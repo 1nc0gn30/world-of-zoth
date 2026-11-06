@@ -1,0 +1,35 @@
+6s [ok] new game -> hub explore
+16s [ok] talked to Vigil (q1 step 1)
+30s [ok] won tutorial battle (q1 step 2)
+30s [ok] gained xp + level up from the tutorial
+44s [ok] reported to Vigil
+53s [ok] Nexus: q2 started
+63s [ok] won roaming fight
+66s [ok] saved at terminal
+74s [ok] entered Rest Woods
+105s [ok] Kitsune recruited
+177s [ok] 3 embers -> lantern (q2 step 3)
+190s [ok] slept + saved
+205s [ok] back to hub
+230s [ok] Nexus: q3
+239s [ok] Ignis recruited
+268s [ok] beat the red copy
+272s [ok] gate open
+286s [ok] q4 + Vigil
+296s [ok] entered the Hollow
+303s [ok] Draco check passed
+309s at pylon? relay 1.380926575622736 23.031508635590257 explore null
+309s  retry 2.065473681551428 23.76047726301166 "cut  voice pylon"
+319s pylon 4 26 {"step":1,"done":false} 5
+324s at pylon? relay 33.28380598540426 18.932304758704795 explore "cut  voice pylon"
+334s pylon 36 20 {"step":1,"done":false} 5
+342s at pylon? relay 11.888032128448243 -24.933070956719067 explore "cut  voice pylon"
+351s pylon 14 -24 {"step":2,"done":false} 5
+351s [ok] 3 pylons cut
+395s final ending 6
+395s [ok] reached the ending
+416s [ok] q4 done
+418s [ok] reload -> continue restores save
+418s final party {"me":{"lvl":6,"xp":131,"hp":105,"en":45},"kitsune":{"lvl":6,"xp":95,"hp":93,"en":49},"ignis":{"lvl":6,"xp":113,"hp":126,"en":39},"vigil":{"lvl":4,"xp":0,"hp":79,"en":49}}
+418s errors []
+BROWSER DISCONNECTED

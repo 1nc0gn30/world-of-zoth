@@ -1,0 +1,128 @@
+{
+ "steps": [
+  [
+   "new game -> hub explore",
+   true
+  ],
+  [
+   "talked to Vigil (q1 step 1)",
+   true
+  ],
+  [
+   "won tutorial battle (q1 step 2)",
+   true
+  ],
+  [
+   "gained xp + level up from the tutorial",
+   true
+  ],
+  [
+   "reported to Vigil",
+   true
+  ],
+  [
+   "Nexus: q2 started",
+   true
+  ],
+  [
+   "won roaming fight",
+   true
+  ],
+  [
+   "saved at terminal",
+   true
+  ],
+  [
+   "entered Rest Woods",
+   true
+  ],
+  [
+   "Kitsune recruited",
+   true
+  ],
+  [
+   "3 embers -> lantern (q2 step 3)",
+   true
+  ],
+  [
+   "slept + saved",
+   true
+  ],
+  [
+   "back to hub",
+   true
+  ],
+  [
+   "Nexus: q3",
+   true
+  ],
+  [
+   "Ignis recruited",
+   true
+  ],
+  [
+   "beat the red copy",
+   true
+  ],
+  [
+   "gate open",
+   true
+  ],
+  [
+   "q4 + Vigil",
+   true
+  ],
+  [
+   "entered the Hollow",
+   true
+  ],
+  [
+   "Draco check passed",
+   true
+  ],
+  [
+   "3 pylons cut",
+   true
+  ],
+  [
+   "reached the ending",
+   true
+  ],
+  [
+   "q4 done",
+   true
+  ],
+  [
+   "reload -> continue restores save",
+   true
+  ]
+ ],
+ "party": {
+  "me": {
+   "lvl": 6,
+   "xp": 131,
+   "hp": 105,
+   "en": 45
+  },
+  "kitsune": {
+   "lvl": 6,
+   "xp": 95,
+   "hp": 93,
+   "en": 49
+  },
+  "ignis": {
+   "lvl": 6,
+   "xp": 113,
+   "hp": 126,
+   "en": 39
+  },
+  "vigil": {
+   "lvl": 4,
+   "xp": 0,
+   "hp": 79,
+   "en": 49
+  }
+ },
+ "errors": [],
+ "secs": 418.392
+}

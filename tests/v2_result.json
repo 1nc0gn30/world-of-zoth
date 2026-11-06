@@ -1,0 +1,136 @@
+{
+ "steps": [
+  [
+   "new game",
+   true
+  ],
+  [
+   "q1 done",
+   true
+  ],
+  [
+   "q2 done",
+   true
+  ],
+  [
+   "q3 done",
+   true
+  ],
+  [
+   "q4 done",
+   true
+  ],
+  [
+   "q5 done",
+   true
+  ],
+  [
+   "q6 done",
+   true
+  ],
+  [
+   "q7 done",
+   true
+  ],
+  [
+   "q8 done",
+   true
+  ],
+  [
+   "q9 done",
+   true
+  ],
+  [
+   "q10 done",
+   true
+  ],
+  [
+   "q11 done",
+   true
+  ],
+  [
+   "q12 done",
+   true
+  ],
+  [
+   "q13 done",
+   true
+  ],
+  [
+   "q14 done",
+   true
+  ],
+  [
+   "q15 done",
+   true
+  ],
+  [
+   "q16 done",
+   true
+  ],
+  [
+   "q17 done",
+   true
+  ],
+  [
+   "q18 done",
+   true
+  ],
+  [
+   "copy beaten (act 1 boss)",
+   true
+  ],
+  [
+   "RELAY 4 beaten (act 2 boss)",
+   true
+  ],
+  [
+   "SANDGLASS beaten (act 3 boss)",
+   true
+  ],
+  [
+   "THE HUNTER beaten (act 4 boss)",
+   true
+  ],
+  [
+   ">_ beaten (act 5 boss)",
+   true
+  ],
+  [
+   "final ending reached",
+   true
+  ],
+  [
+   "reload -> continue restores save",
+   true
+  ]
+ ],
+ "bosses": {
+  "copy": 1,
+  "relay4": 1,
+  "sandglass": 1,
+  "warden": 3,
+  "hunter": 1,
+  "blank": 1
+ },
+ "shot_fiber": 1,
+ "shot_clock": 1,
+ "shot_foundry": 1,
+ "shot_mirrors": 1,
+ "roster": [
+  "me",
+  "kitsune",
+  "vigil",
+  "nexus",
+  "kraken",
+  "chronos",
+  "athena",
+  "lycan",
+  "onyx",
+  "leviathan",
+  "aether"
+ ],
+ "lvl": 28,
+ "errors": [],
+ "secs": 1359.818
+}

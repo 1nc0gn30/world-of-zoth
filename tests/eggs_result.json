@@ -1,0 +1,126 @@
+{
+ "res": [
+  [
+   "red tag in hub reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in forest reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in relay reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in fiber reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in clock reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in streets reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in foundry reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in caves reachable (read  red tag)",
+   true
+  ],
+  [
+   "red tag in deep reachable (read  red tag)",
+   true
+  ],
+  [
+   "minion in hub reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "minion in forest reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "minion in relay reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "minion in fiber reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "minion in clock reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "minion in streets reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "minion in caves reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "minion in deep reachable (catch  glitching minion)",
+   true
+  ],
+  [
+   "s_minion done after 8",
+   true
+  ],
+  [
+   "s_tags done after 9",
+   true
+  ],
+  [
+   "konami: +99 bits",
+   true
+  ],
+  [
+   "??? terminal offered",
+   true
+  ],
+  [
+   "terminal opens",
+   true
+  ],
+  [
+   "trace prints \"found you\"",
+   true
+  ],
+  [
+   "date says 06:12",
+   true
+  ],
+  [
+   "tomorrow 06:12 -> rooftop",
+   true
+  ],
+  [
+   "life mini-game runs",
+   true
+  ],
+  [
+   "achievements unlocked: konami, terminal, rooftop, trace, handshake",
+   true
+  ],
+  [
+   "0 console errors",
+   true
+  ]
+ ],
+ "ach": [
+  "konami",
+  "terminal",
+  "whoami",
+  "trace",
+  "rooftop",
+  "doom",
+  "handshake"
+ ],
+ "errors": []
+}

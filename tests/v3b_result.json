@@ -1,0 +1,93 @@
+{
+ "res": [
+  [
+   "academy terminal in reach",
+   true
+  ],
+  [
+   "academy hub opens",
+   true
+  ],
+  [
+   "academy marker on the map",
+   true
+  ],
+  [
+   "wrong pick rejected",
+   true
+  ],
+  [
+   "typed step rejects a vague prompt",
+   true
+  ],
+  [
+   "typed step accepts role + format",
+   true
+  ],
+  [
+   "debrief card shown",
+   true
+  ],
+  [
+   "lab complete + saved",
+   true
+  ],
+  [
+   "safehouse door in reach",
+   true
+  ],
+  [
+   "entered the safehouse",
+   true
+  ],
+  [
+   "pieces placed",
+   true
+  ],
+  [
+   "layout saved in woz.house",
+   true
+  ],
+  [
+   "layout survives reload",
+   true
+  ],
+  [
+   "valid ZGL applied",
+   true
+  ],
+  [
+   "request carried bearer key + ZGL system prompt",
+   true
+  ],
+  [
+   "rate limit blocks a fast second call",
+   true
+  ],
+  [
+   "invalid ZGL + injection rejected with errors",
+   true
+  ],
+  [
+   "nothing applied from the rejected reply",
+   true
+  ],
+  [
+   "forget key removes it",
+   true
+  ],
+  [
+   "key never logged",
+   true
+  ],
+  [
+   "editor sprite parses + becomes a poster",
+   true
+  ],
+  [
+   "no console errors",
+   true
+  ]
+ ],
+ "errors": []
+}

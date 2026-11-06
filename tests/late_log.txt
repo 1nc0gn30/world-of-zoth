@@ -1,0 +1,22 @@
+17s [ok] Nexus: q3
+27s [ok] Ignis recruited
+57s [ok] beat the red copy
+62s [ok] gate open
+77s [ok] q4 + Vigil
+88s [ok] entered the Hollow
+94s [ok] Draco check passed
+100s at pylon? relay 1.380926575622736 23.031508635590257 explore null
+100s  retry 2.065473681551428 23.76047726301166 "cut  voice pylon"
+110s pylon 4 26 {"step":1,"done":false} 4
+116s at pylon? relay 33.28380598540426 18.932304758704795 explore "cut  voice pylon"
+125s pylon 36 20 {"step":1,"done":false} 5
+133s at pylon? relay 11.888032128448243 -24.933070956719067 explore "cut  voice pylon"
+143s pylon 14 -24 {"step":2,"done":false} 5
+143s [ok] 3 pylons cut
+187s final ending 6
+187s [ok] reached the ending
+208s [ok] q4 done
+211s [ok] reload -> continue restores save
+211s final party {"me":{"lvl":6,"xp":113,"hp":102,"en":45},"kitsune":{"lvl":6,"xp":113,"hp":90,"en":49},"ignis":{"lvl":6,"xp":113,"hp":125,"en":39},"vigil":{"lvl":4,"xp":0,"hp":79,"en":49}}
+211s errors []
+BROWSER DISCONNECTED

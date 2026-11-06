@@ -1,0 +1,10 @@
+import { open } from './lib.mjs';
+import { Bot } from './bot.mjs';
+const {browser,page,errors}=await open(); const b=new Bot(page);
+await b.tap('Enter',5);
+await page.evaluate(()=>{ G.D=null; G.mode='explore'; G.quests={q1:{step:3,done:true},q2:{step:3,done:true},q3:{step:3,done:true},q4:{step:1,done:false}}; G.party.me.lvl=6; G.recruit('ignis'); G.recruit('kitsune'); G.flag('draco_ok',1); G.travel('relay',2,24,0); WOZ.step(40); });
+let s=await b.s(); console.log(s.zone,s.x,s.z,s.mode,JSON.stringify(s.interact));
+await page.evaluate(()=>{ G.player.group.position.set(2.2,G.player.group.position.y,24.2); WOZ.step(5); });
+s=await b.s(); console.log(s.zone,s.x,s.z,s.mode,JSON.stringify(s.interact));
+await b.talk(); s=await b.s(); console.log(s.mode, JSON.stringify(s.dialog));
+console.log(errors); await browser.close();

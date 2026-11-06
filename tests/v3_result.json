@@ -1,0 +1,66 @@
+{
+ "res": [
+  [
+   "new game starts the intro cinematic",
+   true
+  ],
+  [
+   "intro still running at ~21 s",
+   true
+  ],
+  [
+   "intro hands off to the hub + tutorial",
+   true
+  ],
+  [
+   "tutorial on",
+   true
+  ],
+  [
+   "tutorial: move, camera, run done",
+   true
+  ],
+  [
+   "jumped the hurdle",
+   true
+  ],
+  [
+   "hurdle cache opened",
+   true
+  ],
+  [
+   "dissipated through the firewall",
+   true
+  ],
+  [
+   "firewall cache opened",
+   true
+  ],
+  [
+   "map opens",
+   true
+  ],
+  [
+   "waypoint set",
+   true
+  ],
+  [
+   "talked to Vigil (q1 step 1)",
+   true
+  ],
+  [
+   "first mission fight won (q1 step 2)",
+   true
+  ],
+  [
+   "tutorial complete",
+   true
+  ],
+  [
+   "0 console errors",
+   true
+  ]
+ ],
+ "errors": [],
+ "dur": 101.66666666666667
+}

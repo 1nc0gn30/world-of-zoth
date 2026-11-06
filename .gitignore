@@ -1,0 +1,9 @@
+node_modules/
+capture/audio.wav
+capture/video.mp4
+capture/frames/
+android/build/
+*.log
+android/build/
+dist/*.mp4
+capture/v3.*
