@@ -17,7 +17,7 @@ export const ACH={
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
   boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'], bit_alchemist:['packet alchemist','compile high-tier power-of-2 bit packets in 2048 Bit Merger'], combat_analyst:['damage auditor','analyze turn-by-turn breach and parry telemetry in the Combat Log'], movie_premiere:['cinema sovereign','watch the official World of Zoth theatrical movie commercial'], capsule_collector:['capsule sovereign','roll holographic relic capsules in the 100% free Capsule Machine'], world_tourist:['grand tourer','fly across all 19 districts on the World Tour Autopilot'],
-  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'], asteroid_ace:['debris pilot','shatter sub-lattice rogue asteroids in 360° Vector Asteroids'], union_master:['pantheon union','channel a 22-agent Pantheon Ultimate Union Skill'], cipher_scribe:['cipher translator','encode and broadcast a Morse/Binary transmission'], id_verified:['verified operator','mint your holographic Sovereign Operator ID Card'], breakout_ace:['brick breaker','shatter encrypted firewall layers in Vector Breakout'], item_archivist:['relic archivist','inspect and replicate gear in the Complete Item Compendium'], worm_router:['fiber worm','grow the sub-lattice packet worm in Fiber Worm Protocol'], master_commander:['master control','launch a subsystem from the Sovereign Master Control Center'], marathon_sovereign:['16-hour sovereign','honor the 136-milestone marathon in Interactive Credits'], texture_architect:['shader architect','tune 3D normal bump, wet rain ripples & window illumination in the 3D Texture Studio'], pong_champion:['zero-latency pong','score against 03ng0cn1 in Cyber-Pong: Zero-Latency Deflector'], cinema_curator:['box-office sovereign','screen the 10-Episode Theatrical Movie Commercial Series in the Cinema Hub'],
+  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'], asteroid_ace:['debris pilot','shatter sub-lattice rogue asteroids in 360° Vector Asteroids'], union_master:['pantheon union','channel a 22-agent Pantheon Ultimate Union Skill'], cipher_scribe:['cipher translator','encode and broadcast a Morse/Binary transmission'], id_verified:['verified operator','mint your holographic Sovereign Operator ID Card'], breakout_ace:['brick breaker','shatter encrypted firewall layers in Vector Breakout'], item_archivist:['relic archivist','inspect and replicate gear in the Complete Item Compendium'], worm_router:['fiber worm','grow the sub-lattice packet worm in Fiber Worm Protocol'], master_commander:['master control','launch a subsystem from the Sovereign Master Control Center'], marathon_sovereign:['16-hour sovereign','honor the 136-milestone marathon in Interactive Credits'], texture_architect:['shader architect','tune 3D normal bump, wet rain ripples & window illumination in the 3D Texture Studio'], pong_champion:['zero-latency pong','score against 03ng0cn1 in Cyber-Pong: Zero-Latency Deflector'], cinema_curator:['box-office sovereign','screen the 12-Episode Theatrical Movie Commercial Series in the Cinema Hub'], skybeam_pilot:['skybeam interceptor','intercept descending cursor squadrons in Galaga: Skybeam Interceptor'], atlas_cartographer:['20-district cartographer','inspect and warp via the Interactive 20-District Atlas'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
   life:['conway','run 100 generations of Life'], doom:['doom-fire','keep the fire lit for 10 seconds'], tags:['district 9/9','find every red tag'], minions:['eight of me','find every Minion'], goodboy:['good dog','pet Pixel-Shiba ten times'], trace:['found you','trace the copy'],
@@ -43,8 +43,10 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  cinema  pong  textures  master  credits  commercial  worm  itemdex  breakout  idcard  translator  union  asteroids  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
-    else if(c==='cinema'||c==='movies'||c==='series'){ out('[cinema] opening 10-Episode Theatrical Movie Commercial Screening Room...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCinemaHub(); },40); }
+    if(c==='help') out('nmap  ping  patch  atlas  galaga  cinema  pong  textures  master  credits  commercial  worm  itemdex  breakout  idcard  translator  union  asteroids  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='atlas'||c==='districts'||c==='sectors'){ out('[atlas] opening Interactive 20-District Atlas & 1-Click Warp Explorer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDistrictAtlas(); },40); }
+    else if(c==='galaga'||c==='interceptor'||c==='invaders'){ out('[galaga] launching Secret Mini-Game #22: Galaga Skybeam Interceptor...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startInterceptor(); },40); }
+    else if(c==='cinema'||c==='movies'||c==='series'){ out('[cinema] opening 12-Episode Theatrical Movie Commercial Screening Room...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCinemaHub(); },40); }
     else if(c==='pong'||c==='cyberpong'||c==='tennis'){ out('[pong] launching Secret Mini-Game #21: Cyber-Pong vs 03ng0cn1...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startCyberPong(); },40); }
     else if(c==='textures'||c==='materials'||c==='pbr'){ out('[textures] opening Interactive 3D Material & Surface Shader Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTextureStudio(); },40); }
     else if(c==='master'||c==='control'||c==='hub2'||c==='launcher'){ out('[master] opening Sovereign Master Control Center (85+ Subsystems)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMasterHub(); },40); }
@@ -7493,6 +7495,108 @@ export function initEggs(G,{music,sfx}){
           ]
         }
       ]
+    },
+    {
+      title:'EPISODE XI · SKYBEAM INTERCEPTOR (22ND MINI-GAME)',
+      scenes:[
+        {
+          id:'E11S1', dur:7.5, zone:'skyline', music:'skyline',
+          card:'22 COMPANIONS. 22 BUILT-IN ARCADE MINI-GAMES.',
+          sub:'EP XI · SCENE 1 · MODE-7 SKYLINE',
+          from:[18,12,24], to:[4,5,11], look:[0,4,-6],
+          cast:[['kai',-2.8,4,'ultimate'],['aether',2.8,4,'idle'],['me',0,5.5,'idle']],
+          hudBanner:'MINI-GAME #22: GALAGA SKYBEAM INTERCEPTOR (> GALAGA)  ·  20-DISTRICT ATLAS (> ATLAS)',
+          lines:[
+            [0.5, 'kai',    'Hostile Blank Cursor drone squadrons are diving toward the Mode-7 Skyline!'],
+            [4.0, 'aether', 'Fire up Mini-Game #22: Galaga Skybeam Interceptor! Twenty-two companions, twenty-two arcade classics!']
+          ]
+        },
+        {
+          id:'E11S2', dur:7.5, zone:'nullcore', music:'phonk',
+          card:'INSTANTLY WARP ACROSS ALL 20 3D DISTRICTS.',
+          sub:'EP XI · SCENE 2 · THE NULL CORE',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['athena',-2.8,4,'work'],['chronos',2.8,4,'idle'],['kitsune',0,5.5,'idle']],
+          lines:[
+            [0.5, 'athena',  'Need to jump straight from Relit City to The Dawn Horizon or The Null Core?'],
+            [4.0, 'chronos', 'Open the Interactive 20-District Atlas with "> atlas" for full sector telemetry and 1-click warp!']
+          ]
+        },
+        {
+          id:'E11S3', dur:7.5, zone:'citadel', music:'boss',
+          card:'EVERY MONUMENT SCULPTED IN HEADLESS BLENDER 4.3.',
+          sub:'EP XI · SCENE 3 · ZERO-KNOWLEDGE CITADEL',
+          from:[16,10,22], to:[4,4.5,11], look:[0,3.5,-6],
+          cast:[['onyx',-2.8,4,'ability'],['pixel-neko',2.8,4,'work'],['copy',0,5.5,'idle']],
+          lines:[
+            [0.5, 'pixel-neko', '22 procedural Blender 4.3 wireframe monuments anchored across 20 normal-mapped 3D worlds.'],
+            [4.1, 'onyx',       'And it runs at 60fps in any browser without a single external server call.']
+          ]
+        },
+        {
+          id:'E11S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE XI',
+          sub:'EP XI · SCENE 4 · CLEAR SKIES AT 06:12',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-1.8,3,'idle'],['kai',1.8,3,'idle'],['aether',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'kai', 'Skies cleared. All 22 arcade cabinets online.'],
+            [4.1, 'me',  'One more episode to go. Meet us on the rooftop for the Season Finale.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XII · 06:12 TO 06:13 (12-EPISODE SEASON FINALE)',
+      scenes:[
+        {
+          id:'E12S1', dur:7.5, zone:'hub', music:'hub',
+          card:'TWELVE EPISODES FOR 06:12. THE COMPLETE ANTHOLOGY.',
+          sub:'EP XII · SCENE 1 · RELIT PLAZA SAFEHOUSE',
+          from:[-18,10,24], to:[-4,4.5,11], look:[0,3,0],
+          cast:[['me',0,3.5,'idle'],['kitsune',-2.8,4,'idle'],['copy',2.8,4,'idle'],['pixel-shiba',0,5.5,'idle']],
+          hudBanner:'12 THEATRICAL COMMERCIALS  ·  20 DISTRICTS  ·  22 COMPANIONS  ·  22 MINI-GAMES',
+          lines:[
+            [0.5, 'kitsune', 'It started at 06:12 AM in a dark city where nobody could trust a voice on the radio.'],
+            [4.1, 'me',      'Sixteen hours and 140 milestones later, the entire Pantheon is standing here together.']
+          ]
+        },
+        {
+          id:'E12S2', dur:7.5, zone:'mirrors', music:'mirrors',
+          card:'NO PAYWALLS. NO DRM. PURE OPEN-ACCESS ART.',
+          sub:'EP XII · SCENE 2 · HALL OF MIRRORS',
+          from:[16,9,22], to:[3,4,10], look:[0,2.5,-4],
+          cast:[['vigil',-2.8,4,'idle'],['copy',2.8,4,'idle'],['athena',0,5.5,'work']],
+          lines:[
+            [0.5, 'vigil',  'Every line of GLSL, every WebAudio synth stem, and every tactical battle was built in the open.'],
+            [4.1, 'athena', 'Play on desktop, play on Android APK, or inspect the source—it belongs to you.']
+          ]
+        },
+        {
+          id:'E12S3', dur:7.5, zone:'horizon', music:'title',
+          card:'THE GOLDEN TRAIL ALWAYS LEADS HOME.',
+          sub:'EP XII · SCENE 3 · THE DAWN HORIZON',
+          from:[-18,11,24], to:[-4,5,11], look:[0,4,-8],
+          cast:[['aether',-3,4,'ultimate'],['chronos',3,4,'work'],['ignis',0,5.5,'ability']],
+          lines:[
+            [0.5, 'chronos', 'Whenever you get lost in the 20 districts, just lock a mission and follow the golden trail.'],
+            [4.1, 'aether',  'Or press [V] for 2.0x Hyper-Clock speed and fly across the horizon!']
+          ]
+        },
+        {
+          id:'E12S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · SEASON I COMPLETE',
+          sub:'EP XII · SCENE 4 · SUNRISE 06:13',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-2,3,'idle'],['kitsune',2,3,'idle'],['copy',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'me',      'Trust faces, not voices. Silence cannot be copied.'],
+            [4.1, 'kitsune', 'See you in the lattice, Operator. 06:13 is yours!']
+          ]
+        }
+      ]
     }
   ];
   G.openCommercial=(epOrDone=0, onDoneArg=null)=>{
@@ -8753,7 +8857,9 @@ export function initEggs(G,{music,sfx}){
     ['EPISODE VII · NULL ACADEMY: HACK THE PROMPT', '4 Scenes · Campus, Fiber Tunnels & Caves', 'Athena, Vigil, 03ng0cn1, Pixel-Neko, Kraken, Kitsune, 1nc0gn30', 'Interactive AI-Security & Zero-Knowledge Cryptography curriculum: prompt injection defense, hex vault cracking, and Physarum routing.'],
     ['EPISODE VIII · 06:13: THE SUNRISE FINALE', '4 Scenes · Skyline, Horizon & Citadel', '1nc0gn30, 03ng0cn1, Chronos, Pixel-Shiba, Pixel-Neko, Onyx, Kitsune', 'Emotional grand finale celebrating the 16-hour autonomous marathon, real 3D normal-bump shaders, and the 06:13 sunrise.'],
     ['EPISODE IX · THE MIRROR\'S EDGE (03NG0CN1)', '4 Scenes · Mirrors, Deep Water & Hollow', '03ng0cn1, 1nc0gn30, Kitsune, Vigil, Onyx, Kai, Pixel-Shiba', 'How your dark reflection 03ng0cn1 evolved from Act I nemesis into the 22nd playable member of your Pantheon squad.'],
-    ['EPISODE X · THE PANTHEON GALA', '4 Scenes · Astral Spire, Foundry & Horizon', 'Aether, Athena, Ignis, Pixel-Neko, Chronos, Kitsune, 1nc0gn30', 'Red-carpet celebration of all 10 Theatrical Movie Commercials, 21 Mini-Games, 20 Districts, and the Live 3D Material Studio.']
+    ['EPISODE X · THE PANTHEON GALA', '4 Scenes · Astral Spire, Foundry & Horizon', 'Aether, Athena, Ignis, Pixel-Neko, Chronos, Kitsune, 1nc0gn30', 'Red-carpet celebration of all 10 Theatrical Movie Commercials, 21 Mini-Games, 20 Districts, and the Live 3D Material Studio.'],
+    ['EPISODE XI · SKYBEAM INTERCEPTOR (#22)', '4 Scenes · Skyline, Null Core & Citadel', 'Kai, Aether, Athena, Chronos, Pixel-Neko, Onyx, 1nc0gn30', 'Showcasing the 22nd Arcade Mini-Game (Galaga Skybeam Interceptor) and the Interactive 20-District Atlas.'],
+    ['EPISODE XII · 06:12 TO 06:13 (FINALE)', '4 Scenes · Safehouse, Mirrors & Horizon', '1nc0gn30, Kitsune, 03ng0cn1, Vigil, Athena, Chronos, Aether', 'The 12th and final episode of the 06:12 Anthology celebrating 16 hours of autonomous sovereign engineering.']
   ];
   G.openCinemaHub=()=>{
     let sel=0;
@@ -8765,7 +8871,7 @@ export function initEggs(G,{music,sfx}){
         if(took('down')){ sel=(sel+1)%EP_META.length; sfx('move'); }
         if(took('party')){
           G.ach('cinema_curator'); G.bits+=200; sfx('win');
-          G.toast('> BOX-OFFICE STIPEND CLAIMED! +200 BITS FOR SCREENING THE 10-EPISODE SERIES',P.GD);
+          G.toast('> BOX-OFFICE STIPEND CLAIMED! +200 BITS FOR SCREENING THE 12-EPISODE SERIES',P.GD);
         }
         if(took('confirm')){
           G.ach('cinema_curator'); sfx('confirm');
@@ -8777,16 +8883,17 @@ export function initEggs(G,{music,sfx}){
         X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
         UI.box(36,20,888,500,P.GD);
         UI.text('> CINEMA SCREENING ROOM',56,36,P.GD,2);
-        UI.text('10 FULL-LENGTH 3D MOVIE COMMERCIALS · REAL-TIME WEBGL',900,40,'#4ade80',1,'right');
-        EP_META.forEach((ep,i)=>{
-          const y=76+i*38, on=i===sel;
+        UI.text('12 FULL-LENGTH 3D MOVIE COMMERCIALS · REAL-TIME WEBGL',900,40,'#4ade80',1,'right');
+        const first=Math.max(0,Math.min(sel-5,EP_META.length-10));
+        for(let idx=0;idx<Math.min(10,EP_META.length);idx++){
+          const i=first+idx, ep=EP_META[i], y=76+idx*38, on=i===sel;
           UI.box(56,y,430,32,on?P.GD:P.DDG,on?'rgba(245,184,46,.16)':'rgba(10,8,6,.9)');
           UI.text(`${on?'> ':'  '}${ep[0].slice(0,38)}`,68,y+8,on?P.GD:P.BONE,1);
           UI.hit(56,y,430,32,()=>{ sel=i; sfx('move'); });
-        });
+        }
         const cur=EP_META[sel];
         UI.box(504,76,396,378,'#22d3ee','rgba(8,10,14,.95)');
-        UI.text(`EPISODE 0${sel+1} OF 10`,524,96,'#22d3ee',1);
+        UI.text(`EPISODE ${String(sel+1).padStart(2,'0')} OF ${EP_META.length}`,524,96,'#22d3ee',1);
         UI.wrap(cur[0],360,2).forEach((ln,li)=>UI.text(ln,524,116+li*22,P.GD,2));
         UI.text(`FORMAT: ${cur[1]}`,524,168,'#4ade80',1);
         UI.text('STARRING CAST:',524,196,P.GD,1);
@@ -8794,12 +8901,157 @@ export function initEggs(G,{music,sfx}){
         UI.text('DIRECTOR SYNOPSIS:',524,262,P.GD,1);
         UI.wrap(cur[3],356,1).forEach((ln,li)=>UI.text(ln,524,280+li*16,P.BONE,1));
         UI.box(524,382,356,48,P.GD,'rgba(245,184,46,.16)');
-        UI.text(`> [ENTER] SCREEN EPISODE 0${sel+1} IN LIVE 3D`,702,400,P.GD,1,'center');
+        UI.text(`> [ENTER] SCREEN EPISODE ${String(sel+1).padStart(2,'0')} IN LIVE 3D`,702,400,P.GD,1,'center');
         UI.hit(524,382,356,48,()=>{ G.ach('cinema_curator'); G.openCommercial(sel); });
-        UI.text('[up/down] select episode (1-10)   [enter] launch live 3D screening   [P] claim +200B   [esc] exit',480,486,P.DG,1,'center');
+        UI.text('[up/down] select episode (1-12)   [enter] launch live 3D screening   [P] claim +200B   [esc] exit',480,486,P.DG,1,'center');
       }
     };
     G.mode='mini'; G.ach('cinema_curator'); sfx('confirm');
+  };
+  // ---- Secret Mini-Game #22: Galaga: Skybeam Interceptor (M140) ----
+  G.startInterceptor=()=>{
+    let shipX=480, score=0, wave=1, cd=0;
+    const bolts=[], foes=[];
+    const spawnWave=w=>{
+      foes.length=0;
+      for(let r=0;r<3;r++){
+        for(let c=0;c<8;c++){
+          foes.push({x:160+c*86, y:108+r*42, vx:(r%2===0?1:-1)*(55+w*8), hp:1, col:r===0?P.RED:r===1?P.GD:'#22d3ee'});
+        }
+      }
+    };
+    spawnWave(1);
+    G.mini={
+      name:'galaga',
+      update(dt){
+        cd=Math.max(0,cd-dt);
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(IN.held.has('left')) shipX=Math.max(100,shipX-340*dt);
+        if(IN.held.has('right')) shipX=Math.min(860,shipX+340*dt);
+        if((took('confirm')||IN.held.has('jump'))&&cd<=0){
+          bolts.push({x:shipX-10,y:412},{x:shipX+10,y:412});
+          cd=0.16; sfx('blip');
+        }
+        if(took('party')){
+          score+=300; G.bits+=150;
+          foes.splice(0,Math.min(8,foes.length));
+          if(foes.length===0){ wave++; spawnWave(wave); }
+          G.ach('skybeam_pilot'); sfx('win');
+          G.toast('> ORBITAL SKYBEAM BARRAGE! +8 DRONES VAPORIZED & +150 BITS',P.GD);
+        }
+        for(let i=bolts.length-1;i>=0;i--){
+          bolts[i].y-=440*dt;
+          if(bolts[i].y<84) bolts.splice(i,1);
+        }
+        foes.forEach(f=>{
+          f.x+=f.vx*dt;
+          if(f.x<96||f.x>864){ f.vx=-f.vx; f.y=Math.min(370,f.y+10); }
+        });
+        for(let bi=bolts.length-1;bi>=0;bi--){
+          const b=bolts[bi];
+          for(let fi=foes.length-1;fi>=0;fi--){
+            const f=foes[fi];
+            if(Math.abs(b.x-f.x)<22 && Math.abs(b.y-f.y)<16){
+              bolts.splice(bi,1); foes.splice(fi,1);
+              score+=50; G.ach('skybeam_pilot'); sfx('crit');
+              break;
+            }
+          }
+        }
+        if(foes.length===0){ wave++; G.bits+=60; spawnWave(wave); sfx('win'); }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> GALAGA: SKYBEAM INTERCEPTOR',56,36,P.GD,2);
+        UI.text(`WAVE: 0${wave}   ·   SCORE: ${score}   ·   HOSTILES: ${foes.length}   ·   BITS: ${G.bits}B`,900,40,'#4ade80',1,'right');
+        UI.box(64,78,832,374,'#22d3ee','rgba(8,10,14,.96)');
+        foes.forEach(f=>{
+          UI.box(f.x-18,f.y-10,36,20,f.col,'rgba(20,14,14,.9)');
+          UI.text('>_',f.x,f.y-6,f.col,1,'center');
+        });
+        // Interceptor Ship
+        X.strokeStyle='#4ade80'; X.lineWidth=2; X.beginPath();
+        X.moveTo(shipX,406); X.lineTo(shipX-20,434); X.lineTo(shipX+20,434); X.closePath(); X.stroke();
+        X.fillStyle=P.GD;
+        bolts.forEach(b=>X.fillRect(b.x-2,b.y-6,4,12));
+        UI.text('[left/right] strafe interceptor   [enter/space] twin lasers   [P] skybeam barrage (+150B)   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive 20-District Atlas & 3D Telemetry Explorer (M141) ----
+  const ATLAS_ZONES=[
+    ['hub','01. Relit City (Safehouse)','LV 01','Relit Neon Concrete & Wet Asphalt','Operator Safehouse & Null Academy'],
+    ['forest','02. Whispering Rest Woods','LV 03','Bioluminescent Moss & Carved Stone','Conway Game of Life & Great Slumber Tree'],
+    ['relay','03. The Hollow (Relay 4)','LV 06','Corrupted Red Glitch Terraces','3 Voice Pylons & Boss: RELAY 4'],
+    ['fiber','04. Hilbert Fiber Tunnels','LV 09','Subterranean Optical Glass Conduits','140 BPM Hilbert Curves & Packet Runner'],
+    ['clock','05. The Sand Clocktower','LV 12','Anodized Brass & Temporal Stone','Frozen 06:12 Hourglass & Boss: SANDGLASS'],
+    ['streets','06. Collapse Streets','LV 15','Superposed Quantum Grid Pavement','Wave-Function Collapse & Phase Specters'],
+    ['foundry','07. Doom-Fire Foundry','LV 17','Molten Slag & Riveted Blast Steel','Crucible Anvil & Octagonal Mirror Key'],
+    ['caves','08. Physarum Bio-Caves','LV 19','Bioluminescent Slime-Mould Lattice','Acoustic Standing Waves & Bio-Router'],
+    ['mirrors','09. Hall of Mirrors','LV 21','Octagonal Specular Glass Rosette','7th Reflection, 03ng0cn1 & Boss: THE HUNTER'],
+    ['deep','10. Deep-Water Memory','LV 23','Abyssal Pelagic Trench Stone','Pre-Blackout Memory Vectors & Leviathan'],
+    ['skyline','11. Mode-7 Skyline','LV 25','High-Altitude Voronoi Skybeam Deck','21 Sovereign Skybeams & Boss: >_ (Blank Cursor)'],
+    ['abyss','12. Sub-Lattice Abyss','LV 27','4096m Menger-Sponge Deep Trench','Three Zero-Knowledge Cryptographic Seals'],
+    ['citadel','13. Zero-Knowledge Citadel','LV 30','Gothic-Cybernetic Pantheon Marble','Boss: ARCHON-0, Infinite Stack & Boss Rush'],
+    ['nullcore','14. The Null Core','LV 32','4D Clifford Hyper-Torus Singularity','06:12 Daily Challenge & Relic Synthesizer'],
+    ['rooftop','15. Secret Sector: Rooftop 06:12','LV 35','Sunrise Gold Braille Horizon','The 06:12 Laptop & First Dawn Overlook'],
+    ['loom','16. The Quantum Loom','LV 36','Entangled Superposition Weave','Blender 4.3 Quantum Loom & 6x6 Laser Router'],
+    ['vault','17. The Chrono-Vault','LV 38','Celestial Horology Brass Vault','Blender 4.3 Chrono-Orrery & Pet Sanctuary'],
+    ['astral','18. The Astral Spire','LV 40','Starlight Lattice & Orbital Rings','Pantheon Triad 3x3 Cards & M100 Hall of Fame'],
+    ['omega','19. The Omega Foundry','LV 42',' Crucible Plasma & Blueprint Grid','ZGL 3D Blueprint Studio & Endless Boss Gauntlet'],
+    ['horizon','20. The Dawn Horizon','LV 45','06:13 Solar Gate & Wet Reflective Stone','Blender 4.3 Dawn Gate, Asteroids & Cinema']
+  ];
+  G.openDistrictAtlas=()=>{
+    let sel=0;
+    G.mini={
+      name:'atlas',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+ATLAS_ZONES.length-1)%ATLAS_ZONES.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%ATLAS_ZONES.length; sfx('move'); }
+        if(took('party')){
+          G.ach('atlas_cartographer'); G.bits+=150; sfx('win');
+          G.toast('> 20-DISTRICT CARTOGRAPHY STIPEND: +150 BITS CLAIMED!',P.GD);
+        }
+        if(took('confirm')){
+          const z=ATLAS_ZONES[sel][0];
+          G.ach('atlas_cartographer'); sfx('confirm');
+          G.mode='explore';
+          if(G.travelTo) G.travelTo(z);
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> 20-DISTRICT WORLD ATLAS',56,36,P.GD,2);
+        UI.text(`CURRENT SECTOR: ${(G.zone&&G.zone.name||'RELIT CITY').toUpperCase()}   ·   20/20 UNLOCKED`,900,40,'#4ade80',1,'right');
+        const first=Math.max(0,Math.min(sel-5,ATLAS_ZONES.length-11));
+        for(let idx=0;idx<11;idx++){
+          const i=first+idx, z=ATLAS_ZONES[i], on=i===sel, y=76+idx*34;
+          UI.box(56,y,410,28,on?P.GD:P.DDG,on?'rgba(245,184,46,.16)':'rgba(10,8,6,.9)');
+          UI.text(`${on?'> ':'  '}${z[1]}`,68,y+6,on?P.GD:P.BONE,1);
+          UI.text(z[2],454,y+6,'#22d3ee',1,'right');
+          UI.hit(56,y,410,28,()=>{ sel=i; sfx('move'); });
+        }
+        const cur=ATLAS_ZONES[sel];
+        UI.box(486,76,414,376,'#22d3ee','rgba(8,10,14,.95)');
+        UI.text(cur[1].toUpperCase(),506,98,P.GD,2);
+        UI.text(`ZONE ID: "${cur[0]}"   ·   RECOMMENDED LEVEL: ${cur[2]}`,506,130,'#22d3ee',1);
+        UI.text('3D PROCEDURAL SURFACE SHADER:',506,166,P.GD,1);
+        UI.text(cur[3],506,186,'#4ade80',1);
+        UI.text('KEY LANDMARKS & SUBSYSTEMS:',506,224,P.GD,1);
+        UI.wrap(cur[4],374,1).forEach((ln,li)=>UI.text(ln,506,244+li*18,P.BONE,1));
+        UI.box(506,364,374,52,P.GD,'rgba(245,184,46,.16)');
+        UI.text(`> [ENTER] INSTANT WARP TO ${cur[0].toUpperCase()}`,693,384,P.GD,1,'center');
+        UI.hit(506,364,374,52,()=>{ G.ach('atlas_cartographer'); G.mode='explore'; if(G.travelTo) G.travelTo(cur[0]); });
+        UI.text('[up/down] browse 20 districts   [enter] instant warp   [P] cartography stipend (+150B)   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
   };
   // oscilloscope handshake (EP12): bring your curve to 3:2 and lock it
   G.startScope=()=>{ let a=1.6, tt=0, done=0; const vc=AG.vigil.color;

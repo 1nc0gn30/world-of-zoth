@@ -157,5 +157,10 @@
 - [x] **M132** (`14:37`): Full 90-Subsystem & 20-Mini-Game Automated Zero-Error Audit #8 (`Errors: []`)
 - [x] **M133** (`14:35`): Comprehensive `README.md` v2.0 Sovereign Edition Overhaul (20 Districts, 22 Agents, 20 Mini-Games, 88+ Subsystems, 4+ Movie Commercials)
 - [x] **M134** (`14:37`): `1nc0gn30.si` Sovereign Portal v2.0 Sync & Interactive Feature Matrix Update
-- [x] **M135** (`14:37`): Signed Android APK v2.0 (`dist/world-of-zoth.apk` verified v2/v3, `2,139,000 bytes`) & Desktop Release Bundle (`dist/world-of-zoth.zip`)
+- [x] **M135** (`14:37` · `commit 44511a7`): Signed Android APK v2.0 (`dist/world-of-zoth.apk` verified v2/v3, `2,139,000 bytes`) & Desktop Release Bundle (`dist/world-of-zoth.zip`)
+- [x] **M137** (`15:02` · `commit c7fb3de`): Interactive 3D Material & Surface Shader Studio (`G.openTextureStudio()` via `> textures` & System Menu — 5 PBR-style world-space relief presets + real-time sliders for `texBump`, `texWet`, and `texWin` + Episodes IX & X)
+- [x] **M138** (`15:18` · `commit 4e28517`): Secret Mini-Game #21 — *"Cyber-Pong: Zero-Latency Duel"* (`G.startCyberPong()` via `> pong` & System Menu — high-speed 2-paddle arcade rally with curve spin & smash mechanics)
+- [x] **M139** (`15:18` · `commit 4e28517`): 12-Episode Theatrical Cinema Screening Room (`G.openCinemaHub()` via `> cinema` & System Menu — browse & launch all 12 movie commercials directly in-engine)
+- [x] **M140** (`15:35`): Secret Mini-Game #22 — *"Galaga: Skybeam Interceptor"* (`G.startInterceptor()` via `> galaga` & System Menu — 3-wave vertical arcade shmup vs Swarm Drones & Boss Cruisers)
+- [x] **M141** (`15:35`): Interactive 20-District World Atlas & 1-Click Warp Explorer (`G.openDistrictAtlas()` via `> atlas` & System Menu — 5x4 grid of all 20 districts with lore, threat level, and instant warp + Episodes XI & XII completing the 12-Episode 1080p Movie Anthology!)
 - [ ] **M136**: Final 16-Hour Autonomous Marathon Verification, GitHub Release Push & Summary Report (`16:00`)
