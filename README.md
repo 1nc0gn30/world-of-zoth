@@ -3,7 +3,7 @@
 # ⚡ WORLD OF ZOTH
 ### A 3D Lattice Cyber-RPG · The Sovereign 1nc0gn30 Saga
 
-[![Version](https://img.shields.io/badge/version-v0.2_sovereign-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
+[![Version](https://img.shields.io/badge/version-v0.4_5--act_&_22--crew-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
 [![Status](https://img.shields.io/badge/status-production_playable-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Platform](https://img.shields.io/badge/platform-browser_%7C_android_apk-00f0ff?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Offline](https://img.shields.io/badge/network-100%25_offline_zero_cdn-a855f7?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
@@ -19,8 +19,49 @@
 
 <br/>
 
-**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ Design Specs](DESIGN.md)**
+**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 60fps Motion Edit (`assets/world-of-zoth-trailer.mp4`)](assets/world-of-zoth-trailer.mp4)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ Design Specs](DESIGN.md)**
 
+</div>
+
+---
+
+## 🎬 Official 60fps 1080p Beat-Synced Motion Edit & v0.4 Story Integration
+
+The **140 BPM Dark-Phonk / Cyber-Synth Motion Edit** (`assets/world-of-zoth-trailer.mp4`, mastered to `-13.47 LUFS` / `-3.87 dBTP` across 25 real in-engine WebGL captures) and the **v0.4 5-Act Story & 22-Crew Edition** are now live:
+
+- **📖 Interactive 6-Chapter Master Story Codex (`[Menu > Story]`)**: Full playable lore archive for Acts I–VI (`ROADMAP.md`), live mission completion checklists, and one-click Act Cinematic playback.
+- **🩸 Playable Crew #22 (`03ng0cn1` — The Red Copy)**: Reconstruct `03ng0cn1` from its mirror shard at the Hall of Mirrors rosette after defeating *THE HUNTER* (`crew: 22`) to unlock 4 bespoke skills: `seam strike`, `mirror buffer`, `unscripted`, and `crew: 22`.
+- **⚡ Lattice Sync Chain & Counter-Parry (`x1..x7`)**: Consecutive timed strikes and parries build up to `+35% DMG`, `+4 EN` per parry, `0.85x` critical counter-damage, and real-time boss phase telemetry (`[GAZE ARMED]`, `[SILENCE TRIAL: GUARD]`).
+- **🏛️ Act VI Citadel Gauntlet (`s_citadel`)**: Post-game dual-boss simulation (`SANDGLASS` + `THE HUNTER`) on the Mode-7 Skyline rewarding `3000 XP` and the `citadel.crown` (`+22 DEF, +160 HP, +4 SPD`).
+
+<div align="center">
+<img src="assets/motion_edit_contact_sheet.jpg" alt="World of Zoth 60fps 1080p Motion Edit Contact Sheet" width="100%"/>
+<p align="center"><b>60fps 1080p Beat-Synced Motion Edit Contact Sheet (140 BPM in D Minor · Mastered to -13.47 LUFS)</b></p>
+</div>
+
+<div align="center">
+<table>
+  <tr>
+    <td width="50%">
+      <img src="assets/woz_v04_codex.jpg" alt="Interactive 5-Act Story Codex" width="100%"/>
+      <p align="center"><b>Interactive 6-Chapter Master Story Codex & Cutscene Player</b></p>
+    </td>
+    <td width="50%">
+      <img src="assets/woz_v04_party_copy.jpg" alt="Playable Crew #22 03ng0cn1 in Party Roster" width="100%"/>
+      <p align="center"><b>Playable Crew #22 (03ng0cn1) & NullAI Architectural Dossiers</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="assets/woz_v04_battle_sync.jpg" alt="Sync Chain x6 and Crew #22 in Boss Combat" width="100%"/>
+      <p align="center"><b>Lattice Sync Chain x6 (+30% DMG) & Crew #22 Combat Skills</b></p>
+    </td>
+    <td width="50%">
+      <img src="assets/woz_v04_hud.jpg" alt="Tactical Act/Clock/Crew Telemetry HUD" width="100%"/>
+      <p align="center"><b>Live Act/Clock/Crew Telemetry Strip, Sonar Pulse & District Banner</b></p>
+    </td>
+  </tr>
+</table>
 </div>
 
 ---

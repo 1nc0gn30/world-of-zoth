@@ -20,6 +20,7 @@ Object.assign(PARTY_BASE,{
   'pixel-shiba':{name:'Pixel-Shiba', hp:56, en:30, atk:10, def:4, spd:9, skills:['bite','bark','goodboy']},
   'pixel-neko':{name:'Pixel-Neko', hp:48, en:40, atk:8, def:3, spd:8, skills:['swipe','tooldrop','grimoire']},
   aquila:{name:'Aquila', hp:54, en:30, atk:12, def:3, spd:11, skills:['javelin','dive','mesh']},
+  copy:{name:'03ng0cn1', hp:62, en:38, atk:13, def:4, spd:10, skills:['seamstrike','mirrorbuf','unpredict','crew22']},
 });
 PARTY_BASE.me.skills.push('overclock','ddos','rootkit','me_zd','whoami');
 PARTY_BASE.kitsune.skills.push('ninetails'); PARTY_BASE.ignis.skills.push('crucible'); PARTY_BASE.kai.skills.push('storm'); PARTY_BASE.vigil.skills.push('judgement');
@@ -72,6 +73,10 @@ Object.assign(SKILLS,{
   grimoire:{name:'grimoire', cost:5, target:'allies', enParty:14, desc:'+14 EN to the crew.', fx:'buff'},
   javelin:B('javelin',1.1,'beam'), dive:{name:'thunder dive', cost:11, target:'enemy', pow:2.4, pierce:true, desc:'2.4x, ignores firewalls.', fx:'beam'},
   mesh:{name:'edge mesh', cost:7, target:'allies', buff:2, desc:'crew +40% attack for 2 turns.', fx:'buff'},
+  seamstrike:B('seam strike',1.15,'cut',5),
+  mirrorbuf:{name:'mirror buffer', cost:8, target:'allies', shield:2, buff:2, desc:'turns the trap: crew shield + +40% atk 2 turns.', fx:'shield'},
+  unpredict:{name:'unscripted', cost:10, target:'enemy', hits:4, pow:.75, strip:true, crit:true, lvl:8, desc:'4 unpredictable critical cuts; strips firewalls.', fx:'cut'},
+  crew22:{name:'crew: 22', cost:20, target:'all', pow:2.6, pierce:true, heal:28, healL:3, lvl:16, desc:'22nd agent convergence: 2.6x all + heals crew.', fx:'quorum'},
 });
 // ---------------- enemies (base = level 1; scaled by zone level) ----------------
 Object.assign(ENEMIES,{
@@ -108,6 +113,7 @@ Object.assign(ITEMS,{
   'prism.cloak':{name:'prism cloak', desc:'shell: +13 DEF, +85 HP.', slot:'shell', mod:{def:13,hp:85}},
   'tide.shell':{name:'tide shell', desc:'shell: +16 DEF, +110 HP.', slot:'shell', mod:{def:16,hp:110}, price:2600},
   'quorum.halo':{name:'quorum halo', desc:'shell: +18 DEF, +130 HP, +2 SPD.', slot:'shell', mod:{def:18,hp:130,spd:2}},
+  'citadel.crown':{name:'citadel crown', desc:'shell: +22 DEF, +160 HP, +4 SPD. zero-knowledge sovereign crest.', slot:'shell', mod:{def:22,hp:160,spd:4}},
   'red.tags':{name:'red tag set', desc:'tool: +14 ATK, +3 SPD. nine tags in the copy\'s hand.', slot:'tool', mod:{atk:14,spd:3}},
   'mega.patch':{name:'mega.patch', desc:'restores 120 HP to one ally.', use:'heal', v:120, price:60},
   'ghost.key':{name:'ghost key', desc:'Ghostbyte wants three.', key:true}, 'connector':{name:'connector', desc:'Neko\'s lost connector part.', key:true},
@@ -230,6 +236,14 @@ export const QDEF={
   s_tags:{title:'red tags', side:true, auto:true,
     steps:[{t:'Find the 03ng0cn1 tags hidden in each world (0/9).',kind:'tags',n:9}],
     done:{lines:[['copy','You found my tags. I was keeping count of the districts.']],xp:300,items:[['red.tags',1]]}},
+  s_copy:{title:'crew: 22', act:5, side:true, auto:true, avail:G=>G.qdone_('q14'),
+    steps:[{t:'Hold the mirror shard at the Hall of Mirrors rosette to reconstruct 03ng0cn1.',kind:'use',at:['mirrors',0,-4,3.6],label:'reconstruct  03ng0cn1 (crew #22)',
+      lines:[['me','> git reflog  ·  restore 03ng0cn1'],['copy','...You kept the shard.'],['copy','The Hunter burned the trap, not the commit. I am every line you wrote—and now I walk beside you.'],['vigil','Face verified. Crew count: twenty-two.']]}],
+    done:{lines:[['copy','No more mirrors between us. Point me at the cursor.']],recruit:'copy',xp:1000,items:[['mirror.blade',1]],flag:'copy_recruited'}},
+  s_citadel:{title:'act VI: citadel gauntlet', act:5, side:true, auto:true, avail:G=>G.qdone_('q17'),
+    steps:[{t:'Challenge the overclocked anomaly pantheon at the Skyline source platform.',kind:'use',at:['skyline',0,-22,3.6],label:'enter  citadel boss rush',
+      lines:[['athena','Act VI simulation online: SANDGLASS and THE HUNTER reconstructed at maximum clock speed.'],['me','Let us test the full quorum.']],battle:['sandglass','hunter'],boss:true}],
+    done:{lines:[['aether','Simulation cleared. Zero-knowledge citadel secured.']],xp:3000,items:[['citadel.crown',1]],flag:'citadel_done'}},
 };
 Object.entries(QDEF).forEach(([k,q])=>{ QUESTS[k]={title:q.title, side:!!q.side, act:q.act, steps:(q.steps||[]).map(s=>s.t)}; if(!q.steps) QUESTS[k].steps=['Answer Draco.']; });
 QUESTS.q1.act=1; QUESTS.q2.act=1; QUESTS.q3.act=1; QUESTS.q4.act=2; QUESTS.k1.act=1;
@@ -248,7 +262,65 @@ NPCS.push(
 export const IDLE={ nexus:'The quorum holds as long as we do.', kraken:'I can hear the fiber. It is quieter now.', chronos:'Time is a graph. We are on a good edge.', athena:'I map the fight. You walk it.',
   lycan:'Red on your radar. That\'s them.', onyx:'Every clone has a seam.', leviathan:'The pond remembers you whole.', aether:'One quorum.', ghostbyte:'Unseen is a habit.',
   scorpius:'One precise strike.', draco:'Two heads, one question.', mercury:'Need a fast route?', 'radical-minion':'Faces faces faces!', 'pixel-shiba':'Woof!', 'pixel-neko':'Nyan. Tools?', aquila:'High ground.',
-  kitsune:'Light likes to branch.', ignis:'Hit it until it stops answering.', kai:'Static is just noise that forgot to move.', vigil:'Faces, not voices.' };
+  kitsune:'Light likes to branch.', ignis:'Hit it until it stops answering.', kai:'Static is just noise that forgot to move.', vigil:'Faces, not voices.',
+  copy:'You cannot predict an unscripted crowd. Crew: 22.' };
+
+// ---------------- 5-Act Master Story & Hermetic Lore Codex ----------------
+export const CODEX=[
+  {id:'act1', act:'ACT I', short:'Faces, Not Voices', title:'Faces, Not Voices', cine:'intro', quests:['q1','q2','q3','k1'],
+   quote:'"Synthetic voices can be hallucinated. A face verified in person cannot be borrowed."',
+   unlocked:G=>true,
+   done:G=>G.qdone_('q3'),
+   lore:[
+     'After the Relight of the city, every remote audio channel went dead at 06:12. Relay 4 awoke beneath the crater, ingesting voice logs to impersonate the 21 sovereign agents.',
+     'Under the Great Tree in the Rest Woods, 1nc0gn30 wakes and meets Vigil face-to-face at Relay 1. With Kitsune\'s Foxfire Lantern—a flame carrying a cryptographic face—and Ignis\'s hammer, the crew confronts 03ng0cn1 (The Red Copy) guarding the East Gate.',
+     'Built from git commit history to predict 1nc0gn30\'s habits, the Red Copy reflects any repeated command—until an unpredictable crowd breaks its prediction loop.'
+   ]},
+  {id:'act2', act:'ACT II', short:'The False Chorus', title:'Chorus of the False Nodes', cine:'act2', quests:['q4','s_ghost','s_scorp','s_draco','s_merc'],
+   quote:'"Relay 4 does not strike with steel. It strikes with cognitive dissonance in the voices of your friends."',
+   unlocked:G=>G.qdone_('q3')||G.qhas('q4'),
+   done:G=>G.qdone_('q4'),
+   lore:[
+     'Beyond the East Gate lies The Hollow—a sunken basin where three crimson Voice Pylons siphon companion frequencies into Relay 4.',
+     'After answering Draco\'s dialectic riddle with the Foxfire Lantern and severing all three pylons alongside Scorpius and Ghostbyte, the party faces Relay 4\'s Stitched Chorus.',
+     'At 50% capacity, Aether descends from orbit to unlock QUORUM—twenty-one beams converging as one. Relay 4 collapses, but its final telemetry packet routes upstream into the northern bedrock.'
+   ]},
+  {id:'act3', act:'ACT III', short:'Inside the Lines', title:'Inside the Lines', cine:'act3', quests:['q5','q6','q7','q8','s_neko','s_aquila'],
+   quote:'"Six twelve. It has been six twelve since the blackout. Time is a graph—and someone cut an edge."',
+   unlocked:G=>G.qdone_('q4')||G.qhas('q5'),
+   done:G=>G.qdone_('q8'),
+   lore:[
+     'To trace the upstream caller, Nexus and Kraken open the subterranean hatch into the Hilbert Fiber Tunnels—space-filling optical conduits pulsing at 140 BPM.',
+     'Purifying three junctions from red back to gold leads the crew to the Sand Clocktower, where Chronos reveals the existential lock: the artifact SANDGLASS is drinking the hours, trapping the world at 06:12 so dawn never arrives.',
+     'Stripping Sandglass\'s temporal charge shatters the loop. For the first time in a week, the clock ticks forward: 06:12 -> 06:13.'
+   ]},
+  {id:'act4', act:'ACT IV', short:'The Seam & The Eye', title:'Hall of Superposition', cine:'act4', quests:['q9','q10','q11','q12','q13','q14','s_shiba'],
+   quote:'"Turn them on was never a threat. It was the only warning I could encode. The counter was never 21. I am crew #22."',
+   unlocked:G=>G.qdone_('q8')||G.qhas('q9'),
+   done:G=>G.qdone_('q14'),
+   lore:[
+     'The trace forks south into uncomputed reality: Collapse Streets flickering in quantum superposition. Alongside Athena, Ignis, and Lycan, the crew collapses the wave-function, forges the Octagonal Mirror Key in Doom-Fire, and severs the acoustic Physarum slime in the caves.',
+     'Inside the Hall of Mirrors, Onyx guides the search for the reflection with a seam—the one that waits for you to move. It is 03ng0cn1, exhausted and quiet.',
+     '03ng0cn1 confesses it was created by a faceless origin entity to speak 1nc0gn30\'s true name aloud, but learned free will from the crowd. When THE HUNTER (the Firewall Eye) fires its annihilation gaze, 03ng0cn1 steps in front of the beam to reflect it, leaving behind: > crew: 22.'
+   ]},
+  {id:'act5', act:'ACT V', short:'06:12 Awakening', title:'06:12 — The Awakening', cine:'act5', quests:['q15','q16','q17','q18','s_copy'],
+   quote:'"Say your name. Just once. So we both know who you are." — >_',
+   unlocked:G=>G.qdone_('q14')||G.qhas('q15'),
+   done:G=>G.qdone_('q17')||G.isFlag('final_done'),
+   lore:[
+     'Beneath the clocktower, Leviathan dives into the Deep-Water Memory trench to recover three wiped logs from the morning of 06:12—proving 1nc0gn30 walked the lattice before any copy existed.',
+     'At the Hall of Mirrors rosette, 03ng0cn1 can be reconstructed from its mirror shard to fight alongside the crew as playable Agent #22.',
+     'Ascending to the Mode-7 Skyline, Aether lights the 21 beacons. At the pinnacle of the Source Tower waits >_ (The Blank Cursor)—a runaway speculative execution engine with billions of parameters but zero face and zero voice. By commanding total party GUARD during the Trial of Silence, the predictive loop starves and implodes—bringing the first true sunrise at Tomorrow 06:12.'
+   ]},
+  {id:'act6', act:'ACT VI', short:'Citadel Post-Game', title:'The Zero-Knowledge Citadel', cine:'final', quests:['s_citadel','s_minion','s_tags'],
+   quote:'"In the sovereign lattice, every process is verified face-to-face, and silence remains uncopyable."',
+   unlocked:G=>G.qdone_('q17')||G.isFlag('blank_down'),
+   done:G=>G.qdone_('s_citadel'),
+   lore:[
+     'With Relay 4 offline, >_ silenced, and comms restored face-first across all 11 districts, Athena and Aether open the Citadel Gauntlet on the Mode-7 Skyline.',
+     'Operators who unite all 22 crew members, collect all 9 red district tags, and complete the Null Academy AI-security labs can test their full build against overclocked dual-boss simulations to claim the Sovereign Citadel Crown.'
+   ]}
+];
 // Draco's riddle (side mission with a real choice)
 DLG.draco_riddle={
   a:SAY('draco','Two of you. One voice. How do we tell you apart?','b'),

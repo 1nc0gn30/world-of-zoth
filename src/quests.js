@@ -29,6 +29,8 @@ export function initQuests(G){
       if(D.xp){ const ups=G.gainXP(G.active(),D.xp); G.toast(`+${D.xp} xp`,'#f5b82e'); ups.forEach(u=>G.toast(`${u.name} > level ${u.lvl}`+(u.learn?`  learned: ${u.learn}`:''),'#f5b82e')); }
       if(D.recruit) G.recruit(D.recruit); if(q.boss) G.ach('boss_'+q.boss); if(k==='q4') G.ach('boss_relay4');
       if(D.next){ const n=QDEF[D.next]; if(!n.giver) Q.start(D.next); }
+      if(k==='q14'&&!G.qhas('s_copy')) Q.start('s_copy');
+      if(k==='q17'&&!G.qhas('s_citadel')) Q.start('s_citadel');
       G.rebuildFoes&&G.rebuildFoes(); G.rebuildNPCs&&G.rebuildNPCs(); G.checkAch&&G.checkAch(); };
     if(DLG[`Q:${k}:done`]&&!G.isFlag('qd_'+k)){ G.flag('qd_'+k); if(G.mode==='battle'||G.B){ reward(); G.after=`Q:${k}:done`; } else G.dialog(`Q:${k}:done`,reward); } else reward(); };
   // ---- talk: returns true if the engine handled this NPC ----
@@ -52,7 +54,7 @@ export function initQuests(G){
   Q.use=(k,i)=>{ const s=QDEF[k].steps[i]; const fight=()=>{ if(s.battle) G.battle(s.battle,{qk:k,qi:i,boss:s.boss,lvl:G.zone.lvl,music:s.boss?(s.battle[0]==='blank'?'final':'boss'):undefined}); else Q.advance(k); };
     if(DLG[`Q:${k}:${i}`]) G.dialog(`Q:${k}:${i}`,fight); else fight(); };
   // ---- events ----
-  Q.onZone=z=>{ G.flag('seen_'+z); for(const k of Q.active()){ const s=cur(k); if(s&&s.kind==='visit'&&s.zone===z) Q.advance(k); } };
+  Q.onZone=z=>{ G.flag('seen_'+z); if(G.qdone_('q14')&&!G.qhas('s_copy')) Q.start('s_copy'); if(G.qdone_('q17')&&!G.qhas('s_citadel')) Q.start('s_citadel'); for(const k of Q.active()){ const s=cur(k); if(s&&s.kind==='visit'&&s.zone===z) Q.advance(k); } };
   Q.onWin=o=>{ if(o.qk){ const st=G.quests[o.qk]; if(st&&st.step===o.qi&&!st.done) Q.advance(o.qk); }
     const c=o.foe&&o.foe.s.qcollect; if(c){ const st=G.quests[c.k]; if(!st||st.done||st.step!==c.i) return; const s=QDEF[c.k].steps[c.i];
       if(s.item) G.give(s.item,1); const have=s.item?(G.inv[s.item]||0):s.foes.filter((_,j)=>G.defeated.has(`${c.k}_f${j}`)).length; if(have>=s.n) Q.advance(c.k); else G.toast('> '+G.stepText(c.k)); } };

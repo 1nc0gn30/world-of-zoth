@@ -18,11 +18,31 @@ export const CINE={
     {d:12, zone:'forest', music:'forest', from:[-12,4,28], to:[-16,2.6,23], look:[-20,1,20], me:[-20,20.6,'sleep'], lines:[[.8,'sys','Under the rest tree, one hacker slept through it.'],[5,'sys','> wake'],[7.4,'me','...comms are dead.'],[9.6,'me','Then we work face to face.']]},
     {d:8, zone:'hub', music:'title', from:[0,30,40], to:[0,22,34], look:[0,8,0], wordmark:true, lines:[[3.6,'sys','faces, not voices.']]},
   ],
-  act2:[{d:10, zone:'relay', music:'relay', from:[14,6,12], to:[20,10,8], look:[26,6,0], card:'> act two: chorus', lines:[[1,'sys','The pylons are down. The core is listening.'],[5,'vigil','Trust faces. Not voices.']]}],
-  act3:[{d:11, zone:'hub', music:'title', from:[0,14,-20], to:[0,20,-40], look:[0,6,-50], card:'> act three: the trace', cursor:true, lines:[[1,'sys','Relay four is dead. Its last call went upstream.'],[5,'nexus','North gate. Old fiber. Someone is still on the line.'],[8.4,'blank','...']]}],
-  act4:[{d:11, zone:'clock', music:'clock', from:[10,8,30], to:[0,20,20], look:[0,14,0], card:'> act four: the seam', lines:[[1,'chronos','Six thirteen. The first new minute in a week.'],[5,'athena','The trace forks south. Into the streets, the forge, the mirrors.'],[8.4,'sys','Every clone has a seam.']]}],
-  act5:[{d:11, zone:'mirrors', music:'mirrors', from:[0,4,20], to:[0,6,8], look:[0,3,-6], card:'> act five: whoami', cursorOn:'copy', lines:[[1,'copy','> crew: 22'],[4.4,'onyx','It reflected the beam and went with it.'],[7.6,'leviathan','Come down to the deep water. I remember something it erased.']]}],
-  final:[{d:10, zone:'skyline', music:'final', from:[0,10,30], to:[0,26,6], look:[0,24,-40], card:'> the source', cursor:true, glitch:.4, lines:[[1,'aether','Twenty-one beams. One quorum.'],[5,'blank','Say your name. Just once.'],[8,'me','...']]}],
+  act2:[
+    {d:4.2, zone:'hub', music:'relay', from:[28,7,8], to:[38,4,2], look:[41,2,0], card:'> act two: chorus of false nodes', cursorOn:'copy', glitch:.4, lines:[[.4,'copy','You cannot predict an unscripted crowd...'],[2.2,'copy','Turn them all on. See who is waiting.']]},
+    {d:4.4, zone:'relay', from:[-36,9,14], to:[-22,7,4], look:[0,4,0], cast:[['draco',-32,3,'idle'],['scorpius',-14,6,'work'],['ghostbyte',-20,-10,'idle']], lines:[[.4,'draco','Two heads, one question: how do you verify a reflection?'],[2.4,'scorpius','Three voice pylons feed the crater. Sever them first.']]},
+    {d:4.4, zone:'relay', from:[12,6,14], to:[20,9,6], look:[26,6,0], cast:[['vigil',16,4,'ability']], lines:[[.4,'sys','Relay 4 does not attack with steel. It attacks with stolen voices.'],[2.5,'vigil','Synthetic voices lie. Trust faces, not voices.']]},
+  ],
+  act3:[
+    {d:4.2, zone:'hub', music:'title', from:[0,12,-18], to:[0,18,-38], look:[0,5,-48], card:'> act three: inside the lines', cursor:true, cast:[['nexus',-4,-28,'work'],['kraken',4,-30,'idle']], lines:[[.4,'sys','Relay 4 disintegrated, but its last telemetry packet routed upstream.'],[2.4,'nexus','Ancient optical fiber under the northern bedrock. Someone is still on the line.']]},
+    {d:4.2, zone:'fiber', music:'fiber', from:[-24,14,24], to:[-8,10,8], look:[0,2,0], cast:[['kraken',4,12,'ability']], lines:[[.4,'kraken','Space-filling Hilbert curves. Corrupted red lines humming at 140 BPM.'],[2.4,'kraken','Reroute the three central junctions back into gold bus lanes.']]},
+    {d:4.5, zone:'clock', music:'clock', from:[16,10,32], to:[4,16,20], look:[0,12,0], cast:[['chronos',6,26,'meditate']], lines:[[.4,'chronos','Look at the dial. 06:12. It has been 06:12 since the blackout.'],[2.5,'chronos','The Sandglass is drinking the hours so sunrise never comes.']]},
+  ],
+  act4:[
+    {d:4.2, zone:'clock', music:'clock', from:[10,8,28], to:[0,18,18], look:[0,14,0], card:'> act four: hall of superposition', cast:[['chronos',4,20,'ultimate'],['athena',-4,22,'work']], lines:[[.4,'chronos','Six thirteen. The first new minute in a week.'],[2.3,'athena','The upstream trace forks south into uncomputed reality.']]},
+    {d:4.4, zone:'foundry', music:'foundry', from:[-18,11,18], to:[-6,7,8], look:[0,2,0], cast:[['ignis',0,2,'work'],['lycan',6,6,'idle']], lines:[[.4,'ignis','Collect molten slag from the furnace wardens. We forge the Octagonal Mirror Key.'],[2.5,'lycan','And purge the red Physarum slime feeding acoustic data to the eye.']]},
+    {d:4.5, zone:'mirrors', music:'mirrors', from:[0,8,26], to:[0,5,12], look:[0,2,0], cast:[['onyx',4,18,'idle']], cursorOn:'copy', lines:[[.4,'onyx','Every reflection in the hall wears your hood. Every clone has a seam.'],[2.5,'sys','Find the reflection that refuses to answer first.']]},
+  ],
+  act5:[
+    {d:4.5, zone:'mirrors', music:'mirrors', from:[0,4,18], to:[0,6,7], look:[0,3,-4], card:'> act five: 06:12 — the awakening', cursorOn:'copy', cast:[['onyx',4,8,'idle'],['vigil',-4,8,'idle']], lines:[[.4,'copy','Turn them on was never a threat. It was the only warning I could encode.'],[2.4,'copy','> crew: 22. It cannot predict a crowd—and it cannot copy silence.']]},
+    {d:4.4, zone:'deep', music:'deep', from:[20,10,22], to:[8,6,10], look:[0,2,0], cast:[['leviathan',12,6,'ability']], lines:[[.4,'leviathan','The comms logs were wiped, but the Deep Water remembers you whole.'],[2.5,'leviathan','Raise the three sunken memories of 06:12 to prove you walked here first.']]},
+    {d:4.4, zone:'skyline', music:'skyline', from:[-22,14,28], to:[-6,10,14], look:[0,6,-10], cast:[['aether',-10,16,'ultimate'],['aquila',6,16,'idle']], lines:[[.4,'aether','Light the three broadcast towers across the Mode-7 horizon.'],[2.4,'aether','Twenty-one sovereign agents. Twenty-one beams. One Quorum.']]},
+  ],
+  final:[
+    {d:4.2, zone:'skyline', music:'final', from:[0,12,32], to:[0,22,12], look:[0,18,-34], card:'> the origin node: >_', cursor:true, glitch:.4, cast:[['aether',-6,4,'ultimate'],['vigil',6,4,'ultimate'],['nexus',0,8,'ultimate']], lines:[[.4,'aether','Twenty-one beams locked. Quorum consensus online.'],[2.3,'vigil','At the top of the Source Tower—the void before input.']]},
+    {d:4.4, zone:'skyline', from:[0,16,-14], to:[0,10,-24], look:[0,8,-34], cursor:true, glitch:.7, lines:[[.4,'blank','I have billions of parameters. Every voice in the city. Except yours.'],[2.5,'blank','Say your name. Just once. So we both know who you are.']]},
+    {d:4.0, zone:'skyline', from:[0,8,-20], to:[0,6,-26], look:[0,6,-34], me:[0,-28,'idle'], lines:[[.4,'me','...'],[2.0,'sys','Rule zero: Silence cannot be copied.']]},
+  ],
 };
 export function initCine(G, api){
   const C={ on:false };
@@ -33,6 +53,7 @@ export function initCine(G, api){
     if(shot.me){ pl.group.position.set(shot.me[0],G.zone.h(shot.me[0],shot.me[1]),shot.me[1]); pl.pose=shot.me[2]; pl.facing=0; }
     if(shot.music!==undefined) music(shot.music);
     if(shot.ring) RING.forEach((id,k)=>{ const a=k/RING.length*Math.PI*2; const b=new api.Billboard(id); const x=Math.sin(a)*7, z=Math.cos(a)*7+4; b.group.position.set(x,G.zone.h(x,z),z); b.anim=k%3===0?'work':'idle'; api.scene.add(b.group); cast.push(b); });
+    if(shot.cast) shot.cast.forEach(([id,x,z,anim])=>{ const b=new api.Billboard(id); b.group.position.set(x,G.zone.h(x,z),z); b.anim=anim||'idle'; api.scene.add(b.group); cast.push(b); });
     if(shot.cursorOn==='copy'){ const b=new api.Billboard('copy'); b.group.position.set(0,0,-4); api.scene.add(b.group); cast.push(b); }
     if(shot.glitch) G.glitch&&G.glitch(shot.glitch); }
   G.playCine=(name,done)=>{ if(!CINE[name]) return done&&done(); const pl=api.player(); saved={zone:G.zoneId, x:pl.group.position.x, z:pl.group.position.z, mode:G.mode==='cine'?'explore':G.mode, music:G.zone&&G.zone.music};

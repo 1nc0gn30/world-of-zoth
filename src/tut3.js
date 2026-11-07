@@ -42,7 +42,7 @@ export function initTut(G, api){
     const dy=Math.abs(G.cam.yaw-T.ly); if(dy<1) T.cam+=dy; T.ly=G.cam.yaw;
     while(T.i<TUT.length&&TUT[T.i].done(G)){ T.i++; G.sfx('confirm'); if(T.i<TUT.length) G.toast('> tutorial: '+TUT[T.i].t.split('.')[0],P.GD); }
     if(T.i>=TUT.length){ T.on=false; G.flag('tut_done'); G.toast('> tutorial complete. crew check passed.',P.GD); G.ach&&G.ach('tutorial'); } };
-  G.drawTut=()=>{ if(!T.on) return; const s=TUT[T.i]; if(!s) return; const dev=IN.stick.pad?2:(IN.touch?1:0); const k=2; const n=G.active().length; const y=12+n*34+6;
+  G.drawTut=()=>{ if(!T.on) return; const s=TUT[T.i]; if(!s) return; const dev=IN.stick.pad?2:(IN.touch?1:0); const k=2; const n=G.active().length; const y=12+n*34+28+(G.scanT>0?24:0);
     const lines=UI.wrap(s.t,300,1); const w=320, h=34+lines.length*14+(s.hint[dev]?16:0);
     UI.box(12,y,w,h,P.DG,'rgba(6,5,4,.82)'); UI.text(`> tutorial ${T.i+1}/${TUT.length}`,22,y+6,P.GD); UI.text('[menu > system] skip',w+2,y+6,P.DDG,1,'right');
     lines.forEach((l,i)=>UI.text(l,22,y+22+i*14,P.BONE)); if(s.hint[dev]) UI.text('[ '+s.hint[dev]+' ]',22,y+24+lines.length*14,P.DG); };

@@ -23,7 +23,7 @@ export class Battle{
     G.player.facing=Math.atan2(this.R.x,this.R.z); G.player.moving=false;
     // enemies
     this.enemies=[]; types.forEach(t=>this.addEnemy(t));
-    this.lastMe=null; this.prevMe=null; this.flags={}; this.order=[]; this.ti=0;
+    this.lastMe=null; this.prevMe=null; this.flags={}; this.order=[]; this.ti=0; this.chain=0;
     this.menu=0; this.sub=null; this.tsel=0; this.timing=null; this.block=null; this.result=null;
     this.camPos=this.C.clone().addScaledVector(this.F,-8.6).add(V(0,3.1,0)); this.camLook=this.C.clone().add(V(0,1.3,0)); if(types.some(t=>['relay4','sandglass','hunter','blank'].includes(t))){ this.camPos.addScaledVector(this.F,-3).y+=2.5; this.camLook.y+=2; }
     const M=G.mods||{}; if(M.d3) this.party.forEach(p=>p.st.shield=1);
@@ -48,8 +48,8 @@ export class Battle{
     this.t+=dt; this.st+=dt; if(this.msgT>0) this.msgT-=dt; if(this.arena) this.arena.rotation.y=this.t*.15;
     const G=this.G; G.cam.pos.lerp(this.camPos,1-Math.pow(.02,dt)); G.cam.look.lerp(this.camLook,1-Math.pow(.02,dt));
     // animate
-    this.party.forEach(p=>{ p.sp.facing=Math.atan2(this.R.x,this.R.z); if(p.id!=='me'){ p.sp.anim=p.anim||'idle'; p.sp.flip=false; } p.sp.mesh.material.uniforms.flash.value=Math.max(0,(p.flash||0)); p.flash=Math.max(0,(p.flash||0)-dt*4);
-      p.sp.mesh.material.uniforms.mode.value=p.id==='me'?0:p.sp.mesh.material.uniforms.mode.value; p.sp.mesh.material.uniforms.mode.value=p.alive?(p.id==='me'?0:0):2; p.sp.update(dt,0,G.camera.position); });
+    this.party.forEach(p=>{ p.sp.facing=Math.atan2(this.R.x,this.R.z); if(p.id!=='me'&&p.id!=='copy'){ p.sp.anim=p.anim||'idle'; p.sp.flip=false; } p.sp.mesh.material.uniforms.flash.value=Math.max(0,(p.flash||0)); p.flash=Math.max(0,(p.flash||0)-dt*4);
+      p.sp.mesh.material.uniforms.mode.value=p.alive?(p.id==='copy'?1:0):2; p.sp.update(dt,0,G.camera.position); });
     this.enemies.forEach(e=>{ if(e.obj.update){ e.obj.mesh.material.uniforms.flash.value=e.flash; e.obj.update(dt,0,G.camera.position); } else animEnemy(e.obj.group,this.t,e.flash); e.flash=Math.max(0,e.flash-dt*4);
       if(!e.alive){ e.dead=(e.dead||0)+dt; if(e.obj.update) e.obj.mesh.material.uniforms.dis.value=Math.min(1,e.dead*1.5); else e.obj.group.scale.setScalar(Math.max(0.001,1-e.dead*2)); if(e.dead>.8) e.obj.group.visible=false; }
       else if(!e.obj.update) e.obj.group.position.y=e.home.y+Math.sin(this.t*2+e.home.x)*.12; });
@@ -137,7 +137,7 @@ export class Battle{
   timingInput(dt){ const T=this.timing; T.t+=dt/1.05; if(T.res===null && took('confirm')){ const x=T.t; const wd=(this.G.mods||{}).o2&&this.actor.id==='me'?1.5:1; T.res= Math.abs(x-.71)<.035*wd?'perfect':(Math.abs(x-.71)<.09*wd?'good':'miss'); T.hold=.25; sfx(T.res==='miss'?'cancel':'blip'); }
     if(T.res!==null){ T.hold-=dt; if(T.hold<=0) this.execute(this.actor,this.cur.o,this.cur.S,this.tgt,T.res); } else if(T.t>=1){ T.res='none'; this.execute(this.actor,this.cur.o,this.cur.S,this.tgt,'none'); } }
   // ---------------- resolve party action ----------------
-  dmg(a,e,pow,{crit=1,pierce=false}={}){ let atk=a.atk*(a.st&&a.st.buff>0?1.4:1); let d=atk*pow*(.9+Math.random()*.2)-e.def*.6; d*=crit; if(e.st.mark>0) d*=1.5; if(e.st.wall>0&&!pierce) d*=.35; return Math.max(1,Math.round(d)); }
+  dmg(a,e,pow,{crit=1,pierce=false}={}){ let atk=a.atk*(a.st&&a.st.buff>0?1.4:1)*(a.isP?1+(this.chain||0)*.05:1); let d=atk*pow*(.9+Math.random()*.2)-e.def*.6; d*=crit; if(e.st.mark>0) d*=1.5; if(e.st.wall>0&&!pierce) d*=.35; return Math.max(1,Math.round(d)); }
   hitE(e,d,col,label){ e.hp=Math.max(0,e.hp-d); e.flash=1; num(e.obj.group.position.clone().add(V(0,(e.obj.update?2.1:(e.obj.group.userData.h||1.4)+.6),0)),label?label+' '+d:d,col);
     burst(e.obj.group.position.clone().add(V(0,e.obj.update?1:(e.obj.group.userData.h||1.4),0)),col,18,4,.6); this.G.shake(.25);
     if(e.hp<=0){ e.alive=false; sfx('boom'); const bg=['relay4','sandglass','hunter','blank'].includes(e.type); dissolve(e.obj.group.position.clone(),P.RED,90,bg?8:1.6); if(bg) this.G.shake(1); }
@@ -154,6 +154,7 @@ export class Battle{
       if(it.use==='revive'){ tgt.alive=true; tgt.hp=Math.round(tgt.mhp*it.v); num(tgt.sp.group.position.clone().add(V(0,2.2,0)),'online',P.GD); }
       sfx('heal'); burst(tgt.sp.group.position.clone().add(V(0,1,0)),P.GD,24,2,.8); this.say(`${a.name} uses ${it.name}.`,1); this.waitAct(.9); return; }
     a.en-=S.cost; if(S.gain) a.en=Math.min(a.men,a.en+S.gain); if(S.once) this.flags.quorum=2;
+    if(tres==='perfect'||tres==='good'){ this.chain=Math.min(7,(this.chain||0)+(tres==='perfect'?2:1)); if(tres==='perfect') a.en=Math.min(a.men,a.en+2); } else if(tres==='miss'){ this.chain=0; }
     // the copy answers before you speak: repeat the same command and it is reflected
     let mirrored=false; const copy=this.alive(this.enemies).find(e=>e.type==='copy'||e.E.mirror);
     if(a.id==='me'){ if(copy && this.lastMe===o.id && S.target!=='ally'&&S.target!=='allies'){ mirrored=true; } this.lastMe=o.id; }
@@ -217,7 +218,7 @@ export class Battle{
       targets.forEach(p=>{ if(!p.alive) return;
         if(p.st.decoy>0&&single){ num(p.sp.group.position.clone().add(V(0,2.2,0)),'decoy',AG.kitsune.color); dissolve(p.sp.group.position.clone(),AG.kitsune.color,30); sfx('glitch'); p.st.decoy--; return; }
         let d=(e.atk*m.pow*r4*(.9+Math.random()*.2))-p.def*.7; if(p.st.shield>0) d*=.5; if(p.st.guard) d*=.5;
-        let lab=''; if(single&&this.block){ const b=this.block.res; if(b==='parry'){ d=0; lab='parry'; const c=this.dmg(p,e,.6); this.hitE(e,c,P.GD,'counter'); sfx('crit'); } else if(b==='block'){ d*=.5; lab='block'; sfx('block'); } else if(b==='dodge'){ d=0; lab='dodge'; } }
+        let lab=''; if(single&&this.block){ const b=this.block.res; if(b==='parry'){ d=0; lab='parry'; this.chain=Math.min(7,(this.chain||0)+2); p.en=Math.min(p.men,p.en+4); const c=this.dmg(p,e,.85); this.hitE(e,c,P.GD,'counter'); sfx('crit'); this.G.flashFx(.35); } else if(b==='block'){ d*=.5; lab='block'; this.chain=Math.min(7,(this.chain||0)+1); sfx('block'); } else if(b==='dodge'){ d=0; lab='dodge'; this.chain=Math.min(7,(this.chain||0)+1); } else if(d>0){ this.chain=0; } }
         d=Math.max(lab==='parry'||lab==='dodge'?0:1,Math.round(d)); p.hp=Math.max(0,p.hp-d); if(d>0){ p.flash=1; sfx('hurt'); }
         num(p.sp.group.position.clone().add(V(0,2.3,0)),lab?lab+(d?' '+d:''):d,lab?P.GD:P.RED);
         const pc=lab==='parry'?P.GD:P.RED; beam(sc,ep,p.sp.group.position.clone().add(V(0,1.1,0)),pc,.4,1); burst(p.sp.group.position.clone().add(V(0,1,0)),pc,lab==='parry'?20:14,3,.5); if(lab==='parry') ringFx(sc,p.sp.group.position.clone().add(V(0,1,0)),P.GD,1.4,.5,'z'); this.G.shake(lab==='parry'?.15:.3);
@@ -253,6 +254,7 @@ export class Battle{
     this.enemies.forEach((e,i)=>{ if(!e.alive) return; const top=e.obj.group.position.clone().add(V(0,(e.obj.update?2.2:(e.obj.group.userData.h||1.4)+.9)+(e.type==='relay4'?2.5:0),0)); const s=proj(top); if(!s.vis) return;
       const w=90; UI.text(e.name,s.x,s.y-34,P.RED,1,'center'); UI.bar(s.x-w/2,s.y-20,w,5,e.hp/e.mhp,P.RED,P.RED3);
       let st=[]; if(e.st.wall>0) st.push('[fw]'); if(e.st.mark>0) st.push('[traced]'); if(e.st.charge) st.push('[charging]'); if(e.st.stacks) st.push(`[voices ${e.st.stacks}]`);
+      if(e.type==='hunter'&&e.st.gaze) st.push('[GAZE ARMED]'); if(e.type==='blank'&&e.st.p2) st.push('[SILENCE TRIAL: GUARD]');
       if(st.length) UI.text(st.join(' '),s.x,s.y-48,P.RED,1,'center');
       if(e.intent){ let it=e.intent.m.txt; if(e.intent.tgt) it+=' > '+e.intent.tgt.name; if(e.type==='copy'&&this.lastMe) it+=`  | mirrors: ${SKILLS[this.lastMe].name}`; UI.text('next: '+it,s.x,s.y-10,P.RED,1,'center'); }
       UI.hit(s.x-50,s.y-40,100,120,()=>{ if(this.state==='target'&&this.tlist.includes(e)){ this.tsel=this.tlist.indexOf(e); this.commit(e); } });
@@ -284,8 +286,9 @@ export class Battle{
       if(this.block.res&&this.block.res!=='early'&&this.block.res!=='late'){ const s=proj(this.block.tgt.sp.group.position.clone().add(V(0,2.6,0))); UI.text(this.block.res.toUpperCase(),s.x,s.y-46,P.GD,2,'center'); } }
     // message
     if(this.msgT>0||this.state==='defeat'){ const w=UI.textW(this.msg)+40; UI.box(480-w/2,14,w,28,P.DDG); UI.text(this.msg,480,22,this.state==='defeat'?P.RED:P.BONE,1,'center'); }
-    // turn order
-    if(this.order.length&&this.state!=='victory'){ let x=12; UI.text('order',x,52,P.DG); x+=46; this.order.forEach((o,i)=>{ if(!o.alive) return; const c=o.isP?o.col:P.RED; const s=(i===this.ti?'>':'')+o.name.slice(0,7); UI.text(s,x,52,i===this.ti?c:(o.isP?P.DG:P.RED2)); x+=UI.textW(s)+12; }); }
+    // turn order & sync chain
+    if(this.order.length&&this.state!=='victory'){ let x=12; UI.text(`r${this.round} · order`,x,52,P.DG); x+=68; this.order.forEach((o,i)=>{ if(!o.alive) return; const c=o.isP?o.col:P.RED; const s=(i===this.ti?'>':'')+o.name.slice(0,7); UI.text(s,x,52,i===this.ti?c:(o.isP?P.DG:P.RED2)); x+=UI.textW(s)+12; });
+      if(this.chain>0){ UI.box(12,68,210,22,P.GD,'rgba(6,5,4,.85)'); UI.text(`> sync chain x${this.chain}  (+${this.chain*5}% dmg)`,20,73,P.GD,1); } }
     if(this.state==='victory'&&this.result){ const R=this.result; const vx=560, vy=60, vh=Math.min(320,100+R.ups.length*18+(R.loot.length?20:0)); UI.box(vx,vy,380,vh); UI.text('> battle: won',vx+20,vy+16,P.GD,2); let y=vy+52;
       UI.text(`+${R.xp} xp   +${R.bits} bits`,vx+20,y,P.BONE); y+=20; if(R.loot.length){ UI.text('loot: '+R.loot.map(i=>ITEMS[i].name).join(', '),vx+20,y,P.GD); y+=20; }
       R.ups.forEach(u=>{ UI.text(`${u.name} > level ${u.lvl}`+(u.learn?`  learned: ${u.learn}`:''),vx+20,y,P.GD); y+=18; }); UI.text('[confirm]',vx+356,vy+vh-20,P.DG,1,'right'); UI.cursor(vx+360,vy+vh-19,t); }

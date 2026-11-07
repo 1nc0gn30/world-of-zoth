@@ -17,6 +17,7 @@ with zipfile.ZipFile('dist/world-of-zoth.zip','w',zipfile.ZIP_DEFLATED) as z:
         for root,_,files in os.walk(d):
             for f in files:
                 if f.endswith('.json') and 'snapshot' in f: continue
+                if f.endswith('.mp4'): continue
                 z.write(os.path.join(root,f),'world-of-zoth/'+os.path.join(root,f))
 PY
 ls -la game.js world-of-zoth.html dist/world-of-zoth.zip

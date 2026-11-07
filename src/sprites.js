@@ -3,7 +3,11 @@ import * as THREE from 'three';
 import { IMG, SHEETS, AGENTS } from './assets.js';
 import { spriteMat } from './render.js';
 export const TEX={}, IMGS={};
-export const AG={}; AGENTS.forEach(a=>AG[a.id]=a);
+export const AG={
+  me:{id:'me',name:'1nc0gn30',color:'#f5b82e',sec:'#ece4d2',role:'Sovereign Zero-Telemetry Operator',ability:'Root-Level Lattice Execution',foot:89,top:17},
+  copy:{id:'copy',name:'03ng0cn1',color:'#dc3228',sec:'#f5b82e',role:'Redacted Commit Reflection · Crew #22',ability:'Seam Reflection & Unscripted Crowd',foot:89,top:17}
+};
+AGENTS.forEach(a=>AG[a.id]=a);
 export function loadAll(){
   const names=Object.keys(IMG);
   return Promise.all(names.map(n=>new Promise(res=>{ const im=new Image(); im.onload=()=>{ IMGS[n]=im; const t=new THREE.Texture(im); t.magFilter=t.minFilter=THREE.NearestFilter; t.generateMipmaps=false; t.colorSpace=THREE.NoColorSpace; t.needsUpdate=true; TEX[n]=t; res(); }; im.src=IMG[n]; })));

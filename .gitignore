@@ -7,3 +7,7 @@ android/build/
 android/build/
 dist/*.mp4
 capture/v3.*
+
+motion/clips/
+motion/out/score.wav
+dist/world-of-zoth-motion-edit.mp4
