@@ -1,14 +1,40 @@
 // Lattice geometry builders: grids, dot planes, wire boxes with window points, L-system trees, rings, trusses, point clouds.
 import * as THREE from 'three';
-import { latMat, solidMat } from './render.js';
+import { latMat, solidMat, terrainMat } from './render.js';
 export function rng(seed){ let s=seed>>>0||1; return ()=>{ s=(s*1664525+1013904223)>>>0; return s/4294967296; }; }
-export function segs(arr, mat){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(arr,3)); const l=new THREE.LineSegments(g,mat); l.frustumCulled=false; l.renderOrder=2; return l; }
-export function pts(arr, mat, colors){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(arr,3)); if(colors) g.setAttribute('acol',new THREE.Float32BufferAttribute(colors,3)); const p=new THREE.Points(g,mat); p.frustumCulled=false; p.renderOrder=2; return p; }
+export function segs(arr, mat){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(arr,3)); g.computeBoundingSphere(); const l=new THREE.LineSegments(g,mat); l.frustumCulled=true; l.renderOrder=2; return l; }
+export function pts(arr, mat, colors){ const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(arr,3)); if(colors) g.setAttribute('acol',new THREE.Float32BufferAttribute(colors,3)); g.computeBoundingSphere(); const p=new THREE.Points(g,mat); p.frustumCulled=true; p.renderOrder=2; return p; }
 export function grid(x0,x1,z0,z1,step,hf,mat,sub=1){
   const a=[]; const ds=step/sub;
   for(let x=x0;x<=x1+1e-6;x+=step) for(let z=z0;z<z1-1e-6;z+=ds) a.push(x,hf(x,z),z, x,hf(x,z+ds),z+ds);
   for(let z=z0;z<=z1+1e-6;z+=step) for(let x=x0;x<x1-1e-6;x+=ds) a.push(x,hf(x,z),z, x+ds,hf(x+ds,z),z);
-  return segs(a,mat);
+  const l=segs(a,mat);
+  // Build a real textured 3D terrain mesh underneath the wireframe lattice
+  const nx=Math.min(48,Math.max(4,Math.round((x1-x0)/step))), nz=Math.min(48,Math.max(4,Math.round((z1-z0)/step)));
+  const tg=new THREE.BufferGeometry();
+  const tv=[], ti=[];
+  for(let iz=0;iz<=nz;iz++){
+    const z=z0+(z1-z0)*(iz/nz);
+    for(let ix=0;ix<=nx;ix++){
+      const x=x0+(x1-x0)*(ix/nx);
+      tv.push(x, hf(x,z)-0.03, z);
+    }
+  }
+  for(let iz=0;iz<nz;iz++){
+    for(let ix=0;ix<nx;ix++){
+      const a0=iz*(nx+1)+ix, b0=a0+1, c0=a0+(nx+1), d0=c0+1;
+      ti.push(a0,c0,b0, b0,c0,d0);
+    }
+  }
+  tg.setAttribute('position',new THREE.Float32BufferAttribute(tv,3));
+  tg.setIndex(ti);
+  tg.computeBoundingSphere();
+  const acc=(mat&&mat.uniforms&&mat.uniforms.color)?mat.uniforms.color.value:'#f5b82e';
+  const fFar=(mat&&mat.uniforms&&mat.uniforms.fogFar)?mat.uniforms.fogFar.value:72;
+  const tm=new THREE.Mesh(tg, terrainMat(acc, 10, fFar));
+  tm.renderOrder=0;
+  l.add(tm);
+  return l;
 }
 export function dotPlane(x0,x1,z0,z1,step,hf,mat,yoff=0.02){ const a=[]; for(let x=x0;x<=x1;x+=step) for(let z=z0;z<=z1;z+=step) a.push(x,hf(x,z)+yoff,z); return pts(a,mat); }
 const BOXE=[[0,0,0,1,0,0],[1,0,0,1,0,1],[1,0,1,0,0,1],[0,0,1,0,0,0],[0,1,0,1,1,0],[1,1,0,1,1,1],[1,1,1,0,1,1],[0,1,1,0,1,0],[0,0,0,0,1,0],[1,0,0,1,1,0],[1,0,1,1,1,1],[0,0,1,0,1,1]];

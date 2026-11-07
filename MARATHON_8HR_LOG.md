@@ -137,18 +137,18 @@
 - [x] **M116** (`13:20` · `commit 406c5b6`): Tactical Combat Log & Damage Breakdown Analyzer (`G.openCombatLog()` via `> combatlog` & System Menu — inspect turn-by-turn damage, breach, crit & parry analytics)
 - [x] **M117** (`13:38` · `commit 308f18a`): Sovereign Loot Box & Relic Gacha Simulator (100% Free Bits-Only `G.openRelicCapsules()` via `> capsules` & System Menu — spend earned Bits to roll holo cards & items + Official Theatrical Movie Commercial `G.openCommercial()`)
 - [x] **M118** (`13:38` · `commit 308f18a`): Interactive 19-District World Tour Autopilot (`G.openWorldTour()` via `> tour` & System Menu — cinematic automated fly-through across all districts)
-- [x] **M119** (`13:47`): Custom Dialogue & Story Scene Creator (`G.openSceneMaker()` via `> scenemaker` & System Menu — script custom crew dialogues & test them live)
-- [x] **M120** (`13:47`): Full 19-District + 75-Subsystem Automated Audit #7 & APK v1.7 Sync (`dist/world-of-zoth.apk` signed & verified, `Errors: []`)
+- [x] **M119** (`13:50` · `commit 035e3df`): Custom Dialogue & Story Scene Creator (`G.openSceneMaker()` via `> scenemaker` & System Menu — script custom crew dialogues & test them live)
+- [x] **M120** (`13:50` · `commit 035e3df`): Full 19-District + 75-Subsystem Automated Audit #7 & APK v1.7 Sync (`dist/world-of-zoth.apk` signed & verified, `Errors: []`)
 
 ### Hour 15 (`14:00`–`15:00`) — District #20 (*"The Dawn Horizon"*) & Ultimate Pantheon Systems
-- [ ] **M121**: Blender 4.3 Wireframe Mesh #22 (`dawn_horizon_gate`) & District #20 (*"The Dawn Horizon"* `Z.horizon` in `src/zones2.js` — 20th District Milestone!)
-- [ ] **M122**: Secret Mini-Game #18 — *"Asteroids: Sub-Lattice Debris Field"* (`G.startAsteroids()` via `> asteroids` & System Menu — 360° vector thrust & split-debris shooter)
-- [ ] **M123**: Pantheon Ultimate Union Skills & 22-Crew Resonance (`G.openUnionSkills()` via `> union` & System Menu — unlockable 4-agent elemental cataclysm finishers)
-- [ ] **M124**: Interactive Morse & Binary Cipher Translator Utility (`G.openTranslator()` via `> translator` & System Menu — encode/decode text into Zoth Braille, Hex & Morse)
-- [ ] **M125**: Sovereign Operator ID Card & PNG Badge Exporter (`G.openIDCard()` via `> idcard` & System Menu — render & export a shareable PNG Operator ID badge)
-- [ ] **M126**: Secret Mini-Game #19 — *"Breakout: Firewall Brick Breaker"* (`G.startBreakout()` via `> breakout` & System Menu — bounce a kinetic packet ball to shatter 5 layers of red firewalls)
-- [ ] **M127**: Complete Item & Relic Compendium (`G.openItemDex()` via `> itemdex` & System Menu — browse all items, drop sources, overclock stats & 1-click craft)
-- [ ] **M128**: Secret Mini-Game #20 — *"Snake: Fiber Worm Protocol"* (`G.startWormGame()` via `> worm` & System Menu — classic high-speed grid worm harvesting signal embers)
+- [x] **M121** (`14:12`): Blender 4.3 Wireframe Mesh #22 (`dawn_horizon_gate`) & District #20 (*"The Dawn Horizon"* `Z.horizon` in `src/zones2.js` — 20th District Milestone!) + Procedural 3D PBR-Style Architectural & Terrain Textures (`solidMat`, `terrainMat`, `spriteMat`) + Game Speed Multiplier (`1.0x / 1.5x / 2.0x`)
+- [x] **M122** (`14:16`): Secret Mini-Game #18 — *"Asteroids: Sub-Lattice Debris Field"* (`G.startAsteroids()` via `> asteroids` & System Menu — 360° vector thrust & split-debris shooter) + 4-Episode 1080p Theatrical Movie Commercial Series (`commercial.html`)
+- [x] **M123** (`14:21`): Pantheon Ultimate Union Skills & 22-Crew Resonance (`G.openUnionSkills()` via `> union` & System Menu — unlockable 4-agent elemental cataclysm finishers)
+- [x] **M124** (`14:21`): Interactive Morse & Binary Cipher Translator Utility (`G.openTranslator()` via `> translator` & System Menu — encode/decode text into Zoth Braille, Hex & Morse)
+- [x] **M125** (`14:21`): Sovereign Operator ID Card & PNG Badge Exporter (`G.openIDCard()` via `> idcard` & System Menu — render & export a shareable PNG Operator ID badge)
+- [x] **M126** (`14:21`): Secret Mini-Game #19 — *"Breakout: Firewall Brick Breaker"* (`G.startBreakout()` via `> breakout` & System Menu — bounce a kinetic packet ball to shatter 5 layers of red firewalls)
+- [x] **M127** (`14:21`): Complete Item & Relic Compendium (`G.openItemDex()` via `> itemdex` & System Menu — browse all items, drop sources, overclock stats & 1-click craft)
+- [x] **M128** (`14:21`): Secret Mini-Game #20 — *"Snake: Fiber Worm Protocol"* (`G.startWormGame()` via `> worm` & System Menu — classic high-speed grid worm harvesting signal embers)
 
 ### Hour 16 (`15:00`–`16:00`) — Grand Finale Polish, 20-District Verification & Release v2.0
 - [ ] **M129**: Sovereign Master Control Center (`G.openMasterHub()` via `> master` & System Menu — categorized search & 1-click launcher for all 85+ subsystems & 20 mini-games)

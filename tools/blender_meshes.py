@@ -528,6 +528,33 @@ def build_omega_core():
     return arr
 
 
+def build_dawn_horizon_gate():
+    """Monumental 12-Ray Solar Dawn Archway & Celestial Sun-Dial Gate for District #20: The Dawn Horizon."""
+    bm = bmesh.new()
+    # Twin grand solar rings & horizon platform
+    add_ring(bm, 0, 0, 0.4, 6.2, segs=32, axis="z")
+    add_ring(bm, 0, 0, 6.8, 5.4, segs=32, axis="y")
+    add_ring(bm, 0, 0, 6.8, 4.2, segs=32, axis="y")
+    # 12 solar corona rays radiating from the archway crown
+    for i in range(12):
+        a = (i / 12.0) * math.pi * 2.0
+        r_in = 4.2
+        r_out = 6.8 if i % 2 == 0 else 5.6
+        v0 = bm.verts.new((math.cos(a) * r_in, 0.0, 6.8 + math.sin(a) * r_in))
+        v1 = bm.verts.new((math.cos(a) * r_out, 0.0, 6.8 + math.sin(a) * r_out))
+        v2 = bm.verts.new((math.cos(a) * 4.8, 1.4 if i % 2 == 0 else -1.4, 6.8 + math.sin(a) * 4.8))
+        bm.edges.new((v0, v1))
+        bm.edges.new((v0, v2))
+        bm.edges.new((v1, v2))
+    # Central suspended Dawn Star octa-core
+    bmesh.ops.create_icosphere(bm, subdivisions=1, radius=1.8)
+    for v in bm.verts[-12:]:
+        v.co.z += 6.8
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
 def main():
     data = {
         "relay4_crown": build_relay4_crown(),
@@ -551,6 +578,7 @@ def main():
         "chrono_orrery": build_chrono_orrery(),
         "astral_astrolabe": build_astral_astrolabe(),
         "omega_core": build_omega_core(),
+        "dawn_horizon_gate": build_dawn_horizon_gate(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:

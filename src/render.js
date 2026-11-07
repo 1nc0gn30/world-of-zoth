@@ -48,9 +48,10 @@ export function initRender(canvas){
         if(s.a>.75){ col=s.rgb; }
         else if(s.a>.25){
           float v=max(max(s.r,s.g),s.b); vec3 hue=v>0.?s.rgb/v:vec3(0.);
-          float b=bayer(np); float q=floor(clamp(v,0.,1.)*4.+b)/4.;
-          if(q<=.5 && q>0.){ bool dot=mod(px.x,2.)<1. && mod(px.y,2.)<1.; col=dot? hue*min(1.,q*1.9):vec3(0.); }
-          else col=hue*q;
+          float b=bayer(np);
+          float q=floor(clamp(v,0.,1.)*14.+b)/14.;
+          if(q<=.12 && q>0.){ bool dot=mod(px.x,2.)<1. && mod(px.y,2.)<1.; col=dot? mix(s.rgb,hue*min(1.,q*1.8),.6):s.rgb*.55; }
+          else col=mix(s.rgb,hue*q,.48);
           if(v>1.){ vec3 hot=hue.r>hue.g*1.8? vec3(1.,.9,.78): vec3(.925,.894,.824); col=mix(col,hot,clamp((v-1.)*.7,0.,1.)); }
         } else {
           // empty sky: glyph rain + braille star dots
@@ -117,13 +118,126 @@ export function latMat({color='#f5b82e', intensity=1, fogNear=10, fogFar=70, wob
   });
   return m;
 }
-// Solid occluder (dark faces) — writes depth, class "world".
+// Solid occluder with procedural high-detail 3D world-space architectural & surface textures — writes depth, class "world".
 export function solidMat(color='#0b0906'){
-  return new THREE.ShaderMaterial({ uniforms:{color:{value:new THREE.Color(color)}},
-    vertexShader:`void main(){gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
-    fragmentShader:`uniform vec3 color; void main(){gl_FragColor=vec4(color,.5);}`, polygonOffset:true, polygonOffsetFactor:1, polygonOffsetUnits:1 });
+  return new THREE.ShaderMaterial({
+    uniforms:{ color:{value:new THREE.Color(color)}, time:U.time, pulse:U.pulse },
+    vertexShader:`
+      varying vec3 vW; varying vec3 vN; varying float vDist;
+      void main(){
+        vec4 w=modelMatrix*vec4(position,1.); vW=w.xyz;
+        vN=normalize(mat3(modelMatrix)*normal);
+        vec4 mv=viewMatrix*w; vDist=-mv.z;
+        gl_Position=projectionMatrix*mv;
+      }`,
+    fragmentShader:`
+      precision highp float;
+      uniform vec3 color; uniform float time; uniform vec4 pulse;
+      varying vec3 vW; varying vec3 vN; varying float vDist;
+      float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
+      float n2(vec2 p){
+        vec2 i=floor(p), f=fract(p); f=f*f*(3.-2.*f);
+        return mix(mix(h2(i),h2(i+vec2(1.,0.)),f.x), mix(h2(i+vec2(0.,1.)),h2(i+vec2(1.,1.)),f.x), f.y);
+      }
+      float fbm(vec2 p){
+        return n2(p)*.55 + n2(p*2.13)*.30 + n2(p*4.41)*.15;
+      }
+      void main(){
+        float fog=1.-smoothstep(12.,88.,vDist);
+        vec3 base=max(color, vec3(0.065,0.052,0.036));
+        vec3 gold=vec3(0.96,0.72,0.18), cyan=vec3(0.13,0.83,0.93);
+        // Directional 3D hemisphere lighting so building/prop faces have real depth
+        vec3 L=normalize(vec3(0.55,0.78,0.42));
+        float ndl=clamp(dot(vN,L)*0.5+0.5, 0., 1.);
+        vec3 col=base*(0.65+0.85*ndl);
+        if(abs(vN.y)<0.5){
+          // Vertical architectural facade: brushed cyber-concrete, panel joints, rain streaks & recessed micro-windows
+          float uCoord = abs(vN.x)>abs(vN.z) ? vW.z : vW.x;
+          float grain = fbm(vec2(uCoord*2.4, vW.y*1.2));
+          float rainStreak = n2(vec2(uCoord*6.5, vW.y*0.35 - time*0.15));
+          // Panel seams every 2.6m vertically and 1.3m horizontally
+          float seamY = smoothstep(0.06, 0.0, abs(fract(vW.y/2.6)-0.5));
+          float seamX = smoothstep(0.05, 0.0, abs(fract(uCoord/1.3)-0.5));
+          col *= (0.78 + 0.44*grain) * (1.0 - 0.35*max(seamY, seamX));
+          col += gold * (0.045 * rainStreak * smoothstep(0.0, 12.0, vW.y));
+          // Ground bounce ambient warmth near street level
+          col += gold * (0.07 * exp(-max(0., vW.y)*0.55));
+          // Procedural recessed window cells with interior blinds & parallax warmth
+          vec2 wCell = floor(vec2(uCoord*0.95, vW.y*0.78));
+          vec2 wUv = fract(vec2(uCoord*0.95, vW.y*0.78));
+          float inWin = step(0.22, wUv.x)*step(wUv.x, 0.78)*step(0.24, wUv.y)*step(wUv.y, 0.76);
+          float winRng = h2(wCell + floor(vW.xz*0.1));
+          if(inWin>0.5 && vW.y>1.1){
+            float blinds = 0.65 + 0.35*sin(wUv.y*34.0);
+            if(winRng>0.74){
+              vec3 wCol = winRng>0.91 ? cyan : gold;
+              col = mix(col, wCol*(0.28 + 0.24*blinds), 0.75);
+            } else {
+              col *= 0.62;
+            }
+          }
+        } else {
+          // Horizontal roof / bridge / platform surface: carved paver tiles, wet asphalt puddles & circuit traces
+          vec2 uv = vW.xz;
+          float g = fbm(uv*1.6);
+          float puddle = smoothstep(0.56, 0.74, fbm(uv*0.28));
+          float tileX = smoothstep(0.04, 0.0, abs(fract(uv.x*0.5)-0.5));
+          float tileZ = smoothstep(0.04, 0.0, abs(fract(uv.y*0.5)-0.5));
+          col *= (0.75 + 0.5*g) * (1.0 - 0.3*max(tileX, tileZ));
+          col += mix(gold, cyan, 0.35) * (puddle * 0.11 * (0.7 + 0.3*sin(time*1.8 + uv.x)));
+        }
+        // Sonar pulse wave reflection across solid surfaces
+        float r=distance(vW.xz,pulse.xz); float pr=(time-pulse.w)*14.;
+        if(pr>0.&&pr<60.) col += gold * exp(-pow((r-pr)*.9,2.))*0.28*(1.-pr/60.);
+        gl_FragColor=vec4(col*fog, .5);
+      }`,
+    polygonOffset:true, polygonOffsetFactor:1, polygonOffsetUnits:1
+  });
 }
-// Sprite material (class "sprite", alpha 1): frame rect, tint modes, hit flash, dissolve.
+// Textured 3D terrain surface material underneath lattice grids (wet cyber-asphalt, stone tiles, sub-surface circuit traces)
+export function terrainMat(accent='#f5b82e', fogNear=10, fogFar=72){
+  return new THREE.ShaderMaterial({
+    uniforms:{ accent:{value:new THREE.Color(accent)}, time:U.time, pulse:U.pulse, fogNear:{value:fogNear}, fogFar:{value:fogFar} },
+    vertexShader:`
+      varying vec3 vW; varying float vDist;
+      void main(){
+        vec4 w=modelMatrix*vec4(position,1.); vW=w.xyz;
+        vec4 mv=viewMatrix*w; vDist=-mv.z;
+        gl_Position=projectionMatrix*mv;
+      }`,
+    fragmentShader:`
+      precision highp float;
+      uniform vec3 accent; uniform float time, fogNear, fogFar; uniform vec4 pulse;
+      varying vec3 vW; varying float vDist;
+      float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
+      float n2(vec2 p){
+        vec2 i=floor(p), f=fract(p); f=f*f*(3.-2.*f);
+        return mix(mix(h2(i),h2(i+vec2(1.,0.)),f.x), mix(h2(i+vec2(0.,1.)),h2(i+vec2(1.,1.)),f.x), f.y);
+      }
+      float fbm(vec2 p){ return n2(p)*.55 + n2(p*2.3)*.30 + n2(p*5.1)*.15; }
+      void main(){
+        float fog=1.-smoothstep(fogNear,fogFar,vDist);
+        vec2 uv=vW.xz;
+        float micro=fbm(uv*1.85);
+        float macro=fbm(uv*0.22);
+        // Carved stone / cyber-asphalt tile joints every 2m
+        vec2 tc=fract(uv*0.5);
+        float groove=smoothstep(0.035,0.0,min(tc.x,tc.y));
+        // Wet rain-slicked puddle reflection + subtle circuit trace pulse
+        float puddle=smoothstep(0.58,0.76,macro);
+        float trace=step(0.92, h2(floor(uv*0.5))) * smoothstep(0.05,0.0,abs(tc.x-0.5));
+        vec3 base=mix(vec3(0.038,0.031,0.022), accent*0.14, 0.35 + 0.45*micro);
+        base *= (1.0 - 0.38*groove);
+        base += accent * (puddle * 0.095 * (0.65 + 0.35*sin(time*1.5 + uv.x*0.5 + uv.y*0.5)));
+        base += accent * (trace * 0.14 * (0.5 + 0.5*sin(time*3.0 + uv.y)));
+        float r=distance(uv,pulse.xz); float pr=(time-pulse.w)*14.;
+        if(pr>0.&&pr<60.) base += accent * exp(-pow((r-pr)*.9,2.))*0.32*(1.-pr/60.);
+        gl_FragColor=vec4(base*fog, .5);
+      }`,
+    polygonOffset:true, polygonOffsetFactor:2, polygonOffsetUnits:2
+  });
+}
+// Sprite material (class "sprite", alpha 1): frame rect, micro-weave normal relief, rim-lighting, tint modes, hit flash, dissolve.
 export function spriteMat(tex){
   return new THREE.ShaderMaterial({ uniforms:{ map:{value:tex}, rect:{value:new THREE.Vector4(0,0,1,1)}, flip:{value:0}, mode:{value:0}, flash:{value:0}, dis:{value:0}, time:U.time, glow:{value:0}, glowCol:{value:new THREE.Color('#f5b82e')} },
     vertexShader:`varying vec2 vUv; void main(){vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
@@ -131,8 +245,16 @@ export function spriteMat(tex){
       float hh(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
       void main(){ vec2 u=vUv; if(flip>.5) u.x=1.-u.x; vec2 t=rect.xy+u*rect.zw; vec4 c=texture2D(map,t);
         if(c.a<.5) discard;
-        if(dis>0.){ vec2 cell=floor(t*vec2(textureSize(map,0))); if(hh(cell)<dis) discard; }
+        vec2 tsz=vec2(textureSize(map,0));
+        vec2 cell=floor(t*tsz);
+        if(dis>0. && hh(cell)<dis) discard;
         vec3 col=c.rgb;
+        // Micro-weave fabric & armor normal relief + silhouette rim light
+        float weave = (hh(cell) - 0.5) * 0.08;
+        float topEdge = 1.0 - step(0.5, texture2D(map, t + vec2(0.0, 1.0/tsz.y)).a);
+        float sideEdge = 1.0 - step(0.5, texture2D(map, t + vec2((flip>.5?-1.0:1.0)/tsz.x, 0.0)).a);
+        float rim = max(topEdge, sideEdge*0.7);
+        col = clamp(col * (1.0 + weave) + col * rim * 0.24 + vec3(0.96,0.78,0.32)*rim*0.09, 0.0, 1.0);
         if(mode>.5 && mode<1.5){ float l=max(col.r,max(col.g,col.b)); col= l<.12? vec3(.05,.01,.01) : (l<.35? vec3(.27,.055,.04) : (l<.6? vec3(.55,.12,.08): vec3(.86,.2,.16))); }
         if(mode>1.5){ float l=dot(col,vec3(.3,.5,.2)); col=vec3(l)*.6; }
         col+=glowCol*glow*.35;

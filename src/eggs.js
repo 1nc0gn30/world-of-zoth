@@ -17,7 +17,7 @@ export const ACH={
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
   boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'], bit_alchemist:['packet alchemist','compile high-tier power-of-2 bit packets in 2048 Bit Merger'], combat_analyst:['damage auditor','analyze turn-by-turn breach and parry telemetry in the Combat Log'], movie_premiere:['cinema sovereign','watch the official World of Zoth theatrical movie commercial'], capsule_collector:['capsule sovereign','roll holographic relic capsules in the 100% free Capsule Machine'], world_tourist:['grand tourer','fly across all 19 districts on the World Tour Autopilot'],
-  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'],
+  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'], asteroid_ace:['debris pilot','shatter sub-lattice rogue asteroids in 360° Vector Asteroids'], union_master:['pantheon union','channel a 22-agent Pantheon Ultimate Union Skill'], cipher_scribe:['cipher translator','encode and broadcast a Morse/Binary transmission'], id_verified:['verified operator','mint your holographic Sovereign Operator ID Card'], breakout_ace:['brick breaker','shatter encrypted firewall layers in Vector Breakout'], item_archivist:['relic archivist','inspect and replicate gear in the Complete Item Compendium'], worm_router:['fiber worm','grow the sub-lattice packet worm in Fiber Worm Protocol'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
   life:['conway','run 100 generations of Life'], doom:['doom-fire','keep the fire lit for 10 seconds'], tags:['district 9/9','find every red tag'], minions:['eight of me','find every Minion'], goodboy:['good dog','pet Pixel-Shiba ten times'], trace:['found you','trace the copy'],
@@ -33,6 +33,7 @@ export function initEggs(G,{music,sfx}){
   addEventListener('keydown',e=>{ kc=(e.code===KC[kc])?kc+1:(e.code===KC[0]?1:0); if(kc===KC.length){ kc=0; G.konami(); }
     if(e.code==='Backquote'&&G.mode==='explore'){ G.openTerminal(true); e.preventDefault(); return; }
     if(e.code==='Tab'&&G.mode==='explore'){ G.openQuickWheel(); e.preventDefault(); return; }
+    if(e.code==='KeyV'&&(G.mode==='explore'||G.mode==='battle')&&G.cycleSpeed){ G.cycleSpeed(); e.preventDefault(); return; }
     if(G.mode==='terminal') termKey(e); if(G.mode==='mini'&&G.mini.key) G.mini.key(e); });
   G.konami=()=>{ if(G.isFlag('konami')){ G.toast('> cheat detected. still no.',P.DG); return; } G.flag('konami'); G.bits+=99; G.give('root.shell',3); G.toast('> up up down down left right left right b a',P.GD); G.glitch(.8); G.ach('konami'); };
   // ---- hidden terminal ----
@@ -42,8 +43,15 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  commercial  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
-    else if(c==='commercial'||c==='trailer'||c==='movie'){ out('[commercial] rolling World of Zoth Theatrical Movie Commercial...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCommercial(); },40); }
+    if(c==='help') out('nmap  ping  patch  commercial  worm  itemdex  breakout  idcard  translator  union  asteroids  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='worm'||c==='snake'||c==='fiberworm'){ out('[worm] launching Secret Mini-Game #20: Fiber Worm Protocol...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startWormGame(); },40); }
+    else if(c==='itemdex'||c==='compendium'||c==='relics'){ out('[itemdex] opening Complete Item & Relic Compendium...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openItemDex(); },40); }
+    else if(c==='breakout'||c==='bricks'||c==='arkanoid'){ out('[breakout] launching Secret Mini-Game #19: Firewall Brick Breaker...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startBreakout(); },40); }
+    else if(c==='idcard'||c==='passport'||c==='badge'){ out('[idcard] opening Sovereign Operator ID Card & PNG Badge Exporter...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openIDCard(); },40); }
+    else if(c==='translator'||c==='encode'||c==='binary'){ out('[translator] opening Interactive Morse, Binary & Hex Cipher Translator...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTranslator(); },40); }
+    else if(c==='union'||c==='pantheon'||c==='ultimates'){ out('[union] opening Pantheon Ultimate Union Skills & 22-Crew Resonance...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openUnionSkills(); },40); }
+    else if(c==='commercial'||c.startsWith('commercial ')||c==='trailer'||c==='movie'){ const ep=parseInt(c.split(' ')[1]||'1',10)-1; out('[commercial] rolling World of Zoth Theatrical Movie Commercial...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCommercial(isNaN(ep)?0:ep); },40); }
+    else if(c==='asteroids'||c==='debris'||c==='meteor'){ out('[asteroids] launching Secret Mini-Game #18: 360° Vector Asteroids...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startAsteroids(); },40); }
     else if(c==='scenemaker'||c==='script'||c==='director'){ out('[scenemaker] opening Custom Dialogue & Story Scene Creator...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSceneMaker(); },40); }
     else if(c==='capsules'||c==='gacha'||c==='lootbox'){ out('[capsules] opening 100% Free Bits-Only Relic Capsule Machine...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openRelicCapsules(); },40); }
     else if(c==='tour'||c==='autopilot'||c==='flythrough'){ out('[tour] launching 19-District World Tour Autopilot...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openWorldTour(); },40); }
@@ -7020,7 +7028,166 @@ export function initEggs(G,{music,sfx}){
       ]
     }
   ];
-  G.openCommercial=(onDone)=>{
+  const COMMERCIAL_EPISODES=[
+    { title:'EPISODE I · 06:12 — FACES, NOT VOICES', scenes:COMMERCIAL_SCENES },
+    {
+      title:'EPISODE II · MIDNIGHT AT THE SAFEHOUSE',
+      scenes:[
+        {
+          id:'E2S1', dur:7.5, zone:'hub', music:'hub',
+          card:'22 COMPANIONS. ONE VERY CROWDED SAFEHOUSE.',
+          sub:'EP II · SCENE 1 · RELIT PLAZA SAFEHOUSE',
+          from:[-18,9,24], to:[-4,4,11], look:[0,2.5,2],
+          cast:[['pixel-neko',-2.5,4,'work'],['kitsune',2.5,4,'idle'],['pixel-shiba',0,5.5,'idle'],['me',0,3,'idle']],
+          hudBanner:'100% FREE RELIC CAPSULES  ·  ZERO PAYWALLS  ·  EARN BITS IN COMBAT',
+          lines:[
+            [0.5, 'kitsune',     'Okay, honest question: who rolled the Relic Capsule Machine 40 times at three in the morning?'],
+            [3.8, 'pixel-neko',  'It costs earned Bits, not real money! Plus Pixel-Shiba needed a Mythic Halo Crown!'],
+            [5.8, 'pixel-shiba', 'Bork! (Translation: It matches my tail.)']
+          ]
+        },
+        {
+          id:'E2S2', dur:7.5, zone:'vault', music:'vault',
+          card:'SOLVE CELESTIAL PUZZLES. OR JUST VIBES.',
+          sub:'EP II · SCENE 2 · THE CHRONO-VAULT ORRERY',
+          from:[16,10,22], to:[4,5,12], look:[0,3,-6],
+          cast:[['chronos',-3,3,'work'],['athena',3,3,'ability'],['me',0,5,'idle']],
+          lines:[
+            [0.5, 'chronos', 'If we align all five orbital brass rings to 06:12, the ancient Chrono-Vault unlocks!'],
+            [4.0, 'athena',  'And if we align them to 06:15, it dispenses hot espresso and +250 Bits. Guess which one I picked.']
+          ]
+        },
+        {
+          id:'E2S3', dur:7.5, zone:'foundry', music:'foundry',
+          card:'OVERCLOCK YOUR GEAR TO +5 AT THE ANVIL.',
+          sub:'EP II · SCENE 3 · THE DOOM-FIRE FOUNDRY',
+          from:[-16,9,20], to:[-3,4,10], look:[0,2.5,0],
+          cast:[['ignis',-2.5,3.5,'ability'],['kai',2.5,3.5,'work'],['pixel-neko',0,5.5,'idle']],
+          lines:[
+            [0.5, 'ignis',      'Stand back! I am engraving custom runes onto a +5 Overclocked Sovereign Katana!'],
+            [4.0, 'pixel-neko', 'You are literally using lava as soldering flux. Respect.']
+          ]
+        },
+        {
+          id:'E2S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE II',
+          sub:'EP II · SCENE 4 · ROOFTOP HANGOUT',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-2,3,'idle'],['copy',2,3,'idle'],['kitsune',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'copy',    'Admit it. Having your former arch-nemesis in the squad makes campfires 10x cooler.'],
+            [4.1, 'kitsune', 'Just don\'t eat the last ramen packet, 03ng0cn1.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE III · 99 FLOORS OF FURY',
+      scenes:[
+        {
+          id:'E3S1', dur:7.5, zone:'citadel', music:'boss',
+          card:'THE INFINITE STACK: 99 FLOORS OF ROGUE-LITE CHAOS.',
+          sub:'EP III · SCENE 1 · ZERO-KNOWLEDGE CITADEL',
+          from:[20,12,26], to:[5,5,12], look:[0,4,-6],
+          cast:[['me',0,5,'idle'],['kai',-3,4,'ultimate'],['onyx',3,4,'ability']],
+          hudBanner:'[V] TURBO SPEED 1.5x / 2.0x   ·   5x SYNC CHAIN   ·   1.35x PROTOCOL BREACH',
+          lines:[
+            [0.5, 'kai',  'Floor 99 of the Infinite Stack. Five apex bosses waiting in the dark.'],
+            [3.9, 'onyx', 'Good thing we just toggled 2.0x Hyper-Clock speed and charged our Overdrive bar.']
+          ]
+        },
+        {
+          id:'E3S2', dur:7.5, zone:'nullcore', music:'phonk',
+          card:'808 DRIFT-PHONK STEMS AT 144 BPM.',
+          sub:'EP III · SCENE 2 · THE NULL CORE SINGULARITY',
+          from:[-18,11,24], to:[-4,5,11], look:[0,3.5,-6],
+          cast:[['nexus',-2.8,4,'work'],['kraken',2.8,4,'ability'],['me',0,6,'idle']],
+          lines:[
+            [0.5, 'nexus', 'Wait—is the game synthesizing a 144 BPM 808 cowbell drift-phonk track directly in WebAudio?!'],
+            [4.1, 'me',    'Zero MP3 files. Pure mathematical basslines while we parry the Singularity.']
+          ]
+        },
+        {
+          id:'E3S3', dur:7.5, zone:'horizon', music:'title',
+          card:'20 PROCEDURAL 3D DISTRICTS WITH REAL SHADERS.',
+          sub:'EP III · SCENE 3 · THE DAWN HORIZON (DISTRICT #20)',
+          from:[18,11,24], to:[4,5,11], look:[0,4,-8],
+          cast:[['aether',-3,4,'ultimate'],['athena',3,4,'ability'],['kitsune',0,6,'idle']],
+          lines:[
+            [0.5, 'aether',  'Look at the wet asphalt reflections and brutalist concrete panels under the Solar Gate.'],
+            [4.0, 'kitsune', 'District 20: The Dawn Horizon. Worth every single step of the journey.']
+          ]
+        },
+        {
+          id:'E3S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE III',
+          sub:'EP III · SCENE 4 · DAWN BREAKERS',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-1.8,3,'idle'],['kai',1.8,3,'idle'],['pixel-shiba',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'me',  '99 floors cleared. 20 districts unlocked. Zero console errors.'],
+            [4.1, 'kai', 'Your turn, Operator. Step into the lattice.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE IV · BEHIND THE WIREFRAME (SECRETS OF 06:13)',
+      scenes:[
+        {
+          id:'E4S1', dur:7.5, zone:'mirrors', music:'mirrors',
+          card:'WHEN YOUR REFLECTION STOPS MIMICKING YOU... RUN.',
+          sub:'EP IV · SCENE 1 · THE HALL OF MIRRORS',
+          from:[-16,9,22], to:[-3,4,10], look:[0,2.5,-4],
+          cast:[['copy',0,2,'idle'],['me',0,6.5,'idle'],['vigil',-3,4.5,'idle']],
+          lines:[
+            [0.5, 'vigil', 'Every mirror in this hall reflects your exact footsteps. Except the seventh one.'],
+            [4.1, 'copy',  'Because I got tired of walking backward. Let\'s talk, 1nc0gn30.']
+          ]
+        },
+        {
+          id:'E4S2', dur:7.5, zone:'abyss', music:'abyss',
+          card:'EVERY DELETED MEMORY SINKS TO THE TRENCH.',
+          sub:'EP IV · SCENE 2 · THE ABYSSAL MEMORY TRENCH',
+          from:[16,10,22], to:[4,4.5,11], look:[0,3,-6],
+          cast:[['onyx',-2.8,4,'ability'],['kraken',2.8,4,'idle'],['me',0,6,'idle']],
+          lines:[
+            [0.5, 'onyx',   'They tried to wipe the city\'s memory at 06:12. They forgot that light travels through fiber.'],
+            [4.1, 'kraken', 'Collect the 15 hermetic datacubes. Put the truth back together.']
+          ]
+        },
+        {
+          id:'E4S3', dur:7.5, zone:'loom', music:'loom',
+          card:'85+ SUBSYSTEMS. 18 ARCADE GAMES. ONE LIVING WORLD.',
+          sub:'EP IV · SCENE 3 · THE QUANTUM LOOM',
+          from:[-18,11,24], to:[-4,5,11], look:[0,4,-8],
+          cast:[['athena',-3,4,'work'],['chronos',3,4,'idle'],['kitsune',0,6,'idle']],
+          lines:[
+            [0.5, 'athena',  'Press Backtick (`) anywhere in the world to open the hidden UNIX shell.'],
+            [4.0, 'kitsune', 'Type "commercial", "asteroids", "tank", or "scenemaker"—the whole engine is yours to command.']
+          ]
+        },
+        {
+          id:'E4S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE IV',
+          sub:'EP IV · SCENE 4 · TOMORROW 06:13',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-1.8,3,'idle'],['vigil',1.8,3,'idle'],['kitsune',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'vigil', 'Trust faces, not voices. Silence cannot be copied.'],
+            [4.1, 'me',    'See you at sunrise.']
+          ]
+        }
+      ]
+    }
+  ];
+  G.openCommercial=(epOrDone=0, onDoneArg=null)=>{
+    let epIdx=(typeof epOrDone==='number')?Math.max(0,Math.min(COMMERCIAL_EPISODES.length-1,epOrDone)):0;
+    const onDone=(typeof epOrDone==='function')?epOrDone:onDoneArg;
+    let curScenes=COMMERCIAL_EPISODES[epIdx].scenes;
     let sIdx=0, st=0, paused=false, totalT=0, lastTalkIdx=-1;
     const savedZone=G.zoneId||'hub';
     const savedPos=G.player&&G.player.group?{x:G.player.group.position.x,z:G.player.group.position.z}:{x:0,z:16};
@@ -7032,9 +7199,10 @@ export function initEggs(G,{music,sfx}){
     };
     const loadScene=idx=>{
       clearCast();
-      sIdx=(idx+COMMERCIAL_SCENES.length)%COMMERCIAL_SCENES.length;
+      curScenes=COMMERCIAL_EPISODES[epIdx].scenes;
+      sIdx=(idx+curScenes.length)%curScenes.length;
       st=0; lastTalkIdx=-1;
-      const sc=COMMERCIAL_SCENES[sIdx];
+      const sc=curScenes[sIdx];
       if(G.enterZone && G.Z && G.Z[sc.zone]) G.enterZone(sc.zone,true,0,30,Math.PI);
       if(G.player && G.player.group) G.player.group.visible=false;
       G.banner=null;
@@ -7048,6 +7216,13 @@ export function initEggs(G,{music,sfx}){
           castGroups.push(b);
         });
       }
+    };
+    const switchEp=newEp=>{
+      epIdx=(newEp+COMMERCIAL_EPISODES.length)%COMMERCIAL_EPISODES.length;
+      totalT=0;
+      loadScene(0);
+      G.toast(`> NOW PLAYING: ${COMMERCIAL_EPISODES[epIdx].title}`,P.GD);
+      sfx('confirm');
     };
     const closeCommercial=()=>{
       clearCast();
@@ -7072,26 +7247,29 @@ export function initEggs(G,{music,sfx}){
       key(e){
         const k=(e.key||'').toLowerCase();
         if(k===' ') { e.preventDefault(); paused=!paused; sfx('blip'); }
+        if(k==='1'||k==='2'||k==='3'||k==='4') switchEp(parseInt(k,10)-1);
         if(k==='p'){
           if(!G.flags.commercial_stipend){
             G.flags.commercial_stipend=1; G.bits+=200;
             G.toast('> MOVIE PREMIERE STIPEND: +200 BITS CLAIMED!','#4ade80');
           } else {
-            G.toast('> THEATRICAL COMMERCIAL: 100% IN-ENGINE 3D CINEMA',P.GD);
+            G.toast('> THEATRICAL COMMERCIAL: [1-4] SWITCH EPISODE!',P.GD);
           }
           sfx('win');
         }
       },
       update(dt){
         if(took('back')||took('pause')){ sfx('cancel'); closeCommercial(); return; }
+        if(took('up'))    { switchEp(epIdx-1); return; }
+        if(took('down'))  { switchEp(epIdx+1); return; }
         if(took('left'))  { loadScene(sIdx-1); sfx('move'); return; }
         if(took('right')||took('confirm')) {
-          if(sIdx+1>=COMMERCIAL_SCENES.length){ closeCommercial(); return; }
+          if(sIdx+1>=curScenes.length){ closeCommercial(); return; }
           loadScene(sIdx+1); sfx('move'); return;
         }
         if(paused) return;
         st+=dt; totalT+=dt;
-        const sc=COMMERCIAL_SCENES[sIdx];
+        const sc=curScenes[sIdx];
         const u=Math.min(1,st/sc.dur), e=u*u*(3-2*u);
         if(G.cam){
           G.cam.pos.set(
@@ -7111,12 +7289,12 @@ export function initEggs(G,{music,sfx}){
           }
         }
         if(st>=sc.dur){
-          if(sIdx+1<COMMERCIAL_SCENES.length) loadScene(sIdx+1);
+          if(sIdx+1<curScenes.length) loadScene(sIdx+1);
           else closeCommercial();
         }
       },
       draw(t){
-        const X=UI.ctx, sc=COMMERCIAL_SCENES[sIdx];
+        const X=UI.ctx, sc=curScenes[sIdx];
         // Widescreen 2.35:1 Cinema Anamorphic Letterbox Bars
         X.fillStyle='#040302';
         X.fillRect(0,0,960,54);
@@ -7126,11 +7304,11 @@ export function initEggs(G,{music,sfx}){
         X.fillRect(0,485,960,1);
         // Top Cinema Bar Telemetry
         const mm=String(Math.floor(totalT/60)).padStart(2,'0'), ss=String(Math.floor(totalT%60)).padStart(2,'0'), ff=String(Math.floor((totalT%1)*30)).padStart(2,'0');
-        UI.text(`REC [LIVE] 06:12:${mm}:${ss}:${ff}  ·  ${sc.sub}`,24,18,P.GD,1);
-        UI.text(`SCENE 0${sIdx+1}/0${COMMERCIAL_SCENES.length}  [<-/->] SKIP  [SPACE] ${paused?'PLAY':'PAUSE'}  [P] +200B  [ESC] EXIT`,936,18,'#22d3ee',1,'right');
+        UI.text(`REC [EP 0${epIdx+1}/04] 06:12:${mm}:${ss}:${ff}  ·  ${sc.sub}`,24,18,P.GD,1);
+        UI.text(`SCENE 0${sIdx+1}/0${curScenes.length}  [1-4/UP/DN] EPISODE  [<-/->] SKIP  [P] +200B`,936,18,'#22d3ee',1,'right');
         // Scene Progress Bar inside top letterbox
         X.fillStyle='rgba(245,184,46,.18)'; X.fillRect(24,38,912,6);
-        const totProg=((sIdx + Math.min(1,st/sc.dur))/COMMERCIAL_SCENES.length)*912;
+        const totProg=((sIdx + Math.min(1,st/sc.dur))/curScenes.length)*912;
         X.fillStyle=P.GD; X.fillRect(24,38,Math.round(totProg),6);
         // Optional Gameplay Feature Callout Pill
         if(sc.hudBanner){
@@ -7475,6 +7653,486 @@ export function initEggs(G,{music,sfx}){
         UI.text('[ENTER] LAUNCH FULL INTERACTIVE SCENE IN-GAME',888,332,'#4ade80',1,'right');
         UI.wrap(cur[1],660,2).slice(0,2).forEach((l,li)=>UI.text(l,224,366+li*28,P.BONE,2));
         UI.text('[up/down] select beat   [left/right] speaker   [Q] cycle line   [P] preset (+120B)   [enter] play scene   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #18: Asteroids — Sub-Lattice Debris Field (M122) ----
+  G.startAsteroids=()=>{
+    let ship={x:480,y:265,vx:0,vy:0,ang:-Math.PI/2}, bullets=[], rocks=[], score=0, wave=1, fireCd=0;
+    const spawnRocks=n=>{
+      for(let i=0;i<n;i++){
+        const a=(i/n)*Math.PI*2+0.4;
+        rocks.push({
+          x:480+Math.cos(a)*170, y:265+Math.sin(a)*120,
+          vx:Math.cos(a+1.2)*(42+wave*8), vy:Math.sin(a+1.2)*(42+wave*8),
+          r:28, tier:3, rot:i*0.7
+        });
+      }
+    };
+    spawnRocks(5);
+    G.ach('asteroid_ace');
+    G.mini={
+      name:'asteroids',
+      key(e){
+        const k=(e.key||'').toLowerCase();
+        if(k==='p'){
+          rocks.slice(0,3).forEach(rk=>{
+            score+=150;
+            if(rk.tier>1){
+              rocks.push({x:rk.x+10,y:rk.y,vx:rk.vy,vy:-rk.vx,r:rk.r*0.62,tier:rk.tier-1,rot:0});
+            }
+          });
+          rocks=rocks.slice(2);
+          if(rocks.length===0){ wave++; spawnRocks(5+wave); }
+          if(!G.flags.asteroids_stipend){
+            G.flags.asteroids_stipend=1; G.bits+=150;
+            G.toast('> ORBITAL DEBRIS BOUNTY: +150 BITS CLAIMED!','#4ade80');
+          } else {
+            G.toast(`> AUTO-TURRET VOLLEY! SCORE: ${score} (WAVE ${wave})`,P.GD);
+          }
+          G.ach('asteroid_ace'); sfx('win');
+        }
+      },
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        fireCd=Math.max(0,fireCd-dt);
+        if(IN.held.has('left'))  ship.ang-=dt*3.8;
+        if(IN.held.has('right')) ship.ang+=dt*3.8;
+        if(IN.held.has('up')){
+          ship.vx+=Math.cos(ship.ang)*180*dt;
+          ship.vy+=Math.sin(ship.ang)*180*dt;
+        }
+        ship.vx*=0.99; ship.vy*=0.99;
+        ship.x=((ship.x+ship.vx*dt-64+832)%832)+64;
+        ship.y=((ship.y+ship.vy*dt-76+378)%378)+76;
+        if((took('confirm')||IN.held.has('jump'))&&fireCd<=0){
+          fireCd=0.16;
+          bullets.push({x:ship.x+Math.cos(ship.ang)*14,y:ship.y+Math.sin(ship.ang)*14,vx:Math.cos(ship.ang)*340,vy:Math.sin(ship.ang)*340,life:1.1});
+          sfx('blip');
+        }
+        bullets.forEach(b=>{
+          b.x+=b.vx*dt; b.y+=b.vy*dt; b.life-=dt;
+        });
+        bullets=bullets.filter(b=>b.life>0&&b.x>64&&b.x<896&&b.y>76&&b.y<454);
+        rocks.forEach(r=>{
+          r.x=((r.x+r.vx*dt-64+832)%832)+64;
+          r.y=((r.y+r.vy*dt-76+378)%378)+76;
+          r.rot+=dt*1.2;
+        });
+        for(let bi=bullets.length-1;bi>=0;bi--){
+          const b=bullets[bi];
+          for(let ri=rocks.length-1;ri>=0;ri--){
+            const r=rocks[ri];
+            if(Math.hypot(b.x-r.x,b.y-r.y)<r.r){
+              bullets.splice(bi,1);
+              rocks.splice(ri,1);
+              score+=r.tier*50; sfx('crit');
+              if(r.tier>1){
+                rocks.push({x:r.x,y:r.y,vx:r.vy*1.2,vy:-r.vx*1.2,r:r.r*0.62,tier:r.tier-1,rot:0});
+                rocks.push({x:r.x,y:r.y,vx:-r.vy*1.2,vy:r.vx*1.2,r:r.r*0.62,tier:r.tier-1,rot:1});
+              }
+              break;
+            }
+          }
+        }
+        if(rocks.length===0){
+          wave++; G.bits+=40; sfx('win');
+          spawnRocks(4+wave);
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> ASTEROIDS: DEBRIS FIELD',56,36,P.GD,2);
+        UI.text(`WAVE: 0${wave}   ·   SCORE: ${score}   ·   DEBRIS: ${rocks.length}   ·   BITS: ${G.bits}B`,900,40,'#4ade80',1,'right');
+        UI.box(64,76,832,378,'#22d3ee','rgba(8,10,14,.96)');
+        // Draw wireframe asteroids
+        rocks.forEach(r=>{
+          X.strokeStyle=r.tier===3?P.GD:r.tier===2?'#22d3ee':'#4ade80';
+          X.lineWidth=2; X.beginPath();
+          for(let i=0;i<=8;i++){
+            const a=r.rot+(i/8)*Math.PI*2, rad=r.r*(i%2===0?1:0.78);
+            const px=r.x+Math.cos(a)*rad, py=r.y+Math.sin(a)*rad;
+            if(i===0) X.moveTo(px,py); else X.lineTo(px,py);
+          }
+          X.stroke();
+        });
+        // Draw vector ship
+        X.save(); X.translate(ship.x,ship.y); X.rotate(ship.ang);
+        X.strokeStyle='#4ade80'; X.lineWidth=2; X.beginPath();
+        X.moveTo(16,0); X.lineTo(-12,-10); X.lineTo(-7,0); X.lineTo(-12,10); X.closePath(); X.stroke();
+        X.restore();
+        // Draw plasma bolts
+        X.fillStyle=P.GD;
+        bullets.forEach(b=>X.fillRect(b.x-2,b.y-2,5,5));
+        UI.text('[left/right] rotate   [up] vector thrust   [enter/space] plasma cannon   [P] auto-turret (+150B)   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Pantheon Ultimate Union Skills & 22-Crew Resonance (M123) ----
+  const UNION_SKILLS=[
+    {id:'dawn_conv', name:'06:12 DAWN CONVERGENCE', proto:'VOID', pow:'4.8x All-Foe Piercing', buff:'+35% All Stats · Full Heal', agents:['me','copy','aether','chronos'], desc:'All 22 Pantheon agents channel the 06:13 sunrise through the Safehouse obelisk, shattering every hostile firewall and restoring 100% HP/EN.'},
+    {id:'chorus_22', name:'TWENTY-TWO FACES CHORUS', proto:'CRYPTO', pow:'4.2x Acoustic Shatter', buff:'+50% Crit Rate · Nullify Clones', agents:['me','vigil','onyx','kitsune'], desc:'Simultaneous visual-cryptographic verification across 22 operators. Eradicates voice-clone illusions and grants guaranteed critical sync.'},
+    {id:'solar_nova', name:'SOLAR-CRUCIBLE SUPERNOVA', proto:'THERMAL', pow:'4.5x Magma Singularity', buff:'+45% ATK · Thermal Burn Aura', agents:['ignis','kitsune','kraken','kai'], desc:'Fuses nine-tail foxfire with Foundry crucible plasma into a blinding orbital strike across the entire battlefield.'},
+    {id:'deep_tide', name:'DEEP-TIME ABYSSAL SINGULARITY', proto:'TEMPORAL', pow:'4.4x Trench Compression', buff:'+2 Free Turns · 60% Shield', agents:['chronos','athena','nexus','aether'], desc:'Freezes the hostile timeline at 06:12:00 while crushing enemy armor under Sub-Lattice pelagic pressure.'},
+    {id:'mirror_shatter', name:'ZERO-TRUST MIRROR SHATTER', proto:'CRYPTO', pow:'4.6x Seam Execution', buff:'100% Armor Pierce · +20 EN', agents:['copy','me','onyx','vigil'], desc:'1nc0gn30 and 03ng0cn1 strike from opposite sides of the glass simultaneously, bypassing all damage mitigation.'},
+    {id:'kernel_root', name:'SOVEREIGN KERNEL OVERWRITE', proto:'KERNEL', pow:'5.0x Root Execution', buff:'Overdrive 100% · Invulnerable 1T', agents:['me','athena','nexus','pixel-neko'], desc:'Recompiles the district lattice at ring-0 privilege, elevating active squad Overdrive to 100% and granting a Sovereign Aegis.'}
+  ];
+  G.openUnionSkills=()=>{
+    let sel=0, castT=0;
+    G.mini={
+      name:'union',
+      update(dt){
+        if(castT>0) castT=Math.max(0,castT-dt);
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+UNION_SKILLS.length-1)%UNION_SKILLS.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%UNION_SKILLS.length; sfx('move'); }
+        if(took('confirm')||took('party')){
+          const u=UNION_SKILLS[sel];
+          G.flags.active_union=u.id;
+          G.healAll();
+          castT=1.5; G.ach('union_master'); sfx('level');
+          G.toast(`> PANTHEON UNION ARMED: ${u.name} (${u.buff})`,P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> PANTHEON UNION SKILLS',56,36,P.GD,2);
+        UI.text(`CREW RESONANCE: ${G.crewCount()}/22   ·   ARMED UNION: ${(G.flags.active_union||'DAWN_CONV').toUpperCase()}`,900,40,'#4ade80',1,'right');
+        UNION_SKILLS.forEach((u,i)=>{
+          const y=78+i*62, on=i===sel, armed=(G.flags.active_union||'dawn_conv')===u.id;
+          UI.box(56,y,410,54,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(10,8,6,.9)');
+          UI.text(`${on?'> ':'  '}${u.name}`,70,y+10,on?P.GD:P.BONE,1);
+          UI.text(`[${u.proto}]  ${u.pow}`,70,y+30,'#22d3ee',1);
+          if(armed) UI.text('[ARMED]',450,y+10,'#4ade80',1,'right');
+          UI.hit(56,y,410,54,()=>{ sel=i; sfx('move'); });
+        });
+        const cur=UNION_SKILLS[sel];
+        UI.box(486,78,414,366,'#22d3ee','rgba(8,10,14,.95)');
+        UI.text(cur.name,506,96,P.GD,2);
+        UI.text(`PROTOCOL: ${cur.proto}   ·   POWER: ${cur.pow}`,506,124,'#22d3ee',1);
+        UI.text(`RESONANCE BUFF: ${cur.buff}`,506,144,'#4ade80',1);
+        UI.wrap(cur.desc,376,1).forEach((ln,idx)=>UI.text(ln,506,170+idx*16,P.BONE,1));
+        // Orbital 22-agent resonance ring + lead quad sprites
+        const cx=693, cy=318, r=74+(castT>0?Math.sin(t*18)*8:0);
+        X.strokeStyle=castT>0?'#4ade80':'rgba(245,184,46,.35)'; X.lineWidth=castT>0?3:1.5;
+        X.beginPath(); X.arc(cx,cy,r,0,Math.PI*2); X.stroke();
+        for(let i=0;i<22;i++){
+          const a=t*0.8+(i/22)*Math.PI*2;
+          const px=cx+Math.cos(a)*r, py=cy+Math.sin(a)*r;
+          X.fillStyle=i<G.crewCount()?P.GD:P.DDG;
+          X.fillRect(px-2,py-2,5,5);
+        }
+        cur.agents.forEach((aid,idx)=>{
+          const c=frameCanvas(aid,'walk',Math.floor(t*5+idx)%2);
+          const ax=540+idx*84, ay=288;
+          UI.box(ax-6,ay-6,60,64,P.GD,'rgba(6,5,4,.9)');
+          X.drawImage(c,0,0,c.width,c.height,ax+4,ay,40,52);
+          UI.text(aid.slice(0,7).toUpperCase(),ax+24,ay+62,P.BONE,1,'center');
+        });
+        UI.text('[up/down] select union skill   [enter / P] arm union & restore squad   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Morse, Binary & Hex Cipher Translator Utility (M124) ----
+  const MORSE_MAP={A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..','0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.',' ':'/'};
+  const PRESET_CIPHERS=['TRUST FACES NOT VOICES','SILENCE CANNOT BE COPIED','MEET AT 0612 DAWN','1NC0GN30 SOVEREIGN','RELAY 4 OFFLINE'];
+  G.openTranslator=()=>{
+    let text=PRESET_CIPHERS[0], presetIdx=0, pulse=0;
+    const toMorse=s=>s.toUpperCase().split('').map(c=>MORSE_MAP[c]||'').join(' ');
+    const toBin=s=>s.slice(0,12).split('').map(c=>c.charCodeAt(0).toString(2).padStart(8,'0')).join(' ');
+    const toHex=s=>s.split('').map(c=>c.charCodeAt(0).toString(16).toUpperCase().padStart(2,'0')).join(' ');
+    const toRot13=s=>s.replace(/[A-Za-z]/g,c=>String.fromCharCode(c.charCodeAt(0)+(c.toUpperCase()<='M'?13:-13)));
+    G.mini={
+      name:'translator',
+      key(e){
+        if(e.key==='Backspace'){ text=text.slice(0,-1); sfx('talk'); e.preventDefault(); }
+        else if(e.key.length===1 && text.length<28 && /[a-zA-Z0-9 ]/.test(e.key)){ text+=e.key.toUpperCase(); sfx('talk'); e.preventDefault(); }
+      },
+      update(dt){
+        if(pulse>0) pulse=Math.max(0,pulse-dt);
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')||took('down')){
+          presetIdx=(presetIdx+1)%PRESET_CIPHERS.length;
+          text=PRESET_CIPHERS[presetIdx]; sfx('move');
+        }
+        if(took('confirm')||took('party')){
+          pulse=1.2; G.ach('cipher_scribe'); G.bits+=50; sfx('win');
+          G.toast('> CW MORSE TRANSMISSION BROADCAST ACROSS LATTICE (+50 BITS)',P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> CIPHER TRANSLATOR STUDIO',56,36,P.GD,2);
+        UI.text('REAL-TIME ASCII · MORSE CW · 8-BIT BINARY · HEX · ROT13',900,40,'#22d3ee',1,'right');
+        UI.box(64,74,832,56,P.GD,'rgba(245,184,46,.12)');
+        UI.text('PLAINTEXT INPUT (TYPE ANY KEYS OR [UP/DOWN] PRESET):',84,84,P.DG,1);
+        UI.text(`> ${text}${Math.floor(t*3)%2?'_':''}`,84,104,P.GD,2);
+        const rows=[
+          ['INTERNATIONAL MORSE CODE (CW):', toMorse(text), '#4ade80'],
+          ['HEXADECIMAL STREAM (BASE-16):', toHex(text), '#22d3ee'],
+          ['8-BIT BINARY FRAMES (FIRST 12 CHARS):', toBin(text), P.BONE],
+          ['CAESAR ROT-13 SUBSTITUTION:', toRot13(text), '#a78bfa']
+        ];
+        rows.forEach(([lbl,val,col],i)=>{
+          const y=144+i*76;
+          UI.box(64,y,832,64,P.DDG,'rgba(10,12,16,.94)');
+          UI.text(lbl,84,y+10,P.GD,1);
+          UI.wrap(val||'(EMPTY)',790,1).slice(0,2).forEach((ln,li)=>UI.text(ln,84,y+30+li*16,col,1));
+        });
+        UI.text('[type A-Z/0-9] live encode   [up/down] cycle lore phrases   [enter / P] broadcast CW (+50B)   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Sovereign Operator ID Card & PNG Badge Exporter (M125) ----
+  const BADGE_STYLES=['GOLD SOVEREIGN CLEARANCE','CYAN KERNEL ARCHITECT','EMERALD ROOT OPERATOR','CRIMSON RED-TEAM HUNTER'];
+  G.openIDCard=()=>{
+    let styleIdx=0, flash=0;
+    G.mini={
+      name:'idcard',
+      update(dt){
+        if(flash>0) flash=Math.max(0,flash-dt*2);
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')||took('up')){ styleIdx=(styleIdx+BADGE_STYLES.length-1)%BADGE_STYLES.length; sfx('move'); }
+        if(took('right')||took('down')){ styleIdx=(styleIdx+1)%BADGE_STYLES.length; sfx('move'); }
+        if(took('confirm')||took('party')){
+          flash=0.22; G.ach('id_verified'); sfx('save');
+          G.toast('> OPERATOR HOLOGRAPHIC ID CARD MINTED & VERIFIED!',P.GD);
+          try{
+            if(window.WOZ&&window.WOZ.frame){
+              const url=window.WOZ.frame('image/png');
+              const a=document.createElement('a'); a.href=url; a.download='world-of-zoth-operator-id.png'; a.click();
+            }
+          }catch(e){}
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        const cols=[P.GD,'#22d3ee','#4ade80',P.RED];
+        const col=cols[styleIdx];
+        UI.box(36,20,888,500,col);
+        UI.text('> SOVEREIGN OPERATOR ID CARD',56,36,col,2);
+        UI.text(`STYLE: ${BADGE_STYLES[styleIdx]}`,900,40,P.BONE,1,'right');
+        // Main Holographic ID Card Box
+        UI.box(130,86,700,350,col,'rgba(10,12,16,.96)');
+        X.strokeStyle=col; X.lineWidth=2; X.strokeRect(142,98,676,326);
+        UI.box(164,120,176,220,col,'rgba(6,5,4,.92)');
+        const c=frameCanvas('me','walk',Math.floor(t*4)%2);
+        X.drawImage(c,0,0,c.width,c.height,196,142,112,156);
+        UI.text('CLEARANCE: RING-0',252,316,col,1,'center');
+        const callsign=G.flags.callsign||'1NC0GN30';
+        UI.text('NULLAI PLATFORM // WORLD OF ZOTH PASSPORT',366,124,col,1);
+        UI.text(callsign,366,148,P.BONE,3);
+        UI.text(`TITLE: ${G.currentTitle?G.currentTitle():'FREELANCE OPERATOR'}`,366,188,'#22d3ee',1);
+        const achs=Object.keys(ACH).filter(k=>G.achGot[k]).length;
+        const fields=[
+          `OPERATOR LEVEL: LV ${G.party.me.lvl}   ·   CREW RECRUITED: ${G.crewCount()}/22`,
+          `INFINITE STACK FLOOR: FL ${G.flags.stack_floor||0}   ·   ENDLESS WAVE: WV ${G.flags.endless_wave||0}`,
+          `ACHIEVEMENTS UNLOCKED: ${achs}/${Object.keys(ACH).length}   ·   LATTICE BITS: ${G.bits}B`,
+          `ACTIVE DISTRICT: ${(G.zone&&G.zone.name||'SAFEHOUSE').toUpperCase()}   ·   NG+ CYCLE: 06:${12+(G.flags.ng_plus||0)}`,
+          `PGP FINGERPRINT: 0612-FACE-NOT-VOIC-${String(G.party.me.lvl*137+achs).padStart(4,'0')}`
+        ];
+        fields.forEach((f,i)=>UI.text(f,366,220+i*26,i===4?col:P.BONE,1));
+        // Holographic barcode strip
+        for(let i=0;i<44;i++){
+          X.fillStyle=(i*7+styleIdx)%3===0?col:P.DDG;
+          X.fillRect(164+i*14,364,((i*3)%2+1)*4,36);
+        }
+        if(flash>0){ X.fillStyle=`rgba(255,248,220,${flash*.5})`; X.fillRect(0,0,960,540); }
+        UI.text('[left/right] holographic theme   [enter / P] mint & export PNG badge   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #19: Breakout: Firewall Brick Breaker (M126) ----
+  G.startBreakout=()=>{
+    let padX=480, score=0, lives=3;
+    const ball={x:480,y:390,vx:210,vy:-230};
+    const bricks=[];
+    const bCols=[P.RED,'#fb923c',P.GD,'#4ade80','#22d3ee'];
+    const spawnBricks=()=>{
+      bricks.length=0;
+      for(let r=0;r<5;r++){
+        for(let c=0;c<10;c++){
+          bricks.push({x:96+c*76,y:102+r*28,w:70,h:20,col:bCols[r],pts:(5-r)*25,alive:true});
+        }
+      }
+    };
+    spawnBricks();
+    G.mini={
+      name:'breakout',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(IN.held.has('left')) padX=Math.max(124,padX-380*dt);
+        if(IN.held.has('right')) padX=Math.min(836,padX+380*dt);
+        if(took('party')){
+          padX=ball.x;
+          const alive=bricks.filter(b=>b.alive);
+          if(alive.length){ alive.slice(0,5).forEach(b=>{ b.alive=false; score+=b.pts; }); }
+          G.bits+=150; G.ach('breakout_ace'); sfx('win');
+          G.toast('> AUTO-DEFLECTOR OVERDRIVE! +5 BRICKS SHATTERED & +150 BITS',P.GD);
+        }
+        ball.x+=ball.vx*dt; ball.y+=ball.vy*dt;
+        if(ball.x<76){ ball.x=76; ball.vx=Math.abs(ball.vx); sfx('blip'); }
+        if(ball.x>884){ ball.x=884; ball.vx=-Math.abs(ball.vx); sfx('blip'); }
+        if(ball.y<88){ ball.y=88; ball.vy=Math.abs(ball.vy); sfx('blip'); }
+        // Paddle bounce
+        if(ball.vy>0 && ball.y>=420 && ball.y<=436 && Math.abs(ball.x-padX)<64){
+          ball.vy=-Math.abs(ball.vy);
+          ball.vx=((ball.x-padX)/56)*260;
+          sfx('move');
+        }
+        if(ball.y>448){
+          lives=Math.max(1,lives-1);
+          ball.x=padX; ball.y=390; ball.vy=-230;
+        }
+        bricks.forEach(b=>{
+          if(!b.alive) return;
+          if(ball.x>=b.x && ball.x<=b.x+b.w && ball.y>=b.y && ball.y<=b.y+b.h){
+            b.alive=false; ball.vy=-ball.vy; score+=b.pts;
+            G.ach('breakout_ace'); sfx('crit');
+          }
+        });
+        if(bricks.every(b=>!b.alive)){ G.bits+=100; spawnBricks(); sfx('win'); }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> BREAKOUT: FIREWALL BREAKER',56,36,P.GD,2);
+        UI.text(`SCORE: ${score}   ·   BRICKS LEFT: ${bricks.filter(b=>b.alive).length}   ·   SHIELDS: 0${lives}`,900,40,'#4ade80',1,'right');
+        UI.box(64,76,832,378,'#22d3ee','rgba(8,10,14,.96)');
+        bricks.forEach(b=>{
+          if(!b.alive) return;
+          UI.box(b.x,b.y,b.w,b.h,b.col,'rgba(20,18,14,.9)');
+        });
+        // Paddle
+        UI.box(padX-56,424,112,12,P.GD,'rgba(245,184,46,.35)');
+        // Ball
+        X.fillStyle='#4ade80'; X.beginPath(); X.arc(ball.x,ball.y,6,0,Math.PI*2); X.fill();
+        UI.text('[left/right] vector deflector paddle   [P] overdrive shatter (+150B)   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Complete Item & Relic Compendium (M127) ----
+  G.openItemDex=()=>{
+    const keys=Object.keys(ITEMS);
+    let sel=0;
+    G.mini={
+      name:'itemdex',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+keys.length-1)%keys.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%keys.length; sfx('move'); }
+        if(took('confirm')||took('party')){
+          const k=keys[sel];
+          G.give(k,1); G.ach('item_archivist'); sfx('level');
+          G.toast(`> REPLICATED +1 ${ITEMS[k].name.toUpperCase()} TO INVENTORY (100% FREE)`,P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> ITEM & RELIC COMPENDIUM',56,36,P.GD,2);
+        UI.text(`CATALOGED ITEMS: ${keys.length}   ·   100% FREE REPLICATOR READY`,900,40,'#4ade80',1,'right');
+        const first=Math.max(0,Math.min(sel-5,keys.length-11));
+        for(let idx=0;idx<Math.min(11,keys.length);idx++){
+          const i=first+idx, k=keys[i], it=ITEMS[k], on=i===sel, y=78+idx*34;
+          UI.box(56,y,390,28,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(10,8,6,.9)');
+          UI.text(`${on?'> ':'  '}${it.name}`,68,y+6,on?P.GD:P.BONE,1);
+          UI.text(`x${G.inv[k]||0}`,434,y+6,'#22d3ee',1,'right');
+          UI.hit(56,y,390,28,()=>{ sel=i; sfx('move'); });
+        }
+        const curKey=keys[sel], cur=ITEMS[curKey];
+        UI.box(468,78,432,374,'#22d3ee','rgba(8,10,14,.95)');
+        UI.text(cur.name.toUpperCase(),488,98,P.GD,2);
+        UI.text(`ID: ${curKey}   ·   CATEGORY: ${(cur.slot||cur.use||(cur.key?'KEY RELIC':'ARTIFACT')).toUpperCase()}`,488,128,'#22d3ee',1);
+        UI.text(`OWNED IN INVENTORY: x${G.inv[curKey]||0}   ·   HOLDER: ${G.holderOf&&G.holderOf(curKey)||'NONE'}`,488,150,'#4ade80',1);
+        UI.wrap(cur.desc||'Sovereign lattice artifact.',392,1).forEach((ln,li)=>UI.text(ln,488,182+li*18,P.BONE,1));
+        const stats=[];
+        if(cur.atk) stats.push(`ATK +${cur.atk}`);
+        if(cur.def) stats.push(`DEF +${cur.def}`);
+        if(cur.spd) stats.push(`SPD +${cur.spd}`);
+        if(cur.mhp) stats.push(`MAX HP +${cur.mhp}`);
+        if(cur.men) stats.push(`MAX EN +${cur.men}`);
+        if(cur.v) stats.push(`RESTORE +${cur.v}`);
+        UI.box(488,248,392,56,P.DDG,'rgba(14,12,10,.9)');
+        UI.text('COMBAT TELEMETRY & SCALING:',504,258,P.GD,1);
+        UI.text(stats.length?stats.join('   ·   '):'SPECIAL STORY / PASSIVE LATTICE RELIC',504,280,'#4ade80',1);
+        UI.box(488,334,392,48,P.GD,'rgba(245,184,46,.14)');
+        UI.text('> [ENTER / P] REPLICATE +1 FREE COPY TO INVENTORY',684,352,P.GD,1,'center');
+        UI.text('[up/down] browse all items & relics   [enter / P] replicate free copy   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #20: Snake: Fiber Worm Protocol (M128) ----
+  G.startWormGame=()=>{
+    const GW=26, GH=13;
+    let worm=[{x:12,y:6},{x:11,y:6},{x:10,y:6}], dir={x:1,y:0}, stepT=0, score=0;
+    let node={x:18,y:6};
+    const spawnNode=()=>{
+      node={x:2+Math.floor(Math.random()*(GW-4)),y:1+Math.floor(Math.random()*(GH-2))};
+    };
+    G.mini={
+      name:'worm',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')&&dir.y===0) dir={x:0,y:-1};
+        if(took('down')&&dir.y===0) dir={x:0,y:1};
+        if(took('left')&&dir.x===0) dir={x:-1,y:0};
+        if(took('right')&&dir.x===0) dir={x:1,y:0};
+        if(took('party')){
+          score+=100; G.bits+=150;
+          worm.push({...worm[worm.length-1]});
+          spawnNode(); G.ach('worm_router'); sfx('win');
+          G.toast('> FIBER WORM OVERCLOCKED! +1 SEGMENT & +150 BITS',P.GD);
+        }
+        stepT+=dt;
+        if(stepT>=0.11){
+          stepT=0;
+          const head={x:(worm[0].x+dir.x+GW)%GW, y:(worm[0].y+dir.y+GH)%GH};
+          worm.unshift(head);
+          if(head.x===node.x && head.y===node.y){
+            score+=50; G.bits+=20; G.ach('worm_router'); sfx('crit');
+            spawnNode();
+          } else {
+            worm.pop();
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> SNAKE: FIBER WORM PROTOCOL',56,36,P.GD,2);
+        UI.text(`WORM LENGTH: ${worm.length}   ·   SCORE: ${score}   ·   BITS: ${G.bits}B`,900,40,'#4ade80',1,'right');
+        UI.box(68,78,824,372,'#22d3ee','rgba(8,10,14,.96)');
+        const ox=84, oy=90, cw=30, ch=26;
+        // Grid lines
+        X.strokeStyle='rgba(34,211,238,.08)'; X.lineWidth=1;
+        for(let x=0;x<=GW;x++){ X.beginPath(); X.moveTo(ox+x*cw,oy); X.lineTo(ox+x*cw,oy+GH*ch); X.stroke(); }
+        for(let y=0;y<=GH;y++){ X.beginPath(); X.moveTo(ox,oy+y*ch); X.lineTo(ox+GW*cw,oy+y*ch); X.stroke(); }
+        // Data packet node
+        X.fillStyle=P.GD; X.fillRect(ox+node.x*cw+4,oy+node.y*ch+4,cw-8,ch-8);
+        // Fiber Worm segments
+        worm.forEach((seg,i)=>{
+          X.fillStyle=i===0?'#4ade80':'#22d3ee';
+          X.fillRect(ox+seg.x*cw+2,oy+seg.y*ch+2,cw-4,ch-4);
+        });
+        UI.text('[WASD/arrows] steer fiber worm   [P] overclock packet (+150B)   [esc] exit',480,486,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

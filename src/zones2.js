@@ -315,10 +315,27 @@ export function buildZones2(Z){
     });
     const st=[]; for(let i=0;i<360;i++) st.push((R()-.5)*86,R()*26,(R()-.5)*86);
     g.add(pts(st,latMat({color:'#fb923c',points:true,size:2.0,twinkle:1,intensity:1.55,fogFar:80})));
-    portal(g,0,42,0);
+    portal(g,0,42,0); portal(g,0,-42,0);
     Z.omega={ id:'omega', name:'the omega foundry', sub:'reactor crucible · 06:17', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'omega', lvl:40,
       sky:{rain:.24,rainCol:'#fb923c',hex:1,stars:2.8}, spawn:{x:0,z:36,yaw:Math.PI},
-      portals:[{x:0,z:42,r:3,to:'astral',sx:0,sz:-36,syaw:0,label:'the astral relay'}], objs:{core,pyl}, tag:[-36,-36] };
+      portals:[{x:0,z:42,r:3,to:'astral',sx:0,sz:-36,syaw:0,label:'the astral relay'},{x:0,z:-42,r:3,to:'horizon',sx:0,sz:36,syaw:Math.PI,label:'the dawn horizon'}], objs:{core,pyl}, tag:[-36,-36] };
+  }
+  // ===================== THE DAWN HORIZON (District #20 · 06:18 Solar Gate) =====================
+  { const h=(x,z)=>0.18*Math.cos(x*.12)*Math.cos(z*.12);
+    const B=base('horizon',{seed:201,h,fogFar:74,gridCol:'#30230a',dotCol:'#fde047'}); const {g,col,anim}=B; const R=rng(202);
+    const gate=segs(BLENDER_GEO.dawn_horizon_gate,latMat({color:'#fde047',intensity:1.75,fogFar:150})); gate.position.set(0,0,-8); g.add(gate); col.push({c:[0,-8,5.8]});
+    const inner=segs(BLENDER_GEO.dawn_horizon_gate,latMat({color:'#22d3ee',intensity:1.45,fogFar:150})); inner.scale.setScalar(.62); inner.position.set(0,2.5,-8); g.add(inner);
+    anim.push(t=>{ gate.rotation.y=t*.36; inner.rotation.y=-t*.64; inner.position.y=2.5+Math.sin(t*1.8)*.42; });
+    const pyl={}; [['h1',-20,-8],['h2',20,-8],['h3',0,16]].forEach(([id,x,z])=>{
+      const a=[]; wireOcta(a,1.8,x,3.0,z); ring(a,x,.15,z,3.2,32,2);
+      const m=segs(a,latMat({color:'#4ade80',intensity:1.55,fogFar:85})); g.add(m); anim.push(t=>{ m.rotation.y=t*.54; }); col.push({c:[x,z,1.8]}); pyl[id]={x,z,m};
+    });
+    const st=[]; for(let i=0;i<400;i++) st.push((R()-.5)*88,R()*28,(R()-.5)*88);
+    g.add(pts(st,latMat({color:'#fde047',points:true,size:2.1,twinkle:1,intensity:1.6,fogFar:84})));
+    portal(g,0,42,0);
+    Z.horizon={ id:'horizon', name:'the dawn horizon', sub:'solar archway · 06:18', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'title', lvl:42,
+      sky:{rain:.12,rainCol:'#fde047',hex:1,stars:3.5}, spawn:{x:0,z:36,yaw:Math.PI},
+      portals:[{x:0,z:42,r:3,to:'omega',sx:0,sz:-36,syaw:0,label:'the omega foundry'}], objs:{gate,pyl}, tag:[36,36] };
   }
   // ===================== SECRET: THE ROOFTOP AT 06:12 =====================
   { const g=new THREE.Group(), col=[], anim=[], R=rng(612); const h=()=>0;
