@@ -37,7 +37,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='singularity'||c==='ng+'||c==='ascend'){ out('[singularity] opening 06:14 Sovereign Singularity Ascension...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSingularity(); },40); }
     else if(c==='ledger'||c==='stats'||c==='career'){ out('[ledger] opening Operator Career Telemetry Ledger...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openLedger(); },40); }
     else if(c==='combos'||c==='synergy'){ out('[combos] opening Companion Duo & Overdrive Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCombos(); },40); }
     else if(c==='router'||c==='physarum'){ out('[router] launching Physarum Slime Mould Network Router...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRouter(); },40); }
@@ -1978,6 +1979,53 @@ export function initEggs(G,{music,sfx}){
         UI.box(98,434,764,34,P.GD,'rgba(245,184,46,.14)');
         UI.text(`SOVEREIGN OPERATOR STATUS: ${overallPct>=80?'PANTHEON ARCHITECT':(overallPct>=40?'SENIOR LATTICE OPERATOR':'INITIATE NODE WALKER')}`,480,445,P.GD,1,'center');
         UI.text('[enter / esc] return to lattice',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- New Game++ ("06:14 Sovereign Singularity" Ascension Console, M59) ----
+  const NG_TIERS=[
+    {tier:1, clock:'06:13:00', name:'CYCLE I · FIRST SUNRISE', bonus:'+12% All Stats · +1 SPD · Keep Full Crew & Relics'},
+    {tier:2, clock:'06:14:00', name:'CYCLE II · SOVEREIGN SINGULARITY', bonus:'+24% All Stats · +2 SPD · +1x Singularity.Halo'},
+    {tier:3, clock:'06:15:00', name:'CYCLE III · PANTHEON OVERCLOCK', bonus:'+36% All Stats · +3 SPD · +500 Treasury Bits'},
+    {tier:4, clock:'06:16:00', name:'CYCLE IV · ZERO-KNOWLEDGE OMNI', bonus:'+48% All Stats · +4 SPD · Max Overclock Resonance'},
+    {tier:5, clock:'06:17:00', name:'CYCLE V · ETERNAL LATTICE', bonus:'+60% All Stats · +5 SPD · Sovereign Apex Tier'}
+  ];
+  G.openSingularity=()=>{
+    let sel=Math.min(4,(G.flags.ng_plus||0));
+    G.mini={
+      name:'singularity',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+NG_TIERS.length-1)%NG_TIERS.length;
+        if(took('down')) sel=(sel+1)%NG_TIERS.length;
+        if(took('confirm')){
+          const tObj=NG_TIERS[sel];
+          G.flags.ng_plus=tObj.tier-1;
+          if(tObj.tier>=2&&!G.has('singularity.halo')) G.give('singularity.halo',1);
+          if(tObj.tier>=3) G.bits+=500;
+          G.newGamePlus(); sfx('level');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(76,28,808,484,P.GD,'rgba(8,7,5,.96)');
+        const curNg=G.flags.ng_plus||0;
+        UI.text('> 06:14 SOVEREIGN SINGULARITY (NG++)',98,44,P.GD,2);
+        UI.text(`ACTIVE CYCLE: NG+${curNg} (+${curNg*12}% ALL STATS)`,862,48,'#4ade80',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(94,72,772,2);
+        NG_TIERS.forEach((tr,i)=>{
+          const y=92+i*58, on=i===sel, act=curNg>=tr.tier;
+          UI.box(98,y-4,764,48,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.85)');
+          UI.text(`${on?'> ':'  '}${tr.name}`,114,y+4,act?'#4ade80':(on?P.GD:P.BONE),2);
+          UI.text(`[CLOCK ${tr.clock}]`,844,y+8,'#22d3ee',1,'right');
+          UI.text(`Ascension Resonance: ${tr.bonus}`,118,y+28,P.DG,1);
+          UI.hit(98,y-4,764,48,()=>{ sel=i; });
+        });
+        UI.box(98,396,764,62,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('Ascending into a New Game++ Cycle preserves your recruited crew, levels, relics, and overclocking',480,414,P.BONE,1,'center');
+        UI.text('while resetting campaign missions and granting permanent multiplicative stat resonance.',480,434,'#22d3ee',1,'center');
+        UI.text('[up/down] select ascension cycle   [enter] initialize new game++ cycle   [esc] close',480,482,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
