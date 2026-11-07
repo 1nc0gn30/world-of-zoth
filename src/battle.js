@@ -23,6 +23,7 @@ export const ENEMY_WEAK={
   mite:'TEMPORAL', phase:'TEMPORAL', sandglass:'TEMPORAL',
   slag:'VOID', warden:'VOID', cursorling:'VOID', blank:'VOID', archon:'VOID'
 };
+export const AI_TACTICS=['MANUAL','COMPANION: BREACH','COMPANION: SUPPORT','FULL SQUAD: AUTO'];
 export class Battle{
   constructor(G,types,opts={}){
     this.G=G; this.opts=opts; this.t=0; this.state='intro'; this.st=0; this.msg=''; this.msgT=0; this.log=[]; this.round=0; this.events=[];
@@ -106,8 +107,31 @@ export class Battle{
     if(this.ti>=this.order.length){ this.endRound(); return; }
     const a=this.order[this.ti]; this.actor=a;
     if(a.isP){ if(a.st.confused){ a.st.confused=0; this.say(`${a.name} hears a familiar voice and freezes.`,1.3); this.waitAct(1.1); return; }
+      const tac=this.G.aiTactic||0;
+      if(tac===3||(tac>0&&a.id!=='me')){ this.aiAct(a,tac); return; }
       this.menu=0; this.sub=null; this.go('menu'); }
     else this.enemyAct(a);
+  }
+  aiAct(a,tac){
+    const opts=this.options().filter(o=>o.kind==='skill'&&a.en>=o.cost);
+    const al=this.alive(this.party), en=this.alive(this.enemies);
+    if(!opts.length||!en.length){ this.pick({kind:'guard'}); return; }
+    let pickOpt=opts[0], tgt=en[0];
+    const lowAlly=al.reduce((m,p)=>p.hp/p.mhp<m.hp/m.mhp?p:m,al[0]);
+    const healOpt=opts.find(o=>SKILLS[o.id].heal);
+    if((tac===2||lowAlly.hp/lowAlly.mhp<.5)&&healOpt&&lowAlly.hp/lowAlly.mhp<.75){
+      pickOpt=healOpt; tgt=lowAlly;
+    } else {
+      const odOpt=opts.find(o=>o.id==='od_surge'||SKILLS[o.id].duo);
+      const atkOpts=opts.filter(o=>SKILLS[o.id].pow).sort((x,y)=>(SKILLS[y.id].pow||0)-(SKILLS[x.id].pow||0));
+      pickOpt=odOpt||atkOpts[0]||opts[0];
+      const myProto=PARTY_PROTO[a.id];
+      const weakE=en.find(e=>ENEMY_WEAK[e.type]===myProto);
+      tgt=weakE||en.reduce((m,e)=>e.hp<m.hp?e:m,en[0]);
+    }
+    const S={...SKILLS[pickOpt.id],cost:pickOpt.cost};
+    this.cur={o:pickOpt,S};
+    this.execute(a,pickOpt,S,S.target==='ally'?lowAlly:tgt,'good');
   }
   endRound(){
     const blank=this.alive(this.enemies).find(e=>e.type==='blank'&&e.st.p2); const guards=this.party.filter(p=>p.alive&&p.st.guard).length; if(blank&&guards&&blank.st.stacks){ blank.st.stacks=Math.max(0,blank.st.stacks-guards*2); this.say('Silence. The cursor has nothing to copy.',1.4); }
@@ -145,6 +169,7 @@ export class Battle{
   menuInput(){
     const list=this.sub==='items'?this.itemOpts():this.options(); if(!list.length){ this.sub=null; return; }
     if(took('up')){ this.menu=(this.menu+list.length-1)%list.length; sfx('move'); } if(took('down')){ this.menu=(this.menu+1)%list.length; sfx('move'); }
+    if(took('party')){ this.G.aiTactic=((this.G.aiTactic||0)+1)%AI_TACTICS.length; sfx('blip'); this.say(`> AI TACTIC: ${AI_TACTICS[this.G.aiTactic]}`,1.2); if(this.G.aiTactic===3){ this.aiAct(this.actor,3); return; } }
     for(let i=1;i<=6;i++) if(took('n'+i) && i<=list.length){ this.menu=i-1; this.pick(list[i-1]); return; }
     if(took('back')&&this.sub){ this.sub=null; this.menu=0; sfx('cancel'); return; }
     if(took('confirm')) this.pick(list[this.menu]);
@@ -310,6 +335,8 @@ export class Battle{
     // command menu
     if(this.state==='menu'){ const list=this.sub==='items'?this.itemOpts():this.options(); const bx=10, by=540-14-Math.max(5,list.length)*20-50; UI.box(bx,by,330,Math.max(5,list.length)*20+44);
       UI.text(this.actor.name+(this.sub?' / items':''),bx+12,by+8,this.actor.col);
+      const tacLbl=`[P] ${AI_TACTICS[G.aiTactic||0]}`; UI.text(tacLbl,bx+318,by+8,(G.aiTactic||0)>0?'#22d3ee':P.DG,1,'right');
+      UI.hit(bx+150,by+4,174,18,()=>{ G.aiTactic=((G.aiTactic||0)+1)%AI_TACTICS.length; sfx('blip'); });
       list.forEach((o,i)=>{ const y=by+28+i*20, sel=i===this.menu; const can=o.kind!=='skill'||this.actor.en>=o.cost;
         if(sel){ X.fillStyle='rgba(245,184,46,.12)'; X.fillRect(bx+6,y-3,318,18); }
         UI.text(o.label,bx+14,y,sel?P.GD:(can?P.BONE:P.ASH)); if(o.cost) UI.text(o.cost+' EN',bx+318,y,can?P.DG:P.ASH,1,'right'); if(sel) UI.cursor(bx+16+UI.textW(o.label)+2,y+1,t);

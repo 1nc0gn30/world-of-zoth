@@ -5,7 +5,7 @@ import { P, THEMES, applyTheme } from './pal.js';
 import { IN, took } from './input.js';
 import { AG } from './sprites.js';
 import { ENEMIES, ITEMS } from './data.js';
-import { ENEMY_WEAK } from './battle.js';
+import { ENEMY_WEAK, AI_TACTICS } from './battle.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
@@ -42,6 +42,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='bestiary'){ out('[bestiary] opening Hostile Protocol Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBestiary(); },40); }
     else if(c==='bounty'){ out('[bounty] opening District Elite Bounty Board (10 contracts)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBounties(); },40); }
     else if(c==='photo'){ out('[photo] entering 3D Photo Mode & Postcard Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openPhotoMode(); },40); }
+    else if(c==='saves'||c==='save'){ out('[saves] opening 3-Slot Save Manager & Base64 Exporter...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSaveManager(); },40); }
     else if(c==='theme'||c.startsWith('theme ')){ const t=G.cycleTheme(); out(`[theme] CRT phosphor set to: ${t.name}`,P.GD); }
     else if(c==='nmap'){
       const z=G.zone; const fn=(G.foes||[]).filter(f=>f.alive).length, nn=(G.npcs||[]).length, pn=(z.portals||[]).length;
@@ -85,7 +86,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','bounty','stack','bossrush','reforge','bestiary','photo','theme','warp','exit'];
+  const CHIPS=['help','nmap','ping','patch','bounty','stack','bossrush','reforge','bestiary','photo','saves','theme','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -111,6 +112,77 @@ export function initEggs(G,{music,sfx}){
         UI.box(10,500,460,30); UI.text('> doom-fire   [up] stoke  [down] smother  [x] exit',20,509,P.BONE); } };
     G.mode='mini'; sfx('confirm'); }
   G.startLife=startLife; G.startDoom=startDoom;
+  // ---- 3-Slot Save Manager & Base64 Cloud-Free Save String Export/Import (M25) ----
+  const SLOT_KEYS=['woz.save','woz.save.2','woz.save.3'];
+  G.openSaveManager=()=>{
+    let sel=0, msg='';
+    const readSlot=i=>{ try{ return JSON.parse(localStorage.getItem(SLOT_KEYS[i])||'null'); }catch(e){ return null; } };
+    const makePayload=()=>{
+      const p=G.player.group.position;
+      return {v:1,zone:G.zoneId,x:p.x,z:p.z,yaw:G.player.facing,party:G.party,roster:G.roster,active:G.activeL,inv:G.inv,bits:G.bits,quests:G.quests,flags:G.flags,defeated:[...G.defeated],equip:G.equip,mods:G.mods,time:Date.now(),v2:1};
+    };
+    G.mini={
+      name:'saves',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+2)%3;
+        if(took('down')) sel=(sel+1)%3;
+        if(took('confirm')){
+          const d=makePayload();
+          try{
+            localStorage.setItem(SLOT_KEYS[sel],JSON.stringify(d));
+            localStorage.setItem('woz.save',JSON.stringify(d));
+            sfx('save'); msg=`SAVED TO SLOT 0${sel+1} (${new Date().toLocaleTimeString()})`;
+            G.toast(`> Saved to Slot 0${sel+1}`,P.GD);
+          }catch(e){ msg='SAVE FAILED'; }
+        }
+        if(took('party')){
+          const s=readSlot(sel);
+          if(!s){ sfx('cancel'); msg=`SLOT 0${sel+1} IS EMPTY`; return; }
+          try{
+            localStorage.setItem('woz.save',JSON.stringify(s));
+            G.loadGame(); sfx('confirm');
+          }catch(e){}
+        }
+        if(took('n1')||took('quests')){
+          try{
+            const b64=btoa(unescape(encodeURIComponent(JSON.stringify(makePayload()))));
+            window.__wozSaveB64=b64;
+            if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(b64).catch(()=>{});
+            sfx('save'); msg=`BASE64 STRING COPIED (${b64.length} chars) -> window.__wozSaveB64`;
+            G.toast('> Base64 Save String copied to clipboard!',P.GD);
+          }catch(e){}
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,36,768,468,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> 3-SLOT SAVE MANAGER',118,52,P.GD,2);
+        UI.text('BASE64 BACKUP  ·  100% LOCAL-FIRST',842,56,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,80,732,2);
+        for(let i=0;i<3;i++){
+          const s=readSlot(i), y=98+i*96, on=i===sel;
+          UI.box(118,y,724,84,on?P.GD:P.DDG,on?'rgba(245,184,46,.12)':'rgba(6,5,4,.85)');
+          UI.text(`${on?'> ':'  '}SLOT 0${i+1} ${i===0?'(PRIMARY AUTO-SYNC)':''}`,136,y+12,on?P.GD:P.BONE,2);
+          if(s){
+            const zname=G.Z[s.zone]?G.Z[s.zone].name.toUpperCase():s.zone;
+            const lvl=s.party&&s.party.me?s.party.me.lvl:1, crw=(s.roster||[]).length;
+            const dt=s.time?new Date(s.time).toLocaleString():'unknown';
+            UI.text(`Zone: ${zname}   ·   Level: lv${lvl}   ·   Crew: ${crw}/22   ·   Bits: ${s.bits||0}`,136,y+42,'#22d3ee',1);
+            UI.text(`Infinite Stack: FL ${s.flags&&s.flags.stack_floor||0}   ·   NG+: ${s.flags&&s.flags.ng_plus||0}   ·   Saved: ${dt}`,136,y+62,P.DG,1);
+          } else {
+            UI.text('[EMPTY SAVE SLOT — PRESS ENTER TO WRITE CURRENT SESSION]',136,y+46,P.DG,1);
+          }
+          UI.hit(118,y,724,84,()=>{ sel=i; });
+        }
+        UI.box(118,394,724,52,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('[ENTER] SAVE TO SLOT     [P] LOAD SLOT     [1 / J] EXPORT BASE64 STRING TO CLIPBOARD',480,404,P.GD,1,'center');
+        UI.text(msg||'Tip: Base64 save strings let you back up or transfer your squad across devices offline.',480,424,msg?'#22d3ee':P.BONE,1,'center');
+        UI.text('[up/down] select slot   [enter] save   [P] load   [1] export base64   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
   // ---- Interactive 3D Photo Mode & Postcard Studio (M24) ----
   const PHOTO_FRAMES=['SOVEREIGN POSTCARD','06:12 BRAILLE TELEMETRY','CLASSIFIED DOSSIER','CLEAN NO-HUD'];
   const PHOTO_POSES=[null,'walk','kneel','sleep'];
