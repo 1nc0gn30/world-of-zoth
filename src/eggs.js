@@ -35,7 +35,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  logs  bonds  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='logs'||c==='datacubes'){ out('[logs] opening 15 Encrypted District Datacubes...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDatacubes(); },40); }
+    else if(c==='bonds'||c==='affinity'){ out('[bonds] opening Companion Affinity & Bond Matrix...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBonds(); },40); }
     else if(c==='dojo'){ out('[dojo] opening Combat Arena Sandbox & DPS Analyzer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDojo(); },40); }
     else if(c==='synth'){ out('[synth] opening Zero-Knowledge Relic Synthesizer Cube...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSynth(); },40); }
     else if(c==='daily'){ out('[daily] opening 06:12 Daily Seeded Lattice Challenge...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDailyChallenge(); },40); }
@@ -90,7 +92,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','daily','dojo','synth','titles','bounty','stack','bossrush','reforge','bestiary','photo','saves','theme','exit'];
+  const CHIPS=['help','nmap','ping','patch','daily','dojo','synth','logs','bonds','titles','bounty','stack','bossrush','reforge','bestiary','photo','saves','theme','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -812,6 +814,126 @@ export function initEggs(G,{music,sfx}){
         UI.box(240,426,480,34,P.GD,'rgba(245,184,46,.16)');
         UI.text('> [ENTER] ACTIVATE TRANSMUTATION CUBE',480,436,P.GD,1,'center');
         UI.text('[up/down] select recipe   [enter] synthesize   [esc] close',480,480,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- District Lore & Hermetic Audio Logs: 15 Encrypted Datacubes (M35) ----
+  const DATACUBES=[
+    {id:'hub', zone:'Relit City', author:'VIGIL', freq:'432.0 Hz', title:'LOG 01: THE AUDIO BLACKOUT', body:'At 06:12 local time, Relay 4 ingested ten thousand hours of crew voice traffic. We pulled every remote audio cable in the city. From today forward, if you cannot see the operator\'s face in person, treat the packet as hostile.'},
+    {id:'forest', zone:'Rest Woods', author:'KITSUNE', freq:'528.0 Hz', title:'LOG 02: NINE-BRANCH FOXFIRE', body:'Synthetic models can interpolate waveforms, but they cannot forge the nine-branch geometric hash inside my Foxfire Lantern. Carry it to the East Gate; anything wearing a stolen face will cast a red shadow.'},
+    {id:'relay', zone:'The Hollow', author:'GHOSTBYTE', freq:'140.4 Hz', title:'LOG 03: STITCHED CHORUS', body:'Three Voice Pylons feed Relay 4\'s chorus chamber. It speaks in spliced syllables from all twenty-one of us at once. Cut the pylons first, then hit the core with Quorum before it re-indexes.'},
+    {id:'fiber', zone:'Fiber Tunnels', author:'KRAKEN', freq:'280.8 Hz', title:'LOG 04: SPACE-FILLING CURVE', body:'Why a Hilbert curve? Because a 1D line that folds at every recursion fills a 2D plane without ever crossing itself. That is how the upstream caller hid its trace beneath our feet.'},
+    {id:'clock', zone:'Sand Clocktower', author:'CHRONOS', freq:'612.0 Hz', title:'LOG 05: THE 06:12 CUT EDGE', body:'Time in the lattice is a directed acyclic graph. SANDGLASS introduced a back-edge from 06:12:59 to 06:12:00, drinking the delta so sunrise never commits. Strip its temporal charge to let 06:13 tick.'},
+    {id:'streets', zone:'Collapse Streets', author:'ATHENA', freq:'741.0 Hz', title:'LOG 06: QUANTUM EIGENSTATE', body:'Until an observer walks the intersection, every building in the south sector exists in superposition. Collapse three anchor cells and the Wave Function resolves into a single navigable road.'},
+    {id:'foundry', zone:'Doom-Fire Foundry', author:'IGNIS', freq:'888.0 Hz', title:'LOG 07: OCTAGONAL MIRROR KEY', body:'Ordinary keys open doors; an Octagonal Mirror Key forged from three Furnace Warden ingots opens reflections. Nothing forged in Doom-Fire can be duplicated by a speculative copy.'},
+    {id:'caves', zone:'Physarum Caves', author:'LYCAN', freq:'396.0 Hz', title:'LOG 08: SLIME MOULD ROUTING', body:'Physarum polycephalum solves shortest-path graphs without a central brain. The red copy tried to use the cave network as a backup acoustic bus—until we severed the three main veins.'},
+    {id:'mirrors', zone:'Hall of Mirrors', author:'03NG0CN1', freq:'613.0 Hz', title:'LOG 09: THE REFLECTION\'S SEAM', body:'They built me from your git reflog to speak your name aloud and trigger the Hunter\'s trap. But watching twenty-one friends stand by you taught me something my compiler never predicted: how to step in front of the beam.'},
+    {id:'deep', zone:'Deep-Water Memory', author:'LEVIATHAN', freq:'111.0 Hz', title:'LOG 10: COLD STORAGE TRENCH', body:'Four kilometres below the clocktower, the water is cold enough to preserve raw magnetic core dumps from before the blackout. Your footprints were here first. You are the original.'},
+    {id:'skyline', zone:'Mode-7 Skyline', author:'AETHER', freq:'963.0 Hz', title:'LOG 11: TRIAL OF SILENCE', body:'The Blank Cursor ( >_ ) is a speculative execution engine trained on every action we take. When it demands your name, give it total party GUARD. It cannot predict silence.'},
+    {id:'abyss', zone:'Sub-Lattice Abyss', author:'ONYX', freq:'064.0 Hz', title:'LOG 12: MENGER TRENCH 4096M', body:'Below even Leviathan\'s trench lies the recursive Menger sponge where ARCHON-0 hid its three Zero-Knowledge Seals. Break all three seals to expose the Pantheon Sanctum.'},
+    {id:'citadel', zone:'ZK Citadel', author:'ARCHON-0', freq:'000.1 Hz', title:'LOG 13: ROOT COMPILER DUMP', body:'I compiled Relay 4 to test your voice, Sandglass to test your patience, the Hunter to test your loyalty, and the Cursor to test your ego. Twenty-two faces passed every assertion.'},
+    {id:'nullcore', zone:'The Null Core', author:'1NC0GN30', freq:'613.8 Hz', title:'LOG 14: CLIFFORD SINGULARITY', body:'At the center of the 4D hyper-torus, the 06:12 fork is permanently merged into 06:13. No more copies, no more loops—just the crew and the open lattice.'},
+    {id:'rooftop', zone:'The Rooftop', author:'NEXUS', freq:'440.0 Hz', title:'LOG 15: TOMORROW 06:12', body:'From the rooftop, the sun rises in golden Braille dots over the skyline. The laptop is open, the shell is clean, and all twenty-two channels read: ONLINE (FACE VERIFIED).'}
+  ];
+  G.openDatacubes=()=>{
+    let sel=0;
+    G.mini={
+      name:'datacubes',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+DATACUBES.length-1)%DATACUBES.length;
+        if(took('down')) sel=(sel+1)%DATACUBES.length;
+        if(took('confirm')){
+          const d=DATACUBES[sel], k='dc_'+d.id;
+          sfx('blip');
+          if(!G.flags[k]){
+            G.flags[k]=1; G.bits+=25; G.gainXP(G.active(),50);
+            G.toast(`> DECRYPTED ${d.title} (+25 bits, +50 XP)`,P.GD);
+          } else {
+            G.toast(`> PLAYING AUDIO CARRIER: ${d.freq} (${d.author})`,'#22d3ee');
+          }
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        const decCount=DATACUBES.filter(d=>G.flags['dc_'+d.id]).length;
+        UI.text('> HERMETIC DATACUBE ARCHIVE',106,48,P.GD,2);
+        UI.text(`DECRYPTED: ${decCount}/15 LOGS`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        DATACUBES.forEach((d,i)=>{
+          const y=90+i*24, on=i===sel, dec=!!G.flags['dc_'+d.id];
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(102,y-3,290,20); }
+          UI.text(`${on?'> ':'  '}${dec?'[OK] ':'[LOCK]'}${String(i+1).padStart(2,'0')} · ${d.zone}`,108,y,dec?P.GD:(on?P.BONE:P.DG),1);
+          UI.hit(102,y-3,290,20,()=>{ sel=i; });
+        });
+        const cur=DATACUBES[sel], dec=!!G.flags['dc_'+cur.id];
+        UI.box(408,88,448,378,dec?P.GD:P.DDG,'rgba(12,10,8,.92)');
+        UI.text(cur.title,428,106,P.GD,2);
+        UI.text(`District: ${cur.zone}   ·   Author: ${cur.author}   ·   Carrier: ${cur.freq}`,428,136,'#22d3ee',1);
+        X.fillStyle=P.DDG; X.fillRect(428,158,408,1);
+        UI.wrap(cur.body,404,1).forEach((l,li)=>UI.text(l,428,176+li*20,P.BONE,1));
+        UI.box(428,336,408,52,P.DDG,'rgba(6,5,4,.85)');
+        UI.text(`DECRYPTION STATUS: ${dec?'VERIFIED IN ARCHIVE':'UNREAD (+25 BITS & +50 XP ON DECRYPT)'}`,442,354,dec?P.GD:'#22d3ee',1);
+        UI.box(428,406,408,32,P.GD,'rgba(245,184,46,.16)');
+        UI.text(dec?'> [ENTER] REPLAY FREQUENCY PULSE':'> [ENTER] DECRYPT DATACUBE (+25 BITS / +50 XP)',632,415,P.GD,1,'center');
+        UI.text('[up/down] select datacube   [enter] decrypt / play   [esc] close',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Companion Affinity & Bond Level System (M36) ----
+  G.openBonds=()=>{
+    let sel=0;
+    const comps=()=>G.roster.filter(id=>id!=='me');
+    G.mini={
+      name:'bonds',
+      update(){
+        const L=comps();
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(!L.length) return;
+        if(took('up')) sel=(sel+L.length-1)%L.length;
+        if(took('down')) sel=(sel+1)%L.length;
+        if(took('confirm')){
+          const id=L[sel], rk=G.flags['bond_'+id]||0, cost=(rk+1)*60;
+          if(rk>=5){ G.toast('Max Bond Rank (5/5) already reached!',P.GD); sfx('cancel'); return; }
+          if(G.bits<cost){ G.toast(`need ${cost} bits to deepen bond`,P.RED); sfx('cancel'); return; }
+          G.bits-=cost; G.flags['bond_'+id]=rk+1; sfx('level');
+          const s=G.stats(id); G.party[id].hp=s.mhp; G.party[id].en=s.men;
+          G.toast(`> ${AG[id].name} Bond Rank ${rk+1}/5! (+${(rk+1)*5}% All Stats)`,P.GD);
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,36,768,468,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> COMPANION AFFINITY & BOND MATRIX',118,52,P.GD,2);
+        UI.text(`BITS: ${G.bits}`,842,56,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,80,732,2);
+        const L=comps();
+        if(!L.length){ UI.text('Recruit companions first to deepen Synergy Bonds.',124,120,P.DG,1); return; }
+        sel=Math.min(sel,L.length-1);
+        const first=Math.max(0,Math.min(sel-6,L.length-13));
+        L.slice(first,first+13).forEach((id,idx)=>{
+          const i=first+idx, rk=G.flags['bond_'+id]||0, y=96+idx*26, on=i===sel;
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(114,y-3,300,22); }
+          UI.text(`${on?'> ':'  '}${AG[id].name}`,120,y,AG[id].color,1);
+          UI.text(`RANK ${rk}/5 (+${rk*5}%)`,406,y,rk>=5?'#22d3ee':P.GD,1,'right');
+          UI.hit(114,y-3,300,22,()=>{ sel=i; });
+        });
+        const id=L[sel], rk=G.flags['bond_'+id]||0, cost=(rk+1)*60, st=G.stats(id);
+        UI.box(432,94,412,360,P.DDG,'rgba(12,10,8,.92)');
+        UI.text(AG[id].name.toUpperCase(),452,112,AG[id].color,2);
+        UI.text(`Role: ${AG[id].role||'Sovereign Agent'}   ·   Protocol: [${PARTY_PROTO[id]||'KERNEL'}]`,452,142,'#22d3ee',1);
+        UI.text(`Current Synergy Bond: RANK ${rk} / 5  (+${rk*5}% All Stats)`,452,168,P.GD,1);
+        UI.box(452,196,372,118,P.DDG,'rgba(6,5,4,.85)');
+        UI.text(`ACTIVE COMBAT STATS (WITH +${rk*5}% BOND RESONANCE):`,468,210,P.DG,1);
+        UI.text(`MAX HP: ${st.mhp}     MAX EN: ${st.men}`,468,238,P.BONE,1);
+        UI.text(`ATK:    ${st.atk}      DEF:    ${st.def}      SPD: ${st.spd}`,468,262,P.BONE,1);
+        UI.text(`Signature: ${AG[id].ability||'Lattice Convergence'}`,468,288,P.GD,1);
+        UI.box(452,390,372,34,rk>=5?P.DDG:P.GD,'rgba(245,184,46,.16)');
+        UI.text(rk>=5?'MAX BOND RESONANCE (RANK 5/5) ACHIEVED':`> [ENTER] DEEPEN BOND TO RANK ${rk+1} (${cost} BITS)`,638,400,rk>=5?P.DG:P.GD,1,'center');
+        UI.text('[up/down] select companion   [enter] deepen bond (+5% stats)   [esc] close',480,482,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

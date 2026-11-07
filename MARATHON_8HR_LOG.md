@@ -35,10 +35,10 @@
 - [x] **M30** (`03:20` · `ec7481b`): Full `README.md` & Architecture Documentation Overhaul (`world-of-zoth` & `1nc0gn30-si` updated for 15 Districts, 20 Stems, 16 Labs & v1.2 Director's Cut)
 - [x] **M31** (`03:20` · `ec7481b`): Full 15-District + All Mini-Games + All Bosses Automated Verification Pass (`node tests/zones.mjs` — all 15 districts verified with `0` errors)
 - [x] **M32** (`03:20` · `ec7481b`): Mid-Marathon Signed APK v1.2 (`2,007,936 bytes`, v2/v3 verified) & `1nc0gn30.si` Sync Checkpoint #2
-- [x] **M33** (`03:34`): Interactive Combat Arena Sandbox / Training Dummy (`> dojo` — DPS meter, protocol tester, skill benchmark & live sparring arena)
-- [x] **M34** (`03:34`): Procedural Relic Synthesizer / Transmutation Cube (`> synth` — transmute bits & materials into unowned Mythic Companion Relics)
-- [ ] **M35**: District Lore & Hermetic Audio Logs (`15 Encrypted Datacubes` scattered across the 15 districts)
-- [ ] **M36**: Companion Affinity & Gift System (boost individual companion bond levels for +10% stat synergy)
+- [x] **M33** (`03:34` · `6448172`): Interactive Combat Arena Sandbox / Training Dummy (`> dojo` — DPS meter, protocol tester, skill benchmark & live sparring arena)
+- [x] **M34** (`03:34` · `6448172`): Procedural Relic Synthesizer / Transmutation Cube (`> synth` — transmute bits & materials into unowned Mythic Companion Relics)
+- [x] **M35** (`03:49`): District Lore & Hermetic Audio Logs (`15 Encrypted Datacubes` across all 15 districts via `G.openDatacubes()` / `> logs` with +25 bits & +50 XP decryption bounties)
+- [x] **M36** (`03:49`): Companion Affinity & Gift System (`G.openBonds()` via `> bonds` — Rank 1..5 Synergy Bonds granting up to `+25%` companion stats in `G.stats(id)`)
 - [ ] **M37**: Boss Modifiers / Hardcore "06:12 Nightmare" Difficulty Toggle (`1.5x enemy stats`, `+100% bit/XP drops`)
 - [ ] **M38**: Interactive Waveform Visualizer in Safehouse Jukebox (real-time oscilloscope + spectrum bars)
 - [ ] **M39**: Custom Keybind & Controller Remapper UI in System Menu
