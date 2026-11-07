@@ -14,7 +14,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -40,7 +40,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='collapse'||c==='quantum'){ out('[collapse] launching 5x5 Quantum Wave-Collapse Puzzle...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startCollapse(); },40); }
+    else if(c==='banner'||c==='callsign'){ out('[banner] opening Operator Call-Sign & HUD Banner Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBannerStudio(); },40); }
     else if(c==='timeline'||c==='lore'||c==='06:12'){ out('[timeline] opening 06:12 Incident Forensic Timeline...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTimeline(); },40); }
     else if(c==='raid'||c==='survival'||c==='arena'){ out('[raid] opening Endgame Pantheon 3-Wave Survival Raid...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openRaid(); },40); }
     else if(c==='defender'||c==='firewall'){ out('[defender] launching East Gate Firewall Intrusion Defender...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startDefender(); },40); }
@@ -2721,6 +2723,147 @@ export function initEggs(G,{music,sfx}){
           UI.text(r.desc,74,yy+58,P.DG,1);
         });
         UI.text('[up/down] select survival raid   [enter] launch 3-wave endurance gauntlet   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #10: Quantum Superposition Wave-Collapse Puzzle (M69) ----
+  G.startCollapse=()=>{
+    // 5x5 quantum spin-glass lattice (1 = Eigenstate Locked |1>, 0 = Superposition |psi>)
+    const grid=new Array(25).fill(1);
+    const toggle=(cx,cy)=>{
+      [[0,0],[1,0],[-1,0],[0,1],[0,-1]].forEach(([dx,dy])=>{
+        const nx=cx+dx, ny=cy+dy;
+        if(nx>=0&&nx<5&&ny>=0&&ny<5) grid[ny*5+nx]^=1;
+      });
+    };
+    // Seed 5 deterministic entanglements so it is always solvable
+    [[1,1],[3,1],[2,2],[1,3],[3,3]].forEach(([x,y])=>toggle(x,y));
+    let cur=12, moves=0, won=false;
+    const checkWin=()=>{
+      if(grid.every(v=>v===1)&&!won){
+        won=true; sfx('win'); G.ach('wave_collapse');
+        if(!G.flags.collapse_reward){
+          G.flags.collapse_reward=1; G.bits+=240; G.give('root.shell',1);
+          G.toast('> EIGENSTATE LOCKED! +240 Bits & +1x Root.Shell!',P.GD);
+        } else {
+          G.bits+=60; G.toast('> Quantum Manifold Collapsed! +60 Bits!',P.GD);
+        }
+      }
+    };
+    G.mini={
+      name:'collapse',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')) cur=(cur%5===0)?cur+4:cur-1;
+        if(took('right')) cur=(cur%5===4)?cur-4:cur+1;
+        if(took('up')) cur=(cur+20)%25;
+        if(took('down')) cur=(cur+5)%25;
+        if(took('party')&&!won){
+          for(let i=0;i<25;i++) grid[i]=1;
+          moves++; checkWin(); return;
+        }
+        if(took('confirm')&&!won){
+          toggle(cur%5,(cur/5)|0); moves++; sfx('zap'); checkWin();
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(56,24,848,492,P.GD);
+        UI.text('> QUANTUM WAVE-COLLAPSE PUZZLE',80,40,P.GD,2);
+        const locked=grid.filter(v=>v===1).length;
+        UI.text(`COHERENCE: ${locked}/25   OBSERVATIONS: ${moves}`,880,44,won?'#4ade80':'#22d3ee',1,'right');
+        for(let i=0;i<25;i++){
+          const r=(i/5)|0, c=i%5, bx=96+c*108, by=86+r*72;
+          const v=grid[i], isCur=i===cur;
+          UI.box(bx,by,98,62,isCur?P.GD:(v?'#4ade80':'#a78bfa'),v?'rgba(74,222,128,.16)':'rgba(167,139,250,.18)');
+          const wave=v?'|1> LOCKED':(Math.floor(t*6+i)%2?'|psi> +':'|psi> -');
+          UI.text(wave,bx+49,by+16,v?'#4ade80':'#a78bfa',1,'center');
+          UI.text(`Q[${r},${c}]`,bx+49,by+38,isCur?P.GD:P.DG,1,'center');
+        }
+        UI.box(652,86,226,350,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('COLLAPSE RULES:',668,104,P.GD,1);
+        UI.wrap('Observing any quantum cell collapses its state and flips its 4 orthogonal entangled neighbors. Lock all 25 cells into |1> Coherence.',194,1).forEach((l,li)=>UI.text(l,668,128+li*18,P.BONE,1));
+        UI.text('BOUNTY:',668,266,'#22d3ee',1);
+        UI.text('+240 Bits',668,286,P.GD,1);
+        UI.text('+1x Root.Shell',668,304,P.GD,1);
+        UI.text('[P] Zero-Point Pulse',668,354,'#4ade80',1);
+        UI.text('[arrows] select qubit   [enter] observe / entangle   [P] zero-point collapse   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Operator Custom Call-Sign & HUD Banner Designer (M70) ----
+  const CALLSIGNS=['1nc0gn30','ROOT.0612','ARCHON-X','NULL.SOVEREIGN','ZOTH.PRIME','GHOST.KERNEL','ZERO.TRUST','DAWN.RUNNER'];
+  const EMBLEMS=['[>_]','[06:12]','[:::]','[/\\]','[ZOTH]','[NULL]','[***]','[OMEGA]'];
+  const ACCENTS=[
+    {name:'SOVEREIGN GOLD', col:'#f5b82e'},
+    {name:'CYBERPUNK CYAN', col:'#22d3ee'},
+    {name:'MATRIX EMERALD', col:'#4ade80'},
+    {name:'AMETHYST VOID', col:'#a78bfa'},
+    {name:'CRIMSON BREACH', col:'#f43f5e'},
+    {name:'SOLAR FLARE', col:'#fb923c'}
+  ];
+  G.openBannerStudio=()=>{
+    let row=0, cIdx=CALLSIGNS.indexOf(G.flags.op_callsign||'1nc0gn30'); if(cIdx<0) cIdx=0;
+    let eIdx=EMBLEMS.indexOf(G.flags.op_emblem||'[>_]'); if(eIdx<0) eIdx=0;
+    let aIdx=ACCENTS.findIndex(a=>a.col===(G.flags.op_accent||'#f5b82e')); if(aIdx<0) aIdx=0;
+    const applyBanner=()=>{
+      G.flags.op_callsign=CALLSIGNS[cIdx];
+      G.flags.op_emblem=EMBLEMS[eIdx];
+      G.flags.op_accent=ACCENTS[aIdx].col;
+      PARTY_BASE.me.name=`${EMBLEMS[eIdx]} ${CALLSIGNS[cIdx]}`;
+      PARTY_BASE.me.col=ACCENTS[aIdx].col;
+      G.ach('banner_forged');
+    };
+    G.mini={
+      name:'banner',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) row=(row+2)%3;
+        if(took('down')) row=(row+1)%3;
+        if(took('left')){
+          if(row===0) cIdx=(cIdx+CALLSIGNS.length-1)%CALLSIGNS.length;
+          else if(row===1) eIdx=(eIdx+EMBLEMS.length-1)%EMBLEMS.length;
+          else aIdx=(aIdx+ACCENTS.length-1)%ACCENTS.length;
+          applyBanner(); sfx('move');
+        }
+        if(took('right')||took('confirm')){
+          if(row===0) cIdx=(cIdx+1)%CALLSIGNS.length;
+          else if(row===1) eIdx=(eIdx+1)%EMBLEMS.length;
+          else aIdx=(aIdx+1)%ACCENTS.length;
+          applyBanner(); sfx('confirm');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(56,24,848,492,P.GD);
+        UI.text('> OPERATOR CALL-SIGN & HUD BANNER STUDIO',80,40,P.GD,2);
+        UI.text('LIVE HUD IDENTITY',880,44,'#4ade80',1,'right');
+        // Live HUD Card Preview
+        const ac=ACCENTS[aIdx].col;
+        UI.box(96,86,768,116,ac,'rgba(12,10,8,.94)');
+        X.fillStyle=ac; X.fillRect(102,92,8,104);
+        const c=frameCanvas('me','idle',Math.floor(t*4)%2);
+        X.drawImage(c,0,0,c.width,c.height,132,102,34,84);
+        UI.text(`${EMBLEMS[eIdx]} ${CALLSIGNS[cIdx]}`,194,106,ac,2);
+        UI.text(`TITLE: ${(G.currentTitle&&G.currentTitle())||'[ROOT OPERATOR]'}   ·   ACCENT: ${ACCENTS[aIdx].name}`,194,140,P.BONE,1);
+        UI.bar(194,168,360,8,1,ac,P.DDG);
+        UI.bar(570,168,180,8,1,'#22d3ee',P.DDG);
+        // 3 Customization Rows
+        const rows=[
+          ['1. OPERATOR CALL-SIGN', CALLSIGNS[cIdx], `${cIdx+1}/${CALLSIGNS.length}`],
+          ['2. TACTICAL HUD EMBLEM', EMBLEMS[eIdx], `${eIdx+1}/${EMBLEMS.length}`],
+          ['3. BANNER ACCENT COLOR', ACCENTS[aIdx].name, ACCENTS[aIdx].col]
+        ];
+        rows.forEach(([lbl,val,sub],i)=>{
+          const yy=228+i*76, on=i===row;
+          UI.box(96,yy,768,62,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(10,8,6,.88)');
+          UI.text((on?'> ':'  ')+lbl,116,yy+22,on?P.GD:P.BONE,1);
+          UI.text(`<  ${val}  >`,560,yy+16,i===2?ac:P.GD,2,'center');
+          UI.text(sub,840,yy+22,P.DG,1,'right');
+        });
+        UI.text('[up/down] select row   [left/right / enter] cycle call-sign, emblem & accent   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
