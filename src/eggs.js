@@ -12,7 +12,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -28,6 +28,7 @@ export function initEggs(G,{music,sfx}){
   const KC=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','KeyB','KeyA']; let kc=0;
   addEventListener('keydown',e=>{ kc=(e.code===KC[kc])?kc+1:(e.code===KC[0]?1:0); if(kc===KC.length){ kc=0; G.konami(); }
     if(e.code==='Backquote'&&G.mode==='explore'){ G.openTerminal(true); e.preventDefault(); return; }
+    if(e.code==='Tab'&&G.mode==='explore'){ G.openQuickWheel(); e.preventDefault(); return; }
     if(G.mode==='terminal') termKey(e); if(G.mode==='mini'&&G.mini.key) G.mini.key(e); });
   G.konami=()=>{ if(G.isFlag('konami')){ G.toast('> cheat detected. still no.',P.DG); return; } G.flag('konami'); G.bits+=99; G.give('root.shell',3); G.toast('> up up down down left right left right b a',P.GD); G.glitch(.8); G.ach('konami'); };
   // ---- hidden terminal ----
@@ -37,7 +38,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='wheel'||c==='radial'){ out('[wheel] opening 12-Node Sovereign Command Wheel...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openQuickWheel(); },40); }
+    else if(c==='defrag'||c==='memory'){ out('[defrag] launching Memory Trench Core-Dump Defragmenter...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startDefrag(); },40); }
     else if(c==='singularity'||c==='ng+'||c==='ascend'){ out('[singularity] opening 06:14 Sovereign Singularity Ascension...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSingularity(); },40); }
     else if(c==='ledger'||c==='stats'||c==='career'){ out('[ledger] opening Operator Career Telemetry Ledger...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openLedger(); },40); }
     else if(c==='combos'||c==='synergy'){ out('[combos] opening Companion Duo & Overdrive Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCombos(); },40); }
@@ -2026,6 +2029,137 @@ export function initEggs(G,{music,sfx}){
         UI.text('Ascending into a New Game++ Cycle preserves your recruited crew, levels, relics, and overclocking',480,414,P.BONE,1,'center');
         UI.text('while resetting campaign missions and granting permanent multiplicative stat resonance.',480,434,'#22d3ee',1,'center');
         UI.text('[up/down] select ascension cycle   [enter] initialize new game++ cycle   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #8: "Memory Trench Core-Dump Defragmenter" (M61) ----
+  const MEM_TYPES=[
+    {id:0, lbl:'KERNEL', col:'#f5b82e', row:'ROW 01'},
+    {id:1, lbl:'CRYPTO', col:'#22d3ee', row:'ROW 02'},
+    {id:2, lbl:'THERMAL', col:'#fb923c', row:'ROW 03'},
+    {id:3, lbl:'VOID', col:'#a78bfa', row:'ROW 04'}
+  ];
+  G.startDefrag=()=>{
+    // 4x4 scrambled blocks where each row should contain its own protocol type (0,1,2,3)
+    const grid=[
+      [0,1,0,2],
+      [1,0,1,3],
+      [2,3,2,0],
+      [3,2,3,1]
+    ];
+    let cr=0, cc=1, picked=null, solved=false;
+    const isSolved=()=>grid.every((row,r)=>row.every(v=>v===r));
+    const alignedCount=()=>grid.reduce((acc,row,r)=>acc+row.filter(v=>v===r).length,0);
+    G.mini={
+      name:'defrag',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) cr=(cr+3)%4;
+        if(took('down')) cr=(cr+1)%4;
+        if(took('left')) cc=(cc+3)%4;
+        if(took('right')) cc=(cc+1)%4;
+        if(took('confirm')&&!solved){
+          if(!picked){ picked=[cr,cc]; sfx('blip'); }
+          else {
+            const [pr,pc]=picked;
+            const tmp=grid[pr][pc]; grid[pr][pc]=grid[cr][cc]; grid[cr][cc]=tmp;
+            picked=null; sfx('confirm');
+            if(isSolved()){
+              solved=true; sfx('win'); G.ach('core_defrag');
+              if(!G.flags.defrag_won){ G.flags.defrag_won=1; G.bits+=200; G.give('cache.bit',2); }
+              G.toast('> CORE-DUMP DEFRAGMENTED! (+200 bits + 2x Cache.Bit)',P.GD);
+            }
+          }
+        }
+        if(took('party')&&!solved){
+          for(let r=0;r<4;r++) for(let c=0;c<4;c++) grid[r][c]=r;
+          solved=true; picked=null; sfx('win'); G.ach('core_defrag');
+          if(!G.flags.defrag_won){ G.flags.defrag_won=1; G.bits+=200; G.give('cache.bit',2); }
+          G.toast('> AUTO-DEFRAGMENTED ALL 16 SECTORS! (+200 bits)',P.GD);
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(76,28,808,484,P.GD,'rgba(8,7,5,.96)');
+        const al=alignedCount();
+        UI.text('> CORE-DUMP DEFRAGMENTER',98,44,P.GD,2);
+        UI.text(`SECTORS ALIGNED: ${al}/16 (${Math.round(al/16*100)}%)`,862,48,al===16?'#4ade80':'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(94,72,772,2);
+        for(let r=0;r<4;r++){
+          const rt=MEM_TYPES[r], ry=104+r*76;
+          UI.text(`${rt.row} [${rt.lbl}]`,102,ry+24,rt.col,1);
+          for(let c=0;c<4;c++){
+            const x=240+c*108, y=ry, v=grid[r][c], mt=MEM_TYPES[v];
+            const cur=(r===cr&&c===cc), pk=picked&&picked[0]===r&&picked[1]===c, ok=(v===r);
+            UI.box(x,y,96,62,pk?P.RED:(cur?P.GD:(ok?'#4ade80':P.DDG)),pk?'rgba(220,50,40,.22)':(cur?'rgba(245,184,46,.16)':'rgba(8,7,5,.88)'));
+            UI.text(mt.lbl,x+48,y+16,mt.col,1,'center');
+            UI.text(pk?'[SWAP...]':(ok?'[ALIGNED]':'[FRAG]'),x+48,y+38,pk?P.RED:(ok?'#4ade80':P.DG),1,'center');
+            UI.hit(x,y,96,62,()=>{ cr=r; cc=c; });
+          }
+        }
+        UI.box(690,104,172,292,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('DEFRAG RULES:',706,122,P.GD,1);
+        UI.wrap('Swap fragmented cold-storage blocks so each row holds its matching protocol signature.',144,1).forEach((l,li)=>UI.text(l,706,148+li*18,P.BONE,1));
+        UI.text('BOUNTY:',706,272,'#22d3ee',1);
+        UI.text('+200 Bits',706,292,P.GD,1);
+        UI.text('+2x Cache.Bit',706,310,P.GD,1);
+        UI.text('[P] Auto-Defrag',706,352,'#4ade80',1);
+        UI.text('[arrows] cursor   [enter] select / swap block   [P] auto-defrag   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Sovereign Tactical Command Wheel / Quick-Action Radial (M62) ----
+  const WHEEL_NODES=[
+    {name:'WORLD ATLAS', sub:'15 Districts', col:'#f5b82e', act:()=>{ G.mode='explore'; G.hud3.open(); }},
+    {name:'22 DOSSIERS', sub:'Crew Archive', col:'#22d3ee', act:()=>G.openDossiers()},
+    {name:'SQUAD STANCES', sub:'Row Synergy', col:'#4ade80', act:()=>G.openFormation()},
+    {name:'COMBO CODEX', sub:'Duo & Overdrive', col:'#a78bfa', act:()=>G.openCombos()},
+    {name:'INFINITE STACK', sub:'Floors 1-99', col:'#f43f5e', act:()=>G.startStack()},
+    {name:'BOSS RUSH', sub:'Pantheon Trial', col:'#fb923c', act:()=>G.openBossRush()},
+    {name:'ELITE BOUNTIES', sub:'10 Contracts', col:'#f5b82e', act:()=>G.openBounties()},
+    {name:'BLACK MARKET', sub:'Neko Contraband', col:'#22d3ee', act:()=>G.openBlackMarket()},
+    {name:'RELIC SYNTH', sub:'Transmute Cube', col:'#a78bfa', act:()=>G.openSynth()},
+    {name:'WEATHER RADAR', sub:'Storm Buffs', col:'#4ade80', act:()=>G.openWeather()},
+    {name:'PHOTO STUDIO', sub:'3D Postcards', col:'#fb923c', act:()=>G.openPhotoMode()},
+    {name:'CAREER LEDGER', sub:'Completion %', col:'#22d3ee', act:()=>G.openLedger()}
+  ];
+  G.openQuickWheel=()=>{
+    let sel=0;
+    G.mini={
+      name:'wheel',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')||took('up')) sel=(sel+WHEEL_NODES.length-1)%WHEEL_NODES.length;
+        if(took('right')||took('down')) sel=(sel+1)%WHEEL_NODES.length;
+        if(took('confirm')){ sfx('confirm'); WHEEL_NODES[sel].act(); }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.86)'; X.fillRect(0,0,960,540);
+        const cx=480, cy=270, rx=280, ry=175;
+        UI.text('> SOVEREIGN TACTICAL COMMAND WHEEL [TAB]',480,26,P.GD,2,'center');
+        // Radial spokes & outer ring
+        X.strokeStyle=P.DDG; X.lineWidth=1.5;
+        X.beginPath(); X.ellipse(cx,cy,rx,ry,0,0,Math.PI*2); X.stroke();
+        WHEEL_NODES.forEach((n,i)=>{
+          const ang=(i/WHEEL_NODES.length)*Math.PI*2-Math.PI/2;
+          const nx=Math.round(cx+Math.cos(ang)*rx), ny=Math.round(cy+Math.sin(ang)*ry);
+          const on=i===sel;
+          X.strokeStyle=on?P.GD:'rgba(138,101,20,.35)'; X.lineWidth=on?2.5:1;
+          X.beginPath(); X.moveTo(cx,cy); X.lineTo(nx,ny); X.stroke();
+          UI.box(nx-68,ny-22,136,44,on?P.GD:n.col,on?'rgba(245,184,46,.22)':'rgba(8,7,5,.94)');
+          UI.text(n.name,nx,ny-12,on?P.GD:P.BONE,1,'center');
+          UI.text(n.sub,nx,ny+4,n.col,1,'center');
+          UI.hit(nx-68,ny-22,136,44,()=>{ sel=i; sfx('confirm'); n.act(); });
+        });
+        // Center hub core
+        const cur=WHEEL_NODES[sel];
+        UI.box(cx-96,cy-42,192,84,P.GD,'rgba(6,5,4,.96)');
+        UI.text(cur.name,cx,cy-22,P.GD,2,'center');
+        UI.text(cur.sub,cx,cy+4,'#22d3ee',1,'center');
+        UI.text('[ENTER] LAUNCH',cx,cy+22,'#4ade80',1,'center');
+        UI.text('[arrows] rotate radial wheel   [enter / click] launch subsystem   [tab / esc] close',480,506,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
