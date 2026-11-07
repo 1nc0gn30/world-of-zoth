@@ -19,6 +19,58 @@ export function initHud3(G, api){
     for(let j=cj-rc;j<=cj+rc;j++) for(let i=ci-rc;i<=ci+rc;i++){ if(i<0||j<0||i>=FN||j>=FN) continue; if((i-ci)**2+(j-cj)**2<=rc*rc) f[j*FN+i]=1; }
     acc+=dt; if(acc>3){ acc=0; saveFog(); } };
   H.explored=z=>{ const f=fog[z]; if(!f) return 0; let n=0; for(const v of f) n+=v; return n/(FN*FN); };
+  // ---- A* / BFS obstacle-avoiding grid pathfinder for the 3D Golden Mission Trail ----
+  H.findPath=(zone,sx,sz,tx,tz)=>{
+    if(!zone) return [[sx,sz],[tx,tz]];
+    const b=zone.bounds||[-55,-55,55,55], GN=52, bw=b[2]-b[0], bh=b[3]-b[1], cw=bw/GN, ch=bh/GN;
+    const toCell=(x,z)=>[Math.max(0,Math.min(GN-1,Math.floor((x-b[0])/cw))), Math.max(0,Math.min(GN-1,Math.floor((z-b[1])/ch)))];
+    const toWorld=(i,j)=>[b[0]+(i+.5)*cw, b[1]+(j+.5)*ch];
+    const blocked=(wx,wz)=>{
+      if(Math.hypot(wx-sx,wz-sz)<2.2||Math.hypot(wx-tx,wz-tz)<2.4) return false;
+      for(const c of (zone.col||[])){
+        if(c.box){ const [x0,z0,x1,z1]=c.box; if(wx>=x0-.65&&wx<=x1+.65&&wz>=z0-.65&&wz<=z1+.65) return true; }
+        else if(c.c){ if(Math.hypot(wx-c.c[0],wz-c.c[1])<=c.c[2]+.65) return true; }
+      }
+      return false;
+    };
+    const [si,sj]=toCell(sx,sz), [ti,tj]=toCell(tx,tz);
+    const los=(ax,az,bx,bz)=>{ const d=Math.hypot(bx-ax,bz-az), n=Math.max(2,Math.ceil(d/.9)); for(let k=1;k<n;k++){ const u=k/n; if(blocked(ax+(bx-ax)*u,az+(bz-az)*u)) return false; } return true; };
+    let raw=[[sx,sz],[tx,tz]];
+    if(!los(sx,sz,tx,tz)){
+      const vis=new Uint8Array(GN*GN), prev=new Int32Array(GN*GN).fill(-1);
+      const q=[sj*GN+si]; vis[sj*GN+si]=1; let best=sj*GN+si, bestD=1e9;
+      const dirs=[[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+      let head=0;
+      while(head<q.length){
+        const cur=q[head++], ci=cur%GN, cj=(cur/GN)|0;
+        const d=Math.hypot(ci-ti,cj-tj); if(d<bestD){ bestD=d; best=cur; }
+        if(ci===ti&&cj===tj){ best=cur; break; }
+        for(const [di,dj] of dirs){
+          const ni=ci+di, nj=cj+dj; if(ni<0||nj<0||ni>=GN||nj>=GN) continue;
+          const nk=nj*GN+ni; if(vis[nk]) continue;
+          const [wx,wz]=toWorld(ni,nj); if(blocked(wx,wz)) continue;
+          vis[nk]=1; prev[nk]=cur; q.push(nk);
+        }
+      }
+      const cells=[]; let c=best; while(c!==-1){ cells.push(toWorld(c%GN,(c/GN)|0)); c=prev[c]; }
+      cells.reverse(); cells[0]=[sx,sz]; cells[cells.length-1]=[tx,tz];
+      // string-pull smoothing
+      const sm=[cells[0]]; let idx=0;
+      while(idx<cells.length-1){
+        let next=idx+1;
+        for(let probe=cells.length-1;probe>idx+1;probe--){ if(los(cells[idx][0],cells[idx][1],cells[probe][0],cells[probe][1])){ next=probe; break; } }
+        sm.push(cells[next]); idx=next;
+      }
+      raw=sm;
+    }
+    // subdivide into 1.25m steps for smooth terrain hugging & animated chevrons
+    const pts=[[sx,sz]];
+    for(let i=0;i<raw.length-1;i++){
+      const [ax,az]=raw[i], [bx,bz]=raw[i+1], segD=Math.hypot(bx-ax,bz-az), steps=Math.max(1,Math.ceil(segD/1.25));
+      for(let s=1;s<=steps;s++){ const u=s/steps; pts.push([ax+(bx-ax)*u, az+(bz-az)*u]); }
+    }
+    return pts;
+  };
   // ---- markers shared by compass / minimap / map ----
   H.markers=()=>{ const L=[], z=G.zoneId; const q=api.trackQuest(); const m=q&&api.markFor(q);
     if(m){ if(m[0]===z) L.push({x:m[1],z:m[2],col:P.GD,kind:'mission',label:'mission'}); else { const po=api.portalToward(m[0]); if(po) L.push({x:po.x,z:po.z,col:P.GD,kind:'mission',label:'to '+G.Z[m[0]].name}); } }
@@ -78,6 +130,7 @@ export function initHud3(G, api){
     (Z.checkpoints||[]).forEach(c=>draw(c[0],c[1],'#7fd1c8',c[2]));
     H.sources.forEach(fn=>fn(z).forEach(o=>draw(o.x,o.z,o.col,o.label)));
     const q=api.trackQuest(), m=q&&api.markFor(q); if(m&&m[0]===z&&Math.floor(t*3)%3) draw(m[1],m[2],P.GD,'mission',true);
+    if(z===G.zoneId&&G.navPts&&G.navPts.length>1){ X.strokeStyle=P.GD; X.lineWidth=2; X.setLineDash([5,4]); X.beginPath(); G.navPts.forEach(([px,pz],i)=>{ const [sx,sy]=toS(px,pz); if(i===0) X.moveTo(sx,sy); else X.lineTo(sx,sy); }); X.stroke(); X.setLineDash([]); X.lineWidth=1; }
     if(G.waypoint&&G.waypoint.zone===z){ const [a,bq]=toS(G.waypoint.x,G.waypoint.z); X.strokeStyle=P.BONE; X.lineWidth=2; X.beginPath(); X.arc(a,bq,7+Math.sin(t*5)*2,0,7); X.stroke(); X.lineWidth=1; UI.text('waypoint',a+10,bq+4,P.BONE); }
     if(z===G.zoneId){ const p=api.player().group.position, [a,bq]=toS(p.x,p.z); const yaw=G.cam.yaw; X.save(); X.translate(a,bq); X.rotate(-yaw+Math.PI); X.fillStyle=P.BONE; X.beginPath(); X.moveTo(0,-7); X.lineTo(-5,5); X.lineTo(5,5); X.fill(); X.restore(); UI.text('you',a+8,bq+6,P.BONE); }
     // cursor

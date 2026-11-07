@@ -36,8 +36,8 @@ initRender(glc); UI.initUI(screen); initInput(screen,toCanvas); initFX(scene); G
 // ---------------- state helpers used by dialogue/battle ----------------
 Object.assign(G,{
   qhas:k=>!!G.quests[k], qstep:k=>G.quests[k]?G.quests[k].step:-1, qdone_:k=>!!(G.quests[k]&&G.quests[k].done),
-  qstart(k){ if(!G.quests[k]){ G.quests[k]={step:0,done:false}; G.toast('quest: '+QUESTS[k].title,P.GD); sfx('confirm'); G._refresh&&G._refresh(); } },
-  qset(k,s){ G.qstart(k); G.quests[k].step=s; G.toast('> '+G.stepText(k),P.BONE); G.rebuildFoes&&G.rebuildFoes(); },
+  qstart(k){ if(!G.quests[k]){ G.quests[k]={step:0,done:false}; G.pinnedQuest=k; G.trailOn=true; G.scanT=Math.max(G.scanT||0,2.8); G.toast('quest & trail locked: '+QUESTS[k].title,P.GD); sfx('confirm'); G._refresh&&G._refresh(); } },
+  qset(k,s){ G.qstart(k); G.quests[k].step=s; G.pinnedQuest=k; G.scanT=Math.max(G.scanT||0,2.2); G.toast('> '+G.stepText(k),P.BONE); G.rebuildFoes&&G.rebuildFoes(); },
   _refresh(){ if(G.rebuildNPCs&&G.mode!=='battle') G.rebuildNPCs(); },
   qdone(k){ G.qstart(k); G.quests[k].done=true; G.toast('[done] '+QUESTS[k].title,P.GD); sfx('win'); },
   flag(k,v=1){ G.flags[k]=v; }, isFlag:k=>!!G.flags[k],
@@ -64,7 +64,7 @@ Object.assign(G,{
     if(k==='q2'&&q.step===1) s=s.replace('0/3',(G.inv['signal.ember']||0)+'/3'); if(k==='q4'&&q.step===1) s=s.replace('0/3',['p1','p2','p3'].filter(p=>G.flags['cut_'+p]).length+'/3'); return s; },
 });
 // ---------------- boot ----------------
-let player, npcs=[], foes=[], followers=[], beacon, interact=null, trail=[];
+let player, npcs=[], foes=[], followers=[], beacon, navTrail, navPosArr, interact=null, trail=[];
 async function boot(){
   await loadAll(); G.Z=buildZones(); buildZones2(G.Z); initQuests(G); initEggs(G,{music,sfx}); initHud3(G,{player:()=>player,trackQuest,markFor,portalToward}); G.Z.hub.checkpoints=[[-5,-2,'save terminal']]; G.Z.forest.checkpoints=[[-20,20,'rest tree']];
   initCine(G,{scene,camera,enterZone,Billboard,AG,PARTY_BASE,player:()=>player}); initTut(G,{player:()=>player}); initLabs(G); initHouse(G,{scene,applyLook:()=>applyLook()}); initForge(G);
@@ -76,6 +76,10 @@ async function boot(){
   player=G.player=new Billboard('me'); scene.add(player.group);
   // objective beacon: dashed lattice pillar + spinning braille ring
   beacon=new THREE.Group(); const a=[]; for(let y=0;y<14;y+=.7) a.push(0,y,0,0,y+.35,0); const b=[]; ring(b,0,0,0,.9,32,2); const bl=segs(a,latMat({color:P.GD,intensity:1.6,fogFar:200})); const br=segs(b,latMat({color:P.GD,intensity:2,fogFar:200})); br.position.y=.3; beacon.add(bl,br); beacon.userData.ring=br; scene.add(beacon);
+  // 3D golden mission guide trail: dynamic buffer geometry with double rails + animated marching chevrons
+  navPosArr=new Float32Array(1800*3);
+  const navGeo=new THREE.BufferGeometry(); navGeo.setAttribute('position',new THREE.BufferAttribute(navPosArr,3)); navGeo.setDrawRange(0,0);
+  navTrail=new THREE.LineSegments(navGeo,latMat({color:P.GD,intensity:1.28,fogFar:180})); navTrail.frustumCulled=false; scene.add(navTrail);
   newGame(); G.mode='title'; enterZone('hub',true); G.titleT=0; music('title');
   if(new URLSearchParams(location.search).has('capture')) WOZ.manual=true;
   requestAnimationFrame(loop);
@@ -122,7 +126,7 @@ G.battle=function(types,opts={}){ G.pendingBattle={types,opts}; };
 function startBattle(types,opts){ G.mode='battle'; G.zone.group.children.forEach(o=>{ if(o.userData.keep===undefined) o.userData.keep=o.visible; });
   // keep the ground lattice, dissolve props: hide solids and buildings near the arena
   const C=player.group.position; G.zone.group.children.forEach((o,i)=>{ if(i<=2) return; let c=o.position, r=0; if(o.geometry){ if(!o.geometry.boundingSphere) o.geometry.computeBoundingSphere(); c=o.geometry.boundingSphere.center.clone().add(o.position); r=o.geometry.boundingSphere.radius; } else if(o.isGroup){ c=o.position; r=4; }
-    if(r<30 && Math.hypot(c.x-C.x,c.z-C.z)<r+12) o.visible=false; }); npcs.forEach(n=>n.sp.group.visible=false); followers.forEach(f=>f.sp.group.visible=false); foes.forEach(f=>f.obj.group.visible=false); beacon.visible=false;
+    if(r<30 && Math.hypot(c.x-C.x,c.z-C.z)<r+12) o.visible=false; }); npcs.forEach(n=>n.sp.group.visible=false); followers.forEach(f=>f.sp.group.visible=false); foes.forEach(f=>f.obj.group.visible=false); beacon.visible=false; if(navTrail) navTrail.visible=false;
   G.glitch(.6); G.flashFx(.5); U.pulse.value.set(player.group.position.x,0,player.group.position.z,U.time.value);
   G.B=new Battle(G,types,opts); }
 G.endBattle=function(B){
@@ -224,16 +228,18 @@ function drawShop(t){ const S=G.shop, x=250, y=20, w=460; UI.box(x,y,w,60+SHOP.l
 // ---------------- pause menu ----------------
 const TABS=['quests','party','items','mods','story','log','system'];
 function openMenu(tab=0){ G.menu={tab,sel:0}; G.mode='menu'; sfx('confirm'); }
-function sysOpts(){ return [['save game',()=>saveGame()],['story codex (5 acts)',()=>{ G.menu.tab=4; G.menu.sel=0; }],['ai forge (optional, your key)',()=>{ G.menu=null; G.openForge(); }],['map',()=>{ G.menu=null; G.mode='explore'; G.hud3.open(); }],['replay intro',()=>{ G.menu=null; G.mode='explore'; G.playCine('intro'); }],...(G.tut&&G.tut.on?[['skip tutorial',()=>{ G.skipTut(); }]]:[]),['load game',()=>loadGame()],...(G.isFlag('fasttravel')?[['fast travel (mercury)',()=>{ G.menu=null; G.mode='explore'; talkTo({id:'mercury'}); }]]:[]),[`large text: ${G.settings.large?'on':'off'}`,()=>{ G.settings.large=!G.settings.large; }],[`music: ${G.settings.music?'on':'off'}`,()=>{ G.settings.music=!G.settings.music; AU.musicOn=G.settings.music; if(AU.music) AU.music.gain.value=G.settings.music?.55:0; }],
+function sysOpts(){ return [['save game',()=>saveGame()],[`3d mission guide trail: ${G.trailOn!==false?'on':'off'}`,()=>{ G.trailOn=G.trailOn===false; G.toast('mission guide trail: '+(G.trailOn?'on':'off'),P.GD); }],['story codex (5 acts)',()=>{ G.menu.tab=4; G.menu.sel=0; }],['ai forge (optional, your key)',()=>{ G.menu=null; G.openForge(); }],['map',()=>{ G.menu=null; G.mode='explore'; G.hud3.open(); }],['replay intro',()=>{ G.menu=null; G.mode='explore'; G.playCine('intro'); }],...(G.tut&&G.tut.on?[['skip tutorial',()=>{ G.skipTut(); }]]:[]),['load game',()=>loadGame()],...(G.isFlag('fasttravel')?[['fast travel (mercury)',()=>{ G.menu=null; G.mode='explore'; talkTo({id:'mercury'}); }]]:[]),[`large text: ${G.settings.large?'on':'off'}`,()=>{ G.settings.large=!G.settings.large; }],[`music: ${G.settings.music?'on':'off'}`,()=>{ G.settings.music=!G.settings.music; AU.musicOn=G.settings.music; if(AU.music) AU.music.gain.value=G.settings.music?.55:0; }],
   [`sfx: ${G.settings.sfx?'on':'off'}`,()=>{ G.settings.sfx=!G.settings.sfx; AU.on=G.settings.sfx; }],[`timed strikes: ${G.settings.noTiming?'off (auto)':'on'}`,()=>{ G.settings.noTiming=!G.settings.noTiming; }],['quit to title',()=>{ G.menu=null; G.mode='title'; G.titleT=0; music('title'); }],['resume',()=>{ G.menu=null; G.mode='explore'; }]]; }
 function itemList(){ return Object.entries(G.inv).filter(([k,n])=>n>0); }
+function questList(){ return Object.keys(G.quests).sort((a,b)=>(G.quests[a].done-G.quests[b].done)||((QUESTS[a].side?1:0)-(QUESTS[b].side?1:0))); }
 function updateMenu(){ const M=G.menu; if(took('pause')||took('back')){ G.menu=null; G.mode='explore'; sfx('cancel'); return; }
   const NT=TABS.length; if(took('left')){ M.tab=(M.tab+NT-1)%NT; M.sel=0; sfx('move'); } if(took('right')){ M.tab=(M.tab+1)%NT; M.sel=0; sfx('move'); }
-  const n=M.tab===1?G.roster.length:M.tab===2?itemList().length:M.tab===3?MODK.length:M.tab===4?CODEX.length:M.tab===5?0:M.tab===6?sysOpts().length:Object.keys(G.quests).length;
+  const n=M.tab===1?G.roster.length:M.tab===2?itemList().length:M.tab===3?MODK.length:M.tab===4?CODEX.length:M.tab===5?0:M.tab===6?sysOpts().length:questList().length;
   if(n){ if(took('up')){ M.sel=(M.sel+n-1)%n; sfx('move'); } if(took('down')){ M.sel=(M.sel+1)%n; sfx('move'); } }
   if(took('confirm')) menuAct(M.tab,M.sel); }
 const MODK=Object.keys(MODULES);
-function menuAct(tab,i){ if(tab===6){ const o=sysOpts()[i]; if(o){ sfx('confirm'); o[1](); } }
+function menuAct(tab,i){ if(tab===0){ const ks=questList(), k=ks[i]; if(!k||G.quests[k].done) return; G.pinnedQuest=k; G.trailOn=true; G.scanT=3; sfx('confirm'); G.toast('> 3d trail locked: '+QUESTS[k].title,P.GD); }
+  if(tab===6){ const o=sysOpts()[i]; if(o){ sfx('confirm'); o[1](); } }
   if(tab===4){ const ch=CODEX[i]; if(ch&&ch.cine){ sfx('confirm'); G.menu=null; G.mode='explore'; G.playCine(ch.cine); } }
   if(tab===3){ const k=MODK[i], m=MODULES[k]; if(!m||G.mods[k]) return; if(m.req&&!G.mods[m.req]){ G.toast('needs '+MODULES[m.req].name,P.DG); sfx('cancel'); return; } if(G.modPoints()<=0){ G.toast('no module points (one every 4 levels)',P.DG); sfx('cancel'); return; } G.mods[k]=1; G.toast('module loaded: '+m.name,P.GD); sfx('level'); }
   if(tab===1){ const id=G.roster[i]; if(id==='me') return; if(G.activeL.includes(id)) G.activeL=G.activeL.filter(x=>x!==id); else if(G.activeL.length<3) G.activeL.push(id); else { G.toast('party is full (3)'); return; } sfx('confirm'); G.rebuildNPCs(); }
@@ -242,11 +248,15 @@ function menuAct(tab,i){ if(tab===6){ const o=sysOpts()[i]; if(o){ sfx('confirm'
 function drawMenu(t){ const M=G.menu, X=UI.ctx; X.fillStyle='rgba(6,5,4,.78)'; X.fillRect(0,0,960,540); UI.box(96,46,768,448);
   TABS.forEach((tb,i)=>{ const x=116+i*104; UI.text((i===M.tab?'> ':'  ')+tb,x,62,i===M.tab?P.GD:P.DG,1); UI.hit(x,56,98,22,()=>{ M.tab=i; M.sel=0; }); });
   X.fillStyle=P.DDG; X.fillRect(110,84,740,2); const x=122; let y=98;
-  if(M.tab===0){ const ks=Object.keys(G.quests).sort((a,b)=>(G.quests[a].done-G.quests[b].done)||((QUESTS[a].side?1:0)-(QUESTS[b].side?1:0))); if(!ks.length) UI.text('no quests yet.',x,y,P.DG);
+  if(M.tab===0){ const ks=questList(), trk=trackQuest(); if(!ks.length) UI.text('no quests yet.',x,y,P.DG);
+    UI.text('> select a mission & press [enter] to lock 3d guide trail  ·  trail: '+(G.trailOn!==false?'ON':'OFF'),x,y,P.DG); y+=20;
     const pend=G.Q&&G.Q.pending(); if(pend){ UI.text('[next] '+QUESTS[pend.k].title+'  > '+pend.text,x,y,P.GD); y+=22; }
     const done=ks.filter(k=>G.quests[k].done).length; UI.text(`missions done: ${done}`,842,98,P.DG,1,'right');
-    ks.forEach((k,i)=>{ if(y>460) return; if(G.quests[k].done&&i>0&&y>380) return; const q=G.quests[k], Q=QUESTS[k], sel=i===M.sel; UI.text((q.done?'[done] ':'[next] ')+(Q.act?'act '+['','I','II','III','IV','V'][Q.act]+'  ':'')+Q.title+(Q.side?'  (side)':''),x,y,q.done?P.DG:(sel?P.GD:P.BONE)); y+=18;
-      if(!q.done){ Q.steps.forEach((s,j)=>{ if(j>q.step||j<q.step-1) return; const txt=j===q.step?G.stepText(k):s; UI.wrap((j<q.step?'  [ok] ':'  > ')+txt,700).forEach(l=>{ UI.text(l,x+10,y,j<q.step?P.DG:P.BONE); y+=16; }); }); } y+=8; }); }
+    ks.forEach((k,i)=>{ if(y>460) return; if(G.quests[k].done&&i>0&&y>380) return; const q=G.quests[k], Q=QUESTS[k], sel=i===M.sel, isTrk=k===trk&&!q.done;
+      const y0=y; if(sel){ X.fillStyle='rgba(245,184,46,.1)'; X.fillRect(x-6,y-3,726,38); }
+      UI.text((q.done?'[done] ':isTrk?'[trail locked] ':'[active] ')+(Q.act?'act '+['','I','II','III','IV','V'][Q.act]+'  ':'')+Q.title+(Q.side?'  (side)':''),x,y,q.done?P.DG:(sel||isTrk?P.GD:P.BONE)); y+=18;
+      if(!q.done){ Q.steps.forEach((s,j)=>{ if(j>q.step||j<q.step-1) return; const txt=j===q.step?G.stepText(k):s; UI.wrap((j<q.step?'  [ok] ':'  > ')+txt,700).forEach(l=>{ UI.text(l,x+10,y,j<q.step?P.DG:P.BONE); y+=16; }); }); }
+      UI.hit(x-6,y0-3,726,Math.max(22,y-y0+4),()=>{ M.sel=i; menuAct(0,i); }); y+=8; }); }
   if(M.tab===1){ UI.text(`pantheon crew: ${G.crewCount?G.crewCount():G.roster.length}/22.  confirm toggles active squad (max 3).`,x,y,P.DG); y+=22; const first=Math.max(0,Math.min(M.sel-2,G.roster.length-5));
     G.roster.forEach((id,i)=>{ if(i<first||i>=first+5) return; const m=G.party[id], s=G.stats(id), sel=i===M.sel, on=G.activeL.includes(id), col=id==='me'?P.GD:AG[id].color; if(sel){ X.fillStyle='rgba(245,184,46,.1)'; X.fillRect(x-6,y-4,728,68); }
       const isOp=id==='me'||id==='copy'; const c=frameCanvas(id,'idle',0); X.drawImage(c,0,0,c.width,c.height,x+(isOp?14:0),y-2,isOp?22:56,isOp?56:56);
@@ -353,9 +363,10 @@ function drawHUD(t){ const X=UI.ctx;
   UI.text(`${curActLabel()} · ${curClockLabel()} · ${G.crewCount?G.crewCount():G.roster.length}/22`,20,ty+5,P.GD,1);
   if(G.scanT>0){ UI.box(12,ty+25,204,20,P.GD,'rgba(6,5,4,.82)'); UI.text('> sonar pulse: scanning lattice',20,ty+29,P.GD,1); }
   // objective
-  const q=trackQuest(); if(q){ const pend=q==='__pending'&&G.Q.pending(); const qid=pend?pend.k:q; const s='> '+(pend?pend.text:G.stepText(q)); const actTag=QUESTS[qid]&&QUESTS[qid].act?`act ${['','I','II','III','IV','V'][QUESTS[qid].act]} · `:''; const title=actTag+(QUESTS[qid]?QUESTS[qid].title:q); const m=markFor(q); let extra=''; if(m&&m[0]!==G.zoneId) extra='  ('+G.Z[m[0]].name+')'; const k=LARGE()?2:1;
-    if(k===2){ const ls=UI.wrap(s+extra,880,2).slice(0,2); const h=24+ls.length*24; UI.box(12,528-h,Math.min(936,Math.max(...ls.map(l=>UI.textW(l,2)))+24),h,P.DDG,'rgba(6,5,4,.8)'); UI.text(title,24,528-h+6,P.GD); ls.forEach((l,i)=>UI.text(l,24,528-h+20+i*24,P.BONE,2)); }
-    else { UI.box(12,486,Math.min(720,Math.max(UI.textW(title),UI.textW(s+extra))+28),40,P.DDG,'rgba(6,5,4,.8)'); UI.text(title,24,492,P.GD); UI.text(s+extra,24,507,P.BONE); } }
+  const q=trackQuest(), nt=navTarget();
+  if(q){ const pend=q==='__pending'&&G.Q.pending(); const qid=pend?pend.k:q; const s='> '+(pend?pend.text:G.stepText(q)); const actTag=QUESTS[qid]&&QUESTS[qid].act?`act ${['','I','II','III','IV','V'][QUESTS[qid].act]} · `:''; const distStr=nt?`  ·  [trail: ${Math.round(Math.hypot(nt.x-player.group.position.x,nt.z-player.group.position.z))}m]`:''; const title=actTag+(QUESTS[qid]?QUESTS[qid].title:q)+distStr; const m=markFor(q); let extra=''; if(m&&m[0]!==G.zoneId) extra='  (follow trail to '+G.Z[m[0]].name+' portal)'; const k=LARGE()?2:1;
+    if(k===2){ const ls=UI.wrap(s+extra,880,2).slice(0,2); const h=24+ls.length*24, bw=Math.min(936,Math.max(UI.textW(title,1),...ls.map(l=>UI.textW(l,2)))+24); UI.box(12,528-h,bw,h,P.DDG,'rgba(6,5,4,.8)'); UI.text(title,24,528-h+6,P.GD); ls.forEach((l,i)=>UI.text(l,24,528-h+20+i*24,P.BONE,2)); UI.hit(12,528-h,bw,h,()=>{ G.trailOn=true; G.scanT=3; sfx('zap'); }); }
+    else { const bw=Math.min(760,Math.max(UI.textW(title),UI.textW(s+extra))+28); UI.box(12,486,bw,40,P.DDG,'rgba(6,5,4,.8)'); UI.text(title,24,492,P.GD); UI.text(s+extra,24,507,P.BONE); UI.hit(12,486,bw,40,()=>{ G.trailOn=true; G.scanT=3; sfx('zap'); }); } }
   UI.text(`bits ${G.bits}`,948,150,P.GD,1,'right'); G.drawTut();
   // radar
   const rx=880, ry=74, rr=60; X.fillStyle='rgba(6,5,4,.75)'; X.beginPath(); X.arc(rx,ry,rr,0,7); X.fill(); X.strokeStyle=P.DDG; X.lineWidth=2; X.stroke();
@@ -363,17 +374,39 @@ function drawHUD(t){ const X=UI.ctx;
   const sw=(t*1.4)%(Math.PI*2); X.strokeStyle='rgba(245,184,46,.35)'; X.beginPath(); X.moveTo(rx,ry); X.lineTo(rx+Math.cos(sw)*rr,ry+Math.sin(sw)*rr); X.stroke();
   const p=player.group.position, yaw=G.cam.yaw, scale=rr/(G.flags.radar?45:30);
   const dot=(wx,wz,col,sz=3,blink=false)=>{ const dx=wx-p.x, dz=wz-p.z; const rx2=dx*Math.cos(yaw)-dz*Math.sin(yaw), ry2=dx*Math.sin(yaw)+dz*Math.cos(yaw); let sx=rx2*scale, sy=ry2*scale; const l=Math.hypot(sx,sy); if(l>rr-4){ sx*=(rr-4)/l; sy*=(rr-4)/l; } if(blink&&Math.floor(t*3)%2) return; X.fillStyle=col; X.fillRect(Math.round(rx+sx-sz/2),Math.round(ry+sy-sz/2),sz,sz); };
-  G.hud3.radarUnder(X,rx,ry,rr,scale,yaw,p); if(G.waypoint){ if(G.waypoint.zone===G.zoneId) dot(G.waypoint.x,G.waypoint.z,P.BONE,6); else { const po=portalToward(G.waypoint.zone); if(po) dot(po.x,po.z,P.BONE,5); } }
+  G.hud3.radarUnder(X,rx,ry,rr,scale,yaw,p);
+  // draw golden mission trail on radar minimap
+  if(G.trailOn!==false&&G.navPts&&G.navPts.length>1){ X.save(); X.beginPath(); X.arc(rx,ry,rr-2,0,7); X.clip(); X.strokeStyle='rgba(245,184,46,.85)'; X.lineWidth=1.5; X.setLineDash([3,3]); X.beginPath();
+    G.navPts.forEach(([wx,wz],i)=>{ const dx=wx-p.x, dz=wz-p.z; const sx=rx+(dx*Math.cos(yaw)-dz*Math.sin(yaw))*scale, sy=ry+(dx*Math.sin(yaw)+dz*Math.cos(yaw))*scale; if(i===0) X.moveTo(sx,sy); else X.lineTo(sx,sy); });
+    X.stroke(); X.setLineDash([]); X.restore(); }
+  if(G.waypoint){ if(G.waypoint.zone===G.zoneId) dot(G.waypoint.x,G.waypoint.z,P.BONE,6); else { const po=portalToward(G.waypoint.zone); if(po) dot(po.x,po.z,P.BONE,5); } }
   G.zone.portals.forEach(po=>dot(po.x,po.z,P.DG,5)); npcs.forEach(n=>{ if(!n.refl) dot(n.sp.group.position.x,n.sp.group.position.z,n.red?P.RED:AG[n.id].color,4); });
   foes.forEach(f=>{ const d=f.obj.group.position.distanceTo(p); if(G.flags.radar||d<22||G.scanT>0) dot(f.obj.group.position.x,f.obj.group.position.z,P.RED,4); });
   const m=q&&markFor(q); if(m){ if(m[0]===G.zoneId) dot(m[1],m[2],P.GD,6,true); else { const po=portalToward(m[0]); if(po) dot(po.x,po.z,P.GD,6,true); } }
   X.fillStyle=P.BONE; X.beginPath(); X.moveTo(rx,ry-5); X.lineTo(rx-4,ry+4); X.lineTo(rx+4,ry+4); X.fill(); UI.text(G.zone.name,rx,ry+rr+6,P.DG,1,'center'); G.hud3.compass(t);
+  // 3D floating HUD objective diamond reticle & off-screen directional indicator
+  if(G.trailOn!==false&&nt){ const dist=Math.round(Math.hypot(nt.x-p.x,nt.z-p.z));
+    if(dist>2){ const tv=V(nt.x,G.zone.h(nt.x,nt.z)+2.35,nt.z).project(camera);
+      let sx=(tv.x+1)/2*960, sy=(1-tv.y)/2*540, off=tv.z>1||sx<64||sx>896||sy<58||sy>460;
+      if(tv.z>1){ sx=960-sx; sy=420; }
+      let cx=Math.max(84,Math.min(860,sx)), cy=Math.max(64,Math.min(448,sy));
+      if(cx>740&&cy<176) cy=176;
+      const pulse=5+Math.sin(t*6)*1.5; X.fillStyle=P.GD; X.beginPath(); X.moveTo(cx,cy-pulse); X.lineTo(cx+pulse,cy); X.lineTo(cx,cy+pulse); X.lineTo(cx-pulse,cy); X.fill();
+      const lbl=(off?(cx<480?'<< ':'')+`${dist}m · ${nt.label}`+(cx>=480?' >>':''):`${dist}m · ${nt.label}`);
+      const lw=UI.textW(lbl,1)+14; UI.box(cx-lw/2,cy+8,lw,18,P.GD,'rgba(6,5,4,.85)'); UI.text(lbl,cx,cy+11,P.GD,1,'center'); } }
   // npc labels
   npcs.forEach(n=>{ if(n.refl||n.prop) return; const d=n.sp.group.position.distanceTo(p); if(d>11) return; const v=n.sp.group.position.clone().add(V(0,2.25,0)).project(camera); if(v.z>1) return; UI.text(n.red?'03ng0cn1':AG[n.id].name,(v.x+1)/2*960,(1-v.y)/2*540-6,n.red?P.RED:AG[n.id].color,LARGE()&&d<6?2:1,'center'); });
   if(interact){ const k=LARGE()?2:1; const s=(IN.touch?'[A] ':'[E] ')+interact.label; const w=UI.textW(s,k)+30; const hh=k===2?40:28, yy=k===2?400:440; UI.box(480-w/2,yy,w,hh,interact.col===P.RED?P.RED2:P.DDG); UI.text(s,480,yy+(k===2?8:8),interact.col,k,'center'); UI.hit(480-w/2,yy,w,hh,()=>interact&&interact.act()); }
   if(G.banner){ const b=G.banner; b.t=G.t-b.t0; const n=Math.floor(b.t*28); const s='> district: '+b.name; const bw=Math.max(260,UI.textW(s,2)+44); UI.box(480-bw/2,86,bw,54,P.GD,'rgba(6,5,4,.84)'); UI.text(s.slice(0,n),480,94,P.GD,2,'center'); if(b.t>0.6) UI.text(curActLabel()+'  ·  '+b.sub,480,120,P.BONE,1,'center'); if(b.t>3.6) G.banner=null; }
 }
-function trackQuest(){ const ks=Object.keys(G.quests).filter(k=>!G.quests[k].done&&k!=='s_tags'); return ks.find(k=>!QUESTS[k].side)||(G.Q&&G.Q.pending()?'__pending':null)||ks[0]; }
+function trackQuest(){ if(G.pinnedQuest&&G.quests[G.pinnedQuest]&&!G.quests[G.pinnedQuest].done) return G.pinnedQuest; const ks=Object.keys(G.quests).filter(k=>!G.quests[k].done&&k!=='s_tags'); return ks.find(k=>!QUESTS[k].side)||(G.Q&&G.Q.pending()?'__pending':null)||ks[0]; }
+function navTarget(){ const q=G.quests&&trackQuest(); const m=q&&markFor(q);
+  if(m){ const qid=q==='__pending'&&G.Q&&G.Q.pending()?G.Q.pending().k:q; const qTitle=QUESTS[qid]?QUESTS[qid].title:'objective';
+    if(m[0]===G.zoneId) return {x:m[1],z:m[2],label:qTitle,zone:m[0],isPortal:false};
+    const po=portalToward(m[0]); if(po) return {x:po.x,z:po.z,label:'portal -> '+G.Z[m[0]].name,zone:m[0],isPortal:true}; }
+  if(G.waypoint){ if(G.waypoint.zone===G.zoneId) return {x:G.waypoint.x,z:G.waypoint.z,label:'waypoint',zone:G.zoneId,isPortal:false};
+    const po=portalToward(G.waypoint.zone); if(po) return {x:po.x,z:po.z,label:'waypoint -> '+G.Z[G.waypoint.zone].name,zone:G.waypoint.zone,isPortal:true}; }
+  return null; }
 function markFor(q){ if(q==='__pending'){ const p=G.Q.pending(); return p&&p.mark; } if(QDEF[q]&&G.Q) return G.Q.mark(q); const st=G.quests[q].step; let m=MARK[q]&&MARK[q][st]; if(!m&&q==='q2'&&st===1){ const s=SPAWNS.filter(s=>s.tag==='ember'&&!G.defeated.has(s.id)); if(s[0]) m=['forest',s[0].x,s[0].z]; }
   if(!m&&q==='q4'&&st===1){ const pid=['p1','p2','p3'].find(p=>!G.flags['cut_'+p]); if(pid){ const py=G.Z.relay.objs.pylons[pid]; m=['relay',py.x,py.z]; } } return m; }
 function portalToward(z){ const prev={[G.zoneId]:null}, q=[G.zoneId]; while(q.length){ const c=q.shift(); if(c===z) break; for(const p of G.Z[c].portals){ if(!(p.to in prev)){ prev[p.to]=c; q.push(p.to); } } } if(!(z in prev)) return null; let c=z; while(prev[c]&&prev[c]!==G.zoneId) c=prev[c]; return G.zone.portals.find(p=>p.to===c); }
@@ -447,8 +480,45 @@ function frame(dt){
   // world anim
   if(G.zone) G.zone.anim.forEach(f=>f(G.t));
   if(G.mode!=='battle'&&G.mode!=='mini'){ player.update(dt,G.cam.yaw,camera.position); npcs.forEach(n=>n.sp.update(dt,G.cam.yaw,camera.position)); followers.forEach(f=>f.sp.update(dt,G.cam.yaw,camera.position)); }
-  // beacon
-  const q=G.quests&&trackQuest(); const m=q&&markFor(q); beacon.visible=!!(m&&m[0]===G.zoneId&&G.mode!=='battle'&&G.mode!=='title'); if(beacon.visible){ beacon.position.set(m[1],G.zone.h(m[1],m[2]),m[2]); beacon.userData.ring.rotation.y=G.t*2; beacon.userData.ring.position.y=(G.t*2)%3; }
+  // beacon + 3D golden mission guide trail
+  const nt=(G.trailOn!==false&&G.zone&&!['battle','title','ending','cine','mini'].includes(G.mode))?navTarget():null;
+  beacon.visible=!!nt;
+  if(nt){ beacon.position.set(nt.x,G.zone.h(nt.x,nt.z),nt.z); beacon.userData.ring.rotation.y=G.t*2; beacon.userData.ring.position.y=(G.t*2)%3;
+    const p=player.group.position;
+    if(!G.navPts||!G._navT||G.t-G._navT>.2||Math.hypot(p.x-(G._navPx||0),p.z-(G._navPz||0))>1.1||G._navTx!==nt.x||G._navTz!==nt.z){
+      G._navT=G.t; G._navPx=p.x; G._navPz=p.z; G._navTx=nt.x; G._navTz=nt.z;
+      G.navPts=G.hud3.findPath(G.zone,p.x,p.z,nt.x,nt.z);
+    }
+    // populate 3D double-rail golden ribbon + marching chevrons along G.navPts
+    let vi=0; const pts=G.navPts, phase=(G.t*4.5)%1, rw=.28;
+    for(let i=0;i<pts.length-1&&vi<1780;i++){
+      const [ax,az]=pts[i], [bx,bz]=pts[i+1], dx=bx-ax, dz=bz-az, len=Math.hypot(dx,dz)||1, ux=dx/len, uz=dz/len, px=-uz, pz=ux;
+      const mx=ax+dx*.75, mz=az+dz*.75, ya=G.zone.h(ax,az)+.12, ym=G.zone.h(mx,mz)+.12;
+      // left & right parallel golden guide rails
+      navPosArr[vi*3]=ax+px*rw; navPosArr[vi*3+1]=ya; navPosArr[vi*3+2]=az+pz*rw; vi++;
+      navPosArr[vi*3]=mx+px*rw; navPosArr[vi*3+1]=ym; navPosArr[vi*3+2]=mz+pz*rw; vi++;
+      navPosArr[vi*3]=ax-px*rw; navPosArr[vi*3+1]=ya; navPosArr[vi*3+2]=az-pz*rw; vi++;
+      navPosArr[vi*3]=mx-px*rw; navPosArr[vi*3+1]=ym; navPosArr[vi*3+2]=mz-pz*rw; vi++;
+      // marching directional chevron (>) every segment
+      if(vi<1780){
+        const cx=ax+dx*phase, cz=az+dz*phase, cy=G.zone.h(cx,cz)+.16, w=.52, back=.52;
+        const lx=cx-ux*back+px*w, lz=cz-uz*back+pz*w, rx2=cx-ux*back-px*w, rz2=cz-uz*back-pz*w;
+        navPosArr[vi*3]=lx; navPosArr[vi*3+1]=cy; navPosArr[vi*3+2]=lz; vi++;
+        navPosArr[vi*3]=cx; navPosArr[vi*3+1]=cy; navPosArr[vi*3+2]=cz; vi++;
+        navPosArr[vi*3]=rx2; navPosArr[vi*3+1]=cy; navPosArr[vi*3+2]=rz2; vi++;
+        navPosArr[vi*3]=cx; navPosArr[vi*3+1]=cy; navPosArr[vi*3+2]=cz; vi++;
+      }
+    }
+    navTrail.geometry.attributes.position.needsUpdate=true;
+    navTrail.geometry.setDrawRange(0,vi);
+    navTrail.visible=true;
+    // subtle golden guide spark flowing along the first few steps near the player
+    if(pts.length>1&&Math.random()<dt*(G.scanT>0?45:16)){
+      const idx=Math.min(pts.length-2,Math.floor(Math.random()*Math.min(6,pts.length-1)));
+      const [ax,az]=pts[idx], [bx,bz]=pts[idx+1], u2=Math.random(), gx=ax+(bx-ax)*u2, gz=az+(bz-az)*u2;
+      particle(gx,G.zone.h(gx,gz)+.18,gz,(bx-ax)*1.4,.45,(bz-az)*1.4,.55,P.GD,.95,0,.12);
+    }
+  } else if(navTrail){ navTrail.visible=false; G.navPts=null; }
   player.group.visible=G.mode!=='title'&&G.mode!=='ending';
   updateFX(dt); updateCamera(dt);
   const u=postU(); G.glitchT=Math.max(0,G.glitchT-dt*1.5); G.flashT=Math.max(0,G.flashT-dt*2.5); u.glitch.value=G.glitchT; u.flash.value=G.flashT*.7; u.fade.value=G.fadeV;
