@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='trophies2'||c==='stipends'||c==='achcase'){ out('[trophies2] opening Achievement Trophy Case & Stipends...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTrophyCase(); },40); }
+    else if(c==='exchange'||c==='stocks'||c==='stake'){ out('[exchange] opening Lattice Stock & Bit Staking Exchange...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openExchange(); },40); }
     else if(c==='orrery'||c==='planets'||c==='orbit'){ out('[orrery] launching Chrono-Orrery Planetary Alignment Puzzle...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startOrrery(); },40); }
     else if(c==='theater'||c==='cutscenes'||c==='cinematics'){ out('[theater] opening Sovereign Dialogue & Cutscene Theater...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTheater(); },40); }
     else if(c==='pets'||c==='familiars'){ out('[pets] opening Cyber-Familiar Pet Companion Sanctuary...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openPets(); },40); }
@@ -3815,6 +3817,212 @@ export function initEggs(G,{music,sfx}){
         UI.text('[ENTER] LAUNCH LIVE IN-ENGINE PLAYBACK',694,400,P.GD,1,'center');
         UI.text('[P] STEP TRANSCRIPT BEAT IN MONITOR',694,424,'#4ade80',1,'center');
         UI.text('[up/down] select reel   [enter] play in-engine   [P] step transcript beat   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Sovereign Achievement Trophy Case & Milestone Stipends (M85) ----
+  const TROPHY_TIERS=[
+    {id:'stip_1', name:'01. TIER I: INITIATE NODE', req:5, bits:150, item:'patch.kit', qty:2, col:'#f5b82e',
+      desc:'Unlocked upon earning 5 Sovereign Achievements across the Relit City lattice.'},
+    {id:'stip_2', name:'02. TIER II: FIELD OPERATOR', req:12, bits:300, item:'cache.bit', qty:2, col:'#22d3ee',
+      desc:'Unlocked upon earning 12 Achievements through tactical exploration & side contracts.'},
+    {id:'stip_3', name:'03. TIER III: PROTOCOL ARCHITECT', req:22, bits:500, item:'root.shell', qty:2, col:'#4ade80',
+      desc:'Unlocked upon earning 22 Achievements across Null Academy labs and district bosses.'},
+    {id:'stip_4', name:'04. TIER IV: PANTHEON VANGUARD', req:35, bits:800, item:'quorum.halo', qty:1, col:'#a78bfa',
+      desc:'Unlocked upon earning 35 Achievements with the 22-agent Pantheon crew.'},
+    {id:'stip_5', name:'05. TIER V: ZERO-KNOWLEDGE MASTER', req:48, bits:1200, item:'citadel.crown', qty:1, col:'#fb923c',
+      desc:'Unlocked upon earning 48 Achievements across endgame gauntlets and mini-games.'},
+    {id:'stip_6', name:'06. TIER VI: 06:12 SOVEREIGN', req:60, bits:2000, item:'singularity.halo', qty:1, col:'#f43f5e',
+      desc:'Supreme milestone tier for mastering 60+ Achievements across the entire World of Zoth.'}
+  ];
+  G.openTrophyCase=()=>{
+    let sel=0;
+    const achCount=()=>Object.keys(ACH).filter(k=>G.achGot[k]).length;
+    const claimTier=(tr,force=false)=>{
+      if(G.flags[tr.id]){ G.toast('> Stipend tier already claimed!',P.DG); sfx('cancel'); return; }
+      if(!force&&achCount()<tr.req){
+        G.toast(`> Requires ${tr.req} Achievements (Have ${achCount()}). Press [P] for Sovereign Override.`,P.RED);
+        sfx('cancel'); return;
+      }
+      G.flags[tr.id]=1;
+      G.bits+=tr.bits;
+      G.give(tr.item,tr.qty);
+      G.ach('trophy_collector'); sfx('win');
+      G.toast(`> STIPEND CLAIMED: +${tr.bits} BITS & +${tr.qty}x ${ITEMS[tr.item].name.toUpperCase()}!`,'#4ade80');
+    };
+    G.mini={
+      name:'trophycase',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+TROPHY_TIERS.length-1)%TROPHY_TIERS.length;
+        if(took('down')) sel=(sel+1)%TROPHY_TIERS.length;
+        if(took('confirm')) claimTier(TROPHY_TIERS[sel],false);
+        if(took('party')) claimTier(TROPHY_TIERS[sel],true);
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> ACHIEVEMENT TROPHY CASE',56,40,P.GD,2);
+        const tot=Object.keys(ACH).length, curN=achCount();
+        const claimedN=TROPHY_TIERS.filter(tr=>G.flags[tr.id]).length;
+        UI.text(`UNLOCKED: ${curN}/${tot} ACH   ·   STIPENDS: ${claimedN}/6`,900,44,'#4ade80',1,'right');
+        // Left: 6 Milestone Stipend Tiers
+        TROPHY_TIERS.forEach((tr,i)=>{
+          const yy=80+i*64, on=i===sel, cl=!!G.flags[tr.id], rdy=curN>=tr.req;
+          UI.box(52,yy,416,56,on?P.GD:(cl?'#4ade80':(rdy?'#22d3ee':P.DDG)),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+tr.name,66,yy+10,on?P.GD:tr.col,1);
+          UI.text(`REQ: ${tr.req} ACH   ·   +${tr.bits}B & ${tr.qty}x ${ITEMS[tr.item].name.toUpperCase()}`,66,yy+30,P.BONE,1);
+          UI.text(cl?'[CLAIMED]':(rdy?'[READY]':`${curN}/${tr.req}`),454,yy+18,cl?'#4ade80':(rdy?'#22d3ee':P.DG),1,'right');
+        });
+        // Right: Selected Trophy Pedestal & Recent Unlocks
+        const cur=TROPHY_TIERS[sel], cl=!!G.flags[cur.id];
+        UI.box(484,80,420,384,cur.col,'rgba(10,8,6,.94)');
+        UI.text(cur.name.slice(4),502,98,P.GD,1);
+        UI.text(`REQUIREMENT: ${cur.req} UNLOCKED ACHIEVEMENTS (CURRENT: ${curN})`,502,120,'#22d3ee',1);
+        // Progress Bar
+        const pct=Math.min(1,curN/cur.req);
+        UI.box(502,144,384,20,P.DDG,'rgba(14,11,8,.95)');
+        X.fillStyle=cl?'#4ade80':cur.col;
+        X.fillRect(504,146,Math.round(380*pct),16);
+        UI.text(`${Math.round(pct*100)}% COMPLETE`,694,149,P.BONE,1,'center');
+        UI.box(502,176,384,82,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('STIPEND PACKAGE:',516,190,P.GD,1);
+        UI.wrap(cur.desc,356,1).forEach((l,li)=>UI.text(l,516,210+li*18,P.BONE,1));
+        UI.text(`GRANT: +${cur.bits} BITS  +  ${cur.qty}x ${ITEMS[cur.item].name.toUpperCase()}`,516,242,'#4ade80',1);
+        // Recent Unlocked Achievements Feed
+        UI.box(502,268,384,104,P.DDG,'rgba(14,11,8,.96)');
+        UI.text('RECENT UNLOCKED ACHIEVEMENTS:',516,282,P.GD,1);
+        const gotKeys=Object.keys(ACH).filter(k=>G.achGot[k]).slice(-4);
+        if(!gotKeys.length) UI.text('No achievements unlocked yet.',516,306,P.DG,1);
+        gotKeys.forEach((k,idx)=>{
+          const ln=`[x] ${ACH[k][0].toUpperCase()} - ${ACH[k][1]}`;
+          UI.text(ln.length>46?ln.slice(0,44)+'..':ln,516,302+idx*16,P.BONE,1);
+        });
+        UI.box(502,384,384,66,cl?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(cl?'TIER STIPEND CLAIMED & ARCHIVED':'[ENTER] CLAIM UNLOCKED TIER STIPEND',694,400,cl?'#4ade80':P.GD,1,'center');
+        UI.text('[P] SOVEREIGN AUDIT & INSTANT STIPEND GRANT',694,424,'#22d3ee',1,'center');
+        UI.text('[up/down] select tier   [enter] claim stipend   [P] instant grant   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Lattice Stock & Bit Staking Exchange (M86) ----
+  const LATTICE_STOCKS=[
+    {id:'rlt', sym:'RLT', name:'RELIT CITY FIBER INDEX', base:120, div:0.08, col:'#f5b82e',
+      hist:[112,115,118,116,121,124,122,126,125,129,128,132],
+      desc:'Core municipal optical backbone index. Steady 8% dividend yield per market cycle.'},
+    {id:'dfn', sym:'DFN', name:'DOOM-FIRE FOUNDRY SLAG', base:185, div:0.12, col:'#fb923c',
+      hist:[170,176,172,181,188,184,192,189,195,191,198,204],
+      desc:'Heavy industrial slag & forge commodity index. 12% dividend yield per market cycle.'},
+    {id:'skl', sym:'SKL', name:'MODE-7 SKYLINE BEACONS', base:260, div:0.15, col:'#22d3ee',
+      hist:[240,248,255,250,262,268,264,274,270,278,285,292],
+      desc:'High-altitude broadcast & air-corridor trust. 15% dividend yield per market cycle.'},
+    {id:'zkc', sym:'ZKC', name:'ZK-CITADEL SOVEREIGN BOND', base:340, div:0.18, col:'#4ade80',
+      hist:[310,320,318,332,340,336,348,355,352,364,370,380],
+      desc:'Zero-knowledge cryptographic treasury bond. 18% dividend yield per market cycle.'},
+    {id:'qtm', sym:'QTM', name:'QUANTUM LOOM ENTANGLED ETF', base:480, div:0.24, col:'#a78bfa',
+      hist:[430,452,440,475,490,468,505,520,510,538,528,556],
+      desc:'Hyper-volatile entangled spindle index. 24% sovereign dividend yield per cycle.'}
+  ];
+  G.openExchange=()=>{
+    let sel=0, lastDiv=0;
+    const sharesOf=id=>(G.flags&&G.flags['stk_'+id])||0;
+    const priceOf=s=>s.hist[s.hist.length-1];
+    const deltaPct=s=>{
+      const a=s.hist[s.hist.length-2]||s.base, b=priceOf(s);
+      return ((b-a)/a)*100;
+    };
+    const totalEquity=()=>LATTICE_STOCKS.reduce((acc,s)=>acc+sharesOf(s.id)*priceOf(s),0);
+    G.mini={
+      name:'exchange',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+LATTICE_STOCKS.length-1)%LATTICE_STOCKS.length;
+        if(took('down')) sel=(sel+1)%LATTICE_STOCKS.length;
+        if(took('right')||took('confirm')){
+          const s=LATTICE_STOCKS[sel], pr=priceOf(s);
+          if(G.bits<pr){
+            // Grant 1 starter staked share if low on bits so player can test immediately
+            G.flags['stk_'+s.id]=sharesOf(s.id)+1;
+            G.ach('market_maker'); sfx('loot');
+            G.toast(`> STAKED +1 ${s.sym} CREDIT SHARE (GRANTED)!`,s.col);
+            return;
+          }
+          G.bits-=pr;
+          G.flags['stk_'+s.id]=sharesOf(s.id)+1;
+          G.ach('market_maker'); sfx('loot');
+          G.toast(`> BOUGHT 1 SHARE OF [${s.sym}] FOR ${pr} BITS!`,'#4ade80');
+        }
+        if(took('left')){
+          const s=LATTICE_STOCKS[sel], sh=sharesOf(s.id), pr=priceOf(s);
+          if(sh<=0){ G.toast(`> No [${s.sym}] shares to sell!`,P.DG); sfx('cancel'); return; }
+          G.flags['stk_'+s.id]=sh-1;
+          G.bits+=pr;
+          sfx('confirm');
+          G.toast(`> SOLD 1 SHARE OF [${s.sym}] FOR +${pr} BITS!`,P.GD);
+        }
+        if(took('party')){
+          // Advance market cycle & harvest dividends
+          let divTotal=0;
+          LATTICE_STOCKS.forEach(s=>{
+            if(sharesOf(s.id)===0 && s.id===LATTICE_STOCKS[sel].id){
+              G.flags['stk_'+s.id]=1; // ensure at least 1 staked share on selected index
+            }
+            const curP=priceOf(s);
+            const swing=Math.round(curP*(0.03+Math.random()*0.06)*(Math.random()<0.72?1:-1));
+            const nextP=Math.max(40,curP+swing);
+            s.hist.push(nextP); if(s.hist.length>12) s.hist.shift();
+            divTotal+=Math.round(sharesOf(s.id)*nextP*s.div);
+          });
+          lastDiv=Math.max(45,divTotal);
+          G.bits+=lastDiv;
+          G.ach('market_maker'); sfx('win');
+          G.toast(`> MARKET CYCLE ADVANCED! HARVESTED +${lastDiv} BITS IN DIVIDENDS!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> LATTICE STOCK & STAKING EXCHANGE',56,40,P.GD,2);
+        UI.text(`LIQUID: ${G.bits}B   ·   EQUITY: ${totalEquity()}B`,900,44,'#4ade80',1,'right');
+        // Left: 5 District Node Tickers
+        LATTICE_STOCKS.forEach((s,i)=>{
+          const yy=80+i*74, on=i===sel, pr=priceOf(s), dp=deltaPct(s), sh=sharesOf(s.id);
+          UI.box(52,yy,408,64,on?P.GD:(sh>0?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+`[${s.sym}] ${s.name}`,66,yy+12,on?P.GD:s.col,1);
+          UI.text(`PRICE: ${pr}B  (${dp>=0?'+':''}${dp.toFixed(1)}%)   YIELD: ${Math.round(s.div*100)}%`,66,yy+34,dp>=0?'#4ade80':'#f43f5e',1);
+          UI.text(`OWNED: ${sh}`,446,yy+12,sh>0?'#4ade80':P.DG,1,'right');
+        });
+        // Right: Sparkline Chart & Staking Desk
+        const cur=LATTICE_STOCKS[sel], pr=priceOf(cur), sh=sharesOf(cur.id), dp=deltaPct(cur);
+        UI.box(478,80,426,384,cur.col,'rgba(10,8,6,.94)');
+        UI.text(`[${cur.sym}] ${cur.name}`,496,98,P.GD,1);
+        UI.text(`SHARE PRICE: ${pr} BITS   ·   STAKED SHARES: ${sh} (${sh*pr}B)`,496,120,'#22d3ee',1);
+        // 12-Tick Sparkline Canvas Box
+        UI.box(496,144,390,112,P.DDG,'rgba(14,11,8,.96)');
+        const minP=Math.min(...cur.hist)*0.95, maxP=Math.max(...cur.hist)*1.05;
+        X.strokeStyle=cur.col; X.lineWidth=2; X.beginPath();
+        cur.hist.forEach((v,idx)=>{
+          const px=514+idx*32, py=242-Math.round(((v-minP)/Math.max(1,maxP-minP))*80);
+          if(idx===0) X.moveTo(px,py); else X.lineTo(px,py);
+        });
+        X.stroke(); X.lineWidth=1;
+        cur.hist.forEach((v,idx)=>{
+          const px=514+idx*32, py=242-Math.round(((v-minP)/Math.max(1,maxP-minP))*80);
+          X.fillStyle=idx===cur.hist.length-1?'#4ade80':cur.col;
+          X.fillRect(px-2.5,py-2.5,5,5);
+        });
+        UI.text(`12-CYCLE SPARKLINE (${dp>=0?'+':''}${dp.toFixed(1)}%)`,510,154,P.DG,1);
+        // Prospectus & Yield Summary
+        UI.box(496,268,390,94,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('NODE PROSPECTUS & DIVIDEND YIELD:',510,282,P.GD,1);
+        UI.wrap(cur.desc,362,1).forEach((l,li)=>UI.text(l,510,302+li*18,P.BONE,1));
+        UI.text(`EST. DIVIDEND / CYCLE: +${Math.max(45,Math.round(Math.max(1,sh)*pr*cur.div))} BITS  (LAST: +${lastDiv}B)`,510,340,'#4ade80',1);
+        UI.box(496,374,390,76,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[RIGHT / ENTER] BUY 1 SHARE   ·   [LEFT] SELL 1 SHARE',691,392,P.GD,1,'center');
+        UI.text('[P] ADVANCE MARKET CYCLE & HARVEST DIVIDENDS',691,418,'#4ade80',1,'center');
+        UI.text('[up/down] select ticker   [left/right] sell/buy share   [P] harvest yield   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
