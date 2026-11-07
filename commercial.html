@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World of Zoth — Official Theatrical Gameplay Commercial (06:12)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060504;
+      --card: rgba(14, 11, 8, 0.92);
+      --gold: #f5b82e;
+      --cyan: #22d3ee;
+      --emerald: #4ade80;
+      --rose: #f43f5e;
+      --bone: #ede4d3;
+      --muted: #9e8c70;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 0%, #1c1508 0%, #060504 70%);
+      color: var(--bone);
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+      padding: 28px 20px 64px;
+    }
+    .container { max-width: 1160px; margin: 0 auto; }
+    header {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(245, 184, 46, 0.28);
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--gold); border: 1px solid rgba(245, 184, 46, 0.45);
+      background: rgba(245, 184, 46, 0.1); padding: 6px 12px; border-radius: 999px;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif; font-size: clamp(26px, 4vw, 42px);
+      color: var(--gold); letter-spacing: -0.02em; margin-top: 8px;
+    }
+    .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+      text-decoration: none; padding: 12px 20px; border-radius: 8px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-gold {
+      background: var(--gold); color: #060504;
+      box-shadow: 0 0 24px rgba(245, 184, 46, 0.35);
+    }
+    .btn-outline {
+      border: 1px solid var(--cyan); color: var(--cyan);
+      background: rgba(34, 211, 238, 0.08);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .theater-frame {
+      background: #040302;
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85), 0 0 40px rgba(245, 184, 46, 0.18);
+      margin-bottom: 32px;
+    }
+    .theater-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 18px; background: rgba(245, 184, 46, 0.08);
+      border-bottom: 1px solid rgba(245, 184, 46, 0.25);
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold);
+    }
+    video { width: 100%; display: block; aspect-ratio: 16 / 9; background: #000; }
+    .scenes-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin-top: 18px;
+    }
+    .scene-card {
+      background: var(--card); border: 1px solid rgba(245, 184, 46, 0.25);
+      border-radius: 10px; padding: 16px;
+    }
+    .scene-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--cyan);
+      margin-bottom: 6px;
+    }
+    .scene-title { font-weight: 700; color: var(--gold); font-size: 15px; margin-bottom: 8px; }
+    .quote { font-size: 13.5px; line-height: 1.5; color: var(--bone); margin-bottom: 6px; }
+    .speaker { color: var(--emerald); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    footer {
+      margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(245, 184, 46, 0.2);
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <span class="badge">● REC 06:12 // OFFICIAL THEATRICAL TRAILER</span>
+        <h1>WORLD OF ZOTH — "FACES, NOT VOICES"</h1>
+        <p class="sub">Real-Time 3D WebGL Gameplay · Custom Character Banter · Mysterious, Funny &amp; 100% Free</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="world-of-zoth.html?commercial=1">▶ LAUNCH LIVE 60FPS 3D COMMERCIAL</a>
+        <a class="btn btn-outline" href="world-of-zoth.html">⚡ PLAY FULL GAME</a>
+      </div>
+    </header>
+
+    <section class="theater-frame">
+      <div class="theater-bar">
+        <span>ANAMORPHIC 2.35:1 MASTER · 1920x1080 HD + WEBAUDIO SYNTHESIS</span>
+        <span>8 SCENES · FADE-IN / FADE-OUT DIRECTOR'S CUT</span>
+      </div>
+      <video controls autoplay loop playsinline preload="auto" src="dist/world-of-zoth-commercial.mp4"></video>
+    </section>
+
+    <h2 style="font-family:'Syne',sans-serif; color:var(--gold); font-size:22px;">8-Scene Director's Script &amp; Custom Conversation Breakdown</h2>
+    <div class="scenes-grid">
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 01 · RELIT CITY</div>
+        <div class="scene-title">The 06:12 Mystery</div>
+        <p class="quote"><span class="speaker">1nc0gn30:</span> "Quick question. Why has my phone been stuck at 6:12 AM for three days straight?"</p>
+        <p class="quote"><span class="speaker">Kitsune:</span> "Because someone stole 6:13. Also your hoodie is inside out. Follow the golden trail!"</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 02 · THE REST WOODS</div>
+        <div class="scene-title">The Golden Thread &amp; Cyber-Shiba</div>
+        <p class="quote"><span class="speaker">Pixel-Shiba:</span> "Bork! (Translation: I found three Signal Embers and a sandwich. I ate the sandwich.)"</p>
+        <p class="quote"><span class="speaker">1nc0gn30:</span> "Wait... the dog talks?"</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 03 · THE HOLLOW</div>
+        <div class="scene-title">Faces, Not Voices</div>
+        <p class="quote"><span class="speaker">RELAY 4:</span> "H E Y  B R O ,  I T  I S  M E ,  Y O U R  B E S T  F R I E N D .  S E N D  P A S S W O R D ."</p>
+        <p class="quote"><span class="speaker">Vigil:</span> "Rule #1 of Relit City: Voices can be deepfaked in 4ms. Only trust a friend face to face."</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 04 · DOOM-FIRE FOUNDRY</div>
+        <div class="scene-title">Zero Paywalls Ever</div>
+        <p class="quote"><span class="speaker">Pixel-Neko:</span> "Want this +5 Legendary Sovereign Katana? That will be $19.99—"</p>
+        <p class="quote"><span class="speaker">Pixel-Neko:</span> "—JUST KIDDING! Everything in World of Zoth is 100% free. Earn Bits in battle, zero paywalls ever!"</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 05 · SAND CLOCKTOWER</div>
+        <div class="scene-title">Timed Strikes &amp; Rhythm Parries</div>
+        <p class="quote"><span class="speaker">Chronos:</span> "Giant time-eating hourglass boss incoming! What is our grand tactical strategy?!"</p>
+        <p class="quote"><span class="speaker">1nc0gn30:</span> "Hit SPACEBAR right when the ring flashes gold."</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 06 · THE ASTRAL RELAY</div>
+        <div class="scene-title">Even Your Evil Twin Joins</div>
+        <p class="quote"><span class="speaker">03ng0cn1:</span> "I am your dark reflection. Your name spelled backward. Your eternal—"</p>
+        <p class="quote"><span class="speaker">1nc0gn30:</span> "Hey, we have a 22nd spot open and we're playing Vector Tank after this. You in?"</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 07 · THE OMEGA FOUNDRY</div>
+        <div class="scene-title">An Entire Universe in 3.5MB</div>
+        <p class="quote"><span class="speaker">Athena:</span> "19 3D districts, 22 companions, 17 arcade games, chiptune synth, and an AI security academy..."</p>
+        <p class="quote"><span class="speaker">Kitsune:</span> "All inside one 3.5MB file that runs offline in your browser or phone. Show-off."</p>
+      </div>
+      <div class="scene-card">
+        <div class="scene-tag">SCENE 08 · ROOFTOP SUNRISE</div>
+        <div class="scene-title">See You at 06:13</div>
+        <p class="quote"><span class="speaker">1nc0gn30:</span> "Voices can be faked. Presence cannot."</p>
+        <p class="quote"><span class="speaker">Kitsune:</span> "Play free right now in your browser. See you at 6:13."</p>
+      </div>
+    </div>
+
+    <footer>
+      <span>Engineered by 1nc0gn30 • NullAI Platform</span>
+      <span><a href="https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X" target="_blank" rel="noopener">☕ Buy Us a Coffee</a> · 100% Open-Access Sovereign Game</span>
+    </footer>
+  </div>
+</body>
+</html>

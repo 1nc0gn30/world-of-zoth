@@ -133,10 +133,10 @@
 ### Hour 14 (`13:00`–`14:00`) — District #19 (*"The Omega Foundry"*) & ZGL World Mod Studio
 - [x] **M113** (`13:08` · `commit 42727bf`): Blender 4.3 Wireframe Mesh #21 (`omega_core`) & Secret District #19 (*"The Omega Foundry"* `Z.omega` in `src/zones2.js`)
 - [x] **M114** (`13:08` · `commit 42727bf`): In-Game ZGL World & Prop Blueprint Editor (`G.openBlueprintStudio()` via `> blueprint` & System Menu — place & preview custom 3D wireframe props in the current district)
-- [x] **M115** (`13:20`): Secret Mini-Game #17 — *"Packet Alchemy / 2048 Bit Merger"* (`G.startBitMerge()` via `> merge` & System Menu — 4x4 sliding power-of-2 bit compiler up to `2048.ROOT`)
-- [x] **M116** (`13:20`): Tactical Combat Log & Damage Breakdown Analyzer (`G.openCombatLog()` via `> combatlog` & System Menu — inspect turn-by-turn damage, breach, crit & parry analytics)
-- [ ] **M117**: Sovereign Loot Box & Relic Gacha Simulator (100% Free Bits-Only `G.openRelicCapsules()` via `> capsules` & System Menu — spend earned Bits to roll holo cards & items)
-- [ ] **M118**: Interactive 19-District World Tour Autopilot (`G.openWorldTour()` via `> tour` & System Menu — cinematic automated fly-through across all districts)
+- [x] **M115** (`13:20` · `commit 406c5b6`): Secret Mini-Game #17 — *"Packet Alchemy / 2048 Bit Merger"* (`G.startBitMerge()` via `> merge` & System Menu — 4x4 sliding power-of-2 bit compiler up to `2048.ROOT`)
+- [x] **M116** (`13:20` · `commit 406c5b6`): Tactical Combat Log & Damage Breakdown Analyzer (`G.openCombatLog()` via `> combatlog` & System Menu — inspect turn-by-turn damage, breach, crit & parry analytics)
+- [x] **M117** (`13:37`): Sovereign Loot Box & Relic Gacha Simulator (100% Free Bits-Only `G.openRelicCapsules()` via `> capsules` & System Menu — spend earned Bits to roll holo cards & items + Official Theatrical Movie Commercial `G.openCommercial()`)
+- [x] **M118** (`13:37`): Interactive 19-District World Tour Autopilot (`G.openWorldTour()` via `> tour` & System Menu — cinematic automated fly-through across all districts)
 - [ ] **M119**: Custom Dialogue & Story Scene Creator (`G.openSceneMaker()` via `> scenemaker` & System Menu — script custom crew dialogues & test them live)
 - [ ] **M120**: Full 19-District + 75-Subsystem Automated Audit #7 & APK v1.7 Sync
 
