@@ -62,11 +62,12 @@ export function initHouse(G, api){
   G.hud3&&G.hud3.sources.push(z=>z==='hub'?[{x:H.door.x,z:H.door.z,col:P.BONE,label:'safehouse',kind:'poi'}]:[]);
   // visitors: up to 5 recruited agents idle in the house
   H.visitors=()=>{ const r=G.roster.filter(id=>id!=='me').slice(-5); return r.map((id,i)=>({id,x:[-4.5,3,-1.5,4.2,-3.2][i],z:[1.5,-1.5,-3,1.2,-2.2][i]})); };
-  const JTRACKS=['title','hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','abyss','skyline','citadel','battle','boss','final'];
+  const JTRACKS=['title','hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','abyss','skyline','citadel','stack','battle','boss','phonk','archon','final'];
   G.openJukebox=()=>{ let sel=0; G.mini={ name:'jukebox', update(){ if(took('back')||took('pause')){ G.mode='explore'; return; } if(took('up')) sel=(sel+JTRACKS.length-1)%JTRACKS.length; if(took('down')) sel=(sel+1)%JTRACKS.length;
       if(took('confirm')){ api.music&&api.music(JTRACKS[sel]); G.toast('> playing: '+JTRACKS[sel],P.GD); } },
-    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540); UI.box(180,30,600,480); UI.text('> safehouse jukebox  (17 web-audio stems)',204,46,P.GD,2);
-      JTRACKS.forEach((tr,i)=>{ const y=86+i*22, s=i===sel; if(s){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(194,y-3,572,20); } UI.text((s?'> ':'  ')+tr,210,y,s?P.GD:P.BONE); });
+    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540); UI.box(180,30,600,480); UI.text('> safehouse jukebox  (20 web-audio stems)',204,46,P.GD,2);
+      const first=Math.max(0,Math.min(sel-7,JTRACKS.length-16));
+      JTRACKS.slice(first,first+16).forEach((tr,idx)=>{ const i=first+idx, y=86+idx*23, s=i===sel; if(s){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(194,y-3,572,20); } UI.text(`${s?'> ':'  '}${String(i+1).padStart(2,'0')} · ${tr}`,210,y,s?P.GD:P.BONE); });
       UI.text('[up/down] select  ·  [enter] play track  ·  [esc] close',480,488,P.DG,1,'center'); } }; G.mode='mini'; };
   // ---- Companion Campfire & Safehouse Banter (M17) ----
   const BANTERS=[

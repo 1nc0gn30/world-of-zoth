@@ -19,6 +19,7 @@ function nz(ctx,dest,t,dur,v,{hp=6000,lp=0,bp=0}={}){ const s=ctx.createBufferSo
 function kick(ctx,d,t,v=.5){ osc(ctx,d,'sine',150,t,.22,v,{slide:.27}); }
 function snare(ctx,d,t,v=.22){ nz(ctx,d,t,.14,v,{hp:1200}); osc(ctx,d,'triangle',190,t,.08,v*.6,{slide:.6}); }
 function hat(ctx,d,t,v=.05){ nz(ctx,d,t,.03,v,{hp:7000}); }
+function cowbell(ctx,d,t,f,v=.085){ osc(ctx,d,'sq',f,t,.11,v,{duty:.5}); osc(ctx,d,'sq',f*1.48,t,.09,v*.7,{duty:.25}); }
 
 // chords as midi triads; D minor world
 const Dm=[50,53,57], Bb=[46,50,53], C=[48,52,55], A=[45,49,52], F=[41,45,48], Gm=[43,46,50], Eb=[51,55,58], Am=[45,48,52];
@@ -39,6 +40,9 @@ export const TRACKS={
   abyss:{bpm:66, prog:[Dm,Eb,Gm,A], bass:'x.......x...x...', arp:[0,2,1,0], arpDiv:2, duty:.25, drums:'soft', lead:.35, pad:1.3, drone:1},
   skyline:{bpm:124, prog:[Dm,Bb,C,A], bass:'x.x.x.xxx.x.x.xx', arp:[0,1,2,3,2,1,2,0], arpDiv:4, duty:.125, drums:'hub', lead:.6, pad:.5},
   citadel:{bpm:148, prog:[Dm,Bb,Eb,A], bass:'xx.xx.xxx.xx.xxx', arp:[0,2,1,3,2,1,3,0], arpDiv:4, duty:.125, drums:'battle', lead:.8, pad:.6, drone:1},
+  phonk:{bpm:144, prog:[Dm,Eb,Dm,Bb], bass:'x.x.xx.xx.x.xx.x', arp:[0,2,1,2], arpDiv:4, duty:.25, drums:'phonk', lead:.85, pad:.4, phonk:1},
+  archon:{bpm:158, prog:[Dm,Eb,Gm,A], bass:'xxx.xxx.xxxxxxx.', arp:[0,2,1,3,2,0,3,1], arpDiv:4, duty:.125, drums:'phonk', lead:.95, pad:.5, drone:1, phonk:1},
+  stack:{bpm:136, prog:[Dm,Bb,C,A], bass:'x.xxx.x.x.xxx.xx', arp:[0,1,2,3,1,2], arpDiv:4, duty:.25, drums:'battle', lead:.75, pad:.6},
   final:{bpm:160, prog:[Dm,Eb,Bb,A], bass:'xxxxxxx.xxxxxx.x', arp:[0,2,1,3,1,2], arpDiv:4, duty:.125, drums:'battle', lead:.9, pad:.4, drone:1},
 };
 function hsh(n){ n=Math.sin(n*127.1)*43758.5453; return n-Math.floor(n); }
@@ -60,6 +64,8 @@ export function step(ctx,dest,name,i,t){
   if(tr.drone && k===0){ osc(ctx,dest,'sq',N(38)*1.003,t,s16*16,.035,{duty:.5,a:.4}); osc(ctx,dest,'sq',N(39),t,s16*16,.02,{duty:.125,a:.6}); }
   if(tr.lead && (k===0||k===6||k===10) && hsh(i*1.7+bar)<tr.lead){ const sc=[0,2,3,5,7,8,10]; const m=62+sc[Math.floor(hsh(i*3.3)*7)]+(hsh(i)>.7?12:0); osc(ctx,dest,'sq',N(m),t,s16*(k===0?3:1.6),.06,{duty:.5}); }
   const d=tr.drums;
+  if(tr.phonk && k%2===0){ const cb=[62,62,65,69,68,65,62,57][(k/2)%8]; cowbell(ctx,dest,t,N(cb+(bar%2?12:0)),.075); }
+  if(d==='phonk'){ if(k===0||k===3||k===6||k===10||k===12) kick(ctx,dest,t,.58); if(k===4||k===12) snare(ctx,dest,t,.26); hat(ctx,dest,t,k%2?.04:.06); }
   if(d==='hub'){ if(k%8===0) kick(ctx,dest,t,.35); if(k%8===4) snare(ctx,dest,t,.12); if(k%2===0) hat(ctx,dest,t,.03); }
   if(d==='battle'){ if(k%4===0) kick(ctx,dest,t,.45); if(k%8===4) snare(ctx,dest,t,.2); hat(ctx,dest,t,k%2?(chain>=3?.038:.02):.045); }
   if(d==='relay'){ if(k===0||k===10) kick(ctx,dest,t,.4); if(k===8) snare(ctx,dest,t,.16); if(k%4===2) nz(ctx,dest,t,.05,.03,{bp:2400}); }

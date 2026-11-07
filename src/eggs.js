@@ -10,7 +10,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -35,12 +35,13 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  bounty  stack  bossrush  reforge  bestiary  theme  warp <zone>  exit');
+    if(c==='help') out('nmap  ping  patch  bounty  stack  bossrush  reforge  bestiary  photo  theme  warp  exit');
     else if(c==='stack'){ out('[stack] opening The Infinite Stack (floors 1-99)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startStack(); },40); }
     else if(c==='bossrush'){ out('[bossrush] opening Pantheon Boss Rush Trial...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBossRush(); },40); }
     else if(c==='reforge'){ out('[reforge] opening Gear Overclocking Bench (+1 to +5)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openReforge(); },40); }
     else if(c==='bestiary'){ out('[bestiary] opening Hostile Protocol Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBestiary(); },40); }
     else if(c==='bounty'){ out('[bounty] opening District Elite Bounty Board (10 contracts)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBounties(); },40); }
+    else if(c==='photo'){ out('[photo] entering 3D Photo Mode & Postcard Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openPhotoMode(); },40); }
     else if(c==='theme'||c.startsWith('theme ')){ const t=G.cycleTheme(); out(`[theme] CRT phosphor set to: ${t.name}`,P.GD); }
     else if(c==='nmap'){
       const z=G.zone; const fn=(G.foes||[]).filter(f=>f.alive).length, nn=(G.npcs||[]).length, pn=(z.portals||[]).length;
@@ -84,7 +85,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','bounty','stack','bossrush','reforge','bestiary','theme','warp','exit'];
+  const CHIPS=['help','nmap','ping','patch','bounty','stack','bossrush','reforge','bestiary','photo','theme','warp','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -110,6 +111,73 @@ export function initEggs(G,{music,sfx}){
         UI.box(10,500,460,30); UI.text('> doom-fire   [up] stoke  [down] smother  [x] exit',20,509,P.BONE); } };
     G.mode='mini'; sfx('confirm'); }
   G.startLife=startLife; G.startDoom=startDoom;
+  // ---- Interactive 3D Photo Mode & Postcard Studio (M24) ----
+  const PHOTO_FRAMES=['SOVEREIGN POSTCARD','06:12 BRAILLE TELEMETRY','CLASSIFIED DOSSIER','CLEAN NO-HUD'];
+  const PHOTO_POSES=[null,'walk','kneel','sleep'];
+  G.openPhotoMode=()=>{
+    const c=G.cam, p=G.player.group.position;
+    let yaw=c.yaw, pitch=c.pitch||.32, dist=c.dist||8.5, frameIdx=0, poseIdx=0, flash=0, hideCtl=false;
+    G.mini={
+      name:'photo', see3d:true,
+      update(dt){
+        if(flash>0) flash=Math.max(0,flash-dt*2.5);
+        if(took('back')||took('pause')){ G.player.pose=null; G.mode='explore'; sfx('cancel'); return; }
+        if(IN.held.has('left')) yaw+=dt*1.8;
+        if(IN.held.has('right')) yaw-=dt*1.8;
+        if(IN.held.has('up')) pitch=Math.min(1.25,pitch+dt*1.1);
+        if(IN.held.has('down')) pitch=Math.max(-.05,pitch-dt*1.1);
+        if(IN.held.has('rotl')) dist=Math.max(2.6,dist-dt*6);
+        if(IN.held.has('rotr')) dist=Math.min(24,dist+dt*6);
+        if(took('n1')||took('quests')){ frameIdx=(frameIdx+1)%PHOTO_FRAMES.length; sfx('move'); }
+        if(took('party')){ poseIdx=(poseIdx+1)%PHOTO_POSES.length; G.player.pose=PHOTO_POSES[poseIdx]; sfx('move'); }
+        if(took('dash')){ hideCtl=!hideCtl; sfx('blip'); }
+        const cp=Math.cos(pitch);
+        c.pos.set(p.x+Math.sin(yaw)*dist*cp, p.y+1.2+Math.sin(pitch)*dist, p.z+Math.cos(yaw)*dist*cp);
+        c.look.set(p.x, p.y+1.3, p.z);
+        if(took('confirm')){
+          flash=1; sfx('save'); G.ach('photographer');
+          G.toast(`> POSTCARD CAPTURED (${G.zone.name.toUpperCase()} · 06:12)`,P.GD);
+          try{
+            if(window.WOZ&&window.WOZ.frame){
+              const url=window.WOZ.frame('image/png');
+              const a=document.createElement('a'); a.href=url; a.download=`world-of-zoth-${G.zoneId}-0612.png`; a.click();
+            }
+          }catch(e){}
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        // Postcard Frame Stamps
+        if(frameIdx===0){
+          X.strokeStyle=P.GD; X.lineWidth=3; X.strokeRect(14,14,932,512);
+          X.strokeStyle=P.DDG; X.lineWidth=1; X.strokeRect(20,20,920,500);
+          UI.box(28,28,312,48,P.GD,'rgba(6,5,4,.84)');
+          UI.text('WORLD OF ZOTH · 06:12',42,36,P.GD,2);
+          UI.text(`${G.zone.name.toUpperCase()}  ·  CREW ${G.crewCount()}/22`,42,58,P.BONE,1);
+        } else if(frameIdx===1){
+          UI.box(20,20,920,32,P.GD,'rgba(6,5,4,.82)');
+          UI.text(`⣿ 1NC0GN30 LATTICE TELEMETRY  ·  SECTOR: ${G.zone.name.toUpperCase()}  ·  POS (${Math.round(p.x)},${Math.round(p.z)})  ·  LV ${G.party.me.lvl}`,34,29,P.GD,1);
+          // viewfinder crosshairs
+          X.strokeStyle=P.GD; X.beginPath();
+          [[40,68,1,1],[920,68,-1,1],[40,468,1,-1],[920,468,-1,-1]].forEach(([cx,cy,dx,dy])=>{
+            X.moveTo(cx,cy+dy*18); X.lineTo(cx,cy); X.lineTo(cx+dx*18,cy);
+          });
+          X.stroke();
+        } else if(frameIdx===2){
+          UI.box(24,412,420,64,P.RED,'rgba(6,5,4,.88)');
+          UI.text('CLASSIFIED // NULLAI FIELD ARCHIVE',38,422,P.RED,1);
+          UI.text(`SUBJECT: 1NC0GN30   ·   ZONE: ${G.zone.name.toUpperCase()}`,38,440,P.BONE,1);
+          UI.text('"TRUST FACES, NOT VOICES. SILENCE CANNOT BE COPIED."',38,456,P.GD,1);
+        }
+        if(!hideCtl){
+          UI.box(150,490,660,34,P.DDG,'rgba(6,5,4,.88)');
+          UI.text(`[arrows] orbit  [Q/R] zoom  [1] frame: ${PHOTO_FRAMES[frameIdx]}  [P] pose  [C] hide bar  [enter] snap`,480,500,P.GD,1,'center');
+        }
+        if(flash>0){ X.fillStyle=`rgba(255,248,220,${flash*.75})`; X.fillRect(0,0,960,540); }
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
   // ---- Custom HUD & CRT Phosphor Theme Switcher (M22) ----
   G.themeIdx=0;
   try{ const ti=parseInt(localStorage.getItem('woz.theme')||'0',10); if(!isNaN(ti)){ G.themeIdx=ti%THEMES.length; applyTheme(G.themeIdx); } }catch(e){}
