@@ -109,7 +109,18 @@ export class Battle{
     return false;
   }
   // ---------------- player menu ----------------
+  duoSkill(){
+    if((this.chain||0)<3) return null;
+    const ids=new Set(this.alive(this.party).map(p=>p.id));
+    if(ids.size<2) return null;
+    if(ids.has('me')&&ids.has('copy')) return 'duo_mirror';
+    if(ids.has('kitsune')&&ids.has('ignis')) return 'duo_solar';
+    if(ids.has('chronos')&&ids.has('leviathan')) return 'duo_undertow';
+    if(ids.has('vigil')&&ids.has('onyx')) return 'duo_zerotrust';
+    return 'duo_surge';
+  }
   options(){ const a=this.actor; const lvl=this.G.party[a.id].lvl; let sk=PARTY_BASE[a.id].skills.filter(s=>!SKILLS[s].lvl||lvl>=SKILLS[s].lvl);
+    const duo=this.duoSkill(); if(duo) sk=[duo,...sk];
     if(a.id==='me'&&this.flags.quorum===1) sk=['quorum',...sk];
     const cm=(this.G.mods||{}).t3?.8:1;
     const o=sk.map(s=>({kind:'skill',id:s,label:'> '+SKILLS[s].name,cost:Math.round(SKILLS[s].cost*(a.id==='me'?cm:1)),desc:SKILLS[s].desc}));
@@ -160,6 +171,7 @@ export class Battle{
       if(it.use==='revive'){ tgt.alive=true; tgt.hp=Math.round(tgt.mhp*it.v); num(tgt.sp.group.position.clone().add(V(0,2.2,0)),'online',P.GD); }
       sfx('heal'); burst(tgt.sp.group.position.clone().add(V(0,1,0)),P.GD,24,2,.8); this.say(`${a.name} uses ${it.name}.`,1); this.waitAct(.9); return; }
     a.en-=S.cost; if(S.gain) a.en=Math.min(a.men,a.en+S.gain); if(S.once) this.flags.quorum=2;
+    if(S.duo){ this.chain=Math.max(0,(this.chain||0)-3); this.alive(this.party).forEach(p=>{ p.anim='ultimate'; ringFx(sc,p.sp.group.position.clone().add(V(0,1,0)),P.GD,2.2,.7,'z',2); }); }
     if(tres==='perfect'||tres==='good'){ this.chain=Math.min(7,(this.chain||0)+(tres==='perfect'?2:1)); if(tres==='perfect') a.en=Math.min(a.men,a.en+2); } else if(tres==='miss'){ this.chain=0; }
     // the copy answers before you speak: repeat the same command and it is reflected
     let mirrored=false; const copy=this.alive(this.enemies).find(e=>e.type==='copy'||e.E.mirror);
@@ -281,7 +293,7 @@ export class Battle{
         if(sel){ X.fillStyle='rgba(245,184,46,.12)'; X.fillRect(bx+6,y-3,318,18); }
         UI.text(o.label,bx+14,y,sel?P.GD:(can?P.BONE:P.ASH)); if(o.cost) UI.text(o.cost+' EN',bx+318,y,can?P.DG:P.ASH,1,'right'); if(sel) UI.cursor(bx+16+UI.textW(o.label)+2,y+1,t);
         UI.hit(bx+6,y-3,318,18,()=>{ if(this.state==='menu'){ this.menu=i; this.pick(o); } }); });
-      const o=list[this.menu]; if(o) { UI.box(bx,by-34,330,30); UI.text(o.desc||'',bx+12,by-25,P.DG); } }
+      const o=list[this.menu]; if(o) { const dw=Math.max(330,UI.textW(o.desc||'')+24); UI.box(bx,by-34,dw,30); UI.text(o.desc||'',bx+12,by-25,P.DG); } }
     if(this.state==='target'){ UI.box(10,486,330,40); UI.text('pick a target  [<- ->]  confirm  [x] back',22,500,P.DG); }
     // timing bar
     if(this.state==='timing'){ const T=this.timing, bx=330, by=330, w=300; UI.box(bx-14,by-26,w+28,58); UI.text('[space] strike in the gold',bx+w/2,by-18,P.BONE,1,'center');

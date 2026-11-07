@@ -40,25 +40,33 @@ export const TRACKS={
   final:{bpm:160, prog:[Dm,Eb,Bb,A], bass:'xxxxxxx.xxxxxx.x', arp:[0,2,1,3,1,2], arpDiv:4, duty:.125, drums:'battle', lead:.9, pad:.4, drone:1},
 };
 function hsh(n){ n=Math.sin(n*127.1)*43758.5453; return n-Math.floor(n); }
+const VOICE_MIDI={
+  me:69, vigil:64, kitsune:76, ignis:57, kai:74, nexus:67, kraken:55, chronos:62, athena:71,
+  lycan:58, onyx:66, leviathan:52, aether:79, ghostbyte:72, scorpius:65, draco:56, mercury:77,
+  'radical-minion':81, 'pixel-shiba':78, 'pixel-neko':80, aquila:75, copy:68,
+  relay4:48, sandglass:53, hunter:46, blank:45
+};
 // schedule one 16th step
 export function step(ctx,dest,name,i,t){
   const tr=TRACKS[name]; if(!tr) return; const s16=60/tr.bpm/4, bar=Math.floor(i/16)%tr.prog.length, ch=tr.prog[bar], k=i%16;
+  const chain=(typeof window!=='undefined'&&window.G&&window.G.B&&window.G.B.chain)||0;
   if(tr.bass[k]==='x') osc(ctx,dest,'triangle',N(ch[0]-12),t,s16*1.6,.32);
-  const ad=16/(tr.arpDiv*4); if(k%Math.max(1,Math.round(ad))===0){ const ai=Math.floor(k/ad)%tr.arp.length; const nn=tr.arp[ai]; const m=nn<3?ch[nn]+12:ch[0]+24; osc(ctx,dest,'sq',N(m),t,s16*.9,.07,{duty:tr.duty}); }
+  const ad=16/(tr.arpDiv*4); if(k%Math.max(1,Math.round(ad))===0){ const ai=Math.floor(k/ad)%tr.arp.length; const nn=tr.arp[ai]; const m=nn<3?ch[nn]+12:ch[0]+24; osc(ctx,dest,'sq',N(m),t,s16*.9,.07,{duty:tr.duty});
+    if(chain>=3&&(name==='battle'||name==='boss')) osc(ctx,dest,'sq',N(m+12),t,s16*.55,.045,{duty:.125}); }
   if(tr.pad && k===0){ ch.forEach((m,j)=>{ const o=ctx.createOscillator(), g=ctx.createGain(), f=ctx.createBiquadFilter(); o.type='sawtooth'; o.frequency.value=N(m)*(1+(j-1)*.003); f.type='lowpass'; f.frequency.value=900;
       const d=s16*16; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.022*tr.pad,t+d*.3); g.gain.linearRampToValueAtTime(0,t+d); o.connect(f); f.connect(g); g.connect(dest); o.start(t); o.stop(t+d+.05); }); }
   if(tr.drone && k===0){ osc(ctx,dest,'sq',N(38)*1.003,t,s16*16,.035,{duty:.5,a:.4}); osc(ctx,dest,'sq',N(39),t,s16*16,.02,{duty:.125,a:.6}); }
   if(tr.lead && (k===0||k===6||k===10) && hsh(i*1.7+bar)<tr.lead){ const sc=[0,2,3,5,7,8,10]; const m=62+sc[Math.floor(hsh(i*3.3)*7)]+(hsh(i)>.7?12:0); osc(ctx,dest,'sq',N(m),t,s16*(k===0?3:1.6),.06,{duty:.5}); }
   const d=tr.drums;
   if(d==='hub'){ if(k%8===0) kick(ctx,dest,t,.35); if(k%8===4) snare(ctx,dest,t,.12); if(k%2===0) hat(ctx,dest,t,.03); }
-  if(d==='battle'){ if(k%4===0) kick(ctx,dest,t,.45); if(k%8===4) snare(ctx,dest,t,.2); hat(ctx,dest,t,k%2?.02:.045); }
+  if(d==='battle'){ if(k%4===0) kick(ctx,dest,t,.45); if(k%8===4) snare(ctx,dest,t,.2); hat(ctx,dest,t,k%2?(chain>=3?.038:.02):.045); }
   if(d==='relay'){ if(k===0||k===10) kick(ctx,dest,t,.4); if(k===8) snare(ctx,dest,t,.16); if(k%4===2) nz(ctx,dest,t,.05,.03,{bp:2400}); }
   if(d==='soft'){ if(k===0) kick(ctx,dest,t,.2); if(k%4===2) hat(ctx,dest,t,.02); }
   if(tr.crickets && k%8===3 && hsh(i*.37)>.4){ for(let r=0;r<3;r++) osc(ctx,dest,'sine',4200+hsh(i)*600,t+r*.045,.02,.01); }
 }
 export const SFX={
   blip:(c,d,t)=>osc(c,d,'sq',N(84),t,.03,.05,{duty:.25}),
-  talk:(c,d,t)=>osc(c,d,'sq',N(72+Math.floor(Math.random()*5)),t,.025,.025,{duty:.125}),
+  talk:(c,d,t)=>{ const spk=(typeof window!=='undefined'&&window.G&&window.G.dlg&&window.G.dlg.cur&&window.G.dlg.cur.s)||'me'; const base=VOICE_MIDI[spk]||72; const boss=base<55; osc(c,d,boss?'sawtooth':'sq',N(base+Math.floor(Math.random()*5)),t,boss?.038:.025,.028,{duty:base>74?.25:.125}); },
   move:(c,d,t)=>osc(c,d,'sq',N(79),t,.03,.04,{duty:.25}),
   confirm:(c,d,t)=>{osc(c,d,'sq',N(81),t,.05,.07,{duty:.25}); osc(c,d,'sq',N(88),t+.05,.08,.07,{duty:.25});},
   cancel:(c,d,t)=>{osc(c,d,'sq',N(76),t,.05,.06); osc(c,d,'sq',N(69),t+.05,.08,.06);},

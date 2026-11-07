@@ -73,6 +73,7 @@ export function buildZones2(Z){
     // sand dunes: stepped terrace rings
     const ter=[]; for(let k=1;k<7;k++) ring(ter,0,k*.9+.05,0,10+k*7,96,2); g.add(segs(ter,latMat({color:DG,intensity:1,fogFar:60})));
     const sg=[]; truss(sg,0,0,4,1.6,.3,4,6); truss(sg,0,0,-4,1.6,.3,4,6); const glass=segs(sg,latMat({color:RED,intensity:1.4,fogFar:80})); glass.position.set(0,30.5+4,0); g.add(glass); anim.push(t=>glass.rotation.y=t*.4);
+    const esc=segs(BLENDER_GEO.clock_escapement,latMat({color:GD,intensity:1.35,fogFar:100})); esc.position.set(0,15,0); g.add(esc); anim.push(t=>{ esc.rotation.z=Math.floor(t*2)*0.1309; esc.rotation.y=t*.15; });
     portal(g,0,46,0).position.y=h(0,46); const dp=portal(g,-44,0,Math.PI/2); dp.position.y=h(-44,0);
     Z.clock={ id:'clock', name:'sand clocktower', sub:'falling sand · 06:12', group:g, col, bounds:[-48,-48,48,48], h, anim, music:'clock', lvl:11,
       sky:{rain:.05,rainCol:'#3c2c0a',hex:0,stars:1.6}, spawn:{x:0,z:42,yaw:Math.PI},
@@ -154,8 +155,9 @@ export function buildZones2(Z){
     // inner mirror pillars (the reflections stand by these)
     const ps=[]; const pil=[]; for(let k=0;k<6;k++){ const a=k/6*Math.PI*2+.3, r=15; const x=Math.cos(a)*r, z=Math.sin(a)*r; boxEdges(ps,x,0,z,.6,7,2.6); col.push({c:[x,z,1.2]}); pil.push([x,z]); }
     g.add(segs(ps,latMat({color:GD,intensity:1.2,fogFar:70})));
-    // kaleidoscope rosette on the floor
+    // kaleidoscope rosette on the floor + Blender mirror obelisk centerpiece
     const ro=[]; for(let k=0;k<16;k++){ const a=k/16*Math.PI*2; ro.push(0,.05,0,Math.cos(a)*12,.05,Math.sin(a)*12); } for(let r=3;r<=12;r+=3) ring(ro,0,.05,0,r,64,2); const rose=segs(ro,latMat({color:GD,intensity:.9,fogFar:50})); g.add(rose); anim.push(t=>rose.rotation.y=t*.1);
+    const mob=segs(BLENDER_GEO.mirror_obelisk,latMat({color:BONE,intensity:1.35,fogFar:70})); mob.position.set(0,0,-8); g.add(mob); anim.push(t=>{ mob.rotation.y=-t*.35; });
     portal(g,0,44,0);
     Z.mirrors={ id:'mirrors', name:'hall of mirrors', sub:'every clone has a seam', group:g, col, bounds:[-28,-28,28,44], h, anim, music:'mirrors', lvl:19,
       sky:{rain:0,rainCol:'#3c2c0a',hex:1,stars:.8}, spawn:{x:0,z:40,yaw:Math.PI},

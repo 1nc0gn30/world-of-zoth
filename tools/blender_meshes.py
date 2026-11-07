@@ -1,4 +1,4 @@
-# Headless Blender (bpy + bmesh) procedural 3D wireframe geometry generator for World of Zoth.
+# Headless Blender 4.3 (bpy + bmesh) Full 3D Enemy & District Landmark Generator for World of Zoth v1.0.
 # Usage: /usr/bin/blender --background --python tools/blender_meshes.py
 import bpy
 import bmesh
@@ -15,7 +15,6 @@ def bmesh_to_seg_array(bm, scale=1.0, offset=(0.0, 0.0, 0.0)):
     out = []
     for e in bm.edges:
         v0, v1 = e.verts[0].co, e.verts[1].co
-        # Blender Z-up -> Three.js Y-up: (x, z, y)
         out.extend([
             round(v0.x * scale + ox, 3),
             round(v0.z * scale + oy, 3),
@@ -27,18 +26,31 @@ def bmesh_to_seg_array(bm, scale=1.0, offset=(0.0, 0.0, 0.0)):
     return out
 
 
+def add_ring(bm, cx, cy, cz, r, segs=16, axis="z"):
+    verts = []
+    for i in range(segs):
+        a = i / segs * math.pi * 2.0
+        ca, sa = math.cos(a) * r, math.sin(a) * r
+        if axis == "z":
+            verts.append(bm.verts.new((cx + ca, cy + sa, cz)))
+        elif axis == "x":
+            verts.append(bm.verts.new((cx, cy + ca, cz + sa)))
+        else:
+            verts.append(bm.verts.new((cx + ca, cy, cz + sa)))
+    for i in range(segs):
+        bm.edges.new((verts[i], verts[(i + 1) % segs]))
+    return verts
+
+
 def build_relay4_crown():
-    """Geodesic parabolic dish + 6-fin harmonic resonator crown for Relay 4."""
     bm = bmesh.new()
     bmesh.ops.create_uvsphere(bm, u_segments=18, v_segments=10, radius=2.4)
-    # Deform upper hemisphere into a deep parabolic receiver dish + lower spike
     for v in bm.verts:
         r = math.hypot(v.co.x, v.co.y)
         if v.co.z > 0:
             v.co.z = 0.28 * (r ** 2) - 0.8
         else:
             v.co.z *= 0.65
-    # Add 6 radial transceiver fins
     for i in range(6):
         ang = i * math.pi / 3.0
         ca, sa = math.cos(ang), math.sin(ang)
@@ -48,15 +60,13 @@ def build_relay4_crown():
         bm.edges.new((v_in, v_out))
         bm.edges.new((v_out, v_tip))
         bm.edges.new((v_tip, v_in))
-    arr = bmesh_to_seg_array(bm, scale=1.0, offset=(0.0, 0.0, 0.0))
+    arr = bmesh_to_seg_array(bm)
     bm.free()
     return arr
 
 
 def build_sandglass_cage():
-    """Twisted double-helix astrolabe & octagram chronosphere cage for SANDGLASS."""
     bm = bmesh.new()
-    # Two counter-twistedcones + equatorial astrolabe torus
     bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=12, radius1=2.1, radius2=0.25, depth=3.0)
     for v in bm.verts:
         twist = (v.co.z / 1.5) * 0.65
@@ -72,24 +82,20 @@ def build_sandglass_cage():
         v.co.x = x * math.cos(twist) - y * math.sin(twist)
         v.co.y = x * math.sin(twist) + y * math.cos(twist)
         v.co.z -= 1.5
-    # Merge bm2 into bm
     vmap = [bm.verts.new(v.co) for v in bm2.verts]
     for e in bm2.edges:
         bm.edges.new((vmap[e.verts[0].index], vmap[e.verts[1].index]))
     bm2.free()
-    arr = bmesh_to_seg_array(bm, scale=1.0, offset=(0.0, 0.0, 0.0))
+    arr = bmesh_to_seg_array(bm)
     bm.free()
     return arr
 
 
 def build_hunter_seraph():
-    """6-winged Seraphim gyroscope & faceted ocular polyhedron for THE HUNTER."""
     bm = bmesh.new()
     bmesh.ops.create_icosphere(bm, subdivisions=2, radius=1.35)
-    # Flatten slightly along Y (Three.js Z) to form an ocular lens
     for v in bm.verts:
         v.co.y *= 0.45
-    # Add 6 swept seraphim blade wings around the eye
     for w in range(6):
         base_ang = w * math.pi / 3.0
         for seg in range(5):
@@ -103,15 +109,13 @@ def build_hunter_seraph():
             bm.edges.new((v0, v1))
             bm.edges.new((v0, v2))
             bm.edges.new((v1, v2))
-    arr = bmesh_to_seg_array(bm, scale=1.0, offset=(0.0, 0.0, 0.0))
+    arr = bmesh_to_seg_array(bm)
     bm.free()
     return arr
 
 
 def build_blank_tesseract():
-    """4D-projected fractured tesseract hypercube & floating monolith frame for >_ (THE BLANK CURSOR)."""
     bm = bmesh.new()
-    # 16 vertices of a 4D hypercube projected into 3D
     verts4d = []
     for x in (-1, 1):
         for y in (-1, 1):
@@ -124,13 +128,143 @@ def build_blank_tesseract():
             j = i ^ (1 << bit)
             if i < j:
                 bm.edges.new((verts4d[i], verts4d[j]))
-    arr = bmesh_to_seg_array(bm, scale=1.0, offset=(0.0, 0.0, 0.0))
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
+def build_drone_rotor():
+    """Quad-rotor cyber-hornet with swept delta arms & scanner eye."""
+    bm = bmesh.new()
+    bmesh.ops.create_icosphere(bm, subdivisions=1, radius=0.42)
+    for v in bm.verts:
+        v.co.z *= 0.65
+    for i in range(4):
+        ang = (i + 0.5) * math.pi / 2.0
+        cx, cy = math.cos(ang) * 0.78, math.sin(ang) * 0.78
+        v0 = bm.verts.new((math.cos(ang) * 0.3, math.sin(ang) * 0.3, 0.0))
+        v1 = bm.verts.new((cx, cy, 0.18))
+        v2 = bm.verts.new((cx * 0.85, cy * 0.85, -0.35))
+        bm.edges.new((v0, v1))
+        bm.edges.new((v1, v2))
+        add_ring(bm, cx, cy, 0.18, 0.28, segs=10, axis="z")
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
+def build_sentinel_mech():
+    """Armored bipedal lattice goliath with shoulder pods & chest core."""
+    bm = bmesh.new()
+    # Torso octa-core
+    bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=6, radius1=0.45, radius2=0.72, depth=1.1)
+    # Shoulder pods + arms + legs
+    for side in (-1, 1):
+        sh = bm.verts.new((side * 0.75, 0.0, 0.45))
+        el = bm.verts.new((side * 1.05, -0.15, -0.05))
+        ha = bm.verts.new((side * 0.92, -0.45, -0.55))
+        pod1 = bm.verts.new((side * 0.95, 0.25, 0.85))
+        pod2 = bm.verts.new((side * 0.55, -0.25, 0.85))
+        bm.edges.new((sh, el))
+        bm.edges.new((el, ha))
+        bm.edges.new((sh, pod1))
+        bm.edges.new((sh, pod2))
+        bm.edges.new((pod1, pod2))
+        hip = bm.verts.new((side * 0.38, 0.0, -0.55))
+        kn = bm.verts.new((side * 0.46, -0.18, -0.95))
+        ft = bm.verts.new((side * 0.42, 0.1, -1.35))
+        bm.edges.new((hip, kn))
+        bm.edges.new((kn, ft))
+    add_ring(bm, 0, 0, 0.78, 0.32, segs=8, axis="z")
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
+def build_worm_serpent():
+    """Articulated 9-segment cyber-wyrm with mandibles and dorsal spines."""
+    bm = bmesh.new()
+    prev_ring = None
+    for s in range(9):
+        u = s / 8.0
+        x = (u - 0.5) * 2.4
+        z = math.sin(u * math.pi * 2.0) * 0.28
+        r = 0.44 * (1.0 - u * 0.65)
+        ring_v = add_ring(bm, x, 0.0, z, r, segs=8, axis="x")
+        if prev_ring:
+            for k in range(0, 8, 2):
+                bm.edges.new((prev_ring[k], ring_v[k]))
+        # Dorsal spine
+        sp = bm.verts.new((x - 0.12, 0.0, z + r + 0.25))
+        bm.edges.new((ring_v[2], sp))
+        prev_ring = ring_v
+    arr = bmesh_to_seg_array(bm, offset=(0.0, 1.15, 0.0))
+    bm.free()
+    return arr
+
+
+def build_mite_arachnid():
+    """8-legged crystal cyber-spider."""
+    bm = bmesh.new()
+    bmesh.ops.create_icosphere(bm, subdivisions=1, radius=0.32)
+    for side in (-1, 1):
+        for leg in range(4):
+            ang = (leg - 1.5) * 0.38
+            bx, by = side * 0.22, math.sin(ang) * 0.22
+            kx, ky, kz = side * 0.62, math.sin(ang) * 0.55, 0.32
+            fx, fy, fz = side * 0.88, math.sin(ang) * 0.75, -0.32
+            v0 = bm.verts.new((bx, by, 0.0))
+            v1 = bm.verts.new((kx, ky, kz))
+            v2 = bm.verts.new((fx, fy, fz))
+            bm.edges.new((v0, v1))
+            bm.edges.new((v1, v2))
+    arr = bmesh_to_seg_array(bm, offset=(0.0, 0.45, 0.0))
+    bm.free()
+    return arr
+
+
+def build_phase_merkaba():
+    """Counter-interlocking star tetrahedron (Merkaba) prism."""
+    bm = bmesh.new()
+    bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=4, radius1=0.85, radius2=0.0, depth=1.2)
+    bm2 = bmesh.new()
+    bmesh.ops.create_cone(bm2, cap_ends=True, cap_tris=False, segments=4, radius1=0.0, radius2=0.85, depth=1.2)
+    for v in bm2.verts:
+        x, y = v.co.x, v.co.y
+        v.co.x = x * 0.707 - y * 0.707
+        v.co.y = x * 0.707 + y * 0.707
+    vmap = [bm.verts.new(v.co) for v in bm2.verts]
+    for e in bm2.edges:
+        bm.edges.new((vmap[e.verts[0].index], vmap[e.verts[1].index]))
+    bm2.free()
+    arr = bmesh_to_seg_array(bm, offset=(0.0, 0.85, 0.0))
+    bm.free()
+    return arr
+
+
+def build_gunship_valkyrie():
+    """Twin-turbine VTOL interceptor gunship."""
+    bm = bmesh.new()
+    bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=6, radius1=0.55, radius2=0.08, depth=1.8)
+    for v in bm.verts:
+        # Rotate cone to point along Y
+        y, z = v.co.y, v.co.z
+        v.co.y = z
+        v.co.z = y * 0.55
+    for side in (-1, 1):
+        w0 = bm.verts.new((side * 0.35, 0.1, 0.0))
+        w1 = bm.verts.new((side * 1.45, -0.25, 0.12))
+        w2 = bm.verts.new((side * 1.25, -0.65, -0.08))
+        bm.edges.new((w0, w1))
+        bm.edges.new((w1, w2))
+        bm.edges.new((w2, w0))
+        add_ring(bm, side * 1.35, -0.25, 0.05, 0.34, segs=10, axis="z")
+    arr = bmesh_to_seg_array(bm, offset=(0.0, 1.8, 0.0))
     bm.free()
     return arr
 
 
 def build_citadel_spire():
-    """Twisted Gothic-cyber lattice spire sculpted in Blender for the Skyline & Relit Hub."""
     bm = bmesh.new()
     bmesh.ops.create_cone(bm, cap_ends=False, cap_tris=False, segments=8, radius1=2.6, radius2=0.2, depth=14.0)
     bmesh.ops.subdivide_edges(bm, edges=bm.edges[:], cuts=4, use_grid_fill=True)
@@ -140,7 +274,45 @@ def build_citadel_spire():
         x, y = v.co.x, v.co.y
         v.co.x = x * math.cos(twist) - y * math.sin(twist)
         v.co.y = x * math.sin(twist) + y * math.cos(twist)
-    arr = bmesh_to_seg_array(bm, scale=1.0, offset=(0.0, 0.0, 0.0))
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
+def build_clock_escapement():
+    """Interlocking planetary gear escapement & crown wheel for Sand Clocktower."""
+    bm = bmesh.new()
+    add_ring(bm, 0, 0, 0, 3.6, segs=24, axis="y")
+    add_ring(bm, 0, 0, 0, 2.8, segs=24, axis="y")
+    add_ring(bm, 0, 0, 0, 2.2, segs=18, axis="x")
+    for i in range(12):
+        a = i / 12.0 * math.pi * 2.0
+        v0 = bm.verts.new((math.cos(a) * 2.8, 0.0, math.sin(a) * 2.8))
+        v1 = bm.verts.new((math.cos(a + 0.08) * 4.1, 0.0, math.sin(a + 0.08) * 4.1))
+        v2 = bm.verts.new((math.cos(a + 0.18) * 2.8, 0.0, math.sin(a + 0.18) * 2.8))
+        bm.edges.new((v0, v1))
+        bm.edges.new((v1, v2))
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
+def build_mirror_obelisk():
+    """Floating fractured diamond hyper-obelisk for Hall of Mirrors."""
+    bm = bmesh.new()
+    bmesh.ops.create_cone(bm, cap_ends=False, cap_tris=False, segments=6, radius1=1.6, radius2=0.0, depth=3.2)
+    for v in bm.verts:
+        v.co.z += 1.6
+    bm2 = bmesh.new()
+    bmesh.ops.create_cone(bm2, cap_ends=False, cap_tris=False, segments=6, radius1=0.0, radius2=1.6, depth=2.2)
+    for v in bm2.verts:
+        v.co.z -= 1.1
+    vmap = [bm.verts.new(v.co) for v in bm2.verts]
+    for e in bm2.edges:
+        bm.edges.new((vmap[e.verts[0].index], vmap[e.verts[1].index]))
+    bm2.free()
+    add_ring(bm, 0, 0, 0.4, 2.4, segs=16, axis="z")
+    arr = bmesh_to_seg_array(bm)
     bm.free()
     return arr
 
@@ -151,11 +323,19 @@ def main():
         "sandglass_cage": build_sandglass_cage(),
         "hunter_seraph": build_hunter_seraph(),
         "blank_tesseract": build_blank_tesseract(),
+        "drone_rotor": build_drone_rotor(),
+        "sentinel_mech": build_sentinel_mech(),
+        "worm_serpent": build_worm_serpent(),
+        "mite_arachnid": build_mite_arachnid(),
+        "phase_merkaba": build_phase_merkaba(),
+        "gunship_valkyrie": build_gunship_valkyrie(),
         "citadel_spire": build_citadel_spire(),
+        "clock_escapement": build_clock_escapement(),
+        "mirror_obelisk": build_mirror_obelisk(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:
-        f.write("// Generated by headless Blender (bpy + bmesh) via tools/blender_meshes.py\n")
+        f.write("// Generated by headless Blender 4.3 (bpy + bmesh) via tools/blender_meshes.py\n")
         f.write("export const BLENDER_GEO = " + json.dumps(data, separators=(",", ":")) + ";\n")
     print(f"Wrote {out_path} ({os.path.getsize(out_path)} bytes)")
     for k, v in data.items():

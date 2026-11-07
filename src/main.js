@@ -399,9 +399,9 @@ function drawHUD(t){ const X=UI.ctx;
   npcs.forEach(n=>{ if(n.refl||n.prop) return; const d=n.sp.group.position.distanceTo(p); if(d>11) return; const v=n.sp.group.position.clone().add(V(0,2.25,0)).project(camera); if(v.z>1) return; UI.text(n.red?'03ng0cn1':AG[n.id].name,(v.x+1)/2*960,(1-v.y)/2*540-6,n.red?P.RED:AG[n.id].color,LARGE()&&d<6?2:1,'center'); });
   if(interact){ const k=LARGE()?2:1; const s=(IN.touch?'[A] ':'[E] ')+interact.label; const w=UI.textW(s,k)+30; const hh=k===2?40:28, yy=k===2?400:440; UI.box(480-w/2,yy,w,hh,interact.col===P.RED?P.RED2:P.DDG); UI.text(s,480,yy+(k===2?8:8),interact.col,k,'center'); UI.hit(480-w/2,yy,w,hh,()=>interact&&interact.act()); }
   // clickable tactical quick-bar on bottom-right (desktop)
-  if(!IN.touch){ const qbs=[['[J] quests',()=>openMenu(0)],['[P] crew',()=>openMenu(1)],['[M] map',()=>G.hud3.open()],['[Tab] codex',()=>openMenu(4)],['[C] dash',()=>press('dash')]];
-    let qx=948; for(let i=qbs.length-1;i>=0;i--){ const [lbl,fn]=qbs[i], bw=UI.textW(lbl,1)+16; qx-=bw; UI.box(qx,504,bw,22,P.DDG,'rgba(6,5,4,.82)');
-      if(i===4&&G.mv3&&G.mv3.cd>0){ UI.bar(qx+2,522,bw-4,2,1-G.mv3.cd/1.4,P.GD,P.DDG); }
+  if(!IN.touch){ const qbs=[['[J] quests',()=>openMenu(0)],['[P] crew',()=>openMenu(1)],['[M] map',()=>G.hud3.open()],['[Tab] codex',()=>openMenu(4)],['[`] shell',()=>G.openTerminal(true)],['[C] dash',()=>press('dash')]];
+    let qx=948; for(let i=qbs.length-1;i>=0;i--){ const [lbl,fn]=qbs[i], bw=UI.textW(lbl,1)+14; qx-=bw; UI.box(qx,504,bw,22,P.DDG,'rgba(6,5,4,.82)');
+      if(i===5&&G.mv3&&G.mv3.cd>0){ UI.bar(qx+2,522,bw-4,2,1-G.mv3.cd/1.4,P.GD,P.DDG); }
       UI.text(lbl,qx+bw/2,509,P.GD,1,'center'); UI.hit(qx,504,bw,22,fn); qx-=4; } }
   if(G.banner){ const b=G.banner; b.t=G.t-b.t0; const n=Math.floor(b.t*28); const s='> district: '+b.name; const bw=Math.max(260,UI.textW(s,2)+44); UI.box(480-bw/2,86,bw,54,P.GD,'rgba(6,5,4,.84)'); UI.text(s.slice(0,n),480,94,P.GD,2,'center'); if(b.t>0.6) UI.text(curActLabel()+'  ·  '+b.sub,480,120,P.BONE,1,'center'); if(b.t>3.6) G.banner=null; }
 }
@@ -413,6 +413,7 @@ function navTarget(){ const q=G.quests&&trackQuest(); const m=q&&markFor(q);
   if(G.waypoint){ if(G.waypoint.zone===G.zoneId) return {x:G.waypoint.x,z:G.waypoint.z,label:'waypoint',zone:G.zoneId,isPortal:false};
     const po=portalToward(G.waypoint.zone); if(po) return {x:po.x,z:po.z,label:'waypoint -> '+G.Z[G.waypoint.zone].name,zone:G.waypoint.zone,isPortal:true}; }
   return null; }
+G.navTarget=navTarget;
 function markFor(q){ if(q==='__pending'){ const p=G.Q.pending(); return p&&p.mark; } if(QDEF[q]&&G.Q) return G.Q.mark(q); const st=G.quests[q].step; let m=MARK[q]&&MARK[q][st]; if(!m&&q==='q2'&&st===1){ const s=SPAWNS.filter(s=>s.tag==='ember'&&!G.defeated.has(s.id)); if(s[0]) m=['forest',s[0].x,s[0].z]; }
   if(!m&&q==='q4'&&st===1){ const pid=['p1','p2','p3'].find(p=>!G.flags['cut_'+p]); if(pid){ const py=G.Z.relay.objs.pylons[pid]; m=['relay',py.x,py.z]; } } return m; }
 function portalToward(z){ const prev={[G.zoneId]:null}, q=[G.zoneId]; while(q.length){ const c=q.shift(); if(c===z) break; for(const p of G.Z[c].portals){ if(!(p.to in prev)){ prev[p.to]=c; q.push(p.to); } } } if(!(z in prev)) return null; let c=z; while(prev[c]&&prev[c]!==G.zoneId) c=prev[c]; return G.zone.portals.find(p=>p.to===c); }
@@ -436,7 +437,7 @@ function drawTitle(t){ const X=UI.ctx; const r=Math.min(1,G.titleT/1.6); X.fillS
   if(G.titleT>2.0){ titleOpts().forEach((o,i)=>{ const y=296+i*30, sel=i===G.tsel; UI.text((sel?'> ':'  ')+o[0],420,y,sel?P.GD:P.DG,2); if(sel) UI.cursor(420+UI.textW('> '+o[0],2)+4,y+4,t); UI.hit(380,y-4,240,28,()=>{ G.tsel=i; o[1](); }); }); }
   if(G.showCtl){ UI.box(250,400,460,120); ((IN.touch||/android=1/.test(location.search))?['left stick moves, drag right side for camera, run toggles','A talks + confirms, B goes back, the menu button opens the menu','battle: tap A in the gold = crit, tap A on impact = block']:['WASD/arrows move, shift run, drag/Q/R camera','E/space talk + confirm, X back, esc menu, J quests','battle: space in the gold = crit, space on impact = block']).forEach((l,i)=>UI.text(l,270,416+i*20,P.BONE)); }
   if(G.titleT>61){ const n=Math.floor((G.titleT-61)*10); UI.text('found you'.slice(0,n),480,270,P.RED,2,'center'); }
-  UI.text('v0.4 · 5-act story & 22-crew edition',950,524,P.DDG,1,'right'); }
+  UI.text('v1.0 · sovereign director\'s cut',950,524,P.DDG,1,'right'); }
 G.finalEnding=function(){ G.mode='final'; G.endT=0; music('title'); sfx('win'); G.ach('ending'); G.checkAch(); G.flag('final_done'); saveGame(true); };
 function updateFinal(dt){ G.endT+=dt; const T=G.endT; const p=player.group.position; player.pose=T<1?'kneel':'sleep'; const c=G.cam; c.pos.set(p.x+Math.sin(T*.05)*9,2.5+T*.25,p.z+9); c.look.set(p.x,1.5+T*.2,p.z-10);
   postU().stars.value=Math.max(0,2.4-T*.15); if(T>26&&took('confirm')){ player.pose=null; G.mode='explore'; music(G.zone.music); } }

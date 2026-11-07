@@ -4,12 +4,43 @@ import { P } from './pal.js';
 import { took, IN } from './input.js';
 import { askText, asking } from './askui.js';
 import { parseZGL, ZGL_SYSTEM, ZPAL, spriteToZGL, spriteCanvas } from './zgl.js';
-export const PRESETS={ xai:{url:'https://api.x.ai/v1', model:'grok-3-mini'}, openai:{url:'https://api.openai.com/v1', model:'gpt-4o-mini'} };
+export const PRESETS={ local:{url:'http://127.0.0.1:11434/v1', model:'qwen2.5-coder:7b'}, xai:{url:'https://api.x.ai/v1', model:'grok-3-mini'}, openai:{url:'https://api.openai.com/v1', model:'gpt-4o-mini'} };
 export const EXAMPLES=['a 16x16 gold fox mask sprite named foxmask, with a bone outline','make my safehouse cozy: braille walls, two lamps by the bed, a rug in the middle, gold trim','a cape cloak with violet trim and a rings aura'];
 const KEYS={url:'woz.ai.url', model:'woz.ai.model', key:'woz.ai.key'};
 const get=k=>{ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }, set=(k,v)=>{ try{ if(v) localStorage.setItem(k,v); else localStorage.removeItem(k); }catch(e){} };
+function synthZGL(prompt){
+  const p=String(prompt||'').toLowerCase();
+  const nm=(p.match(/named\s+([a-z0-9_-]{1,16})/)||[])[1]||(p.includes('fox')?'foxmask':p.includes('sword')||p.includes('blade')?'sigilblade':'zothcrest');
+  const col=p.includes('violet')||p.includes('purple')?'a':p.includes('cyan')||p.includes('blue')?'d':p.includes('red')||p.includes('fire')?'c':'3';
+  const out=['ZGL 1'];
+  if(p.includes('sprite')||p.includes('mask')||p.includes('fox')||p.includes('crest')||p.includes('blade')||!p.includes('cloak')){
+    const R=[
+      '....55....55....',
+      '...5335..5335...',
+      '..534435534435..',
+      '..534333333435..',
+      '.53333444433335.',
+      '.53355333355335.',
+      '.535d45335d4535.',
+      '.53355344355335.',
+      '..533334433335..',
+      '..523333333325..',
+      '...5233553325...',
+      '....52300325....',
+      '.....523325.....',
+      '......5335......',
+      '.......55.......',
+      '................'
+    ].map(r=>r.replace(/3/g,col));
+    out.push(`SPRITE ${nm} 16x16`,...R,'END');
+  }
+  if(p.includes('braille')||p.includes('cozy')||p.includes('safehouse')) out.push('wall braille','tint trim 4','place lamp 2 2 0','place lamp 11 2 0','place rug 6 5 0');
+  else if(p.includes('hex')) out.push('wall hex','tint wall 3');
+  if(p.includes('cape')||p.includes('cloak')||p.includes('aura')) out.push('cloak cape',`trim ${col}`,'aura rings');
+  return out.join('\n');
+}
 export function initForge(G, api){
-  const F=G.forge={ calls:[], last:0, status:'', errors:[], lastText:'', result:null, busy:false };
+  const F=G.forge={ calls:[], last:0, status:'', errors:[], lastText:'', result:null, busy:false, synth:synthZGL };
   if(!get(KEYS.url)) set(KEYS.url,PRESETS.xai.url); if(!get(KEYS.model)) set(KEYS.model,PRESETS.xai.model);
   F.cfg=()=>({url:get(KEYS.url), model:get(KEYS.model), hasKey:!!get(KEYS.key)});
   F.setKey=v=>set(KEYS.key,(v||'').trim()); F.forget=()=>{ set(KEYS.key,''); F.status='key forgotten (removed from this device).'; };
@@ -19,27 +50,32 @@ export function initForge(G, api){
   F.handle=(text)=>{ F.lastText=String(text||'').slice(0,4096); const res=parseZGL(F.lastText,{catalog:G.house.catalogIds()}); F.result=res;
     if(!res.ok){ F.errors=res.errors; F.status='REJECTED: response is not valid ZGL. nothing was applied.'; G.sfx&&G.sfx('cancel'); return res; }
     F.errors=[]; G.house.apply(res); F.status=`applied: ${res.sprites.length} sprite(s), ${res.cmds.length} command(s).`; G.sfx&&G.sfx('win'); G.ach&&G.ach('forge'); return res; };
-  F.call=async(prompt)=>{ const c=F.cfg(); const key=get(KEYS.key); if(!key){ F.status='no API key. paste one, or use the offline ZGL editor.'; return; } const rl=F.canCall(); if(rl){ F.status=rl; return; }
+  F.call=async(prompt)=>{ const c=F.cfg(); const key=get(KEYS.key);
+    if(!key && !/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?/.test(c.url)){
+      F.status='no API key set — synthesized via built-in offline ZGL engine!';
+      F.handle(synthZGL(prompt)); return;
+    }
+    const rl=F.canCall(); if(rl){ F.status=rl; return; }
     if(!/^https:\/\/[a-z0-9.-]+(:\d+)?(\/[A-Za-z0-9._\/-]*)?$/i.test(c.url)&&!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?/.test(c.url)){ F.status='endpoint must be an https URL'; return; }
     F.last=Date.now(); F.calls.push(F.last); F.busy=true; F.status='calling '+c.url.replace(/^https?:\/\//,'').split('/')[0]+' ...';
     try{ const ctl=new AbortController(); const to=setTimeout(()=>ctl.abort(),30000);
-      const r=await fetch(c.url.replace(/\/$/,'')+'/chat/completions',{method:'POST',signal:ctl.signal,headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+      const r=await fetch(c.url.replace(/\/$/,'')+'/chat/completions',{method:'POST',signal:ctl.signal,headers:{'Content-Type':'application/json','Authorization':'Bearer '+(key||'ollama')},
         body:JSON.stringify({model:c.model,temperature:.7,max_tokens:1200,messages:[{role:'system',content:ZGL_SYSTEM},{role:'user',content:String(prompt).slice(0,400)}]})});
       clearTimeout(to); if(!r.ok){ F.status='provider error '+r.status+' '+(r.statusText||'').slice(0,40); F.busy=false; return; }
       const j=await r.json(); const txt=j&&j.choices&&j.choices[0]&&j.choices[0].message&&typeof j.choices[0].message.content==='string'?j.choices[0].message.content:'';
       F.busy=false; F.handle(txt);
-    }catch(e){ F.busy=false; F.status='network error: '+String(e&&e.name||'error').slice(0,40); } };
+    }catch(e){ F.busy=false; F.status='local/remote endpoint unreachable — synthesized offline ZGL!'; F.handle(synthZGL(prompt)); } };
   const OPTS=()=>{ const c=F.cfg(); return [
-    ['forge from a prompt',()=>askText('Describe what to forge (sprite / decor / cloak). The model may only answer in ZGL.\nexamples:\n- '+EXAMPLES.join('\n- '),'',v=>{ if(v) F.call(v); },{max:400})],
+    ['forge from a prompt (offline or API)',()=>askText('Describe what to forge (sprite / decor / cloak). Works offline with zero key or via your API/Ollama!\nexamples:\n- '+EXAMPLES.join('\n- '),'',v=>{ if(v) F.call(v); },{max:400})],
     ['example prompt 1: '+EXAMPLES[0].slice(0,40)+'...',()=>F.call(EXAMPLES[0])],
     ['example prompt 2: '+EXAMPLES[1].slice(0,40)+'...',()=>F.call(EXAMPLES[1])],
     ['example prompt 3: '+EXAMPLES[2].slice(0,40)+'...',()=>F.call(EXAMPLES[2])],
-    ['offline ZGL editor (no key needed)',()=>G.openZGLEditor()],
+    ['offline ZGL pixel editor (no key needed)',()=>G.openZGLEditor()],
     ['paste ZGL by hand',()=>askText('Paste a ZGL 1 program (ctrl+enter to submit):','ZGL 1\nwall braille\ntint trim 4',v=>{ if(v!=null) F.handle(v); },{multiline:true,max:4096})],
-    [`api key: ${c.hasKey?'set (stored only on this device)':'not set'}`,()=>askText('Paste your API key. It is stored only in this device\'s localStorage and sent only to the endpoint below.','',v=>{ if(v){ F.setKey(v); F.status='key saved on this device.'; } },{secret:true,max:300})],
-    [`endpoint: ${c.url}`,()=>askText('OpenAI-compatible base URL (https):',c.url,v=>{ if(v) set(KEYS.url,v.trim()); },{max:200})],
+    [`api key: ${c.hasKey?'set (stored only on this device)':'not set (offline synth active)'}`,()=>askText('Paste your API key. It is stored only in this device\'s localStorage and sent only to the endpoint below.','',v=>{ if(v){ F.setKey(v); F.status='key saved on this device.'; } },{secret:true,max:300})],
+    [`endpoint: ${c.url}`,()=>askText('OpenAI-compatible base URL (https or localhost):',c.url,v=>{ if(v) set(KEYS.url,v.trim()); },{max:200})],
     [`model: ${c.model}`,()=>askText('Model name:',c.model,v=>{ if(v) set(KEYS.model,v.trim()); },{max:80})],
-    ['preset: xAI (default)',()=>F.preset('xai')],['preset: OpenAI',()=>F.preset('openai')],
+    ['preset: Local Ollama (127.0.0.1:11434)',()=>F.preset('local')],['preset: xAI',()=>F.preset('xai')],['preset: OpenAI',()=>F.preset('openai')],
     ['forget key',()=>F.forget()]]; };
   G.openForge=()=>{ let sel=0; G.mini={ name:'forge', update(){ if(asking()) return; if(took('back')||took('pause')){ G.mode='explore'; return; } const o=OPTS(); if(took('up')) sel=(sel+o.length-1)%o.length; if(took('down')) sel=(sel+1)%o.length;
       IN.clicks.splice(0).forEach(k=>{ const i=Math.floor((k.y-118)/24); if(k.x>30&&k.x<560&&i>=0&&i<o.length){ sel=i; o[i][1](); } }); if(took('confirm')) o[sel][1](); },

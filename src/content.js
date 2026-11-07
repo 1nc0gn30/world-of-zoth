@@ -77,6 +77,11 @@ Object.assign(SKILLS,{
   mirrorbuf:{name:'mirror buffer', cost:8, target:'allies', shield:2, buff:2, desc:'turns the trap: crew shield + +40% atk 2 turns.', fx:'shield'},
   unpredict:{name:'unscripted', cost:10, target:'enemy', hits:4, pow:.75, strip:true, crit:true, lvl:8, desc:'4 unpredictable critical cuts; strips firewalls.', fx:'cut'},
   crew22:{name:'crew: 22', cost:20, target:'all', pow:2.6, pierce:true, heal:28, healL:3, lvl:16, desc:'22nd agent convergence: 2.6x all + heals crew.', fx:'quorum'},
+  duo_mirror:{name:'duo: zero-day split', cost:10, target:'all', pow:2.8, pierce:true, markAll:3, duo:true, desc:'[1nc0gn30 + 03ng0cn1] 2.8x piercing all + traces all (-3 sync).', fx:'quorum'},
+  duo_solar:{name:'duo: foxfire nova', cost:10, target:'all', pow:2.5, pierce:true, heal:24, healL:3, duo:true, desc:'[Kitsune + Ignis] 2.5x solar magma all + heals crew (-3 sync).', fx:'rings'},
+  duo_undertow:{name:'duo: deep-time tide', cost:10, target:'all', pow:2.4, shieldAll:2, enParty:12, duo:true, desc:'[Chronos + Leviathan] 2.4x all + crew shield + 12 EN (-3 sync).', fx:'wipe'},
+  duo_zerotrust:{name:'duo: zero-trust exec', cost:10, target:'all', pow:2.6, strip:true, unvoice:2, buff:2, duo:true, desc:'[Vigil + Onyx] 2.6x all + strips firewalls + crew +40% atk (-3 sync).', fx:'wipe'},
+  duo_surge:{name:'duo: lattice surge', cost:8, target:'all', pow:2.2, pierce:true, enParty:8, duo:true, desc:'[Duo Resonance] 2.2x piercing all + 8 EN to crew (-3 sync).', fx:'wipe'},
 });
 // ---------------- enemies (base = level 1; scaled by zone level) ----------------
 Object.assign(ENEMIES,{
@@ -114,6 +119,9 @@ Object.assign(ITEMS,{
   'tide.shell':{name:'tide shell', desc:'shell: +16 DEF, +110 HP.', slot:'shell', mod:{def:16,hp:110}, price:2600},
   'quorum.halo':{name:'quorum halo', desc:'shell: +18 DEF, +130 HP, +2 SPD.', slot:'shell', mod:{def:18,hp:130,spd:2}},
   'citadel.crown':{name:'citadel crown', desc:'shell: +22 DEF, +160 HP, +4 SPD. zero-knowledge sovereign crest.', slot:'shell', mod:{def:22,hp:160,spd:4}},
+  'foxfire.crown':{name:'foxfire crown', desc:'shell: +14 DEF, +90 HP, +3 SPD. Kitsune\'s nine-branch halo.', slot:'shell', mod:{def:14,hp:90,spd:3}},
+  'doom.gauntlet':{name:'doom gauntlet', desc:'tool: +22 ATK, +4 DEF. Ignis\'s white-hot anvil fist.', slot:'tool', mod:{atk:22,def:4}},
+  'aeon.gear':{name:'aeon escapement', desc:'tool: +18 ATK, +4 SPD, +15 EN. Chronos\'s golden 06:13 gear.', slot:'tool', mod:{atk:18,spd:4,en:15}},
   'red.tags':{name:'red tag set', desc:'tool: +14 ATK, +3 SPD. nine tags in the copy\'s hand.', slot:'tool', mod:{atk:14,spd:3}},
   'mega.patch':{name:'mega.patch', desc:'restores 120 HP to one ally.', use:'heal', v:120, price:60},
   'ghost.key':{name:'ghost key', desc:'Ghostbyte wants three.', key:true}, 'connector':{name:'connector', desc:'Neko\'s lost connector part.', key:true},
@@ -244,6 +252,18 @@ export const QDEF={
     steps:[{t:'Challenge the overclocked anomaly pantheon at the Skyline source platform.',kind:'use',at:['skyline',0,-22,3.6],label:'enter  citadel boss rush',
       lines:[['athena','Act VI simulation online: SANDGLASS and THE HUNTER reconstructed at maximum clock speed.'],['me','Let us test the full quorum.']],battle:['sandglass','hunter'],boss:true}],
     done:{lines:[['aether','Simulation cleared. Zero-knowledge citadel secured.']],xp:3000,items:[['citadel.crown',1]],flag:'citadel_done'}},
+  s_kitsune:{title:'nine-branch lantern', act:2, side:true, auto:true, avail:G=>G.qdone_('q3'),
+    steps:[{t:'Kindle the ancient foxfire shrine in the Rest Woods.',kind:'use',at:['forest',-18,-22,3.6],label:'kindle  foxfire shrine',
+      lines:[['kitsune','Nine branches of light. None of them can be forged by a voice node.']],battle:['echo','drone','echo']}],
+    done:{lines:[['kitsune','The nine-branch halo is yours. Wear it when the dark listens.']],xp:280,items:[['foxfire.crown',1]]}},
+  s_ignis:{title:'white-hot anvil', act:4, side:true, auto:true, avail:G=>G.qdone_('q10'),
+    steps:[{t:'Temper the master gauntlet at the Doom-Fire Foundry core anvil.',kind:'use',at:['foundry',0,16,3.6],label:'temper  doom gauntlet',
+      lines:[['ignis','One more strike while the fire is white-hot!']],battle:['warden','slag','slag'],boss:true}],
+    done:{lines:[['ignis','Pure doom-fire steel. Nothing stands in front of this.']],xp:650,items:[['doom.gauntlet',1]]}},
+  s_chronos:{title:'the 06:13 escapement', act:3, side:true, auto:true, avail:G=>G.qdone_('q8'),
+    steps:[{t:'Calibrate the golden escapement wheel at the Sand Clocktower base.',kind:'use',at:['clock',0,-14,3.6],label:'calibrate  escapement',
+      lines:[['chronos','One stray sand-loop remains on the north terrace. Clear it and the escapement is yours.']],battle:['mite','worm','mite','worm']}],
+    done:{lines:[['chronos','The 06:13 escapement. Time moves with you now.']],xp:520,items:[['aeon.gear',1]]}},
 };
 Object.entries(QDEF).forEach(([k,q])=>{ QUESTS[k]={title:q.title, side:!!q.side, act:q.act, steps:(q.steps||[]).map(s=>s.t)}; if(!q.steps) QUESTS[k].steps=['Answer Draco.']; });
 QUESTS.q1.act=1; QUESTS.q2.act=1; QUESTS.q3.act=1; QUESTS.q4.act=2; QUESTS.k1.act=1;
