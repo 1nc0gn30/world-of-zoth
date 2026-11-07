@@ -36,7 +36,9 @@ export const TRACKS={
   caves:{bpm:76, prog:[Dm,Eb,Bb,A], bass:'x.......x...x...', arp:[0,1,2], arpDiv:2, duty:.5, drums:'none', lead:.2, pad:1, drone:1},
   mirrors:{bpm:96, prog:[Dm,Dm,Eb,A], bass:'x...x.x.x...x.x.', arp:[2,1,0,1], arpDiv:4, duty:.125, drums:'relay', lead:.45, pad:.7},
   deep:{bpm:70, prog:[Dm,F,Bb,Am], bass:'x...............', arp:[0,1,2,1], arpDiv:2, duty:.5, drums:'none', lead:.2, pad:1.2, crickets:0},
+  abyss:{bpm:66, prog:[Dm,Eb,Gm,A], bass:'x.......x...x...', arp:[0,2,1,0], arpDiv:2, duty:.25, drums:'soft', lead:.35, pad:1.3, drone:1},
   skyline:{bpm:124, prog:[Dm,Bb,C,A], bass:'x.x.x.xxx.x.x.xx', arp:[0,1,2,3,2,1,2,0], arpDiv:4, duty:.125, drums:'hub', lead:.6, pad:.5},
+  citadel:{bpm:148, prog:[Dm,Bb,Eb,A], bass:'xx.xx.xxx.xx.xxx', arp:[0,2,1,3,2,1,3,0], arpDiv:4, duty:.125, drums:'battle', lead:.8, pad:.6, drone:1},
   final:{bpm:160, prog:[Dm,Eb,Bb,A], bass:'xxxxxxx.xxxxxx.x', arp:[0,2,1,3,1,2], arpDiv:4, duty:.125, drums:'battle', lead:.9, pad:.4, drone:1},
 };
 function hsh(n){ n=Math.sin(n*127.1)*43758.5453; return n-Math.floor(n); }

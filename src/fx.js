@@ -55,6 +55,7 @@ export function enemyMesh(kind){
   if(kind==='glass'){ const cg=L(BLENDER_GEO.sandglass_cage,RED,1.45); cg.position.y=3.2; spin=cg; const b=[]; ring(b,0,3.2,0,2.4,48,2); const bb=L(b,RED2,1.3); g.userData.rings=bb; const c=[]; for(let i=0;i<260;i++){ const y=Math.random()*3; c.push((Math.random()-.5)*.6,y+1.6,(Math.random()-.5)*.6); } P(c,'#ffd08a',1.4,2); h=6.6; }
   if(kind==='eye'){ const e=L(BLENDER_GEO.hunter_seraph,RED,1.45); e.position.y=4.2; const c=[]; sphereCloud(c,0,4.2,0,.9,300,rng(9)); spin=P(c,'#ff8a70',1.8,2.4); const b=[]; for(let i=0;i<6;i++){ const t=i/6*Math.PI*2; b.push(Math.cos(t)*2.2,0,Math.sin(t)*2.2,Math.cos(t)*1.4,3,Math.sin(t)*1.4); } L(b,RED2,1); g.userData.rings=e; h=6.2; }
   if(kind==='blank'){ const c=[]; for(let i=0;i<900;i++){ const u=Math.random(); if(u<.55) c.push(-2.2+Math.random()*2,1+Math.random()*5,(Math.random()-.5)*.4); else c.push(.4+Math.random()*3.2,1+Math.random()*.6,(Math.random()-.5)*.4); } spin=P(c,RED,1.7,2.6); const ts=L(BLENDER_GEO.blank_tesseract,RED2,1.45); ts.position.y=3.5; g.userData.rings=ts; h=6.5; g.userData.flat=true; }
+  if(kind==='archon'){ const ar=L(BLENDER_GEO.archon_seraph,RED,1.55); ar.position.y=4.4; spin=ar; const r=[]; ring(r,0,4.4,0,3.6,64,2); const rr=L(r,'#f5b82e',1.4); g.userData.rings=rr; const c=[]; sphereCloud(c,0,4.4,0,1.2,400,rng(11)); P(c,'#ffe6c8',1.9,2.5); h=6.8; }
   g.userData={...g.userData, mats, spin, h, kind};
   return g;
 }

@@ -179,10 +179,10 @@ export function buildZones2(Z){
     // whale ribs (Leviathan's memory) + three memory orbs
     const wh=[]; for(let i=0;i<14;i++){ const x=-20+i*2.4, r=4*Math.sin(i/13*Math.PI)+.8; ring(wh,x,0,0,r,24,1,'x'); } const whale=segs(wh,latMat({color:'#8B5CF6',intensity:1,fogFar:70})); whale.position.set(0,14,-24); g.add(whale); anim.push(t=>{ whale.position.x=Math.sin(t*.1)*20; });
     const mem={}; [['m1',-28,10],['m2',24,18],['m3',4,-30]].forEach(([id,x,z])=>{ const a=[]; sphereCloud(a,x,2,z,1,140,R); const m=pts(a,latMat({color:BONE,points:true,size:1.8,intensity:1.4,twinkle:.6,fogFar:60})); g.add(m); anim.push(t=>m.rotation.y=t); mem[id]={x,z,m}; });
-    portal(g,44,0,Math.PI/2);
+    portal(g,44,0,Math.PI/2); portal(g,-44,0,Math.PI/2);
     Z.deep={ id:'deep', name:'deep-water memory', sub:'leviathan remembers', group:g, col, bounds:[-46,-46,46,46], h, anim, music:'deep', lvl:22,
       sky:{rain:.15,rainCol:'#2a2246',hex:0,stars:.6}, spawn:{x:40,z:0,yaw:-Math.PI/2},
-      portals:[{x:44,z:0,r:3,to:'clock',sx:-40,sz:0,syaw:Math.PI/2,label:'sand clocktower'}], objs:{mem}, tag:[-36,-36] };
+      portals:[{x:44,z:0,r:3,to:'clock',sx:-40,sz:0,syaw:Math.PI/2,label:'sand clocktower'},{x:-44,z:0,r:3,to:'abyss',sx:40,sz:0,syaw:-Math.PI/2,label:'sub-lattice abyss'}], objs:{mem}, tag:[-36,-36] };
   }
   // ===================== MODE-7 SKYLINE (Voronoi districts, 21 skybeams, the source tower) =====================
   { const B=base('skyline',{seed:101,fogFar:70,step:4}); const {g,col,anim,h}=B; const R=rng(102);
@@ -201,10 +201,39 @@ export function buildZones2(Z){
     anim.push(t=>{ cursor.visible=Math.floor(t*1.6)%2===0; });
     const city=[]; const mats={ edge:latMat({color:GD,intensity:.6,fogNear:20,fogFar:160}), band:latMat({color:DG,intensity:.8,fogFar:150}), win:latMat({color:GD,points:true,size:1.2,twinkle:.6,intensity:1.1,fogFar:170}), solid:solidMat('#0b0906') };
     for(let i=0;i<40;i++){ const a=R()*Math.PI*2, r=70+R()*50; building(g,Math.cos(a)*r,Math.sin(a)*r,4+R()*5,4+R()*5,10+R()*40,R,mats); }
-    portal(g,-50,30,Math.PI/2);
+    portal(g,-50,30,Math.PI/2); portal(g,0,46,0);
     Z.skyline={ id:'skyline', name:'mode-7 skyline', sub:'21 skybeams · the source', group:g, col, bounds:[-50,-48,50,46], h, anim, music:'skyline', lvl:26,
       sky:{rain:.2,rainCol:'#5a420e',hex:1,stars:2}, spawn:{x:-44,z:30,yaw:Math.PI/2},
-      portals:[{x:-50,z:30,r:3,to:'relay',sx:44,sz:0,syaw:-Math.PI/2,label:'the hollow'}], objs:{bea,cursor,src}, tag:[44,40] };
+      portals:[{x:-50,z:30,r:3,to:'relay',sx:44,sz:0,syaw:-Math.PI/2,label:'the hollow'},{x:0,z:46,r:3,to:'citadel',sx:0,sz:38,syaw:Math.PI,label:'zero-knowledge citadel'}], objs:{bea,cursor,src}, tag:[44,40] };
+  }
+  // ===================== SUB-LATTICE ABYSS (District #13) =====================
+  { const h=(x,z)=>0.35*Math.sin(x*.09)*Math.sin(z*.09);
+    const B=base('abyss',{seed:111,h,fogFar:54,gridCol:'#161224',dotCol:'#6d28d9'}); const {g,col,anim}=B; const R=rng(112);
+    const mono=segs(BLENDER_GEO.abyss_monolith,latMat({color:'#a78bfa',intensity:1.4,fogFar:120})); mono.position.set(0,0,0); g.add(mono); col.push({c:[0,0,2.8]});
+    anim.push(t=>{ mono.rotation.y=t*.25; });
+    const seals={}; [['s1',-24,-20],['s2',24,-20],['s3',0,24]].forEach(([id,x,z])=>{
+      const a=[]; wireOcta(a,1.2,x,2.2,z); ring(a,x,.1,z,2.2,32,2);
+      const m=segs(a,latMat({color:GD,intensity:1.4,fogFar:70})); g.add(m); anim.push(t=>{ m.rotation.y=t*.4; }); col.push({c:[x,z,1.3]}); seals[id]={x,z,m};
+    });
+    const sp=[]; for(let i=0;i<260;i++) sp.push((R()-.5)*84,R()*18,(R()-.5)*84);
+    const spp=pts(sp,latMat({color:'#22d3ee',points:true,size:1.8,twinkle:1,intensity:1.4,fogFar:60})); g.add(spp);
+    portal(g,44,0,Math.PI/2); portal(g,-44,0,Math.PI/2);
+    Z.abyss={ id:'abyss', name:'sub-lattice abyss', sub:'menger trench · depth 4096m', group:g, col, bounds:[-46,-46,46,46], h, anim, music:'abyss', lvl:28,
+      sky:{rain:.25,rainCol:'#312e81',hex:1,stars:1.4}, spawn:{x:40,z:0,yaw:-Math.PI/2},
+      portals:[{x:44,z:0,r:3,to:'deep',sx:-40,sz:0,syaw:Math.PI/2,label:'deep-water memory'},{x:-44,z:0,r:3,to:'citadel',sx:0,sz:38,syaw:Math.PI,label:'zero-knowledge citadel'}], objs:{seals}, tag:[-34,34] };
+  }
+  // ===================== ZERO-KNOWLEDGE CITADEL (District #14) =====================
+  { const h=()=>0;
+    const B=base('citadel',{seed:121,h,fogFar:68,gridCol:'#2e2208',dotCol:GD}); const {g,col,anim}=B; const R=rng(122);
+    const thr=segs(BLENDER_GEO.pantheon_throne,latMat({color:GD,intensity:1.35,fogFar:140})); thr.position.set(0,0,-22); g.add(thr); col.push({c:[0,-22,4.2]});
+    const arc=segs(BLENDER_GEO.archon_seraph,latMat({color:RED,intensity:1.45,fogFar:140})); arc.position.set(0,9,-16); g.add(arc);
+    anim.push(t=>{ thr.rotation.y=-t*.15; arc.rotation.y=t*.45; arc.position.y=9+Math.sin(t*1.8)*.5; });
+    const coln=[]; for(let i=-3;i<=3;i++){ if(i===0) continue; const z=i*10; truss(coln,-18,z,14,1.1,.5,6,4); truss(coln,18,z,14,1.1,.5,6,4); col.push({c:[-18,z,1.3]},{c:[18,z,1.3]}); }
+    g.add(segs(coln,latMat({color:DG,intensity:1.15,fogFar:90})));
+    portal(g,0,42,0);
+    Z.citadel={ id:'citadel', name:'zero-knowledge citadel', sub:'pantheon sanctum · archon-0', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'citadel', lvl:30,
+      sky:{rain:.1,rainCol:'#5a420e',hex:1,stars:2.2}, spawn:{x:0,z:38,yaw:Math.PI},
+      portals:[{x:0,z:42,r:3,to:'skyline',sx:0,sz:40,syaw:Math.PI,label:'mode-7 skyline'}], objs:{thr,arc}, tag:[34,-34] };
   }
   // ===================== SECRET: THE ROOFTOP AT 06:12 =====================
   { const g=new THREE.Group(), col=[], anim=[], R=rng(612); const h=()=>0;

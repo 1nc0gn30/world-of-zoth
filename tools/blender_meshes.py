@@ -317,6 +317,59 @@ def build_mirror_obelisk():
     return arr
 
 
+def build_abyss_monolith():
+    """Twisted recursive Menger/octahedral trench monolith for Sub-Lattice Abyss."""
+    bm = bmesh.new()
+    for lvl in range(5):
+        z0 = lvl * 2.4
+        r = 2.8 - lvl * 0.35
+        ang = lvl * 0.38
+        pts = []
+        for k in range(6):
+            a = k / 6.0 * math.pi * 2.0 + ang
+            pts.append(bm.verts.new((math.cos(a) * r, math.sin(a) * r, z0)))
+        for k in range(6):
+            bm.edges.new((pts[k], pts[(k + 1) % 6]))
+    add_ring(bm, 0, 0, 5.2, 3.8, segs=24, axis="z")
+    add_ring(bm, 0, 0, 5.2, 3.2, segs=24, axis="x")
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
+def build_pantheon_throne():
+    """Grand gothic-cybernetic cathedral spire-throne with 3 ZK seal rings for Zero-Knowledge Citadel."""
+    bm = bmesh.new()
+    bmesh.ops.create_cone(bm, cap_ends=False, cap_tris=False, segments=8, radius1=4.2, radius2=1.2, depth=14.0)
+    for v in bm.verts:
+        v.co.z += 7.0
+    add_ring(bm, 0, 0, 4.0, 5.2, segs=32, axis="z")
+    add_ring(bm, 0, 0, 9.0, 4.0, segs=32, axis="z")
+    add_ring(bm, 0, 0, 14.0, 3.0, segs=24, axis="y")
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
+def build_archon_seraph():
+    """6-winged hyper-dodecahedral compiler superboss (ARCHON-0)."""
+    bm = bmesh.new()
+    bmesh.ops.create_icosphere(bm, subdivisions=1, radius=1.6)
+    for w in range(6):
+        ang = w / 6.0 * math.pi * 2.0
+        v0 = bm.verts.new((math.cos(ang) * 1.4, math.sin(ang) * 1.4, 0.0))
+        v1 = bm.verts.new((math.cos(ang + 0.25) * 3.8, math.sin(ang + 0.25) * 3.8, 1.8))
+        v2 = bm.verts.new((math.cos(ang - 0.25) * 3.4, math.sin(ang - 0.25) * 3.4, -1.4))
+        bm.edges.new((v0, v1))
+        bm.edges.new((v1, v2))
+        bm.edges.new((v2, v0))
+    add_ring(bm, 0, 0, 0, 2.9, segs=28, axis="z")
+    add_ring(bm, 0, 0, 0, 2.9, segs=28, axis="x")
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
 def main():
     data = {
         "relay4_crown": build_relay4_crown(),
@@ -332,6 +385,9 @@ def main():
         "citadel_spire": build_citadel_spire(),
         "clock_escapement": build_clock_escapement(),
         "mirror_obelisk": build_mirror_obelisk(),
+        "abyss_monolith": build_abyss_monolith(),
+        "pantheon_throne": build_pantheon_throne(),
+        "archon_seraph": build_archon_seraph(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:

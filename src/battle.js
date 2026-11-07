@@ -25,7 +25,7 @@ export class Battle{
     this.enemies=[]; types.forEach(t=>this.addEnemy(t));
     this.lastMe=null; this.prevMe=null; this.flags={}; this.order=[]; this.ti=0; this.chain=0;
     this.menu=0; this.sub=null; this.tsel=0; this.timing=null; this.block=null; this.result=null;
-    this.camPos=this.C.clone().addScaledVector(this.F,-8.6).add(V(0,3.1,0)); this.camLook=this.C.clone().add(V(0,1.3,0)); if(types.some(t=>['relay4','sandglass','hunter','blank'].includes(t))){ this.camPos.addScaledVector(this.F,-3).y+=2.5; this.camLook.y+=2; }
+    this.camPos=this.C.clone().addScaledVector(this.F,-8.6).add(V(0,3.1,0)); this.camLook=this.C.clone().add(V(0,1.3,0)); if(types.some(t=>['relay4','sandglass','hunter','blank','archon'].includes(t))){ this.camPos.addScaledVector(this.F,-3).y+=2.5; this.camLook.y+=2; }
     const M=G.mods||{}; if(M.d3) this.party.forEach(p=>p.st.shield=1);
     ringFx(G.scene,this.C.clone().add(V(0,.05,0)),P.GD,9,1.2,'y',2);
     // arena: braille-dashed floor rings + a faint lattice dome
@@ -40,7 +40,7 @@ export class Battle{
       this.say('PRE-EMPTIVE LATTICE AMBUSH! (+2 SYNC CHAIN · +10 EN)',2.4);
     }
   }
-  addEnemy(t){ const E=ENEMIES[t], n=this.enemies.filter(e=>e.alive).length, j=this.enemies.length; const big=['relay4','sandglass','hunter','blank'].includes(t);
+  addEnemy(t){ const E=ENEMIES[t], n=this.enemies.filter(e=>e.alive).length, j=this.enemies.length; const big=['relay4','sandglass','hunter','blank','archon'].includes(t);
     const pos=big? this.at(5.2,2.6) : this.at(2.6+(j%2)*1.1, ((j%3)-1)*1.9 + (j>=3?.9:0));
     let obj; if(E.mesh==='echo'||E.mesh==='copy'){ obj=new Billboard('copy'); obj.facing=Math.atan2(-this.R.x,-this.R.z); this.G.scene.add(obj.group); obj.group.position.copy(pos); }
     else { obj={group:enemyMesh(E.mesh)}; this.G.scene.add(obj.group); obj.group.position.copy(pos); }
@@ -157,7 +157,7 @@ export class Battle{
   dmg(a,e,pow,{crit=1,pierce=false}={}){ let atk=a.atk*(a.st&&a.st.buff>0?1.4:1)*(a.isP?1+(this.chain||0)*.05:1); let d=atk*pow*(.9+Math.random()*.2)-e.def*.6; d*=crit; if(e.st.mark>0) d*=1.5; if(e.st.wall>0&&!pierce) d*=.35; return Math.max(1,Math.round(d)); }
   hitE(e,d,col,label){ e.hp=Math.max(0,e.hp-d); e.flash=1; num(e.obj.group.position.clone().add(V(0,(e.obj.update?2.1:(e.obj.group.userData.h||1.4)+.6),0)),label?label+' '+d:d,col);
     burst(e.obj.group.position.clone().add(V(0,e.obj.update?1:(e.obj.group.userData.h||1.4),0)),col,18,4,.6); this.G.shake(.25);
-    if(e.hp<=0){ e.alive=false; sfx('boom'); const bg=['relay4','sandglass','hunter','blank'].includes(e.type); dissolve(e.obj.group.position.clone(),P.RED,90,bg?8:1.6); if(bg) this.G.shake(1); }
+    if(e.hp<=0){ e.alive=false; sfx('boom'); const bg=['relay4','sandglass','hunter','blank','archon'].includes(e.type); dissolve(e.obj.group.position.clone(),P.RED,90,bg?8:1.6); if(bg) this.G.shake(1); }
     if(e.type==='blank'&&e.alive){ if(!e.st.p2&&e.hp<e.mhp*.5){ e.st.p2=1; e.st.stacks=2; this.pendingDialog='blank_p2'; this.say('The cursor goes quiet. It is listening.',1.6); sfx('red'); }
       if(!this.flags.bq&&e.hp<e.mhp*.3){ this.flags.bq=1; this.flags.quorum=1; this.pendingDialog='blank_q'; } }
     if(e.type==='relay4'){ if(!this.flags.n1&&e.hp<e.mhp*.7&&e.alive){ this.flags.n1=1; this.events.push({t:.6,f:()=>{ this.addEnemy('node'); this.addEnemy('node'); this.say('RELAY 4 calls its voice nodes.',1.4); sfx('red'); }}); }
