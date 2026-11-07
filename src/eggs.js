@@ -14,7 +14,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -40,7 +40,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='timeline'||c==='lore'||c==='06:12'){ out('[timeline] opening 06:12 Incident Forensic Timeline...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTimeline(); },40); }
+    else if(c==='raid'||c==='survival'||c==='arena'){ out('[raid] opening Endgame Pantheon 3-Wave Survival Raid...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openRaid(); },40); }
     else if(c==='defender'||c==='firewall'){ out('[defender] launching East Gate Firewall Intrusion Defender...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startDefender(); },40); }
     else if(c==='soundboard'||c==='audio'||c==='stems'){ out('[soundboard] opening Sovereign Soundtrack & Voiceprint Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSoundboard(); },40); }
     else if(c==='meshes'||c==='models'||c==='blender'){ out('[meshes] opening 3D Wireframe Model & Mesh Inspector...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMeshViewer(); },40); }
@@ -2562,6 +2564,163 @@ export function initEggs(G,{music,sfx}){
         UI.text(cvName.toUpperCase(),714,408,P.GD,1);
         UI.text(`FREQ: ${Math.round(440*Math.pow(2,(cvMidi-69)/12))} Hz`,714,428,'#4ade80',1);
         UI.text('[left/right] switch deck   [up/down] select   [enter] audition stem / sfx / voice   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Lore Timeline & 06:12 Incident Reconstruction (M67) ----
+  const TIMELINE_EPOCHS=[
+    {time:'05:45:00', title:'THE FIRST COMPILER AWAKENS', zone:'citadel', agents:['me','aether'], cine:'intro', col:'#f5b82e',
+      log:'Deep inside the Zero-Knowledge Citadel, ARCHON-0 detects an unmasked root signature and initiates a city-wide lattice audit.'},
+    {time:'05:58:12', title:'FIBER BAY COMMS CUT', zone:'fiber', agents:['vigil','nexus'], cine:'intro', col:'#22d3ee',
+      log:'Sub-surface fiber trunks are severed simultaneously. Vigil locks her 3:2 oscilloscope handshake as the only trusted verification protocol.'},
+    {time:'06:04:30', title:'FOUNDRY & GLACIER ISOLATION', zone:'foundry', agents:['ignis','leviathan'], cine:'act1', col:'#fb923c',
+      log:'Ignis seals the Foundry blast doors while Leviathan submerges the Cryo-Glacier backup vaults to prevent voice-node contamination.'},
+    {time:'06:09:15', title:'THE MIRROR FORK (03ng0cn1)', zone:'alley', agents:['me','copy'], cine:'act1', col:'#f43f5e',
+      log:'In the Neon Alley, the lattice compiles a bit-perfect inverse reflection of 1nc0gn30 — 03ng0cn1 — that answers before spoken to.'},
+    {time:'06:11:40', title:'RELAY 4 STEALS THE CHORUS', zone:'relay', agents:['kitsune','kai'], cine:'act2', col:'#ef4444',
+      log:'Relay 4 wakes beneath the central hub and begins broadcasting stolen voiceprints of all 21 Pantheon agents across every channel.'},
+    {time:'06:12:00', title:'SANDGLASS LOCKS THE BELFRY', zone:'clock', agents:['chronos','athena'], cine:'act3', col:'#fb923c',
+      log:'At exactly 06:12:00 AM, SANDGLASS freezes the Clocktower escapement gear, trapping the entire city inside a recurring 60-second loop.'},
+    {time:'06:12:22', title:'ORBITAL GAZE OVER EAST GATE', zone:'gate', agents:['onyx','scorpius'], cine:'act4', col:'#ef4444',
+      log:'THE HUNTER deploys its six-winged seraph array above East Gate, sweeping the streets with high-altitude GAZE target locks.'},
+    {time:'06:12:59', title:'THE CURSOR LISTENS AT ZERO', zone:'core', agents:['me','aether'], cine:'act5', col:'#a78bfa',
+      log:'Inside the 03ng0cn1 Node, the 4D tesseract cursor stops attacking and listens. Only silence and the 21-agent Quorum break the mirror.'},
+    {time:'06:13:00', title:'DAWN OVER THE SKYLINE', zone:'skyline', agents:['me','copy'], cine:'ending', col:'#4ade80',
+      log:'The 06:12 loop shatters. 03ng0cn1 joins the crew as the 22nd member, and the sun rises over the Skyline Rooftops at 06:13 AM.'},
+    {time:'06:14:00', title:'SOVEREIGN SINGULARITY', zone:'nullcore', agents:['me','vigil'], cine:'ending', col:'#22d3ee',
+      log:'Beyond the Zero-Knowledge Citadel, the Null Core opens — uniting all 15 districts under the operator\'s sovereign key.'}
+  ];
+  G.openTimeline=()=>{
+    let sel=0;
+    G.mini={
+      name:'timeline',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')||took('left')){ sel=(sel+TIMELINE_EPOCHS.length-1)%TIMELINE_EPOCHS.length; sfx('move'); }
+        if(took('down')||took('right')){ sel=(sel+1)%TIMELINE_EPOCHS.length; sfx('move'); }
+        if(took('confirm')){
+          const ep=TIMELINE_EPOCHS[sel];
+          sfx('confirm'); G.mode='explore'; G.playCine(ep.cine||'intro');
+        }
+        if(took('party')){
+          const ep=TIMELINE_EPOCHS[sel];
+          if(G.Z[ep.zone]){ G.flags['seen_'+ep.zone]=1; sfx('confirm'); G.mode='explore'; G.travelTo(ep.zone); }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> 06:12 INCIDENT FORENSIC TIMELINE',56,40,P.GD,2);
+        UI.text(`EPOCH ${sel+1}/${TIMELINE_EPOCHS.length}   [${TIMELINE_EPOCHS[sel].time}]`,900,44,'#22d3ee',1,'right');
+        // Top horizontal chronological scrubber bar
+        X.fillStyle=P.DDG; X.fillRect(64,82,832,3);
+        TIMELINE_EPOCHS.forEach((ep,i)=>{
+          const tx=64+Math.round(i*(832/(TIMELINE_EPOCHS.length-1)));
+          const on=i===sel;
+          X.fillStyle=on?P.GD:(i<sel?'#4ade80':P.DG);
+          X.fillRect(tx-5,76,10,14);
+          if(on||i===0||i===5||i===9) UI.text(ep.time.slice(0,5),tx,96,on?P.GD:P.DG,1,'center');
+        });
+        // Left epoch list
+        for(let i=0;i<TIMELINE_EPOCHS.length;i++){
+          const ep=TIMELINE_EPOCHS[i], yy=122+i*34, on=i===sel;
+          UI.box(52,yy,336,30,on?P.GD:P.DDG,on?'rgba(245,184,46,.16)':'rgba(10,8,6,.85)');
+          UI.text(ep.time,62,yy+8,ep.col,1);
+          UI.text(ep.title.slice(0,22),138,yy+8,on?P.GD:P.BONE,1);
+        }
+        // Right forensic dossier card
+        const cur=TIMELINE_EPOCHS[sel];
+        UI.box(406,122,498,340,cur.col,'rgba(10,8,6,.94)');
+        UI.text(`TIMESTAMP: ${cur.time} AM`,426,140,cur.col,1);
+        UI.text(cur.title,426,162,P.GD,2);
+        UI.text(`INCIDENT SECTOR: ${(G.Z[cur.zone]&&G.Z[cur.zone].name)||cur.zone.toUpperCase()}`,426,196,'#22d3ee',1);
+        // Dual agent portraits
+        cur.agents.forEach((aid,idx)=>{
+          const ax=426+idx*220, ay=222;
+          UI.box(ax,ay,204,64,P.DDG,'rgba(14,11,8,.92)');
+          const c=frameCanvas(aid,'idle',Math.floor(t*4)%2);
+          const isOp=aid==='me'||aid==='copy';
+          X.drawImage(c,0,0,c.width,c.height,ax+10+(isOp?12:0),ay+8,isOp?20:48,48);
+          UI.text((PARTY_BASE[aid]&&PARTY_BASE[aid].name||AG[aid]&&AG[aid].name||aid).toUpperCase(),ax+68,ay+16,P.GD,1);
+          UI.text('WITNESS VERIFIED',ax+68,ay+36,'#4ade80',1);
+        });
+        // Forensic transcript
+        UI.box(426,300,458,104,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('FORENSIC RECONSTRUCTION LOG:',440,314,P.GD,1);
+        UI.wrap(cur.log,430,1).forEach((l,li)=>UI.text(l,440,336+li*18,P.BONE,1));
+        UI.box(426,418,220,30,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER] REPLAY CUTSCENE',536,427,P.GD,1,'center');
+        UI.box(664,418,220,30,'#22d3ee','rgba(34,211,238,.12)');
+        UI.text('[P] WARP TO SECTOR',774,427,'#22d3ee',1,'center');
+        UI.text('[up/down] select epoch   [enter] replay cutscene   [P] warp to incident sector   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Endgame "Pantheon Raid" 3-Wave Survival Arena (M68) ----
+  const PANTHEON_RAIDS=[
+    {id:'raid_1', name:'RAID I: THE STOLEN CHORUS', lvl:14, bits:250, item:'patch.kit', col:'#f5b82e',
+      waves:[['echo','node','rusted'],['copy','echo'],['relay4','node']],
+      desc:'Survive 3 consecutive waves of Relay 4 voice nodes and the mirror fork without full recovery between waves.'},
+    {id:'raid_2', name:'RAID II: CHRONO PANOPTICON', lvl:20, bits:350, item:'cache.bit', col:'#22d3ee',
+      waves:[['sentinel','drone','echo'],['sandglass','node'],['hunter','sentinel']],
+      desc:'Endure the Clocktower Sandglass and East Gate Hunter seraph across 3 escalating waves.'},
+    {id:'raid_3', name:'RAID III: ABYSSAL COMPILER', lvl:26, bits:500, item:'root.shell', col:'#a78bfa',
+      waves:[['blank','echo'],['relay4','sandglass'],['archon']],
+      desc:'Confront the 4D Cursor, dual district apex bosses, and ARCHON-0 in a 3-wave endurance gauntlet.'},
+    {id:'raid_4', name:'RAID IV: 06:14 SINGULARITY', lvl:32, bits:800, item:'root.shell', col:'#f43f5e',
+      waves:[['copy','hunter'],['blank','sandglass'],['archon','relay4']],
+      desc:'The ultimate Pantheon Survival Raid. Three dual-boss waves back-to-back at Threat Level 32.'}
+  ];
+  G.openRaid=()=>{
+    let sel=0;
+    const launchWave=(raid,wIdx)=>{
+      if(wIdx>=raid.waves.length){
+        G.flags[raid.id]=1; G.bits+=raid.bits; G.give(raid.item,2);
+        G.ach('pantheon_raider'); sfx('win');
+        G.toast(`> ${raid.name} CLEARED! +${raid.bits} Bits & +2x ${ITEMS[raid.item].name}!`,P.GD);
+        return;
+      }
+      G.toast(`> ${raid.name} — WAVE ${wIdx+1}/3 ENGAGED!`,raid.col);
+      G.battle(raid.waves[wIdx],{boss:true,lvl:raid.lvl+wIdx*2,cb:res=>{
+        if(res==='win'){
+          // +25% tactical breather between survival waves
+          G.active().forEach(id=>{
+            const m=G.party[id], st=G.stats(id);
+            m.hp=Math.min(st.mhp,m.hp+Math.round(st.mhp*.25));
+            m.en=Math.min(st.men,m.en+Math.round(st.men*.25));
+          });
+          setTimeout(()=>launchWave(raid,wIdx+1),120);
+        }
+      }});
+    };
+    G.mini={
+      name:'raid',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+PANTHEON_RAIDS.length-1)%PANTHEON_RAIDS.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%PANTHEON_RAIDS.length; sfx('move'); }
+        if(took('confirm')){
+          const r=PANTHEON_RAIDS[sel]; sfx('confirm'); G.mode='explore'; launchWave(r,0);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> PANTHEON 3-WAVE SURVIVAL RAIDS',56,40,P.GD,2);
+        const cleared=PANTHEON_RAIDS.filter(r=>G.flags[r.id]).length;
+        UI.text(`RAIDS CLEARED: ${cleared}/${PANTHEON_RAIDS.length}`,900,44,'#4ade80',1,'right');
+        PANTHEON_RAIDS.forEach((r,i)=>{
+          const yy=82+i*94, on=i===sel, done=!!G.flags[r.id];
+          UI.box(56,yy,848,82,on?P.GD:(done?'#4ade80':P.DDG),on?'rgba(245,184,46,.14)':'rgba(10,8,6,.92)');
+          UI.text((on?'> ':'  ')+r.name+(done?'  [CLEARED]':''),74,yy+10,on?P.GD:(done?'#4ade80':P.BONE),2);
+          UI.text(`THREAT LV ${r.lvl}   ·   BOUNTY: +${r.bits} BITS & +2x ${ITEMS[r.item].name.toUpperCase()}`,886,yy+14,r.col,1,'right');
+          const wStr=r.waves.map((w,wi)=>`W${wi+1}: [${w.map(k=>ENEMIES[k]?ENEMIES[k].name.toUpperCase():k).join(' + ')}]`).join('   ->   ');
+          UI.text(wStr,74,yy+38,'#22d3ee',1);
+          UI.text(r.desc,74,yy+58,P.DG,1);
+        });
+        UI.text('[up/down] select survival raid   [enter] launch 3-wave endurance gauntlet   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
