@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='hall'||c==='m100'||c==='halloffame'){ out('[hall] opening Milestone #100 Sovereign 3D Hall of Fame...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openHallOfFame(); },40); }
+    else if(c==='binder'||c==='cardbinder'||c==='deck'){ out('[binder] opening Collectible 32-Card Pantheon Foil Binder...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCardBinder(); },40); }
     else if(c==='triad'||c==='cards'){ out('[triad] launching Pantheon Triad 3x3 Tactical Card Battler...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startTriad(); },40); }
     else if(c==='medals'||c==='ribbons'){ out('[medals] opening Operator Combat Medal & Ribbon Rack...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMedals(); },40); }
     else if(c==='epilogues'||c==='afterword'||c==='future'){ out('[epilogues] opening 22-Agent Post-Dawn Epilogue Chronicles...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEpilogues(); },40); }
@@ -5112,6 +5114,210 @@ export function initEggs(G,{music,sfx}){
           UI.text('[ENTER] REMATCH   [ESC] EXIT',480,274,P.GD,1,'center');
         }
         UI.text('[up/down] hand card   [left/right] board slot   [enter] play card   [P] grandmaster win   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Collectible 32-Card Pantheon Foil Binder (M99) ----
+  const BINDER_CARDS=(()=>{
+    const list=[];
+    Object.keys(PARTY_BASE).forEach((id,i)=>{
+      const ag=AG[id]||AG.me, pr=PARTY_PROTO[id]||'KERNEL';
+      const r0=6+(i*3)%4, r1=5+(i*5)%5, r2=6+(i*7)%4, r3=5+(i*2)%5;
+      list.push({
+        code:`C-${String(i+1).padStart(2,'0')}`, id, name:PARTY_BASE[id].name.toUpperCase(),
+        cat:'PANTHEON CREW', rarity:i===0||i===21?'SOVEREIGN FOIL':'MYTHIC HOLO',
+        sprite:id, proto:pr, col:ag.color||P.GD, ranks:[r0,r1,r2,r3],
+        lore:`${ag.role||'Sovereign Specialist'} · Signature: ${ag.ability||'Protocol Resonance'}`
+      });
+    });
+    const bosses=[
+      ['b_copy','03NG0CN1 MIRROR','copy','VOID','#f43f5e',[9,7,8,8],'East Gate red reflection that answers before spoken to.'],
+      ['b_relay4','RELAY 4 CHORUS','vigil','STATIC','#22d3ee',[8,9,8,6],'Subterranean acoustic core broadcasting borrowed voices.'],
+      ['b_sand','SANDGLASS 06:12','chronos','QUANTUM','#f5b82e',[8,7,9,7],'Chrono-cage guardian freezing the Sand Clocktower at 06:12.'],
+      ['b_hunter','THE HUNTER','onyx','CRYPTO','#a78bfa',[9,8,7,8],'Six-winged orbital panopticon seraph of the Hall of Mirrors.'],
+      ['b_blank','BLANK CURSOR','aether','VOID','#4ade80',[9,9,8,9],'Four-dimensional tesseract at the Source Tower that listens at zero.'],
+      ['b_archon','ARCHON-0 ROOT','me','VOID','#f5b82e',[10,9,9,9],'The First Compiler at the apex of the Zero-Knowledge Citadel.']
+    ];
+    bosses.forEach(([id,name,sp,pr,col,ranks,lore], idx)=>{
+      list.push({code:`C-${23+idx}`, id, name, cat:'APEX BOSS', rarity:'APEX HOLO', sprite:sp, proto:pr, col, ranks, lore});
+    });
+    const mons=[
+      ['m_sing','NULL SINGULARITY','aether','VOID','#22d3ee',[9,9,9,8],'Eight-ribbon torus knot anchoring District #15 at 06:13.'],
+      ['m_loom','QUANTUM LOOM','nexus','QUANTUM','#a78bfa',[9,8,9,9],'Twelve-strand Mobius spindle weaving District #16 at 06:14.'],
+      ['m_orrery','CHRONO ORRERY','chronos','QUANTUM','#4ade80',[9,9,8,9],'Five-ring celestial armillary sphere of District #17 at 06:15.'],
+      ['m_astro','ASTRAL ASTROLABE','aquila','STATIC','#22d3ee',[10,9,9,10],'Eight-pointed stellar astrolabe of District #18 at 06:16.']
+    ];
+    mons.forEach(([id,name,sp,pr,col,ranks,lore], idx)=>{
+      list.push({code:`C-${29+idx}`, id, name, cat:'WORLD MONUMENT', rarity:'MONUMENT GOLD', sprite:sp, proto:pr, col, ranks, lore});
+    });
+    return list;
+  })();
+  G.openCardBinder=()=>{
+    let sel=0;
+    const hasCard=c=>!!(G.flags&&G.flags['card_'+c.code]);
+    G.mini={
+      name:'binder',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+BINDER_CARDS.length-4)%BINDER_CARDS.length;
+        if(took('down')) sel=(sel+4)%BINDER_CARDS.length;
+        if(took('left')) sel=(sel+BINDER_CARDS.length-1)%BINDER_CARDS.length;
+        if(took('right')) sel=(sel+1)%BINDER_CARDS.length;
+        if(took('confirm')){
+          const c=BINDER_CARDS[sel];
+          if(!G.flags['card_'+c.code]){
+            G.flags['card_'+c.code]=1; G.bits+=15;
+            G.toast(`> FOIL CARD MINTED: ${c.code} ${c.name} (+15 BITS)!`,'#4ade80');
+          } else {
+            G.toast(`> ${c.code} ${c.name} ALREADY IN FOIL BINDER!`,P.GD);
+          }
+          G.ach('card_collector'); sfx('level');
+        }
+        if(took('party')){
+          let added=0;
+          BINDER_CARDS.forEach(c=>{ if(!G.flags['card_'+c.code]){ G.flags['card_'+c.code]=1; added+=15; } });
+          G.bits+=added; G.ach('card_collector'); sfx('win');
+          G.toast(`> ALL 32 PANTHEON FOIL CARDS MINTED (+${added} BITS)!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> PANTHEON 32-CARD FOIL BINDER',56,40,P.GD,2);
+        const owned=BINDER_CARDS.filter(c=>hasCard(c)).length;
+        const page=Math.floor(sel/16)+1;
+        UI.text(`COLLECTION: ${owned}/32 FOILS   ·   PAGE ${page}/2`,900,44,'#4ade80',1,'right');
+        // Left: 4x4 Foil Card Grid (16 cards per page, 2 pages = 32 cards)
+        const baseIdx=(page-1)*16;
+        for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+          const idx=baseIdx+r*4+c, card=BINDER_CARDS[idx], on=idx===sel, got=hasCard(card);
+          const bx=52+c*104, by=80+r*94;
+          UI.box(bx,by,96,84,on?P.GD:(got?card.col:P.DDG),on?'rgba(245,184,46,.16)':'rgba(10,8,6,.92)');
+          UI.text(card.code,bx+8,by+8,on?P.GD:card.col,1);
+          UI.text(got?'*':'-',bx+86,by+8,got?'#4ade80':P.DG,1,'right');
+          const sp=frameCanvas(card.sprite||'me','idle',Math.floor(t*4)%2);
+          X.drawImage(sp,0,0,sp.width,sp.height,bx+32,by+22,32,32);
+          UI.text(card.name.slice(0,9),bx+48,by+62,got?P.BONE:P.DG,1,'center');
+        }
+        // Right: Selected Foil Card Holo Showcase & Triad Ranks
+        const cur=BINDER_CARDS[sel], got=hasCard(cur);
+        UI.box(480,80,424,384,cur.col,'rgba(10,8,6,.94)');
+        // Foil Card Frame
+        UI.box(500,98,144,182,got?'#4ade80':P.GD,'rgba(16,13,9,.96)');
+        UI.text(String(cur.ranks[0]),572,106,P.GD,2,'center');
+        UI.text(String(cur.ranks[1]),626,178,P.GD,2,'center');
+        UI.text(String(cur.ranks[2]),572,246,P.GD,2,'center');
+        UI.text(String(cur.ranks[3]),518,178,P.GD,2,'center');
+        const sp2=frameCanvas(cur.sprite||'me','idle',Math.floor(t*5)%2);
+        X.drawImage(sp2,0,0,sp2.width,sp2.height,540,148,64,64);
+        UI.text(`${cur.code}: ${cur.name}`,660,102,P.GD,2);
+        UI.text(`SERIES: ${cur.cat}`,660,132,'#22d3ee',1);
+        UI.text(`RARITY: ${cur.rarity}`,660,154,'#a78bfa',1);
+        UI.text(`PROTOCOL: ${cur.proto}`,660,176,cur.col,1);
+        UI.text(`TRIAD RANKS: N:${cur.ranks[0]} E:${cur.ranks[1]} S:${cur.ranks[2]} W:${cur.ranks[3]}`,660,198,'#4ade80',1);
+        UI.text(`POWER SUM: ${cur.ranks.reduce((a,b)=>a+b,0)} PTS`,660,220,P.BONE,1);
+        UI.text(`STATUS: ${got?'FOIL MINTED (+15B)':'UNMINTED (+15B)'}`,660,244,got?'#4ade80':P.GD,1);
+        UI.box(500,294,384,72,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('CARD INSCRIPTION & LORE:',514,308,P.GD,1);
+        UI.wrap(cur.lore,356,1).forEach((ln,li)=>UI.text(ln,514,328+li*18,P.BONE,1));
+        UI.box(500,378,384,70,got?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(got?'CARD MINTED IN SOVEREIGN FOIL BINDER':'[ENTER] MINT FOIL CARD & CLAIM +15 BITS',692,394,got?'#4ade80':P.GD,1,'center');
+        UI.text('[P] MINT FULL 32-CARD FOIL BINDER (+480 BITS)',692,420,'#4ade80',1,'center');
+        UI.text('[arrows] browse 32 cards (2 pages)   [enter] mint foil (+15B)   [P] mint all 32   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Milestone #100 Special: "The Sovereign Pantheon Citadel" 3D Hall of Fame (M100) ----
+  const HOF_MONUMENTS=[
+    {id:'astral_astrolabe', title:'M100: ASTRAL ASTROLABE', sub:'18 DISTRICTS · 20 BLENDER MESHES', col:'#22d3ee'},
+    {id:'chrono_orrery',    title:'M100: CHRONO ORRERY',    sub:'22 PANTHEON CREW · 06:16 DAWN', col:'#4ade80'},
+    {id:'quantum_loom',     title:'M100: QUANTUM SPINDLE',  sub:'14 ARCADE CABINETS · 32 CARDS', col:'#a78bfa'},
+    {id:'null_singularity', title:'M100: NULL SINGULARITY', sub:'100 SOVEREIGN MILESTONES',      col:'#f5b82e'}
+  ];
+  G.openHallOfFame=()=>{
+    let mSel=0, yaw=0.5;
+    G.ach('century_sovereign');
+    G.mini={
+      name:'halloffame',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        yaw+=dt*0.85;
+        if(took('up')||took('left')){ mSel=(mSel+HOF_MONUMENTS.length-1)%HOF_MONUMENTS.length; sfx('move'); }
+        if(took('down')||took('right')){ mSel=(mSel+1)%HOF_MONUMENTS.length; sfx('move'); }
+        if(took('confirm')||took('party')){
+          if(!G.flags.m100_claimed){
+            G.flags.m100_claimed=1;
+            G.bits+=500;
+            G.give('singularity.halo',1);
+            G.ach('century_sovereign'); sfx('win');
+            G.toast('> MILESTONE #100 COMMEMORATION! +500 Bits & +1x Singularity.Halo!','#4ade80');
+          } else {
+            sfx('level');
+            G.toast('> Milestone #100 Century Commemoration already claimed!',P.GD);
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> MILESTONE #100: 3D HALL OF FAME',56,40,P.GD,2);
+        const achCount=Object.keys(ACH).filter(k=>G.achGot&&G.achGot[k]).length;
+        UI.text(`CENTURY EDITION (M01-M100)   ·   ACH: ${achCount}/${Object.keys(ACH).length}`,900,44,'#4ade80',1,'right');
+        // Left: Live 3D Wireframe Monument Turntable
+        const curM=HOF_MONUMENTS[mSel], pts=BLENDER_GEO[curM.id]||BLENDER_GEO.astral_astrolabe||[];
+        UI.box(52,78,412,386,curM.col,'rgba(8,7,5,.96)');
+        let minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9,minZ=1e9,maxZ=-1e9;
+        for(let i=0;i<pts.length;i+=3){
+          const x=pts[i],y=pts[i+1],z=pts[i+2];
+          if(x<minX) minX=x; if(x>maxX) maxX=x;
+          if(y<minY) minY=y; if(y>maxY) maxY=y;
+          if(z<minZ) minZ=z; if(z>maxZ) maxZ=z;
+        }
+        const midX=(minX+maxX)/2, midY=(minY+maxY)/2, midZ=(minZ+maxZ)/2;
+        const span=Math.max(0.5,maxX-minX,maxY-minY,maxZ-minZ);
+        const sc=175/span, cx=258, cy=254;
+        const cyw=Math.cos(yaw), syw=Math.sin(yaw), cpt=Math.cos(0.3), spt=Math.sin(0.3);
+        const proj=(x,y,z)=>{
+          const dx=x-midX, dy=y-midY, dz=z-midZ;
+          const rx=dx*cyw-dz*syw, rz=dx*syw+dz*cyw;
+          const ry=dy*cpt-rz*spt, rz2=dy*spt+rz*cpt;
+          const persp=400/(400+rz2*0.35);
+          return [cx+rx*sc*persp, cy-ry*sc*persp];
+        };
+        X.save(); X.beginPath(); X.rect(54,80,408,382); X.clip();
+        X.strokeStyle=curM.col; X.lineWidth=1.5; X.beginPath();
+        for(let i=0;i<pts.length;i+=6){
+          const a=proj(pts[i],pts[i+1],pts[i+2]), b=proj(pts[i+3],pts[i+4],pts[i+5]);
+          X.moveTo(a[0],a[1]); X.lineTo(b[0],b[1]);
+        }
+        X.stroke(); X.restore();
+        UI.text(curM.title,258,94,P.GD,2,'center');
+        UI.text(curM.sub,258,122,'#22d3ee',1,'center');
+        UI.text('[ARROWS] CYCLE 3D CENTURY MONUMENT',258,438,P.DG,1,'center');
+        // Right: 22-Agent Pantheon Parade & Century Plaque
+        UI.box(480,78,424,386,P.GD,'rgba(10,8,6,.94)');
+        UI.text('SOVEREIGN PANTHEON 22-AGENT HONOR ROLL:',498,94,P.GD,1);
+        const allIds=Object.keys(PARTY_BASE);
+        for(let r=0;r<2;r++) for(let c=0;c<11;c++){
+          const idx=r*11+c, id=allIds[idx]; if(!id) continue;
+          const sp=frameCanvas(id,'idle',Math.floor(t*4+idx)%2);
+          const bx=496+c*35, by=116+r*48;
+          X.drawImage(sp,0,0,sp.width,sp.height,bx,by,30,30);
+        }
+        UI.box(498,218,388,146,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('100-MILESTONE ENGINEERING LEDGER:',514,232,P.GD,1);
+        UI.text('· 18 EXPLORABLE 3D DISTRICTS & 20 BLENDER MESHES',514,254,'#22d3ee',1);
+        UI.text('· 22 RECRUITABLE CREW MEMBERS + LOYALTY EPILOGUES',514,274,'#4ade80',1);
+        UI.text('· 14 IN-ENGINE MINI-GAMES & 32 FOIL TRIAD CARDS',514,294,'#a78bfa',1);
+        UI.text('· 60+ SOVEREIGN SUBSYSTEMS · 100% OPEN ACCESS',514,314,P.GD,1);
+        UI.text('· ENGINEERED BY 1NC0GN30 · NULLAI PLATFORM',514,336,P.BONE,1);
+        const clm=!!G.flags.m100_claimed;
+        UI.box(498,376,388,72,clm?'#4ade80':P.GD,'rgba(245,184,46,.15)');
+        UI.text(clm?'M100 CENTURY GRANT CLAIMED (+500B & HALO)':'[ENTER / P] CLAIM M100 GRANT (+500B & HALO)',692,394,clm?'#4ade80':P.GD,1,'center');
+        UI.text('+500 BITS  &  +1x SINGULARITY.HALO MYTHIC RELIC',692,420,'#22d3ee',1,'center');
+        UI.text('[arrows] cycle 3D monument   [enter / P] claim M100 grant (+500B & Halo)   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
