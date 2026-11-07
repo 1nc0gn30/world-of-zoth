@@ -370,6 +370,34 @@ def build_archon_seraph():
     return arr
 
 
+def build_null_singularity():
+    """4D Clifford hyper-torus & nested gyroscope rings for District #15: The Null Core."""
+    bm = bmesh.new()
+    bmesh.ops.create_icosphere(bm, subdivisions=1, radius=2.2)
+    for v in bm.verts:
+        v.co.z += 6.0
+    # 8 torus-knot meridian loops around the singularity
+    for k in range(8):
+        phi = k / 8.0 * math.pi * 2.0
+        pts = []
+        for s in range(20):
+            th = s / 20.0 * math.pi * 2.0
+            R_maj = 4.6
+            r_min = 1.8
+            x = (R_maj + r_min * math.cos(th)) * math.cos(phi + th * 0.5)
+            y = (R_maj + r_min * math.cos(th)) * math.sin(phi + th * 0.5)
+            z = 6.0 + r_min * math.sin(th) * 1.4
+            pts.append(bm.verts.new((x, y, z)))
+        for s in range(20):
+            bm.edges.new((pts[s], pts[(s + 1) % 20]))
+    add_ring(bm, 0, 0, 6.0, 6.8, segs=36, axis="z")
+    add_ring(bm, 0, 0, 6.0, 6.8, segs=36, axis="x")
+    add_ring(bm, 0, 0, 6.0, 6.8, segs=36, axis="y")
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
 def main():
     data = {
         "relay4_crown": build_relay4_crown(),
@@ -388,6 +416,7 @@ def main():
         "abyss_monolith": build_abyss_monolith(),
         "pantheon_throne": build_pantheon_throne(),
         "archon_seraph": build_archon_seraph(),
+        "null_singularity": build_null_singularity(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:

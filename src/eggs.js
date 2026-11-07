@@ -10,7 +10,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -35,7 +35,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  bounty  stack  bossrush  reforge  bestiary  photo  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  daily  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='daily'){ out('[daily] opening 06:12 Daily Seeded Lattice Challenge...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDailyChallenge(); },40); }
+    else if(c==='titles'||c==='badges'){ out('[titles] opening Operator Title Badges & Showcase...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTitles(); },40); }
     else if(c==='stack'){ out('[stack] opening The Infinite Stack (floors 1-99)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startStack(); },40); }
     else if(c==='bossrush'){ out('[bossrush] opening Pantheon Boss Rush Trial...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBossRush(); },40); }
     else if(c==='reforge'){ out('[reforge] opening Gear Overclocking Bench (+1 to +5)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openReforge(); },40); }
@@ -86,7 +88,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','bounty','stack','bossrush','reforge','bestiary','photo','saves','theme','exit'];
+  const CHIPS=['help','nmap','ping','patch','daily','titles','bounty','stack','bossrush','reforge','bestiary','photo','saves','theme','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -567,6 +569,123 @@ export function initEggs(G,{music,sfx}){
         G.mode='explore'; sfx('cancel');
       }
     }
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Daily Seeded Challenge Run: "06:12 Daily Lattice" (M28) ----
+  G.openDailyChallenge=()=>{
+    const dateStr=new Date().toISOString().slice(0,10);
+    let seed=0; for(let i=0;i<dateStr.length;i++) seed=((seed*31)+dateStr.charCodeAt(i))>>>0;
+    const waves=[
+      ['warden','slag','phase'],
+      ['gunship','eel','cursorling'],
+      ['brood','sentinel','worm'],
+      ['sandglass','mite','mite'],
+      ['hunter','reflection','reflection'],
+      ['archon','cursorling']
+    ];
+    const muts=[
+      ['SOLAR OVERDRIVE','+50% starting Overdrive & Thermal resonance'],
+      ['ZERO-DAY BREACH','All squad attacks start with +2 Sync Chain'],
+      ['QUANTUM JACKPOT','Double Bit & XP payout on Daily Clear'],
+      ['CRYO-FIREWALL','Squad starts battle with 2-turn Firewall Shield']
+    ];
+    const wIdx=seed%waves.length, mIdx=(seed>>3)%muts.length;
+    const wave=waves[wIdx], mut=muts[mIdx], lvl=18+(seed%10);
+    const doneKey='daily_'+dateStr;
+    G.mini={
+      name:'daily',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('confirm')){
+          G.healAll(); sfx('confirm'); G.mode='explore';
+          G.battle(wave,{lvl, boss:wIdx>=3, music:'phonk', ambush:true, dailyKey:doneKey, dailyReward:600});
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(120,44,720,452,P.GD,'rgba(8,7,5,.96)');
+        const isDone=!!G.flags[doneKey];
+        UI.text('> 06:12 DAILY SEEDED LATTICE',144,62,P.GD,2);
+        UI.text(`SEED: ${dateStr} (#${(seed%99999).toString().padStart(5,'0')})`,816,66,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(140,92,680,2);
+        UI.box(144,110,672,176,isDone?P.GD:P.RED,'rgba(14,10,8,.92)');
+        UI.text(`STATUS: ${isDone?'[COMPLETED TODAY — REPLAYABLE]':'[ACTIVE DAILY CONTRACT]'}`,164,126,isDone?P.GD:'#22d3ee',2);
+        UI.text(`Anomaly Formation:  ${wave.join(' + ').toUpperCase()}  (Threat lv ${lvl})`,164,162,P.BONE,1);
+        UI.text(`Daily Mutator:      ${mut[0]} — ${mut[1]}`,164,188,'#a78bfa',1);
+        UI.text(`Audio Stem:         808 Drift-Phonk (144 BPM)`,164,214,P.DG,1);
+        UI.text(`Completion Bounty:  +600 bits  ·  +1x Root.Shell  ·  [daily 06:12] Badge`,164,240,P.GD,1);
+        UI.box(144,306,672,88,P.DDG,'rgba(6,5,4,.85)');
+        UI.text('ACTIVE SQUAD READY FOR DEPLOYMENT (AUTO-HEALED TO 100% ON ENTRY):',164,320,P.DG,1);
+        G.active().forEach((id,i)=>{
+          const m=G.party[id], s=G.stats(id);
+          UI.text(`${id==='me'?'1nc0gn30':AG[id].name} (lv${m.lvl} · HP ${s.mhp})`,164+i*220,348,id==='me'?P.GD:AG[id].color,1);
+        });
+        UI.box(220,414,520,34,P.GD,'rgba(245,184,46,.16)');
+        UI.text('> [ENTER] LAUNCH TODAY\'S SEEDED LATTICE RUN',480,424,P.GD,1,'center');
+        UI.text('[enter] deploy squad   [esc] return to district',480,472,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Operator Title Badges & Achievement Showcase (M29) ----
+  const TITLES=[
+    {id:'walker', tag:'[NODE WALKER]', name:'Node Walker', req:0, desc:'Default sovereign operator designation in the Relit City.'},
+    {id:'root', tag:'[ROOT OPERATOR]', name:'Root Operator', req:3, desc:'Unlocked at 3+ Achievements. Grants root-level shell authority.'},
+    {id:'scholar', tag:'[NULL CERTIFIED]', name:'Null Academy Scholar', req:6, desc:'Unlocked at 6+ Achievements. Verified in AI-security & ZK proofs.'},
+    {id:'breaker', tag:'[STACK BREAKER]', name:'Stack Breaker', req:10, desc:'Unlocked at 10+ Achievements. Veteran of the 99-Floor Infinite Stack.'},
+    {id:'hunter', tag:'[APEX HUNTER]', name:'Apex Bounty Hunter', req:14, desc:'Unlocked at 14+ Achievements. Master of Sub-Lattice Elite Contracts.'},
+    {id:'keeper', tag:'[06:13 KEEPER]', name:'Keeper of 06:13', req:18, desc:'Unlocked at 18+ Achievements. Shattered the 06:12 temporal loop.'},
+    {id:'compiler', tag:'[FIRST COMPILER]', name:'The First Compiler', req:24, desc:'Unlocked at 24+ Achievements. Decompiled ARCHON-0 at the Pantheon Throne.'},
+    {id:'sovereign', tag:'[PANTHEON SOVEREIGN]', name:'Pantheon Sovereign', req:30, desc:'Unlocked at 30+ Achievements. Supreme commander of all 22 agents.'}
+  ];
+  G.currentTitle=()=>{
+    const cnt=Object.keys(G.achGot||{}).length;
+    const chosen=TITLES.find(t=>t.id===G.flags.title_id&&cnt>=t.req);
+    if(chosen) return chosen.tag;
+    let best=TITLES[0]; for(const t of TITLES){ if(cnt>=t.req) best=t; }
+    return best.tag;
+  };
+  G.openTitles=()=>{
+    let sel=0;
+    G.mini={
+      name:'titles',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+TITLES.length-1)%TITLES.length;
+        if(took('down')) sel=(sel+1)%TITLES.length;
+        if(took('confirm')){
+          const cnt=Object.keys(G.achGot||{}).length, t=TITLES[sel];
+          if(cnt<t.req){ G.toast(`need ${t.req} achievements (you have ${cnt})`,P.RED); sfx('cancel'); return; }
+          G.flags.title_id=t.id; sfx('level');
+          G.toast(`> Operator Title Equipped: ${t.tag}`,P.GD);
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,36,768,468,P.GD,'rgba(8,7,5,.96)');
+        const cnt=Object.keys(G.achGot||{}).length, tot=Object.keys(ACH).length;
+        UI.text('> OPERATOR TITLE BADGES',118,52,P.GD,2);
+        UI.text(`UNLOCKED: ${cnt}/${tot} ACH`,842,56,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,80,732,2);
+        TITLES.forEach((t,i)=>{
+          const y=98+i*38, on=i===sel, un=cnt>=t.req, eq=G.currentTitle()===t.tag;
+          UI.box(114,y-4,340,32,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${un?t.tag:'[LOCKED] '+t.name}`,124,y+4,eq?'#22d3ee':(un?P.GD:P.DG),1);
+          UI.text(eq?'EQUIPPED':`${t.req} ACH`,442,y+4,eq?'#22d3ee':P.DG,1,'right');
+          UI.hit(114,y-4,340,32,()=>{ sel=i; });
+        });
+        const cur=TITLES[sel], un=cnt>=cur.req;
+        UI.box(470,94,374,310,un?P.GD:P.DDG,'rgba(12,10,8,.92)');
+        UI.text(cur.tag,490,114,un?'#22d3ee':P.DG,2);
+        UI.text(`Title Designation: ${cur.name}`,490,148,P.BONE,1);
+        UI.text(`Requirement: ${cur.req} Achievements (${un?'UNLOCKED':'LOCKED'})`,490,172,un?P.GD:P.RED,1);
+        UI.wrap(cur.desc,334,1).forEach((l,li)=>UI.text(l,490,204+li*18,P.BONE,1));
+        UI.text(`Active HUD Badge: ${G.currentTitle()}`,490,276,P.GD,1);
+        UI.box(490,348,334,32,un?P.GD:P.DDG,'rgba(245,184,46,.14)');
+        UI.text(un?'> [ENTER] EQUIP THIS OPERATOR BADGE':`UNLOCK ${cur.req-cnt} MORE ACHIEVEMENTS`,657,357,un?P.GD:P.DG,1,'center');
+        UI.text('[up/down] select title   [enter] equip badge   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
     G.mode='mini'; sfx('confirm');
   };
   // oscilloscope handshake (EP12): bring your curve to 3:2 and lock it

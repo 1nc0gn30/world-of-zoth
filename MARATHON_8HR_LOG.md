@@ -27,11 +27,27 @@
 - [x] **M22** (`02:18` · `1385274`): Custom HUD Color Themes & CRT Phosphor Presets (`Gold 1nc0gn30`, `Cyan Sub-Lattice`, `Emerald Matrix`, `Violet Abyss`, `Crimson Overclock`)
 - [x] **M23** (`02:33` · `3cacb84`): Expanded Procedural Chiptune / Dark-Phonk Boss & Victory Stems (`src/audio.js` — 20 WebAudio stems including `phonk`, `archon`, and `stack` + 808 drift-phonk cowbell synth)
 - [x] **M24** (`02:33` · `3cacb84`): Interactive Photo Mode & ASCII/Braille Postcard Exporter (`G.openPhotoMode()` — 3D orbit/zoom camera, 4 postcard frames, character poses & PNG download)
-- [x] **M25** (`02:51`): Save Slot Manager & Base64 Save Import/Export String (`G.openSaveManager()` — 3 independent slots + 1-click clipboard Base64 backup)
-- [x] **M26** (`02:51`): Companion AI Tactics Selector (`MANUAL`, `COMPANION: BREACH`, `COMPANION: SUPPORT`, `FULL SQUAD: AUTO` via `[P]` in battle & System Menu)
-- [ ] **M27**: Secret District #15 — *The Null Core (`nullcore`)* (Post-Citadel Memory Singularity)
-- [ ] **M28**: Daily Seeded Challenge Run (*"06:12 Daily Lattice"* deterministic seed & scorecard)
-- [ ] **M29**: In-Game Achievement Showcase & Title Badges (`36+ Achievements` with bit rewards)
+- [x] **M25** (`02:51` · `0b9247b`): Save Slot Manager & Base64 Save Import/Export String (`G.openSaveManager()` — 3 independent slots + 1-click clipboard Base64 backup)
+- [x] **M26** (`02:51` · `0b9247b`): Companion AI Tactics Selector (`MANUAL`, `COMPANION: BREACH`, `COMPANION: SUPPORT`, `FULL SQUAD: AUTO` via `[P]` in battle & System Menu)
+- [x] **M27** (`03:11`): Secret District #15 — *The Null Core (`nullcore`)* (Post-Citadel 4D Clifford Hyper-Torus Memory Singularity + `q21` + `singularity.halo`)
+- [x] **M28** (`03:11`): Daily Seeded Challenge Run (*"06:12 Daily Lattice"* deterministic daily seed, mutator & +600 bit contract via `> daily` / System Menu)
+- [x] **M29** (`03:11`): In-Game Achievement Showcase & Operator Title Badges (`44 Achievements` & 8 equippable HUD badges `[NODE WALKER]` .. `[PANTHEON SOVEREIGN]`)
 - [ ] **M30**: Full `README.md` & Architecture Documentation Overhaul (`world-of-zoth` & `1nc0gn30-si`)
 - [ ] **M31**: Full 15-District + All Mini-Games + All Bosses Automated Verification Pass (`Errors: []`)
-- [ ] **M32**: Final 8-Hour Marathon Production Build, Signed APK v1.2, `1nc0gn30.si` Deployment & Comprehensive Report
+- [ ] **M32**: Mid-Marathon Signed APK v1.2 & `1nc0gn30.si` Sync Checkpoint #2
+- [ ] **M33**: Interactive Combat Arena Sandbox / Training Dummy (`> dojo` — DPS meter, protocol tester & skill preview)
+- [ ] **M34**: Procedural Relic Synthesizer / Transmutation Cube (`> synth` — combine 3 spare items into rare/mythic relics)
+- [ ] **M35**: District Lore & Hermetic Audio Logs (`15 Encrypted Datacubes` scattered across the 15 districts)
+- [ ] **M36**: Companion Affinity & Gift System (boost individual companion bond levels for +10% stat synergy)
+- [ ] **M37**: Boss Modifiers / Hardcore "06:12 Nightmare" Difficulty Toggle (`1.5x enemy stats`, `+100% bit/XP drops`)
+- [ ] **M38**: Interactive Waveform Visualizer in Safehouse Jukebox (real-time oscilloscope + spectrum bars)
+- [ ] **M39**: Custom Keybind & Controller Remapper UI in System Menu
+- [ ] **M40**: Expanded 3D Postcard Filters (Dither 1-Bit, Matrix Rain, Amber Phosphor, Blueprint Wireframe)
+- [ ] **M41**: Secret Mini-Game #4 — *"Packet Runner"* (High-speed 3D Hilbert-tunnel reflex runner in Fiber Tunnels)
+- [ ] **M42**: Secret Mini-Game #5 — *"Zero-Knowledge Sudoku / 4x4 Cipher Grid"* in Null Academy
+- [ ] **M43**: Speedrun Split Tracker (auto-records split timestamps per Act I–VI completion)
+- [ ] **M44**: Complete 22-Agent Dossier Cards UI (`G.openDossiers()` — bio, lore quote, stats, relic & protocol)
+- [ ] **M45**: Full End-to-End Automated Playthrough & Zero-Defect Audit across all 15 Districts
+- [ ] **M46**: Final Signed Android APK v1.3 & Desktop Zip Distribution Build
+- [ ] **M47**: `1nc0gn30.si` Sovereign Portal Final Sync & Guardrail Verification
+- [ ] **M48**: Final 8-Hour Marathon Completion Report & GitHub Release Tag

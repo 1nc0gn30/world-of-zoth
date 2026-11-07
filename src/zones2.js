@@ -230,10 +230,27 @@ export function buildZones2(Z){
     anim.push(t=>{ thr.rotation.y=-t*.15; arc.rotation.y=t*.45; arc.position.y=9+Math.sin(t*1.8)*.5; });
     const coln=[]; for(let i=-3;i<=3;i++){ if(i===0) continue; const z=i*10; truss(coln,-18,z,14,1.1,.5,6,4); truss(coln,18,z,14,1.1,.5,6,4); col.push({c:[-18,z,1.3]},{c:[18,z,1.3]}); }
     g.add(segs(coln,latMat({color:DG,intensity:1.15,fogFar:90})));
-    portal(g,0,42,0);
+    portal(g,0,42,0); portal(g,0,-42,0);
     Z.citadel={ id:'citadel', name:'zero-knowledge citadel', sub:'pantheon sanctum · archon-0', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'citadel', lvl:30,
       sky:{rain:.1,rainCol:'#5a420e',hex:1,stars:2.2}, spawn:{x:0,z:38,yaw:Math.PI},
-      portals:[{x:0,z:42,r:3,to:'skyline',sx:0,sz:40,syaw:Math.PI,label:'mode-7 skyline'}], objs:{thr,arc}, tag:[34,-34] };
+      portals:[{x:0,z:42,r:3,to:'skyline',sx:0,sz:40,syaw:Math.PI,label:'mode-7 skyline'},{x:0,z:-42,r:3,to:'nullcore',sx:0,sz:36,syaw:Math.PI,label:'the null core'}], objs:{thr,arc}, tag:[34,-34] };
+  }
+  // ===================== THE NULL CORE (District #15 · Memory Singularity) =====================
+  { const h=(x,z)=>-0.25*Math.cos(Math.hypot(x,z)*.12);
+    const B=base('nullcore',{seed:131,h,fogFar:64,gridCol:'#0d242a',dotCol:'#22d3ee'}); const {g,col,anim}=B; const R=rng(132);
+    const sing=segs(BLENDER_GEO.null_singularity,latMat({color:'#22d3ee',intensity:1.5,fogFar:140})); sing.position.set(0,1,-8); g.add(sing); col.push({c:[0,-8,4.5]});
+    const outer=segs(BLENDER_GEO.null_singularity,latMat({color:GD,intensity:1.25,fogFar:140})); outer.scale.setScalar(1.45); outer.position.set(0,1,-8); g.add(outer);
+    anim.push(t=>{ sing.rotation.y=t*.38; sing.rotation.z=Math.sin(t*.4)*.25; outer.rotation.y=-t*.22; outer.rotation.x=Math.cos(t*.3)*.2; });
+    const pyl={}; [['n1',-22,-8],['n2',22,-8],['n3',0,18]].forEach(([id,x,z])=>{
+      const a=[]; wireOcta(a,1.5,x,2.6,z); ring(a,x,.15,z,2.8,32,2);
+      const m=segs(a,latMat({color:GD,intensity:1.5,fogFar:80})); g.add(m); anim.push(t=>{ m.rotation.y=-t*.55; }); col.push({c:[x,z,1.5]}); pyl[id]={x,z,m};
+    });
+    const st=[]; for(let i=0;i<320;i++) st.push((R()-.5)*84,R()*24,(R()-.5)*84);
+    g.add(pts(st,latMat({color:'#f43f5e',points:true,size:1.9,twinkle:1,intensity:1.5,fogFar:70})));
+    portal(g,0,42,0);
+    Z.nullcore={ id:'nullcore', name:'the null core', sub:'memory singularity · 06:13', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'phonk', lvl:32,
+      sky:{rain:.18,rainCol:'#06b6d4',hex:1,stars:2.5}, spawn:{x:0,z:36,yaw:Math.PI},
+      portals:[{x:0,z:42,r:3,to:'citadel',sx:0,sz:-36,syaw:0,label:'zero-knowledge citadel'}], objs:{sing,pyl}, tag:[-32,-32] };
   }
   // ===================== SECRET: THE ROOFTOP AT 06:12 =====================
   { const g=new THREE.Group(), col=[], anim=[], R=rng(612); const h=()=>0;
