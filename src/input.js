@@ -1,8 +1,10 @@
 // Keyboard + mouse drag + touch (virtual stick and buttons). Edge-triggered actions + continuous axes.
-const KEYMAP={ KeyW:'up',ArrowUp:'up',KeyS:'down',ArrowDown:'down',KeyA:'left',ArrowLeft:'left',KeyD:'right',ArrowRight:'right',
+export const KEYMAP={ KeyW:'up',ArrowUp:'up',KeyS:'down',ArrowDown:'down',KeyA:'left',ArrowLeft:'left',KeyD:'right',ArrowRight:'right',
   Enter:'confirm',Space:'confirm',KeyE:'confirm',KeyF:'confirm', Escape:'pause',Backspace:'back',KeyX:'back',
   KeyJ:'quests',KeyI:'items',KeyP:'party',KeyQ:'rotl',KeyR:'rotr',ShiftLeft:'run',ShiftRight:'run',Tab:'pause',
   Digit1:'n1',Digit2:'n2',Digit3:'n3',Digit4:'n4',Digit5:'n5',Digit6:'n6',KeyM:'map', KeyC:'dash', KeyV:'dash', ControlLeft:'crouch' };
+export const DEFAULT_KEYS={...KEYMAP};
+try{ const saved=JSON.parse(localStorage.getItem('woz.keys')||'null'); if(saved&&typeof saved==='object') Object.assign(KEYMAP,saved); }catch(e){}
 export const IN={ held:new Set(), pressed:new Set(), drag:{dx:0,dy:0}, wheel:0, pointer:null, clicks:[], stick:{x:0,y:0,active:false,id:null,ox:0,oy:0}, touch:false, lastUse:0 };
 export function press(a){ IN.pressed.add(a); }
 export function initInput(canvas, toCanvas){

@@ -39,10 +39,10 @@
 - [x] **M34** (`03:34` · `6448172`): Procedural Relic Synthesizer / Transmutation Cube (`> synth` — transmute bits & materials into unowned Mythic Companion Relics)
 - [x] **M35** (`03:49` · `197d66d`): District Lore & Hermetic Audio Logs (`15 Encrypted Datacubes` across all 15 districts via `G.openDatacubes()` / `> logs` with +25 bits & +50 XP decryption bounties)
 - [x] **M36** (`03:49` · `197d66d`): Companion Affinity & Gift System (`G.openBonds()` via `> bonds` — Rank 1..5 Synergy Bonds granting up to `+25%` companion stats in `G.stats(id)`)
-- [x] **M37** (`04:03`): Boss Modifiers / Hardcore "06:12 Nightmare" Difficulty Toggle (`G.settings.nightmare` — `1.5x` enemy stats, `2x` bit/XP/drop rates & `[06:12 NIGHTMARE · 2X LOOT]` battle HUD badge)
-- [x] **M38** (`04:03`): Interactive Waveform Visualizer in Safehouse Jukebox (`src/house.js` — real-time oscilloscope curve, 32-channel spectrum analyzer & BPM/Key metadata across all 20 stems)
-- [ ] **M39**: Custom Keybind & Controller Remapper UI in System Menu
-- [ ] **M40**: Expanded 3D Postcard Filters (Dither 1-Bit, Matrix Rain, Amber Phosphor, Blueprint Wireframe)
+- [x] **M37** (`04:03` · `1bb7776`): Boss Modifiers / Hardcore "06:12 Nightmare" Difficulty Toggle (`G.settings.nightmare` — `1.5x` enemy stats, `2x` bit/XP/drop rates & `[06:12 NIGHTMARE · 2X LOOT]` battle HUD badge)
+- [x] **M38** (`04:03` · `1bb7776`): Interactive Waveform Visualizer in Safehouse Jukebox (`src/house.js` — real-time oscilloscope curve, 32-channel spectrum analyzer & BPM/Key metadata across all 20 stems)
+- [x] **M39** (`04:18`): Custom Keybind & Controller Remapper UI (`G.openKeybinds()` via `> keys` & System Menu with persistent `woz.keys` `localStorage` bindings)
+- [x] **M40** (`04:18`): Expanded 3D Postcard Filters (`CRT Scanline`, `Amber Phosphor`, `Matrix Rain`, `Blueprint Grid` inside `G.openPhotoMode()`)
 - [ ] **M41**: Secret Mini-Game #4 — *"Packet Runner"* (High-speed 3D Hilbert-tunnel reflex runner in Fiber Tunnels)
 - [ ] **M42**: Secret Mini-Game #5 — *"Zero-Knowledge Sudoku / 4x4 Cipher Grid"* in Null Academy
 - [ ] **M43**: Speedrun Split Tracker (auto-records split timestamps per Act I–VI completion)

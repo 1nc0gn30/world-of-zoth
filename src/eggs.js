@@ -2,7 +2,7 @@
 // handshake, title idle hook, achievements (persist across saves).
 import * as UI from './ui.js';
 import { P, THEMES, applyTheme } from './pal.js';
-import { IN, took } from './input.js';
+import { IN, took, KEYMAP, DEFAULT_KEYS } from './input.js';
 import { AG } from './sprites.js';
 import { ENEMIES, ITEMS, PARTY_BASE, SKILLS } from './data.js';
 import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
@@ -35,7 +35,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  logs  bonds  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  logs  bonds  keys  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='keys'||c==='binds'){ out('[keys] opening Custom Keybind & Controller Remapper...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openKeybinds(); },40); }
     else if(c==='logs'||c==='datacubes'){ out('[logs] opening 15 Encrypted District Datacubes...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDatacubes(); },40); }
     else if(c==='bonds'||c==='affinity'){ out('[bonds] opening Companion Affinity & Bond Matrix...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBonds(); },40); }
     else if(c==='dojo'){ out('[dojo] opening Combat Arena Sandbox & DPS Analyzer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDojo(); },40); }
@@ -189,12 +190,13 @@ export function initEggs(G,{music,sfx}){
     };
     G.mode='mini'; sfx('confirm');
   };
-  // ---- Interactive 3D Photo Mode & Postcard Studio (M24) ----
+  // ---- Interactive 3D Photo Mode & Postcard Studio (M24 + M40 Filters) ----
   const PHOTO_FRAMES=['SOVEREIGN POSTCARD','06:12 BRAILLE TELEMETRY','CLASSIFIED DOSSIER','CLEAN NO-HUD'];
+  const PHOTO_FILTERS=['NONE','CRT SCANLINE','AMBER PHOSPHOR','MATRIX RAIN','BLUEPRINT GRID'];
   const PHOTO_POSES=[null,'walk','kneel','sleep'];
   G.openPhotoMode=()=>{
     const c=G.cam, p=G.player.group.position;
-    let yaw=c.yaw, pitch=c.pitch||.32, dist=c.dist||8.5, frameIdx=0, poseIdx=0, flash=0, hideCtl=false;
+    let yaw=c.yaw, pitch=c.pitch||.32, dist=c.dist||8.5, frameIdx=0, filterIdx=0, poseIdx=0, flash=0, hideCtl=false;
     G.mini={
       name:'photo', see3d:true,
       update(dt){
@@ -207,6 +209,7 @@ export function initEggs(G,{music,sfx}){
         if(IN.held.has('rotl')) dist=Math.max(2.6,dist-dt*6);
         if(IN.held.has('rotr')) dist=Math.min(24,dist+dt*6);
         if(took('n1')||took('quests')){ frameIdx=(frameIdx+1)%PHOTO_FRAMES.length; sfx('move'); }
+        if(took('n2')||took('items')){ filterIdx=(filterIdx+1)%PHOTO_FILTERS.length; sfx('blip'); }
         if(took('party')){ poseIdx=(poseIdx+1)%PHOTO_POSES.length; G.player.pose=PHOTO_POSES[poseIdx]; sfx('move'); }
         if(took('dash')){ hideCtl=!hideCtl; sfx('blip'); }
         const cp=Math.cos(pitch);
@@ -225,6 +228,26 @@ export function initEggs(G,{music,sfx}){
       },
       draw(t){
         const X=UI.ctx;
+        // Postcard Shader Overlay Filters (M40)
+        if(filterIdx===1){
+          X.fillStyle='rgba(0,0,0,.32)';
+          for(let y=0;y<540;y+=3) X.fillRect(0,y,960,1);
+        } else if(filterIdx===2){
+          X.fillStyle='rgba(245,160,20,.14)'; X.fillRect(0,0,960,540);
+          X.fillStyle='rgba(40,20,0,.28)'; for(let y=0;y<540;y+=4) X.fillRect(0,y,960,1);
+        } else if(filterIdx===3){
+          X.fillStyle='rgba(16,185,129,.1)'; X.fillRect(0,0,960,540);
+          for(let i=0;i<36;i++){
+            const mx=(i*27)%960, my=Math.floor((t*120+i*47)%540);
+            UI.text(String.fromCharCode(48+(i+Math.floor(t*8))%10),mx,my,'#10b981',1);
+          }
+        } else if(filterIdx===4){
+          X.fillStyle='rgba(14,42,74,.22)'; X.fillRect(0,0,960,540);
+          X.strokeStyle='rgba(34,211,238,.18)'; X.lineWidth=1; X.beginPath();
+          for(let x=0;x<960;x+=40){ X.moveTo(x,0); X.lineTo(x,540); }
+          for(let y=0;y<540;y+=40){ X.moveTo(0,y); X.lineTo(960,y); }
+          X.stroke();
+        }
         // Postcard Frame Stamps
         if(frameIdx===0){
           X.strokeStyle=P.GD; X.lineWidth=3; X.strokeRect(14,14,932,512);
@@ -235,7 +258,6 @@ export function initEggs(G,{music,sfx}){
         } else if(frameIdx===1){
           UI.box(20,20,920,32,P.GD,'rgba(6,5,4,.82)');
           UI.text(`⣿ 1NC0GN30 LATTICE TELEMETRY  ·  SECTOR: ${G.zone.name.toUpperCase()}  ·  POS (${Math.round(p.x)},${Math.round(p.z)})  ·  LV ${G.party.me.lvl}`,34,29,P.GD,1);
-          // viewfinder crosshairs
           X.strokeStyle=P.GD; X.beginPath();
           [[40,68,1,1],[920,68,-1,1],[40,468,1,-1],[920,468,-1,-1]].forEach(([cx,cy,dx,dy])=>{
             X.moveTo(cx,cy+dy*18); X.lineTo(cx,cy); X.lineTo(cx+dx*18,cy);
@@ -248,8 +270,8 @@ export function initEggs(G,{music,sfx}){
           UI.text('"TRUST FACES, NOT VOICES. SILENCE CANNOT BE COPIED."',38,456,P.GD,1);
         }
         if(!hideCtl){
-          UI.box(150,490,660,34,P.DDG,'rgba(6,5,4,.88)');
-          UI.text(`[arrows] orbit  [Q/R] zoom  [1] frame: ${PHOTO_FRAMES[frameIdx]}  [P] pose  [C] hide bar  [enter] snap`,480,500,P.GD,1,'center');
+          UI.box(100,490,760,34,P.DDG,'rgba(6,5,4,.88)');
+          UI.text(`[1] frame: ${PHOTO_FRAMES[frameIdx]}  [2/I] filter: ${PHOTO_FILTERS[filterIdx]}  [P] pose  [C] hide  [enter] snap`,480,500,P.GD,1,'center');
         }
         if(flash>0){ X.fillStyle=`rgba(255,248,220,${flash*.75})`; X.fillRect(0,0,960,540); }
       }
@@ -934,6 +956,71 @@ export function initEggs(G,{music,sfx}){
         UI.box(452,390,372,34,rk>=5?P.DDG:P.GD,'rgba(245,184,46,.16)');
         UI.text(rk>=5?'MAX BOND RESONANCE (RANK 5/5) ACHIEVED':`> [ENTER] DEEPEN BOND TO RANK ${rk+1} (${cost} BITS)`,638,400,rk>=5?P.DG:P.GD,1,'center');
         UI.text('[up/down] select companion   [enter] deepen bond (+5% stats)   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Custom Keybind & Controller Remapper UI (M39) ----
+  const ACTIONS=[
+    ['confirm','Confirm / Interact / Timed Strike','A / Cross'],
+    ['back','Cancel / Back','B / Circle'],
+    ['dash','Dissipate Blink / Ambush','X / Square'],
+    ['map','World Atlas / Radar Map','Y / Triangle'],
+    ['quests','Quest Log & 3D Trail Lock','D-Pad Select'],
+    ['party','Crew Roster / AI Tactics','RB / R1'],
+    ['items','Inventory & Relics','LB / L1'],
+    ['run','Sprint / Overclock Move','L3 / Left Stick'],
+    ['rotl','Camera Orbit Left','LB'],
+    ['rotr','Camera Orbit Right','RB']
+  ];
+  G.openKeybinds=()=>{
+    let sel=0, waiting=false;
+    const keysFor=act=>Object.entries(KEYMAP).filter(([k,v])=>v===act).map(([k])=>k.replace(/^Key/,'').replace(/^Digit/,'')).join(', ');
+    G.mini={
+      name:'keybinds',
+      key(e){
+        if(!waiting) return;
+        if(e.code==='Escape'){ waiting=false; sfx('cancel'); e.preventDefault(); return; }
+        const act=ACTIONS[sel][0];
+        KEYMAP[e.code]=act;
+        try{ localStorage.setItem('woz.keys',JSON.stringify(KEYMAP)); }catch(err){}
+        waiting=false; G.eatConfirm=2; sfx('level');
+        G.toast(`> Bound [${e.code}] -> ${act.toUpperCase()}`,P.GD);
+        e.preventDefault();
+      },
+      update(){
+        if(waiting) return;
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+ACTIONS.length-1)%ACTIONS.length;
+        if(took('down')) sel=(sel+1)%ACTIONS.length;
+        if(took('confirm')){ waiting=true; sfx('blip'); }
+        if(took('party')){
+          Object.keys(KEYMAP).forEach(k=>delete KEYMAP[k]);
+          Object.assign(KEYMAP,DEFAULT_KEYS);
+          try{ localStorage.removeItem('woz.keys'); }catch(err){}
+          sfx('save'); G.toast('> Keybinds reset to sovereign defaults',P.GD);
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> KEYBIND & CONTROLLER REMAPPER',106,48,P.GD,2);
+        UI.text(waiting?'[PRESS ANY KEY TO BIND...]':'KEYBOARD + GAMEPAD ACTIVE',854,52,waiting?P.RED:'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        UI.text('ACTION',114,88,P.DG,1);
+        UI.text('KEYBOARD BINDINGS',460,88,P.DG,1);
+        UI.text('GAMEPAD',740,88,P.DG,1);
+        ACTIONS.forEach(([act,desc,pad],i)=>{
+          const y=112+i*32, on=i===sel;
+          UI.box(106,y-4,748,26,on?(waiting?P.RED:P.GD):P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${desc}`,116,y+3,on?P.GD:P.BONE,1);
+          UI.text(on&&waiting?'[PRESS KEY...]':(keysFor(act)||'NONE'),460,y+3,on&&waiting?P.RED:'#22d3ee',1);
+          UI.text(pad,740,y+3,P.DG,1);
+          UI.hit(106,y-4,748,26,()=>{ sel=i; waiting=true; sfx('blip'); });
+        });
+        UI.box(106,440,748,28,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('[ENTER] REBIND SELECTED ACTION     [P] RESET TO DEFAULT BINDINGS     [ESC] EXIT',480,448,P.GD,1,'center');
+        UI.text('Custom bindings persist automatically in localStorage (woz.keys).',480,484,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
