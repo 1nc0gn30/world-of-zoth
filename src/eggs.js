@@ -1,7 +1,7 @@
 // Easter eggs: hidden terminal + commands, Konami code, Game of Life and doom-fire mini-games, the oscilloscope
 // handshake, title idle hook, achievements (persist across saves).
 import * as UI from './ui.js';
-import { P } from './pal.js';
+import { P, THEMES, applyTheme } from './pal.js';
 import { IN, took } from './input.js';
 import { AG } from './sprites.js';
 import { ENEMIES, ITEMS } from './data.js';
@@ -10,7 +10,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -35,11 +35,13 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  bounty  stack  bossrush  reforge  bestiary  warp <zone>  exit');
+    if(c==='help') out('nmap  ping  patch  bounty  stack  bossrush  reforge  bestiary  theme  warp <zone>  exit');
     else if(c==='stack'){ out('[stack] opening The Infinite Stack (floors 1-99)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startStack(); },40); }
     else if(c==='bossrush'){ out('[bossrush] opening Pantheon Boss Rush Trial...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBossRush(); },40); }
     else if(c==='reforge'){ out('[reforge] opening Gear Overclocking Bench (+1 to +5)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openReforge(); },40); }
     else if(c==='bestiary'){ out('[bestiary] opening Hostile Protocol Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBestiary(); },40); }
+    else if(c==='bounty'){ out('[bounty] opening District Elite Bounty Board (10 contracts)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBounties(); },40); }
+    else if(c==='theme'||c.startsWith('theme ')){ const t=G.cycleTheme(); out(`[theme] CRT phosphor set to: ${t.name}`,P.GD); }
     else if(c==='nmap'){
       const z=G.zone; const fn=(G.foes||[]).filter(f=>f.alive).length, nn=(G.npcs||[]).length, pn=(z.portals||[]).length;
       G.scanT=45; G.trailOn=true; sfx('blip');
@@ -82,7 +84,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','stack','bossrush','reforge','bestiary','warp','whoami','crew','exit'];
+  const CHIPS=['help','nmap','ping','patch','bounty','stack','bossrush','reforge','bestiary','theme','warp','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -108,6 +110,79 @@ export function initEggs(G,{music,sfx}){
         UI.box(10,500,460,30); UI.text('> doom-fire   [up] stoke  [down] smother  [x] exit',20,509,P.BONE); } };
     G.mode='mini'; sfx('confirm'); }
   G.startLife=startLife; G.startDoom=startDoom;
+  // ---- Custom HUD & CRT Phosphor Theme Switcher (M22) ----
+  G.themeIdx=0;
+  try{ const ti=parseInt(localStorage.getItem('woz.theme')||'0',10); if(!isNaN(ti)){ G.themeIdx=ti%THEMES.length; applyTheme(G.themeIdx); } }catch(e){}
+  G.cycleTheme=()=>{
+    G.themeIdx=((G.themeIdx||0)+1)%THEMES.length;
+    const t=applyTheme(G.themeIdx);
+    try{ localStorage.setItem('woz.theme',String(G.themeIdx)); }catch(e){}
+    sfx('blip'); G.toast(`> HUD CRT Theme: ${t.name}`,P.GD);
+    return t;
+  };
+  G.themeName=()=>THEMES[G.themeIdx||0].name;
+  // ---- Dynamic District Bounties & Roaming Elite Anomalies (M21) ----
+  const BOUNTIES=[
+    {id:1, name:'NULL-HOUND ALPHA', zone:'forest', x:18, z:-14, lvl:4, wave:['hound','hound','drone'], proto:'CRYPTO', bits:120},
+    {id:2, name:'PHANTOM RELAY NODE', zone:'relay', x:-18, z:16, lvl:7, wave:['sentinel','node','echo'], proto:'KERNEL', bits:180},
+    {id:3, name:'HILBERT COIL WORM', zone:'fiber', x:20, z:-18, lvl:10, wave:['worm','worm','mite'], proto:'THERMAL', bits:240},
+    {id:4, name:'CHRONO-MITE SWARM', zone:'clock', x:-20, z:14, lvl:13, wave:['mite','mite','phase'], proto:'TEMPORAL', bits:300},
+    {id:5, name:'SUPERPOSED SPECTER', zone:'streets', x:22, z:20, lvl:16, wave:['phase','phase','sentinel'], proto:'TEMPORAL', bits:380},
+    {id:6, name:'MAGMA CRUCIBLE IMP', zone:'foundry', x:-16, z:12, lvl:18, wave:['warden','slag','slag'], proto:'VOID', bits:460},
+    {id:7, name:'PHYSARUM HIVEMIND', zone:'caves', x:18, z:-18, lvl:20, wave:['slime','slime','brood'], proto:'THERMAL', bits:540},
+    {id:8, name:'GLASS DOPPELGANGER', zone:'mirrors', x:0, z:-18, lvl:22, wave:['reflection','copy','echo'], proto:'CRYPTO', bits:650},
+    {id:9, name:'TRENCH LEVIATHAN EEL', zone:'abyss', x:-20, z:18, lvl:27, wave:['eel','eel','cursorling'], proto:'THERMAL', bits:850},
+    {id:10, name:'CITADEL SERAPH GUARD', zone:'citadel', x:14, z:-14, lvl:30, wave:['gunship','cursorling','warden'], proto:'VOID', bits:1100}
+  ];
+  G.openBounties=()=>{
+    let sel=0;
+    G.mini={
+      name:'bounties',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+BOUNTIES.length-1)%BOUNTIES.length;
+        if(took('down')) sel=(sel+1)%BOUNTIES.length;
+        if(took('party')){
+          const b=BOUNTIES[sel]; G.waypoint={zone:b.zone,x:b.x,z:b.z}; G.trailOn=true; G.scanT=8;
+          G.mode='explore'; sfx('confirm'); G.toast(`> 3D Trail locked to ${b.name} (${G.Z[b.zone].name})`,P.GD);
+          return;
+        }
+        if(took('confirm')){
+          const b=BOUNTIES[sel]; sfx('confirm'); G.mode='explore';
+          G.battle(b.wave,{lvl:b.lvl, boss:b.lvl>=18, music:b.lvl>=18?'boss':'battle', ambush:true, bountyId:b.id, bountyBits:b.bits});
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        const doneCount=BOUNTIES.filter(b=>G.flags['bounty_'+b.id]).length;
+        UI.text('> SUB-LATTICE ELITE BOUNTY BOARD',106,48,P.GD,2);
+        UI.text(`CONTRACTS CLEARED: ${doneCount}/${BOUNTIES.length}`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        BOUNTIES.forEach((b,i)=>{
+          const y=92+i*36, on=i===sel, dn=!!G.flags['bounty_'+b.id];
+          UI.box(102,y-4,332,30,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${dn?'[x] ':'[ ] '}${b.name}`,112,y+4,dn?P.GD:(on?P.BONE:P.DG),1);
+          UI.text(`lv${b.lvl}`,424,y+4,P.RED,1,'right');
+          UI.hit(102,y-4,332,30,()=>{ sel=i; });
+        });
+        const cur=BOUNTIES[sel], dn=!!G.flags['bounty_'+cur.id];
+        UI.box(450,88,406,368,P.DDG,'rgba(12,10,8,.92)');
+        UI.text(`CONTRACT #${String(cur.id).padStart(2,'0')}  ${dn?'[COMPLETED]':'[ACTIVE]'}`,470,106,dn?P.GD:P.RED,1);
+        UI.text(cur.name,470,126,P.GD,2);
+        UI.text(`Sector: ${G.Z[cur.zone]?G.Z[cur.zone].name.toUpperCase():cur.zone} (${cur.x}, ${cur.z})`,470,158,P.BONE,1);
+        UI.text(`Threat Level: lv ${cur.lvl}   ·   Weakness: [${cur.proto}]`,470,182,'#22d3ee',1);
+        UI.text(`Hostile Pack: ${cur.wave.join(' + ').toUpperCase()}`,470,206,P.BONE,1);
+        UI.text(`Contract Payout: +${cur.bits} bits + Cache.Bit`,470,230,P.GD,1);
+        UI.box(470,356,366,30,P.GD,'rgba(245,184,46,.16)');
+        UI.text('> [ENTER] INTERCEPT ELITE TARGET NOW',653,364,P.GD,1,'center');
+        UI.box(470,396,366,28,P.DDG,'rgba(6,5,4,.85)');
+        UI.text('> [P] LOCK 3D GOLDEN TRAIL TO SECTOR',653,403,'#22d3ee',1,'center');
+        UI.text('[up/down] select   [enter] engage   [P] lock 3D trail   [esc] close',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
   // ---- Boss Rush Gauntlet Mode: "Pantheon Trial" (M19) ----
   const RUSH_BOSSES=[
     {stage:1, id:'copy', name:'03ng0cn1 · Red Copy', wave:['copy','echo','echo'], lvl:10, proto:'VOID', reward:150},
