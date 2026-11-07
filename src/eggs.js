@@ -9,11 +9,12 @@ import { ENEMIES, ITEMS, PARTY_BASE, SKILLS, QUESTS } from './data.js';
 import { IDLE } from './content.js';
 import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
 import { BLENDER_GEO } from './blender_geo.js';
+import { TRACKS, SFX, AU } from './audio.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -39,7 +40,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='defender'||c==='firewall'){ out('[defender] launching East Gate Firewall Intrusion Defender...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startDefender(); },40); }
+    else if(c==='soundboard'||c==='audio'||c==='stems'){ out('[soundboard] opening Sovereign Soundtrack & Voiceprint Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSoundboard(); },40); }
     else if(c==='meshes'||c==='models'||c==='blender'){ out('[meshes] opening 3D Wireframe Model & Mesh Inspector...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMeshViewer(); },40); }
     else if(c==='mastery'||c==='skills'||c==='loadout'){ out('[mastery] opening Companion Skill Mastery Customizer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSkillMastery(); },40); }
     else if(c==='wheel'||c==='radial'){ out('[wheel] opening 12-Node Sovereign Command Wheel...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openQuickWheel(); },40); }
@@ -2343,6 +2346,222 @@ export function initEggs(G,{music,sfx}){
           UI.text('Permanently amplifies skill power & healing by +15% per rank in all battles.',653,408,P.BONE,1,'center');
         }
         UI.text('[up/down] select skill   [enter] upgrade mastery rank (+15% power)   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #9: East Gate Firewall Intrusion Defender (M65) ----
+  G.startDefender=()=>{
+    let lane=1, hp=100, kills=0, emp=100, spawnT=0.4, won=false, lost=false;
+    const foes=[
+      {lane:0, y:120, spd:58, kind:'DRONE', col:'#f43f5e'},
+      {lane:2, y:160, spd:52, kind:'MITE', col:'#fb923c'},
+      {lane:3, y:100, spd:64, kind:'WORM', col:'#a78bfa'}
+    ];
+    const shots=[];
+    const KINDS=[
+      {kind:'DRONE', col:'#f43f5e', spd:62},
+      {kind:'MITE', col:'#fb923c', spd:75},
+      {kind:'WORM', col:'#a78bfa', spd:54},
+      {kind:'SERAPH', col:'#ef4444', spd:82}
+    ];
+    const rewardWin=()=>{
+      if(won) return; won=true; sfx('win');
+      G.ach('gate_defender');
+      if(!G.flags.defender_reward){
+        G.flags.defender_reward=1; G.bits+=220; G.give('patch.kit',2);
+        G.toast('> EAST GATE SECURED! +220 Bits & +2x Patch.Kit!',P.GD);
+      } else {
+        G.bits+=55; G.toast('> Firewall Defense Drill Complete! +55 Bits!',P.GD);
+      }
+    };
+    G.mini={
+      name:'defender',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(won||lost){
+          if(took('confirm')){ G.startDefender(); return; }
+          return;
+        }
+        if(took('left')) lane=Math.max(0,lane-1);
+        if(took('right')) lane=Math.min(3,lane+1);
+        if(took('confirm')||took('jump')){
+          shots.push({lane, y:392}); sfx('blip');
+        }
+        if(took('party')){
+          if(emp>=100){
+            emp=0; kills+=Math.max(4,foes.length); foes.length=0; sfx('boom');
+            if(kills>=20) rewardWin();
+          } else {
+            // Instant tactical sweep overdrive
+            kills=20; foes.length=0; rewardWin();
+          }
+          return;
+        }
+        emp=Math.min(100,emp+dt*14);
+        spawnT-=dt;
+        if(spawnT<=0 && foes.length<7){
+          spawnT=Math.max(0.45,1.1-kills*0.02);
+          const k=KINDS[(kills+foes.length)%KINDS.length];
+          foes.push({lane:Math.floor(Math.random()*4), y:92, spd:k.spd, kind:k.kind, col:k.col});
+        }
+        // Update shots
+        for(let i=shots.length-1;i>=0;i--){
+          shots[i].y-=dt*340;
+          if(shots[i].y<86){ shots.splice(i,1); continue; }
+          for(let j=foes.length-1;j>=0;j--){
+            if(foes[j].lane===shots[i].lane && Math.abs(foes[j].y-shots[i].y)<22){
+              foes.splice(j,1); shots.splice(i,1); kills++; emp=Math.min(100,emp+12); sfx('hit');
+              if(kills>=20) rewardWin();
+              break;
+            }
+          }
+        }
+        // Update foes
+        for(let j=foes.length-1;j>=0;j--){
+          foes[j].y+=foes[j].spd*dt;
+          if(foes[j].y>=404){
+            foes.splice(j,1); hp=Math.max(0,hp-20); sfx('hurt');
+            if(hp<=0){ lost=true; sfx('glitch'); }
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(52,24,856,492,P.GD);
+        UI.text('> EAST GATE FIREWALL DEFENDER',76,40,P.GD,2);
+        UI.text(`INTERCEPTED: ${kills}/20   CORE HP: ${hp}%   EMP: ${Math.round(emp)}%`,884,44,won?'#4ade80':(hp<=40?P.RED:'#22d3ee'),1,'right');
+        // 4 Conduit Lanes
+        for(let l=0;l<4;l++){
+          const lx=92+l*144;
+          UI.box(lx,82,128,348,l===lane?P.GD:P.DDG,'rgba(10,8,6,.92)');
+          X.strokeStyle='rgba(138,101,20,.22)'; X.setLineDash([6,6]);
+          X.beginPath(); X.moveTo(lx+64,86); X.lineTo(lx+64,424); X.stroke(); X.setLineDash([]);
+          UI.text(`CONDUIT 0${l+1}`,lx+64,92,P.DG,1,'center');
+        }
+        // Draw hostile packets
+        foes.forEach(f=>{
+          const lx=92+f.lane*144;
+          UI.box(lx+16,Math.round(f.y)-14,96,28,f.col,'rgba(244,63,94,.22)');
+          UI.text(f.kind,lx+64,Math.round(f.y)-5,P.BONE,1,'center');
+        });
+        // Draw counter-shots
+        shots.forEach(s=>{
+          const lx=92+s.lane*144;
+          X.fillStyle=P.GD; X.fillRect(lx+58,Math.round(s.y)-8,12,16);
+        });
+        // Draw operator firewall turret
+        const tx=92+lane*144;
+        UI.box(tx+10,394,108,28,'#4ade80','rgba(74,222,128,.24)');
+        UI.text('TURRET [FIRE]',tx+64,403,'#4ade80',1,'center');
+        // Right tactical briefing panel
+        UI.box(676,82,208,348,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('FIREWALL RULES:',692,100,P.GD,1);
+        UI.wrap('Slide the East Gate turret across the 4 fiber conduits and intercept 20 hostile packets before Core HP drops to 0%.',176,1).forEach((l,li)=>UI.text(l,692,124+li*18,P.BONE,1));
+        UI.text('OVERDRIVE EMP:',692,248,'#22d3ee',1);
+        UI.text(emp>=100?'READY [PRESS P]':`CHARGING (${Math.round(emp)}%)`,692,268,emp>=100?'#4ade80':P.GD,1);
+        UI.text('BOUNTY:',692,312,'#22d3ee',1);
+        UI.text('+220 Bits',692,332,P.GD,1);
+        UI.text('+2x Patch.Kit',692,350,P.GD,1);
+        if(won||lost){
+          UI.box(160,210,440,92,won?'#4ade80':P.RED,'rgba(6,5,4,.96)');
+          UI.text(won?'EAST GATE FIREWALL SECURED!':'FIREWALL BREACHED!',380,232,won?'#4ade80':P.RED,2,'center');
+          UI.text('[ENTER] PLAY AGAIN   [ESC] EXIT',380,270,P.GD,1,'center');
+        }
+        UI.text('[left/right] lane   [enter / space] fire packet   [P] EMP / auto-sweep   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Sovereign Soundtrack & Voiceprint Soundboard Studio (M66) ----
+  const TRACK_KEYS=Object.keys(TRACKS);
+  const SFX_KEYS=Object.keys(SFX);
+  const VOICE_LIST=[
+    ['me','1nc0gn30',69],['vigil','Vigil',64],['kitsune','Kitsune',76],['ignis','Ignis',57],
+    ['kai','Kai',74],['nexus','Nexus',67],['kraken','Kraken',55],['chronos','Chronos',62],
+    ['athena','Athena',71],['lycan','Lycan',58],['onyx','Onyx',66],['leviathan','Leviathan',52],
+    ['aether','Aether',79],['ghostbyte','Ghostbyte',72],['scorpius','Scorpius',65],['draco','Draco',56],
+    ['mercury','Mercury',77],['radical-minion','Minion',81],['pixel-shiba','Pixel-Shiba',78],
+    ['pixel-neko','Pixel-Neko',80],['aquila','Aquila',75],['copy','03ng0cn1',68]
+  ];
+  G.openSoundboard=()=>{
+    let deck=0, tSel=0, sSel=0, vSel=0, lastTriggered='hub';
+    G.mini={
+      name:'soundboard',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')) deck=(deck+2)%3;
+        if(took('right')) deck=(deck+1)%3;
+        if(took('up')){
+          if(deck===0) tSel=(tSel+TRACK_KEYS.length-1)%TRACK_KEYS.length;
+          else if(deck===1) sSel=(sSel+SFX_KEYS.length-1)%SFX_KEYS.length;
+          else vSel=(vSel+VOICE_LIST.length-1)%VOICE_LIST.length;
+          sfx('move');
+        }
+        if(took('down')){
+          if(deck===0) tSel=(tSel+1)%TRACK_KEYS.length;
+          else if(deck===1) sSel=(sSel+1)%SFX_KEYS.length;
+          else vSel=(vSel+1)%VOICE_LIST.length;
+          sfx('move');
+        }
+        if(took('confirm')){
+          if(deck===0){
+            const tk=TRACK_KEYS[tSel]; music(tk); lastTriggered='STEM: '+tk.toUpperCase(); sfx('confirm');
+          } else if(deck===1){
+            const sk=SFX_KEYS[sSel]; sfx(sk); lastTriggered='SFX: '+sk.toUpperCase();
+          } else {
+            const [vid,vname]=VOICE_LIST[vSel];
+            const prev=G.dlg; G.dlg={cur:{s:vid}}; sfx('talk'); setTimeout(()=>sfx('talk'),65); setTimeout(()=>{ G.dlg=prev; },140);
+            lastTriggered='VOICE: '+vname.toUpperCase();
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> SOVEREIGN SOUNDBOARD & VOICE STUDIO',56,40,P.GD,2);
+        UI.text(`ACTIVE: ${lastTriggered}`,900,44,'#4ade80',1,'right');
+        // Deck 0: 20 Stems
+        UI.box(52,78,276,396,deck===0?P.GD:P.DDG,'rgba(10,8,6,.92)');
+        UI.text('1. WEBAUDIO STEMS (20)',68,94,deck===0?P.GD:'#22d3ee',1);
+        const f0=Math.max(0,Math.min(tSel-5,TRACK_KEYS.length-11));
+        for(let idx=0;idx<11;idx++){
+          const i=f0+idx; if(i>=TRACK_KEYS.length) break;
+          const tk=TRACK_KEYS[i], tr=TRACKS[tk], yy=120+idx*30, on=deck===0&&i===tSel;
+          if(on){ X.fillStyle='rgba(245,184,46,.16)'; X.fillRect(60,yy-4,260,24); }
+          UI.text((on?'> ':'  ')+tk.toUpperCase(),68,yy,on?P.GD:P.BONE,1);
+          UI.text(`${tr.bpm} BPM`,312,yy,P.DG,1,'right');
+        }
+        // Deck 1: 24 SFX
+        UI.box(342,78,276,396,deck===1?P.GD:P.DDG,'rgba(10,8,6,.92)');
+        UI.text('2. PROCEDURAL SFX (23)',358,94,deck===1?P.GD:'#22d3ee',1);
+        const f1=Math.max(0,Math.min(sSel-5,SFX_KEYS.length-11));
+        for(let idx=0;idx<11;idx++){
+          const i=f1+idx; if(i>=SFX_KEYS.length) break;
+          const sk=SFX_KEYS[i], yy=120+idx*30, on=deck===1&&i===sSel;
+          if(on){ X.fillStyle='rgba(245,184,46,.16)'; X.fillRect(350,yy-4,260,24); }
+          UI.text((on?'> ':'  ')+'SFX.'+sk.toUpperCase(),358,yy,on?P.GD:P.BONE,1);
+          UI.text('[TRIG]',602,yy,'#4ade80',1,'right');
+        }
+        // Deck 2: 22 Crew Voiceprints
+        UI.box(632,78,276,396,deck===2?P.GD:P.DDG,'rgba(10,8,6,.92)');
+        UI.text('3. AGENT VOICEPRINTS (22)',648,94,deck===2?P.GD:'#22d3ee',1);
+        const f2=Math.max(0,Math.min(vSel-4,VOICE_LIST.length-9));
+        for(let idx=0;idx<9;idx++){
+          const i=f2+idx; if(i>=VOICE_LIST.length) break;
+          const [vid,vname,midi]=VOICE_LIST[i], yy=120+idx*30, on=deck===2&&i===vSel;
+          if(on){ X.fillStyle='rgba(245,184,46,.16)'; X.fillRect(640,yy-4,260,24); }
+          UI.text((on?'> ':'  ')+vname.toUpperCase(),648,yy,on?P.GD:P.BONE,1);
+          UI.text(`MIDI ${midi}`,892,yy,'#a78bfa',1,'right');
+        }
+        // Selected Voice Portrait & Oscilloscope bar inside Deck 2 bottom
+        const [cvId,cvName,cvMidi]=VOICE_LIST[vSel];
+        const c=frameCanvas(cvId,'idle',Math.floor(t*4)%2);
+        const isOp=cvId==='me'||cvId==='copy';
+        X.drawImage(c,0,0,c.width,c.height,652+(isOp?12:0),400,isOp?22:48,48);
+        UI.text(cvName.toUpperCase(),714,408,P.GD,1);
+        UI.text(`FREQ: ${Math.round(440*Math.pow(2,(cvMidi-69)/12))} Hz`,714,428,'#4ade80',1);
+        UI.text('[left/right] switch deck   [up/down] select   [enter] audition stem / sfx / voice   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
