@@ -16,7 +16,7 @@ export const CATALOG=[
  ['poster_0612','06:12 poster','panel',1,1.4],['clock','sand clock','cyl',.25,1.2],['anvil','mini anvil','box',.6,.4,.5],['tower','relay model','cyl',.2,2.4],['pillar','mirror pillar','cyl',.35,2.6],
  ['speaker','speaker','box',.5,.5,1.1],['beanbag','beanbag','orb',.5],['hammock','hammock','box',2,.6,.9],['window','fake window','panel',1.6,1.2],
 ].map(([id,name,shape,a,b,c])=>({id,name,shape,a,b,c}));
-const TROPHY=[['boss_copy','copy shard'],['boss_relay4','relay core'],['boss_sandglass','sand glass'],['boss_hunter','hunter eye'],['boss_blank','blank cursor'],['konami','arcade key'],['rooftop','sunrise photo'],['handshake','lissajous'],['tags','red tags'],['tutorial','first light'],['academy','academy cert']];
+const TROPHY=[['boss_copy','copy shard'],['boss_relay4','relay core'],['boss_sandglass','sand glass'],['boss_hunter','hunter eye'],['boss_blank','blank cursor'],['boss_archon','archon halo'],['konami','arcade key'],['rooftop','sunrise photo'],['handshake','lissajous'],['tags','red tags'],['tutorial','first light'],['academy','academy cert']];
 export function initHouse(G, api){
   const H=G.house={ layout:[], tint:{}, wall:'grid', cloak:'none', trim:null, aura:'none', sprites:{} };
   try{ const o=JSON.parse(localStorage.getItem('woz.house')||'null'); if(o) Object.assign(H,o); }catch(e){}
@@ -57,11 +57,17 @@ export function initHouse(G, api){
   H.unlocked=()=>G.qdone_('q1')||G.isFlag('house_open');
   H.inter=()=>{ const L=[]; if(G.zoneId==='hub'&&H.unlocked()) L.push({x:H.door.x,z:H.door.z,r:2,label:'enter  safehouse',col:P.GD,act:()=>G.goZone('house',0,4,Math.PI)});
     if(G.zoneId==='hub'&&!H.unlocked()) L.push({x:H.door.x,z:H.door.z,r:2,label:'safehouse (locked: finish "faces, not voices")',col:P.DDG,act:()=>G.toast('> the door wants a face it knows. finish the first mission.',P.DG)});
-    if(G.zoneId==='house'){ L.push({x:0,z:5,r:1.6,label:'door  to the city',col:P.DG,act:()=>G.goZone('hub',H.door.x+1.2,H.door.z+1.2,0)}); L.push({x:0,z:-3.6,r:1.8,label:'forge  terminal (ZGL)',col:P.GD,act:()=>G.openForge()}); L.push({x:5.5,z:3.5,r:1.6,label:'decorate',col:P.BONE,act:()=>G.decorate()}); }
+    if(G.zoneId==='house'){ L.push({x:0,z:5,r:1.6,label:'door  to the city',col:P.DG,act:()=>G.goZone('hub',H.door.x+1.2,H.door.z+1.2,0)}); L.push({x:0,z:-3.6,r:1.8,label:'forge  terminal (ZGL)',col:P.GD,act:()=>G.openForge()}); L.push({x:5.5,z:3.5,r:1.6,label:'decorate',col:P.BONE,act:()=>G.decorate()}); L.push({x:-5.5,z:3.5,r:1.6,label:'jukebox  (17 tracks)',col:P.GD,act:()=>G.openJukebox()}); }
     return L; };
   G.hud3&&G.hud3.sources.push(z=>z==='hub'?[{x:H.door.x,z:H.door.z,col:P.BONE,label:'safehouse',kind:'poi'}]:[]);
-  // visitors: up to 3 recruited agents idle in the house
-  H.visitors=()=>{ const r=G.roster.filter(id=>id!=='me').slice(-3); return r.map((id,i)=>({id,x:[-4.5,3,-1.5][i],z:[1.5,-1.5,-3][i]})); };
+  // visitors: up to 5 recruited agents idle in the house
+  H.visitors=()=>{ const r=G.roster.filter(id=>id!=='me').slice(-5); return r.map((id,i)=>({id,x:[-4.5,3,-1.5,4.2,-3.2][i],z:[1.5,-1.5,-3,1.2,-2.2][i]})); };
+  const JTRACKS=['title','hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','abyss','skyline','citadel','battle','boss','final'];
+  G.openJukebox=()=>{ let sel=0; G.mini={ name:'jukebox', update(){ if(took('back')||took('pause')){ G.mode='explore'; return; } if(took('up')) sel=(sel+JTRACKS.length-1)%JTRACKS.length; if(took('down')) sel=(sel+1)%JTRACKS.length;
+      if(took('confirm')){ api.music&&api.music(JTRACKS[sel]); G.toast('> playing: '+JTRACKS[sel],P.GD); } },
+    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540); UI.box(180,30,600,480); UI.text('> safehouse jukebox  (17 web-audio stems)',204,46,P.GD,2);
+      JTRACKS.forEach((tr,i)=>{ const y=86+i*22, s=i===sel; if(s){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(194,y-3,572,20); } UI.text((s?'> ':'  ')+tr,210,y,s?P.GD:P.BONE); });
+      UI.text('[up/down] select  ·  [enter] play track  ·  [esc] close',480,488,P.DG,1,'center'); } }; G.mode='mini'; };
   // ---- decorate mode ----
   G.decorate=()=>{ let cx=6, cy=4, ci=0, rot=0; const cat=()=>[...CATALOG.map(c=>c.id),...Object.keys(H.sprites).map(n=>'poster:'+n)];
     const cur=new THREE.Group(); g.add(cur); const curM=()=>{ cur.clear(); const ed=[]; ed.push(0,.05,0,1,.05,0,1,.05,0,1,.05,1,1,.05,1,0,.05,1,0,.05,1,0,.05,0); const s=segs(ed,latMat({color:P.BONE,intensity:2})); cur.add(s); const pv=meshFor({id:cat()[ci]},.5,.5,rot); cur.add(pv); cur.position.set(X0+cx,0,Z0+cy); };

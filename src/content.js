@@ -82,6 +82,7 @@ Object.assign(SKILLS,{
   duo_undertow:{name:'duo: deep-time tide', cost:10, target:'all', pow:2.4, shieldAll:2, enParty:12, duo:true, desc:'[Chronos + Leviathan] 2.4x all + crew shield + 12 EN (-3 sync).', fx:'wipe'},
   duo_zerotrust:{name:'duo: zero-trust exec', cost:10, target:'all', pow:2.6, strip:true, unvoice:2, buff:2, duo:true, desc:'[Vigil + Onyx] 2.6x all + strips firewalls + crew +40% atk (-3 sync).', fx:'wipe'},
   duo_surge:{name:'duo: lattice surge', cost:8, target:'all', pow:2.2, pierce:true, enParty:8, duo:true, desc:'[Duo Resonance] 2.2x piercing all + 8 EN to crew (-3 sync).', fx:'wipe'},
+  od_surge:{name:'overdrive: surge', cost:0, target:'all', pow:3.2, pierce:true, heal:45, healL:4, enParty:15, od:true, desc:'[100% OVERDRIVE] 3.2x piercing surge on all + heals crew + 15 EN.', fx:'quorum'},
 });
 // ---------------- enemies (base = level 1; scaled by zone level) ----------------
 Object.assign(ENEMIES,{

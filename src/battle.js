@@ -9,6 +9,20 @@ import { segs, ring, latMat } from './geo.js';
 import * as UI from './ui.js';
 import { P } from './pal.js';
 const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+export const PARTY_PROTO={
+  me:'KERNEL', kraken:'KERNEL', scorpius:'KERNEL', draco:'KERNEL', 'radical-minion':'KERNEL', 'pixel-neko':'KERNEL',
+  vigil:'CRYPTO', onyx:'CRYPTO', ghostbyte:'CRYPTO', athena:'CRYPTO', copy:'CRYPTO',
+  kitsune:'THERMAL', ignis:'THERMAL', kai:'THERMAL', lycan:'THERMAL', 'pixel-shiba':'THERMAL',
+  chronos:'TEMPORAL', mercury:'TEMPORAL', aquila:'TEMPORAL', nexus:'TEMPORAL',
+  leviathan:'VOID', aether:'VOID'
+};
+export const ENEMY_WEAK={
+  drone:'KERNEL', sentinel:'KERNEL', rusted:'KERNEL', brood:'KERNEL', gunship:'KERNEL', node:'KERNEL',
+  echo:'CRYPTO', copy:'CRYPTO', reflection:'CRYPTO', relay4:'CRYPTO', hunter:'CRYPTO',
+  worm:'THERMAL', slime:'THERMAL', eel:'THERMAL',
+  mite:'TEMPORAL', phase:'TEMPORAL', sandglass:'TEMPORAL',
+  slag:'VOID', warden:'VOID', cursorling:'VOID', blank:'VOID', archon:'VOID'
+};
 export class Battle{
   constructor(G,types,opts={}){
     this.G=G; this.opts=opts; this.t=0; this.state='intro'; this.st=0; this.msg=''; this.msgT=0; this.log=[]; this.round=0; this.events=[];
@@ -23,7 +37,7 @@ export class Battle{
     G.player.facing=Math.atan2(this.R.x,this.R.z); G.player.moving=false;
     // enemies
     this.enemies=[]; types.forEach(t=>this.addEnemy(t));
-    this.lastMe=null; this.prevMe=null; this.flags={}; this.order=[]; this.ti=0; this.chain=0;
+    this.lastMe=null; this.prevMe=null; this.flags={}; this.order=[]; this.ti=0; this.chain=0; this.od=opts.ambush?40:0;
     this.menu=0; this.sub=null; this.tsel=0; this.timing=null; this.block=null; this.result=null;
     this.camPos=this.C.clone().addScaledVector(this.F,-8.6).add(V(0,3.1,0)); this.camLook=this.C.clone().add(V(0,1.3,0)); if(types.some(t=>['relay4','sandglass','hunter','blank','archon'].includes(t))){ this.camPos.addScaledVector(this.F,-3).y+=2.5; this.camLook.y+=2; }
     const M=G.mods||{}; if(M.d3) this.party.forEach(p=>p.st.shield=1);
@@ -121,6 +135,7 @@ export class Battle{
   }
   options(){ const a=this.actor; const lvl=this.G.party[a.id].lvl; let sk=PARTY_BASE[a.id].skills.filter(s=>!SKILLS[s].lvl||lvl>=SKILLS[s].lvl);
     const duo=this.duoSkill(); if(duo) sk=[duo,...sk];
+    if((this.od||0)>=100) sk=['od_surge',...sk];
     if(a.id==='me'&&this.flags.quorum===1) sk=['quorum',...sk];
     const cm=(this.G.mods||{}).t3?.8:1;
     const o=sk.map(s=>({kind:'skill',id:s,label:'> '+SKILLS[s].name,cost:Math.round(SKILLS[s].cost*(a.id==='me'?cm:1)),desc:SKILLS[s].desc}));
@@ -154,8 +169,10 @@ export class Battle{
   timingInput(dt){ const T=this.timing; T.t+=dt/1.05; if(T.res===null && took('confirm')){ const x=T.t; const wd=(this.G.mods||{}).o2&&this.actor.id==='me'?1.5:1; T.res= Math.abs(x-.71)<.035*wd?'perfect':(Math.abs(x-.71)<.09*wd?'good':'miss'); T.hold=.25; sfx(T.res==='miss'?'cancel':'blip'); }
     if(T.res!==null){ T.hold-=dt; if(T.hold<=0) this.execute(this.actor,this.cur.o,this.cur.S,this.tgt,T.res); } else if(T.t>=1){ T.res='none'; this.execute(this.actor,this.cur.o,this.cur.S,this.tgt,'none'); } }
   // ---------------- resolve party action ----------------
-  dmg(a,e,pow,{crit=1,pierce=false}={}){ let atk=a.atk*(a.st&&a.st.buff>0?1.4:1)*(a.isP?1+(this.chain||0)*.05:1); let d=atk*pow*(.9+Math.random()*.2)-e.def*.6; d*=crit; if(e.st.mark>0) d*=1.5; if(e.st.wall>0&&!pierce) d*=.35; return Math.max(1,Math.round(d)); }
-  hitE(e,d,col,label){ e.hp=Math.max(0,e.hp-d); e.flash=1; num(e.obj.group.position.clone().add(V(0,(e.obj.update?2.1:(e.obj.group.userData.h||1.4)+.6),0)),label?label+' '+d:d,col);
+  dmg(a,e,pow,{crit=1,pierce=false}={}){ let atk=a.atk*(a.st&&a.st.buff>0?1.4:1)*(a.isP?1+(this.chain||0)*.05:1); let d=atk*pow*(.9+Math.random()*.2)-e.def*.6; d*=crit;
+    const wk=a.isP&&PARTY_PROTO[a.id]&&ENEMY_WEAK[e.type]===PARTY_PROTO[a.id]; if(wk){ d*=1.35; e._breach=1; this.od=Math.min(100,(this.od||0)+15); } else if(a.isP){ e._breach=0; this.od=Math.min(100,(this.od||0)+8); }
+    if(e.st.mark>0) d*=1.5; if(e.st.wall>0&&!pierce) d*=.35; return Math.max(1,Math.round(d)); }
+  hitE(e,d,col,label){ e.hp=Math.max(0,e.hp-d); e.flash=1; const lb=label||(e._breach?'breach':''); const c=e._breach?'#22d3ee':col; e._breach=0; num(e.obj.group.position.clone().add(V(0,(e.obj.update?2.1:(e.obj.group.userData.h||1.4)+.6),0)),lb?lb+' '+d:d,c);
     burst(e.obj.group.position.clone().add(V(0,e.obj.update?1:(e.obj.group.userData.h||1.4),0)),col,18,4,.6); this.G.shake(.25);
     if(e.hp<=0){ e.alive=false; sfx('boom'); const bg=['relay4','sandglass','hunter','blank','archon'].includes(e.type); dissolve(e.obj.group.position.clone(),P.RED,90,bg?8:1.6); if(bg) this.G.shake(1); }
     if(e.type==='blank'&&e.alive){ if(!e.st.p2&&e.hp<e.mhp*.5){ e.st.p2=1; e.st.stacks=2; this.pendingDialog='blank_p2'; this.say('The cursor goes quiet. It is listening.',1.6); sfx('red'); }
@@ -171,6 +188,7 @@ export class Battle{
       if(it.use==='revive'){ tgt.alive=true; tgt.hp=Math.round(tgt.mhp*it.v); num(tgt.sp.group.position.clone().add(V(0,2.2,0)),'online',P.GD); }
       sfx('heal'); burst(tgt.sp.group.position.clone().add(V(0,1,0)),P.GD,24,2,.8); this.say(`${a.name} uses ${it.name}.`,1); this.waitAct(.9); return; }
     a.en-=S.cost; if(S.gain) a.en=Math.min(a.men,a.en+S.gain); if(S.once) this.flags.quorum=2;
+    if(S.od){ this.od=0; G.flashFx(.75); this.alive(this.party).forEach(p=>{ p.anim='ultimate'; pillar(sc,p.sp.group.position,P.GD,12,.9); }); }
     if(S.duo){ this.chain=Math.max(0,(this.chain||0)-3); this.alive(this.party).forEach(p=>{ p.anim='ultimate'; ringFx(sc,p.sp.group.position.clone().add(V(0,1,0)),P.GD,2.2,.7,'z',2); }); }
     if(tres==='perfect'||tres==='good'){ this.chain=Math.min(7,(this.chain||0)+(tres==='perfect'?2:1)); if(tres==='perfect') a.en=Math.min(a.men,a.en+2); } else if(tres==='miss'){ this.chain=0; }
     // the copy answers before you speak: repeat the same command and it is reflected
@@ -270,7 +288,8 @@ export class Battle{
     const G=this.G, X=UI.ctx; const proj=(p)=>{ const v=p.clone().project(G.camera); return {x:(v.x+1)/2*UI.W, y:(1-v.y)/2*UI.H, vis:v.z<1}; };
     // enemies: name, hp, intent
     this.enemies.forEach((e,i)=>{ if(!e.alive) return; const top=e.obj.group.position.clone().add(V(0,(e.obj.update?2.2:(e.obj.group.userData.h||1.4)+.9)+(e.type==='relay4'?2.5:0),0)); const s=proj(top); if(!s.vis) return;
-      const w=90; UI.text(e.name,s.x,s.y-34,P.RED,1,'center'); UI.bar(s.x-w/2,s.y-20,w,5,e.hp/e.mhp,P.RED,P.RED3);
+      const w=90, wk=ENEMY_WEAK[e.type]; const match=this.actor&&this.actor.isP&&PARTY_PROTO[this.actor.id]===wk;
+      UI.text(e.name+(wk?` [${wk.slice(0,4)}]`:''),s.x,s.y-34,match?P.GD:P.RED,1,'center'); UI.bar(s.x-w/2,s.y-20,w,5,e.hp/e.mhp,P.RED,P.RED3);
       let st=[]; if(e.st.wall>0) st.push('[fw]'); if(e.st.mark>0) st.push('[traced]'); if(e.st.charge) st.push('[charging]'); if(e.st.stacks) st.push(`[voices ${e.st.stacks}]`);
       if(e.type==='hunter'&&e.st.gaze) st.push('[GAZE ARMED]'); if(e.type==='blank'&&e.st.p2) st.push('[SILENCE TRIAL: GUARD]');
       if(st.length) UI.text(st.join(' '),s.x,s.y-48,P.RED,1,'center');
@@ -306,7 +325,8 @@ export class Battle{
     if(this.msgT>0||this.state==='defeat'){ const w=UI.textW(this.msg)+40; UI.box(480-w/2,14,w,28,P.DDG); UI.text(this.msg,480,22,this.state==='defeat'?P.RED:P.BONE,1,'center'); }
     // turn order & sync chain
     if(this.order.length&&this.state!=='victory'){ let x=12; UI.text(`r${this.round} · order`,x,52,P.DG); x+=68; this.order.forEach((o,i)=>{ if(!o.alive) return; const c=o.isP?o.col:P.RED; const s=(i===this.ti?'>':'')+o.name.slice(0,7); UI.text(s,x,52,i===this.ti?c:(o.isP?P.DG:P.RED2)); x+=UI.textW(s)+12; });
-      if(this.chain>0){ UI.box(12,68,210,22,P.GD,'rgba(6,5,4,.85)'); UI.text(`> sync chain x${this.chain}  (+${this.chain*5}% dmg)`,20,73,P.GD,1); } }
+      if(this.chain>0){ UI.box(12,68,210,22,P.GD,'rgba(6,5,4,.85)'); UI.text(`> sync chain x${this.chain}  (+${this.chain*5}% dmg)`,20,73,P.GD,1); }
+      if((this.od||0)>0){ const oy=this.chain>0?94:68; UI.box(12,oy,210,22,this.od>=100?P.GD:P.DDG,'rgba(6,5,4,.85)'); UI.bar(16,oy+15,202,3,Math.min(1,this.od/100),this.od>=100?P.GD:'#22d3ee',P.DDG); UI.text(`> overdrive ${this.od}%`+(this.od>=100?' [SURGE READY]':''),20,oy+3,this.od>=100?P.GD:P.BONE,1); } }
     if(this.state==='victory'&&this.result){ const R=this.result; const vx=560, vy=60, vh=Math.min(320,100+R.ups.length*18+(R.loot.length?20:0)); UI.box(vx,vy,380,vh); UI.text('> battle: won',vx+20,vy+16,P.GD,2); let y=vy+52;
       UI.text(`+${R.xp} xp   +${R.bits} bits`,vx+20,y,P.BONE); y+=20; if(R.loot.length){ UI.text('loot: '+R.loot.map(i=>ITEMS[i].name).join(', '),vx+20,y,P.GD); y+=20; }
       R.ups.forEach(u=>{ UI.text(`${u.name} > level ${u.lvl}`+(u.learn?`  learned: ${u.learn}`:''),vx+20,y,P.GD); y+=18; }); UI.text('[confirm]',vx+356,vy+vh-20,P.DG,1,'right'); UI.cursor(vx+360,vy+vh-19,t); }

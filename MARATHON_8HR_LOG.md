@@ -8,8 +8,8 @@
 - [x] **M03** (`00:58` · `9613e0b`): Act VI Campaign Quests (`q19`–`q20`: *The First Compiler*) & Superboss `ARCHON-0` (`archon_seraph` Blender 4.3 mesh)
 - [x] **M04** (`01:08`): 22-Agent Loyalty Questline Expansion (`s_kai`, `s_vigil`, `s_athena`, `s_kraken`, `s_nexus`, `s_lycan`, `s_onyx`, `s_leviathan`, `s_aether`) + 9 Mythic Relics
 - [x] **M05** (`01:08`): Null Academy Advanced Cyber-Range (Labs 09–16: RAG Poisoning, Model Backdoors, Timing Attacks, Multi-Agent Collusion, ZK Proofs, Master CTF)
-- [ ] **M06**: Tactical Combat v2 — Protocol Affinities (`CRYPTO`, `KERNEL`, `THERMAL`, `TEMPORAL`, `VOID`), Weakness Scanner & Overdrive Burst
-- [ ] **M07**: Safehouse v2 — Interactive Jukebox (all 16 tracks), Boss Trophy Pedestals & Companion Hangout Dialogues
+- [x] **M06** (`01:18`): Tactical Combat v2 — Protocol Affinities (`CRYPTO`, `KERNEL`, `THERMAL`, `TEMPORAL`, `VOID`), Weakness Scanner & Overdrive Burst
+- [x] **M07** (`01:18`): Safehouse v2 — Interactive Jukebox (all 17 tracks), Boss Trophy Pedestals & 5-Agent Hangouts
 - [ ] **M08**: Procedural Rogue-Lite Dungeon Mode (*"The Infinite Stack"* — Floors 1–99 via `> stack` / Citadel portal)
 - [ ] **M09**: 3D Ambient Weather & Shader Polish (district particle systems, boss slow-mo shockwaves)
 - [ ] **M10**: Interactive World Atlas v2 (`src/hud3.js`) — 14-District Node Graph, Completion % & Red Tag Tracker
