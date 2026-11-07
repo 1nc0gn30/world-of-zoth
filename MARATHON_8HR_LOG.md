@@ -123,10 +123,10 @@
 ### Hour 13 (`12:00`–`13:00`) — Mini-Game #15, Telemetry Profiler & Zero-Knowledge Vaults
 - [x] **M105** (`12:03` · `commit 7ffb421`): Secret Mini-Game #15 — *"Signal Tower Rhythm Sync"* (`G.startRhythm()` via `> rhythm` & System Menu — 4-track falling note chiptune rhythm game synced to WebAudio)
 - [x] **M106** (`12:03` · `commit 7ffb421`): Zero-Knowledge Cryptographic Vault Cracker (`G.openVaultCracker()` via `> vaults` & System Menu — crack 8 Mastermind-style hexadecimal vaults for mythic caches)
-- [x] **M107** (`12:21`): Real-Time Engine & WebGL Telemetry Profiler (`G.openProfiler()` via `> profiler` & System Menu — live FPS graph, draw calls, particle count, memory & audio node inspector)
-- [x] **M108** (`12:21`): Interactive Quest Flowchart & Dependency Visualizer (`G.openQuestGraph()` via `> questgraph` & System Menu — visual node graph of all main & side quests across Acts I–VI)
-- [ ] **M109**: Companion Training Regimen & Stat Redistributor (`G.openGym()` via `> gym` & System Menu — train individual crew stats HP/EN/ATK/DEF/SPD)
-- [ ] **M110**: Lattice News Wire & Underground BBS Reader (`G.openBBS()` via `> bbs` & System Menu — read 18 reactive underground bulletin board threads that evolve with story progress)
+- [x] **M107** (`12:21` · `commit c0bc8be`): Real-Time Engine & WebGL Telemetry Profiler (`G.openProfiler()` via `> profiler` & System Menu — live FPS graph, draw calls, particle count, memory & audio node inspector)
+- [x] **M108** (`12:21` · `commit c0bc8be`): Interactive Quest Flowchart & Dependency Visualizer (`G.openQuestGraph()` via `> questgraph` & System Menu — visual node graph of all main & side quests across Acts I–VI)
+- [x] **M109** (`12:35`): Companion Training Regimen & Stat Redistributor (`G.openGym()` via `> gym` & System Menu — train individual crew stats HP/EN/ATK/DEF/SPD)
+- [x] **M110** (`12:35`): Lattice News Wire & Underground BBS Reader (`G.openBBS()` via `> bbs` & System Menu — read 18 reactive underground bulletin board threads that evolve with story progress)
 - [ ] **M111**: Boss Rush Endless Survival Mode (`G.openEndlessBoss()` via `> endless` & System Menu — infinite scaling boss waves with global high-score tracking)
 - [ ] **M112**: Secret Mini-Game #16 — *"Vector Tank Cyber-Arena"* (`G.startVectorTank()` via `> tank` & System Menu — top-down Battlezone-style wireframe vector tank skirmish)
 

@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='gym'||c==='train'||c==='respec'){ out('[gym] opening Companion Training Regimen & Stat Redistributor...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openGym(); },40); }
+    else if(c==='bbs'||c==='news'||c==='wire'){ out('[bbs] connecting to 06:12 Lattice News Wire & Underground BBS...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBBS(); },40); }
     else if(c==='profiler'||c==='perf'||c==='fps'){ out('[profiler] opening Real-Time Engine & WebGL Telemetry Profiler...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openProfiler(); },40); }
     else if(c==='questgraph'||c==='flowchart'||c==='dag'){ out('[questgraph] opening Interactive Quest Flowchart & DAG Visualizer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openQuestGraph(); },40); }
     else if(c==='rhythm'||c==='beats'||c==='ddr'){ out('[rhythm] launching Signal Tower 4-Track Rhythm Sync...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRhythm(); },40); }
@@ -6083,6 +6085,210 @@ export function initEggs(G,{music,sfx}){
         UI.text('[ENTER] ACTIVATE QUEST & LOCK 3D GOLDEN TRAIL',701,394,P.GD,1,'center');
         UI.text(sync?'DAG NODE SYNCHRONIZED (+100B CLAIMED)':'[P] SYNCHRONIZE DAG NODE (+100 BITS)',701,420,'#4ade80',1,'center');
         UI.text('[arrows] select quest node   [enter] lock 3D golden trail   [P] sync node (+100B)   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Companion Training Regimen & Stat Redistributor (M109) ----
+  const GYM_STATS=[
+    {id:'hp',  name:'HP VITALITY REGIMEN',  bonus:'+12 MAX HP / RANK',  step:12, col:'#4ade80', desc:'Reinforces hull integrity and packet buffer resilience against boss cleaves.'},
+    {id:'en',  name:'EN CAPACITOR DRILL',   bonus:'+6 MAX EN / RANK',   step:6,  col:'#22d3ee', desc:'Expands kernel energy reserves for sustained protocol skill casting.'},
+    {id:'atk', name:'ATK STRIKE OVERCLOCK', bonus:'+4 ATK / RANK',      step:4,  col:'#f43f5e', desc:'Sharpens vector output and critical payload multipliers across all strikes.'},
+    {id:'def', name:'DEF AEGIS HARDENING',  bonus:'+4 DEF / RANK',      step:4,  col:'#f5b82e', desc:'Hardens zero-knowledge armor plates against physical and thermal breaches.'},
+    {id:'spd', name:'SPD VECTOR REFLEX',    bonus:'+1 SPD / RANK',      step:1,  col:'#a78bfa', desc:'Accelerates initiative turn order and dodge timing across the lattice.'}
+  ];
+  G.openGym=()=>{
+    const crewIds=Object.keys(PARTY_BASE);
+    let cIdx=0, sIdx=0;
+    const rankOf=(id,st)=>(G.flags&&G.flags['gym_'+id+'_'+st])||0;
+    const totalRanks=id=>GYM_STATS.reduce((s,g)=>s+rankOf(id,g.id),0);
+    const livePreviewStats=id=>{
+      if(G.party&&G.party[id]) return G.stats(id);
+      const B=PARTY_BASE[id]||PARTY_BASE.me;
+      return {
+        mhp:B.hp+rankOf(id,'hp')*12,
+        men:B.en+rankOf(id,'en')*6,
+        atk:B.atk+rankOf(id,'atk')*4,
+        def:B.def+rankOf(id,'def')*4,
+        spd:B.spd+rankOf(id,'spd')*1
+      };
+    };
+    const trainStat=(delta)=>{
+      const id=crewIds[cIdx], g=GYM_STATS[sIdx], cur=rankOf(id,g.id);
+      if(delta>0){
+        if(cur>=10){ G.toast('> REGIMEN AT MAX RANK (10/10)',P.DG); sfx('cancel'); return; }
+        if(G.bits<30){ G.toast('> NEED 30 BITS PER TRAINING RANK (PRESS [P] FOR FREE SPARRING VOUCHER)',P.DG); sfx('cancel'); return; }
+        G.bits-=30;
+        G.flags['gym_'+id+'_'+g.id]=cur+1;
+        if(G.party&&G.party[id]){ const st=G.stats(id); G.party[id].hp=st.mhp; G.party[id].en=st.men; }
+        G.ach('gym_master'); sfx('level');
+        G.toast(`> ${PARTY_BASE[id].name.toUpperCase()}: ${g.name} RANK ${cur+1}/10 (${g.bonus})`,g.col);
+      } else if(delta<0){
+        if(cur<=0){ sfx('cancel'); return; }
+        G.flags['gym_'+id+'_'+g.id]=cur-1;
+        G.bits+=30;
+        if(G.party&&G.party[id]){ const st=G.stats(id); G.party[id].hp=Math.min(G.party[id].hp,st.mhp); G.party[id].en=Math.min(G.party[id].en,st.men); }
+        G.ach('gym_master'); sfx('move');
+        G.toast(`> REFUNDED 1 RANK (+30 BITS)`,P.GD);
+      }
+    };
+    const respecAgent=()=>{
+      const id=crewIds[cIdx], tot=totalRanks(id);
+      if(tot<=0){ G.toast('> NO GYM RANKS TO REDISTRIBUTE ON THIS AGENT',P.DG); sfx('cancel'); return; }
+      GYM_STATS.forEach(g=>{ G.flags['gym_'+id+'_'+g.id]=0; });
+      const refund=tot*30; G.bits+=refund;
+      if(G.party&&G.party[id]){ const st=G.stats(id); G.party[id].hp=Math.min(G.party[id].hp,st.mhp); G.party[id].en=Math.min(G.party[id].en,st.men); }
+      G.ach('gym_master'); sfx('win');
+      G.toast(`> REDISTRIBUTED ${tot} RANKS ON ${PARTY_BASE[id].name.toUpperCase()} (+${refund} BITS REFUNDED)`,P.GD);
+    };
+    G.mini={
+      name:'gym',
+      key(e){
+        const k=(e.key||'').toLowerCase();
+        if(k==='q') { cIdx=(cIdx+crewIds.length-1)%crewIds.length; sfx('move'); }
+        if(k==='e') { cIdx=(cIdx+1)%crewIds.length; sfx('move'); }
+        if(k==='r') respecAgent();
+        if(k==='p'){
+          const id=crewIds[cIdx], g=GYM_STATS[sIdx], cur=rankOf(id,g.id);
+          G.bits+=150;
+          if(cur<10) G.flags['gym_'+id+'_'+g.id]=cur+1;
+          if(G.party&&G.party[id]){ const st=G.stats(id); G.party[id].hp=st.mhp; G.party[id].en=st.men; }
+          G.ach('gym_master'); sfx('win');
+          G.toast(`> SPARRING DRILL COMPLETE: +150 BITS & +1 ${g.id.toUpperCase()} RANK!`,'#4ade80');
+        }
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sIdx=(sIdx+GYM_STATS.length-1)%GYM_STATS.length; sfx('move'); }
+        if(took('down')){ sIdx=(sIdx+1)%GYM_STATS.length; sfx('move'); }
+        if(took('left')) trainStat(-1);
+        if(took('right')||took('confirm')) trainStat(1);
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        const id=crewIds[cIdx], B=PARTY_BASE[id], ag=AG[id]||AG.me, st=livePreviewStats(id), proto=PARTY_PROTO[id]||'KERNEL';
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> COMPANION TRAINING REGIMEN & STAT GYM',56,40,P.GD,2);
+        UI.text(`AGENT ${String(cIdx+1).padStart(2,'0')}/${crewIds.length} [Q/E]   ·   BITS: ${G.bits}B`,900,44,'#4ade80',1,'right');
+        // Left: Selected Agent Card & Live Effective Combat Stats
+        UI.box(52,78,340,386,ag.color||P.GD,'rgba(10,8,6,.94)');
+        UI.text(`${B.name.toUpperCase()} [${proto}]`,68,94,ag.color||P.GD,2);
+        const inRoster=G.roster&&G.roster.includes(id);
+        UI.text(`STATUS: ${inRoster?'ACTIVE CREW':'RESERVE'} · RANKS: ${totalRanks(id)}/50`,68,122,'#22d3ee',1);
+        UI.box(68,144,116,120,P.DDG,'rgba(14,11,8,.96)');
+        const fc=frameCanvas(id,'idle',Math.floor(t*6)%(id==='me'||id==='copy'?1:8));
+        if(fc){ X.imageSmoothingEnabled=false; X.drawImage(fc,0,0,fc.width,fc.height,84,154,84,96); }
+        // Effective Stats Box next to portrait
+        UI.box(196,144,180,120,P.DDG,'rgba(14,11,8,.96)');
+        UI.text('EFFECTIVE STATS:',210,156,P.GD,1);
+        [['MAX HP',st.mhp,'#4ade80'],['MAX EN',st.men,'#22d3ee'],['ATTACK',st.atk,'#f43f5e'],['DEFENSE',st.def,'#f5b82e'],['SPEED',st.spd,'#a78bfa']].forEach(([lbl,val,col],i)=>{
+          UI.text(lbl+':',210,176+i*16,P.DG,1);
+          UI.text(String(val),362,176+i*16,col,1,'right');
+        });
+        // Agent Selector Strip & Respec Controls
+        UI.box(68,278,308,92,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('SWITCH AGENT [Q / E]:',82,292,P.GD,1);
+        const prevId=crewIds[(cIdx+crewIds.length-1)%crewIds.length], nextId=crewIds[(cIdx+1)%crewIds.length];
+        UI.text(`< [Q] ${PARTY_BASE[prevId].name}`,82,316,P.BONE,1);
+        UI.text(`${PARTY_BASE[nextId].name} [E] >`,362,316,P.BONE,1,'right');
+        UI.text('[R] 100% STAT REDISTRIBUTION REFUND',222,344,'#22d3ee',1,'center');
+        UI.box(68,382,308,68,'#4ade80','rgba(16,28,20,.92)');
+        UI.text('[P] RUN SPARRING DRILL (+150B & +1 RANK)',222,398,'#4ade80',1,'center');
+        UI.text('100% Free In-Browser Utility · Zero Paywalls',222,422,P.BONE,1,'center');
+        // Right: 5 Attribute Regimen Sliders (0..10 Ranks Each)
+        UI.box(408,78,496,386,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('ATTRIBUTE REGIMEN ALLOCATION (30 BITS / RANK):',426,94,P.GD,1);
+        GYM_STATS.forEach((g,i)=>{
+          const y=118+i*66, on=i===sIdx, rnk=rankOf(id,g.id);
+          UI.box(424,y,464,58,on?g.col:P.DDG,on?'#1c160c':'rgba(14,11,8,.92)');
+          UI.text(`${on?'> ':'  '}${g.name}`,438,y+10,on?P.GD:P.BONE,1);
+          UI.text(`RANK ${rnk}/10 (${g.bonus})`,874,y+10,g.col,1,'right');
+          // 10-segment progress bar
+          for(let b=0;b<10;b++){
+            X.fillStyle=b<rnk?g.col:'rgba(255,255,255,.08)';
+            X.fillRect(438+b*24,y+30,20,14);
+          }
+          UI.text('[- / +]',874,y+30,on?P.GD:P.DG,1,'right');
+          UI.hit(424,y,464,58,()=>{ sIdx=i; trainStat(1); });
+        });
+        UI.text('[Q/E] switch agent   [up/down] stat   [left/right/enter] -/+ rank   [P] sparring (+150B)   [R] respec   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Lattice News Wire & Underground BBS Reader (M110) ----
+  const BBS_THREADS=[
+    {id:'t01', board:'RELIT WIRE',     author:'@vigil_node01',    title:'06:12 HANDSHAKE PROTOCOL: WHY FACES MATTER',         col:'#f5b82e', cond:()=>true, body:'Every synthetic packet on the Relit grid can spoof a voiceprint in 4ms. Only an in-person oscilloscope 3:2 phase lock or verified Billboard signature proves an operator is real.'},
+    {id:'t02', board:'RELIT WIRE',     author:'@kitsune_rest',    title:'SIGNAL EMBERS SPOTTED IN THE REST WOODS',            col:'#4ade80', cond:()=>true, body:'Three warm amber caches are humming near the Conway clearing. Watch out for Swarm-Bits patrolling the fern line—bring a THERMAL or KERNEL striker.'},
+    {id:'t03', board:'RELIT WIRE',     author:'@ignis_forge',     title:'EAST GATE SEALED BY RED MIRROR SIGNATURE',           col:'#f43f5e', cond:()=>G.isFlag('copy_down'), body:'UPDATE: Operator 1nc0gn30 and Ignis shattered the 03ng0cn1 mirror blockade at East Gate! The road to Relay 4 and The Hollow is officially open.'},
+    {id:'t04', board:'RELIT WIRE',     author:'@nexus_hollow',    title:'CHORUS VOICE PYLONS SILENCED IN SECTOR 03',          col:'#22d3ee', cond:()=>G.isFlag('core_down'), body:'All three Voice Pylons in The Hollow have been severed. RELAY 4 lost its recursive feedback loop and collapsed into static.'},
+    {id:'t05', board:'PANTHEON LEAKS', author:'@athena_collapse', title:'WAVE-FUNCTION COLLAPSE OBSERVED IN DISTRICT 05',     col:'#a78bfa', cond:()=>true, body:'Streets in Sector 05 exist in quantum superposition until observed. Lock your camera yaw or use the 5x5 Eigenstate Resolver in the Quantum Loom.'},
+    {id:'t06', board:'PANTHEON LEAKS', author:'@chronos_belfry',  title:'SAND CLOCKTOWER FROZEN AT 06:12:59',                 col:'#fb923c', cond:()=>true, body:'SANDGLASS is hoarding every grain of the 60th second inside the belfry gear train. Break its temporal shield before it rewinds the turn counter.'},
+    {id:'t07', board:'PANTHEON LEAKS', author:'@ghostbyte_pkt',   title:'HILBERT FIBER TUNNELS: 85% PACKET INTEGRITY',        col:'#22d3ee', cond:()=>true, body:'Kraken and Ghostbyte mapped the space-filling Hilbert curves beneath the city. Surf the gold rails to bypass surface patrols.'},
+    {id:'t08', board:'PANTHEON LEAKS', author:'@onyx_mirrors',    title:'HALL OF MIRRORS: ONE REFLECTION LAGS BY 1 FRAME',    col:'#a78bfa', cond:()=>true, body:'Do not strike the pillars blindly. Watch the reflection that fails to mirror your step—that is where THE HUNTER and 03ng0cn1 hide.'},
+    {id:'t09', board:'PANTHEON LEAKS', author:'@aether_skyline',  title:'MODE-7 SKYLINE TOWER: THE BLANK CURSOR AWAITS',      col:'#22d3ee', cond:()=>true, body:'At the top of the Source Tower, an unblinking prompt (>_) tries to overwrite the operator table. Bring all 21 agents to hold the line.'},
+    {id:'t10', board:'BOUNTY & MARKET',author:'@pixel_neko',      title:'TOOL BENCH & OVERCLOCK ANVIL OPEN IN RELIT HUB',     col:'#f5b82e', cond:()=>true, body:'All relics can now be overclocked to +5 and engraved with elemental runes (+25% stat multiplier). Zero license keys, 100% open hardware.'},
+    {id:'t11', board:'BOUNTY & MARKET',author:'@lycan_bounty',    title:'10 ELITE APEX CONTRACTS POSTED ON THE BOARD',        col:'#f43f5e', cond:()=>true, body:'High-value rogue processes have been sighted across all districts. Clear all 10 contracts for massive Bit payouts and Cache.Bit drops.'},
+    {id:'t12', board:'BOUNTY & MARKET',author:'@mercury_express', title:'FAST-TRAVEL PORTAL GRID EXPANDED TO 18 SECTORS',     col:'#4ade80', cond:()=>true, body:'From the Sunken Server Abyss and Cryo-Storage Array to the Quantum Loom, Chrono-Vault, and Astral Relay—instant transit is online.'},
+    {id:'t13', board:'BOUNTY & MARKET',author:'@draco_exchange',  title:'LATTICE BIT EXCHANGE & DIVIDEND STAKING LIVE',       col:'#f5b82e', cond:()=>true, body:'Trade synthetic tickers (ZOTH, NULL, KRNL, CRYP, VGL, NEKO) or stake spare Bits in the 6% APY Sovereign Yield Vault.'},
+    {id:'t14', board:'BOUNTY & MARKET',author:'@scorpius_triad',  title:'PANTHEON TRIAD 3x3 CARD TOURNAMENT UNDERWAY',        col:'#a78bfa', cond:()=>true, body:'Collect all 32 Foil Cards in the Pantheon Binder and challenge the house in 3x3 directional card battles for +180 Bits per victory.'},
+    {id:'t15', board:'06:13 CYPHERPUNK',author:'@aquila_sat',     title:'ASTRAL RELAY ORBITAL CONSTELLATION LOCKED',          col:'#22d3ee', cond:()=>true, body:'28 orbital rings and the Blender 4.3 Astral Astrolabe are broadcasting clean telemetry across the entire 06:12 hemisphere.'},
+    {id:'t16', board:'06:13 CYPHERPUNK',author:'@leviathan_abyss',title:'SUB-LATTICE SONAR SWEEPS CLEAR TRENCH MINES',        col:'#4ade80', cond:()=>true, body:'Deep-sea packet cables in Sector 13 are clear of logic bombs. Use the 6x6 Sonar Sweeper whenever new mines spawn.'},
+    {id:'t17', board:'06:13 CYPHERPUNK',author:'@03ng0cn1_echo',  title:'WE ARE TWO HALVES OF THE SAME KEYSTROKE',            col:'#f43f5e', cond:()=>G.isFlag('copy_crew'), body:'Once you stop trying to delete your reflection, the 22nd slot in the roster opens. See you on the rooftop at 06:13.'},
+    {id:'t18', board:'06:13 CYPHERPUNK',author:'@1nc0gn30_root',  title:'SOVEREIGN MANIFESTO: 100% FREE & LOCAL-FIRST',       col:'#f5b82e', cond:()=>true, body:'No cloud lock-in, no paywalls, no telemetry harvesting. Every shader, synth stem, and save state runs 100% in your browser.'}
+  ];
+  G.openBBS=()=>{
+    let sel=0;
+    G.ach('bbs_sysop');
+    const isAck=id=>!!(G.flags&&G.flags['bbs_ack_'+id]);
+    const ackCount=()=>BBS_THREADS.filter(t=>isAck(t.id)).length;
+    G.mini={
+      name:'bbs',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+BBS_THREADS.length-1)%BBS_THREADS.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%BBS_THREADS.length; sfx('move'); }
+        if(took('left')){ sel=(sel+BBS_THREADS.length-5)%BBS_THREADS.length; sfx('move'); }
+        if(took('right')){ sel=(sel+5)%BBS_THREADS.length; sfx('move'); }
+        if(took('confirm')){
+          const th=BBS_THREADS[sel];
+          if(!isAck(th.id)){
+            G.flags['bbs_ack_'+th.id]=1; G.bits+=25;
+            sfx('win'); G.toast(`> PGP SIGNED THREAD [${th.id.toUpperCase()}]: +25 BITS BUG-BOUNTY TIP!`,'#4ade80');
+          } else {
+            sfx('talk'); G.toast(`> THREAD [${th.id.toUpperCase()}] ALREADY VERIFIED BY OPERATOR`,P.GD);
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> 06:12 LATTICE WIRE & BBS',56,40,P.GD,2);
+        UI.text(`PGP VERIFIED: ${ackCount()}/${BBS_THREADS.length}   ·   NODE: 1NC0GN30.SI`,900,44,'#4ade80',1,'right');
+        // Left: 18 Scrollable Underground Threads
+        UI.box(52,78,390,386,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('DISPATCH SPOOL (18 THREADS):',68,94,P.GD,1);
+        const first=Math.max(0,Math.min(sel-5,BBS_THREADS.length-11));
+        BBS_THREADS.slice(first,first+11).forEach((th,idx)=>{
+          const i=first+idx, y=116+idx*30, on=i===sel, ack=isAck(th.id);
+          if(on){ X.fillStyle='#241b0b'; X.fillRect(60,y-4,374,24); }
+          UI.text(`${on?'>':' '} [${th.id.toUpperCase()}] ${th.title.slice(0,26)}`,66,y,on?P.GD:P.BONE,1);
+          UI.text(ack?'[ACK]':'[NEW]',426,y,ack?'#4ade80':th.col,1,'right');
+          UI.hit(60,y-4,374,24,()=>{ sel=i; sfx('move'); });
+        });
+        // Right: Selected Thread Reader & Reactive World Status
+        const cur=BBS_THREADS[sel], ack=isAck(cur.id), live=cur.cond();
+        UI.box(458,78,446,386,cur.col,'rgba(10,8,6,.94)');
+        UI.text(`BOARD: [${cur.board}]   ·   THREAD #${sel+1}/18`,476,96,cur.col,1);
+        UI.wrap(cur.title,410,2).slice(0,2).forEach((ln,li)=>UI.text(ln,476,118+li*24,P.GD,2));
+        UI.text(`AUTHOR: ${cur.author}   ·   STATE: ${live?'[LIVE WORLD SYNC]':'[ENCRYPTED ECHO]'}`,476,172,'#22d3ee',1);
+        UI.box(476,196,410,164,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('DECRYPTED MESSAGE PAYLOAD:',492,212,P.GD,1);
+        UI.wrap(cur.body,378,1).forEach((ln,li)=>UI.text(ln,492,238+li*20,P.BONE,1));
+        UI.box(476,374,410,74,ack?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(ack?'[PGP SIGNATURE VERIFIED · +25 BITS CLAIMED]':'[ENTER] PGP-SIGN & UPVOTE DISPATCH (+25 BITS)',681,392,ack?'#4ade80':P.GD,1,'center');
+        UI.text('Reactive sub-lattice spool evolves with your story flags.',681,418,P.BONE,1,'center');
+        UI.text('[up/down] select thread   [enter] PGP-sign & claim +25B tip   [esc] disconnect',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
