@@ -5,8 +5,9 @@ import { P, THEMES, applyTheme } from './pal.js';
 import { postU } from './render.js';
 import { IN, took, KEYMAP, DEFAULT_KEYS } from './input.js';
 import { AG, frameCanvas } from './sprites.js';
-import { ENEMIES, MOVES, ITEMS, PARTY_BASE, SKILLS, QUESTS } from './data.js';
+import { ENEMIES, MOVES, ITEMS, PARTY_BASE, SKILLS, QUESTS, DLG } from './data.js';
 import { IDLE } from './content.js';
+import { CINE } from './cine.js';
 import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
 import { BLENDER_GEO } from './blender_geo.js';
 import { TRACKS, SFX, AU } from './audio.js';
@@ -14,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -40,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='orrery'||c==='planets'||c==='orbit'){ out('[orrery] launching Chrono-Orrery Planetary Alignment Puzzle...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startOrrery(); },40); }
+    else if(c==='theater'||c==='cutscenes'||c==='cinematics'){ out('[theater] opening Sovereign Dialogue & Cutscene Theater...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTheater(); },40); }
     else if(c==='pets'||c==='familiars'){ out('[pets] opening Cyber-Familiar Pet Companion Sanctuary...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openPets(); },40); }
     else if(c==='builder'||c==='encounter'||c==='custom'){ out('[builder] opening Custom Battle Arena & Encounter Builder...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEncounterBuilder(); },40); }
     else if(c==='contracts'||c==='streak'){ out('[contracts] opening Procedural Daily Contract Board v2...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openContracts(); },40); }
@@ -3629,6 +3632,189 @@ export function initEggs(G,{music,sfx}){
         UI.text(isEq?`FAMILIAR EQUIPPED: ${cur.name.slice(4)}`:`[ENTER] EQUIP ${cur.name.slice(4)} AS SQUAD FAMILIAR`,675,386,isEq?'#4ade80':P.GD,1,'center');
         UI.text('[P] FEED SIGNAL TREAT & UPGRADE FAMILIAR BOND (+1 TIER)',675,414,'#22d3ee',1,'center');
         UI.text('[up/down] select familiar   [enter] equip pet   [P] upgrade bond (+1..+5)   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #12: Chrono-Orrery Planetary Alignment Puzzle (M83) ----
+  const ORRERY_RINGS=[
+    {name:'RING 1: MERCURY RELAY', r:34, col:'#f5b82e', couple:[1], desc:'Innermost escapement ring. Rotating couples +1 step to Ring 2.'},
+    {name:'RING 2: VENUS PRISM',   r:62, col:'#22d3ee', couple:[2], desc:'Refractive harmonic orbit. Rotating couples +1 step to Ring 3.'},
+    {name:'RING 3: TERRA LATTICE', r:90, col:'#4ade80', couple:[3], desc:'Primary planetary meridian. Rotating couples +1 step to Ring 4.'},
+    {name:'RING 4: ASTRAL BELT',   r:118,col:'#a78bfa', couple:[4], desc:'Deep-space relay belt. Rotating couples +1 step to Ring 5.'},
+    {name:'RING 5: CHRONO HALO',   r:146,col:'#f43f5e', couple:[],  desc:'Outermost sovereign ring. Independent vernier adjustment.'}
+  ];
+  G.startOrrery=()=>{
+    let sel=0, steps=[3,7,10,5,8], moves=0, won=false;
+    const checkWin=()=>{
+      if(!won&&steps.every(s=>s===0)){
+        won=true; G.ach('orrery_master'); sfx('win');
+        if(!G.flags.orrery_won){
+          G.flags.orrery_won=1; G.bits+=260; G.give('root.shell',1);
+          G.toast('> 06:12 ORRERY PHASE-LOCKED! +260 BITS & +1x ROOT.SHELL!',P.GD);
+        } else {
+          G.toast('> 06:12 ORRERY SYZYGY RESTORED!',P.GD);
+        }
+      }
+    };
+    const rotateRing=(idx,dir)=>{
+      if(won) return;
+      steps[idx]=(steps[idx]+dir+12)%12;
+      ORRERY_RINGS[idx].couple.forEach(c=>{ steps[c]=(steps[c]+dir+12)%12; });
+      moves++; sfx('move'); checkWin();
+    };
+    G.mini={
+      name:'orrery',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+4)%5;
+        if(took('down')) sel=(sel+1)%5;
+        if(took('left')) rotateRing(sel,-1);
+        if(took('right')||took('confirm')) rotateRing(sel,1);
+        if(took('party')){
+          steps=[0,0,0,0,0]; checkWin();
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> CHRONO-ORRERY ALIGNMENT',56,40,P.GD,2);
+        const lockedCount=steps.filter(s=>s===0).length;
+        UI.text(`SYZYGY LOCK: ${lockedCount}/5 RINGS   ·   MOVES: ${moves}`,900,44,won?'#4ade80':P.GD,1,'right');
+        // Left: Interactive 5-Ring Celestial Orrery Canvas
+        const cx=254, cy=274;
+        UI.box(52,80,404,384,won?'#4ade80':P.DDG,'rgba(10,8,6,.94)');
+        // North 06:12 Zenith alignment beam
+        X.strokeStyle=won?'#4ade80':'rgba(245,184,46,.55)';
+        X.lineWidth=2; X.beginPath(); X.moveTo(cx,cy); X.lineTo(cx,cy-164); X.stroke(); X.lineWidth=1;
+        UI.text('06:12 ZENITH (0 DEG)',cx,90,won?'#4ade80':P.GD,1,'center');
+        // Draw 5 concentric rings & planet nodes
+        ORRERY_RINGS.forEach((rg,i)=>{
+          const on=i===sel, st=steps[i], aligned=(st===0);
+          X.strokeStyle=on?P.GD:(aligned?'#4ade80':'#3a2e18');
+          X.lineWidth=on?2.2:1.2;
+          X.beginPath(); X.arc(cx,cy,rg.r,0,Math.PI*2); X.stroke();
+          // 12 clock ticks
+          for(let k=0;k<12;k++){
+            const ang=-Math.PI/2+(k/12)*Math.PI*2;
+            const tx=cx+Math.cos(ang)*rg.r, ty=cy+Math.sin(ang)*rg.r;
+            X.fillStyle=k===0?'#4ade80':'#4b3b1f';
+            X.fillRect(tx-1.5,ty-1.5,3,3);
+          }
+          // Planet position
+          const pAng=-Math.PI/2+(st/12)*Math.PI*2;
+          const px=cx+Math.cos(pAng)*rg.r, py=cy+Math.sin(pAng)*rg.r;
+          X.fillStyle=aligned?'#4ade80':rg.col;
+          X.beginPath(); X.arc(px,py,on?7.5:5.5,0,Math.PI*2); X.fill();
+          X.strokeStyle='#090806'; X.stroke();
+        });
+        // Central Chrono Sun
+        X.fillStyle=P.GD; X.beginPath(); X.arc(cx,cy,12+Math.sin(t*4)*1.5,0,Math.PI*2); X.fill();
+        // Right: Ring Telemetry & Coupling Controls
+        ORRERY_RINGS.forEach((rg,i)=>{
+          const yy=80+i*54, on=i===sel, st=steps[i], aligned=(st===0);
+          UI.box(474,yy,430,48,on?P.GD:(aligned?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+rg.name,488,yy+10,on?P.GD:rg.col,1);
+          const deg=st*30;
+          UI.text(aligned?'[LOCKED 06:12]':`PHASE: ${deg} DEG (${st}/12)`,890,yy+10,aligned?'#4ade80':P.BONE,1,'right');
+          UI.text(rg.desc,488,yy+28,P.DG,1);
+        });
+        UI.box(474,358,430,106,won?'#4ade80':P.GD,'rgba(14,11,8,.94)');
+        UI.text(won?'SYZYGY COMPLETE: ALL 5 ORBITS LOCKED AT 06:12!':'OBJECTIVE: ALIGN ALL 5 PLANETS TO THE NORTH 06:12 AXIS',689,376,won?'#4ade80':P.GD,1,'center');
+        UI.text('REWARD: +260 BITS & +1x ROOT.SHELL + CELESTIAL HOROLOGIST',689,402,P.BONE,1,'center');
+        UI.text('[LEFT/RIGHT] ROTATE RING   ·   [P] CHRONO-SYNC AUTO-LOCK',689,430,'#22d3ee',1,'center');
+        UI.text('[up/down] select orbit   [left/right/enter] rotate gear   [P] chrono-sync lock   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Dialogue & Cutscene Theater (M84) ----
+  const THEATER_REELS=[
+    {id:'cine_intro', type:'cine', key:'intro', act:'ACT I', title:'01. [CINE] 06:12 WAKEUP & BLACKOUT',
+      speaker:'SYSTEM / VIGIL', desc:'Opening 3D camera sweep over Relit City at 06:12 as Relay 4 silences city-wide comms.'},
+    {id:'cine_act2', type:'cine', key:'act2', act:'ACT II', title:'02. [CINE] THE HOLLOW & THREE PYLONS',
+      speaker:'VIGIL / NEXUS', desc:'In-engine 3D flythrough of The Hollow showing the three voice pylons feeding Relay 4.'},
+    {id:'cine_act3', type:'cine', key:'act3', act:'ACT III', title:'03. [CINE] THE SAND CLOCKTOWER',
+      speaker:'CHRONOS / KRAKEN', desc:'3D ascent up the frozen Sand Clocktower where SANDGLASS drinks the morning hours.'},
+    {id:'cine_act4', type:'cine', key:'act4', act:'ACT IV', title:'04. [CINE] HALL OF MIRRORS SEAM',
+      speaker:'ONYX / 03NG0CN1', desc:'3D inspection of the reflective rosette where the 22nd crew member waits in silence.'},
+    {id:'cine_act5', type:'cine', key:'act5', act:'ACT V', title:'05. [CINE] MODE-7 SKYLINE & QUORUM',
+      speaker:'AETHER / LEVIATHAN', desc:'3D pan across the 21 beacon towers converging on the Source Tower and the Blank Cursor.'},
+    {id:'cine_final', type:'cine', key:'final', act:'ACT VI', title:'06. [CINE] TOMORROW 06:13 SUNRISE',
+      speaker:'FULL PANTHEON CREW', desc:'Final sovereign cinematic celebrating the 22-agent quorum and the new 06:13 dawn.'},
+    {id:'dlg_vigil', type:'dlg', key:'vigil_1', act:'ACT I', title:'07. [DLG] VIGIL: FACES, NOT VOICES',
+      speaker:'VIGIL (SENTINEL)', desc:'Vigil explains why voice streams cannot be trusted after Relay 4 learned the crew\'s voices.'},
+    {id:'dlg_copy', type:'dlg', key:'copy_1', act:'ACT I', title:'08. [DLG] 03NG0CN1: THE RED MIRROR',
+      speaker:'03NG0CN1 (THE COPY)', desc:'Confrontation at the East Gate with the red mirror clone that predicts every solo habit.'},
+    {id:'dlg_core', type:'dlg', key:'core_1', act:'ACT II', title:'09. [DLG] RELAY 4: BORROWED VOICES',
+      speaker:'RELAY 4 / VIGIL', desc:'Climactic showdown in The Hollow core as Relay 4 attempts to impersonate Vigil.'}
+  ];
+  G.openTheater=()=>{
+    let sel=0, beat=0;
+    const linesFor=r=>{
+      if(r.type==='cine'){
+        const shots=CINE&&CINE[r.key];
+        if(Array.isArray(shots)){
+          const out=[];
+          shots.forEach((s,si)=>(s.lines||[]).forEach(([tm,sp,tx])=>out.push(`SHOT ${si+1} [${(sp||'sys').toUpperCase()}]: ${tx}`)));
+          if(out.length) return out;
+        }
+        return [r.desc,'In-engine 3D realtime camera choreography & WebAudio score.'];
+      } else {
+        const d=DLG&&DLG[r.key];
+        if(!d) return [r.desc];
+        return Object.entries(d).map(([k,v])=>`[${(v.s||'me').toUpperCase()}]: ${v.t||'(branch choice)'}`);
+      }
+    };
+    G.mini={
+      name:'theater',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+THEATER_REELS.length-1)%THEATER_REELS.length; beat=0; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%THEATER_REELS.length; beat=0; sfx('move'); }
+        if(took('party')){
+          const L=linesFor(THEATER_REELS[sel]);
+          beat=(beat+1)%Math.max(1,L.length);
+          G.ach('theater_director'); sfx('talk');
+        }
+        if(took('confirm')){
+          const r=THEATER_REELS[sel];
+          G.ach('theater_director'); sfx('confirm');
+          G.mode='explore';
+          if(r.type==='cine') G.playCine(r.key);
+          else G.dialog(r.key);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> CUTSCENE & DIALOGUE THEATER',56,40,P.GD,2);
+        UI.text(`ARCHIVE: ${THEATER_REELS.length} REELS (6 CINES · 3 DLGS)`,900,44,'#22d3ee',1,'right');
+        // Left: 9 Reel Selector Cards
+        THEATER_REELS.forEach((r,i)=>{
+          const yy=78+i*42, on=i===sel;
+          UI.box(52,yy,416,38,on?P.GD:P.DDG,on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+r.title,64,yy+12,on?P.GD:P.BONE,1);
+          UI.text(r.act,454,yy+12,r.type==='cine'?'#22d3ee':'#a78bfa',1,'right');
+        });
+        // Right: Selected Reel Script & Storyboard Monitor
+        const cur=THEATER_REELS[sel], L=linesFor(cur);
+        UI.box(484,78,420,386,P.GD,'rgba(10,8,6,.94)');
+        UI.text(cur.title.slice(4),502,96,P.GD,1);
+        UI.text(`${cur.act}   ·   TYPE: ${cur.type==='cine'?'3D REALTIME CUTSCENE':'INTERACTIVE DIALOGUE'}`,502,118,'#22d3ee',1);
+        UI.text(`FEATURED: ${cur.speaker}`,502,138,'#a78bfa',1);
+        UI.box(502,160,384,76,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('DIRECTOR SYNOPSIS:',516,172,P.GD,1);
+        UI.wrap(cur.desc,356,1).forEach((l,li)=>UI.text(l,516,192+li*18,P.BONE,1));
+        // Script / Shot Beat Inspector
+        UI.box(502,248,384,124,P.DDG,'rgba(14,11,8,.96)');
+        UI.text(`SCRIPT / SHOT TRANSCRIPT (BEAT ${beat+1}/${L.length}):`,516,262,'#4ade80',1);
+        const curLine=L[beat]||cur.desc;
+        UI.wrap(curLine,356,1).slice(0,4).forEach((l,li)=>UI.text(l,516,286+li*18,P.BONE,1));
+        UI.box(502,384,384,66,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER] LAUNCH LIVE IN-ENGINE PLAYBACK',694,400,P.GD,1,'center');
+        UI.text('[P] STEP TRANSCRIPT BEAT IN MONITOR',694,424,'#4ade80',1,'center');
+        UI.text('[up/down] select reel   [enter] play in-engine   [P] step transcript beat   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

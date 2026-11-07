@@ -93,8 +93,8 @@
 ### Hour 10 (`09:00`–`10:00`) — District #17 (*"The Chrono-Vault"*) & Sovereign Pet Companions
 - [x] **M81** (`09:06`): Blender 4.3 Wireframe Mesh #19 (`chrono_orrery`) & Secret District #17 (*"The Chrono-Vault"* `Z.vault` in `src/zones2.js` + `vault` stem in `src/audio.js`)
 - [x] **M82** (`09:06`): Cyber-Familiar Pet Companion System (`G.openPets()` via `> pets` & System Menu — equip Pixel-Shiba, Pixel-Neko, Radical-Minion, Foxfire Kit, Chrono Owl, or Void Seraph for passive combat & exploration buffs)
-- [ ] **M83**: Secret Mini-Game #12 — *"Chrono-Orrery Planetary Alignment Puzzle"* (`G.startOrrery()` via `> orrery` & System Menu — align 5 orbital rings to 06:12 phase lock)
-- [ ] **M84**: Interactive Dialogue & Cutscene Theater (`G.openTheater()` via `> theater` & System Menu — replay all story & boss dialogues + all 7 cinematics with free-cam pause)
+- [x] **M83** (`09:23`): Secret Mini-Game #12 — *"Chrono-Orrery Planetary Alignment Puzzle"* (`G.startOrrery()` via `> orrery` & System Menu — align 5 orbital rings to 06:12 phase lock)
+- [x] **M84** (`09:23`): Interactive Dialogue & Cutscene Theater (`G.openTheater()` via `> theater` & System Menu — replay all story & boss dialogues + all 6 cinematics with transcript monitor)
 - [ ] **M85**: Sovereign Achievement Trophy Case & Milestone Rewards (`G.openTrophyCase()` via `> trophies2` & System Menu — claim bit & item stipends for every unlocked achievement tier)
 - [ ] **M86**: Lattice Stock & Bit Staking Exchange (`G.openExchange()` via `> exchange` & System Menu — invest Bits across 5 District Node indices that fluctuate with exploration & battles)
 - [ ] **M87**: Interactive Sprite & Animation Frame Studio (`G.openSpriteStudio()` via `> sprites` & System Menu — inspect all 22 agent & enemy animation states frame-by-frame with zoom)
