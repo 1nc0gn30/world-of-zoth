@@ -4,13 +4,13 @@ import * as UI from './ui.js';
 import { P } from './pal.js';
 import { IN, took } from './input.js';
 import { AG } from './sprites.js';
-import { ENEMIES } from './data.js';
+import { ENEMIES, ITEMS } from './data.js';
 import { ENEMY_WEAK } from './battle.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -35,8 +35,10 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  bounty  stack  bestiary  warp <zone>  whoami  crew  life  doom  exit');
+    if(c==='help') out('nmap  ping  patch  bounty  stack  bossrush  reforge  bestiary  warp <zone>  exit');
     else if(c==='stack'){ out('[stack] opening The Infinite Stack (floors 1-99)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startStack(); },40); }
+    else if(c==='bossrush'){ out('[bossrush] opening Pantheon Boss Rush Trial...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBossRush(); },40); }
+    else if(c==='reforge'){ out('[reforge] opening Gear Overclocking Bench (+1 to +5)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openReforge(); },40); }
     else if(c==='bestiary'){ out('[bestiary] opening Hostile Protocol Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBestiary(); },40); }
     else if(c==='nmap'){
       const z=G.zone; const fn=(G.foes||[]).filter(f=>f.alive).length, nn=(G.npcs||[]).length, pn=(z.portals||[]).length;
@@ -80,7 +82,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','bounty','stack','bestiary','warp','whoami','crew','life','doom','exit'];
+  const CHIPS=['help','nmap','ping','patch','stack','bossrush','reforge','bestiary','warp','whoami','crew','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -106,6 +108,119 @@ export function initEggs(G,{music,sfx}){
         UI.box(10,500,460,30); UI.text('> doom-fire   [up] stoke  [down] smother  [x] exit',20,509,P.BONE); } };
     G.mode='mini'; sfx('confirm'); }
   G.startLife=startLife; G.startDoom=startDoom;
+  // ---- Boss Rush Gauntlet Mode: "Pantheon Trial" (M19) ----
+  const RUSH_BOSSES=[
+    {stage:1, id:'copy', name:'03ng0cn1 · Red Copy', wave:['copy','echo','echo'], lvl:10, proto:'VOID', reward:150},
+    {stage:2, id:'relay4', name:'RELAY 4 · Chorus', wave:['relay4','node','node'], lvl:14, proto:'CRYPTO', reward:300},
+    {stage:3, id:'sandglass', name:'SANDGLASS · 06:12', wave:['sandglass','mite','mite'], lvl:18, proto:'TEMPORAL', reward:450},
+    {stage:4, id:'hunter', name:'THE HUNTER · Gaze', wave:['hunter','gunship'], lvl:22, proto:'CRYPTO', reward:650},
+    {stage:5, id:'blank', name:'>_ · Blank Cursor', wave:['blank','cursorling'], lvl:26, proto:'VOID', reward:900},
+    {stage:6, id:'archon', name:'ARCHON-0 · Compiler', wave:['archon','cursorling','cursorling'], lvl:30, proto:'VOID', reward:1500}
+  ];
+  G.openBossRush=()=>{
+    let sel=Math.min(5,G.flags.bossrush_stage||0);
+    G.mini={
+      name:'bossrush',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+RUSH_BOSSES.length-1)%RUSH_BOSSES.length;
+        if(took('down')) sel=(sel+1)%RUSH_BOSSES.length;
+        if(took('confirm')){
+          const b=RUSH_BOSSES[sel];
+          G.healAll(); sfx('confirm'); G.mode='explore';
+          G.battle(b.wave,{boss:b.id, music:'boss', lvl:b.lvl, ambush:true, rushStage:b.stage, rushReward:b.reward});
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,36,768,468,P.GD,'rgba(8,7,5,.96)');
+        const clr=G.flags.bossrush_stage||0;
+        UI.text('> PANTHEON TRIAL  ·  BOSS RUSH GAUNTLET',118,52,P.GD,2);
+        UI.text(`STAGES CLEARED: ${clr}/6`,842,56,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,80,732,2);
+        RUSH_BOSSES.forEach((b,i)=>{
+          const y=98+i*36, on=i===sel, done=clr>=b.stage;
+          UI.box(114,y-4,330,30,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${done?'[CLEARED] ':'[STAGE '+b.stage+'] '}${b.id.toUpperCase()}`,124,y+4,done?P.GD:(on?P.BONE:P.DG),1);
+          UI.text(`lv${b.lvl}`,432,y+4,P.RED,1,'right');
+          UI.hit(114,y-4,330,30,()=>{ sel=i; });
+        });
+        const cur=RUSH_BOSSES[sel];
+        UI.box(462,94,382,360,P.RED,'rgba(14,10,8,.92)');
+        UI.text(`STAGE 0${cur.stage}`,482,110,P.DG,1);
+        UI.text(cur.name.toUpperCase(),482,128,P.RED,2);
+        UI.text(`Threat Level: lv ${cur.lvl}   ·   Weakness: [${cur.proto}]`,482,162,'#22d3ee',1);
+        UI.text(`Formation: ${cur.wave.join(' + ').toUpperCase()}`,482,188,P.BONE,1);
+        UI.text(`Completion Bounty: +${cur.reward} bits + Mega.Patch`,482,214,P.GD,1);
+        UI.text(`Entry Bonus: 100% HP/EN Restore + Ambush`,482,240,P.DG,1);
+        if(cur.stage===6) UI.text(`Grand Prize: Sovereign Edge + Citadel Crown`,482,268,P.GD,1);
+        UI.box(482,396,342,32,P.GD,'rgba(245,184,46,.16)');
+        UI.text(`> [ENTER] LAUNCH STAGE 0${cur.stage} BOSS ARENA`,653,405,P.GD,1,'center');
+        UI.text('[up/down] select stage   [enter] challenge boss   [esc] leave',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Weapon & Shell Overclocking Bench (+1 to +5 Gear Reforging, M20) ----
+  G.openReforge=()=>{
+    let sel=0;
+    const gearList=()=>Object.keys(G.inv).filter(k=>G.inv[k]>0&&ITEMS[k]&&ITEMS[k].slot);
+    G.mini={
+      name:'reforge',
+      update(){
+        const L=gearList();
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(!L.length) return;
+        if(took('up')) sel=(sel+L.length-1)%L.length;
+        if(took('down')) sel=(sel+1)%L.length;
+        if(took('confirm')){
+          const k=L[sel], up=G.flags['up_'+k]||0, cost=(up+1)*80;
+          if(up>=5){ G.toast('already at max overclock (+5)',P.GD); sfx('cancel'); return; }
+          if(G.bits<cost){ G.toast(`need ${cost} bits to overclock`,P.RED); sfx('cancel'); return; }
+          G.bits-=cost; G.flags['up_'+k]=up+1; sfx('level');
+          if(up+1>=5) G.ach('reforge5');
+          G.roster.forEach(id=>{ const s=G.stats(id); G.party[id].hp=s.mhp; G.party[id].en=s.men; });
+          G.toast(`> OVERCLOCKED: ${ITEMS[k].name} +${up+1} (+${(up+1)*20}% stats!)`,P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,36,768,468,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> GEAR OVERCLOCKING BENCH  (+1 TO +5 REFORGE)',118,52,P.GD,2);
+        UI.text(`BITS: ${G.bits}`,842,56,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,80,732,2);
+        const L=gearList();
+        if(!L.length){ UI.text('no weapons or shells in inventory.',120,120,P.DG); return; }
+        sel=Math.min(sel,L.length-1);
+        const first=Math.max(0,Math.min(sel-6,L.length-13));
+        L.slice(first,first+13).forEach((k,idx)=>{
+          const i=first+idx, it=ITEMS[k], up=G.flags['up_'+k]||0, y=96+idx*26, on=i===sel;
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(114,y-3,310,22); }
+          UI.text(`${on?'> ':'  '}${it.name}${up?` +${up}`:''}`,120,y,up>=5?'#22d3ee':(on?P.GD:P.BONE),1);
+          UI.text(`[${it.slot}]`,416,y,P.DG,1,'right');
+          UI.hit(114,y-3,310,22,()=>{ sel=i; });
+        });
+        const k=L[sel], it=ITEMS[k], up=G.flags['up_'+k]||0, cost=(up+1)*80, m=it.mod||{};
+        const curMul=1+up*.2, nxtMul=1+Math.min(5,up+1)*.2;
+        UI.box(438,94,406,360,P.DDG,'rgba(12,10,8,.92)');
+        UI.text(`${it.name.toUpperCase()} ${up?`+${up}`:'(BASE)'}`,458,112,P.GD,2);
+        UI.text(`Slot: ${it.slot.toUpperCase()}   ·   Overclock Tier: +${up} / +5 (+${up*20}% Bonus)`,458,142,'#22d3ee',1);
+        UI.wrap(it.desc,366,1).slice(0,2).forEach((l,li)=>UI.text(l,458,164+li*15,P.BONE,1));
+        UI.box(458,198,366,126,P.DDG,'rgba(6,5,4,.85)');
+        UI.text('STAT SCALING (CURRENT -> NEXT TIER):',472,210,P.DG,1);
+        let sy=234;
+        [['ATK','atk'],['DEF','def'],['MAX HP','hp'],['MAX EN','en'],['SPD','spd']].forEach(([lbl,st])=>{
+          if(!m[st]) return;
+          const cV=Math.round(m[st]*curMul), nV=Math.round(m[st]*nxtMul);
+          UI.text(`${lbl}:  +${cV}   ->   +${nV}`,472,sy,P.GD,1); sy+=20;
+        });
+        UI.box(458,392,366,32,up>=5?P.DDG:P.GD,'rgba(245,184,46,.14)');
+        UI.text(up>=5?'MAX OVERCLOCK (+5) ACHIEVED':`> [ENTER] OVERCLOCK TO +${up+1} (${cost} BITS)`,641,401,up>=5?P.DG:P.GD,1,'center');
+        UI.text('[up/down] select gear   [enter] overclock (+20% stats)   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
   // ---- Hostile Bestiary & Protocol Encyclopedia (M18) ----
   const PROTO_COUNTERS={
     KERNEL:'1nc0gn30, Kai, Pixel-Shiba, Pixel-Neko, Aquila',

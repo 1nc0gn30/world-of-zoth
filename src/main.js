@@ -47,7 +47,7 @@ Object.assign(G,{
   recruit(id){ if(G.roster.includes(id)) return; const me=G.party.me; G.party[id]={lvl:me.lvl,xp:0,hp:0,en:0}; const s=G.stats(id); G.party[id].hp=s.mhp; G.party[id].en=s.men; G.roster.push(id);
     if(G.activeL.length<3) G.activeL.push(id); G.toast(`${PARTY_BASE[id].name} joins the crew`+(G.activeL.includes(id)?'':' (reserve)'),AG[id].color); sfx('level'); G.rebuildNPCs(); },
   stats(id){ const m=G.party[id], B=PARTY_BASE[id], l=m.lvl-1; const s={mhp:B.hp+Math.round(GROW.hp*l*(id==='ignis'?1.2:1)), men:B.en+GROW.en*l, atk:B.atk+GROW.atk*l, def:B.def+GROW.def*l, spd:B.spd};
-    const eq=G.equip[id]||{}; for(const sl of ['tool','shell']){ const it=eq[sl]&&ITEMS[eq[sl]]; if(it&&it.mod){ s.atk+=it.mod.atk||0; s.def+=it.mod.def||0; s.mhp+=it.mod.hp||0; s.men+=it.mod.en||0; s.spd+=it.mod.spd||0; } }
+    const eq=G.equip[id]||{}; for(const sl of ['tool','shell']){ const k=eq[sl], it=k&&ITEMS[k]; if(it&&it.mod){ const mul=1+((G.flags&&G.flags['up_'+k])||0)*.2; s.atk+=Math.round((it.mod.atk||0)*mul); s.def+=Math.round((it.mod.def||0)*mul); s.mhp+=Math.round((it.mod.hp||0)*mul); s.men+=Math.round((it.mod.en||0)*mul); s.spd+=Math.round((it.mod.spd||0)*mul); } }
     if(id==='me'){ if(G.has('mirror.shard')) s.spd+=2; const M=G.mods; if(M.o1) s.atk=Math.round(s.atk*1.1); if(M.d1) s.mhp=Math.round(s.mhp*1.15); if(M.t1) s.men=Math.round(s.men*1.2); } return s; },
   modPoints(){ return Math.floor((G.party.me.lvl)/4)-Object.keys(G.mods).length; },
   equipNext(k){ const it=ITEMS[k]; if(!it||!it.slot) return; const holder=G.roster.find(id=>(G.equip[id]||{})[it.slot]===k); let i=holder?G.roster.indexOf(holder)+1:0;
@@ -150,6 +150,15 @@ G.endBattle=function(B){
     const n=['p1','p2','p3'].filter(p=>G.flags['cut_'+p]).length; if(n>=3) G.qset('q4',2); else G.toast('> '+G.stepText('q4')); }
   if(o.boss==='copy') G.flag('copy_down',1);
   if(o.boss==='relay4'){ G.flag('core_down',1); coreDown(); }
+  if(o.rushStage){
+    const st=o.rushStage; G.flags.bossrush_stage=Math.max(G.flags.bossrush_stage||0,st);
+    G.bits+=(o.rushReward||200); G.give('mega.patch',1);
+    if(st===6){ G.ach('pantheon_trial'); G.give('citadel.crown',1); G.give('sovereign.edge',1); }
+    G.toast(`> PANTHEON TRIAL STAGE 0${st} CLEARED! +${o.rushReward||200} bits`,P.GD);
+    G.rebuildNPCs();
+    setTimeout(()=>{ if(G.mode==='explore'&&G.openBossRush) G.openBossRush(); },260);
+    return;
+  }
   if(o.stackFloor){
     const fl=o.stackFloor; G.flags.stack_floor=Math.max(G.flags.stack_floor||0,fl);
     const bonus=fl*25; G.bits+=bonus;
@@ -199,8 +208,8 @@ function drawDialog(t){
 // ---------------- interactables ----------------
 function interactables(){
   const L=G.Q?G.Q.interactables():[]; if(G.extraInteract) L.push(...G.extraInteract()); L.push(...G.house.inter()); if(G.zoneId==='hub') L.push({x:9,z:-9,r:2,label:'null academy  (ai labs)',col:'#7fd1c8',act:()=>G.openAcademy()}); npcs.forEach(n=>{ if(n.prop||n.refl) return; L.push({x:n.sp.group.position.x,z:n.sp.group.position.z,r:n.red?4.5:3.6,label:n.red?(n.zone==='mirrors'?'talk  03ng0cn1':'confront  '+'03ng0cn1'):'talk  '+AG[n.id].name,col:n.red?P.RED:AG[n.id].color,act:()=>talkTo(n),npc:n}); });
-  if(G.zoneId==='hub'){ L.push({x:-14.2,z:-14.2,r:1.8,label:'???',col:P.DG,act:()=>G.openTerminal()}); L.push({x:-9,z:-9,r:2.2,label:'infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()}); if(G.roster.includes('vigil')) L.push({x:3.6,z:3.6,r:1.5,label:'vigil\'s lamp  (handshake)',col:AG.vigil.color,act:()=>G.startScope()}); if(G.roster.includes('pixel-neko')) L.push({x:12,z:3.5,r:2.6,label:'tool  bench',col:P.GD,act:()=>G.dialog('neko_bench')}); }
-  if(G.zoneId==='citadel') L.push({x:0,z:12,r:3.2,label:'the infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()});
+  if(G.zoneId==='hub'){ L.push({x:-14.2,z:-14.2,r:1.8,label:'???',col:P.DG,act:()=>G.openTerminal()}); L.push({x:-9,z:-9,r:2.2,label:'infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()}); L.push({x:14.5,z:3.5,r:2.2,label:'overclock  bench (+1 to +5)',col:'#22d3ee',act:()=>G.openReforge()}); if(G.roster.includes('vigil')) L.push({x:3.6,z:3.6,r:1.5,label:'vigil\'s lamp  (handshake)',col:AG.vigil.color,act:()=>G.startScope()}); if(G.roster.includes('pixel-neko')) L.push({x:12,z:3.5,r:2.6,label:'tool  bench',col:P.GD,act:()=>G.dialog('neko_bench')}); }
+  if(G.zoneId==='citadel'){ L.push({x:0,z:12,r:3.2,label:'the infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()}); L.push({x:0,z:-8,r:3.2,label:'pantheon trial  (boss rush)',col:P.RED,act:()=>G.openBossRush()}); }
   if(G.zoneId==='forest') L.push({x:-28,z:-20,r:1.8,label:'watch  the life clearing',col:P.DG,act:()=>G.startLife()});
   if(G.zoneId==='foundry') L.push({x:0,z:-27,r:3,label:'stare into  the fire',col:P.DG,act:()=>G.startDoom()});
   if(G.zoneId==='rooftop'){ L.push({x:0,z:-4,r:2.4,label:'open  laptop',col:P.GD,act:()=>G.dialog('rooftop_laptop')}); L.push({x:0,z:7.5,r:2,label:'stairs  down',col:P.DG,act:()=>G.dialog('rooftop_exit')}); }
@@ -246,7 +255,7 @@ function drawShop(t){ const S=G.shop, x=250, y=20, w=460; UI.box(x,y,w,60+SHOP.l
 // ---------------- pause menu ----------------
 const TABS=['quests','party','items','mods','story','log','system'];
 function openMenu(tab=0){ G.menu={tab,sel:0}; G.mode='menu'; sfx('confirm'); }
-function sysOpts(){ return [['save game',()=>saveGame()],[`3d mission guide trail: ${G.trailOn!==false?'on':'off'}`,()=>{ G.trailOn=G.trailOn===false; G.toast('mission guide trail: '+(G.trailOn?'on':'off'),P.GD); }],[`speedrun & telemetry hud: ${G.settings.telemetry?'on':'off'}`,()=>{ G.settings.telemetry=!G.settings.telemetry; }],['the infinite stack (rogue-lite)',()=>{ G.menu=null; G.startStack(); }],['hostile bestiary & protocols',()=>{ G.menu=null; G.openBestiary(); }],['crew campfire banter (synergy)',()=>{ G.menu=null; G.openBanter(); }],['new game+ (cycle 06:13 — keep crew & gear)',()=>{ G.menu=null; G.newGamePlus(); }],['story codex (5 acts)',()=>{ G.menu.tab=4; G.menu.sel=0; }],['ai forge (optional, your key)',()=>{ G.menu=null; G.openForge(); }],['map',()=>{ G.menu=null; G.mode='explore'; G.hud3.open(); }],['replay intro',()=>{ G.menu=null; G.mode='explore'; G.playCine('intro'); }],...(G.tut&&G.tut.on?[['skip tutorial',()=>{ G.skipTut(); }]]:[]),['load game',()=>loadGame()],...(G.isFlag('fasttravel')?[['fast travel (mercury)',()=>{ G.menu=null; G.mode='explore'; talkTo({id:'mercury'}); }]]:[]),[`large text: ${G.settings.large?'on':'off'}`,()=>{ G.settings.large=!G.settings.large; }],[`music: ${G.settings.music?'on':'off'}`,()=>{ G.settings.music=!G.settings.music; AU.musicOn=G.settings.music; if(AU.music) AU.music.gain.value=G.settings.music?.55:0; }],
+function sysOpts(){ return [['save game',()=>saveGame()],[`3d mission guide trail: ${G.trailOn!==false?'on':'off'}`,()=>{ G.trailOn=G.trailOn===false; G.toast('mission guide trail: '+(G.trailOn?'on':'off'),P.GD); }],[`speedrun & telemetry hud: ${G.settings.telemetry?'on':'off'}`,()=>{ G.settings.telemetry=!G.settings.telemetry; }],['the infinite stack (rogue-lite)',()=>{ G.menu=null; G.startStack(); }],['pantheon boss rush trial',()=>{ G.menu=null; G.openBossRush(); }],['gear overclocking bench (+1 to +5)',()=>{ G.menu=null; G.openReforge(); }],['hostile bestiary & protocols',()=>{ G.menu=null; G.openBestiary(); }],['crew campfire banter (synergy)',()=>{ G.menu=null; G.openBanter(); }],['new game+ (cycle 06:13 — keep crew & gear)',()=>{ G.menu=null; G.newGamePlus(); }],['story codex (5 acts)',()=>{ G.menu.tab=4; G.menu.sel=0; }],['ai forge (optional, your key)',()=>{ G.menu=null; G.openForge(); }],['map',()=>{ G.menu=null; G.mode='explore'; G.hud3.open(); }],['replay intro',()=>{ G.menu=null; G.mode='explore'; G.playCine('intro'); }],...(G.tut&&G.tut.on?[['skip tutorial',()=>{ G.skipTut(); }]]:[]),['load game',()=>loadGame()],...(G.isFlag('fasttravel')?[['fast travel (mercury)',()=>{ G.menu=null; G.mode='explore'; talkTo({id:'mercury'}); }]]:[]),[`large text: ${G.settings.large?'on':'off'}`,()=>{ G.settings.large=!G.settings.large; }],[`music: ${G.settings.music?'on':'off'}`,()=>{ G.settings.music=!G.settings.music; AU.musicOn=G.settings.music; if(AU.music) AU.music.gain.value=G.settings.music?.55:0; }],
   [`sfx: ${G.settings.sfx?'on':'off'}`,()=>{ G.settings.sfx=!G.settings.sfx; AU.on=G.settings.sfx; }],[`timed strikes: ${G.settings.noTiming?'off (auto)':'on'}`,()=>{ G.settings.noTiming=!G.settings.noTiming; }],['quit to title',()=>{ G.menu=null; G.mode='title'; G.titleT=0; music('title'); }],['resume',()=>{ G.menu=null; G.mode='explore'; }]]; }
 function itemList(){ return Object.entries(G.inv).filter(([k,n])=>n>0); }
 function questList(){ return Object.keys(G.quests).sort((a,b)=>(G.quests[a].done-G.quests[b].done)||((QUESTS[a].side?1:0)-(QUESTS[b].side?1:0))); }
