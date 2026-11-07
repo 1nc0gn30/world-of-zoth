@@ -43,10 +43,10 @@
 - [x] **M38** (`04:03` · `1bb7776`): Interactive Waveform Visualizer in Safehouse Jukebox (`src/house.js` — real-time oscilloscope curve, 32-channel spectrum analyzer & BPM/Key metadata across all 20 stems)
 - [x] **M39** (`04:18` · `6930791`): Custom Keybind & Controller Remapper UI (`G.openKeybinds()` via `> keys` & System Menu with persistent `woz.keys` `localStorage` bindings)
 - [x] **M40** (`04:18` · `6930791`): Expanded 3D Postcard Filters (`CRT Scanline`, `Amber Phosphor`, `Matrix Rain`, `Blueprint Grid` inside `G.openPhotoMode()`)
-- [x] **M41** (`04:35`): Secret Mini-Game #4 — *"Hilbert Packet Runner"* (`G.startRunner()` via `> runner` & System Menu — high-speed 3D 3-lane fiber tunnel reflex runner)
-- [x] **M42** (`04:35`): Secret Mini-Game #5 — *"Zero-Knowledge 4x4 Cipher Grid"* (`G.startCipher()` via `> cipher` & System Menu — 4x4 protocol Sudoku puzzle with `[P]` Witness Hint)
-- [ ] **M43**: Speedrun Split Tracker (auto-records split timestamps per Act I–VI completion)
-- [ ] **M44**: Complete 22-Agent Dossier Cards UI (`G.openDossiers()` — bio, lore quote, stats, relic & protocol)
+- [x] **M41** (`04:35` · `8021250`): Secret Mini-Game #4 — *"Hilbert Packet Runner"* (`G.startRunner()` via `> runner` & System Menu — high-speed 3D 3-lane fiber tunnel reflex runner)
+- [x] **M42** (`04:35` · `8021250`): Secret Mini-Game #5 — *"Zero-Knowledge 4x4 Cipher Grid"* (`G.startCipher()` via `> cipher` & System Menu — 4x4 protocol Sudoku puzzle with `[P]` Witness Hint)
+- [x] **M43** (`04:48`): Speedrun Split Tracker (`G.openSplits()` via `> splits` & System Menu — auto-records Act I–VI & Coda split timestamps with Gold Split delta comparison)
+- [x] **M44** (`04:48`): Complete 22-Agent Dossier Cards UI (`G.openDossiers()` via `> dossiers` & System Menu — animated portrait, role, protocol, mythic relic, combat stats & voiceprint quote)
 - [ ] **M45**: Full End-to-End Automated Playthrough & Zero-Defect Audit across all 15 Districts
 - [ ] **M46**: Final Signed Android APK v1.3 & Desktop Zip Distribution Build
 - [ ] **M47**: `1nc0gn30.si` Sovereign Portal Final Sync & Guardrail Verification

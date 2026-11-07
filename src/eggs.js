@@ -3,8 +3,9 @@
 import * as UI from './ui.js';
 import { P, THEMES, applyTheme } from './pal.js';
 import { IN, took, KEYMAP, DEFAULT_KEYS } from './input.js';
-import { AG } from './sprites.js';
+import { AG, frameCanvas } from './sprites.js';
 import { ENEMIES, ITEMS, PARTY_BASE, SKILLS } from './data.js';
+import { IDLE } from './content.js';
 import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
@@ -35,7 +36,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='dossiers'||c==='agents'||c==='crew'){ out('[dossiers] opening 22-Agent Sovereign Dossier Archive...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDossiers(); },40); }
+    else if(c==='splits'||c==='speedrun'){ out('[splits] opening Act I-VI Speedrun Split Tracker...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSplits(); },40); }
     else if(c==='runner'){ out('[runner] launching 3D Hilbert Packet Runner...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRunner(); },40); }
     else if(c==='cipher'){ out('[cipher] launching Zero-Knowledge 4x4 Cipher Grid...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startCipher(); },40); }
     else if(c==='keys'||c==='binds'){ out('[keys] opening Custom Keybind & Controller Remapper...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openKeybinds(); },40); }
@@ -1165,6 +1168,133 @@ export function initEggs(G,{music,sfx}){
         UI.text('+200 Bits + 1x Root.Shell',618,268,P.GD,1);
         UI.text('[P] Hint: Align Current Cell',618,308,P.DG,1);
         UI.text('[arrows] select cell   [enter] cycle protocol   [P] witness hint   [esc] close',480,480,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Speedrun Split Tracker (M43) ----
+  const SPLITS_DEF=[
+    {id:'split_act1', qk:'q3', act:'ACT I: EAST GATE', boss:'03ng0cn1 · Red Copy', gold:180},
+    {id:'split_act2', qk:'q4', act:'ACT II: THE HOLLOW', boss:'RELAY 4 · Stitched Chorus', gold:420},
+    {id:'split_act3', qk:'q8', act:'ACT III: CLOCKTOWER', boss:'SANDGLASS · 06:12 Loop', gold:780},
+    {id:'split_act4', qk:'q14', act:'ACT IV: HALL OF MIRRORS', boss:'THE HUNTER · Gaze', gold:1200},
+    {id:'split_act5', qk:'q16', act:'ACT V: MODE-7 SKYLINE', boss:'>_ · Blank Cursor', gold:1650},
+    {id:'split_act6', qk:'q20', act:'ACT VI: ZK CITADEL', boss:'ARCHON-0 · First Compiler', gold:2100},
+    {id:'split_core', qk:'q21', act:'CODA: THE NULL CORE', boss:'4D Clifford Singularity', gold:2400}
+  ];
+  const fmtSplit=sec=>{
+    if(sec===undefined||sec===null) return '--:--.-';
+    const m=Math.floor(sec/60), s=Math.floor(sec%60), d=Math.floor((sec*10)%10);
+    return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${d}`;
+  };
+  G.openSplits=()=>{
+    let sel=0;
+    G.mini={
+      name:'splits',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+SPLITS_DEF.length-1)%SPLITS_DEF.length;
+        if(took('down')) sel=(sel+1)%SPLITS_DEF.length;
+        if(took('confirm')){
+          const sp=SPLITS_DEF[sel];
+          if(!G.flags[sp.id]){ G.flags[sp.id]=Math.round((G.t||0)*10)/10; sfx('level'); G.toast(`> Recorded manual split for ${sp.act}`,P.GD); }
+          else sfx('blip');
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> SPEEDRUN SPLIT TRACKER',106,48,P.GD,2);
+        UI.text(`LIVE RUN TIMER: ${fmtSplit(G.t||0)}   ·   CYCLE: NG+${G.flags.ng_plus||0}`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        UI.text('SEGMENT / ACT',116,88,P.DG,1);
+        UI.text('TARGET BOSS',360,88,P.DG,1);
+        UI.text('GOLD TARGET',590,88,P.DG,1);
+        UI.text('RUN SPLIT',710,88,P.DG,1);
+        UI.text('DELTA',844,88,P.DG,1,'right');
+        SPLITS_DEF.forEach((sp,i)=>{
+          const y=112+i*42, on=i===sel, cur=G.flags[sp.id], done=cur!==undefined||G.qdone_(sp.qk);
+          UI.box(106,y-4,748,34,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${sp.act}`,116,y+6,done?P.GD:P.BONE,1);
+          UI.text(sp.boss,360,y+6,P.DG,1);
+          UI.text(fmtSplit(sp.gold),590,y+6,'#22d3ee',1);
+          UI.text(fmtSplit(cur),710,y+6,cur!==undefined?P.GD:P.DG,1);
+          let dStr='--'; let dCol=P.DG;
+          if(cur!==undefined){
+            const diff=cur-sp.gold;
+            dStr=(diff<=0?'':'+')+diff.toFixed(1)+'s';
+            dCol=diff<=0?'#4ade80':P.RED;
+          }
+          UI.text(dStr,844,y+6,dCol,1,'right');
+          UI.hit(106,y-4,748,34,()=>{ sel=i; });
+        });
+        UI.box(106,416,748,46,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('Splits auto-record the moment each Act capstone quest (q3, q4, q8, q14, q16, q20, q21) completes.',480,432,P.BONE,1,'center');
+        UI.text('[up/down] inspect segment   [enter] stamp split   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Complete 22-Agent Dossier Cards UI (M44) ----
+  const DOSSIER_IDS=['me','kitsune','ignis','kai','vigil','nexus','kraken','chronos','athena','lycan','onyx','leviathan','aether','ghostbyte','scorpius','draco','mercury','radical-minion','pixel-shiba','pixel-neko','aquila','copy'];
+  const AGENT_RELIC={
+    me:'sovereign.edge', kitsune:'foxfire.charm', ignis:'slag.coat', kai:'kai.katana', vigil:'vigil.lens',
+    nexus:'nexus.cube', kraken:'kraken.coil', chronos:'clock.plate', athena:'athena.aegis', lycan:'lycan.fang',
+    onyx:'onyx.prism', leviathan:'leviathan.scale', aether:'aether.halo', ghostbyte:'zk.cloak', scorpius:'zero.sting',
+    draco:'draco.crest', mercury:'caduceus.wing', 'radical-minion':'minion.goggles', 'pixel-shiba':'shiba.tag',
+    'pixel-neko':'neko.bell', aquila:'aquila.feather', copy:'mirror.shard'
+  };
+  G.openDossiers=()=>{
+    let sel=0;
+    G.mini={
+      name:'dossiers',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')||took('left')) sel=(sel+DOSSIER_IDS.length-1)%DOSSIER_IDS.length;
+        if(took('down')||took('right')) sel=(sel+1)%DOSSIER_IDS.length;
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(72,28,816,484,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> 22-AGENT SOVEREIGN DOSSIER ARCHIVE',96,44,P.GD,2);
+        UI.text(`CREW RECRUITED: ${G.crewCount()}/22`,866,48,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(92,72,776,2);
+        const first=Math.max(0,Math.min(sel-7,DOSSIER_IDS.length-15));
+        DOSSIER_IDS.slice(first,first+15).forEach((id,idx)=>{
+          const i=first+idx, y=86+idx*24, on=i===sel, rec=G.roster.includes(id)||(id==='copy'&&G.isFlag('copy_crew'));
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(92,y-3,236,20); }
+          UI.text(`${on?'> ':'  '}#${String(i+1).padStart(2,'0')} ${(AG[id]&&AG[id].name)||id}`,98,y,rec?(AG[id]?AG[id].color:P.GD):P.DG,1);
+          UI.hit(92,y-3,236,20,()=>{ sel=i; });
+        });
+        const id=DOSSIER_IDS[sel], ag=AG[id]||{}, pb=PARTY_BASE[id]||{hp:60,en:30,atk:10,def:4,spd:6,skills:[]};
+        const rec=G.roster.includes(id)||(id==='copy'&&G.isFlag('copy_crew'));
+        UI.box(344,86,522,380,ag.color||P.GD,'rgba(12,10,8,.94)');
+        // Portrait box with live animated sprite frame
+        UI.box(364,106,124,142,ag.color||P.GD,'rgba(6,5,4,.95)');
+        UI.ditherRect(368,110,116,134,ag.color||P.GD,.22);
+        try{
+          const fc=frameCanvas(id,'idle',Math.floor(t*6)%(id==='me'||id==='copy'?1:8));
+          X.imageSmoothingEnabled=false;
+          if(id==='me'||id==='copy') X.drawImage(fc,364+62-fc.width,106+132-fc.height*2,fc.width*2,fc.height*2);
+          else X.drawImage(fc,0,10,96,86,364+62-96,106+136-86*1.8,96*2,86*1.8);
+        }catch(e){}
+        UI.text(`AGENT #${String(sel+1).padStart(2,'0')} · ${(ag.name||id).toUpperCase()}`,506,108,ag.color||P.GD,2);
+        UI.text(`Role: ${ag.role||'Sovereign Lattice Specialist'}`,506,138,P.BONE,1);
+        UI.text(`Protocol: [${PARTY_PROTO[id]||'KERNEL'}]   ·   Status: ${rec?'RECRUITED':'AT LARGE'}`,506,160,'#22d3ee',1);
+        UI.text(`Signature: ${ag.ability||'Lattice Convergence'}`,506,182,P.GD,1);
+        const relKey=AGENT_RELIC[id], relIt=relKey&&ITEMS[relKey];
+        UI.text(`Mythic Relic: ${relIt?relIt.name:(relKey||'Sovereign Edge')} ${relKey&&G.has(relKey)?'[OWNED]':''}`,506,204,relKey&&G.has(relKey)?'#4ade80':P.DG,1);
+        UI.box(364,262,482,92,P.DDG,'rgba(6,5,4,.85)');
+        const st=G.party[id]?G.stats(id):{mhp:pb.hp,men:pb.en,atk:pb.atk,def:pb.def,spd:pb.spd};
+        UI.text(`COMBAT TELEMETRY (${G.party[id]?'LIVE LVL '+G.party[id].lvl:'BASE LVL 1'}):`,380,276,P.GD,1);
+        UI.text(`HP: ${st.mhp}    EN: ${st.men}    ATK: ${st.atk}    DEF: ${st.def}    SPD: ${st.spd}`,380,300,P.BONE,1);
+        const skNames=(pb.skills||[]).slice(0,4).map(k=>SKILLS[k]?SKILLS[k].name:k).join('  ·  ');
+        UI.text(`Skills: ${skNames}`,380,324,'#22d3ee',1);
+        UI.box(364,368,482,80,P.DDG,'rgba(6,5,4,.85)');
+        const quote=IDLE[id]||'If you cannot see my face in person, treat the voice packet as hostile.';
+        UI.text('VERIFIED VOICEPRINT QUOTE:',380,382,P.DG,1);
+        UI.wrap(`"${quote}"`,450,1).slice(0,2).forEach((l,li)=>UI.text(l,380,404+li*18,P.BONE,1));
+        UI.text('[up/down/left/right] browse 22 agents   [esc] close',480,484,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
