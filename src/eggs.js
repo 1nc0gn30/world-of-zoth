@@ -14,7 +14,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -40,7 +40,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='pets'||c==='familiars'){ out('[pets] opening Cyber-Familiar Pet Companion Sanctuary...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openPets(); },40); }
     else if(c==='builder'||c==='encounter'||c==='custom'){ out('[builder] opening Custom Battle Arena & Encounter Builder...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEncounterBuilder(); },40); }
     else if(c==='contracts'||c==='streak'){ out('[contracts] opening Procedural Daily Contract Board v2...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openContracts(); },40); }
     else if(c==='arcade'||c==='cabinets'||c==='games'){ out('[arcade] opening 11-Cabinet Safehouse Arcade Hub...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openArcade(); },40); }
@@ -1538,7 +1539,7 @@ export function initEggs(G,{music,sfx}){
     {name:'CHRONO SANDSTORM', proto:'TEMPORAL', buff:'+25% TEMPORAL DMG · +2 SPD', col:'#a78bfa'},
     {name:'VOID SINGULARITY SURGE', proto:'VOID', buff:'+25% VOID DMG · +35% XP', col:'#f43f5e'}
   ];
-  const ZONE_KEYS=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','loom','rooftop'];
+  const ZONE_KEYS=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','loom','vault','rooftop'];
   G.openWeather=()=>{
     let sel=0, seedOff=G.flags.weather_seed||0;
     const wFor=i=>WEATHER_TYPES[(i*3+seedOff+Math.floor((G.t||0)/120))%WEATHER_TYPES.length];
@@ -2190,6 +2191,7 @@ export function initEggs(G,{music,sfx}){
     {id:'archon_seraph', name:'ARCHON-0 COMPILER', cat:'APEX BOSS', zone:'ZK Citadel', col:'#f5b82e', lore:'The First Compiler at the apex of the Zero-Knowledge Citadel, surrounded by dual gimbal rings.'},
     {id:'null_singularity', name:'NULL SINGULARITY', cat:'WORLD MONUMENT', zone:'The Null Core', col:'#22d3ee', lore:'Eight-ribbon torus knot and dual accretion rings hovering at the center of District #15.'},
     {id:'quantum_loom', name:'QUANTUM LOOM', cat:'WORLD MONUMENT', zone:'The Quantum Loom', col:'#a78bfa', lore:'Twelve-strand double-helical Mobius spindle weaving entangled eigenstates across District #16.'},
+    {id:'chrono_orrery', name:'CHRONO ORRERY', cat:'WORLD MONUMENT', zone:'The Chrono-Vault', col:'#4ade80', lore:'Five-ring tilted armillary sphere and celestial escapement anchoring District #17 at 06:15.'},
     {id:'pantheon_throne', name:'PANTHEON THRONE', cat:'WORLD MONUMENT', zone:'ZK Citadel', col:'#f5b82e', lore:'Seventeen-meter sovereign monolith and solar halo anchoring the Zero-Knowledge Citadel.'},
     {id:'abyss_monolith', name:'ABYSS MONOLITH', cat:'WORLD MONUMENT', zone:'Sub-Lattice Abyss', col:'#a78bfa', lore:'Twisted hexagonal obelisk suspended inside the inverted gravity field of the Sub-Lattice Abyss.'},
     {id:'citadel_spire', name:'CITADEL SPIRE', cat:'WORLD MONUMENT', zone:'Hub / Citadel', col:'#22d3ee', lore:'Helical lattice broadcast spire routing encrypted carrier packets between sectors.'},
@@ -3540,6 +3542,93 @@ export function initEggs(G,{music,sfx}){
         UI.text('[ENTER] DEPLOY SQUAD TO CONTRACT SECTOR',699,390,P.GD,1,'center');
         UI.text('[P] TACTICAL AUTO-DISPATCH (INSTANT CLEAR + STREAK)',699,416,'#4ade80',1,'center');
         UI.text('[up/down] select contract   [enter] fight contract   [P] auto-dispatch   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Cyber-Familiar Pet Companion Sanctuary (M82) ----
+  const CYBER_PETS=[
+    {id:'shiba', name:'01. PIXEL-SHIBA', sprite:'pixel-shiba', title:'ARGON-BARK HOUND', col:'#f5b82e',
+      buff:'+15% ALL STATS & +2 SPD (Up to +38% at Bond +5)',
+      lore:'Loyal argon-bark hound from Relit City Plaza. Tracks hidden anomalies and amplifies squad strike speed.'},
+    {id:'neko', name:'02. PIXEL-NEKO', sprite:'pixel-neko', title:'MASTER TOOLSMITH CAT', col:'#22d3ee',
+      buff:'+15% ALL STATS & +2 SPD (Up to +38% at Bond +5)',
+      lore:'Lucky cyber-cat of the Hub Tool Bench. Reinforces armor shells and expands kernel energy reserves.'},
+    {id:'minion', name:'03. RADICAL-MINION', sprite:'radical-minion', title:'ASYNC OCTO-CLONE', col:'#4ade80',
+      buff:'+15% ALL STATS & +2 SPD (Up to +38% at Bond +5)',
+      lore:'Eight-in-one asynchronous clone familiar that runs parallel background threads for the entire crew.'},
+    {id:'foxfire', name:'04. FOXFIRE KIT', sprite:'kitsune', title:'NINE-BRANCH WISP', col:'#fb923c',
+      buff:'+15% ALL STATS & +2 SPD (Up to +38% at Bond +5)',
+      lore:'Living nine-branch foxfire spirit born in the Rest Woods. Casts uncopyable light across every battle.'},
+    {id:'owl', name:'05. CHRONO OWL', sprite:'athena', title:'AEGIS CLOCKWORK OWL', col:'#a78bfa',
+      buff:'+15% ALL STATS & +2 SPD (Up to +38% at Bond +5)',
+      lore:'Brass clockwork owl familiar from the 6:12 Belfry. Projects a predictive temporal ward over the squad.'},
+    {id:'seraph', name:'06. VOID SERAPH', sprite:'aether', title:'SINGULARITY WISP', col:'#f43f5e',
+      buff:'+15% ALL STATS & +2 SPD (Up to +38% at Bond +5)',
+      lore:'Miniature six-winged seraph familiar forged in the Null Core. Radiates sovereign 06:15 resonance.'}
+  ];
+  G.openPets=()=>{
+    let sel=CYBER_PETS.findIndex(p=>p.id===(G.flags.active_pet||'shiba')); if(sel<0) sel=0;
+    const bondOf=id=>(G.flags&&G.flags['pet_bond_'+id])||0;
+    G.mini={
+      name:'pets',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+CYBER_PETS.length-1)%CYBER_PETS.length;
+        if(took('down')) sel=(sel+1)%CYBER_PETS.length;
+        if(took('confirm')){
+          const p=CYBER_PETS[sel];
+          G.flags.active_pet=p.id;
+          G.ach('cyber_tamer'); sfx('level');
+          G.toast(`> EQUIPPED CYBER-FAMILIAR: ${p.name.slice(4)}!`,p.col);
+        }
+        if(took('party')){
+          const p=CYBER_PETS[sel], b=bondOf(p.id);
+          if(b>=5){ G.toast('> Familiar Bond already at MAX (+5)!',P.GD); sfx('cancel'); return; }
+          G.flags['pet_bond_'+p.id]=b+1;
+          G.flags.active_pet=p.id;
+          G.ach('cyber_tamer'); sfx('win');
+          G.toast(`> ${p.name.slice(4)} BOND UPGRADED TO +${b+1}/5!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> CYBER-FAMILIAR PET SANCTUARY',56,40,P.GD,2);
+        const actId=G.flags.active_pet||'NONE';
+        UI.text(`ACTIVE FAMILIAR: [${actId.toUpperCase()}]`,900,44,actId!=='NONE'?'#4ade80':P.DG,1,'right');
+        // Left: 6 Cyber-Familiars List
+        CYBER_PETS.forEach((p,i)=>{
+          const yy=80+i*64, on=i===sel, eq=(G.flags.active_pet===p.id), b=bondOf(p.id);
+          UI.box(52,yy,376,56,on?P.GD:(eq?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+p.name,66,yy+10,on?P.GD:P.BONE,1);
+          UI.text(p.title,66,yy+30,p.col,1);
+          UI.text(eq?`[ACTIVE +${b}]`:`BOND +${b}/5`,414,yy+18,eq?'#4ade80':P.DG,1,'right');
+        });
+        // Right: Selected Familiar Habitat & Bond Inspector
+        const cur=CYBER_PETS[sel], b=bondOf(cur.id), isEq=(G.flags.active_pet===cur.id);
+        const multPct=Math.round((1.15*(1+b*0.04)-1)*100);
+        UI.box(446,80,458,384,cur.col,'rgba(10,8,6,.94)');
+        // Animated sprite showcase box
+        UI.box(466,100,116,116,P.DDG,'rgba(14,11,8,.96)');
+        const c=frameCanvas(cur.sprite,'idle',Math.floor(t*5)%2);
+        X.drawImage(c,0,0,c.width,c.height,488,122,72,72);
+        UI.text(cur.name.slice(4),600,104,P.GD,2);
+        UI.text(`CLASS: ${cur.title}`,600,136,cur.col,1);
+        UI.text(`BOND: +${b}/5  ·  BUFF: +${multPct}% STATS & +2 SPD`,600,160,'#4ade80',1);
+        // Bond hearts/stars bar
+        for(let k=0;k<5;k++){
+          UI.box(600+k*54,184,46,24,k<b?'#4ade80':P.DDG,k<b?'rgba(74,222,128,.2)':'rgba(8,7,5,.8)');
+          UI.text(`+${k+1}`,623+k*54,191,k<b?'#4ade80':P.DG,1,'center');
+        }
+        UI.box(466,232,418,118,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('FAMILIAR LORE & PASSIVE RESONANCE:',482,248,P.GD,1);
+        UI.wrap(cur.lore,386,1).forEach((l,li)=>UI.text(l,482,270+li*18,P.BONE,1));
+        UI.text(`AURA: ${cur.buff}`,482,322,'#22d3ee',1);
+        UI.box(466,366,418,80,isEq?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(isEq?`FAMILIAR EQUIPPED: ${cur.name.slice(4)}`:`[ENTER] EQUIP ${cur.name.slice(4)} AS SQUAD FAMILIAR`,675,386,isEq?'#4ade80':P.GD,1,'center');
+        UI.text('[P] FEED SIGNAL TREAT & UPGRADE FAMILIAR BOND (+1 TIER)',675,414,'#22d3ee',1,'center');
+        UI.text('[up/down] select familiar   [enter] equip pet   [P] upgrade bond (+1..+5)   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

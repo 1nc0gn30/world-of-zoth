@@ -264,10 +264,27 @@ export function buildZones2(Z){
     });
     const st=[]; for(let i=0;i<300;i++) st.push((R()-.5)*84,R()*24,(R()-.5)*84);
     g.add(pts(st,latMat({color:'#a78bfa',points:true,size:1.8,twinkle:1,intensity:1.45,fogFar:75})));
-    portal(g,0,42,0);
+    portal(g,0,42,0); portal(g,0,-42,0);
     Z.loom={ id:'loom', name:'the quantum loom', sub:'entangled spindle · 06:14', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'loom', lvl:34,
       sky:{rain:.22,rainCol:'#a78bfa',hex:1,stars:2.6}, spawn:{x:0,z:36,yaw:Math.PI},
-      portals:[{x:0,z:42,r:3,to:'nullcore',sx:0,sz:-36,syaw:0,label:'the null core'}], objs:{spindle,pyl}, tag:[32,-32] };
+      portals:[{x:0,z:42,r:3,to:'nullcore',sx:0,sz:-36,syaw:0,label:'the null core'},{x:0,z:-42,r:3,to:'vault',sx:0,sz:36,syaw:Math.PI,label:'the chrono-vault'}], objs:{spindle,pyl}, tag:[32,-32] };
+  }
+  // ===================== THE CHRONO-VAULT (District #17 · Celestial Orrery) =====================
+  { const h=(x,z)=>0.15*Math.cos(Math.hypot(x,z)*.14);
+    const B=base('vault',{seed:171,h,fogFar:70,gridCol:'#261c08',dotCol:GD}); const {g,col,anim}=B; const R=rng(172);
+    const orr=segs(BLENDER_GEO.chrono_orrery,latMat({color:GD,intensity:1.55,fogFar:140})); orr.position.set(0,0,-8); g.add(orr); col.push({c:[0,-8,5.2]});
+    const inner=segs(BLENDER_GEO.chrono_orrery,latMat({color:'#4ade80',intensity:1.35,fogFar:140})); inner.scale.setScalar(.66); inner.position.set(0,2.1,-8); g.add(inner);
+    anim.push(t=>{ orr.rotation.y=t*.35; inner.rotation.y=-t*.58; inner.rotation.z=Math.sin(t*.8)*.22; });
+    const pyl={}; [['v1',-20,-8],['v2',20,-8],['v3',0,16]].forEach(([id,x,z])=>{
+      const a=[]; wireOcta(a,1.6,x,2.8,z); ring(a,x,.15,z,3.0,32,2);
+      const m=segs(a,latMat({color:'#4ade80',intensity:1.45,fogFar:85})); g.add(m); anim.push(t=>{ m.rotation.y=-t*.48; }); col.push({c:[x,z,1.6]}); pyl[id]={x,z,m};
+    });
+    const st=[]; for(let i=0;i<320;i++) st.push((R()-.5)*84,R()*24,(R()-.5)*84);
+    g.add(pts(st,latMat({color:GD,points:true,size:1.9,twinkle:1,intensity:1.5,fogFar:75})));
+    portal(g,0,42,0);
+    Z.vault={ id:'vault', name:'the chrono-vault', sub:'celestial orrery · 06:15', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'vault', lvl:36,
+      sky:{rain:.16,rainCol:'#f5b82e',hex:1,stars:2.8}, spawn:{x:0,z:36,yaw:Math.PI},
+      portals:[{x:0,z:42,r:3,to:'loom',sx:0,sz:-36,syaw:0,label:'the quantum loom'}], objs:{orr,pyl}, tag:[-34,34] };
   }
   // ===================== SECRET: THE ROOFTOP AT 06:12 =====================
   { const g=new THREE.Group(), col=[], anim=[], R=rng(612); const h=()=>0;

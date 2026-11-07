@@ -91,8 +91,8 @@
 - [x] **M80** (`08:49`): Procedural Daily Contract Generator v2 (`G.openContracts()` via `> contracts` & System Menu — 6 rotating tactical contracts with streak multipliers)
 
 ### Hour 10 (`09:00`–`10:00`) — District #17 (*"The Chrono-Vault"*) & Sovereign Pet Companions
-- [ ] **M81**: Blender 4.3 Wireframe Mesh #19 (`chrono_orrery`) & Secret District #17 (*"The Chrono-Vault"* `Z.vault` in `src/zones2.js` + `vault` stem in `src/audio.js`)
-- [ ] **M82**: Cyber-Familiar Pet Companion System (`G.openPets()` via `> pets` & System Menu — equip Pixel-Shiba, Pixel-Neko, Radical-Minion, or Micro-Drone for passive combat & exploration buffs)
+- [x] **M81** (`09:06`): Blender 4.3 Wireframe Mesh #19 (`chrono_orrery`) & Secret District #17 (*"The Chrono-Vault"* `Z.vault` in `src/zones2.js` + `vault` stem in `src/audio.js`)
+- [x] **M82** (`09:06`): Cyber-Familiar Pet Companion System (`G.openPets()` via `> pets` & System Menu — equip Pixel-Shiba, Pixel-Neko, Radical-Minion, Foxfire Kit, Chrono Owl, or Void Seraph for passive combat & exploration buffs)
 - [ ] **M83**: Secret Mini-Game #12 — *"Chrono-Orrery Planetary Alignment Puzzle"* (`G.startOrrery()` via `> orrery` & System Menu — align 5 orbital rings to 06:12 phase lock)
 - [ ] **M84**: Interactive Dialogue & Cutscene Theater (`G.openTheater()` via `> theater` & System Menu — replay all story & boss dialogues + all 7 cinematics with free-cam pause)
 - [ ] **M85**: Sovereign Achievement Trophy Case & Milestone Rewards (`G.openTrophyCase()` via `> trophies2` & System Menu — claim bit & item stipends for every unlocked achievement tier)

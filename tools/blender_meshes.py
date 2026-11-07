@@ -427,6 +427,46 @@ def build_quantum_loom():
     return arr
 
 
+def build_chrono_orrery():
+    """5-ring tilted celestial armillary sphere & planetary escapement orrery for District #17: The Chrono-Vault."""
+    bm = bmesh.new()
+    # Base pedestal rings
+    add_ring(bm, 0, 0, 0.4, 5.4, segs=28, axis="z")
+    add_ring(bm, 0, 0, 1.2, 4.2, segs=24, axis="z")
+    # 5 Tilted armillary gimbal rings centered at z=6.2
+    tilts = [
+        (5.0, 0.25, 0.0),
+        (4.3, -0.45, 0.6),
+        (3.6, 0.72, -0.5),
+        (2.9, -0.88, 1.1),
+        (2.2, 1.15, -0.9),
+    ]
+    for rad, tx, ty in tilts:
+        segs = 28
+        pts = []
+        cx, sx = math.cos(tx), math.sin(tx)
+        cy, sy = math.cos(ty), math.sin(ty)
+        for i in range(segs):
+            a = (i / segs) * math.pi * 2.0
+            x0, y0, z0 = math.cos(a) * rad, math.sin(a) * rad, 0.0
+            # Rotate around X then Y
+            y1, z1 = y0 * cx - z0 * sx, y0 * sx + z0 * cx
+            x2, z2 = x0 * cy + z1 * sy, -x0 * sy + z1 * cy
+            pts.append(bm.verts.new((x2, y1, 6.2 + z2)))
+        for i in range(segs):
+            bm.edges.new((pts[i], pts[(i + 1) % segs]))
+    # Central polar axis & sun-octahedron at (0,0,6.2)
+    p_bot = bm.verts.new((0, 0, 0.4))
+    p_top = bm.verts.new((0, 0, 11.8))
+    bm.edges.new((p_bot, p_top))
+    bmesh.ops.create_icosphere(bm, subdivisions=1, radius=1.25)
+    for v in bm.verts[-12:]:
+        v.co.z += 6.2
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
 def main():
     data = {
         "relay4_crown": build_relay4_crown(),
@@ -447,6 +487,7 @@ def main():
         "archon_seraph": build_archon_seraph(),
         "null_singularity": build_null_singularity(),
         "quantum_loom": build_quantum_loom(),
+        "chrono_orrery": build_chrono_orrery(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:
