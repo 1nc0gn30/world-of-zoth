@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='sprites'||c==='animstudio'||c==='frames'){ out('[sprites] opening Interactive Sprite & Animation Frame Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSpriteStudio(); },40); }
     else if(c==='trophies2'||c==='stipends'||c==='achcase'){ out('[trophies2] opening Achievement Trophy Case & Stipends...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTrophyCase(); },40); }
     else if(c==='exchange'||c==='stocks'||c==='stake'){ out('[exchange] opening Lattice Stock & Bit Staking Exchange...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openExchange(); },40); }
     else if(c==='orrery'||c==='planets'||c==='orbit'){ out('[orrery] launching Chrono-Orrery Planetary Alignment Puzzle...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startOrrery(); },40); }
@@ -4023,6 +4024,93 @@ export function initEggs(G,{music,sfx}){
         UI.text('[RIGHT / ENTER] BUY 1 SHARE   ·   [LEFT] SELL 1 SHARE',691,392,P.GD,1,'center');
         UI.text('[P] ADVANCE MARKET CYCLE & HARVEST DIVIDENDS',691,418,'#4ade80',1,'center');
         UI.text('[up/down] select ticker   [left/right] sell/buy share   [P] harvest yield   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Sprite & Animation Frame Studio (M87) ----
+  const SPRITE_AGENTS=Object.keys(PARTY_BASE);
+  const SPRITE_STATES=['idle','walk','work','ability','ultimate','meditate'];
+  G.openSpriteStudio=()=>{
+    let sel=1, stIdx=0, paused=false, curFrame=0, zoom=2, onion=false;
+    G.ach('sprite_animator');
+    G.mini={
+      name:'spritestudio',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+SPRITE_AGENTS.length-1)%SPRITE_AGENTS.length;
+        if(took('down')) sel=(sel+1)%SPRITE_AGENTS.length;
+        if(took('left')){ stIdx=(stIdx+SPRITE_STATES.length-1)%SPRITE_STATES.length; sfx('move'); }
+        if(took('right')){ stIdx=(stIdx+1)%SPRITE_STATES.length; sfx('move'); }
+        if(took('confirm')){
+          const id=SPRITE_AGENTS[sel], maxF=(id==='me'||id==='copy')?4:8;
+          if(!paused){ paused=true; sfx('confirm'); }
+          else { curFrame=(curFrame+1)%maxF; sfx('talk'); }
+        }
+        if(took('party')){
+          zoom=zoom===2?3:(zoom===3?1:2);
+          onion=!onion;
+          paused=false;
+          G.ach('sprite_animator'); sfx('level');
+          G.toast(`> SPRITE STUDIO: ZOOM ${zoom}x · ONION-SKIN ${onion?'ON':'OFF'}!`,P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> SPRITE & ANIMATION STUDIO',56,40,P.GD,2);
+        const id=SPRITE_AGENTS[sel], ag=AG[id]||AG.me, st=SPRITE_STATES[stIdx];
+        const maxF=(id==='me'||id==='copy')?4:8;
+        const fIdx=paused?(curFrame%maxF):(Math.floor(t*8)%maxF);
+        UI.text(`AGENT ${sel+1}/22   ·   ZOOM: ${zoom}x   ·   ONION: ${onion?'ON':'OFF'}`,900,44,'#22d3ee',1,'right');
+        // Left: Scrollable 22-Agent Roster List (9 visible rows)
+        const first=Math.max(0,Math.min(sel-4,SPRITE_AGENTS.length-9));
+        SPRITE_AGENTS.slice(first,first+9).forEach((aid,idx)=>{
+          const i=first+idx, yy=78+idx*42, on=i===sel, a=AG[aid]||AG.me;
+          UI.box(52,yy,320,38,on?P.GD:P.DDG,on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+`${String(i+1).padStart(2,'0')}. ${PARTY_BASE[aid].name.toUpperCase()}`,64,yy+12,on?P.GD:(a.color||P.BONE),1);
+          UI.text((aid==='me'||aid==='copy')?'4F':'48F',358,yy+12,P.DG,1,'right');
+        });
+        // Right: Magnified Sprite Viewport & 8-Frame Strip Inspector
+        UI.box(390,78,514,386,ag.color||P.GD,'rgba(10,8,6,.94)');
+        UI.text(`${PARTY_BASE[id].name.toUpperCase()}  —  [${st.toUpperCase()}]  (FRAME ${fIdx+1}/${maxF})`,408,94,P.GD,1);
+        UI.text(`ROLE: ${ag.role||'Sovereign Agent'}   ·   PALETTE: ${(ag.color||'#f5b82e').toUpperCase()}`,408,114,ag.color||'#22d3ee',1);
+        // Magnified Pixel Canvas Box
+        UI.box(408,136,220,184,P.DDG,'rgba(14,11,8,.98)');
+        // Sub-pixel calibration grid lines
+        X.strokeStyle='rgba(245,184,46,.08)';
+        for(let gx=428;gx<628;gx+=20){ X.beginPath(); X.moveTo(gx,136); X.lineTo(gx,320); X.stroke(); }
+        for(let gy=156;gy<320;gy+=20){ X.beginPath(); X.moveTo(408,gy); X.lineTo(628,gy); X.stroke(); }
+        const c=frameCanvas(id,st,fIdx);
+        const dw=Math.min(168,Math.round(c.width*(zoom===1?1:zoom===2?1.5:1.75)));
+        const dh=Math.min(168,Math.round(c.height*(zoom===1?1:zoom===2?1.5:1.75)));
+        if(onion){
+          const prevC=frameCanvas(id,st,(fIdx+maxF-1)%maxF);
+          X.save(); X.globalAlpha=0.32;
+          X.drawImage(prevC,0,0,prevC.width,prevC.height,Math.round(518-dw/2)-8,Math.round(228-dh/2),dw,dh);
+          X.restore();
+        }
+        X.drawImage(c,0,0,c.width,c.height,Math.round(518-dw/2),Math.round(228-dh/2),dw,dh);
+        // Animation State Selector Pills (Right of Viewport)
+        UI.box(642,136,244,184,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('ANIMATION STATES (6):',656,148,P.GD,1);
+        SPRITE_STATES.forEach((sn,si)=>{
+          const sy=170+si*24, isSt=si===stIdx;
+          UI.box(656,sy,216,20,isSt?P.GD:P.DDG,isSt?'rgba(245,184,46,.16)':'rgba(8,7,5,.8)');
+          UI.text((isSt?'> ':'  ')+`ROW ${si+1}: ${sn.toUpperCase()}`,666,sy+3,isSt?P.GD:P.BONE,1);
+        });
+        // Bottom 8-Frame Filmstrip Scrubber
+        UI.box(408,330,478,74,P.DDG,'rgba(14,11,8,.96)');
+        UI.text(`FILMSTRIP SCRUBBER (${paused?'STEP MODE':'LIVE 8 FPS'}):`,420,340,P.GD,1);
+        for(let k=0;k<maxF;k++){
+          const fx=420+k*56, isF=k===fIdx;
+          UI.box(fx,356,48,42,isF?'#4ade80':P.DDG,isF?'rgba(74,222,128,.16)':'rgba(8,7,5,.9)');
+          const fc=frameCanvas(id,st,k);
+          X.drawImage(fc,0,0,fc.width,fc.height,fx+8,360,32,32);
+        }
+        UI.box(408,412,478,40,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[LEFT/RIGHT] STATE   ·   [ENTER] PAUSE/STEP   ·   [P] ZOOM & ONION-SKIN',647,426,P.GD,1,'center');
+        UI.text('[up/down] agent   [left/right] anim row   [enter] step frame   [P] zoom/onion   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

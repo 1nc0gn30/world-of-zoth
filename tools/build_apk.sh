@@ -2,8 +2,8 @@
 # Builds dist/world-of-zoth.apk without Gradle: aapt2 -> javac -> d8 -> zipalign -> apksigner (self-signed debug key).
 set -e
 cd "$(dirname "$0")/.."
-export JAVA_HOME=$HOME/android/jdk PATH=$HOME/android/jdk/bin:$PATH
-SDK=$HOME/android/sdk BT=$SDK/build-tools/34.0.0 PLAT=$SDK/platforms/android-34/android.jar
+export JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/default-java} PATH=$JAVA_HOME/bin:$PATH
+SDK=${SDK:-$HOME/Android/Sdk} BT=$SDK/build-tools/35.0.0 PLAT=$SDK/platforms/android-34/android.jar
 B=android/build; rm -rf $B; mkdir -p $B/gen $B/obj $B/apk/assets
 python3 tools/make_icons.py android/res
 $BT/aapt2 compile --dir android/res -o $B/res.zip

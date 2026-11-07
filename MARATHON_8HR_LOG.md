@@ -97,8 +97,8 @@
 - [x] **M84** (`09:23`): Interactive Dialogue & Cutscene Theater (`G.openTheater()` via `> theater` & System Menu — replay all story & boss dialogues + all 6 cinematics with transcript monitor)
 - [x] **M85** (`09:34`): Sovereign Achievement Trophy Case & Milestone Rewards (`G.openTrophyCase()` via `> trophies2` & System Menu — claim bit & item stipends for every unlocked achievement tier)
 - [x] **M86** (`09:34`): Lattice Stock & Bit Staking Exchange (`G.openExchange()` via `> exchange` & System Menu — invest Bits across 5 District Node indices that fluctuate with exploration & battles)
-- [ ] **M87**: Interactive Sprite & Animation Frame Studio (`G.openSpriteStudio()` via `> sprites` & System Menu — inspect all 22 agent & enemy animation states frame-by-frame with zoom)
-- [ ] **M88**: Full 17-District + 50-Subsystem Automated Audit #5 & APK v1.5 Sync
+- [x] **M87** (`09:49`): Interactive Sprite & Animation Frame Studio (`G.openSpriteStudio()` via `> sprites` & System Menu — inspect all 22 agent & enemy animation states frame-by-frame with zoom)
+- [x] **M88** (`09:49`): Full 17-District + 50-Subsystem Automated Audit #5 & APK v1.5 Sync (`Errors: []`)
 
 ### Hour 11 (`10:00`–`11:00`) — Tactical Mutations, Cybernetic Implants & Mini-Game #13
 - [ ] **M89**: Cybernetic Kernel Implant Laboratory (`G.openImplants()` via `> implants` & System Menu — 9 socketable neural implants granting lifesteal, thorns, and EN surge)
