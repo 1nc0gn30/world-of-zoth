@@ -130,7 +130,8 @@ export class Battle{
       const weakE=en.find(e=>ENEMY_WEAK[e.type]===myProto);
       tgt=weakE||en.reduce((m,e)=>e.hp<m.hp?e:m,en[0]);
     }
-    const S={...SKILLS[pickOpt.id],cost:pickOpt.cost};
+    const mRank=(this.G.flags&&this.G.flags['skm_'+pickOpt.id])||0, mMul=1+mRank*.15;
+    const S={...SKILLS[pickOpt.id],cost:pickOpt.cost}; if(S.pow) S.pow=+(S.pow*mMul).toFixed(2); if(S.heal) S.heal=Math.round(S.heal*mMul);
     this.cur={o:pickOpt,S};
     this.execute(a,pickOpt,S,S.target==='ally'?lowAlly:tgt,'good');
   }
@@ -181,7 +182,7 @@ export class Battle{
     if(o.kind==='run'){ if(Math.random()<.6){ this.say('> disconnect: ok',1); sfx('door'); this.result='run'; this.events.push({t:.8,f:()=>this.finish()}); this.go('done'); } else { this.say('> disconnect: refused',1); sfx('cancel'); this.waitAct(.8); } return; }
     let S;
     if(o.kind==='item'){ S={target:'ally', item:o.id}; }
-    else { S={...SKILLS[o.id],cost:o.cost}; if(a.en<S.cost){ this.say('not enough EN.',1); sfx('cancel'); return; } }
+    else { const mRank=(this.G.flags&&this.G.flags['skm_'+o.id])||0; const mMul=1+mRank*.15; S={...SKILLS[o.id],cost:o.cost}; if(S.pow) S.pow=+(S.pow*mMul).toFixed(2); if(S.heal) S.heal=Math.round(S.heal*mMul); if(a.en<S.cost){ this.say('not enough EN.',1); sfx('cancel'); return; } }
     this.cur={o,S}; sfx('confirm');
     if(S.target==='enemy'||S.target==='ally'||S.target==='downed'){ const L=S.target==='enemy'?this.alive(this.enemies):((S.item==='root.shell'||S.target==='downed')?this.party.filter(p=>!p.alive):this.alive(this.party)); if(!L.length){ this.say('no target.',1); return; }
       this.tlist=L; this.tsel=S.target==='enemy'?Math.max(0,L.findIndex(e=>e.st.mark>0)):L.indexOf(L.reduce((m,p)=>p.hp/p.mhp<m.hp/m.mhp?p:m,L[0])); this.go('target'); }

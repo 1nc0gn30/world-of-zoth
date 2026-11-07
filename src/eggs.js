@@ -8,11 +8,12 @@ import { AG, frameCanvas } from './sprites.js';
 import { ENEMIES, ITEMS, PARTY_BASE, SKILLS, QUESTS } from './data.js';
 import { IDLE } from './content.js';
 import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
+import { BLENDER_GEO } from './blender_geo.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -38,7 +39,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='meshes'||c==='models'||c==='blender'){ out('[meshes] opening 3D Wireframe Model & Mesh Inspector...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMeshViewer(); },40); }
+    else if(c==='mastery'||c==='skills'||c==='loadout'){ out('[mastery] opening Companion Skill Mastery Customizer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSkillMastery(); },40); }
     else if(c==='wheel'||c==='radial'){ out('[wheel] opening 12-Node Sovereign Command Wheel...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openQuickWheel(); },40); }
     else if(c==='defrag'||c==='memory'){ out('[defrag] launching Memory Trench Core-Dump Defragmenter...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startDefrag(); },40); }
     else if(c==='singularity'||c==='ng+'||c==='ascend'){ out('[singularity] opening 06:14 Sovereign Singularity Ascension...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSingularity(); },40); }
@@ -2160,6 +2163,186 @@ export function initEggs(G,{music,sfx}){
         UI.text(cur.sub,cx,cy+4,'#22d3ee',1,'center');
         UI.text('[ENTER] LAUNCH',cx,cy+22,'#4ade80',1,'center');
         UI.text('[arrows] rotate radial wheel   [enter / click] launch subsystem   [tab / esc] close',480,506,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive 3D Wireframe Model & Mesh Inspector (M63) ----
+  const MESH_CATALOG=[
+    {id:'relay4_crown', name:'RELAY 4 CROWN', cat:'APEX BOSS', zone:'Relay 4 Core', col:'#f43f5e', lore:'Twelve-ribbed hyperboloid acoustic resonator that broadcasts stolen operator voices across the lattice.'},
+    {id:'sandglass_cage', name:'SANDGLASS CAGE', cat:'APEX BOSS', zone:'6:12 Clocktower', col:'#fb923c', lore:'Counter-rotating biconical chrono-cage locking the city inside the 06:12 AM minute loop.'},
+    {id:'hunter_seraph', name:'THE HUNTER SERAPH', cat:'APEX BOSS', zone:'East Gate', col:'#ef4444', lore:'Six-winged orbital panopticon seraph chassis armed with the high-altitude GAZE beam.'},
+    {id:'blank_tesseract', name:'THE CURSOR (4D)', cat:'APEX BOSS', zone:'03ng0cn1 Node', col:'#a78bfa', lore:'Four-dimensional Schlegel tesseract projection that listens when spoken to and mirrors every strike.'},
+    {id:'archon_seraph', name:'ARCHON-0 COMPILER', cat:'APEX BOSS', zone:'ZK Citadel', col:'#f5b82e', lore:'The First Compiler at the apex of the Zero-Knowledge Citadel, surrounded by dual gimbal rings.'},
+    {id:'null_singularity', name:'NULL SINGULARITY', cat:'WORLD MONUMENT', zone:'The Null Core', col:'#22d3ee', lore:'Eight-ribbon torus knot and dual accretion rings hovering at the center of District #15.'},
+    {id:'pantheon_throne', name:'PANTHEON THRONE', cat:'WORLD MONUMENT', zone:'ZK Citadel', col:'#f5b82e', lore:'Seventeen-meter sovereign monolith and solar halo anchoring the Zero-Knowledge Citadel.'},
+    {id:'abyss_monolith', name:'ABYSS MONOLITH', cat:'WORLD MONUMENT', zone:'Sub-Lattice Abyss', col:'#a78bfa', lore:'Twisted hexagonal obelisk suspended inside the inverted gravity field of the Sub-Lattice Abyss.'},
+    {id:'citadel_spire', name:'CITADEL SPIRE', cat:'WORLD MONUMENT', zone:'Hub / Citadel', col:'#22d3ee', lore:'Helical lattice broadcast spire routing encrypted carrier packets between sectors.'},
+    {id:'clock_escapement', name:'CLOCK ESCAPEMENT', cat:'WORLD MONUMENT', zone:'6:12 Clocktower', col:'#fb923c', lore:'Twelve-tooth mechanical gear wheel frozen at 06:12:00 inside the Clocktower belfry.'},
+    {id:'mirror_obelisk', name:'MIRROR OBELISK', cat:'WORLD MONUMENT', zone:'Mirror Labyrinth', col:'#67e8f9', lore:'Octahedral phase-reflector prism standing in the center of the Mirror Labyrinth.'},
+    {id:'drone_rotor', name:'SURVEILLANCE DRONE', cat:'HOSTILE CHASSIS', zone:'Hub / Alley', col:'#f43f5e', lore:'Quad-rotor reconnaissance unit patrolling low-altitude alleys for unmasked operators.'},
+    {id:'sentinel_mech', name:'BASTION SENTINEL', cat:'HOSTILE CHASSIS', zone:'East Gate / Foundry', col:'#ef4444', lore:'Heavy bipedal riot-control chassis equipped with deployable packet firewalls.'},
+    {id:'worm_serpent', name:'LATTICE WORM', cat:'HOSTILE CHASSIS', zone:'Sub-Lattice Abyss', col:'#a78bfa', lore:'Nine-segment articulated tunnel borer that consumes corrupted cold-storage sectors.'},
+    {id:'mite_arachnid', name:'CRAWLER MITE', cat:'HOSTILE CHASSIS', zone:'Memory Trench', col:'#fb923c', lore:'Eight-legged packet scavenger swarming exposed fiber conduits.'},
+    {id:'phase_merkaba', name:'PHASE MERKABA', cat:'HOSTILE CHASSIS', zone:'Mirror Labyrinth', col:'#67e8f9', lore:'Interlocking star-tetrahedron anomaly capable of blinking across phase walls.'},
+    {id:'gunship_valkyrie', name:'VALKYRIE GUNSHIP', cat:'HOSTILE CHASSIS', zone:'Signal Spire', col:'#f43f5e', lore:'Twin-nacelle aerial strike craft guarding the upper Signal Spire catwalks.'}
+  ];
+  G.openMeshViewer=()=>{
+    let sel=0, yaw=0.4, pitch=0.28, zoomIdx=1, autoSpin=true;
+    const ZOOMS=[1.0,1.35,1.75];
+    G.mini={
+      name:'meshes',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(autoSpin) yaw+=dt*0.75;
+        if(took('up')){ sel=(sel+MESH_CATALOG.length-1)%MESH_CATALOG.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%MESH_CATALOG.length; sfx('move'); }
+        if(IN.held.has('left')) yaw-=dt*2.2;
+        if(IN.held.has('right')) yaw+=dt*2.2;
+        if(took('n1')) pitch=Math.max(-0.8,pitch-0.18);
+        if(took('n2')) pitch=Math.min(0.8,pitch+0.18);
+        if(took('party')){ zoomIdx=(zoomIdx+1)%ZOOMS.length; sfx('blip'); }
+        if(took('confirm')){ autoSpin=!autoSpin; sfx('confirm'); }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> BLENDER 3D WIREFRAME MESH INSPECTOR',56,40,P.GD,2);
+        UI.text(`MODELS: ${MESH_CATALOG.length}   SPIN: ${autoSpin?'AUTO':'MANUAL'}`,900,44,'#22d3ee',1,'right');
+        // Left list
+        const first=Math.max(0,Math.min(sel-5,MESH_CATALOG.length-11));
+        for(let idx=0;idx<11;idx++){
+          const i=first+idx; if(i>=MESH_CATALOG.length) break;
+          const m=MESH_CATALOG[i], yy=78+idx*36, on=i===sel;
+          UI.box(52,yy,276,32,on?P.GD:P.DDG,on?'rgba(245,184,46,.16)':'rgba(10,8,6,.85)');
+          UI.text((on?'> ':'  ')+m.name,62,yy+9,on?P.GD:P.BONE,1);
+          UI.text(m.cat.split(' ')[0],318,yy+9,m.col,1,'right');
+        }
+        // Right 3D turntable viewport
+        const cur=MESH_CATALOG[sel], pts=BLENDER_GEO[cur.id]||[];
+        UI.box(344,78,560,298,cur.col,'rgba(8,7,5,.96)');
+        // Compute bounding center & radius
+        let minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9,minZ=1e9,maxZ=-1e9;
+        for(let i=0;i<pts.length;i+=3){
+          const x=pts[i],y=pts[i+1],z=pts[i+2];
+          if(x<minX) minX=x; if(x>maxX) maxX=x;
+          if(y<minY) minY=y; if(y>maxY) maxY=y;
+          if(z<minZ) minZ=z; if(z>maxZ) maxZ=z;
+        }
+        const midX=(minX+maxX)/2, midY=(minY+maxY)/2, midZ=(minZ+maxZ)/2;
+        const span=Math.max(0.5,maxX-minX,maxY-minY,maxZ-minZ);
+        const sc=(185/span)*ZOOMS[zoomIdx];
+        const cx=624, cy=226;
+        const cyw=Math.cos(yaw), syw=Math.sin(yaw), cpt=Math.cos(pitch), spt=Math.sin(pitch);
+        const proj=(x,y,z)=>{
+          const dx=x-midX, dy=y-midY, dz=z-midZ;
+          const rx=dx*cyw-dz*syw, rz=dx*syw+dz*cyw;
+          const ry=dy*cpt-rz*spt, rz2=dy*spt+rz*cpt;
+          const persp=420/(420+rz2*0.35);
+          return [cx+rx*sc*persp, cy-ry*sc*persp, rz2];
+        };
+        X.save(); X.beginPath(); X.rect(346,80,556,294); X.clip();
+        // Turntable floor grid
+        X.strokeStyle='rgba(138,101,20,.22)'; X.lineWidth=1;
+        for(let g=-4;g<=4;g++){
+          const p1=proj(midX+g*span*.15,minY,midZ-span*.6), p2=proj(midX+g*span*.15,minY,midZ+span*.6);
+          X.beginPath(); X.moveTo(p1[0],p1[1]); X.lineTo(p2[0],p2[1]); X.stroke();
+        }
+        // Render 3D mesh segments
+        X.strokeStyle=cur.col; X.lineWidth=1.45;
+        X.beginPath();
+        for(let i=0;i<pts.length;i+=6){
+          const a=proj(pts[i],pts[i+1],pts[i+2]);
+          const b=proj(pts[i+3],pts[i+4],pts[i+5]);
+          X.moveTo(a[0],a[1]); X.lineTo(b[0],b[1]);
+        }
+        X.stroke();
+        X.restore();
+        UI.text(cur.name,360,90,P.GD,2);
+        UI.text(`EDGES: ${pts.length/6}  ·  VERTICES: ${pts.length/3}  ·  ZOOM: ${ZOOMS[zoomIdx]}x`,888,94,P.BONE,1,'right');
+        UI.text(`CLASS: ${cur.cat}   ·   SECTOR: ${cur.zone}   ·   SPAN: ${span.toFixed(1)}m`,360,352,'#22d3ee',1);
+        // Bottom lore & telemetry card
+        UI.box(344,386,560,88,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('STRUCTURAL SCHEMATIC & LORE:',360,398,P.GD,1);
+        UI.wrap(cur.lore,528,1).forEach((l,li)=>UI.text(l,360,418+li*18,P.BONE,1));
+        UI.text('[up/down] model   [left/right] rotate yaw   [1/2] pitch   [P] zoom   [enter] spin   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Companion Skill Loadout & Mastery Customizer (M64) ----
+  const MASTERY_SKILLS=Object.keys(SKILLS);
+  G.openSkillMastery=()=>{
+    let sel=0;
+    const rankOf=k=>(G.flags&&G.flags['skm_'+k])||0;
+    const costOf=r=>(r+1)*80;
+    G.mini={
+      name:'mastery',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+MASTERY_SKILLS.length-1)%MASTERY_SKILLS.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%MASTERY_SKILLS.length; sfx('move'); }
+        if(took('confirm')){
+          const k=MASTERY_SKILLS[sel], r=rankOf(k);
+          if(r>=3){ G.toast('> Skill already at MAX Mastery (+3)!',P.GD); sfx('cancel'); return; }
+          const cost=costOf(r);
+          if((G.bits||0)<cost){ G.toast(`> Need ${cost} Bits to upgrade Mastery!`,P.RED); sfx('cancel'); return; }
+          G.bits-=cost;
+          G.flags['skm_'+k]=r+1;
+          sfx('level');
+          G.toast(`> ${SKILLS[k].name.toUpperCase()} upgraded to Mastery +${r+1} (+${(r+1)*15}% Power)!`,P.GD);
+          if(r+1>=3) G.ach('skill_master');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> PROTOCOL SKILL MASTERY BENCH',56,40,P.GD,2);
+        const totalRanks=MASTERY_SKILLS.reduce((a,k)=>a+rankOf(k),0);
+        UI.text(`BITS: ${G.bits||0}   MASTERY RANKS: ${totalRanks}/${MASTERY_SKILLS.length*3}`,900,44,'#4ade80',1,'right');
+        // Left skill list
+        const first=Math.max(0,Math.min(sel-5,MASTERY_SKILLS.length-11));
+        for(let idx=0;idx<11;idx++){
+          const i=first+idx; if(i>=MASTERY_SKILLS.length) break;
+          const k=MASTERY_SKILLS[i], sk=SKILLS[k], r=rankOf(k), yy=78+idx*36, on=i===sel;
+          UI.box(52,yy,330,32,on?P.GD:(r>=3?'#4ade80':P.DDG),on?'rgba(245,184,46,.16)':'rgba(10,8,6,.85)');
+          UI.text((on?'> ':'  ')+sk.name.toUpperCase(),64,yy+9,on?P.GD:P.BONE,1);
+          const stars=r>0?'+'+r+' ['+'*'.repeat(r)+'.'.repeat(3-r)+']':'[0/3]';
+          UI.text(stars,372,yy+9,r>=3?'#4ade80':(r>0?P.GD:P.DG),1,'right');
+        }
+        // Right inspector & upgrade bench
+        const k=MASTERY_SKILLS[sel], sk=SKILLS[k], r=rankOf(k), mul=1+r*.15, nextMul=1+Math.min(3,r+1)*.15;
+        const owner=Object.keys(PARTY_BASE).find(id=>(PARTY_BASE[id].skills||[]).includes(k))||'me';
+        UI.box(402,78,502,396,P.GD,'rgba(10,8,6,.94)');
+        UI.text(sk.name.toUpperCase(),424,98,P.GD,2);
+        UI.text(`AGENT: ${PARTY_BASE[owner].name.toUpperCase()}   EN COST: ${sk.cost}   TARGET: ${sk.target.toUpperCase()}`,424,132,'#22d3ee',1);
+        UI.text(`CURRENT MASTERY: RANK +${r} / +3  (+${r*15}% OUTPUT)`,424,160,r>=3?'#4ade80':P.GD,1);
+        // Mastery bar
+        for(let b=0;b<3;b++){
+          UI.box(424+b*150,184,138,24,b<r?'#4ade80':P.DDG,b<r?'rgba(74,222,128,.2)':'rgba(8,7,5,.8)');
+          UI.text(`RANK +${b+1} (+${(b+1)*15}%)`,493+b*150,191,b<r?'#4ade80':P.DG,1,'center');
+        }
+        // Stat comparison
+        UI.box(424,224,458,108,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('PROTOCOL EFFECT & SCALING:',440,238,P.GD,1);
+        UI.wrap(sk.desc,426,1).forEach((l,li)=>UI.text(l,440,258+li*18,P.BONE,1));
+        if(sk.pow){
+          UI.text(`POWER MULTIPLIER: ${(sk.pow*mul).toFixed(2)}x`+(r<3?`  ->  ${(sk.pow*nextMul).toFixed(2)}x (Rank +${r+1})`:'  [MAX]'),440,302,'#4ade80',1);
+        } else if(sk.heal){
+          UI.text(`BASE HEAL: ${Math.round(sk.heal*mul)} HP`+(r<3?`  ->  ${Math.round(sk.heal*nextMul)} HP (Rank +${r+1})`:'  [MAX]'),440,302,'#4ade80',1);
+        } else {
+          UI.text(`TACTICAL UTILITY: RANK +${r} RESONANCE ACTIVE`,440,302,'#22d3ee',1);
+        }
+        // Upgrade button box
+        const cost=costOf(r);
+        UI.box(424,352,458,96,r>=3?'#4ade80':P.GD,'rgba(245,184,46,.1)');
+        if(r>=3){
+          UI.text('MASTERY RANK +3 COMPLETE (+45% MAX OUTPUT)',653,392,'#4ade80',1,'center');
+        } else {
+          UI.text(`[ENTER] UPGRADE TO MASTERY +${r+1}  (COST: ${cost} BITS)`,653,378,P.GD,1,'center');
+          UI.text('Permanently amplifies skill power & healing by +15% per rank in all battles.',653,408,P.BONE,1,'center');
+        }
+        UI.text('[up/down] select skill   [enter] upgrade mastery rank (+15% power)   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
