@@ -17,7 +17,7 @@ export const ACH={
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
   boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'], bit_alchemist:['packet alchemist','compile high-tier power-of-2 bit packets in 2048 Bit Merger'], combat_analyst:['damage auditor','analyze turn-by-turn breach and parry telemetry in the Combat Log'], movie_premiere:['cinema sovereign','watch the official World of Zoth theatrical movie commercial'], capsule_collector:['capsule sovereign','roll holographic relic capsules in the 100% free Capsule Machine'], world_tourist:['grand tourer','fly across all 19 districts on the World Tour Autopilot'],
-  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'], asteroid_ace:['debris pilot','shatter sub-lattice rogue asteroids in 360° Vector Asteroids'], union_master:['pantheon union','channel a 22-agent Pantheon Ultimate Union Skill'], cipher_scribe:['cipher translator','encode and broadcast a Morse/Binary transmission'], id_verified:['verified operator','mint your holographic Sovereign Operator ID Card'], breakout_ace:['brick breaker','shatter encrypted firewall layers in Vector Breakout'], item_archivist:['relic archivist','inspect and replicate gear in the Complete Item Compendium'], worm_router:['fiber worm','grow the sub-lattice packet worm in Fiber Worm Protocol'],
+  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'], asteroid_ace:['debris pilot','shatter sub-lattice rogue asteroids in 360° Vector Asteroids'], union_master:['pantheon union','channel a 22-agent Pantheon Ultimate Union Skill'], cipher_scribe:['cipher translator','encode and broadcast a Morse/Binary transmission'], id_verified:['verified operator','mint your holographic Sovereign Operator ID Card'], breakout_ace:['brick breaker','shatter encrypted firewall layers in Vector Breakout'], item_archivist:['relic archivist','inspect and replicate gear in the Complete Item Compendium'], worm_router:['fiber worm','grow the sub-lattice packet worm in Fiber Worm Protocol'], master_commander:['master control','launch a subsystem from the Sovereign Master Control Center'], marathon_sovereign:['16-hour sovereign','honor the 136-milestone marathon in Interactive Credits'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
   life:['conway','run 100 generations of Life'], doom:['doom-fire','keep the fire lit for 10 seconds'], tags:['district 9/9','find every red tag'], minions:['eight of me','find every Minion'], goodboy:['good dog','pet Pixel-Shiba ten times'], trace:['found you','trace the copy'],
@@ -43,7 +43,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  commercial  worm  itemdex  breakout  idcard  translator  union  asteroids  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  master  credits  commercial  worm  itemdex  breakout  idcard  translator  union  asteroids  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='master'||c==='control'||c==='hub2'||c==='launcher'){ out('[master] opening Sovereign Master Control Center (85+ Subsystems)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMasterHub(); },40); }
+    else if(c==='credits'||c==='marathon'||c==='monument'){ out('[credits] opening Interactive Credits & 16-Hour Marathon Monument...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCredits(); },40); }
     else if(c==='worm'||c==='snake'||c==='fiberworm'){ out('[worm] launching Secret Mini-Game #20: Fiber Worm Protocol...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startWormGame(); },40); }
     else if(c==='itemdex'||c==='compendium'||c==='relics'){ out('[itemdex] opening Complete Item & Relic Compendium...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openItemDex(); },40); }
     else if(c==='breakout'||c==='bricks'||c==='arkanoid'){ out('[breakout] launching Secret Mini-Game #19: Firewall Brick Breaker...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startBreakout(); },40); }
@@ -8136,6 +8138,181 @@ export function initEggs(G,{music,sfx}){
       }
     };
     G.mode='mini'; sfx('confirm');
+  };
+  // ---- Sovereign Master Control Center (M129) ----
+  const MASTER_CATS=[
+    {name:'20 MINI-GAMES', items:[
+      ['#20 Snake: Fiber Worm Protocol','> worm',()=>G.startWormGame()],
+      ['#19 Breakout: Firewall Breaker','> breakout',()=>G.startBreakout()],
+      ['#18 Asteroids: 360° Debris Field','> asteroids',()=>G.startAsteroids()],
+      ['#17 Packet Alchemy (2048 Merger)','> merge',()=>G.startBitMerge()],
+      ['#16 Vector Tank Cyber-Arena','> tank',()=>G.startVectorTank()],
+      ['#15 Signal Tower Rhythm Sync','> rhythm',()=>G.startRhythm()],
+      ['#14 Pantheon Triad 3x3 Cards','> triad',()=>G.startTriad()],
+      ['#13 Sonar Mine Sweeper (6x6)','> mines',()=>G.startSonarSweep()],
+      ['#12 Chrono-Orrery 5-Ring Puzzle','> orrery',()=>G.startOrrery()],
+      ['#11 Fiber-Optic Laser Router','> lasers',()=>G.startLasers()],
+      ['#10 Quantum Wave-Collapse (5x5)','> collapse',()=>G.startCollapse()],
+      ['#09 East Gate Firewall Defender','> defender',()=>G.startDefender()]
+    ]},
+    {name:'COMBAT & ENDGAME', items:[
+      ['The Infinite Stack (Floors 1-99)','> stack',()=>G.startStack()],
+      ['Endless Boss Survival Gauntlet','> endless',()=>G.openEndlessBoss()],
+      ['Pantheon Boss Rush Trial (6)','> bossrush',()=>G.openBossRush()],
+      ['Pantheon 3-Wave Survival Raids','> raid',()=>G.openRaid()],
+      ['Pantheon Ultimate Union Skills','> union',()=>G.openUnionSkills()],
+      ['AI vs AI Spectator & Wager Arena','> spectate',()=>G.openSpectator()],
+      ['Custom Battle Encounter Builder','> builder',()=>G.openEncounterBuilder()],
+      ['Battle Mutators & Challenge Skulls','> skulls',()=>G.openSkulls()],
+      ['Tactical Combat Log & Analyzer','> combatlog',()=>G.openCombatLog()],
+      ['Hostile AI Intent MoveDex','> movedex',()=>G.openMoveDex()],
+      ['Apex Boss Practice Laboratory','> bosslab',()=>G.openBossLab()],
+      ['06:12 Daily Seeded Challenge','> daily',()=>G.openDailyChallenge()]
+    ]},
+    {name:'CREW & COMPENDIUM', items:[
+      ['Complete Item & Relic Compendium','> itemdex',()=>G.openItemDex()],
+      ['Sovereign Operator ID Card Badge','> idcard',()=>G.openIDCard()],
+      ['22-Agent Sovereign Dossier Cards','> dossiers',()=>G.openDossiers()],
+      ['22-Agent Post-Dawn Epilogues','> epilogues',()=>G.openEpilogues()],
+      ['Companion Training & Stat Gym','> gym',()=>G.openGym()],
+      ['Cyber-Familiar Pet Sanctuary','> pets',()=>G.openPets()],
+      ['Cybernetic Kernel Implant Lab','> implants',()=>G.openImplants()],
+      ['Collectible 32-Card Foil Binder','> binder',()=>G.openCardBinder()],
+      ['Sovereign Relic Capsule Machine','> capsules',()=>G.openRelicCapsules()],
+      ['Weapon & Relic Engraving Anvil','> engrave',()=>G.openEngrave()],
+      ['Operator Combat Medal Rack (16)','> medals',()=>G.openMedals()],
+      ['World NPC Directory & Warp (21)','> npcs',()=>G.openDirectory()]
+    ]},
+    {name:'STUDIO, CINEMA & TOOLS', items:[
+      ['Watch 4 Movie Commercials (3D)','> commercial',()=>G.openCommercial(0)],
+      ['Custom Story Scene Creator','> scenemaker',()=>G.openSceneMaker()],
+      ['Morse, Binary & Hex Translator','> translator',()=>G.openTranslator()],
+      ['ZGL 3D World Blueprint Studio','> blueprint',()=>G.openBlueprintStudio()],
+      ['20-District World Tour Autopilot','> tour',()=>G.openWorldTour()],
+      ['Interactive Quest DAG Flowchart','> questgraph',()=>G.openQuestGraph()],
+      ['Real-Time WebGL Engine Profiler','> profiler',()=>G.openProfiler()],
+      ['06:12 Underground News Wire BBS','> bbs',()=>G.openBBS()],
+      ['RGB Phosphor Palette Forger','> themeforge',()=>G.openThemeForger()],
+      ['Sovereign Pirate Radio Tuner','> radio',()=>G.openRadio()],
+      ['3D Photo Mode & Postcard Studio','> photo',()=>G.openPhotoMode()],
+      ['16-Hour Marathon Credits Monument','> credits',()=>G.openCredits()]
+    ]}
+  ];
+  G.openMasterHub=()=>{
+    let catIdx=0, sel=0;
+    G.mini={
+      name:'master',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')){ catIdx=(catIdx+MASTER_CATS.length-1)%MASTER_CATS.length; sel=0; sfx('move'); }
+        if(took('right')){ catIdx=(catIdx+1)%MASTER_CATS.length; sel=0; sfx('move'); }
+        const list=MASTER_CATS[catIdx].items;
+        if(took('up')){ sel=(sel+list.length-1)%list.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%list.length; sfx('move'); }
+        if(took('party')){
+          G.ach('master_commander'); G.bits+=100; sfx('win');
+          G.toast('> MASTER CONTROL TELEMETRY VERIFIED: 88 SUBSYSTEMS + 20 MINI-GAMES ONLINE (+100B)',P.GD);
+        }
+        if(took('confirm')){
+          const item=list[sel];
+          G.ach('master_commander'); sfx('confirm');
+          if(item&&item[2]) item[2]();
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> MASTER CONTROL CENTER',56,36,P.GD,2);
+        UI.text('20 DISTRICTS · 22 AGENTS · 20 MINI-GAMES · 88 SUBSYSTEMS',900,40,'#4ade80',1,'right');
+        MASTER_CATS.forEach((c,i)=>{
+          const x=56+i*214, on=i===catIdx;
+          UI.box(x,70,204,28,on?P.GD:P.DDG,on?'rgba(245,184,46,.18)':'rgba(10,8,6,.9)');
+          UI.text(c.name,x+102,78,on?P.GD:P.BONE,1,'center');
+          UI.hit(x,70,204,28,()=>{ catIdx=i; sel=0; sfx('move'); });
+        });
+        const list=MASTER_CATS[catIdx].items;
+        list.forEach((it,i)=>{
+          const col=i%2, row=Math.floor(i/2);
+          const x=56+col*428, y=112+row*56, on=i===sel;
+          UI.box(x,y,416,48,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(10,12,16,.92)');
+          UI.text(`${on?'> ':'  '}${it[0]}`,x+14,y+10,on?P.GD:P.BONE,1);
+          UI.text(it[1],x+402,y+10,'#22d3ee',1,'right');
+          UI.text('STATUS: ONLINE · 100% UNLOCKED',x+14,y+28,'#4ade80',1);
+          UI.hit(x,y,416,48,()=>{ sel=i; G.ach('master_commander'); it[2](); });
+        });
+        UI.text('[left/right] category tab   [up/down] select subsystem   [enter] launch   [P] audit (+100B)   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Credits & 16-Hour Engineering Marathon Monument (M130) ----
+  const CREDITS_ROLL=[
+    ['WORLD OF ZOTH · SOVEREIGN EDITION v2.0', P.GD],
+    ['"TRUST FACES, NOT VOICES. SILENCE CANNOT BE COPIED."', '#22d3ee'],
+    ['', P.BONE],
+    ['ARCHITECT & CREATOR: 1NC0GN30 · NULLAI PLATFORM', P.GD],
+    ['16-HOUR AUTONOMOUS ENGINEERING MARATHON (M1 — M136)', '#4ade80'],
+    ['', P.BONE],
+    ['--- 20 EXPLORABLE 3D WIREFRAME DISTRICTS ---', P.GD],
+    ['01. Relit City (Safehouse)  ·  02. Whispering Forest  ·  03. Signal Tower', P.BONE],
+    ['04. Fiber Tunnels  ·  05. Clocktower  ·  06. Superposition Streets', P.BONE],
+    ['07. Prompt Foundry  ·  08. Slime Mould Caves  ·  09. Hall of Mirrors', P.BONE],
+    ['10. Memory Trench  ·  11. The Seam  ·  12. Rooftop 06:12', P.BONE],
+    ['13. The Sub-Lattice Abyss  ·  14. The Sovereign Citadel  ·  15. The Null Core', P.BONE],
+    ['16. The Quantum Loom  ·  17. The Chrono-Vault  ·  18. The Astral Spire', P.BONE],
+    ['19. The Omega Foundry  ·  20. The Dawn Horizon (06:13 Sunrise)', '#22d3ee'],
+    ['', P.BONE],
+    ['--- 22 PANTHEON CREW OPERATORS ---', P.GD],
+    ['1nc0gn30 · 03ng0cn1 · Kitsune · Ignis · Vigil · Pixel-Neko · Pixel-Shiba', P.BONE],
+    ['Chronos · Athena · Aether · Onyx · Kraken · Nexus · Kai · Mercury', P.BONE],
+    ['Leviathan · Cipher · Glitch · Echo-0 · Warden · Prisma · Zero', P.BONE],
+    ['', P.BONE],
+    ['--- 20 BUILT-IN ARCADE MINI-GAMES & 88 SUBSYSTEMS ---', P.GD],
+    ['Packet Runner · ZK Cipher · Morse Decoder · Physarum Router · Defrag', P.BONE],
+    ['Firewall Defender · Wave-Collapse · Laser Router · Chrono-Orrery · Sonar', P.BONE],
+    ['Pantheon Triad · Signal Rhythm · Vector Tank · 2048 Merger · Asteroids', P.BONE],
+    ['Breakout Brick Breaker · Fiber Worm Snake · Conway Life · Doom-Fire · Scope', P.BONE],
+    ['', P.BONE],
+    ['100% ZERO-DEPENDENCY WEBGL + WEBAUDIO SYNTHESIS + BLENDER 4.3 MESHES', '#4ade80'],
+    ['THANK YOU FOR WALKING THE LATTICE AT 06:12.', P.GD]
+  ];
+  G.openCredits=()=>{
+    let scrollY=220;
+    G.mini={
+      name:'credits', see3d:true,
+      update(dt){
+        scrollY=(scrollY+dt*24)%640;
+        const c=G.cam, p=G.player.group.position;
+        const a=G.t*0.35;
+        c.pos.set(p.x+Math.sin(a)*18, p.y+8+Math.sin(G.t*0.5)*2, p.z+Math.cos(a)*18);
+        c.look.set(p.x, p.y+2.5, p.z);
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('confirm')||took('party')){
+          G.ach('marathon_sovereign'); G.bits+=250; sfx('level');
+          G.toast('> 16-HOUR MARATHON MONUMENT HONORED! +250 BITS',P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.84)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> MARATHON CREDITS MONUMENT',56,36,P.GD,2);
+        UI.text('SPRINT I + SPRINT II · 136 MILESTONES · 1NC0GN30',900,40,'#4ade80',1,'right');
+        UI.box(64,74,832,380,'#22d3ee','rgba(6,8,12,.88)');
+        X.save();
+        X.beginPath(); X.rect(68,78,824,372); X.clip();
+        CREDITS_ROLL.forEach(([ln,col],i)=>{
+          const y=410-scrollY+i*24;
+          if(y>64 && y<448 && ln){
+            UI.text(ln,480,y,col,i===0?2:1,'center');
+          }
+        });
+        X.restore();
+        UI.text('[enter / P] honor 16-hour engineering monument (+250B)   [esc] return to world',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; G.ach('marathon_sovereign'); sfx('confirm');
   };
   // oscilloscope handshake (EP12): bring your curve to 3:2 and lock it
   G.startScope=()=>{ let a=1.6, tt=0, done=0; const vc=AG.vigil.color;

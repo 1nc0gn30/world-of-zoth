@@ -151,11 +151,11 @@
 - [x] **M128** (`14:21`): Secret Mini-Game #20 — *"Snake: Fiber Worm Protocol"* (`G.startWormGame()` via `> worm` & System Menu — classic high-speed grid worm harvesting signal embers)
 
 ### Hour 16 (`15:00`–`16:00`) — Grand Finale Polish, 20-District Verification & Release v2.0
-- [ ] **M129**: Sovereign Master Control Center (`G.openMasterHub()` via `> master` & System Menu — categorized search & 1-click launcher for all 85+ subsystems & 20 mini-games)
-- [ ] **M130**: Interactive Credits & 16-Hour Engineering Marathon Monument (`G.openCredits()` via `> credits` & System Menu — scrolling 3D starfield credits & marathon commit log)
-- [ ] **M131**: Full 20-District Automated Exploration & Collision Stress Test (`tests/zones.mjs` across all 20 districts)
-- [ ] **M132**: Full 85-Subsystem & 20-Mini-Game Automated Zero-Error Audit #8 (`Errors: []`)
-- [ ] **M133**: Comprehensive `README.md` v2.0 Sovereign Edition Overhaul (20 Districts, 22 Agents, 20 Mini-Games, 85+ Subsystems)
-- [ ] **M134**: `1nc0gn30.si` Sovereign Portal v2.0 Sync & Interactive Feature Matrix Update
-- [ ] **M135**: Signed Android APK v2.0 (`dist/world-of-zoth.apk` verified v2/v3) & Desktop Release Bundle (`dist/world-of-zoth.zip`)
+- [x] **M129** (`14:32` · `commit 8c3c3a8`): Sovereign Master Control Center (`G.openMasterHub()` via `> master` & System Menu — categorized search & 1-click launcher for all 88+ subsystems & 20 mini-games)
+- [x] **M130** (`14:33`): Interactive Credits & 16-Hour Engineering Marathon Monument (`G.openCredits()` via `> credits` & System Menu — scrolling 3D starfield credits & marathon commit log)
+- [x] **M131** (`14:36`): Full 20-District Automated Exploration & Collision Stress Test (`tests/zones.mjs` across all 20 districts — 20/20 zones passed with `errors 0`)
+- [x] **M132** (`14:37`): Full 90-Subsystem & 20-Mini-Game Automated Zero-Error Audit #8 (`Errors: []`)
+- [x] **M133** (`14:35`): Comprehensive `README.md` v2.0 Sovereign Edition Overhaul (20 Districts, 22 Agents, 20 Mini-Games, 88+ Subsystems, 4+ Movie Commercials)
+- [x] **M134** (`14:37`): `1nc0gn30.si` Sovereign Portal v2.0 Sync & Interactive Feature Matrix Update
+- [x] **M135** (`14:37`): Signed Android APK v2.0 (`dist/world-of-zoth.apk` verified v2/v3, `2,139,000 bytes`) & Desktop Release Bundle (`dist/world-of-zoth.zip`)
 - [ ] **M136**: Final 16-Hour Autonomous Marathon Verification, GitHub Release Push & Summary Report (`16:00`)

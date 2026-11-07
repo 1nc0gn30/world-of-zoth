@@ -4,7 +4,7 @@ import { Bot } from './bot.mjs';
 const {browser,page,errors}=await open(); const b=new Bot(page);
 await b.tap('Enter',5); await b.step(5);
 await page.evaluate(()=>{ G.D=null; G.mode='explore'; });
-const zones=process.argv[2]?process.argv[2].split(','):['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','rooftop'];
+const zones=process.argv[2]?process.argv[2].split(','):['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','loom','vault','astral','omega','horizon','rooftop'];
 for(const z of zones){
   await page.evaluate(z=>{ const Z=G.Z[z]; WOZ.warp(z,Z.spawn.x,Z.spawn.z); G.banner=null; },z); await b.step(40);
   const t0=Date.now(); await b.step(10); const ms=(Date.now()-t0)/10;

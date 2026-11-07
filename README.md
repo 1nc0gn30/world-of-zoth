@@ -1,10 +1,11 @@
 <div align="center">
 
 # ⚡ WORLD OF ZOTH
-### A 3D Lattice Cyber-RPG · The Sovereign 1nc0gn30 Saga
+### A 3D Lattice Cyber-RPG · The Sovereign 1nc0gn30 Saga (v2.0 Sovereign Edition)
 
-[![Version](https://img.shields.io/badge/version-v1.2_sovereign_director's_cut-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
-[![Districts](https://img.shields.io/badge/districts-15_playable_3d_worlds-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
+[![Version](https://img.shields.io/badge/version-v2.0_sovereign_edition-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
+[![Districts](https://img.shields.io/badge/districts-20_playable_3d_worlds-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
+[![Mini-Games](https://img.shields.io/badge/mini--games-20_built--in_arcade_games-f97316?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Platform](https://img.shields.io/badge/platform-browser_%7C_android_apk-00f0ff?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Offline](https://img.shields.io/badge/network-100%25_offline_zero_cdn-a855f7?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![License](https://img.shields.io/badge/license-100%25_free_%26_unlocked-ec4899?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
@@ -19,28 +20,30 @@
 
 <br/>
 
-**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 60fps Motion Edit (`assets/world-of-zoth-trailer.mp4`)](assets/world-of-zoth-trailer.mp4)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ Design Specs](DESIGN.md)**
+**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 4-Episode Movie Commercial Series (`commercial.html`)](commercial.html)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ 16-Hour Marathon Log (`MARATHON_8HR_LOG.md`)](MARATHON_8HR_LOG.md)**
 
 </div>
 
 ---
 
-## 🎬 Official 60fps 1080p Beat-Synced Motion Edit & v0.4 Story Integration
+## 🏆 v2.0 Sovereign Edition — 16-Hour Autonomous Engineering Marathon (`M1`–`M136`)
 
-The **140 BPM Dark-Phonk / Cyber-Synth Motion Edit** (`assets/world-of-zoth-trailer.mp4`, mastered to `-13.47 LUFS` / `-3.87 dBTP` across 25 real in-engine WebGL captures) and the **v0.4 5-Act Story & 22-Crew Edition** are now live:
+Engineered across a **16-Hour Autonomous Marathon (136 Verified Milestones)**, **World of Zoth v2.0 Sovereign Edition** expands the zero-dependency 3D WebGL + WebAudio cyber-RPG into a self-contained sovereign universe:
 
-- **📖 Interactive 6-Act Master Story Codex (`[Menu > Story]`)**: Full playable lore archive for Acts I–VI (`q1`–`q21`), live mission completion checklists, and one-click Act Cinematic playback.
-- **🌐 15 Playable 3D Lattice Districts**: Expanded with **District #13: Sub-Lattice Abyss** (`abyss`), **District #14: Zero-Knowledge Citadel** (`citadel`), and **District #15: The Null Core** (`nullcore` — 4D Clifford hyper-torus singularity generated via headless Blender 4.3).
-- **🩸 Playable Crew #22 (`03ng0cn1` — The Red Copy) & 9 Loyalty Relic Quests**: Reconstruct `03ng0cn1` at the Hall of Mirrors rosette and complete all 22 companion loyalty missions for 10 Mythic Relics (`sovereign.edge`, `singularity.halo`, `citadel.crown`, `seraph.mantle`, `abyssal.trident`, `obsidian.prism`, `fenrir.fang`, `owl.spear`, `ocular.aegis`, `static.katana`).
-- **⚡ Tactical Combat v2 — 5 Protocol Affinities, Overdrive Surge & AI Tactics (`[P]`)**: Every agent and enemy carries a Protocol Affinity (`KERNEL`, `CRYPTO`, `THERMAL`, `TEMPORAL`, `VOID`) granting `1.35x` Breach damage, `100% Overdrive Surge` (`od_surge`), and on-the-fly `[P]` Companion AI Battle Tactics (`MANUAL`, `COMPANION: BREACH`, `COMPANION: SUPPORT`, `FULL SQUAD: AUTO`).
-- **🗼 Endgame Modes (`> stack`, `> bossrush`, `> bounty`, `> daily`, `> reforge`)**:
-  - **The Infinite Stack (`> stack`)**: 99-floor procedural rogue-lite gauntlet with 5 rotating floor mutators.
-  - **Pantheon Trial Boss Rush (`> bossrush`)**: 6-stage sequential boss arena culminating in `ARCHON-0` (`4,800 HP`).
-  - **06:12 Daily Seeded Lattice (`> daily`)**: Deterministic daily seed, anomaly wave, and mutator contract.
-  - **Sub-Lattice Elite Bounties (`> bounty`)**: 10 named district contracts with 1-click intercept or 3D Golden Trail GPS lock.
-  - **Gear Overclocking Bench (`> reforge`)**: Upgrade any weapon or shell from `+1` to `+5` (`+20%` to `+100%` stats).
-  - **16 Null Academy AI-Security & ZK Labs**: Interactive cyber-range covering prompt injection, RAG poisoning, timing side-channels, and zero-knowledge proofs.
-  - **20 WebAudio Stems + 3D Photo Mode (`> photo`) + 5 CRT Phosphor Themes (`> theme`) + 3-Slot Base64 Save Manager (`> saves`)**.
+- **🎬 4-Episode 1080p Theatrical Movie Commercial Series (`commercial.html` & `> commercial 1..4`)**:
+  - **Episode I**: *"06:12 — Faces, Not Voices"* (`dist/world-of-zoth-commercial.mp4`)
+  - **Episode II**: *"Midnight at the Safehouse"* (`dist/world-of-zoth-ep2-crew.mp4`)
+  - **Episode III**: *"99 Floors of Fury"* (`dist/world-of-zoth-ep3-combat.mp4`)
+  - **Episode IV**: *"Behind the Wireframe — Secrets of 06:13"* (`dist/world-of-zoth-ep4-secrets.mp4`)
+- **🧱 Procedural 3D Architectural, Terrain & Sprite Shaders (`src/render.js`, `src/geo.js`)**:
+  - Real-time 3D world-space concrete & anodized metal facade textures, recessed floor slabs, vertical rain streaks, interior parallax lit windows, subdivided wet cyber-asphalt ground meshes with glowing sub-surface circuit traces, and 14-step high-definition Bayer dithering.
+- **⚡ Live Game Speed & Turbo Multiplier (`[V]` Key — `1.0x / 1.5x / 2.0x`)**:
+  - Snappier base movement (`6.8 / 11.5`), faster Dissipate Dash (`21` speed, `0.9s` cooldown), WebGL frustum culling, and an instant `[V]` key toggle between `1.0x STANDARD`, `1.5x TURBO`, and `2.0x HYPER-CLOCK`.
+- **🌐 20 Playable 3D Lattice Districts & 22 Blender 4.3 Procedural Wireframe Monuments**:
+  - Includes **District #16: The Quantum Loom (`loom`)**, **District #17: The Chrono-Vault (`vault`)**, **District #18: The Astral Spire (`astral`)**, **District #19: The Omega Foundry (`omega`)**, and **District #20: The Dawn Horizon (`horizon`)**.
+- **🕹️ 20 Built-In Arcade Mini-Games & 88 Sovereign Subsystems (`> master`)**:
+  - Access every subsystem and mini-game from the **Sovereign Master Control Center (`> master`)** or the **`[Tab]` 12-Node Radial Command Wheel (`> wheel`)**:
+  - **Mini-Games #1–#20**: *Conway's Game of Life*, *Doom-Fire Crucible*, *Oscilloscope 3:2 Handshake*, *3D Hilbert Packet Runner* (`> runner`), *4x4 ZK Cipher Grid* (`> cipher`), *Signal Frequency & Morse Decoder* (`> decoder`), *Physarum Slime Mould Router* (`> router`), *Memory Core-Dump Defragmenter* (`> defrag`), *East Gate Firewall Defender* (`> defender`), *5x5 Quantum Wave-Collapse* (`> collapse`), *6x6 Fiber-Optic Laser Router* (`> lasers`), *5-Ring Chrono-Orrery Puzzle* (`> orrery`), *Sub-Lattice Sonar Mine Sweeper* (`> mines`), *Pantheon Triad 3x3 Card Battler* (`> triad`), *Signal Tower 4-Track Rhythm Sync* (`> rhythm`), *Vector Tank Cyber-Arena* (`> tank`), *Packet Alchemy / 2048 Bit Merger* (`> merge`), *360° Vector Asteroids* (`> asteroids`), *Breakout: Firewall Brick Breaker* (`> breakout`), and *Snake: Fiber Worm Protocol* (`> worm`).
 
 <div align="center">
 <img src="assets/motion_edit_contact_sheet.jpg" alt="World of Zoth 60fps 1080p Motion Edit Contact Sheet" width="100%"/>
@@ -172,7 +175,7 @@ Boss: >_ (The Blank Cursor)     Boss: THE HUNTER (Firewall Eye)
 
 ---
 
-## 🌐 The 15 Playable 3D Lattice Districts
+## 🌐 The 20 Playable 3D Lattice Districts
 
 <div align="center">
 <img src="assets/gameplay-loop.gif" alt="World of Zoth Zone Exploration Tour" width="100%" style="border-radius: 12px; border: 1px solid rgba(251, 191, 36, 0.3);"/>
@@ -193,6 +196,11 @@ Boss: >_ (The Blank Cursor)     Boss: THE HUNTER (Firewall Eye)
 13. **Zero-Knowledge Citadel (`citadel`)**: Gothic-cybernetic Pantheon Sanctum, `ARCHON-0` (`4,800 HP`), Infinite Stack, and Boss Rush Arena.
 14. **The Null Core (`nullcore`)**: Post-Citadel 4D Clifford hyper-torus Memory Singularity (`06:13`) and Daily Seeded Lattice hub.
 15. **★ Secret Sector — The Rooftop (`rooftop`)**: Unlocked via hidden terminal (`tomorrow 06:12`); overlooks the rising Braille sun.
+16. **The Quantum Loom (`loom`)**: 16th District featuring the Blender 4.3 `quantum_loom` spire, 5x5 Quantum Wave-Collapse, Protocol Resonance Matrix, and 6x6 Fiber-Optic Laser Router.
+17. **The Chrono-Vault (`vault`)**: 17th District housing the Blender 4.3 `chrono_vault_orrery`, 5-Ring Chrono-Orrery Puzzle, Cyber-Familiar Pet Sanctuary, and Cutscene Theater.
+18. **The Astral Spire (`astral`)**: 18th District crowned by the Blender 4.3 `astral_spire_crown`, Pantheon Triad 3x3 Card Table, M100 Sovereign Hall of Fame, and Signal Tower Rhythm Sync.
+19. **The Omega Foundry (`omega`)**: 19th District forged around the Blender 4.3 `omega_core`, ZGL 3D World Blueprint Studio, Endless Boss Survival Gauntlet, and Vector Tank Cyber-Arena.
+20. **The Dawn Horizon (`horizon`)**: 20th Milestone District anchored by the Blender 4.3 `dawn_horizon_gate`, 360° Vector Asteroids, Custom Story Scene Creator, and the 4-Episode Movie Commercial Cinema.
 
 ---
 
