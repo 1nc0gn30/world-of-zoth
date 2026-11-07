@@ -11,7 +11,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -36,7 +36,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='formation'||c==='stances'){ out('[formation] opening Tactical Squad Formation & Row Synergy...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openFormation(); },40); }
+    else if(c==='decoder'||c==='morse'){ out('[decoder] launching Signal Frequency Lock & Morse Decoder...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startDecoder(); },40); }
     else if(c==='dossiers'||c==='agents'||c==='crew'){ out('[dossiers] opening 22-Agent Sovereign Dossier Archive...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDossiers(); },40); }
     else if(c==='splits'||c==='speedrun'){ out('[splits] opening Act I-VI Speedrun Split Tracker...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSplits(); },40); }
     else if(c==='runner'){ out('[runner] launching 3D Hilbert Packet Runner...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRunner(); },40); }
@@ -1295,6 +1297,125 @@ export function initEggs(G,{music,sfx}){
         UI.text('VERIFIED VOICEPRINT QUOTE:',380,382,P.DG,1);
         UI.wrap(`"${quote}"`,450,1).slice(0,2).forEach((l,li)=>UI.text(l,380,404+li*18,P.BONE,1));
         UI.text('[up/down/left/right] browse 22 agents   [esc] close',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #6: "Signal Frequency Lock / Morse Decoder" (M47) ----
+  const CARRIERS=[
+    {id:1, name:'CHANNEL 01 · RELIT RELAY', freq:432, phase:3, morse:'... --- ... / 06:12 FACE VERIFIED', reward:120},
+    {id:2, name:'CHANNEL 02 · SUB-LATTICE', freq:528, phase:5, morse:'-... .-. . .- -.- / THE THREE ZK SEALS', reward:150},
+    {id:3, name:'CHANNEL 03 · MIRROR SEAM', freq:613, phase:2, morse:'..--- ..--- / TWENTY TWO FACES ONE ANSWER', reward:180},
+    {id:4, name:'CHANNEL 04 · NULL CORE',   freq:963, phase:7, morse:'--- -.- / CLIFFORD SINGULARITY MERGED', reward:250}
+  ];
+  G.startDecoder=()=>{
+    let sel=0, uFreq=400, uPhase=1;
+    G.mini={
+      name:'decoder',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+CARRIERS.length-1)%CARRIERS.length;
+        if(took('down')) sel=(sel+1)%CARRIERS.length;
+        if(took('left')) uFreq=Math.max(300,uFreq-12);
+        if(took('right')) uFreq=Math.min(1020,uFreq+12);
+        if(took('party')){ uPhase=(uPhase%8)+1; sfx('blip'); }
+        if(took('confirm')){
+          const c=CARRIERS[sel];
+          if(Math.abs(uFreq-c.freq)<=18 && uPhase===c.phase){
+            sfx('win');
+            if(!G.flags['dec_'+c.id]){
+              G.flags['dec_'+c.id]=1; G.bits+=c.reward;
+              G.toast(`> LOCKED ${c.name}! (+${c.reward} bits)`,P.GD);
+              if(CARRIERS.every(x=>G.flags['dec_'+x.id])) G.ach('sig_decoder');
+            } else G.toast(`> CARRIER VERIFIED: ${c.morse}`,'#22d3ee');
+          } else {
+            // Snap closer as tuning assist
+            uFreq=c.freq; uPhase=c.phase; sfx('blip');
+            G.toast('> Auto-aligned harmonic carrier! Press [Enter] to lock.',P.GD);
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        const clr=CARRIERS.filter(c=>G.flags['dec_'+c.id]).length;
+        UI.text('> SIGNAL FREQUENCY & MORSE DECODER',106,48,P.GD,2);
+        UI.text(`CHANNELS DECODED: ${clr}/4`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        CARRIERS.forEach((c,i)=>{
+          const y=94+i*42, on=i===sel, ok=!!G.flags['dec_'+c.id];
+          UI.box(104,y-4,310,34,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${ok?'[LOCK] ':'[SCAN] '}${c.name}`,112,y+6,ok?P.GD:(on?P.BONE:P.DG),1);
+          UI.hit(104,y-4,310,34,()=>{ sel=i; });
+        });
+        const cur=CARRIERS[sel], match=Math.abs(uFreq-cur.freq)<=18&&uPhase===cur.phase;
+        UI.box(430,90,426,256,match?P.GD:P.DDG,'rgba(10,8,6,.95)');
+        UI.text(`TARGET: ${cur.freq} Hz · PHASE ${cur.phase}     YOUR TUNER: ${uFreq} Hz · PHASE ${uPhase}`,446,106,match?'#4ade80':'#22d3ee',1);
+        // Dual sine wave oscilloscope
+        X.strokeStyle='rgba(34,211,238,.55)'; X.lineWidth=2; X.beginPath();
+        for(let x=0;x<390;x++){
+          const y=218+Math.sin(x*0.03*(cur.freq/400)+t*3*cur.phase)*48;
+          if(x===0) X.moveTo(448+x,y); else X.lineTo(448+x,y);
+        }
+        X.stroke();
+        X.strokeStyle=match?'#4ade80':P.GD; X.lineWidth=2; X.beginPath();
+        for(let x=0;x<390;x++){
+          const y=218+Math.sin(x*0.03*(uFreq/400)+t*3*uPhase)*48;
+          if(x===0) X.moveTo(448+x,y); else X.lineTo(448+x,y);
+        }
+        X.stroke();
+        UI.box(104,360,752,102,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('DECODED MORSE PAYLOAD:',122,376,P.GD,1);
+        UI.text(match||G.flags['dec_'+cur.id]?cur.morse:'[CARRIER OUT OF PHASE — TUNE FREQUENCY OR PRESS ENTER TO AUTO-ALIGN]',122,402,match||G.flags['dec_'+cur.id]?'#4ade80':P.BONE,1);
+        UI.text(`Bounty Reward: +${cur.reward} bits on first carrier lock`,122,430,'#22d3ee',1);
+        UI.text('[up/down] channel   [left/right] tune Hz   [P] cycle phase   [enter] lock/align   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Tactical Squad Formation & Row Synergy System (M48) ----
+  const STANCES=[
+    {id:0, name:'VANGUARD STRIKE', col:'#f5b82e', bonus:'+15% ATK · +1 SPD', desc:'Frontline breach posture. Maximizes physical & protocol burst damage.'},
+    {id:1, name:'TACTICAL OVERCLOCK', col:'#22d3ee', bonus:'+20% MAX EN · +2 SPD', desc:'Mid-row harmonic posture. Accelerates turn order and energy pool.'},
+    {id:2, name:'SENTINEL BASTION', col:'#4ade80', bonus:'+25% DEF · +15% MAX HP', desc:'Anchor bulwark posture. Fortifies hull integrity against boss wipes.'}
+  ];
+  G.openFormation=()=>{
+    let sel=0;
+    const squad=()=>G.active();
+    G.mini={
+      name:'formation',
+      update(){
+        const S=squad();
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+S.length-1)%S.length;
+        if(took('down')) sel=(sel+1)%S.length;
+        if(took('left')||took('right')||took('confirm')){
+          const id=S[sel], dir=took('left')?2:1;
+          G.flags['stance_'+id]=(((G.flags['stance_'+id]||0)+dir)%3);
+          const st=G.stats(id); G.party[id].hp=Math.min(G.party[id].hp,st.mhp); G.party[id].en=Math.min(G.party[id].en,st.men);
+          sfx('confirm'); G.toast(`> ${AG[id].name} -> ${STANCES[G.flags['stance_'+id]].name}`,P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> SQUAD FORMATION & STANCES',106,48,P.GD,2);
+        UI.text('ROW SYNERGY ACTIVE IN ALL BATTLES',854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        const S=squad();
+        S.forEach((id,i)=>{
+          const y=96+i*108, on=i===sel, stIdx=(G.flags['stance_'+id]||0), stObj=STANCES[stIdx], st=G.stats(id);
+          UI.box(106,y,748,94,on?P.GD:P.DDG,on?'rgba(245,184,46,.12)':'rgba(10,8,6,.88)');
+          UI.text(`${on?'> ':'  '}SLOT 0${i+1} · ${AG[id].name.toUpperCase()} (LVL ${G.party[id].lvl})`,124,y+12,AG[id].color,2);
+          UI.box(540,y+10,294,28,stObj.col,'rgba(6,5,4,.9)');
+          UI.text(`[${stObj.name}]`,687,y+17,stObj.col,1,'center');
+          UI.text(`Active Bonus: ${stObj.bonus}`,128,y+44,stObj.col,1);
+          UI.text(`Live Stats: HP ${st.mhp}  ·  EN ${st.men}  ·  ATK ${st.atk}  ·  DEF ${st.def}  ·  SPD ${st.spd}`,128,y+66,P.BONE,1);
+          UI.hit(106,y,748,94,()=>{ sel=i; G.flags['stance_'+id]=((G.flags['stance_'+id]||0)+1)%3; sfx('confirm'); });
+        });
+        UI.box(106,424,748,40,P.DDG,'rgba(12,10,8,.92)');
+        UI.text(STANCES[G.flags['stance_'+S[sel]]||0].desc,480,438,P.BONE,1,'center');
+        UI.text('[up/down] select squad slot   [enter / left / right] cycle tactical stance   [esc] close',480,482,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
