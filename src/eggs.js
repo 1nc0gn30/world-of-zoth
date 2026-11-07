@@ -8,7 +8,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -33,7 +33,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  bounty  warp <zone>  whoami  crew  life  doom  trace 03ng0cn1  exit');
+    if(c==='help') out('nmap  ping  patch  bounty  stack  warp <zone>  whoami  crew  life  doom  exit');
+    else if(c==='stack'){ out('[stack] opening The Infinite Stack (floors 1-99)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startStack(); },40); }
     else if(c==='nmap'){
       const z=G.zone; const fn=(G.foes||[]).filter(f=>f.alive).length, nn=(G.npcs||[]).length, pn=(z.portals||[]).length;
       G.scanT=45; G.trailOn=true; sfx('blip');
@@ -76,7 +77,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','bounty','warp','whoami','crew','life','doom','trace 03ng0cn1','tomorrow 06:12','exit'];
+  const CHIPS=['help','nmap','ping','patch','bounty','stack','warp','whoami','crew','life','doom','trace 03ng0cn1','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -102,6 +103,88 @@ export function initEggs(G,{music,sfx}){
         UI.box(10,500,460,30); UI.text('> doom-fire   [up] stoke  [down] smother  [x] exit',20,509,P.BONE); } };
     G.mode='mini'; sfx('confirm'); }
   G.startLife=startLife; G.startDoom=startDoom;
+  // ---- The Infinite Stack (Procedural Rogue-Lite Dungeon Mode: Floors 1-99) ----
+  const MUTATORS=[
+    ['OVERCLOCK','+35% starting Overdrive gauge & +10 EN on entry'],
+    ['HYPER-CHAIN','Begin encounter at +2 Sync Chain multiplier'],
+    ['CRYO-LATTICE','Enemy defenses reduced; Thermal/Crypto breach bonus'],
+    ['QUANTUM BOUNTY','+50% bit & XP payout on floor completion'],
+    ['BOSS ANOMALY','Sovereign Apex Guardian blocks every 5th floor']
+  ];
+  function stackWave(fl){
+    if(fl%5===0){
+      const bosses=[['copy','echo','echo'],['sandglass','wisp','wisp'],['hunter','hound','hound'],['relay4','node','node'],['archon','cursorling','cursorling']];
+      return bosses[Math.min(bosses.length-1,Math.floor(fl/5)-1)];
+    }
+    const tiers=[
+      ['drone','mite','drone'],['echo','worm','drone'],['sentinel','wisp','mite'],
+      ['phase','slag','slime'],['gunship','eel','sentinel'],['warden','hound','phase'],
+      ['cursorling','warden','gunship'],['cursorling','cursorling','warden']
+    ];
+    return tiers[Math.min(tiers.length-1,Math.floor((fl-1)/3))];
+  }
+  G.startStack=()=>{
+    let sel=0;
+    G.mini={
+      name:'stack',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')||took('left')){ sel=(sel+2)%3; sfx('move'); }
+        if(took('down')||took('right')){ sel=(sel+1)%3; sfx('move'); }
+        if(took('confirm')) act(sel);
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.92)'; X.fillRect(0,0,960,540);
+        const bx=150, by=54, bw=660, bh=432; UI.box(bx,by,bw,bh,P.GD,'rgba(8,7,5,.96)');
+        const best=G.flags.stack_floor||0, fl=Math.min(99,best+1);
+        const mut=MUTATORS[(fl%5===0)?4:(fl%4)];
+        const wave=stackWave(fl), lvl=4+fl*2, isBoss=fl%5===0;
+        UI.text('> THE INFINITE STACK',bx+22,by+18,P.GD,2);
+        UI.text(`ROGUE-LITE GAUNTLET  ·  MAX FLOOR: ${best}/99`,bx+bw-22,by+22,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(bx+18,by+48,bw-36,2);
+        UI.box(bx+22,by+64,bw-44,124,isBoss?P.RED:P.DDG,'rgba(14,11,8,.9)');
+        UI.text(`NEXT BREACH: FLOOR ${String(fl).padStart(2,'0')}  ${isBoss?'[BOSS ANOMALY]':'[SECTOR WAVE]'}`,bx+36,by+76,isBoss?P.RED:P.GD,2);
+        UI.text(`Threat Level: lv ${lvl}   ·   Hostile Signature: ${wave.join(' + ').toUpperCase()}`,bx+36,by+108,P.BONE,1);
+        UI.text(`Active Mutator: ${mut[0]} — ${mut[1]}`,bx+36,by+130,'#a78bfa',1);
+        UI.text(`Floor Reward: +${fl*25} bits  ·  ${isBoss?'Guaranteed Mythic / Root Shell Drop':'XP & Lattice Loot'}`,bx+36,by+152,P.DG,1);
+        // Party status strip
+        UI.text('ACTIVE SQUAD STATUS:',bx+22,by+204,P.DG,1);
+        G.active().forEach((id,i)=>{
+          const m=G.party[id], s=G.stats(id), px=bx+22+i*208, py=by+222;
+          UI.box(px,py,196,48,P.DDG,'rgba(6,5,4,.85)');
+          UI.text(`${id==='me'?'1nc0gn30':AG[id].name} (lv${m.lvl})`,px+10,py+6,id==='me'?P.GD:AG[id].color,1);
+          UI.text(`HP ${m.hp}/${s.mhp}   EN ${m.en}/${s.men}`,px+10,py+24,P.BONE,1);
+        });
+        const opts=[
+          [`> BREACH FLOOR ${String(fl).padStart(2,'0')} (${isBoss?'BOSS WAVE':'LAUNCH COMBAT'})`,()=>act(0)],
+          [`> PATCH SQUAD HP/EN (25 bits  ·  you have ${G.bits} bits)`,()=>act(1)],
+          [`> EXIT INFINITE STACK`,()=>act(2)]
+        ];
+        opts.forEach((o,i)=>{
+          const oy=by+292+i*36, on=i===sel;
+          UI.box(bx+22,oy,bw-44,30,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(o[0],bx+36,oy+8,on?P.GD:P.BONE,1);
+          UI.hit(bx+22,oy,bw-44,30,()=>{ sel=i; act(i); });
+        });
+        UI.text('[up/down] select   [enter] confirm   [esc] leave',bx+bw/2,by+bh-24,P.DG,1,'center');
+      }
+    };
+    function act(i){
+      const best=G.flags.stack_floor||0, fl=Math.min(99,best+1);
+      if(i===0){
+        const wave=stackWave(fl), isBoss=fl%5===0, mutIdx=(fl%5===0)?4:(fl%4);
+        sfx('confirm'); G.mode='explore';
+        if(mutIdx===0){ G.active().forEach(id=>{ const s=G.stats(id); G.party[id].en=Math.min(s.men,G.party[id].en+10); }); }
+        G.battle(wave,{lvl:4+fl*2, boss:isBoss, music:isBoss?'boss':'battle', ambush:mutIdx===0||mutIdx===1, stackFloor:fl});
+      } else if(i===1){
+        if(G.bits<25){ G.toast('need 25 bits to patch squad',P.RED); sfx('cancel'); return; }
+        G.bits-=25; G.healAll(); sfx('heal'); G.toast('squad patched to 100% HP/EN',P.GD);
+      } else {
+        G.mode='explore'; sfx('cancel');
+      }
+    }
+    G.mode='mini'; sfx('confirm');
+  };
   // oscilloscope handshake (EP12): bring your curve to 3:2 and lock it
   G.startScope=()=>{ let a=1.6, tt=0, done=0; const vc=AG.vigil.color;
     G.mini={ name:'scope', ratio:()=>a, update(dt){ tt+=dt; if(took('back')){ G.mode='explore'; return; } if(IN.held.has('left')) a=Math.max(1,a-dt*.6); if(IN.held.has('right')) a=Math.min(5,a+dt*.6);

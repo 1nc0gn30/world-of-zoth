@@ -8,12 +8,12 @@
 - [x] **M03** (`00:58` · `9613e0b`): Act VI Campaign Quests (`q19`–`q20`: *The First Compiler*) & Superboss `ARCHON-0` (`archon_seraph` Blender 4.3 mesh)
 - [x] **M04** (`01:08`): 22-Agent Loyalty Questline Expansion (`s_kai`, `s_vigil`, `s_athena`, `s_kraken`, `s_nexus`, `s_lycan`, `s_onyx`, `s_leviathan`, `s_aether`) + 9 Mythic Relics
 - [x] **M05** (`01:08`): Null Academy Advanced Cyber-Range (Labs 09–16: RAG Poisoning, Model Backdoors, Timing Attacks, Multi-Agent Collusion, ZK Proofs, Master CTF)
-- [x] **M06** (`01:18`): Tactical Combat v2 — Protocol Affinities (`CRYPTO`, `KERNEL`, `THERMAL`, `TEMPORAL`, `VOID`), Weakness Scanner & Overdrive Burst
-- [x] **M07** (`01:18`): Safehouse v2 — Interactive Jukebox (all 17 tracks), Boss Trophy Pedestals & 5-Agent Hangouts
-- [ ] **M08**: Procedural Rogue-Lite Dungeon Mode (*"The Infinite Stack"* — Floors 1–99 via `> stack` / Citadel portal)
-- [ ] **M09**: 3D Ambient Weather & Shader Polish (district particle systems, boss slow-mo shockwaves)
-- [ ] **M10**: Interactive World Atlas v2 (`src/hud3.js`) — 14-District Node Graph, Completion % & Red Tag Tracker
-- [ ] **M11**: New Game+ (*"Cycle 06:13"*) & Live Speedrun / Combat Telemetry HUD
+- [x] **M06** (`01:18` · `87e9605`): Tactical Combat v2 — Protocol Affinities (`CRYPTO`, `KERNEL`, `THERMAL`, `TEMPORAL`, `VOID`), Weakness Scanner & Overdrive Burst
+- [x] **M07** (`01:18` · `87e9605`): Safehouse v2 — Interactive Jukebox (all 17 tracks), Boss Trophy Pedestals & 5-Agent Hangouts
+- [x] **M08** (`01:26`): Procedural Rogue-Lite Dungeon Mode (*"The Infinite Stack"* — Floors 1–99 via `> stack` / Citadel & Hub terminals)
+- [x] **M09** (`01:26`): 3D Ambient Weather & Shader Polish (district particle systems, boss multi-ring shockwaves & light pillars)
+- [x] **M10** (`01:26`): Interactive World Atlas v2 (`src/hud3.js`) — 14-District Node Graph, Completion %, Red Tag Tracker & 1-Click Warp
+- [x] **M11** (`01:26`): New Game+ (*"Cycle 06:13"*) & Live Speedrun / Combat Telemetry HUD (`RUN MM:SS.ms · NG+ · FL`)
 - [ ] **M12**: Full Automated Playwright Bot Playthrough & Regression Suite (`tests/zones.mjs`, `tests/eggs.mjs`)
 - [ ] **M13**: `1nc0gn30.si` Interactive Codex & Strategy Guide Upgrade
 - [ ] **M14**: Director's Cut Gameplay Capture from New Districts (`abyss`, `citadel`, `ARCHON-0`)

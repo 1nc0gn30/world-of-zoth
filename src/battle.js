@@ -174,7 +174,9 @@ export class Battle{
     if(e.st.mark>0) d*=1.5; if(e.st.wall>0&&!pierce) d*=.35; return Math.max(1,Math.round(d)); }
   hitE(e,d,col,label){ e.hp=Math.max(0,e.hp-d); e.flash=1; const lb=label||(e._breach?'breach':''); const c=e._breach?'#22d3ee':col; e._breach=0; num(e.obj.group.position.clone().add(V(0,(e.obj.update?2.1:(e.obj.group.userData.h||1.4)+.6),0)),lb?lb+' '+d:d,c);
     burst(e.obj.group.position.clone().add(V(0,e.obj.update?1:(e.obj.group.userData.h||1.4),0)),col,18,4,.6); this.G.shake(.25);
-    if(e.hp<=0){ e.alive=false; sfx('boom'); const bg=['relay4','sandglass','hunter','blank','archon'].includes(e.type); dissolve(e.obj.group.position.clone(),P.RED,90,bg?8:1.6); if(bg) this.G.shake(1); }
+    if(e.hp<=0){ e.alive=false; sfx('boom'); const bg=['copy','relay4','sandglass','hunter','blank','archon'].includes(e.type); const ep=e.obj.group.position.clone(); dissolve(ep,P.RED,90,bg?8:1.6);
+      ringFx(this.G.scene,ep.clone().add(V(0,.2,0)),bg?P.GD:P.RED,bg?3.8:1.8,.6,'y',2);
+      if(bg){ ringFx(this.G.scene,ep.clone().add(V(0,.6,0)),P.RED,6.4,.9,'y',3); pillar(this.G.scene,ep,P.GD,14,1.1); this.G.flashFx(.65); this.G.shake(1); } }
     if(e.type==='blank'&&e.alive){ if(!e.st.p2&&e.hp<e.mhp*.5){ e.st.p2=1; e.st.stacks=2; this.pendingDialog='blank_p2'; this.say('The cursor goes quiet. It is listening.',1.6); sfx('red'); }
       if(!this.flags.bq&&e.hp<e.mhp*.3){ this.flags.bq=1; this.flags.quorum=1; this.pendingDialog='blank_q'; } }
     if(e.type==='relay4'){ if(!this.flags.n1&&e.hp<e.mhp*.7&&e.alive){ this.flags.n1=1; this.events.push({t:.6,f:()=>{ this.addEnemy('node'); this.addEnemy('node'); this.say('RELAY 4 calls its voice nodes.',1.4); sfx('red'); }}); }

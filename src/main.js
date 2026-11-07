@@ -84,11 +84,18 @@ async function boot(){
   if(new URLSearchParams(location.search).has('capture')) WOZ.manual=true;
   requestAnimationFrame(loop);
 }
-function newGame(){
+function newGame(ngPlus=false){
+  if(ngPlus){
+    const ng=(G.flags&&G.flags.ng_plus||0)+1, sf=G.flags&&G.flags.stack_floor||0;
+    G.quests={}; G.flags={ng_plus:ng,stack_floor:sf,fasttravel:1}; G.defeated=new Set();
+    G.roster.forEach(id=>{ const s=G.stats(id); G.party[id].hp=s.mhp; G.party[id].en=s.men; });
+    return;
+  }
   G.equip={}; G.mods={};
   G.party={me:{lvl:1,xp:0,hp:60,en:30}}; G.roster=['me']; G.activeL=['me']; G.inv={'patch.kit':2,'cache.bit':1}; G.bits=20; G.quests={}; G.flags={}; G.defeated=new Set();
   const s=G.stats('me'); G.party.me.hp=s.mhp; G.party.me.en=s.men;
 }
+G.newGamePlus=()=>{ newGame(true); enterZone('hub',false,0,16,Math.PI); G.mode='explore'; G.qstart('q1'); G.toast(`> CYCLE 06:13 (NG+${G.flags.ng_plus}) INITIALIZED`,P.GD); };
 // ---------------- zones ----------------
 function enterZone(id,silent=false,sx,sz,syaw){
   if(G.zone) G.zone.group.visible=false; const z=G.zone=G.Z[id]; G.zoneId=id; z.group.visible=true;
@@ -143,6 +150,16 @@ G.endBattle=function(B){
     const n=['p1','p2','p3'].filter(p=>G.flags['cut_'+p]).length; if(n>=3) G.qset('q4',2); else G.toast('> '+G.stepText('q4')); }
   if(o.boss==='copy') G.flag('copy_down',1);
   if(o.boss==='relay4'){ G.flag('core_down',1); coreDown(); }
+  if(o.stackFloor){
+    const fl=o.stackFloor; G.flags.stack_floor=Math.max(G.flags.stack_floor||0,fl);
+    const bonus=fl*25; G.bits+=bonus;
+    if(fl%5===0) G.give('root.shell',1);
+    if(fl===10){ G.ach('stack10'); G.give('sovereign.edge',1); }
+    G.toast(`> STACK FLOOR ${fl} CLEARED! +${bonus} bits`,P.GD);
+    G.rebuildNPCs();
+    setTimeout(()=>{ if(G.mode==='explore'&&G.startStack) G.startStack(); },260);
+    return;
+  }
   if(G.Q) G.Q.onWin(o);
   if(o.after) G.dialog(o.after);
   G.rebuildNPCs();
@@ -182,7 +199,8 @@ function drawDialog(t){
 // ---------------- interactables ----------------
 function interactables(){
   const L=G.Q?G.Q.interactables():[]; if(G.extraInteract) L.push(...G.extraInteract()); L.push(...G.house.inter()); if(G.zoneId==='hub') L.push({x:9,z:-9,r:2,label:'null academy  (ai labs)',col:'#7fd1c8',act:()=>G.openAcademy()}); npcs.forEach(n=>{ if(n.prop||n.refl) return; L.push({x:n.sp.group.position.x,z:n.sp.group.position.z,r:n.red?4.5:3.6,label:n.red?(n.zone==='mirrors'?'talk  03ng0cn1':'confront  '+'03ng0cn1'):'talk  '+AG[n.id].name,col:n.red?P.RED:AG[n.id].color,act:()=>talkTo(n),npc:n}); });
-  if(G.zoneId==='hub'){ L.push({x:-14.2,z:-14.2,r:1.8,label:'???',col:P.DG,act:()=>G.openTerminal()}); if(G.roster.includes('vigil')) L.push({x:3.6,z:3.6,r:1.5,label:'vigil\'s lamp  (handshake)',col:AG.vigil.color,act:()=>G.startScope()}); if(G.roster.includes('pixel-neko')) L.push({x:12,z:3.5,r:2.6,label:'tool  bench',col:P.GD,act:()=>G.dialog('neko_bench')}); }
+  if(G.zoneId==='hub'){ L.push({x:-14.2,z:-14.2,r:1.8,label:'???',col:P.DG,act:()=>G.openTerminal()}); L.push({x:-9,z:-9,r:2.2,label:'infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()}); if(G.roster.includes('vigil')) L.push({x:3.6,z:3.6,r:1.5,label:'vigil\'s lamp  (handshake)',col:AG.vigil.color,act:()=>G.startScope()}); if(G.roster.includes('pixel-neko')) L.push({x:12,z:3.5,r:2.6,label:'tool  bench',col:P.GD,act:()=>G.dialog('neko_bench')}); }
+  if(G.zoneId==='citadel') L.push({x:0,z:12,r:3.2,label:'the infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()});
   if(G.zoneId==='forest') L.push({x:-28,z:-20,r:1.8,label:'watch  the life clearing',col:P.DG,act:()=>G.startLife()});
   if(G.zoneId==='foundry') L.push({x:0,z:-27,r:3,label:'stare into  the fire',col:P.DG,act:()=>G.startDoom()});
   if(G.zoneId==='rooftop'){ L.push({x:0,z:-4,r:2.4,label:'open  laptop',col:P.GD,act:()=>G.dialog('rooftop_laptop')}); L.push({x:0,z:7.5,r:2,label:'stairs  down',col:P.DG,act:()=>G.dialog('rooftop_exit')}); }
@@ -228,7 +246,7 @@ function drawShop(t){ const S=G.shop, x=250, y=20, w=460; UI.box(x,y,w,60+SHOP.l
 // ---------------- pause menu ----------------
 const TABS=['quests','party','items','mods','story','log','system'];
 function openMenu(tab=0){ G.menu={tab,sel:0}; G.mode='menu'; sfx('confirm'); }
-function sysOpts(){ return [['save game',()=>saveGame()],[`3d mission guide trail: ${G.trailOn!==false?'on':'off'}`,()=>{ G.trailOn=G.trailOn===false; G.toast('mission guide trail: '+(G.trailOn?'on':'off'),P.GD); }],['story codex (5 acts)',()=>{ G.menu.tab=4; G.menu.sel=0; }],['ai forge (optional, your key)',()=>{ G.menu=null; G.openForge(); }],['map',()=>{ G.menu=null; G.mode='explore'; G.hud3.open(); }],['replay intro',()=>{ G.menu=null; G.mode='explore'; G.playCine('intro'); }],...(G.tut&&G.tut.on?[['skip tutorial',()=>{ G.skipTut(); }]]:[]),['load game',()=>loadGame()],...(G.isFlag('fasttravel')?[['fast travel (mercury)',()=>{ G.menu=null; G.mode='explore'; talkTo({id:'mercury'}); }]]:[]),[`large text: ${G.settings.large?'on':'off'}`,()=>{ G.settings.large=!G.settings.large; }],[`music: ${G.settings.music?'on':'off'}`,()=>{ G.settings.music=!G.settings.music; AU.musicOn=G.settings.music; if(AU.music) AU.music.gain.value=G.settings.music?.55:0; }],
+function sysOpts(){ return [['save game',()=>saveGame()],[`3d mission guide trail: ${G.trailOn!==false?'on':'off'}`,()=>{ G.trailOn=G.trailOn===false; G.toast('mission guide trail: '+(G.trailOn?'on':'off'),P.GD); }],[`speedrun & telemetry hud: ${G.settings.telemetry?'on':'off'}`,()=>{ G.settings.telemetry=!G.settings.telemetry; }],['the infinite stack (rogue-lite)',()=>{ G.menu=null; G.startStack(); }],['new game+ (cycle 06:13 — keep crew & gear)',()=>{ G.menu=null; G.newGamePlus(); }],['story codex (5 acts)',()=>{ G.menu.tab=4; G.menu.sel=0; }],['ai forge (optional, your key)',()=>{ G.menu=null; G.openForge(); }],['map',()=>{ G.menu=null; G.mode='explore'; G.hud3.open(); }],['replay intro',()=>{ G.menu=null; G.mode='explore'; G.playCine('intro'); }],...(G.tut&&G.tut.on?[['skip tutorial',()=>{ G.skipTut(); }]]:[]),['load game',()=>loadGame()],...(G.isFlag('fasttravel')?[['fast travel (mercury)',()=>{ G.menu=null; G.mode='explore'; talkTo({id:'mercury'}); }]]:[]),[`large text: ${G.settings.large?'on':'off'}`,()=>{ G.settings.large=!G.settings.large; }],[`music: ${G.settings.music?'on':'off'}`,()=>{ G.settings.music=!G.settings.music; AU.musicOn=G.settings.music; if(AU.music) AU.music.gain.value=G.settings.music?.55:0; }],
   [`sfx: ${G.settings.sfx?'on':'off'}`,()=>{ G.settings.sfx=!G.settings.sfx; AU.on=G.settings.sfx; }],[`timed strikes: ${G.settings.noTiming?'off (auto)':'on'}`,()=>{ G.settings.noTiming=!G.settings.noTiming; }],['quit to title',()=>{ G.menu=null; G.mode='title'; G.titleT=0; music('title'); }],['resume',()=>{ G.menu=null; G.mode='explore'; }]]; }
 function itemList(){ return Object.entries(G.inv).filter(([k,n])=>n>0); }
 function questList(){ return Object.keys(G.quests).sort((a,b)=>(G.quests[a].done-G.quests[b].done)||((QUESTS[a].side?1:0)-(QUESTS[b].side?1:0))); }
@@ -326,6 +344,16 @@ function updateExplore(dt){
   npcs.forEach(n=>{ n.sp.anim='idle'; if(n.refl){ if(n.reflect){ n.sp.moving=player.moving; n.sp.facing=-player.facing+Math.PI; n.sp.group.position.y=Math.sin(G.t*2+n.x)*.05; } else { n.sp.moving=false; n.sp.facing=Math.atan2(p.x-n.x,p.z-n.z); } return; } if(!n.red) n.sp.flip=false; else n.sp.facing=Math.atan2(p.x-n.x,p.z-n.z); });
   // interact
   G.hud3.update(dt); G.updateTut(dt); lookFx(dt);
+  // district-reactive 3D ambient weather particles (M09)
+  if(Math.random()<dt*18){
+    const zid=G.zoneId, wx=p.x+(Math.random()-.5)*18, wz=p.z+(Math.random()-.5)*18, wy=G.zone.h(wx,wz);
+    if(zid==='foundry') particle(wx,wy+.2,wz,(Math.random()-.5)*.8,1.8+Math.random()*1.6,(Math.random()-.5)*.8,1.4,Math.random()<.5?'#f97316':P.GD,.95,0,.12);
+    else if(zid==='glacier') particle(wx,wy+5+Math.random()*4,wz,Math.sin(G.t+wx)*.6,-1.6-Math.random()*.8,Math.cos(G.t+wz)*.6,2.2,Math.random()<.6?'#67e8f9':P.BONE,.98,0,.1);
+    else if(zid==='abyss') particle(wx,wy+.3+Math.random()*3,wz,(Math.random()-.5)*.4,.7+Math.random()*.9,(Math.random()-.5)*.4,1.9,Math.random()<.5?'#22d3ee':'#a78bfa',.96,0,.12);
+    else if(zid==='citadel') particle(wx,wy+.4+Math.random()*2,wz,Math.cos(G.t*2+wx)*.5,1.1+Math.random()*.8,Math.sin(G.t*2+wz)*.5,1.6,P.GD,.95,0,.12);
+    else if(zid==='forest'||zid==='garden') particle(wx,wy+.5+Math.random()*2.2,wz,Math.sin(G.t*3+wx)*.4,.2+Math.random()*.4,Math.cos(G.t*3+wz)*.4,1.8,Math.random()<.5?'#84cc16':P.GD,.96,0,.1);
+    else if(zid==='skyline'||zid==='archive') particle(wx,wy+1+Math.random()*3.5,wz,(Math.random()-.5)*2.4,0,(Math.random()-.5)*2.4,.9,P.DG,.9,0,.09);
+  }
   if(G.pendingCine&&!G.D&&!G.pendingBattle&&!G.pendingTravel){ const n=G.pendingCine; G.pendingCine=null; G.playCine(n); return; }
   interact=null; let best=1e9; for(const it of interactables()){ const d=Math.hypot(p.x-it.x,p.z-it.z); if(d<it.r&&d<best){ best=d; interact=it; } }
   if(took('confirm')){ if(interact){ sfx('confirm'); interact.act(); return; } else { U.pulse.value.set(p.x,0,p.z,U.time.value); sfx('zap'); G.scanT=3; } }
@@ -362,7 +390,12 @@ function drawHUD(t){ const X=UI.ctx;
   // tactical telemetry bar under party cards
   const ty=12+actN*34; UI.box(12,ty,204,22,P.DDG,'rgba(6,5,4,.75)');
   UI.text(`${curActLabel()} · ${curClockLabel()} · ${G.crewCount?G.crewCount():G.roster.length}/22`,20,ty+5,P.GD,1);
-  if(G.scanT>0){ UI.box(12,ty+25,204,20,P.GD,'rgba(6,5,4,.82)'); UI.text('> sonar pulse: scanning lattice',20,ty+29,P.GD,1); }
+  if(G.settings.telemetry||G.flags.ng_plus||G.flags.stack_floor){
+    const mm=String(Math.floor(G.t/60)).padStart(2,'0'), ss=String(Math.floor(G.t%60)).padStart(2,'0'), ms=String(Math.floor((G.t%1)*100)).padStart(2,'0');
+    UI.box(12,ty+24,204,20,P.DDG,'rgba(6,5,4,.78)');
+    UI.text(`RUN ${mm}:${ss}.${ms} · NG+${G.flags.ng_plus||0} · FL${G.flags.stack_floor||0}`,20,ty+28,'#22d3ee',1);
+  }
+  if(G.scanT>0){ const sy=ty+(G.settings.telemetry||G.flags.ng_plus||G.flags.stack_floor?46:25); UI.box(12,sy,204,20,P.GD,'rgba(6,5,4,.82)'); UI.text('> sonar pulse: scanning lattice',20,sy+4,P.GD,1); }
   // objective
   const q=trackQuest(), nt=navTarget();
   if(q){ const pend=q==='__pending'&&G.Q.pending(); const qid=pend?pend.k:q; const s='> '+(pend?pend.text:G.stepText(q)); const actTag=QUESTS[qid]&&QUESTS[qid].act?`act ${['','I','II','III','IV','V','VI'][QUESTS[qid].act]} · `:''; const distStr=nt?`  ·  [trail: ${Math.round(Math.hypot(nt.x-player.group.position.x,nt.z-player.group.position.z))}m]`:''; const title=actTag+(QUESTS[qid]?QUESTS[qid].title:q)+distStr; const m=markFor(q); let extra=''; if(m&&m[0]!==G.zoneId) extra='  (follow trail to '+G.Z[m[0]].name+' portal)'; const k=LARGE()?2:1;
@@ -428,7 +461,7 @@ function drawTouch(){ if(!IN.touch) return; IN.wantStick=G.mode==='explore'; con
 function updateTitle(dt){ G.titleT+=dt; const c=G.cam; const a=G.titleT*.06; c.pos.set(Math.sin(a)*34,12+Math.sin(G.titleT*.2)*3,Math.cos(a)*34); c.look.set(0,6,0);
   const opts=titleOpts(); G.tsel=Math.min(G.tsel||0,opts.length-1); if(took('up')){ G.tsel=(G.tsel+opts.length-1)%opts.length; sfx('move'); } if(took('down')){ G.tsel=(G.tsel+1)%opts.length; sfx('move'); }
   if(IN.held.size||IN.clicks.length) G.titleIdle=0; if(took('confirm')&&G.titleT>.5) opts[G.tsel][1](); }
-function titleOpts(){ const o=[]; if(hasSave()) o.push(['continue',()=>{ sfx('confirm'); loadGame(); }]); o.push(['new game',()=>{ sfx('confirm'); G.skipTutNext=false; startNew(); }]); o.push(['new game (skip intro + tutorial)',()=>{ sfx('confirm'); G.skipTutNext=true; startNew(true); }]); o.push(['controls',()=>{ G.showCtl=!G.showCtl; sfx('blip'); }]); return o; }
+function titleOpts(){ const o=[]; if(hasSave()){ o.push(['continue',()=>{ sfx('confirm'); loadGame(); }]); o.push(['new game+ (cycle 06:13)',()=>{ sfx('confirm'); loadGame(); G.newGamePlus(); }]); } o.push(['new game',()=>{ sfx('confirm'); G.skipTutNext=false; startNew(); }]); o.push(['new game (skip intro + tutorial)',()=>{ sfx('confirm'); G.skipTutNext=true; startNew(true); }]); o.push(['controls',()=>{ G.showCtl=!G.showCtl; sfx('blip'); }]); return o; }
 function startNew(skipIntro){ newGame(); const go=()=>{ enterZone('hub',false,0,16,Math.PI); G.mode='explore'; G.qstart('q1'); if(!G.skipTutNext) G.startTut(); G.dialog('intro'); };
   if(skipIntro||G.noCine) go(); else G.playCine('intro',go); }
 function drawTitle(t){ const X=UI.ctx; const r=Math.min(1,G.titleT/1.6); X.fillStyle='rgba(6,5,4,.38)'; X.fillRect(0,0,960,540);
