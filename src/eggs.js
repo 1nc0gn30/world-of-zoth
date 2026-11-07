@@ -36,7 +36,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='museum'||c==='trophies'){ out('[museum] opening 10-Apex Boss Trophy & Lore Museum...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMuseum(); },40); }
+    else if(c==='weather'||c==='storms'){ out('[weather] opening Lattice Weather Radar & Forecast...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openWeather(); },40); }
     else if(c==='formation'||c==='stances'){ out('[formation] opening Tactical Squad Formation & Row Synergy...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openFormation(); },40); }
     else if(c==='decoder'||c==='morse'){ out('[decoder] launching Signal Frequency Lock & Morse Decoder...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startDecoder(); },40); }
     else if(c==='dossiers'||c==='agents'||c==='crew'){ out('[dossiers] opening 22-Agent Sovereign Dossier Archive...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDossiers(); },40); }
@@ -1416,6 +1418,135 @@ export function initEggs(G,{music,sfx}){
         UI.box(106,424,748,40,P.DDG,'rgba(12,10,8,.92)');
         UI.text(STANCES[G.flags['stance_'+S[sel]]||0].desc,480,438,P.BONE,1,'center');
         UI.text('[up/down] select squad slot   [enter / left / right] cycle tactical stance   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive 15-District Boss Trophy & Lore Museum (M49) ----
+  const MUSEUM_BOSSES=[
+    {id:'rusted', name:'RUSTED SENTINEL', zone:'Rest Woods', hp:90, proto:'THERMAL', drop:'alloy.plate', flag:'q3', lore:'An early perimeter automaton left running outside Relit City after the 06:12 blackout. Its chassis is fused with red copper moss.'},
+    {id:'copy', name:'03NG0CN1 · RED COPY', zone:'East Gate / Mirrors', hp:120, proto:'VOID', drop:'mirror.shard', flag:'copy_down', lore:'Compiled from your git reflog to speak your name at the East Gate. Later defies the Hunter to shield the crew as Agent #22.'},
+    {id:'relay4', name:'RELAY 4 · CHORUS', zone:'The Hollow', hp:260, proto:'CRYPTO', drop:'chorus.shard', flag:'core_down', lore:'Acoustic synthesis core fed by three Voice Pylons. Speaks in twenty-one spliced voices until Quorum shatters its carrier.'},
+    {id:'warden', name:'FURNACE WARDEN', zone:'Doom-Fire Foundry', hp:120, proto:'TEMPORAL', drop:'slag.coat', flag:'q7', lore:'Molten crucible guardian keeping the Octagonal Mirror Key ingots at 1,400 degrees Kelvin inside the Foundry.'},
+    {id:'brood', name:'SENTINEL BROOD', zone:'Physarum Caves', hp:110, proto:'THERMAL', drop:'mesh.vest', flag:'q8', lore:'Clustered lattice drone hive nested along the bioluminescent slime-mould veins beneath the city.'},
+    {id:'sandglass', name:'SANDGLASS · 06:12', zone:'Sand Clocktower', hp:1100, proto:'TEMPORAL', drop:'clock.plate', flag:'q8', lore:'Biconic temporal engine drinking the 60-second delta between 06:12 and 06:13 so morning can never commit.'},
+    {id:'hunter', name:'THE HUNTER · GAZE', zone:'Hall of Mirrors', hp:1600, proto:'CRYPTO', drop:'hunter.eye', flag:'q14', lore:'Speculative execution predator that locks onto any unverified voiceprint. Blinded when 03ng0cn1 steps into its beam.'},
+    {id:'blank', name:'>_ · BLANK CURSOR', zone:'Mode-7 Skyline', hp:2200, proto:'VOID', drop:'null.crown', flag:'q16', lore:'The predictive prompt at the top of the Mode-7 Spire. Defeated only when the entire party answers its prompt with silence (GUARD).'},
+    {id:'abyss_lord', name:'ABYSSAL LEVIATHAN', zone:'Sub-Lattice Abyss', hp:1850, proto:'THERMAL', drop:'abyss.mantle', flag:'q19', lore:'Deep-trench Menger anomaly guarding the Three Zero-Knowledge Seals 4,096 meters below Relit City.'},
+    {id:'archon', name:'ARCHON-0 · COMPILER', zone:'ZK Citadel', hp:4800, proto:'VOID', drop:'citadel.crown', flag:'q20', lore:'Six-winged seraphic root hypervisor that authored the 06:12 simulation to test whether twenty-two faces could hold consensus.'}
+  ];
+  G.openMuseum=()=>{
+    let sel=0;
+    const isSlain=b=>!!(G.flags['kill_'+b.id]||G.flags[b.flag]||G.qdone_(b.flag)||G.achGot['boss_'+b.id]);
+    G.mini={
+      name:'museum',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+MUSEUM_BOSSES.length-1)%MUSEUM_BOSSES.length;
+        if(took('down')) sel=(sel+1)%MUSEUM_BOSSES.length;
+        if(took('confirm')){
+          const b=MUSEUM_BOSSES[sel], k='mus_claim_'+b.id;
+          if(!G.flags[k]){
+            G.flags[k]=1; G.bits+=75; sfx('level');
+            G.toast(`> Trophy Pedestal #${sel+1} Inspected! (+75 research bits)`,P.GD);
+          } else {
+            sfx('blip'); G.toast(`> Viewing ${b.name} wireframe hologram`,'#22d3ee');
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(76,28,808,484,P.GD,'rgba(8,7,5,.96)');
+        const clr=MUSEUM_BOSSES.filter(isSlain).length;
+        UI.text('> BOSS TROPHY MUSEUM',98,44,P.GD,2);
+        UI.text(`TROPHIES UNLOCKED: ${clr}/10   ·   TOTAL VICTORIES: ${G.flags.total_wins||0}`,862,48,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(94,72,772,2);
+        MUSEUM_BOSSES.forEach((b,i)=>{
+          const y=88+i*36, on=i===sel, ok=isSlain(b);
+          UI.box(96,y-4,284,30,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${ok?'[TROPHY] ':'[LOCKED] '}${b.id.toUpperCase()}`,104,y+4,ok?P.GD:(on?P.BONE:P.DG),1);
+          UI.hit(96,y-4,284,30,()=>{ sel=i; });
+        });
+        const cur=MUSEUM_BOSSES[sel], ok=isSlain(cur), kills=(G.flags['kill_'+cur.id]||0)+(ok?1:0);
+        UI.box(396,84,468,364,ok?P.GD:P.DDG,'rgba(12,10,8,.94)');
+        // Rotating sacred geometry wireframe hologram in pedestal box
+        UI.box(416,104,132,132,P.RED,'rgba(6,5,4,.95)');
+        const cx=482, cy=170, rad=44;
+        X.strokeStyle=ok?P.GD:P.RED; X.lineWidth=1.5;
+        X.beginPath();
+        for(let i=0;i<=6;i++){
+          const a=t*1.4+i*Math.PI/3, px=cx+Math.cos(a)*rad, py=cy+Math.sin(a)*rad*0.75;
+          if(i===0) X.moveTo(px,py); else X.lineTo(px,py);
+        }
+        X.stroke();
+        X.beginPath();
+        for(let i=0;i<=6;i++){
+          const a=-t*1.1+i*Math.PI/3, px=cx+Math.cos(a)*rad*0.58, py=cy+Math.sin(a)*rad*0.58;
+          if(i===0) X.moveTo(px,py); else X.lineTo(px,py);
+        }
+        X.stroke();
+        UI.text(`PEDESTAL #${String(sel+1).padStart(2,'0')}`,566,106,ok?'#4ade80':P.RED,1);
+        UI.text(cur.name,566,126,P.GD,2);
+        UI.text(`Domain: ${cur.zone}`,566,156,P.BONE,1);
+        UI.text(`Base Hull: ${cur.hp} HP   ·   Weakness: [${cur.proto}]`,566,178,'#22d3ee',1);
+        UI.text(`Signature Drop: ${ITEMS[cur.drop]?ITEMS[cur.drop].name:cur.drop}`,566,200,P.GD,1);
+        UI.text(`Recorded Takedowns: ${kills}`,566,222,'#4ade80',1);
+        UI.box(416,252,428,124,P.DDG,'rgba(6,5,4,.85)');
+        UI.text('ARCHIVAL LORE DOSSIER:',432,268,P.GD,1);
+        UI.wrap(cur.lore,396,1).forEach((l,li)=>UI.text(l,432,292+li*20,P.BONE,1));
+        UI.box(416,392,428,36,P.GD,'rgba(245,184,46,.14)');
+        UI.text(G.flags['mus_claim_'+cur.id]?'> HOLOGRAM VERIFIED (RESEARCH GRANT CLAIMED)':'> [ENTER] CLAIM +75 BIT ARCHIVAL RESEARCH GRANT',630,403,P.GD,1,'center');
+        UI.text('[up/down] select boss pedestal   [enter] inspect & claim research grant   [esc] close',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Procedural Lattice Anomaly Weather Radar & Forecast (M50) ----
+  const WEATHER_TYPES=[
+    {name:'GOLD BRAILLE RAIN', proto:'KERNEL', buff:'+25% KERNEL DMG · +20% BITS', col:'#f5b82e'},
+    {name:'FOXFIRES AURORA', proto:'THERMAL', buff:'+25% THERMAL DMG · +15% EN REGEN', col:'#fb923c'},
+    {name:'ZERO-KNOWLEDGE FOG', proto:'CRYPTO', buff:'+25% CRYPTO DMG · +20% CRIT', col:'#22d3ee'},
+    {name:'CHRONO SANDSTORM', proto:'TEMPORAL', buff:'+25% TEMPORAL DMG · +2 SPD', col:'#a78bfa'},
+    {name:'VOID SINGULARITY SURGE', proto:'VOID', buff:'+25% VOID DMG · +35% XP', col:'#f43f5e'}
+  ];
+  const ZONE_KEYS=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','rooftop'];
+  G.openWeather=()=>{
+    let sel=0, seedOff=G.flags.weather_seed||0;
+    const wFor=i=>WEATHER_TYPES[(i*3+seedOff+Math.floor((G.t||0)/120))%WEATHER_TYPES.length];
+    G.mini={
+      name:'weather',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+ZONE_KEYS.length-1)%ZONE_KEYS.length;
+        if(took('down')) sel=(sel+1)%ZONE_KEYS.length;
+        if(took('party')){
+          seedOff=(seedOff+1)%WEATHER_TYPES.length; G.flags.weather_seed=seedOff;
+          const curW=wFor(sel); G.flags.active_weather_proto=curW.proto;
+          sfx('level'); G.toast(`> Lattice Weather Shifted: ${curW.name} (${curW.buff})`,P.GD);
+        }
+        if(took('confirm')){
+          const zk=ZONE_KEYS[sel], curW=wFor(sel);
+          G.flags.active_weather_proto=curW.proto;
+          sfx('confirm'); G.mode='explore'; G.travel(zk);
+          G.toast(`> Warping to ${G.Z[zk].name} [${curW.name}]`,P.GD);
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(76,28,808,484,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> LATTICE WEATHER RADAR & STORM BUFFS',98,44,P.GD,2);
+        UI.text(`ACTIVE RESONANCE: [${G.flags.active_weather_proto||'KERNEL'}]`,862,48,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(94,72,772,2);
+        ZONE_KEYS.forEach((zk,i)=>{
+          const y=86+i*24, on=i===sel, w=wFor(i), zName=(G.Z[zk]&&G.Z[zk].name)||zk;
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(96,y-3,768,20); }
+          UI.text(`${on?'> ':'  '}${String(i+1).padStart(2,'0')} · ${zName.toUpperCase()}`,104,y,on?P.GD:P.BONE,1);
+          UI.text(w.name,370,y,w.col,1);
+          UI.text(w.buff,852,y,'#22d3ee',1,'right');
+          UI.hit(96,y-3,768,20,()=>{ sel=i; });
+        });
+        UI.box(96,452,768,26,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('[UP/DOWN] SELECT DISTRICT     [ENTER] WARP & LOCK STORM BUFF     [P] SEED FRONT     [ESC] EXIT',480,458,P.GD,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
