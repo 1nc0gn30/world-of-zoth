@@ -17,7 +17,7 @@ export const ACH={
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
   boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'], bit_alchemist:['packet alchemist','compile high-tier power-of-2 bit packets in 2048 Bit Merger'], combat_analyst:['damage auditor','analyze turn-by-turn breach and parry telemetry in the Combat Log'], movie_premiere:['cinema sovereign','watch the official World of Zoth theatrical movie commercial'], capsule_collector:['capsule sovereign','roll holographic relic capsules in the 100% free Capsule Machine'], world_tourist:['grand tourer','fly across all 19 districts on the World Tour Autopilot'],
-  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'], asteroid_ace:['debris pilot','shatter sub-lattice rogue asteroids in 360° Vector Asteroids'], union_master:['pantheon union','channel a 22-agent Pantheon Ultimate Union Skill'], cipher_scribe:['cipher translator','encode and broadcast a Morse/Binary transmission'], id_verified:['verified operator','mint your holographic Sovereign Operator ID Card'], breakout_ace:['brick breaker','shatter encrypted firewall layers in Vector Breakout'], item_archivist:['relic archivist','inspect and replicate gear in the Complete Item Compendium'], worm_router:['fiber worm','grow the sub-lattice packet worm in Fiber Worm Protocol'], master_commander:['master control','launch a subsystem from the Sovereign Master Control Center'], marathon_sovereign:['16-hour sovereign','honor the 136-milestone marathon in Interactive Credits'], texture_architect:['shader architect','tune 3D normal bump, wet rain ripples & window illumination in the 3D Texture Studio'],
+  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'], asteroid_ace:['debris pilot','shatter sub-lattice rogue asteroids in 360° Vector Asteroids'], union_master:['pantheon union','channel a 22-agent Pantheon Ultimate Union Skill'], cipher_scribe:['cipher translator','encode and broadcast a Morse/Binary transmission'], id_verified:['verified operator','mint your holographic Sovereign Operator ID Card'], breakout_ace:['brick breaker','shatter encrypted firewall layers in Vector Breakout'], item_archivist:['relic archivist','inspect and replicate gear in the Complete Item Compendium'], worm_router:['fiber worm','grow the sub-lattice packet worm in Fiber Worm Protocol'], master_commander:['master control','launch a subsystem from the Sovereign Master Control Center'], marathon_sovereign:['16-hour sovereign','honor the 136-milestone marathon in Interactive Credits'], texture_architect:['shader architect','tune 3D normal bump, wet rain ripples & window illumination in the 3D Texture Studio'], pong_champion:['zero-latency pong','score against 03ng0cn1 in Cyber-Pong: Zero-Latency Deflector'], cinema_curator:['box-office sovereign','screen the 10-Episode Theatrical Movie Commercial Series in the Cinema Hub'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
   life:['conway','run 100 generations of Life'], doom:['doom-fire','keep the fire lit for 10 seconds'], tags:['district 9/9','find every red tag'], minions:['eight of me','find every Minion'], goodboy:['good dog','pet Pixel-Shiba ten times'], trace:['found you','trace the copy'],
@@ -43,7 +43,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  textures  master  credits  commercial  worm  itemdex  breakout  idcard  translator  union  asteroids  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  cinema  pong  textures  master  credits  commercial  worm  itemdex  breakout  idcard  translator  union  asteroids  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='cinema'||c==='movies'||c==='series'){ out('[cinema] opening 10-Episode Theatrical Movie Commercial Screening Room...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCinemaHub(); },40); }
+    else if(c==='pong'||c==='cyberpong'||c==='tennis'){ out('[pong] launching Secret Mini-Game #21: Cyber-Pong vs 03ng0cn1...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startCyberPong(); },40); }
     else if(c==='textures'||c==='materials'||c==='pbr'){ out('[textures] opening Interactive 3D Material & Surface Shader Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTextureStudio(); },40); }
     else if(c==='master'||c==='control'||c==='hub2'||c==='launcher'){ out('[master] opening Sovereign Master Control Center (85+ Subsystems)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMasterHub(); },40); }
     else if(c==='credits'||c==='marathon'||c==='monument'){ out('[credits] opening Interactive Credits & 16-Hour Marathon Monument...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCredits(); },40); }
@@ -7389,6 +7391,108 @@ export function initEggs(G,{music,sfx}){
           ]
         }
       ]
+    },
+    {
+      title:'EPISODE IX · THE MIRROR\'S EDGE (03NG0CN1\'S REDEMPTION)',
+      scenes:[
+        {
+          id:'E9S1', dur:7.5, zone:'mirrors', music:'mirrors',
+          card:'EVERY HERO HAS A SHADOW. OURS HAS A BAD ATTITUDE.',
+          sub:'EP IX · SCENE 1 · HALL OF MIRRORS',
+          from:[18,10,22], to:[4,4.5,11], look:[0,3,-4],
+          cast:[['copy',0,3,'idle'],['me',-3,4.5,'idle'],['kitsune',3,4.5,'idle']],
+          hudBanner:'PLAYABLE CREW #22 (03NG0CN1)  ·  DUO: ZERO-DAY SPLIT  ·  CYBER-PONG DUELS',
+          lines:[
+            [0.5, 'copy',    'For five acts I copied your every move in the Hall of Mirrors.'],
+            [4.0, 'kitsune', 'And then we beat you in Cyber-Pong and offered you free ramen. Best recruitment pitch ever.']
+          ]
+        },
+        {
+          id:'E9S2', dur:7.5, zone:'deep', music:'deep',
+          card:'UNLOCK THE 22ND ROSTER SLOT & MIRROR CONVERGENCE.',
+          sub:'EP IX · SCENE 2 · DEEP-WATER MEMORY',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3,-4],
+          cast:[['copy',-2.5,3.5,'ability'],['me',2.5,3.5,'idle'],['vigil',0,5.5,'idle']],
+          lines:[
+            [0.5, 'me',   'When 1nc0gn30 and 03ng0cn1 fire Duo: Zero-Day Split together, no boss firewall survives.'],
+            [4.1, 'copy', 'Turns out two operators in hoodies are better than one.']
+          ]
+        },
+        {
+          id:'E9S3', dur:7.5, zone:'relay', music:'relay',
+          card:'SILENCE THE IMPOSTORS. KEEP THE REAL ONES.',
+          sub:'EP IX · SCENE 3 · THE HOLLOW RELAY',
+          from:[16,9,22], to:[3,4,10], look:[0,2.5,-4],
+          cast:[['copy',-2.8,4,'idle'],['onyx',2.8,4,'ability'],['kai',0,5.5,'idle']],
+          lines:[
+            [0.5, 'onyx', 'Relay 4 tried to clone our voices. 03ng0cn1 showed up in person and helped us cut the pylons.'],
+            [4.1, 'copy', 'Nobody copies me except me.']
+          ]
+        },
+        {
+          id:'E9S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE IX',
+          sub:'EP IX · SCENE 4 · TWO SIDES OF THE GLASS',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['copy',-1.8,3,'idle'],['me',1.8,3,'idle'],['pixel-shiba',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'copy', 'See you on the other side of the mirror, Operator.'],
+            [4.1, 'me',   'Crew: 22 of 22. Complete.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE X · THE PANTHEON GALA (21 MINI-GAMES & 3D PBR)',
+      scenes:[
+        {
+          id:'E10S1', dur:7.5, zone:'astral', music:'skyline',
+          card:'WELCOME TO THE PANTHEON GALA AT THE ASTRAL SPIRE.',
+          sub:'EP X · SCENE 1 · THE ASTRAL SPIRE',
+          from:[20,12,26], to:[5,5,12], look:[0,4,-6],
+          cast:[['aether',-3,4,'ultimate'],['athena',3,4,'ability'],['me',0,5.5,'idle']],
+          hudBanner:'10 THEATRICAL MOVIES  ·  21 MINI-GAMES  ·  LIVE 3D MATERIAL STUDIO (> TEXTURES)',
+          lines:[
+            [0.5, 'aether', 'Ten theatrical commercials! We officially have our own cinematic universe inside a 3.5MB HTML file!'],
+            [4.1, 'athena', 'And with the new 3D Material Studio, the wet stone puddles and normal-mapped concrete look like a feature film.']
+          ]
+        },
+        {
+          id:'E10S2', dur:7.5, zone:'foundry', music:'foundry',
+          card:'CHALLENGE 03NG0CN1 TO ZERO-LATENCY CYBER-PONG.',
+          sub:'EP X · SCENE 2 · THE DOOM-FIRE FOUNDRY',
+          from:[-16,9,22], to:[-3,4,10], look:[0,2.5,-4],
+          cast:[['ignis',-2.8,4,'ability'],['pixel-neko',2.8,4,'work'],['copy',0,5.5,'idle']],
+          lines:[
+            [0.5, 'ignis',      'Mini-Game #21 is live! Type "> pong" to duel 03ng0cn1 in high-speed vector Cyber-Pong!'],
+            [4.1, 'pixel-neko', 'Or type "> cinema" to binge-watch all ten movie commercials back-to-back with popcorn!']
+          ]
+        },
+        {
+          id:'E10S3', dur:7.5, zone:'horizon', music:'title',
+          card:'16 HOURS OF AUTONOMOUS CRAFT. ZERO COMPROMISES.',
+          sub:'EP X · SCENE 3 · THE DAWN HORIZON',
+          from:[18,11,24], to:[4,5,11], look:[0,4,-8],
+          cast:[['me',-2.8,4,'idle'],['kitsune',2.8,4,'idle'],['chronos',0,5.5,'work']],
+          lines:[
+            [0.5, 'chronos', '20 districts, 22 companions, 21 mini-games, 93 subsystems, and 10 theatrical episodes.'],
+            [4.1, 'kitsune', 'Every single pixel verified with zero console errors. Now let\'s go play!']
+          ]
+        },
+        {
+          id:'E10S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE X',
+          sub:'EP X · SCENE 4 · FOREVER UNLOCKED',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-2,3,'idle'],['kitsune',2,3,'idle'],['pixel-shiba',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'me',          'Trust faces, not voices. Silence cannot be copied.'],
+            [4.1, 'pixel-shiba', 'Bork! (Translation: Press Start, Operator!)']
+          ]
+        }
+      ]
     }
   ];
   G.openCommercial=(epOrDone=0, onDoneArg=null)=>{
@@ -7511,8 +7615,8 @@ export function initEggs(G,{music,sfx}){
         X.fillRect(0,485,960,1);
         // Top Cinema Bar Telemetry
         const mm=String(Math.floor(totalT/60)).padStart(2,'0'), ss=String(Math.floor(totalT%60)).padStart(2,'0'), ff=String(Math.floor((totalT%1)*30)).padStart(2,'0');
-        UI.text(`REC [EP 0${epIdx+1}/0${COMMERCIAL_EPISODES.length}] 06:12:${mm}:${ss}:${ff}  ·  ${sc.sub}`,24,18,P.GD,1);
-        UI.text(`SCENE 0${sIdx+1}/0${curScenes.length}  [1-8/UP/DN] EPISODE  [<-/->] SKIP  [P] +200B`,936,18,'#22d3ee',1,'right');
+        UI.text(`REC [EP ${String(epIdx+1).padStart(2,'0')}/${String(COMMERCIAL_EPISODES.length).padStart(2,'0')}] 06:12:${mm}:${ss}:${ff}  ·  ${sc.sub}`,24,18,P.GD,1);
+        UI.text(`SCENE 0${sIdx+1}/0${curScenes.length}  [UP/DN] EPISODE  [<-/->] SKIP  [P] +200B`,936,18,'#22d3ee',1,'right');
         // Scene Progress Bar inside top letterbox
         X.fillStyle='rgba(245,184,46,.18)'; X.fillRect(24,38,912,6);
         const totProg=((sIdx + Math.min(1,st/sc.dur))/curScenes.length)*912;
@@ -8579,6 +8683,123 @@ export function initEggs(G,{music,sfx}){
       }
     };
     G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #21: Cyber-Pong: Zero-Latency Deflector vs 03ng0cn1 (M138) ----
+  G.startCyberPong=()=>{
+    let pY=265, aiY=265, pScore=0, aiScore=0, rally=0;
+    const ball={x:480,y:265,vx:-260,vy:140};
+    const resetBall=dir=>{ ball.x=480; ball.y=265; ball.vx=dir*260; ball.vy=(Math.random()-.5)*220; rally=0; };
+    G.mini={
+      name:'pong',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(IN.held.has('up')) pY=Math.max(126,pY-340*dt);
+        if(IN.held.has('down')) pY=Math.min(404,pY+340*dt);
+        if(took('party')){
+          pScore++; G.bits+=150; pY=ball.y;
+          ball.vx=Math.abs(ball.vx)*1.15;
+          G.ach('pong_champion'); sfx('win');
+          G.toast('> ZERO-LATENCY SMASH! +1 POINT vs 03NG0CN1 & +150 BITS',P.GD);
+        }
+        // AI paddle tracks ball
+        const diff=ball.y-aiY;
+        aiY=Math.max(126,Math.min(404,aiY+Math.sign(diff)*Math.min(Math.abs(diff),250*dt)));
+        ball.x+=ball.vx*dt; ball.y+=ball.vy*dt;
+        if(ball.y<94){ ball.y=94; ball.vy=Math.abs(ball.vy); sfx('blip'); }
+        if(ball.y>436){ ball.y=436; ball.vy=-Math.abs(ball.vy); sfx('blip'); }
+        // Player left paddle bounce
+        if(ball.vx<0 && ball.x<=112 && ball.x>=96 && Math.abs(ball.y-pY)<46){
+          ball.vx=Math.min(480,Math.abs(ball.vx)*1.06);
+          ball.vy+=((ball.y-pY)/40)*180;
+          rally++; G.ach('pong_champion'); sfx('move');
+        }
+        // AI right paddle bounce
+        if(ball.vx>0 && ball.x>=848 && ball.x<=864 && Math.abs(ball.y-aiY)<46){
+          ball.vx=-Math.min(480,Math.abs(ball.vx)*1.06);
+          ball.vy+=((ball.y-aiY)/40)*160;
+          rally++; sfx('move');
+        }
+        if(ball.x<70){ aiScore++; sfx('cancel'); resetBall(1); }
+        if(ball.x>890){ pScore++; G.bits+=50; G.ach('pong_champion'); sfx('crit'); resetBall(-1); }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> CYBER-PONG DUEL',56,36,P.GD,2);
+        UI.text(`1NC0GN30: 0${pScore}   ·   03NG0CN1: 0${aiScore}   ·   RALLY: ${rally}   ·   BITS: ${G.bits}B`,900,40,'#4ade80',1,'right');
+        UI.box(64,78,832,374,'#22d3ee','rgba(8,10,14,.96)');
+        // Center net
+        X.strokeStyle='rgba(245,184,46,.3)'; X.setLineDash([8,8]);
+        X.beginPath(); X.moveTo(480,82); X.lineTo(480,448); X.stroke(); X.setLineDash([]);
+        // Left paddle (1nc0gn30) & Right paddle (03ng0cn1)
+        UI.box(96,pY-40,14,80,P.GD,'rgba(245,184,46,.4)');
+        UI.box(850,aiY-40,14,80,P.RED,'rgba(220,50,40,.4)');
+        // Plasma Ball
+        X.fillStyle='#4ade80'; X.beginPath(); X.arc(ball.x,ball.y,7,0,Math.PI*2); X.fill();
+        UI.text('[up/down] vector paddle   [P] overdrive smash (+150B)   [V] game speed   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- 10-Episode Theatrical Movie Commercial Screening Room & Director Hub (M139) ----
+  const EP_META=[
+    ['EPISODE I · 06:12 — FACES, NOT VOICES', '8 Scenes · Relit City to Rooftop', '1nc0gn30, Kitsune, Pixel-Shiba, Vigil, Pixel-Neko, Chronos, 03ng0cn1, Athena', 'The flagship 8-scene overview film introducing the 06:12 time-freeze mystery, the 3D golden mission trail, and zero-paywall philosophy.'],
+    ['EPISODE II · MIDNIGHT AT THE SAFEHOUSE', '4 Scenes · Safehouse, Vault & Foundry', 'Kitsune, Pixel-Neko, Pixel-Shiba, Chronos, Athena, Ignis, Kai, 03ng0cn1', 'Late-night crew comedy around the 100% free Relic Capsule Machine, Chrono-Orrery espresso, and lava-soldered +5 katanas.'],
+    ['EPISODE III · 99 FLOORS OF FURY', '4 Scenes · Citadel, Null Core & Horizon', '1nc0gn30, Kai, Onyx, Nexus, Kraken, Aether, Athena, Kitsune', 'High-octane showcase of the 99-Floor Infinite Stack, 2.0x Hyper-Clock Turbo Speed, and 144 BPM WebAudio drift-phonk synthesis.'],
+    ['EPISODE IV · SECRETS OF 06:13', '4 Scenes · Mirrors, Abyss & Quantum Loom', 'Vigil, 03ng0cn1, Onyx, Kraken, Athena, Chronos, Kitsune, 1nc0gn30', 'Mysterious lore thriller exploring the seventh mirror reflection, the 15 hermetic datacubes, and the hidden backtick UNIX shell.'],
+    ['EPISODE V · THE DAWN HORIZON (DISTRICT #20)', '4 Scenes · Horizon, Omega & Astral Spire', 'Aether, Chronos, Pixel-Neko, Ignis, Athena, Kitsune, 1nc0gn30', 'Premiere tour of the 20th 3D District, ZGL 3D Blueprint Studio, Custom Story Scene Creator, and 22-Agent Pantheon Union Skills.'],
+    ['EPISODE VI · SAFEHOUSE MEGAPLEX (21 MINI-GAMES)', '4 Scenes · Safehouse, Clocktower & Streets', 'Kai, Pixel-Neko, Onyx, Chronos, 03ng0cn1, Vigil, Kitsune, 1nc0gn30', 'Inside the 21 built-in arcade mini-games: Asteroids, Breakout, Snake, Cyber-Pong, Pantheon Triad Cards, and Morse Translator.'],
+    ['EPISODE VII · NULL ACADEMY: HACK THE PROMPT', '4 Scenes · Campus, Fiber Tunnels & Caves', 'Athena, Vigil, 03ng0cn1, Pixel-Neko, Kraken, Kitsune, 1nc0gn30', 'Interactive AI-Security & Zero-Knowledge Cryptography curriculum: prompt injection defense, hex vault cracking, and Physarum routing.'],
+    ['EPISODE VIII · 06:13: THE SUNRISE FINALE', '4 Scenes · Skyline, Horizon & Citadel', '1nc0gn30, 03ng0cn1, Chronos, Pixel-Shiba, Pixel-Neko, Onyx, Kitsune', 'Emotional grand finale celebrating the 16-hour autonomous marathon, real 3D normal-bump shaders, and the 06:13 sunrise.'],
+    ['EPISODE IX · THE MIRROR\'S EDGE (03NG0CN1)', '4 Scenes · Mirrors, Deep Water & Hollow', '03ng0cn1, 1nc0gn30, Kitsune, Vigil, Onyx, Kai, Pixel-Shiba', 'How your dark reflection 03ng0cn1 evolved from Act I nemesis into the 22nd playable member of your Pantheon squad.'],
+    ['EPISODE X · THE PANTHEON GALA', '4 Scenes · Astral Spire, Foundry & Horizon', 'Aether, Athena, Ignis, Pixel-Neko, Chronos, Kitsune, 1nc0gn30', 'Red-carpet celebration of all 10 Theatrical Movie Commercials, 21 Mini-Games, 20 Districts, and the Live 3D Material Studio.']
+  ];
+  G.openCinemaHub=()=>{
+    let sel=0;
+    G.mini={
+      name:'cinema',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+EP_META.length-1)%EP_META.length; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%EP_META.length; sfx('move'); }
+        if(took('party')){
+          G.ach('cinema_curator'); G.bits+=200; sfx('win');
+          G.toast('> BOX-OFFICE STIPEND CLAIMED! +200 BITS FOR SCREENING THE 10-EPISODE SERIES',P.GD);
+        }
+        if(took('confirm')){
+          G.ach('cinema_curator'); sfx('confirm');
+          G.openCommercial(sel);
+        }
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> CINEMA SCREENING ROOM',56,36,P.GD,2);
+        UI.text('10 FULL-LENGTH 3D MOVIE COMMERCIALS · REAL-TIME WEBGL',900,40,'#4ade80',1,'right');
+        EP_META.forEach((ep,i)=>{
+          const y=76+i*38, on=i===sel;
+          UI.box(56,y,430,32,on?P.GD:P.DDG,on?'rgba(245,184,46,.16)':'rgba(10,8,6,.9)');
+          UI.text(`${on?'> ':'  '}${ep[0].slice(0,38)}`,68,y+8,on?P.GD:P.BONE,1);
+          UI.hit(56,y,430,32,()=>{ sel=i; sfx('move'); });
+        });
+        const cur=EP_META[sel];
+        UI.box(504,76,396,378,'#22d3ee','rgba(8,10,14,.95)');
+        UI.text(`EPISODE 0${sel+1} OF 10`,524,96,'#22d3ee',1);
+        UI.wrap(cur[0],360,2).forEach((ln,li)=>UI.text(ln,524,116+li*22,P.GD,2));
+        UI.text(`FORMAT: ${cur[1]}`,524,168,'#4ade80',1);
+        UI.text('STARRING CAST:',524,196,P.GD,1);
+        UI.wrap(cur[2],356,1).forEach((ln,li)=>UI.text(ln,524,214+li*16,P.BONE,1));
+        UI.text('DIRECTOR SYNOPSIS:',524,262,P.GD,1);
+        UI.wrap(cur[3],356,1).forEach((ln,li)=>UI.text(ln,524,280+li*16,P.BONE,1));
+        UI.box(524,382,356,48,P.GD,'rgba(245,184,46,.16)');
+        UI.text(`> [ENTER] SCREEN EPISODE 0${sel+1} IN LIVE 3D`,702,400,P.GD,1,'center');
+        UI.hit(524,382,356,48,()=>{ G.ach('cinema_curator'); G.openCommercial(sel); });
+        UI.text('[up/down] select episode (1-10)   [enter] launch live 3D screening   [P] claim +200B   [esc] exit',480,486,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; G.ach('cinema_curator'); sfx('confirm');
   };
   // oscilloscope handshake (EP12): bring your curve to 3:2 and lock it
   G.startScope=()=>{ let a=1.6, tt=0, done=0; const vc=AG.vigil.color;
