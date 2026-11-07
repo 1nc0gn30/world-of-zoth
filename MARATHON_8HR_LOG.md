@@ -45,9 +45,23 @@
 - [x] **M40** (`04:18` · `6930791`): Expanded 3D Postcard Filters (`CRT Scanline`, `Amber Phosphor`, `Matrix Rain`, `Blueprint Grid` inside `G.openPhotoMode()`)
 - [x] **M41** (`04:35` · `8021250`): Secret Mini-Game #4 — *"Hilbert Packet Runner"* (`G.startRunner()` via `> runner` & System Menu — high-speed 3D 3-lane fiber tunnel reflex runner)
 - [x] **M42** (`04:35` · `8021250`): Secret Mini-Game #5 — *"Zero-Knowledge 4x4 Cipher Grid"* (`G.startCipher()` via `> cipher` & System Menu — 4x4 protocol Sudoku puzzle with `[P]` Witness Hint)
-- [x] **M43** (`04:48`): Speedrun Split Tracker (`G.openSplits()` via `> splits` & System Menu — auto-records Act I–VI & Coda split timestamps with Gold Split delta comparison)
-- [x] **M44** (`04:48`): Complete 22-Agent Dossier Cards UI (`G.openDossiers()` via `> dossiers` & System Menu — animated portrait, role, protocol, mythic relic, combat stats & voiceprint quote)
-- [ ] **M45**: Full End-to-End Automated Playthrough & Zero-Defect Audit across all 15 Districts
-- [ ] **M46**: Final Signed Android APK v1.3 & Desktop Zip Distribution Build
-- [ ] **M47**: `1nc0gn30.si` Sovereign Portal Final Sync & Guardrail Verification
-- [ ] **M48**: Final 8-Hour Marathon Completion Report & GitHub Release Tag
+- [x] **M43** (`04:48` · `e9a6b21`): Speedrun Split Tracker (`G.openSplits()` via `> splits` & System Menu — auto-records Act I–VI & Coda split timestamps with Gold Split delta comparison)
+- [x] **M44** (`04:48` · `e9a6b21`): Complete 22-Agent Dossier Cards UI (`G.openDossiers()` via `> dossiers` & System Menu — animated portrait, role, protocol, mythic relic, combat stats & voiceprint quote)
+- [x] **M45** (`05:04`): Full End-to-End Automated Playthrough & Zero-Defect Audit across all 15 Districts & 21 Interactive Subsystems (`0` errors)
+- [x] **M46** (`05:04`): Signed Android APK v1.3 (`dist/world-of-zoth.apk` verified v2/v3) & Desktop Zip Distribution Build
+- [ ] **M47**: Secret Mini-Game #6 — *"Signal Frequency Lock / Morse Decoder"* (`G.startDecoder()` via `> decoder` & System Menu)
+- [ ] **M48**: Tactical Squad Formation & Row Synergy System (`G.openFormation()` via `> formation` & System Menu — Vanguard `+15% ATK`, Tactician `+15% EN`, Sentinel `+20% DEF`)
+- [ ] **M49**: Interactive 15-District Boss Trophy & Lore Museum (`G.openMuseum()` via `> museum` & System Menu — inspect all 10 Boss Signatures, kill counts & lore records)
+- [ ] **M50**: Procedural Lattice Anomaly Weather Radar & Forecast (`G.openWeather()` via `> weather` & System Menu — live district storm buffs `+25% Protocol DMG` & `+30% Bit Drops`)
+- [ ] **M51**: Custom CRT Shader & Scanline Curvature Studio (`G.openShaderStudio()` via `> shaders` & System Menu — tune bloom, scanlines, vignette & chromatic aberration)
+- [ ] **M52**: In-Game 8-Bit Chiptune Sequencer & Loop Composer (`G.openComposer()` via `> composer` & System Menu — 16-step 4-track WebAudio synthesizer)
+- [ ] **M53**: Sovereign Black-Market Merchant ("Neko Underground" `G.openBlackMarket()` via `> market` — rotating discounted relics & overclock cores)
+- [ ] **M54**: Boss Practice / Phase Selector Mode (`G.openBossLab()` via `> bosslab` — practice any boss with custom level & protocol loadout)
+- [ ] **M55**: Companion Combo Synergy Encyclopedia (`G.openCombos()` via `> combos` — interactive guide & preview for all Duo Resonance & Overdrive skills)
+- [ ] **M56**: Secret Mini-Game #7 — *"Physarum Slime Mould Network Router"* (`G.startRouter()` via `> router` — connect bio-nodes in minimum spanning tree)
+- [ ] **M57**: Operator Combat Statistics & Career Telemetry Ledger (`G.openLedger()` via `> ledger` — lifetime battles, crits, bits earned, districts & completion %)
+- [ ] **M58**: Interactive World Map Fast-Warp & District Threat Filter (`src/hud3.js` upgrade — filter by uncollected Red Tags, Datacubes & Bounties)
+- [ ] **M59**: New Game++ ("06:14 Sovereign Singularity" — unlockable 4th accessory slot & +50% XP/Bit multiplier)
+- [ ] **M60**: Full 15-District + 30-System Automated Regression Pass #3 (`tests/zones.mjs` & subsystem audit)
+- [ ] **M61**: `1nc0gn30.si` Sovereign Portal Sync & Codex Update v1.4
+- [ ] **M62**: Final Signed Android APK v1.4 & GitHub Release Tag (`08:58` Marathon Completion)
