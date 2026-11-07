@@ -10,7 +10,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -35,7 +35,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  logs  bonds  keys  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='runner'){ out('[runner] launching 3D Hilbert Packet Runner...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRunner(); },40); }
+    else if(c==='cipher'){ out('[cipher] launching Zero-Knowledge 4x4 Cipher Grid...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startCipher(); },40); }
     else if(c==='keys'||c==='binds'){ out('[keys] opening Custom Keybind & Controller Remapper...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openKeybinds(); },40); }
     else if(c==='logs'||c==='datacubes'){ out('[logs] opening 15 Encrypted District Datacubes...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDatacubes(); },40); }
     else if(c==='bonds'||c==='affinity'){ out('[bonds] opening Companion Affinity & Bond Matrix...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBonds(); },40); }
@@ -1021,6 +1023,148 @@ export function initEggs(G,{music,sfx}){
         UI.box(106,440,748,28,P.DDG,'rgba(12,10,8,.92)');
         UI.text('[ENTER] REBIND SELECTED ACTION     [P] RESET TO DEFAULT BINDINGS     [ESC] EXIT',480,448,P.GD,1,'center');
         UI.text('Custom bindings persist automatically in localStorage (woz.keys).',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #4: "Packet Runner" (3D Hilbert Tunnel Reflex Runner, M41) ----
+  G.startRunner=()=>{
+    let lane=1, dist=0, score=0, hp=3, spd=180, spawnT=0;
+    const obs=[{z:80, lane:0, kind:'fw'},{z:140, lane:2, kind:'bit'},{z:200, lane:1, kind:'fw'}];
+    G.mini={
+      name:'runner',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(hp<=0){ if(took('confirm')){ lane=1; dist=0; score=0; hp=3; spd=180; obs.length=0; sfx('confirm'); } return; }
+        if(took('left')) lane=Math.max(0,lane-1);
+        if(took('right')) lane=Math.min(2,lane+1);
+        dist+=spd*dt*.4; spd=Math.min(340,180+dist*.15);
+        spawnT-=dt;
+        if(spawnT<=0){
+          spawnT=Math.max(.28,.65-dist*.0004);
+          obs.push({z:240, lane:Math.floor(Math.random()*3), kind:Math.random()<.32?'bit':'fw'});
+        }
+        for(let i=obs.length-1;i>=0;i--){
+          const o=obs[i]; o.z-=spd*dt;
+          if(o.z<18&&o.z>4&&o.lane===lane){
+            if(o.kind==='bit'){ score+=25; G.bits+=5; sfx('loot'); }
+            else { hp--; sfx('hurt'); }
+            obs.splice(i,1); continue;
+          }
+          if(o.z<=0) obs.splice(i,1);
+        }
+        if(dist>=500&&!G.flags.runner_500){
+          G.flags.runner_500=1; G.bits+=150; G.ach('packet_runner');
+          G.toast('> 500M HILBERT SURFER ACHIEVED! (+150 bits)',P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(84,28,792,484,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> HILBERT PACKET RUNNER',108,44,P.GD,2);
+        UI.text(`DIST: ${Math.floor(dist)}/500m   ·   SCORE: ${score}   ·   HP: ${Math.max(0,hp)}/3`,852,48,'#22d3ee',1,'right');
+        // Pseudo-3D perspective tunnel grid
+        const cx=480, cy=210;
+        X.strokeStyle=P.DDG; X.lineWidth=1;
+        for(let r=1;r<=8;r++){
+          const rad=((r*30-(t*spd)%30+240)%240)/240;
+          const w=40+rad*620, h=20+rad*240;
+          X.strokeRect(cx-w/2,cy-h/2+rad*40,w,h);
+        }
+        // 3 perspective lane rails
+        [-1,0,1].forEach(dl=>{
+          X.strokeStyle=dl===(lane-1)?P.GD:P.DDG; X.lineWidth=dl===(lane-1)?2:1;
+          X.beginPath(); X.moveTo(cx+dl*18,cy); X.lineTo(cx+dl*220,440); X.stroke();
+        });
+        // Render obstacles back-to-front
+        obs.slice().sort((a,b)=>b.z-a.z).forEach(o=>{
+          const u=Math.max(0,Math.min(1,1-o.z/240));
+          const ox=cx+(o.lane-1)*(20+u*200), oy=cy+u*220, sz=8+u*36;
+          X.fillStyle=o.kind==='bit'?'#22d3ee':P.RED;
+          X.fillRect(ox-sz/2,oy-sz/2,sz,sz*.65);
+          X.strokeStyle=P.BONE; X.strokeRect(ox-sz/2,oy-sz/2,sz,sz*.65);
+          if(u>.45) UI.text(o.kind==='bit'?'+BIT':'FW',ox,oy-6,P.BONE,1,'center');
+        });
+        // Player Packet Avatar
+        const px=cx+(lane-1)*200, py=428;
+        UI.box(px-28,py-16,56,28,P.GD,'rgba(245,184,46,.28)');
+        UI.text('PKT',px,py-8,P.GD,1,'center');
+        if(hp<=0){
+          UI.box(280,210,400,110,P.RED,'rgba(6,5,4,.95)');
+          UI.text('PACKET DROPPED',480,232,P.RED,2,'center');
+          UI.text(`Final Distance: ${Math.floor(dist)}m   ·   Press [Enter] to Reboot`,480,274,P.BONE,1,'center');
+        }
+        UI.text('[left / right] switch fiber lane   [dodge red FW · collect cyan +BIT]   [esc] exit',480,488,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #5: "Zero-Knowledge 4x4 Cipher Grid" (M42) ----
+  const ZK_SYMS=['KERNEL','CRYPTO','THERMAL','VOID'];
+  const ZK_SOL=[
+    [0,1,2,3],
+    [2,3,0,1],
+    [1,0,3,2],
+    [3,2,1,0]
+  ];
+  const ZK_FIXED=[
+    [1,0,0,1],
+    [0,1,1,0],
+    [0,1,0,0],
+    [1,0,0,1]
+  ];
+  G.startCipher=()=>{
+    const grid=ZK_SOL.map((row,r)=>row.map((v,c)=>ZK_FIXED[r][c]?v:(v+1)%4));
+    let cr=0, cc=1, solved=false;
+    const check=()=>{
+      for(let r=0;r<4;r++) for(let c=0;c<4;c++) if(grid[r][c]!==ZK_SOL[r][c]) return false;
+      return true;
+    };
+    G.mini={
+      name:'cipher',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) cr=(cr+3)%4;
+        if(took('down')) cr=(cr+1)%4;
+        if(took('left')) cc=(cc+3)%4;
+        if(took('right')) cc=(cc+1)%4;
+        if(took('confirm')&&!solved){
+          if(ZK_FIXED[cr][cc]){ G.toast('Fixed Zero-Knowledge anchor cell',P.DG); sfx('cancel'); return; }
+          grid[cr][cc]=(grid[cr][cc]+1)%4; sfx('blip');
+          if(check()){
+            solved=true; sfx('win'); G.ach('zk_cipher');
+            if(!G.flags.cipher_won){ G.flags.cipher_won=1; G.bits+=200; G.give('root.shell',1); }
+            G.toast('> ZERO-KNOWLEDGE CIPHER VERIFIED! (+200 bits + Root.Shell)',P.GD);
+          }
+        }
+        if(took('party')&&!solved){
+          // Auto-align current selected cell to witness proof
+          if(!ZK_FIXED[cr][cc]){ grid[cr][cc]=ZK_SOL[cr][cc]; sfx('blip'); if(check()){ solved=true; sfx('win'); G.ach('zk_cipher'); } }
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,34,768,472,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> ZK 4X4 CIPHER GRID',118,50,P.GD,2);
+        UI.text(solved?'STATUS: PROOF VERIFIED [OK]':'ROW / COL / 2X2 = 4 UNIQUE PROTOCOLS',842,54,solved?P.GD:'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,78,732,2);
+        for(let r=0;r<4;r++){
+          for(let c=0;c<4;c++){
+            const x=136+c*112, y=104+r*76, on=(r===cr&&c===cc), fx=ZK_FIXED[r][c], v=grid[r][c];
+            const ok=v===ZK_SOL[r][c];
+            UI.box(x,y,102,64,on?P.GD:(fx?'#22d3ee':P.DDG),on?'rgba(245,184,46,.16)':(fx?'rgba(8,22,28,.55)':'rgba(6,5,4,.85)'));
+            UI.text(ZK_SYMS[v],x+51,y+18,fx?'#22d3ee':(ok?P.GD:P.BONE),1,'center');
+            UI.text(fx?'[ANCHOR]':(ok?'[VALID]':'[CYCLE]'),x+51,y+38,fx?P.DG:(ok?P.GD:P.RED),1,'center');
+            UI.hit(x,y,102,64,()=>{ cr=r; cc=c; if(!fx){ grid[r][c]=(grid[r][c]+1)%4; sfx('blip'); } });
+          }
+        }
+        UI.box(600,104,238,300,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('ZK-PROOF RULES:',618,122,P.GD,1);
+        UI.wrap('Arrange KERNEL, CRYPTO, THERMAL, and VOID so no protocol repeats in any row, column, or 2x2 sub-lattice.',204,1).forEach((l,li)=>UI.text(l,618,154+li*18,P.BONE,1));
+        UI.text('REWARD BOUNTY:',618,248,'#22d3ee',1);
+        UI.text('+200 Bits + 1x Root.Shell',618,268,P.GD,1);
+        UI.text('[P] Hint: Align Current Cell',618,308,P.DG,1);
+        UI.text('[arrows] select cell   [enter] cycle protocol   [P] witness hint   [esc] close',480,480,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

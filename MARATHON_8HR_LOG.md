@@ -41,10 +41,10 @@
 - [x] **M36** (`03:49` · `197d66d`): Companion Affinity & Gift System (`G.openBonds()` via `> bonds` — Rank 1..5 Synergy Bonds granting up to `+25%` companion stats in `G.stats(id)`)
 - [x] **M37** (`04:03` · `1bb7776`): Boss Modifiers / Hardcore "06:12 Nightmare" Difficulty Toggle (`G.settings.nightmare` — `1.5x` enemy stats, `2x` bit/XP/drop rates & `[06:12 NIGHTMARE · 2X LOOT]` battle HUD badge)
 - [x] **M38** (`04:03` · `1bb7776`): Interactive Waveform Visualizer in Safehouse Jukebox (`src/house.js` — real-time oscilloscope curve, 32-channel spectrum analyzer & BPM/Key metadata across all 20 stems)
-- [x] **M39** (`04:18`): Custom Keybind & Controller Remapper UI (`G.openKeybinds()` via `> keys` & System Menu with persistent `woz.keys` `localStorage` bindings)
-- [x] **M40** (`04:18`): Expanded 3D Postcard Filters (`CRT Scanline`, `Amber Phosphor`, `Matrix Rain`, `Blueprint Grid` inside `G.openPhotoMode()`)
-- [ ] **M41**: Secret Mini-Game #4 — *"Packet Runner"* (High-speed 3D Hilbert-tunnel reflex runner in Fiber Tunnels)
-- [ ] **M42**: Secret Mini-Game #5 — *"Zero-Knowledge Sudoku / 4x4 Cipher Grid"* in Null Academy
+- [x] **M39** (`04:18` · `6930791`): Custom Keybind & Controller Remapper UI (`G.openKeybinds()` via `> keys` & System Menu with persistent `woz.keys` `localStorage` bindings)
+- [x] **M40** (`04:18` · `6930791`): Expanded 3D Postcard Filters (`CRT Scanline`, `Amber Phosphor`, `Matrix Rain`, `Blueprint Grid` inside `G.openPhotoMode()`)
+- [x] **M41** (`04:35`): Secret Mini-Game #4 — *"Hilbert Packet Runner"* (`G.startRunner()` via `> runner` & System Menu — high-speed 3D 3-lane fiber tunnel reflex runner)
+- [x] **M42** (`04:35`): Secret Mini-Game #5 — *"Zero-Knowledge 4x4 Cipher Grid"* (`G.startCipher()` via `> cipher` & System Menu — 4x4 protocol Sudoku puzzle with `[P]` Witness Hint)
 - [ ] **M43**: Speedrun Split Tracker (auto-records split timestamps per Act I–VI completion)
 - [ ] **M44**: Complete 22-Agent Dossier Cards UI (`G.openDossiers()` — bio, lore quote, stats, relic & protocol)
 - [ ] **M45**: Full End-to-End Automated Playthrough & Zero-Defect Audit across all 15 Districts
