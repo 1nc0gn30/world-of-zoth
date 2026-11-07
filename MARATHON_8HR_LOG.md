@@ -111,8 +111,8 @@
 - [x] **M96** (`10:49`): Companion Story Epilogues & Future Logs (`G.openEpilogues()` via `> epilogues` & System Menu — unlockable 06:13 post-dawn epilogue chapters for all 22 crew members)
 
 ### Hour 12 (`11:00`–`12:00`) — District #18 (*"The Astral Relay"*) & Tactical Card Battler
-- [ ] **M97**: Blender 4.3 Wireframe Mesh #20 (`astral_astrolabe`) & Secret District #18 (*"The Astral Relay"* `Z.astral` in `src/zones2.js` + `astral` stem in `src/audio.js`)
-- [ ] **M98**: Secret Mini-Game #14 — *"Pantheon Triad" Tactical 3x3 Card Battler* (`G.startTriad()` via `> triad` & System Menu — Triple-Triad style 3x3 grid card game using 22 Agent & Boss cards!)
+- [x] **M97** (`11:08`): Blender 4.3 Wireframe Mesh #20 (`astral_astrolabe`) & Secret District #18 (*"The Astral Relay"* `Z.astral` in `src/zones2.js` + `astral` stem in `src/audio.js`)
+- [x] **M98** (`11:08`): Secret Mini-Game #14 — *"Pantheon Triad" Tactical 3x3 Card Battler* (`G.startTriad()` via `> triad` & System Menu — Triple-Triad style 3x3 grid card game using 22 Agent & Boss cards!)
 - [ ] **M99**: Collectible Pantheon Card Binder (`G.openCardBinder()` via `> cards` & System Menu — inspect all 32 collectible Agent, Boss & Monument Triad cards)
 - [ ] **M100**: Milestone #100 Special — *"The Sovereign Pantheon Citadel"* Interactive 3D Hall of Fame (`G.openHallOfFame()` via `> hall` & System Menu — celebrate 100 milestones with full crew & stats)
 - [ ] **M101**: Weapon & Relic Custom Naming & Engraving Anvil (`G.openEngrave()` via `> engrave` & System Menu — imbue custom prefixes & elemental runes onto any relic)

@@ -467,6 +467,33 @@ def build_chrono_orrery():
     return arr
 
 
+def build_astral_astrolabe():
+    """Celestial astrolabe & interlocking star-octahedron relay for District #18: The Astral Relay."""
+    bm = bmesh.new()
+    # Base horizon ring & meridian cradle
+    add_ring(bm, 0, 0, 0.5, 5.8, segs=32, axis="z")
+    add_ring(bm, 0, 0, 6.4, 5.2, segs=32, axis="x")
+    add_ring(bm, 0, 0, 6.4, 5.2, segs=32, axis="y")
+    add_ring(bm, 0, 0, 6.4, 4.4, segs=28, axis="z")
+    # 8-pointed star compass needles in the equatorial plane (z=6.4)
+    for i in range(8):
+        a = (i / 8.0) * math.pi * 2.0
+        r_out = 5.0 if i % 2 == 0 else 3.4
+        v0 = bm.verts.new((math.cos(a) * 1.1, math.sin(a) * 1.1, 6.4))
+        v1 = bm.verts.new((math.cos(a) * r_out, math.sin(a) * r_out, 6.4))
+        v_top = bm.verts.new((math.cos(a) * 2.2, math.sin(a) * 2.2, 8.2 if i % 2 == 0 else 4.6))
+        bm.edges.new((v0, v1))
+        bm.edges.new((v1, v_top))
+        bm.edges.new((v0, v_top))
+    # Central suspended biconical astral core
+    bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=8, radius1=1.4, radius2=0.1, depth=3.8)
+    for v in bm.verts[-18:]:
+        v.co.z += 6.4
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
 def main():
     data = {
         "relay4_crown": build_relay4_crown(),
@@ -488,6 +515,7 @@ def main():
         "null_singularity": build_null_singularity(),
         "quantum_loom": build_quantum_loom(),
         "chrono_orrery": build_chrono_orrery(),
+        "astral_astrolabe": build_astral_astrolabe(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:

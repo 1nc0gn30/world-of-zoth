@@ -281,10 +281,27 @@ export function buildZones2(Z){
     });
     const st=[]; for(let i=0;i<320;i++) st.push((R()-.5)*84,R()*24,(R()-.5)*84);
     g.add(pts(st,latMat({color:GD,points:true,size:1.9,twinkle:1,intensity:1.5,fogFar:75})));
-    portal(g,0,42,0);
+    portal(g,0,42,0); portal(g,0,-42,0);
     Z.vault={ id:'vault', name:'the chrono-vault', sub:'celestial orrery · 06:15', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'vault', lvl:36,
       sky:{rain:.16,rainCol:'#f5b82e',hex:1,stars:2.8}, spawn:{x:0,z:36,yaw:Math.PI},
-      portals:[{x:0,z:42,r:3,to:'loom',sx:0,sz:-36,syaw:0,label:'the quantum loom'}], objs:{orr,pyl}, tag:[-34,34] };
+      portals:[{x:0,z:42,r:3,to:'loom',sx:0,sz:-36,syaw:0,label:'the quantum loom'},{x:0,z:-42,r:3,to:'astral',sx:0,sz:36,syaw:Math.PI,label:'the astral relay'}], objs:{orr,pyl}, tag:[-34,34] };
+  }
+  // ===================== THE ASTRAL RELAY (District #18 · Stellar Astrolabe) =====================
+  { const h=(x,z)=>0.18*Math.sin(x*.12)*Math.sin(z*.12);
+    const B=base('astral',{seed:181,h,fogFar:72,gridCol:'#0e222e',dotCol:'#22d3ee'}); const {g,col,anim}=B; const R=rng(182);
+    const astro=segs(BLENDER_GEO.astral_astrolabe,latMat({color:'#22d3ee',intensity:1.6,fogFar:140})); astro.position.set(0,0,-8); g.add(astro); col.push({c:[0,-8,5.4]});
+    const inner=segs(BLENDER_GEO.astral_astrolabe,latMat({color:GD,intensity:1.4,fogFar:140})); inner.scale.setScalar(.64); inner.position.set(0,2.3,-8); g.add(inner);
+    anim.push(t=>{ astro.rotation.y=t*.38; inner.rotation.y=-t*.62; inner.rotation.x=Math.sin(t*.7)*.25; });
+    const pyl={}; [['a1',-20,-8],['a2',20,-8],['a3',0,16]].forEach(([id,x,z])=>{
+      const a=[]; wireOcta(a,1.7,x,2.9,z); ring(a,x,.15,z,3.1,32,2);
+      const m=segs(a,latMat({color:GD,intensity:1.5,fogFar:85})); g.add(m); anim.push(t=>{ m.rotation.y=t*.52; }); col.push({c:[x,z,1.7]}); pyl[id]={x,z,m};
+    });
+    const st=[]; for(let i=0;i<360;i++) st.push((R()-.5)*86,R()*26,(R()-.5)*86);
+    g.add(pts(st,latMat({color:'#22d3ee',points:true,size:2.0,twinkle:1,intensity:1.55,fogFar:80})));
+    portal(g,0,42,0);
+    Z.astral={ id:'astral', name:'the astral relay', sub:'stellar astrolabe · 06:16', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'astral', lvl:38,
+      sky:{rain:.14,rainCol:'#22d3ee',hex:1,stars:3.2}, spawn:{x:0,z:36,yaw:Math.PI},
+      portals:[{x:0,z:42,r:3,to:'vault',sx:0,sz:-36,syaw:0,label:'the chrono-vault'}], objs:{astro,pyl}, tag:[34,-34] };
   }
   // ===================== SECRET: THE ROOFTOP AT 06:12 =====================
   { const g=new THREE.Group(), col=[], anim=[], R=rng(612); const h=()=>0;

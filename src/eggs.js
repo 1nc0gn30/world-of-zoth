@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='triad'||c==='cards'){ out('[triad] launching Pantheon Triad 3x3 Tactical Card Battler...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startTriad(); },40); }
     else if(c==='medals'||c==='ribbons'){ out('[medals] opening Operator Combat Medal & Ribbon Rack...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMedals(); },40); }
     else if(c==='epilogues'||c==='afterword'||c==='future'){ out('[epilogues] opening 22-Agent Post-Dawn Epilogue Chronicles...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEpilogues(); },40); }
     else if(c==='seedlab'||c==='seeds'){ out('[seedlab] opening Procedural Dungeon Seed & Custom Run Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSeedLab(); },40); }
@@ -2206,6 +2207,7 @@ export function initEggs(G,{music,sfx}){
     {id:'null_singularity', name:'NULL SINGULARITY', cat:'WORLD MONUMENT', zone:'The Null Core', col:'#22d3ee', lore:'Eight-ribbon torus knot and dual accretion rings hovering at the center of District #15.'},
     {id:'quantum_loom', name:'QUANTUM LOOM', cat:'WORLD MONUMENT', zone:'The Quantum Loom', col:'#a78bfa', lore:'Twelve-strand double-helical Mobius spindle weaving entangled eigenstates across District #16.'},
     {id:'chrono_orrery', name:'CHRONO ORRERY', cat:'WORLD MONUMENT', zone:'The Chrono-Vault', col:'#4ade80', lore:'Five-ring tilted armillary sphere and celestial escapement anchoring District #17 at 06:15.'},
+    {id:'astral_astrolabe', name:'ASTRAL ASTROLABE', cat:'WORLD MONUMENT', zone:'The Astral Relay', col:'#22d3ee', lore:'Eight-pointed stellar astrolabe and meridian compass anchoring District #18 at 06:16.'},
     {id:'pantheon_throne', name:'PANTHEON THRONE', cat:'WORLD MONUMENT', zone:'ZK Citadel', col:'#f5b82e', lore:'Seventeen-meter sovereign monolith and solar halo anchoring the Zero-Knowledge Citadel.'},
     {id:'abyss_monolith', name:'ABYSS MONOLITH', cat:'WORLD MONUMENT', zone:'Sub-Lattice Abyss', col:'#a78bfa', lore:'Twisted hexagonal obelisk suspended inside the inverted gravity field of the Sub-Lattice Abyss.'},
     {id:'citadel_spire', name:'CITADEL SPIRE', cat:'WORLD MONUMENT', zone:'Hub / Citadel', col:'#22d3ee', lore:'Helical lattice broadcast spire routing encrypted carrier packets between sectors.'},
@@ -4541,7 +4543,7 @@ export function initEggs(G,{music,sfx}){
   };
   const compileSeed=seedStr=>{
     const h=fnvHash(seedStr||'ZOTH-0612');
-    const zones=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','loom','vault'];
+    const zones=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','loom','vault','astral'];
     const regular=['drone','sentinel','echo','worm','mite','phase','slag','slime','reflection','eel','gunship','cursorling','warden'];
     const bosses=['copy','relay4','sandglass','hunter','blank','archon'];
     const items=['patch.kit','cache.bit','root.shell','foxfire.crown','doom.gauntlet','aeon.gear','static.katana','ocular.aegis','tesseract.core','hilbert.coil','owl.spear','fenrir.fang','obsidian.prism','abyssal.trident','seraph.mantle','singularity.halo'];
@@ -4942,6 +4944,174 @@ export function initEggs(G,{music,sfx}){
         UI.text(rd?'CHAPTER ARCHIVED IN SOVEREIGN RECORD':'[ENTER] ARCHIVE EPILOGUE CHAPTER (+50 BITS)',670,394,rd?'#4ade80':P.GD,1,'center');
         UI.text('[P] UNLOCK & ARCHIVE ALL 22 CREW EPILOGUES',670,420,'#4ade80',1,'center');
         UI.text('[up/down] select crew member   [enter] archive chapter   [P] archive all 22   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #14: "Pantheon Triad" Tactical 3x3 Card Battler (M98) ----
+  const TRIAD_PLAYER_DECK=[
+    {id:'me',      name:'1NC0GN30', sprite:'me',      ranks:[9,7,8,8], proto:'KERNEL'},
+    {id:'vigil',   name:'VIGIL',    sprite:'vigil',   ranks:[7,9,6,8], proto:'STATIC'},
+    {id:'kitsune', name:'KITSUNE',  sprite:'kitsune', ranks:[8,8,7,7], proto:'THERMAL'},
+    {id:'ignis',   name:'IGNIS',    sprite:'ignis',   ranks:[9,6,9,5], proto:'THERMAL'},
+    {id:'aether',  name:'AETHER',   sprite:'aether',  ranks:[8,7,9,8], proto:'QUANTUM'}
+  ];
+  const TRIAD_FOE_DECK=[
+    {id:'copy',      name:'03NG0CN1',  sprite:'copy',   ranks:[8,6,7,7], proto:'VOID'},
+    {id:'relay4',    name:'RELAY 4',   sprite:'vigil',  ranks:[6,8,7,5], proto:'STATIC'},
+    {id:'sandglass', name:'SANDGLASS', sprite:'chronos',ranks:[7,5,8,6], proto:'QUANTUM'},
+    {id:'hunter',    name:'HUNTER',    sprite:'onyx',   ranks:[8,7,5,6], proto:'CRYPTO'},
+    {id:'archon',    name:'ARCHON-0',  sprite:'aether', ranks:[7,8,6,7], proto:'VOID'}
+  ];
+  G.startTriad=()=>{
+    const board=new Array(9).fill(null);
+    const pHand=TRIAD_PLAYER_DECK.map(c=>({...c, used:false}));
+    const fHand=TRIAD_FOE_DECK.map(c=>({...c, used:false}));
+    let hSel=0, bSel=4, won=false, lost=false, drawGame=false;
+    const placeAndFlip=(cellIdx,card,owner)=>{
+      board[cellIdx]={...card, owner};
+      const r=Math.floor(cellIdx/3), c=cellIdx%3;
+      // N (0 vs neighbor S=2), E (1 vs neighbor W=3), S (2 vs neighbor N=0), W (3 vs neighbor E=1)
+      const dirs=[[-1,0,0,2],[0,1,1,3],[1,0,2,0],[0,-1,3,1]];
+      let flips=0;
+      dirs.forEach(([dr,dc,mySide,nbSide])=>{
+        const nr=r+dr, nc=c+dc;
+        if(nr>=0&&nr<3&&nc>=0&&nc<3){
+          const nb=board[nr*3+nc];
+          if(nb && nb.owner!==owner && card.ranks[mySide]>nb.ranks[nbSide]){
+            nb.owner=owner; flips++;
+          }
+        }
+      });
+      return flips;
+    };
+    const scoreOf=own=>{
+      const onBoard=board.filter(b=>b&&b.owner===own).length;
+      const inHand=(own==='P'?pHand:fHand).filter(h=>!h.used).length;
+      return onBoard+inHand;
+    };
+    const awardVictory=()=>{
+      if(won) return;
+      won=true; lost=false; drawGame=false;
+      G.ach('triad_champion'); sfx('win');
+      if(!G.flags.triad_reward){
+        G.flags.triad_reward=1; G.bits+=300; G.give('root.shell',1);
+        G.toast('> PANTHEON TRIAD CHAMPION! +300 Bits & +1x Root.Shell!',P.GD);
+      } else {
+        G.bits+=90;
+        G.toast('> Triad Match Won! +90 Bits!',P.GD);
+      }
+    };
+    const checkEnd=()=>{
+      if(board.every(b=>b!==null)){
+        const ps=scoreOf('P'), fs=scoreOf('F');
+        if(ps>fs) awardVictory();
+        else if(fs>ps){ lost=true; sfx('hurt'); }
+        else { drawGame=true; sfx('blip'); }
+      }
+    };
+    G.mini={
+      name:'triad',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(won||lost||drawGame){
+          if(took('confirm')){ G.startTriad(); return; }
+          return;
+        }
+        if(took('up')) hSel=(hSel+pHand.length-1)%pHand.length;
+        if(took('down')) hSel=(hSel+1)%pHand.length;
+        if(took('left')) bSel=(bSel+8)%9;
+        if(took('right')) bSel=(bSel+1)%9;
+        if(took('party')){
+          // Sovereign Grandmaster Play: fill remaining cells with winning player control
+          pHand.forEach(c=>c.used=true);
+          fHand.forEach(c=>c.used=true);
+          for(let i=0;i<9;i++){
+            const isP=i<7;
+            const base=isP?TRIAD_PLAYER_DECK[i%5]:TRIAD_FOE_DECK[i%5];
+            board[i]={...base, owner:isP?'P':'F'};
+          }
+          awardVictory();
+          return;
+        }
+        if(took('confirm')){
+          const card=pHand[hSel];
+          if(card.used){ G.toast('> Card already deployed! Select an unused card [Up/Down].',P.RED); sfx('cancel'); return; }
+          if(board[bSel]){ G.toast('> Board sector occupied! Move cursor [Left/Right].',P.RED); sfx('cancel'); return; }
+          card.used=true;
+          const fl=placeAndFlip(bSel,card,'P');
+          sfx(fl>0?'level':'confirm');
+          if(fl>0) G.toast(`> TRIAD CAPTURE! Flipped ${fl} adjacent card(s)!`,'#4ade80');
+          // AI Counter-Turn if empty cells remain
+          const emptyIdx=board.map((b,i)=>b===null?i:-1).filter(i=>i>=0);
+          const aiCard=fHand.find(c=>!c.used);
+          if(emptyIdx.length>0 && aiCard){
+            aiCard.used=true;
+            const aiCell=emptyIdx[0];
+            placeAndFlip(aiCell,aiCard,'F');
+          }
+          // Auto-advance hand & board cursor to next available
+          const nextH=pHand.findIndex(c=>!c.used); if(nextH>=0) hSel=nextH;
+          const nextB=board.findIndex(b=>b===null); if(nextB>=0) bSel=nextB;
+          checkEnd();
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> PANTHEON TRIAD 3x3 CARD ARENA',56,40,P.GD,2);
+        const ps=scoreOf('P'), fs=scoreOf('F');
+        UI.text(`SCORE: CREW ${ps}  —  ${fs} ARCHON AI   ·   BOUNTY: +300B`,900,44,ps>=fs?'#4ade80':'#f43f5e',1,'right');
+        // Left: Player 5-Card Hand
+        UI.text('SOVEREIGN HAND [UP/DOWN]:',56,78,P.GD,1);
+        pHand.forEach((c,i)=>{
+          const yy=98+i*70, on=i===hSel;
+          UI.box(52,yy,234,62,on?P.GD:(c.used?P.DDG:'#4ade80'),on?'rgba(245,184,46,.16)':'rgba(10,8,6,.92)');
+          UI.text((on?'> ':'  ')+c.name,64,yy+10,c.used?P.DG:(on?P.GD:P.BONE),1);
+          UI.text(`N:${c.ranks[0]} E:${c.ranks[1]} S:${c.ranks[2]} W:${c.ranks[3]}`,64,yy+32,c.used?P.DG:'#22d3ee',1);
+          UI.text(c.used?'[PLAYED]':'[READY]',274,yy+10,c.used?P.DG:'#4ade80',1,'right');
+        });
+        // Center: 3x3 Tactical Triad Board
+        const bx0=316, by0=86, cw=104, ch=114;
+        for(let r=0;r<3;r++) for(let c=0;c<3;c++){
+          const idx=r*3+c, cell=board[idx], cur=(idx===bSel)&&!won&&!lost;
+          const x=bx0+c*(cw+10), y=by0+r*(ch+10);
+          const col=cur?P.GD:(cell?(cell.owner==='P'?'#4ade80':'#f43f5e'):P.DDG);
+          const bg=cell?(cell.owner==='P'?'rgba(22,60,36,.88)':'rgba(70,18,28,.88)'):(cur?'rgba(245,184,46,.14)':'rgba(12,10,8,.92)');
+          UI.box(x,y,cw,ch,col,bg);
+          if(cell){
+            const sp=frameCanvas(cell.sprite||'me','idle',Math.floor(t*4)%2);
+            X.drawImage(sp,0,0,sp.width,sp.height,x+32,y+30,40,40);
+            // Directional ranks N / E / S / W
+            UI.text(String(cell.ranks[0]),x+cw/2,y+6,P.GD,1,'center');
+            UI.text(String(cell.ranks[1]),x+cw-12,y+48,P.GD,1,'center');
+            UI.text(String(cell.ranks[2]),x+cw/2,y+74,P.GD,1,'center');
+            UI.text(String(cell.ranks[3]),x+12,y+48,P.GD,1,'center');
+            UI.text(cell.name.slice(0,8),x+cw/2,y+94,cell.owner==='P'?'#4ade80':'#f43f5e',1,'center');
+          } else {
+            UI.text(`SLOT 0${idx+1}`,x+cw/2,y+48,cur?P.GD:P.DG,1,'center');
+          }
+        }
+        // Right: AI Opponent Deck & Rules Dossier
+        UI.box(676,86,228,362,P.GD,'rgba(10,8,6,.94)');
+        UI.text('ARCHON AI DECK:',692,102,'#f43f5e',1);
+        fHand.forEach((c,i)=>{
+          const yy=124+i*36;
+          UI.text(`${i+1}. ${c.name}`,692,yy,c.used?P.DG:P.BONE,1);
+          UI.text(c.used?'[ON BOARD]':`[${c.ranks.join('/')}]`,888,yy,c.used?P.DG:'#f43f5e',1,'right');
+        });
+        UI.box(690,312,200,122,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('TRIAD RULES:',702,324,P.GD,1);
+        UI.text('Higher N/E/S/W rank flips',702,344,P.BONE,1);
+        UI.text('adjacent opponent cards.',702,362,P.BONE,1);
+        UI.text('[P] GRANDMASTER SWEEP',702,388,'#4ade80',1);
+        UI.text('+300B & +1x Root.Shell',702,408,P.GD,1);
+        if(won||lost||drawGame){
+          UI.box(296,214,368,94,won?'#4ade80':P.RED,'rgba(6,5,4,.96)');
+          UI.text(won?'TRIAD GRANDMASTER VICTORY!':(lost?'ARCHON AI PREVAILS!':'STALEMATE DRAW!'),480,236,won?'#4ade80':P.RED,2,'center');
+          UI.text('[ENTER] REMATCH   [ESC] EXIT',480,274,P.GD,1,'center');
+        }
+        UI.text('[up/down] hand card   [left/right] board slot   [enter] play card   [P] grandmaster win   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
