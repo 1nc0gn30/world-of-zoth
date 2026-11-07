@@ -33,6 +33,12 @@ export class Battle{
     for(let j=1;j<5;j++) ring(dome,0,Math.sin(j/8*Math.PI/2)*7,0,Math.cos(j/8*Math.PI/2)*11,72,2);
     this.arena=new THREE.Group(); this.arena.add(segs(ar,latMat({color:P.DG,intensity:1.3,fogFar:80}))); this.arena.add(segs(dome,latMat({color:P.DDG,intensity:1.4,fogNear:6,fogFar:40})));
     this.arena.position.copy(this.C); G.scene.add(this.arena); sfx('encounter'); music(opts.music||'battle');
+    if(opts.ambush){
+      this.chain=2;
+      this.party.forEach(p=>{ p.en=Math.min(p.men,p.en+10); });
+      this.enemies.forEach(e=>{ const dmg=Math.max(4,Math.round(e.mhp*.15)); e.hp=Math.max(1,e.hp-dmg); e.flash=.8; num(e.home.clone().add(V(0,1.8,0)),'-'+dmg+' AMBUSH',P.GD); });
+      this.say('PRE-EMPTIVE LATTICE AMBUSH! (+2 SYNC CHAIN · +10 EN)',2.4);
+    }
   }
   addEnemy(t){ const E=ENEMIES[t], n=this.enemies.filter(e=>e.alive).length, j=this.enemies.length; const big=['relay4','sandglass','hunter','blank'].includes(t);
     const pos=big? this.at(5.2,2.6) : this.at(2.6+(j%2)*1.1, ((j%3)-1)*1.9 + (j>=3?.9:0));

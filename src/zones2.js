@@ -5,6 +5,7 @@
 // rooftop (secret: EP01/EP10 sunrise).
 import * as THREE from 'three';
 import { rng, segs, pts, grid, dotPlane, ring, truss, sphereCloud, wireOcta, boxEdges, building, latMat, solidMat } from './geo.js';
+import { BLENDER_GEO } from './blender_geo.js';
 import { U } from './render.js';
 import { portal, groundPlane } from './world.js';
 const GD='#f5b82e', DG='#8a6514', DDG='#3c2c0a', RED='#dc3228', BONE='#ece4d2';
@@ -193,6 +194,7 @@ export function buildZones2(Z){
     // three beacon towers + the source tower with the blinking cursor
     const bea={}; [['b1',-30,-10],['b2',30,-10],['b3',0,20]].forEach(([id,x,z])=>{ const a=[]; truss(a,x,z,12,1.2,.4,6,3); const m=segs(a,latMat({color:DG,intensity:1.2,fogFar:90})); g.add(m); col.push({c:[x,z,1.4]}); bea[id]={x,z,m}; });
     const st=[]; truss(st,0,0,60,6,2,16,4); const src=segs(st,latMat({color:DG,intensity:1,fogFar:220})); src.position.set(0,0,-40); g.add(src); col.push({c:[0,-40,6.5]});
+    const csp=segs(BLENDER_GEO.citadel_spire,latMat({color:GD,intensity:1.3,fogFar:180})); csp.position.set(0,0,-22); g.add(csp); anim.push(t=>{ csp.rotation.y=t*.22; });
     const cur=[]; for(let i=0;i<300;i++){ const u=R(), v=R(); if(u<.25) cur.push(-6+u*16,62+v*6,-40); else cur.push(1+u*7,61,-40); } const cursor=pts(cur,latMat({color:RED,points:true,size:2.6,intensity:1.8,fogFar:260})); g.add(cursor);
     anim.push(t=>{ cursor.visible=Math.floor(t*1.6)%2===0; });
     const city=[]; const mats={ edge:latMat({color:GD,intensity:.6,fogNear:20,fogFar:160}), band:latMat({color:DG,intensity:.8,fogFar:150}), win:latMat({color:GD,points:true,size:1.2,twinkle:.6,intensity:1.1,fogFar:170}), solid:solidMat('#0b0906') };

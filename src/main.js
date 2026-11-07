@@ -337,6 +337,7 @@ function updateExplore(dt){
   foes.forEach(f=>{ const g=f.obj.group, gp=g.position; f.stun=Math.max(0,f.stun-dt); const d=Math.hypot(p.x-gp.x,p.z-gp.z);
     if(d<9&&f.stun<=0&&G.grace<=0){ const k=Math.min(1,dt*3.4/Math.max(d,.01)); gp.x+=(p.x-gp.x)*k; gp.z+=(p.z-gp.z)*k; } else { f.ang+=dt*.5; gp.x+=(f.home.x+Math.cos(f.ang)*3.5-gp.x)*dt; gp.z+=(f.home.z+Math.sin(f.ang)*3.5-gp.z)*dt; }
     collide(G.zone,gp,.5); gp.y=G.zone.h(gp.x,gp.z); if(f.obj.update) { f.obj.moving=true; f.obj.facing=Math.atan2(p.x-gp.x,p.z-gp.z); f.obj.update(dt,0,camera.position); } else animEnemy(g,G.t,d<9?.3+.3*Math.sin(G.t*10):0);
+    if(M3.diss>0&&d<1.8&&f.stun<=0&&G.mode==='explore'){ M3.diss=0; player.group.visible=true; G.toast('> PRE-EMPTIVE LATTICE AMBUSH!',P.GD); G.battle(f.s.group,{foe:f,tag:f.s.tag,after:f.s.after,ambush:true,music:f.s.mesh==='rusted'?'boss':undefined}); return; }
     if(d<1.5&&G.grace<=0&&f.stun<=0&&G.mode==='explore'){ G.battle(f.s.group,{foe:f,tag:f.s.tag,after:f.s.after,music:f.s.mesh==='rusted'?'boss':undefined}); } });
 }
 function updateCamera(dt){ const c=G.cam, p=player.group.position;
@@ -397,6 +398,11 @@ function drawHUD(t){ const X=UI.ctx;
   // npc labels
   npcs.forEach(n=>{ if(n.refl||n.prop) return; const d=n.sp.group.position.distanceTo(p); if(d>11) return; const v=n.sp.group.position.clone().add(V(0,2.25,0)).project(camera); if(v.z>1) return; UI.text(n.red?'03ng0cn1':AG[n.id].name,(v.x+1)/2*960,(1-v.y)/2*540-6,n.red?P.RED:AG[n.id].color,LARGE()&&d<6?2:1,'center'); });
   if(interact){ const k=LARGE()?2:1; const s=(IN.touch?'[A] ':'[E] ')+interact.label; const w=UI.textW(s,k)+30; const hh=k===2?40:28, yy=k===2?400:440; UI.box(480-w/2,yy,w,hh,interact.col===P.RED?P.RED2:P.DDG); UI.text(s,480,yy+(k===2?8:8),interact.col,k,'center'); UI.hit(480-w/2,yy,w,hh,()=>interact&&interact.act()); }
+  // clickable tactical quick-bar on bottom-right (desktop)
+  if(!IN.touch){ const qbs=[['[J] quests',()=>openMenu(0)],['[P] crew',()=>openMenu(1)],['[M] map',()=>G.hud3.open()],['[Tab] codex',()=>openMenu(4)],['[C] dash',()=>press('dash')]];
+    let qx=948; for(let i=qbs.length-1;i>=0;i--){ const [lbl,fn]=qbs[i], bw=UI.textW(lbl,1)+16; qx-=bw; UI.box(qx,504,bw,22,P.DDG,'rgba(6,5,4,.82)');
+      if(i===4&&G.mv3&&G.mv3.cd>0){ UI.bar(qx+2,522,bw-4,2,1-G.mv3.cd/1.4,P.GD,P.DDG); }
+      UI.text(lbl,qx+bw/2,509,P.GD,1,'center'); UI.hit(qx,504,bw,22,fn); qx-=4; } }
   if(G.banner){ const b=G.banner; b.t=G.t-b.t0; const n=Math.floor(b.t*28); const s='> district: '+b.name; const bw=Math.max(260,UI.textW(s,2)+44); UI.box(480-bw/2,86,bw,54,P.GD,'rgba(6,5,4,.84)'); UI.text(s.slice(0,n),480,94,P.GD,2,'center'); if(b.t>0.6) UI.text(curActLabel()+'  ·  '+b.sub,480,120,P.BONE,1,'center'); if(b.t>3.6) G.banner=null; }
 }
 function trackQuest(){ if(G.pinnedQuest&&G.quests[G.pinnedQuest]&&!G.quests[G.pinnedQuest].done) return G.pinnedQuest; const ks=Object.keys(G.quests).filter(k=>!G.quests[k].done&&k!=='s_tags'); return ks.find(k=>!QUESTS[k].side)||(G.Q&&G.Q.pending()?'__pending':null)||ks[0]; }

@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import { latMat } from './render.js';
 import { segs, ring, wireOcta, wireIco, boxEdges, truss, sphereCloud, rng } from './geo.js';
+import { BLENDER_GEO } from './blender_geo.js';
 const MAXP=3000;
 export const FX={ items:[], nums:[] };
 let pgeo, ppos, pcol, pdata;
@@ -42,7 +43,7 @@ export function enemyMesh(kind){
   if(kind==='sentinel'||kind==='rusted'){ const s=kind==='rusted'?1.7:1; const a=[]; boxEdges(a,0,-.6*s,0,1.2*s,1.2*s,1.2*s); L(a,RED,1.3); const b=[]; boxEdges(b,0,-.35*s,0,.7*s,.7*s,.7*s); spin=L(b,kind==='rusted'?'#8c1e14':RED,1.8);
     const c=[]; sphereCloud(c,0,0,0,.25*s,60,rng(2)); P(c,'#ffe6c8',1.4,2); g.children.forEach(o=>o.position.y=1.2*s); h=1.3*s+.6; }
   if(kind==='node'){ const a=[]; wireIco(a,.45); spin=L(a,RED,1.6); g.children.forEach(o=>o.position.y=1.2); h=1.2; }
-  if(kind==='relay4'){ const a=[]; truss(a,0,0,6,1.6,.6,6,6); L(a,RED,1.1); const c=[]; sphereCloud(c,0,7.5,0,1.8,700,rng(5)); spin=P(c,RED,1.5,2.2); const r=[]; ring(r,0,7.5,0,2.8,64,2); ring(r,0,7.5,0,3.6,64,3); const rr=L(r,RED2,1.6); g.userData.rings=rr; P([0,7.5,0],'#ffe6c8',2.4,8); h=7.5; }
+  if(kind==='relay4'){ const a=[]; truss(a,0,0,6,1.6,.6,6,6); L(a,RED,1.1); const cr=L(BLENDER_GEO.relay4_crown,RED,1.45); cr.position.y=7.2; const c=[]; sphereCloud(c,0,7.5,0,1.8,700,rng(5)); spin=P(c,RED,1.5,2.2); const r=[]; ring(r,0,7.5,0,2.8,64,2); ring(r,0,7.5,0,3.6,64,3); const rr=L(r,RED2,1.6); rr.add(cr); g.userData.rings=rr; P([0,7.5,0],'#ffe6c8',2.4,8); h=7.5; }
   if(kind==='worm'){ const a=[]; for(let i=0;i<7;i++) ring(a,i*.35-1,1.1+Math.sin(i)*.2,0,.38-i*.03,16,1,'x'); spin=L(a,RED,1.5); h=1.3; }
   if(kind==='mite'){ const a=[]; for(let i=0;i<5;i++){ const t=i/5*Math.PI*2; boxEdges(a,Math.cos(t)*.35,.5,Math.sin(t)*.35,.25,.25,.25); } spin=L(a,RED,1.7); P([0,.62,0],'#ffe6c8',2,3); h=.8; }
   if(kind==='phase'){ const a=[]; boxEdges(a,0,0,0,1.4,.12,1.4); boxEdges(a,0,.6,0,1,1,1); spin=L(a,RED,1.4); const b=[]; ring(b,0,.06,0,1.2,24,2); L(b,RED2,1.2); h=1.4; }
@@ -51,9 +52,9 @@ export function enemyMesh(kind){
   if(kind==='eel'){ const a=[]; for(let i=0;i<10;i++){ const x=i*.3-1.4; a.push(x,1.3+Math.sin(i*.8)*.3,0,x+.3,1.3+Math.sin((i+1)*.8)*.3,0); a.push(x,1.3+Math.sin(i*.8)*.3+.18,0,x,1.3+Math.sin(i*.8)*.3-.18,0); } spin=L(a,RED,1.5); h=1.6; }
   if(kind==='gunship'){ const a=[]; wireOcta(a,.6,0,1.8,0); a.push(-1.4,1.8,0,1.4,1.8,0, 0,1.8,-1.1,0,1.8,1.1); ring(a,-1.4,1.8,0,.35,12,1); ring(a,1.4,1.8,0,.35,12,1); spin=L(a,RED,1.6); const c=[]; for(let i=0;i<6;i++){ const t=i/6*Math.PI*2; c.push(0,1.8,0,Math.cos(t)*1.4,0,Math.sin(t)*1.4); } L(c,RED2,.7); h=2.2; }
   if(kind==='cursor'){ const c=[]; for(let i=0;i<160;i++){ const u=Math.random(); if(u<.6) c.push(-.3+Math.random()*.5,.6+Math.random()*1.1,(Math.random()-.5)*.1); else c.push(.35+Math.random()*.6,.6,(Math.random()-.5)*.1); } spin=P(c,RED,1.8,2.2); h=1.8; }
-  if(kind==='glass'){ const a=[]; truss(a,0,0,3.2,1.8,.25,4,6); spin=L(a,RED,1.3); const b=[]; truss(b,0,0,-3.2,1.8,.25,4,6); const bb=L(b,RED,1.3); bb.position.y=6.4; const c=[]; for(let i=0;i<260;i++){ const y=Math.random()*3; c.push((Math.random()-.5)*.6,y,(Math.random()-.5)*.6); } P(c,'#ffd08a',1.4,2); spin.position.y=3.2; h=6.6; }
-  if(kind==='eye'){ const a=[]; ring(a,0,0,0,2.6,64,1,'z'); ring(a,0,0,0,1.6,48,2,'z'); for(let i=0;i<10;i++){ const t=i/10*Math.PI*2; a.push(Math.cos(t)*2.6,Math.sin(t)*2.6,0,Math.cos(t)*3.4,Math.sin(t)*3.4,0); } const e=L(a,RED,1.5); e.position.y=4.2; const c=[]; sphereCloud(c,0,4.2,0,.9,300,rng(9)); spin=P(c,'#ff8a70',1.8,2.4); const b=[]; for(let i=0;i<6;i++){ const t=i/6*Math.PI*2; b.push(Math.cos(t)*2.2,0,Math.sin(t)*2.2,Math.cos(t)*1.4,3,Math.sin(t)*1.4); } L(b,RED2,1); g.userData.rings=e; h=6.2; }
-  if(kind==='blank'){ const c=[]; for(let i=0;i<900;i++){ const u=Math.random(); if(u<.55) c.push(-2.2+Math.random()*2,1+Math.random()*5,(Math.random()-.5)*.4); else c.push(.4+Math.random()*3.2,1+Math.random()*.6,(Math.random()-.5)*.4); } spin=P(c,RED,1.7,2.6); const a=[]; ring(a,0,3.5,0,4.4,72,2,'z'); ring(a,0,3.5,0,5.2,72,3,'z'); const rr=L(a,RED2,1.4); g.userData.rings=rr; h=6.5; g.userData.flat=true; }
+  if(kind==='glass'){ const cg=L(BLENDER_GEO.sandglass_cage,RED,1.45); cg.position.y=3.2; spin=cg; const b=[]; ring(b,0,3.2,0,2.4,48,2); const bb=L(b,RED2,1.3); g.userData.rings=bb; const c=[]; for(let i=0;i<260;i++){ const y=Math.random()*3; c.push((Math.random()-.5)*.6,y+1.6,(Math.random()-.5)*.6); } P(c,'#ffd08a',1.4,2); h=6.6; }
+  if(kind==='eye'){ const e=L(BLENDER_GEO.hunter_seraph,RED,1.45); e.position.y=4.2; const c=[]; sphereCloud(c,0,4.2,0,.9,300,rng(9)); spin=P(c,'#ff8a70',1.8,2.4); const b=[]; for(let i=0;i<6;i++){ const t=i/6*Math.PI*2; b.push(Math.cos(t)*2.2,0,Math.sin(t)*2.2,Math.cos(t)*1.4,3,Math.sin(t)*1.4); } L(b,RED2,1); g.userData.rings=e; h=6.2; }
+  if(kind==='blank'){ const c=[]; for(let i=0;i<900;i++){ const u=Math.random(); if(u<.55) c.push(-2.2+Math.random()*2,1+Math.random()*5,(Math.random()-.5)*.4); else c.push(.4+Math.random()*3.2,1+Math.random()*.6,(Math.random()-.5)*.4); } spin=P(c,RED,1.7,2.6); const ts=L(BLENDER_GEO.blank_tesseract,RED2,1.45); ts.position.y=3.5; g.userData.rings=ts; h=6.5; g.userData.flat=true; }
   g.userData={...g.userData, mats, spin, h, kind};
   return g;
 }
