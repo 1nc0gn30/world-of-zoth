@@ -5,7 +5,8 @@
 
 [![Version](https://img.shields.io/badge/version-v2.0_sovereign_edition-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
 [![Districts](https://img.shields.io/badge/districts-20_playable_3d_worlds-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
-[![Mini-Games](https://img.shields.io/badge/mini--games-20_built--in_arcade_games-f97316?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
+[![Mini-Games](https://img.shields.io/badge/mini--games-22_built--in_arcade_games-f97316?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
+[![Movies](https://img.shields.io/badge/cinema-12_movie_commercials-fbbf24?style=for-the-badge)](commercial.html)
 [![Platform](https://img.shields.io/badge/platform-browser_%7C_android_apk-00f0ff?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Offline](https://img.shields.io/badge/network-100%25_offline_zero_cdn-a855f7?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![License](https://img.shields.io/badge/license-100%25_free_%26_unlocked-ec4899?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
@@ -20,30 +21,38 @@
 
 <br/>
 
-**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 4-Episode Movie Commercial Series (`commercial.html`)](commercial.html)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ 16-Hour Marathon Log (`MARATHON_8HR_LOG.md`)](MARATHON_8HR_LOG.md)**
+**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 12-Episode Movie Anthology (`commercial.html`)](commercial.html)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ 16-Hour Marathon Log (`MARATHON_8HR_LOG.md`)](MARATHON_8HR_LOG.md)**
 
 </div>
 
 ---
 
-## 🏆 v2.0 Sovereign Edition — 16-Hour Autonomous Engineering Marathon (`M1`–`M136`)
+## 🏆 v2.0 Sovereign Edition — 16-Hour Autonomous Engineering Marathon (`M1`–`M142`)
 
-Engineered across a **16-Hour Autonomous Marathon (136 Verified Milestones)**, **World of Zoth v2.0 Sovereign Edition** expands the zero-dependency 3D WebGL + WebAudio cyber-RPG into a self-contained sovereign universe:
+Engineered across a **16-Hour Autonomous Marathon (142 Verified Milestones)**, **World of Zoth v2.0 Sovereign Edition** expands the zero-dependency 3D WebGL + WebAudio cyber-RPG into a self-contained sovereign universe:
 
-- **🎬 4-Episode 1080p Theatrical Movie Commercial Series (`commercial.html` & `> commercial 1..4`)**:
+- **🎬 12-Episode 1080p Theatrical Movie Commercial Anthology (`commercial.html`, `> cinema` & `> commercial 1..12`)**:
   - **Episode I**: *"06:12 — Faces, Not Voices"* (`dist/world-of-zoth-commercial.mp4`)
   - **Episode II**: *"Midnight at the Safehouse"* (`dist/world-of-zoth-ep2-crew.mp4`)
   - **Episode III**: *"99 Floors of Fury"* (`dist/world-of-zoth-ep3-combat.mp4`)
   - **Episode IV**: *"Behind the Wireframe — Secrets of 06:13"* (`dist/world-of-zoth-ep4-secrets.mp4`)
-- **🧱 Procedural 3D Architectural, Terrain & Sprite Shaders (`src/render.js`, `src/geo.js`)**:
-  - Real-time 3D world-space concrete & anodized metal facade textures, recessed floor slabs, vertical rain streaks, interior parallax lit windows, subdivided wet cyber-asphalt ground meshes with glowing sub-surface circuit traces, and 14-step high-definition Bayer dithering.
+  - **Episode V**: *"The Dawn Horizon (District #20)"* (`dist/world-of-zoth-ep5-horizon.mp4`)
+  - **Episode VI**: *"The Safehouse Megaplex (Mini-Games)"* (`dist/world-of-zoth-ep6-arcade.mp4`)
+  - **Episode VII**: *"Null Academy: Hack the Prompt"* (`dist/world-of-zoth-ep7-academy.mp4`)
+  - **Episode VIII**: *"06:13: The Sunrise Finale"* (`dist/world-of-zoth-ep8-sunrise.mp4`)
+  - **Episode IX**: *"The Mirror's Edge (03ng0cn1's Redemption)"* (`dist/world-of-zoth-ep9-mirror.mp4`)
+  - **Episode X**: *"The Pantheon Gala (PBR Shaders & 22 Crew)"* (`dist/world-of-zoth-ep10-gala.mp4`)
+  - **Episode XI**: *"Skybeam Interceptor (22nd Mini-Game)"* (`dist/world-of-zoth-ep11-skyline.mp4`)
+  - **Episode XII**: *"06:12 to 06:13 (12-Episode Season Finale)"* (`dist/world-of-zoth-ep12-season.mp4`)
+- **🧱 Procedural 3D Normal-Bump Architectural, Terrain & Sprite Shaders (`src/render.js`, `src/geo.js`, `> textures`)**:
+  - Real-time 3D world-space FBM normal-bump perturbation (`dN`) across concrete & anodized metal facades, recessed floor slabs, structural steel corner rivets, animated concentric raindrop ripples in wet asphalt puddles, interior parallax lit windows, and an interactive **3D Material & Surface Shader Studio (`> textures`)** with 5 live presets and real-time uniform sliders (`texBump`, `texWet`, `texWin`).
 - **⚡ Live Game Speed & Turbo Multiplier (`[V]` Key — `1.0x / 1.5x / 2.0x`)**:
   - Snappier base movement (`6.8 / 11.5`), faster Dissipate Dash (`21` speed, `0.9s` cooldown), WebGL frustum culling, and an instant `[V]` key toggle between `1.0x STANDARD`, `1.5x TURBO`, and `2.0x HYPER-CLOCK`.
-- **🌐 20 Playable 3D Lattice Districts & 22 Blender 4.3 Procedural Wireframe Monuments**:
-  - Includes **District #16: The Quantum Loom (`loom`)**, **District #17: The Chrono-Vault (`vault`)**, **District #18: The Astral Spire (`astral`)**, **District #19: The Omega Foundry (`omega`)**, and **District #20: The Dawn Horizon (`horizon`)**.
-- **🕹️ 20 Built-In Arcade Mini-Games & 88 Sovereign Subsystems (`> master`)**:
-  - Access every subsystem and mini-game from the **Sovereign Master Control Center (`> master`)** or the **`[Tab]` 12-Node Radial Command Wheel (`> wheel`)**:
-  - **Mini-Games #1–#20**: *Conway's Game of Life*, *Doom-Fire Crucible*, *Oscilloscope 3:2 Handshake*, *3D Hilbert Packet Runner* (`> runner`), *4x4 ZK Cipher Grid* (`> cipher`), *Signal Frequency & Morse Decoder* (`> decoder`), *Physarum Slime Mould Router* (`> router`), *Memory Core-Dump Defragmenter* (`> defrag`), *East Gate Firewall Defender* (`> defender`), *5x5 Quantum Wave-Collapse* (`> collapse`), *6x6 Fiber-Optic Laser Router* (`> lasers`), *5-Ring Chrono-Orrery Puzzle* (`> orrery`), *Sub-Lattice Sonar Mine Sweeper* (`> mines`), *Pantheon Triad 3x3 Card Battler* (`> triad`), *Signal Tower 4-Track Rhythm Sync* (`> rhythm`), *Vector Tank Cyber-Arena* (`> tank`), *Packet Alchemy / 2048 Bit Merger* (`> merge`), *360° Vector Asteroids* (`> asteroids`), *Breakout: Firewall Brick Breaker* (`> breakout`), and *Snake: Fiber Worm Protocol* (`> worm`).
+- **🌐 20 Playable 3D Lattice Districts & 22 Blender 4.3 Procedural Wireframe Monuments (`> atlas`)**:
+  - Includes **District #16: The Quantum Loom (`loom`)**, **District #17: The Chrono-Vault (`vault`)**, **District #18: The Astral Spire (`astral`)**, **District #19: The Omega Foundry (`omega`)**, **District #20: The Dawn Horizon (`horizon`)**, and an interactive **20-District World Atlas & 1-Click Warp Explorer (`> atlas`)**.
+- **🕹️ 22 Built-In Arcade Mini-Games & 95+ Sovereign Subsystems (`> master` & `> arcade`)**:
+  - Access every subsystem and mini-game from the **Sovereign Master Control Center (`> master`)**, the **22-Cabinet Safehouse Arcade Hub (`> arcade`)**, or the **`[Tab]` 12-Node Radial Command Wheel (`> wheel`)**:
+  - **Mini-Games #1–#22**: *Conway's Game of Life*, *Doom-Fire Crucible*, *Oscilloscope 3:2 Handshake*, *3D Hilbert Packet Runner* (`> runner`), *4x4 ZK Cipher Grid* (`> cipher`), *Signal Frequency & Morse Decoder* (`> decoder`), *Physarum Slime Mould Router* (`> router`), *Memory Core-Dump Defragmenter* (`> defrag`), *East Gate Firewall Defender* (`> defender`), *5x5 Quantum Wave-Collapse* (`> collapse`), *6x6 Fiber-Optic Laser Router* (`> lasers`), *5-Ring Chrono-Orrery Puzzle* (`> orrery`), *Sub-Lattice Sonar Mine Sweeper* (`> mines`), *Pantheon Triad 3x3 Card Battler* (`> triad`), *Signal Tower 4-Track Rhythm Sync* (`> rhythm`), *Vector Tank Cyber-Arena* (`> tank`), *Packet Alchemy / 2048 Bit Merger* (`> merge`), *360° Vector Asteroids* (`> asteroids`), *Breakout: Firewall Brick Breaker* (`> breakout`), *Snake: Fiber Worm Protocol* (`> worm`), *Cyber-Pong: Zero-Latency Duel* (`> pong`), and *Galaga: Skybeam Interceptor* (`> galaga`).
 
 <div align="center">
 <img src="assets/motion_edit_contact_sheet.jpg" alt="World of Zoth 60fps 1080p Motion Edit Contact Sheet" width="100%"/>

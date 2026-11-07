@@ -3259,7 +3259,29 @@ export function initEggs(G,{music,sfx}){
     {id:'collapse', name:'10. QUANTUM WAVE-COLLAPSE', genre:'SPIN-GLASS EIGENSTATE', ach:'wave_collapse', reward:'+240 Bits & +1x Root.Shell', col:'#a78bfa',
       desc:'Observe entangled qubits in a 5x5 manifold to collapse all 25 superposition states into |1> Coherence.', run:()=>G.startCollapse()},
     {id:'lasers', name:'11. FIBER LASER MIRRORS', genre:'OPTICAL PHASE PUZZLE', ach:'laser_router', reward:'+250 Bits & +2x Cache.Bit', col:'#4ade80',
-      desc:'Rotate 45-degree phase mirrors (/ and \\) across a 6x6 grid to bounce the TX laser through N1-N3 into RX.', run:()=>G.startLasers()}
+      desc:'Rotate 45-degree phase mirrors (/ and \\) across a 6x6 grid to bounce the TX laser through N1-N3 into RX.', run:()=>G.startLasers()},
+    {id:'orrery', name:'12. CHRONO-ORRERY RINGS', genre:'CELESTIAL HOROLOGY', ach:'orrery_master', reward:'+250 Bits & Phase Lock', col:'#f5b82e',
+      desc:'Align all 5 concentric planetary brass rings inside the Chrono-Vault to lock the 06:12 celestial meridian.', run:()=>G.startOrrery()},
+    {id:'mines', name:'13. SONAR MINE SWEEPER', genre:'6x6 LOGIC SWEEPER', ach:'sonar_sweeper', reward:'+250 Bits & Safe Sector', col:'#22d3ee',
+      desc:'Ping the 6x6 Sub-Lattice sonar grid to triangulate and disarm 6 corrupted logic bombs without detonation.', run:()=>G.startSonarSweep()},
+    {id:'triad', name:'14. PANTHEON TRIAD 3x3', genre:'TACTICAL CARD BATTLER', ach:'triad_champion', reward:'+250 Bits & Foil Card', col:'#a78bfa',
+      desc:'Outflank rival operators on a 3x3 tactical grid using directional power ranks from your 22-Agent Card Binder.', run:()=>G.startTriad()},
+    {id:'rhythm', name:'15. SIGNAL RHYTHM SYNC', genre:'4-TRACK CHIPTUNE DDR', ach:'rhythm_maestro', reward:'+250 Bits & Sync Combo', col:'#f43f5e',
+      desc:'Strike falling 4-track harmonic notes in real-time synchronization with the WebAudio chiptune synthesizer.', run:()=>G.startRhythm()},
+    {id:'tank', name:'16. VECTOR TANK ARENA', genre:'WIREFRAME BATTLEZONE', ach:'vector_commander', reward:'+250 Bits & Tank Ace', col:'#4ade80',
+      desc:'Pilot a wireframe vector tank across the cyber-arena, blasting hostile sentinel armor and dodging plasma.', run:()=>G.startVectorTank()},
+    {id:'merge', name:'17. 2048 PACKET MERGER', genre:'POWER-OF-2 COMPILER', ach:'bit_alchemist', reward:'+250 Bits & 2048.ROOT', col:'#fb923c',
+      desc:'Slide and merge matching binary packet tiles across a 4x4 matrix to compile the mythic 2048.ROOT kernel.', run:()=>G.startBitMerge()},
+    {id:'asteroids', name:'18. 360° VECTOR ASTEROIDS', genre:'ZERO-G DEBRIS SHOOTER', ach:'asteroid_ace', reward:'+250 Bits & Star Pilot', col:'#22d3ee',
+      desc:'Fire thrusters and twin vector cannons in 360-degree zero-gravity to shatter splitting sub-lattice debris.', run:()=>G.startAsteroids()},
+    {id:'breakout', name:'19. FIREWALL BREAKOUT', genre:'KINETIC BRICK BREAKER', ach:'breakout_ace', reward:'+250 Bits & Breach Key', col:'#f43f5e',
+      desc:'Deflect a high-velocity kinetic packet ball to shatter 5 encrypted layers of red ice firewalls.', run:()=>G.startBreakout()},
+    {id:'worm', name:'20. SNAKE: FIBER WORM', genre:'HIGH-SPEED GRID WORM', ach:'worm_router', reward:'+250 Bits & Fiber Node', col:'#4ade80',
+      desc:'Steer an overclocked fiber-optic worm across the sub-lattice grid, harvesting golden signal embers.', run:()=>G.startWormGame()},
+    {id:'pong', name:'21. CYBER-PONG DUEL', genre:'ZERO-LATENCY DEFLECTOR', ach:'pong_champion', reward:'+250 Bits & Mirror Trophy', col:'#f5b82e',
+      desc:'Challenge your mirror reflection 03ng0cn1 in a high-velocity arcade rally with spin physics and overdrive smash.', run:()=>G.startCyberPong()},
+    {id:'galaga', name:'22. GALAGA INTERCEPTOR', genre:'SKYBEAM SHMUP ARENA', ach:'skybeam_pilot', reward:'+250 Bits & Skybeam Wing', col:'#22d3ee',
+      desc:'Defend Mode-7 Skyline against descending waves of Swarm Drones and Boss Cruisers with twin plasma lasers.', run:()=>G.startInterceptor()}
   ];
   G.openArcade=()=>{
     let sel=0;
@@ -3273,10 +3295,10 @@ export function initEggs(G,{music,sfx}){
         if(took('party')){
           const cleared=ARCADE_CABINETS.filter(c=>G.achGot&&G.achGot[c.ach]).length;
           if(!G.flags.arcade_stipend){
-            G.flags.arcade_stipend=1; const bonus=150+cleared*30; G.bits+=bonus;
-            sfx('win'); G.toast(`> ARCADE HALL STIPEND CLAIMED: +${bonus} Bits!`,P.GD);
+            G.flags.arcade_stipend=1; const bonus=200+cleared*30; G.bits+=bonus;
+            sfx('win'); G.toast(`> 22-CABINET MEGAPLEX STIPEND CLAIMED: +${bonus} Bits!`,P.GD);
           } else {
-            sfx('blip'); G.toast(`> Arcade Stipend already claimed (${cleared}/11 cabinets crowned).`,P.DG);
+            sfx('blip'); G.toast(`> Arcade Stipend already claimed (${cleared}/${ARCADE_CABINETS.length} cabinets crowned).`,P.DG);
           }
           return;
         }
@@ -3287,15 +3309,17 @@ export function initEggs(G,{music,sfx}){
       draw(t){
         const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
         UI.box(36,24,888,492,P.GD);
-        UI.text('> SAFEHOUSE 11-CABINET ARCADE HUB',56,40,P.GD,2);
+        UI.text('> SAFEHOUSE 22-CABINET ARCADE',56,40,P.GD,2);
         const cleared=ARCADE_CABINETS.filter(c=>G.achGot&&G.achGot[c.ach]).length;
-        UI.text(`CROWNED CABINETS: ${cleared}/${ARCADE_CABINETS.length}   BITS: ${G.bits||0}`,900,44,'#4ade80',1,'right');
-        // Left: 11 Arcade Cabinets List
-        for(let i=0;i<ARCADE_CABINETS.length;i++){
-          const c=ARCADE_CABINETS[i], yy=76+i*36, on=i===sel, done=!!(G.achGot&&G.achGot[c.ach]);
+        UI.text(`CROWNED CABINETS: ${cleared}/${ARCADE_CABINETS.length}   ·   BITS: ${G.bits||0}B`,900,44,'#4ade80',1,'right');
+        // Left: Scrollable 11-row window of all 22 Arcade Cabinets
+        const first=Math.max(0,Math.min(sel-5,ARCADE_CABINETS.length-11));
+        for(let idx=0;idx<11;idx++){
+          const i=first+idx, c=ARCADE_CABINETS[i], yy=76+idx*36, on=i===sel, done=!!(G.achGot&&G.achGot[c.ach]);
           UI.box(52,yy,390,32,on?P.GD:(done?'#4ade80':P.DDG),on?'rgba(245,184,46,.16)':'rgba(10,8,6,.88)');
           UI.text((on?'> ':'  ')+c.name,64,yy+9,on?P.GD:P.BONE,1);
           UI.text(done?'[CROWNED]':'[PLAY]',430,yy+9,done?'#4ade80':c.col,1,'right');
+          UI.hit(52,yy,390,32,()=>{ sel=i; sfx('move'); });
         }
         // Right: Selected Arcade Cabinet Marquee & Telemetry
         const cur=ARCADE_CABINETS[sel], isDone=!!(G.achGot&&G.achGot[cur.ach]);
@@ -8555,7 +8579,9 @@ export function initEggs(G,{music,sfx}){
   };
   // ---- Sovereign Master Control Center (M129) ----
   const MASTER_CATS=[
-    {name:'20 MINI-GAMES', items:[
+    {name:'22 MINI-GAMES', items:[
+      ['#22 Galaga: Skybeam Interceptor','> galaga',()=>G.startInterceptor()],
+      ['#21 Cyber-Pong: Zero-Latency Duel','> pong',()=>G.startCyberPong()],
       ['#20 Snake: Fiber Worm Protocol','> worm',()=>G.startWormGame()],
       ['#19 Breakout: Firewall Breaker','> breakout',()=>G.startBreakout()],
       ['#18 Asteroids: 360° Debris Field','> asteroids',()=>G.startAsteroids()],
@@ -8565,9 +8591,7 @@ export function initEggs(G,{music,sfx}){
       ['#14 Pantheon Triad 3x3 Cards','> triad',()=>G.startTriad()],
       ['#13 Sonar Mine Sweeper (6x6)','> mines',()=>G.startSonarSweep()],
       ['#12 Chrono-Orrery 5-Ring Puzzle','> orrery',()=>G.startOrrery()],
-      ['#11 Fiber-Optic Laser Router','> lasers',()=>G.startLasers()],
-      ['#10 Quantum Wave-Collapse (5x5)','> collapse',()=>G.startCollapse()],
-      ['#09 East Gate Firewall Defender','> defender',()=>G.startDefender()]
+      ['All 22 Safehouse Arcade Cabinets','> arcade',()=>G.openArcade()]
     ]},
     {name:'COMBAT & ENDGAME', items:[
       ['The Infinite Stack (Floors 1-99)','> stack',()=>G.startStack()],
@@ -8598,7 +8622,9 @@ export function initEggs(G,{music,sfx}){
       ['World NPC Directory & Warp (21)','> npcs',()=>G.openDirectory()]
     ]},
     {name:'STUDIO, CINEMA & TOOLS', items:[
-      ['Watch 4 Movie Commercials (3D)','> commercial',()=>G.openCommercial(0)],
+      ['12-Episode Movie Cinema Hub','> cinema',()=>G.openCinemaHub()],
+      ['3D Material & PBR Shader Studio','> textures',()=>G.openTextureStudio()],
+      ['20-District World Atlas & Warp','> atlas',()=>G.openDistrictAtlas()],
       ['Custom Story Scene Creator','> scenemaker',()=>G.openSceneMaker()],
       ['Morse, Binary & Hex Translator','> translator',()=>G.openTranslator()],
       ['ZGL 3D World Blueprint Studio','> blueprint',()=>G.openBlueprintStudio()],
@@ -8607,8 +8633,6 @@ export function initEggs(G,{music,sfx}){
       ['Real-Time WebGL Engine Profiler','> profiler',()=>G.openProfiler()],
       ['06:12 Underground News Wire BBS','> bbs',()=>G.openBBS()],
       ['RGB Phosphor Palette Forger','> themeforge',()=>G.openThemeForger()],
-      ['Sovereign Pirate Radio Tuner','> radio',()=>G.openRadio()],
-      ['3D Photo Mode & Postcard Studio','> photo',()=>G.openPhotoMode()],
       ['16-Hour Marathon Credits Monument','> credits',()=>G.openCredits()]
     ]}
   ];
@@ -8625,7 +8649,7 @@ export function initEggs(G,{music,sfx}){
         if(took('down')){ sel=(sel+1)%list.length; sfx('move'); }
         if(took('party')){
           G.ach('master_commander'); G.bits+=100; sfx('win');
-          G.toast('> MASTER CONTROL TELEMETRY VERIFIED: 88 SUBSYSTEMS + 20 MINI-GAMES ONLINE (+100B)',P.GD);
+          G.toast('> MASTER CONTROL TELEMETRY VERIFIED: 95 SUBSYSTEMS + 22 MINI-GAMES ONLINE (+100B)',P.GD);
         }
         if(took('confirm')){
           const item=list[sel];
@@ -8638,7 +8662,7 @@ export function initEggs(G,{music,sfx}){
         X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
         UI.box(36,20,888,500,P.GD);
         UI.text('> MASTER CONTROL CENTER',56,36,P.GD,2);
-        UI.text('20 DISTRICTS · 22 AGENTS · 20 MINI-GAMES · 88 SUBSYSTEMS',900,40,'#4ade80',1,'right');
+        UI.text('20 DISTRICTS · 22 AGENTS · 22 MINI-GAMES · 12 MOVIES',900,40,'#4ade80',1,'right');
         MASTER_CATS.forEach((c,i)=>{
           const x=56+i*214, on=i===catIdx;
           UI.box(x,70,204,28,on?P.GD:P.DDG,on?'rgba(245,184,46,.18)':'rgba(10,8,6,.9)');
@@ -8682,11 +8706,11 @@ export function initEggs(G,{music,sfx}){
     ['Chronos · Athena · Aether · Onyx · Kraken · Nexus · Kai · Mercury', P.BONE],
     ['Leviathan · Cipher · Glitch · Echo-0 · Warden · Prisma · Zero', P.BONE],
     ['', P.BONE],
-    ['--- 20 BUILT-IN ARCADE MINI-GAMES & 88 SUBSYSTEMS ---', P.GD],
+    ['--- 22 BUILT-IN ARCADE MINI-GAMES · 12 MOVIES · 95 SUBSYSTEMS ---', P.GD],
     ['Packet Runner · ZK Cipher · Morse Decoder · Physarum Router · Defrag', P.BONE],
     ['Firewall Defender · Wave-Collapse · Laser Router · Chrono-Orrery · Sonar', P.BONE],
     ['Pantheon Triad · Signal Rhythm · Vector Tank · 2048 Merger · Asteroids', P.BONE],
-    ['Breakout Brick Breaker · Fiber Worm Snake · Conway Life · Doom-Fire · Scope', P.BONE],
+    ['Breakout · Fiber Worm Snake · Cyber-Pong · Galaga Interceptor · Life · Doom', P.BONE],
     ['', P.BONE],
     ['100% ZERO-DEPENDENCY WEBGL + WEBAUDIO SYNTHESIS + BLENDER 4.3 MESHES', '#4ade80'],
     ['THANK YOU FOR WALKING THE LATTICE AT 06:12.', P.GD]
