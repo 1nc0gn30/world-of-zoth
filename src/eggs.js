@@ -17,7 +17,7 @@ export const ACH={
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
   boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'], bit_alchemist:['packet alchemist','compile high-tier power-of-2 bit packets in 2048 Bit Merger'], combat_analyst:['damage auditor','analyze turn-by-turn breach and parry telemetry in the Combat Log'], movie_premiere:['cinema sovereign','watch the official World of Zoth theatrical movie commercial'], capsule_collector:['capsule sovereign','roll holographic relic capsules in the 100% free Capsule Machine'], world_tourist:['grand tourer','fly across all 19 districts on the World Tour Autopilot'],
-  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
+  ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'], scene_director:['scene director','script and play a custom crew conversation in the Story Scene Creator'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
   life:['conway','run 100 generations of Life'], doom:['doom-fire','keep the fire lit for 10 seconds'], tags:['district 9/9','find every red tag'], minions:['eight of me','find every Minion'], goodboy:['good dog','pet Pixel-Shiba ten times'], trace:['found you','trace the copy'],
@@ -42,8 +42,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  commercial  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  commercial  scenemaker  capsules  tour  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
     else if(c==='commercial'||c==='trailer'||c==='movie'){ out('[commercial] rolling World of Zoth Theatrical Movie Commercial...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCommercial(); },40); }
+    else if(c==='scenemaker'||c==='script'||c==='director'){ out('[scenemaker] opening Custom Dialogue & Story Scene Creator...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSceneMaker(); },40); }
     else if(c==='capsules'||c==='gacha'||c==='lootbox'){ out('[capsules] opening 100% Free Bits-Only Relic Capsule Machine...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openRelicCapsules(); },40); }
     else if(c==='tour'||c==='autopilot'||c==='flythrough'){ out('[tour] launching 19-District World Tour Autopilot...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openWorldTour(); },40); }
     else if(c==='merge'||c==='2048'||c==='alchemy'){ out('[merge] launching Secret Mini-Game #17: Packet Alchemy / 2048 Bit Merger...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startBitMerge(); },40); }
@@ -7347,6 +7348,133 @@ export function initEggs(G,{music,sfx}){
         UI.box(36,444,888,72,P.GD,'rgba(6,5,4,.90)');
         UI.text('[LEFT/RIGHT] PREV/NEXT DISTRICT   ·   [ENTER] LAND HERE   ·   [SPACE] PAUSE ORBIT   ·   [P] CLAIM +150B TOUR GRANT',480,464,P.GD,1,'center');
         UI.text('Live 60fps orbital WebGL camera fly-through across all 19 procedural wireframe sectors.',480,490,'#4ade80',1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Custom Dialogue & Story Scene Creator (M119) ----
+  const SCENE_PRESETS=[
+    {
+      title:'06:12 ROOFTOP COFFEE & PROTOCOL DEBATE',
+      lines:[
+        ['kitsune','We saved the city, shattered a time loop, and Pixel-Shiba STILL chewed the Ethernet cable.'],
+        ['pixel-shiba','*tail wagging* It tasted like high-bandwidth encrypted bacon! Woof!'],
+        ['vigil','For the record, my lantern does not run on bacon. It runs on 3:2 harmonic phase locks.'],
+        ['me','Keep your faces in the light, crew. Tomorrow 06:13 is ours to write.']
+      ]
+    },
+    {
+      title:'MIRROR HALL IDENTITY AUDIT',
+      lines:[
+        ['copy','If you script my dialogue, am I still your reflection, or are you mine?'],
+        ['pixel-neko','Either way, only one of you gets the spare +5 Overclocked Katana!'],
+        ['chronos','According to my pocket watch, you both owe the Clock Tower 14 minutes of overtime.'],
+        ['me','Silence cannot be copied. Let\'s roll the next take.']
+      ]
+    },
+    {
+      title:'OMEGA FOUNDRY LATE-NIGHT PATCH NOTES',
+      lines:[
+        ['ignis','Who set the blast furnace to compile shaders at 4,000 Kelvin?!'],
+        ['athena','Technically, thermal runaway increases Zero-Knowledge proof throughput by 18%.'],
+        ['aether','And it makes the wireframe stars shimmer nicely from the Astral Spire.'],
+        ['me','Ship the patch. Zero console errors, 100% sovereign.']
+      ]
+    }
+  ];
+  const SCENE_SPEAKERS=['me','kitsune','pixel-shiba','vigil','pixel-neko','ignis','chronos','copy','athena','aether','nyx','seraph','cipher','echo','volt','frost','terra','zephyr','sol','luna','umbra','nexus'];
+  const SCENE_QUOTES=[
+    'The 06:12 clock just ticked forward. Did anyone else see the horizon glow?',
+    '*happy tail wag* I found 250 Bits under the server rack! Can we buy snacks?',
+    'Remember Lab 07: a voice can be synthesized in 3 seconds. Look for the face.',
+    'Hold my solder iron—I am about to overclock this toaster to Level 30!',
+    'Every wireframe line in this sector was forged from pure sovereign math.',
+    'Wait... is the camera rolling right now? Make sure my dithered cape looks cool!'
+  ];
+  G.openSceneMaker=()=>{
+    let presetIdx=0, lineIdx=0, quoteIdx=0;
+    let lines=SCENE_PRESETS[0].lines.map(r=>[r[0],r[1]]);
+    G.ach('scene_director');
+    const playLiveScene=()=>{
+      const obj={};
+      lines.forEach((ln,i)=>{
+        const k='s'+i, nk=(i<lines.length-1)?('s'+(i+1)):null;
+        obj[k]={s:ln[0], t:ln[1], n:nk};
+      });
+      DLG.__custom_scene=obj;
+      G.mode='explore';
+      sfx('confirm');
+      G.dialog('__custom_scene');
+    };
+    G.mini={
+      name:'scenemaker',
+      see3d:true,
+      key(e){
+        const k=(e.key||'').toLowerCase();
+        if(k==='p'){
+          presetIdx=(presetIdx+1)%SCENE_PRESETS.length;
+          lines=SCENE_PRESETS[presetIdx].lines.map(r=>[r[0],r[1]]);
+          lineIdx=0;
+          if(!G.flags.scenemaker_stipend){
+            G.flags.scenemaker_stipend=1; G.bits+=120;
+            G.toast('> LOADED SCENE PRESET & CLAIMED +120B DIRECTOR GRANT!','#4ade80');
+          } else {
+            G.toast(`> LOADED PRESET: ${SCENE_PRESETS[presetIdx].title}`,P.GD);
+          }
+          G.ach('scene_director'); sfx('win');
+        }
+        if(k==='q'){
+          quoteIdx=(quoteIdx+1)%SCENE_QUOTES.length;
+          lines[lineIdx][1]=SCENE_QUOTES[quoteIdx];
+          sfx('talk');
+        }
+      },
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up'))   { lineIdx=(lineIdx+lines.length-1)%lines.length; sfx('move'); }
+        if(took('down')) { lineIdx=(lineIdx+1)%lines.length; sfx('move'); }
+        if(took('left')||took('right')){
+          const dir=took('right')?1:-1;
+          const curSpk=lines[lineIdx][0];
+          const si=Math.max(0,SCENE_SPEAKERS.indexOf(curSpk));
+          lines[lineIdx][0]=SCENE_SPEAKERS[(si+dir+SCENE_SPEAKERS.length)%SCENE_SPEAKERS.length];
+          sfx('blip');
+        }
+        if(took('confirm')) playLiveScene();
+      },
+      draw(t){
+        const X=UI.ctx;
+        X.fillStyle='rgba(6,5,4,.84)'; X.fillRect(0,0,960,540);
+        UI.box(36,20,888,500,P.GD);
+        UI.text('> STORY SCENE CREATOR',56,36,P.GD,2);
+        UI.text(`PRESET: ${SCENE_PRESETS[presetIdx].title}   ·   BITS: ${G.bits}B`,900,40,'#4ade80',1,'right');
+        // Script Timeline Table
+        UI.box(54,70,852,230,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('SCENE SCRIPT TIMELINE (4 CONVERSATION BEATS — SELECT LINE & CUSTOMIZE):',70,84,P.GD,1);
+        lines.forEach((ln,i)=>{
+          const y=106+i*46, on=i===lineIdx;
+          const spk=ln[0], spkCol=spk==='me'?P.GD:spk==='copy'?P.RED:(AG[spk]&&AG[spk].color||'#22d3ee');
+          const spkName=spk==='me'?'1NC0GN30':spk==='copy'?'03NG0CN1':(AG[spk]&&AG[spk].name||spk).toUpperCase();
+          UI.box(70,y,820,40,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(14,11,8,.90)');
+          UI.text(`BEAT #0${i+1}  [${spkName}]`,84,y+6,spkCol,1);
+          UI.text(on?'[<-/-> SPEAKER]  [Q: CYCLE LINE]':'',876,y+6,'#4ade80',1,'right');
+          UI.text(`"${ln[1].slice(0,82)}"`,84,y+22,P.BONE,1);
+        });
+        // Live Cinema Preview Box (Bottom)
+        const cur=lines[lineIdx]||lines[0];
+        const spk=cur[0], spkCol=spk==='me'?P.GD:spk==='copy'?P.RED:(AG[spk]&&AG[spk].color||'#22d3ee');
+        const spkName=spk==='me'?'1NC0GN30':spk==='copy'?'03NG0CN1':(AG[spk]&&AG[spk].name||spk).toUpperCase();
+        UI.box(54,312,136,152,spkCol,'rgba(10,8,6,.96)');
+        const fc=frameCanvas(spk,'idle',Math.floor(t*4)%4);
+        if(fc){
+          X.imageSmoothingEnabled=false;
+          X.drawImage(fc,0,0,fc.width,fc.height,76,332,92,114);
+        }
+        UI.box(204,312,702,152,spkCol,'rgba(10,8,6,.96)');
+        UI.text(`LIVE PREVIEW — ${spkName}`,224,328,spkCol,2);
+        UI.text('[ENTER] LAUNCH FULL INTERACTIVE SCENE IN-GAME',888,332,'#4ade80',1,'right');
+        UI.wrap(cur[1],660,2).slice(0,2).forEach((l,li)=>UI.text(l,224,366+li*28,P.BONE,2));
+        UI.text('[up/down] select beat   [left/right] speaker   [Q] cycle line   [P] preset (+120B)   [enter] play scene   [esc] exit',480,486,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
