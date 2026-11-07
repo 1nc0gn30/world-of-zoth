@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='endless'||c==='survival'||c==='gauntlet'){ out('[endless] opening Boss Rush Endless Survival Mode...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEndlessBoss(); },40); }
+    else if(c==='tank'||c==='vectortank'||c==='battlezone'){ out('[tank] launching Secret Mini-Game #16: Vector Tank Cyber-Arena...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startVectorTank(); },40); }
     else if(c==='gym'||c==='train'||c==='respec'){ out('[gym] opening Companion Training Regimen & Stat Redistributor...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openGym(); },40); }
     else if(c==='bbs'||c==='news'||c==='wire'){ out('[bbs] connecting to 06:12 Lattice News Wire & Underground BBS...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBBS(); },40); }
     else if(c==='profiler'||c==='perf'||c==='fps'){ out('[profiler] opening Real-Time Engine & WebGL Telemetry Profiler...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openProfiler(); },40); }
@@ -6289,6 +6291,266 @@ export function initEggs(G,{music,sfx}){
         UI.text(ack?'[PGP SIGNATURE VERIFIED · +25 BITS CLAIMED]':'[ENTER] PGP-SIGN & UPVOTE DISPATCH (+25 BITS)',681,392,ack?'#4ade80':P.GD,1,'center');
         UI.text('Reactive sub-lattice spool evolves with your story flags.',681,418,P.BONE,1,'center');
         UI.text('[up/down] select thread   [enter] PGP-sign & claim +25B tip   [esc] disconnect',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Boss Rush Endless Survival Mode (M111) ----
+  const ENDLESS_ROTATION=['copy','relay4','sandglass','hunter','blank','archon','warden','seraph','leviathan_foe','overseer'];
+  const ENDLESS_LADDER=[
+    {rank:1, op:'ARCHON_SLAYER_00', wave:25, score:64200, col:'#f5b82e'},
+    {rank:2, op:'VIGIL_PRIME_0612', wave:18, score:45800, col:'#22d3ee'},
+    {rank:3, op:'KITSUNE_9TAIL',    wave:14, score:34900, col:'#4ade80'},
+    {rank:4, op:'CHRONOS_BELFRY',   wave:10, score:24500, col:'#fb923c'},
+    {rank:5, op:'ONYX_GLASS_04',    wave:6,  score:14200, col:'#a78bfa'}
+  ];
+  G.openEndlessBoss=()=>{
+    let curWave=Math.max(1,(G.flags&&G.flags.endless_wave||0)+1);
+    let simLog=[
+      '> ENDLESS APEX SURVIVAL GAUNTLET INITIALIZED.',
+      '> Each wave scales Boss HP/ATK by +15% and Bit Payouts by +35B.',
+      '> Press [ENTER] for 3D Battle or [P] for Tactical Blitz Simulation.'
+    ];
+    const bossForWave=w=>{
+      const k=ENDLESS_ROTATION[(w-1)%ENDLESS_ROTATION.length];
+      return {key:k, foe:ENEMIES[k]||ENEMIES.copy, mul:+(1+(w-1)*0.15).toFixed(2), reward:150+w*35};
+    };
+    const blitzWave=()=>{
+      const info=bossForWave(curWave), f=info.foe;
+      const squad=G.active();
+      const pwr=squad.reduce((s,id)=>{ const st=G.stats(id); return s+st.mhp+st.atk*6+st.def*4+st.spd*5; },0);
+      const bHp=Math.round((f.hp||220)*info.mul), bAtk=Math.round((f.atk||18)*info.mul);
+      const turns=Math.max(2,Math.min(9,Math.round(bHp/Math.max(28,pwr*0.18))));
+      G.flags.endless_wave=Math.max(G.flags.endless_wave||0,curWave);
+      G.flags.endless_score=(G.flags.endless_score||0)+curWave*1250+pwr;
+      G.bits+=info.reward;
+      if(curWave%5===0) G.give('root.shell',1);
+      simLog=[
+        `[WAVE ${String(curWave).padStart(2,'0')}] ${f.name.toUpperCase()} (${info.mul}x) — HP ${bHp} / ATK ${bAtk}`,
+        `> Squad (${squad.map(id=>PARTY_BASE[id].name).join(', ')}) unleashed Protocol Overdrive!`,
+        `> Dealt ${bHp} total breach damage across ${turns} turns.`,
+        `[VICTORY] Wave ${curWave} Cleared! +${info.reward} Bits${curWave%5===0?' + 1 Root.Shell':''}!`
+      ];
+      G.ach('endless_survivor'); sfx('win');
+      G.toast(`> ENDLESS WAVE ${curWave} CLEARED! +${info.reward} BITS`,P.GD);
+      curWave++;
+    };
+    G.mini={
+      name:'endless_boss',
+      key(e){
+        if((e.key||'').toLowerCase()==='p') blitzWave();
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')) { curWave=Math.max(1,curWave-1); sfx('move'); }
+        if(took('right')){ curWave=Math.min(99,curWave+1); sfx('move'); }
+        if(took('confirm')){
+          const info=bossForWave(curWave);
+          sfx('confirm');
+          G.startBattle([info.key],{endlessWave:curWave,endlessReward:info.reward,boss:info.key});
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        const bestW=G.flags&&G.flags.endless_wave||0, myScore=G.flags&&G.flags.endless_score||(bestW*2600);
+        const info=bossForWave(curWave), f=info.foe, wk=ENEMY_WEAK[info.key]||'KERNEL';
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> BOSS RUSH ENDLESS SURVIVAL MODE',56,40,P.GD,2);
+        UI.text(`BEST WAVE: ${bestW}   ·   SCORE: ${myScore}   ·   BITS: ${G.bits}B`,900,44,'#4ade80',1,'right');
+        // Left: Current Wave Boss Dossier & Scaling Multipliers
+        UI.box(52,78,424,254,P.RED,'rgba(10,8,6,.94)');
+        UI.text(`WAVE ${String(curWave).padStart(2,'0')} TARGET [LEFT/RIGHT]:`,68,94,P.GD,1);
+        UI.text(f.name.toUpperCase(),68,116,P.RED,2);
+        UI.text(`SCALING: ${info.mul.toFixed(2)}x THREAT   ·   WEAKNESS: [${wk}]`,68,146,'#22d3ee',1);
+        const sHp=Math.round((f.hp||200)*info.mul), sAtk=Math.round((f.atk||18)*info.mul), sDef=Math.round((f.def||8)*info.mul);
+        UI.box(68,170,392,74,P.DDG,'rgba(14,11,8,.92)');
+        UI.text(`SCALED HP: ${sHp}     SCALED ATK: ${sAtk}     SCALED DEF: ${sDef}`,84,186,P.BONE,1);
+        UI.text(`WAVE BOUNTY: +${info.reward} BITS   +   ROOT.SHELL EVERY 5 WAVES`,84,212,'#4ade80',1);
+        UI.box(68,254,392,64,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER] 3D BOSS BATTLE  |  [P] TACTICAL BLITZ SIM',264,270,P.GD,1,'center');
+        UI.text('Infinite wave scaling from Wave 01 to Wave 99+.',264,294,P.BONE,1,'center');
+        // Bottom-Left: Live Tactical Combat Log
+        UI.box(52,344,424,120,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('ENDLESS GAUNTLET TELEMETRY LOG:',68,360,P.GD,1);
+        simLog.slice(0,4).forEach((ln,i)=>UI.text(ln.slice(0,52),68,382+i*18,i===simLog.length-1?'#4ade80':P.BONE,1));
+        // Right: Global Pantheon Survival Leaderboard
+        UI.box(492,78,412,386,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('GLOBAL PANTHEON SURVIVAL LEADERBOARD:',510,94,P.GD,1);
+        const rows=[...ENDLESS_LADDER,{rank:0,op:(G.flags&&G.flags.callsign)||'1NC0GN30 [YOU]',wave:bestW,score:myScore,col:'#4ade80',me:true}]
+          .sort((a,b)=>b.wave-a.wave||b.score-a.score);
+        rows.forEach((r,idx)=>{
+          const y=122+idx*54;
+          UI.box(508,y,380,46,r.me?'#4ade80':P.DDG,r.me?'rgba(18,34,24,.94)':'rgba(14,11,8,.92)');
+          UI.text(`#${idx+1}  ${r.op}`,522,y+10,r.me?'#4ade80':r.col,1);
+          UI.text(`WAVE ${String(r.wave).padStart(2,'0')}`,872,y+10,P.GD,1,'right');
+          UI.text(`SURVIVAL SCORE: ${r.score} PTS`,522,y+28,P.DG,1);
+          UI.text(r.me?'[ACTIVE OPERATOR]':'[VERIFIED NODE]',872,y+28,r.me?'#4ade80':P.DG,1,'right');
+        });
+        UI.text('[left/right] select wave   [enter] 3D boss battle   [P] blitz simulate wave   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #16: "Vector Tank Cyber-Arena" (M112) ----
+  G.startVectorTank=()=>{
+    let wave=1, score=0, kills=0, hp=100;
+    const player={x:264, y:390, ang:-Math.PI/2, vx:0, vy:0, cd:0};
+    let bullets=[], foes=[];
+    const obstacles=[
+      {x:135,y:150,w:56,h:36},{x:335,y:150,w:56,h:36},
+      {x:135,y:285,w:56,h:36},{x:335,y:285,w:56,h:36}
+    ];
+    const spawnWave=w=>{
+      foes=[];
+      const n=3+Math.min(5,w);
+      for(let i=0;i<n;i++){
+        foes.push({
+          x:95+(i%3)*160,
+          y:105+Math.floor(i/3)*70,
+          ang:Math.PI/2,
+          hp:2+Math.floor(w/2),
+          maxHp:2+Math.floor(w/2),
+          cd:0.8+(i*0.35),
+          col:i%2===0?'#f43f5e':'#a78bfa'
+        });
+      }
+    };
+    spawnWave(wave);
+    const fireShell=(x,y,ang,friendly)=>{
+      bullets.push({x:x+Math.cos(ang)*16, y:y+Math.sin(ang)*16, vx:Math.cos(ang)*240, vy:Math.sin(ang)*240, friendly, life:1.8});
+      sfx(friendly?'hit':'talk');
+    };
+    const empNova=()=>{
+      const destroyed=foes.length;
+      score+=destroyed*250+500; kills+=destroyed;
+      G.bits+=200; wave++;
+      spawnWave(wave);
+      G.ach('vector_commander'); sfx('win');
+      G.toast(`> VECTOR EMP NOVA: WAVE ${wave-1} OBLITERATED (+200 BITS)!`,'#4ade80');
+    };
+    G.mini={
+      name:'vector_tank',
+      key(e){
+        const k=(e.key||'').toLowerCase();
+        if(k==='p') empNova();
+        if(k===' ') { e.preventDefault(); if(player.cd<=0){ fireShell(player.x,player.y,player.ang,true); player.cd=0.22; } }
+      },
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        player.cd=Math.max(0,player.cd-dt);
+        if(IN.held.has('left'))  player.ang-=dt*2.8;
+        if(IN.held.has('right')) player.ang+=dt*2.8;
+        let thrust=0;
+        if(IN.held.has('up'))   thrust=115;
+        if(IN.held.has('down')) thrust=-85;
+        player.x=Math.max(76,Math.min(452,player.x+Math.cos(player.ang)*thrust*dt));
+        player.y=Math.max(96,Math.min(444,player.y+Math.sin(player.ang)*thrust*dt));
+        if(took('confirm')&&player.cd<=0){
+          fireShell(player.x,player.y,player.ang,true);
+          player.cd=0.22;
+        }
+        // Update hostile vector tanks
+        foes.forEach(f=>{
+          const dx=player.x-f.x, dy=player.y-f.y;
+          f.ang=Math.atan2(dy,dx);
+          const dist=Math.hypot(dx,dy);
+          if(dist>95){
+            f.x=Math.max(76,Math.min(452,f.x+Math.cos(f.ang)*34*dt));
+            f.y=Math.max(96,Math.min(444,f.y+Math.sin(f.ang)*34*dt));
+          }
+          f.cd-=dt;
+          if(f.cd<=0){
+            fireShell(f.x,f.y,f.ang,false);
+            f.cd=1.45;
+          }
+        });
+        // Update shells
+        bullets.forEach(b=>{
+          b.x+=b.vx*dt; b.y+=b.vy*dt; b.life-=dt;
+          if(b.x<60||b.x>468||b.y<82||b.y>458) b.life=0;
+          obstacles.forEach(o=>{
+            if(b.x>=o.x&&b.x<=o.x+o.w&&b.y>=o.y&&b.y<=o.y+o.h) b.life=0;
+          });
+          if(b.friendly){
+            foes.forEach(f=>{
+              if(f.hp>0&&Math.hypot(b.x-f.x,b.y-f.y)<16){
+                f.hp--; b.life=0; score+=100;
+                if(f.hp<=0){
+                  kills++; score+=200; G.bits+=35; sfx('level');
+                  if(kills>=3) G.ach('vector_commander');
+                }
+              }
+            });
+          } else {
+            if(Math.hypot(b.x-player.x,b.y-player.y)<15){
+              b.life=0; hp=Math.max(10,hp-8);
+            }
+          }
+        });
+        bullets=bullets.filter(b=>b.life>0);
+        foes=foes.filter(f=>f.hp>0);
+        if(foes.length===0){
+          wave++; G.bits+=120; G.ach('vector_commander'); sfx('win');
+          G.toast(`> VECTOR WAVE ${wave-1} CLEARED! +120 BITS`,P.GD);
+          spawnWave(wave);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> VECTOR TANK CYBER-ARENA [BATTLEZONE]',56,40,P.GD,2);
+        UI.text(`WAVE: 0${wave}   ·   KILLS: ${kills}   ·   SCORE: ${score}`,900,44,'#4ade80',1,'right');
+        // Left: 424x386 Wireframe Vector Battlefield
+        UI.box(52,78,424,386,'#22d3ee','rgba(6,10,12,.96)');
+        // Subtle radar grid lines
+        X.strokeStyle='rgba(34,211,238,.11)'; X.lineWidth=1;
+        for(let gx=84;gx<470;gx+=40){ X.beginPath(); X.moveTo(gx,80); X.lineTo(gx,462); X.stroke(); }
+        for(let gy=108;gy<460;gy+=40){ X.beginPath(); X.moveTo(54,gy); X.lineTo(474,gy); X.stroke(); }
+        // Draw 4 wireframe bunkers
+        obstacles.forEach(o=>{
+          UI.box(o.x,o.y,o.w,o.h,'#22d3ee','rgba(14,24,28,.92)');
+        });
+        // Draw helper for wireframe vector tank
+        const drawTank=(tx,ty,ang,col,turretCol)=>{
+          X.save(); X.translate(tx,ty); X.rotate(ang);
+          X.strokeStyle=col; X.lineWidth=2;
+          X.strokeRect(-12,-10,24,20);
+          X.strokeRect(-14,-13,28,4);
+          X.strokeRect(-14,9,28,4);
+          X.strokeStyle=turretCol;
+          X.beginPath(); X.arc(0,0,5,0,Math.PI*2); X.stroke();
+          X.beginPath(); X.moveTo(5,0); X.lineTo(18,0); X.stroke();
+          X.restore(); X.lineWidth=1;
+        };
+        // Draw hostile tanks
+        foes.forEach(f=>{
+          drawTank(f.x,f.y,f.ang,f.col,P.GD);
+        });
+        // Draw player Sovereign Vector Tank
+        drawTank(player.x,player.y,player.ang,'#4ade80','#22d3ee');
+        // Draw plasma shells
+        bullets.forEach(b=>{
+          X.fillStyle=b.friendly?'#4ade80':'#f43f5e';
+          X.fillRect(Math.round(b.x-2),Math.round(b.y-2),5,5);
+        });
+        // Right: Vector Tank Tactical HUD & Controls
+        UI.box(492,78,412,386,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('SOVEREIGN VECTOR CHASSIS TELEMETRY:',510,96,P.GD,1);
+        UI.box(510,118,376,92,'#4ade80','rgba(14,20,16,.94)');
+        UI.text(`HULL INTEGRITY: ${hp}%`,526,134,'#4ade80',2);
+        X.fillStyle='rgba(255,255,255,.1)'; X.fillRect(526,164,344,12);
+        X.fillStyle='#4ade80'; X.fillRect(526,164,Math.round(344*(hp/100)),12);
+        UI.text(`HOSTILE TANKS REMAINING: ${foes.length}   ·   BITS: ${G.bits}B`,526,188,'#22d3ee',1);
+        UI.box(510,224,376,136,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('TACTICAL ENGAGEMENT PROTOCOLS:',526,240,P.GD,1);
+        UI.text('• [LEFT / RIGHT]: Rotate Tank Chassis & Cannon',526,266,P.BONE,1);
+        UI.text('• [UP / DOWN]: Vector Thruster Forward / Reverse',526,288,P.BONE,1);
+        UI.text('• [ENTER / SPACE]: Fire High-Velocity Plasma Shell',526,310,P.BONE,1);
+        UI.text('• Use the 4 cyan wireframe bunkers as cover!',526,332,'#22d3ee',1);
+        UI.box(510,374,376,74,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[P] TRIGGER EMP OVERDRIVE NOVA (+200 BITS)',698,392,P.GD,1,'center');
+        UI.text('Detonates all hostile vector tanks & advances wave.',698,418,'#4ade80',1,'center');
+        UI.text('[arrows] steer & thrust   [enter/space] fire cannon   [P] EMP nova (+200B)   [esc] exit',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
