@@ -85,8 +85,8 @@
 - [x] **M74** (`08:07`): Interactive Elemental & Protocol Resonance Matrix (`G.openResonance()` via `> resonance` & System Menu — attune active squad to 5x5 Lattice Harmonics)
 - [x] **M75** (`08:18`): Secret Mini-Game #11 — *"Fiber-Optic Laser Mirror Routing Puzzle"* (`G.startLasers()` via `> lasers` & System Menu — rotate 45° phase mirrors across a 6x6 grid)
 - [x] **M76** (`08:18`): Companion Gear Loadout Presets & 1-Click Auto-Optimizer (`G.openLoadouts()` via `> loadouts` & System Menu — save/restore 4 squad gear presets & auto-equip best-in-slot)
-- [ ] **M77**: Interactive Safehouse Trophy Room & Arcade Cabinet Hub (`G.openArcade()` via `> arcade` & System Menu — launch all 11 mini-games with high-score leaderboards)
-- [ ] **M78**: Hostile AI Behavior & Intent Inspector (`G.openMoveDex()` via `> movedex` & System Menu — inspect every enemy & boss move multiplier, cooldown, and counter-strategy)
+- [x] **M77** (`08:35`): Interactive Safehouse Trophy Room & Arcade Cabinet Hub (`G.openArcade()` via `> arcade` & System Menu — launch all 11 mini-games with trophy status & arcade stipend)
+- [x] **M78** (`08:35`): Hostile AI Behavior & Intent Inspector (`G.openMoveDex()` via `> movedex` & System Menu — inspect all 24 enemy & boss move multipliers, AI weights & counter-strategies)
 - [ ] **M79**: Custom Battle Arena & Encounter Builder (`G.openEncounterBuilder()` via `> builder` & System Menu — assemble custom 1–3 enemy/boss squads at any level & fight them)
 - [ ] **M80**: Procedural Daily Contract Generator v2 (`G.openContracts()` via `> contracts` & System Menu — 6 rotating tactical contracts with streak multipliers)
 
