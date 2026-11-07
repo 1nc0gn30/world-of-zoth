@@ -4,6 +4,8 @@ import * as UI from './ui.js';
 import { P } from './pal.js';
 import { IN, took } from './input.js';
 import { AG } from './sprites.js';
+import { ENEMIES } from './data.js';
+import { ENEMY_WEAK } from './battle.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
@@ -33,8 +35,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  bounty  stack  warp <zone>  whoami  crew  life  doom  exit');
+    if(c==='help') out('nmap  ping  patch  bounty  stack  bestiary  warp <zone>  whoami  crew  life  doom  exit');
     else if(c==='stack'){ out('[stack] opening The Infinite Stack (floors 1-99)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startStack(); },40); }
+    else if(c==='bestiary'){ out('[bestiary] opening Hostile Protocol Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBestiary(); },40); }
     else if(c==='nmap'){
       const z=G.zone; const fn=(G.foes||[]).filter(f=>f.alive).length, nn=(G.npcs||[]).length, pn=(z.portals||[]).length;
       G.scanT=45; G.trailOn=true; sfx('blip');
@@ -77,7 +80,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','bounty','stack','warp','whoami','crew','life','doom','trace 03ng0cn1','exit'];
+  const CHIPS=['help','nmap','ping','patch','bounty','stack','bestiary','warp','whoami','crew','life','doom','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -103,6 +106,57 @@ export function initEggs(G,{music,sfx}){
         UI.box(10,500,460,30); UI.text('> doom-fire   [up] stoke  [down] smother  [x] exit',20,509,P.BONE); } };
     G.mode='mini'; sfx('confirm'); }
   G.startLife=startLife; G.startDoom=startDoom;
+  // ---- Hostile Bestiary & Protocol Encyclopedia (M18) ----
+  const PROTO_COUNTERS={
+    KERNEL:'1nc0gn30, Kai, Pixel-Shiba, Pixel-Neko, Aquila',
+    CRYPTO:'Vigil, Athena, Ghostbyte, Scorpius',
+    THERMAL:'Kitsune, Ignis, Lycan, Draco',
+    TEMPORAL:'Nexus, Kraken, Chronos, Leviathan, Mercury, Radical-Minion',
+    VOID:'Onyx, Aether, 03ng0cn1'
+  };
+  G.openBestiary=()=>{
+    const keys=Object.keys(ENEMIES); let sel=0;
+    G.mini={
+      name:'bestiary',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+keys.length-1)%keys.length;
+        if(took('down')) sel=(sel+1)%keys.length;
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> HOSTILE BESTIARY',106,48,P.GD,2);
+        UI.text(`PROTOCOL ENCYCLOPEDIA  ·  ${keys.length} SIGNATURES`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        const first=Math.max(0,Math.min(sel-7,keys.length-15));
+        keys.slice(first,first+15).forEach((k,idx)=>{
+          const i=first+idx, e=ENEMIES[k], y=92+idx*24, on=i===sel, wk=ENEMY_WEAK[k]||'KERNEL';
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(102,y-3,296,20); }
+          UI.text(`${on?'> ':'  '}${e.boss?'[BOSS] ':'       '}${e.name}`,108,y,e.boss?P.RED:(on?P.GD:P.BONE),1);
+          UI.text(`[${wk.slice(0,4)}]`,390,y,'#22d3ee',1,'right');
+          UI.hit(102,y-3,296,20,()=>{ sel=i; });
+        });
+        const k=keys[sel], e=ENEMIES[k], wk=ENEMY_WEAK[k]||'KERNEL';
+        UI.box(412,90,444,376,e.boss?P.RED:P.DDG,'rgba(12,10,8,.92)');
+        UI.text(e.name.toUpperCase(),432,106,e.boss?P.RED:P.GD,2);
+        UI.text(`Classification: ${e.boss?'SOVEREIGN APEX BOSS':'SUB-LATTICE HOSTILE UNIT'}   ·   Mesh: ${e.mesh}`,432,134,P.DG,1);
+        UI.box(432,158,404,64,P.DDG,'rgba(6,5,4,.85)');
+        UI.text(`BASE STATS (LV 1):   HP ${e.hp}   ·   ATK ${e.atk}   ·   DEF ${e.def}   ·   SPD ${e.spd}`,444,168,P.BONE,1);
+        UI.text(`BOUNTY PAYOUT:   +${e.xp} XP  ·  +${e.bits} bits  ·  Voice Mimic: ${e.voice?'YES':'NO'}`,444,192,P.GD,1);
+        UI.box(432,234,404,76,'#22d3ee','rgba(8,22,28,.45)');
+        UI.text(`PROTOCOL WEAKNESS: [${wk}]  (1.35x Breach + 15% OD)`,444,244,'#22d3ee',1);
+        UI.wrap(`Counter Agents (${wk}): ${PROTO_COUNTERS[wk]}`,380,1).forEach((l,li)=>UI.text(l,444,266+li*16,P.BONE,1));
+        const mvs=(e.moves||[]).map(m=>m[0]).join('  ·  ');
+        UI.text(`KNOWN ATTACK PATTERNS:  ${mvs||'standard strike'}`,432,328,P.GD,1);
+        const drp=(e.drop||[]).map(d=>`${d[0]} (${Math.round(d[1]*100)}%)`).join('  ·  ')||'none';
+        UI.text(`SALVAGE DROPS:          ${drp}`,432,354,P.BONE,1);
+        if(e.mirror) UI.text('WARNING: Reflects repeated consecutive player commands!',432,386,P.RED,1);
+        UI.text('[up/down] browse signatures   [esc] close encyclopedia',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
   // ---- The Infinite Stack (Procedural Rogue-Lite Dungeon Mode: Floors 1-99) ----
   const MUTATORS=[
     ['OVERCLOCK','+35% starting Overdrive gauge & +10 EN on entry'],

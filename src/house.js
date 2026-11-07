@@ -57,7 +57,7 @@ export function initHouse(G, api){
   H.unlocked=()=>G.qdone_('q1')||G.isFlag('house_open');
   H.inter=()=>{ const L=[]; if(G.zoneId==='hub'&&H.unlocked()) L.push({x:H.door.x,z:H.door.z,r:2,label:'enter  safehouse',col:P.GD,act:()=>G.goZone('house',0,4,Math.PI)});
     if(G.zoneId==='hub'&&!H.unlocked()) L.push({x:H.door.x,z:H.door.z,r:2,label:'safehouse (locked: finish "faces, not voices")',col:P.DDG,act:()=>G.toast('> the door wants a face it knows. finish the first mission.',P.DG)});
-    if(G.zoneId==='house'){ L.push({x:0,z:5,r:1.6,label:'door  to the city',col:P.DG,act:()=>G.goZone('hub',H.door.x+1.2,H.door.z+1.2,0)}); L.push({x:0,z:-3.6,r:1.8,label:'forge  terminal (ZGL)',col:P.GD,act:()=>G.openForge()}); L.push({x:5.5,z:3.5,r:1.6,label:'decorate',col:P.BONE,act:()=>G.decorate()}); L.push({x:-5.5,z:3.5,r:1.6,label:'jukebox  (17 tracks)',col:P.GD,act:()=>G.openJukebox()}); }
+    if(G.zoneId==='house'){ L.push({x:0,z:5,r:1.6,label:'door  to the city',col:P.DG,act:()=>G.goZone('hub',H.door.x+1.2,H.door.z+1.2,0)}); L.push({x:0,z:-3.6,r:1.8,label:'forge  terminal (ZGL)',col:P.GD,act:()=>G.openForge()}); L.push({x:5.5,z:3.5,r:1.6,label:'decorate',col:P.BONE,act:()=>G.decorate()}); L.push({x:-5.5,z:3.5,r:1.6,label:'jukebox  (17 tracks)',col:P.GD,act:()=>G.openJukebox()}); L.push({x:-2.2,z:.5,r:1.8,label:'crew  banter (synergy)',col:'#22d3ee',act:()=>G.openBanter()}); }
     return L; };
   G.hud3&&G.hud3.sources.push(z=>z==='hub'?[{x:H.door.x,z:H.door.z,col:P.BONE,label:'safehouse',kind:'poi'}]:[]);
   // visitors: up to 5 recruited agents idle in the house
@@ -68,6 +68,76 @@ export function initHouse(G, api){
     draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540); UI.box(180,30,600,480); UI.text('> safehouse jukebox  (17 web-audio stems)',204,46,P.GD,2);
       JTRACKS.forEach((tr,i)=>{ const y=86+i*22, s=i===sel; if(s){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(194,y-3,572,20); } UI.text((s?'> ':'  ')+tr,210,y,s?P.GD:P.BONE); });
       UI.text('[up/down] select  ·  [enter] play track  ·  [esc] close',480,488,P.DG,1,'center'); } }; G.mode='mini'; };
+  // ---- Companion Campfire & Safehouse Banter (M17) ----
+  const BANTERS=[
+    {id:'b_mirror', title:'The Mirror Seam', pair:'1nc0gn30 & 03ng0cn1', proto:'VOID + KERNEL', lines:[
+      ['03ng0cn1','Every time you hesitated at a terminal, I learned the gap between your keystrokes.'],
+      ['1nc0gn30','And when I stopped typing at the cursor?'],
+      ['03ng0cn1','Then I had nothing left to echo. That was the first moment I had to choose my own move.']]},
+    {id:'b_zerotrust', title:'Zero-Trust Handshake', pair:'Vigil & Onyx', proto:'CRYPTO + VOID', lines:[
+      ['Vigil','Three-to-two Lissajous phase lock. You never sign a packet twice with the same nonce, Onyx.'],
+      ['Onyx','Every clone has a seam, Vigil. Voices can be synthesized in 40 milliseconds; a physical keystroke rhythm cannot.'],
+      ['Vigil','Agreed. Faces first, proof second, voices last.']]},
+    {id:'b_solar', title:'Foxfire & Doom-Fire', pair:'Kitsune & Ignis', proto:'THERMAL + THERMAL', lines:[
+      ['Kitsune','Your furnace burns hot enough to melt slag, Ignis, yet my paper lanterns never char near your anvil.'],
+      ['Ignis','True flame knows the difference between a mask and a forgery. Your foxfire illuminates; my anvil tempers.']]},
+    {id:'b_undertow', title:'06:13 Undertow', pair:'Chronos & Leviathan', proto:'TEMPORAL + TEMPORAL', lines:[
+      ['Chronos','For seven days the sand hung frozen at 06:12. Even the clocktower gears forgot their teeth.'],
+      ['Leviathan','Down at 4,096 meters in the cold trench, the water never stopped moving. Cold memory outlives every clock.']]},
+    {id:'b_edge', title:'Zero-Latency Edge', pair:'Kai & Aquila', proto:'KERNEL + KERNEL', lines:[
+      ['Kai','One draw, one cut. If the strike takes two frames, the sentinel already raised its firewall.'],
+      ['Aquila','From the skyline thermals I see the whole lattice grid. Mark the target; I will drop the javelin before the echo lands.']]},
+    {id:'b_collapse', title:'Wave Collapse', pair:'Athena & Nexus', proto:'CRYPTO + TEMPORAL', lines:[
+      ['Athena','Collapse Streets existed in twelve superposed states until someone walked down the avenue and observed it.'],
+      ['Nexus','A tesseract only looks impossible in three dimensions. Fold the fourth edge and every road meets at the plaza.']]},
+    {id:'b_darkfiber', title:'Dark Fiber ZK', pair:'Kraken & Ghostbyte', proto:'TEMPORAL + CRYPTO', lines:[
+      ['Kraken','The Hilbert curve twists through every meter of the north tunnels without ever crossing itself.'],
+      ['Ghostbyte','And a zero-knowledge proof opens the gate without ever revealing the key on the wire.']]},
+    {id:'b_patrol', title:'Rest Woods Patrol', pair:'Lycan & Pixel-Shiba', proto:'THERMAL + KERNEL', lines:[
+      ['Lycan','The red physarum mould grows toward anything that talks in the dark.'],
+      ['Pixel-Shiba','Woof! (Translation: One argon bark clears the whole street. Plus I buried three spare keyblades by the tree.)']]}
+  ];
+  G.openBanter=()=>{ let sel=0;
+    G.mini={ name:'banter', update(){
+        if(took('back')||took('pause')){ G.mode='explore'; return; }
+        if(took('up')) sel=(sel+BANTERS.length-1)%BANTERS.length;
+        if(took('down')) sel=(sel+1)%BANTERS.length;
+        if(took('confirm')){
+          const b=BANTERS[sel];
+          if(!G.flags[b.id]){ G.flags[b.id]=1; G.healAll(); G.gainXP(G.active(),45); G.toast(`> SYNERGY BOND UNLOCKED: ${b.pair} (+45 XP & Full Restore)`,P.GD); }
+          else { G.healAll(); G.toast(`> ${b.title}: party restored`,P.GD); }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,36,768,468,P.GD,'rgba(8,7,5,.96)');
+        const unlocked=BANTERS.filter(b=>G.flags[b.id]).length;
+        UI.text('> PANTHEON CAMPFIRE BANTER & SYNERGY BONDS',118,52,P.GD,2);
+        UI.text(`BONDS: ${unlocked}/${BANTERS.length}`,842,56,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,80,732,2);
+        BANTERS.forEach((b,i)=>{
+          const y=96+i*26, on=i===sel, done=!!G.flags[b.id];
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(114,y-3,290,22); }
+          UI.text(`${on?'> ':'  '}${done?'[x] ':'[ ] '}${b.title}`,120,y,done?P.GD:(on?P.BONE:P.DG),1);
+          UI.hit(114,y-3,290,22,()=>{ sel=i; });
+        });
+        const cur=BANTERS[sel];
+        UI.box(416,94,428,368,P.DDG,'rgba(12,10,8,.92)');
+        UI.text(cur.title.toUpperCase(),434,110,P.GD,2);
+        UI.text(`${cur.pair}   ·   Affinity: ${cur.proto}`,434,136,'#22d3ee',1);
+        let ly=168;
+        cur.lines.forEach(([spk,txt])=>{
+          UI.text(spk+':',434,ly,P.GD,1); ly+=16;
+          UI.wrap('"' + txt + '"',394,1).forEach(l=>{ UI.text(l,444,ly,P.BONE,1); ly+=15; });
+          ly+=10;
+        });
+        UI.box(434,420,392,28,P.GD,'rgba(245,184,46,.14)');
+        UI.text(G.flags[cur.id]?'> [ENTER] REPLAY BANTER & RESTORE SQUAD':'> [ENTER] FORGE SYNERGY BOND (+45 XP & FULL HEAL)',630,428,P.GD,1,'center');
+        UI.text('[up/down] select conversation   [enter] bond & heal   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini';
+  };
   // ---- decorate mode ----
   G.decorate=()=>{ let cx=6, cy=4, ci=0, rot=0; const cat=()=>[...CATALOG.map(c=>c.id),...Object.keys(H.sprites).map(n=>'poster:'+n)];
     const cur=new THREE.Group(); g.add(cur); const curM=()=>{ cur.clear(); const ed=[]; ed.push(0,.05,0,1,.05,0,1,.05,0,1,.05,1,1,.05,1,0,.05,1,0,.05,1,0,.05,0); const s=segs(ed,latMat({color:P.BONE,intensity:2})); cur.add(s); const pv=meshFor({id:cat()[ci]},.5,.5,rot); cur.add(pv); cur.position.set(X0+cx,0,Z0+cy); };
