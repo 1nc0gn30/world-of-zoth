@@ -63,12 +63,84 @@ export function initHouse(G, api){
   // visitors: up to 5 recruited agents idle in the house
   H.visitors=()=>{ const r=G.roster.filter(id=>id!=='me').slice(-5); return r.map((id,i)=>({id,x:[-4.5,3,-1.5,4.2,-3.2][i],z:[1.5,-1.5,-3,1.2,-2.2][i]})); };
   const JTRACKS=['title','hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','abyss','skyline','citadel','stack','battle','boss','phonk','archon','final'];
-  G.openJukebox=()=>{ let sel=0; G.mini={ name:'jukebox', update(){ if(took('back')||took('pause')){ G.mode='explore'; return; } if(took('up')) sel=(sel+JTRACKS.length-1)%JTRACKS.length; if(took('down')) sel=(sel+1)%JTRACKS.length;
-      if(took('confirm')){ api.music&&api.music(JTRACKS[sel]); G.toast('> playing: '+JTRACKS[sel],P.GD); } },
-    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540); UI.box(180,30,600,480); UI.text('> safehouse jukebox  (20 web-audio stems)',204,46,P.GD,2);
-      const first=Math.max(0,Math.min(sel-7,JTRACKS.length-16));
-      JTRACKS.slice(first,first+16).forEach((tr,idx)=>{ const i=first+idx, y=86+idx*23, s=i===sel; if(s){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(194,y-3,572,20); } UI.text(`${s?'> ':'  '}${String(i+1).padStart(2,'0')} · ${tr}`,210,y,s?P.GD:P.BONE); });
-      UI.text('[up/down] select  ·  [enter] play track  ·  [esc] close',480,488,P.DG,1,'center'); } }; G.mode='mini'; };
+  const JMETA={
+    title:['68 BPM','D Minor','Solitary Braille Sunrise Pad'],
+    hub:['96 BPM','D Minor','Relit City Pulse & Sub-Bass'],
+    forest:['76 BPM','D Dorian','Rest Woods Firefly Arpeggio'],
+    relay:['108 BPM','D Phrygian','Hollow Glitch & Borrowed Chorus'],
+    fiber:['120 BPM','A Minor','Hilbert Curve 16th-Note Sequencer'],
+    clock:['84 BPM','D Minor','06:12 Escapement Tick & Drone'],
+    streets:['116 BPM','A Minor','Wave-Collapse Syncopated Bass'],
+    foundry:['112 BPM','D Phrygian','Doom-Fire Industrial Anvil Beat'],
+    caves:['72 BPM','D Minor','Physarum Bioluminescent Echo'],
+    mirrors:['66 BPM','D Minor','Octagonal Reflection Glass Chimes'],
+    deep:['60 BPM','D Dorian','4096m Trench Sub-Harmonic Whale'],
+    abyss:['138 BPM','D Phrygian','Menger Trench Zero-Knowledge Drive'],
+    skyline:['124 BPM','D Minor','Mode-7 21-Skybeam Anthem'],
+    citadel:['148 BPM','D Minor','Pantheon Sanctum Cathedral Organ'],
+    stack:['136 BPM','A Minor','Infinite Stack Rogue-Lite Pulse'],
+    battle:['140 BPM','D Minor','Terminal Command Combat Sequencer'],
+    boss:['152 BPM','D Phrygian','Sovereign Anomaly Boss Overdrive'],
+    phonk:['144 BPM','D Minor','808 Cowbell Drift-Phonk Engine'],
+    archon:['158 BPM','D Phrygian','ARCHON-0 Root Compiler Polyrhythm'],
+    final:['132 BPM','D Major/Min','Trial of Silence & 06:13 Dawn']
+  };
+  G.openJukebox=()=>{
+    let sel=0, playing=JTRACKS[0];
+    G.mini={
+      name:'jukebox',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; return; }
+        if(took('up')) sel=(sel+JTRACKS.length-1)%JTRACKS.length;
+        if(took('down')) sel=(sel+1)%JTRACKS.length;
+        if(took('confirm')){ playing=JTRACKS[sel]; api.music&&api.music(playing); G.toast('> playing: '+playing,P.GD); }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> SAFEHOUSE JUKEBOX & WAVEFORM STUDIO',106,48,P.GD,2);
+        UI.text(`NOW PLAYING: ${playing.toUpperCase()}`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        const first=Math.max(0,Math.min(sel-7,JTRACKS.length-15));
+        JTRACKS.slice(first,first+15).forEach((tr,idx)=>{
+          const i=first+idx, y=92+idx*24, s=i===sel, act=tr===playing;
+          if(s){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(102,y-3,260,20); }
+          UI.text(`${s?'> ':'  '}${String(i+1).padStart(2,'0')} · ${tr}`,110,y,act?'#22d3ee':(s?P.GD:P.BONE),1);
+          if(act) UI.text('[ON]',354,y,'#22d3ee',1,'right');
+          UI.hit(102,y-3,260,20,()=>{ sel=i; playing=JTRACKS[i]; api.music&&api.music(playing); });
+        });
+        const cur=JTRACKS[sel], meta=JMETA[cur]||['120 BPM','D Minor','Procedural WebAudio Stem'];
+        const bpmNum=parseInt(meta[0],10)||120, beat=t*(bpmNum/60)*Math.PI*2;
+        UI.box(380,88,476,374,P.DDG,'rgba(12,10,8,.92)');
+        UI.text(`STEM ${String(sel+1).padStart(2,'0')}: ${cur.toUpperCase()}`,400,104,P.GD,2);
+        UI.text(`Tempo: ${meta[0]}   ·   Key: ${meta[1]}   ·   Engine: WebAudio Synth`,400,132,'#22d3ee',1);
+        UI.text(meta[2],400,152,P.BONE,1);
+        // Real-time Oscilloscope Waveform Canvas
+        UI.box(400,178,436,112,P.DDG,'rgba(6,5,4,.9)');
+        UI.text('REAL-TIME OSCILLOSCOPE WAVEFORM:',412,186,P.DG,1);
+        X.strokeStyle=P.GD; X.lineWidth=1.5; X.beginPath();
+        for(let x=0;x<412;x+=3){
+          const u=x/412*Math.PI*4;
+          const y=242+Math.sin(u+beat)*18*Math.cos(u*.5-t*3)+Math.sin(u*2.5-beat*1.5)*9;
+          if(x===0) X.moveTo(412+x,y); else X.lineTo(412+x,y);
+        }
+        X.stroke();
+        // 28-Band Spectrum Analyzer Bars
+        UI.box(400,302,436,108,P.DDG,'rgba(6,5,4,.9)');
+        UI.text('32-CHANNEL FREQUENCY SPECTRUM:',412,310,P.DG,1);
+        for(let b=0;b<28;b++){
+          const amp=Math.abs(Math.sin(beat*.5+b*.45)*Math.cos(t*4+b*.2))*.75 + (b<6?Math.abs(Math.sin(beat))*.25:0);
+          const bh=Math.max(4,Math.round(amp*68)), bx=414+b*14.8, by=398-bh;
+          X.fillStyle=bh>50?P.RED:(bh>32?P.GD:'#22d3ee');
+          X.fillRect(Math.round(bx),by,10,bh);
+        }
+        UI.box(400,420,436,30,P.GD,'rgba(245,184,46,.16)');
+        UI.text(`> [ENTER] PLAY '${cur.toUpperCase()}' ON SAFEHOUSE PA`,618,428,P.GD,1,'center');
+        UI.text('[up/down] select stem   [enter] play audio   [esc] close studio',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini';
+  };
   // ---- Companion Campfire & Safehouse Banter (M17) ----
   const BANTERS=[
     {id:'b_mirror', title:'The Mirror Seam', pair:'1nc0gn30 & 03ng0cn1', proto:'VOID + KERNEL', lines:[

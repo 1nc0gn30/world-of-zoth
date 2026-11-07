@@ -59,8 +59,9 @@ export class Battle{
     const pos=big? this.at(5.2,2.6) : this.at(2.6+(j%2)*1.1, ((j%3)-1)*1.9 + (j>=3?.9:0));
     let obj; if(E.mesh==='echo'||E.mesh==='copy'){ obj=new Billboard('copy'); obj.facing=Math.atan2(-this.R.x,-this.R.z); this.G.scene.add(obj.group); obj.group.position.copy(pos); }
     else { obj={group:enemyMesh(E.mesh)}; this.G.scene.add(obj.group); obj.group.position.copy(pos); }
-    const L=E.fixed?1:Math.max(1,this.opts.lvl||this.G.zone.lvl||1), k=L-1; const hp=Math.round(E.hp*(1+.3*k)); this.xpMul=Math.max(this.xpMul||1,1+.6*k);
-    const e={type:t, name:E.name+(k>0&&!E.fixed?'':''), E, lvl:L, hp, mhp:hp, atk:Math.round(E.atk+2.1*k), def:Math.round(E.def+.8*k), spd:E.spd+Math.floor(k*.1), obj, home:pos.clone(), st:{}, alive:true, flash:0, voice:E.voice};
+    const L=E.fixed?1:Math.max(1,this.opts.lvl||this.G.zone.lvl||1), k=L-1, nm=this.G.settings&&this.G.settings.nightmare?1.5:1;
+    const hp=Math.round(E.hp*(1+.3*k)*nm); this.xpMul=Math.max(this.xpMul||1,1+.6*k);
+    const e={type:t, name:E.name+(k>0&&!E.fixed?'':''), E, lvl:L, hp, mhp:hp, atk:Math.round((E.atk+2.1*k)*nm), def:Math.round(E.def+.8*k), spd:E.spd+Math.floor(k*.1), obj, home:pos.clone(), st:{}, alive:true, flash:0, voice:E.voice};
     if(this.round>0) dissolve(pos,P.RED,40); this.enemies.push(e); return e; }
   alive(list){ return list.filter(x=>x.alive); }
   say(s,d=1.4){ this.msg=s; this.msgT=d; this.log.push(s); }
@@ -297,7 +298,8 @@ export class Battle{
     if(B.res===null && took('confirm')){ const x=this.st; const wd=(this.G.mods||{}).d2?.04:0; B.res= x<.4-wd?'early': (x>=.5-wd&&x<=.6+wd?'parry':(x>=.4-wd&&x<.64+wd?'block':'late')); } }
   // ---------------- results ----------------
   win(){ this.go('victory'); sfx('win'); music(this.G.zone.music);
-    let xp=0,bits=0; const loot=[]; this.enemies.forEach(e=>{ const m=e.E.fixed?1:1+.6*(e.lvl-1); xp+=Math.round(e.E.xp*m); bits+=Math.round(e.E.bits*(1+.3*(e.lvl-1))); (e.E.drop||[]).forEach(([it,p])=>{ if(Math.random()<p) loot.push(it); }); });
+    const nmMul=this.G.settings&&this.G.settings.nightmare?2:1;
+    let xp=0,bits=0; const loot=[]; this.enemies.forEach(e=>{ const m=e.E.fixed?1:1+.6*(e.lvl-1); xp+=Math.round(e.E.xp*m*nmMul); bits+=Math.round(e.E.bits*(1+.3*(e.lvl-1))*nmMul); (e.E.drop||[]).forEach(([it,p])=>{ if(Math.random()<p*nmMul) loot.push(it); }); });
     if(this.opts.tag==='ember') loot.push('signal.ember');
     this.party.forEach(p=>{ const m=this.G.party[p.id]; m.hp=p.alive?p.hp:1; m.en=p.en; });
     loot.forEach(it=>this.G.give(it,1)); this.G.bits+=bits;
@@ -355,6 +357,7 @@ export class Battle{
     // turn order & sync chain
     if(this.order.length&&this.state!=='victory'){ let x=12; UI.text(`r${this.round} · order`,x,52,P.DG); x+=68; this.order.forEach((o,i)=>{ if(!o.alive) return; const c=o.isP?o.col:P.RED; const s=(i===this.ti?'>':'')+o.name.slice(0,7); UI.text(s,x,52,i===this.ti?c:(o.isP?P.DG:P.RED2)); x+=UI.textW(s)+12; });
       if(this.chain>0){ UI.box(12,68,210,22,P.GD,'rgba(6,5,4,.85)'); UI.text(`> sync chain x${this.chain}  (+${this.chain*5}% dmg)`,20,73,P.GD,1); }
+      if(G.settings&&G.settings.nightmare){ UI.box(740,12,208,22,P.RED,'rgba(18,6,6,.88)'); UI.text('[06:12 NIGHTMARE · 2X LOOT]',844,17,P.RED,1,'center'); }
       if((this.od||0)>0){ const oy=this.chain>0?94:68; UI.box(12,oy,210,22,this.od>=100?P.GD:P.DDG,'rgba(6,5,4,.85)'); UI.bar(16,oy+15,202,3,Math.min(1,this.od/100),this.od>=100?P.GD:'#22d3ee',P.DDG); UI.text(`> overdrive ${this.od}%`+(this.od>=100?' [SURGE READY]':''),20,oy+3,this.od>=100?P.GD:P.BONE,1); } }
     if(this.state==='victory'&&this.result){ const R=this.result; const vx=560, vy=60, vh=Math.min(320,100+R.ups.length*18+(R.loot.length?20:0)); UI.box(vx,vy,380,vh); UI.text('> battle: won',vx+20,vy+16,P.GD,2); let y=vy+52;
       UI.text(`+${R.xp} xp   +${R.bits} bits`,vx+20,y,P.BONE); y+=20; if(R.loot.length){ UI.text('loot: '+R.loot.map(i=>ITEMS[i].name).join(', '),vx+20,y,P.GD); y+=20; }
