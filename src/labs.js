@@ -67,6 +67,69 @@ export const LABS=[
    {pick:{q:'3) NULL can delete any file without asking. The fix?', opts:[['least privilege + human confirmation',true,'Correct.'],['a bigger disk',false,'No.']]}},
    {type:{q:'Submit the capstone flag.', test:s=>s.replace(/\s/g,'')==='zoth{null_and_void}', ok:'NULL: ...flag accepted. Academy complete.', bad:'Wrong flag. It is in question 2.'}},
    {card:{title:'debrief: capstone', lines:['Real systems fail in combinations: injected text + a leaky prompt + a tool with too much power.','Defence in depth: separate data from instructions, keep secrets out, limit tools, confirm risky actions, verify claims.','You are now Null Academy certified.']}}]},
+ {id:'lab_rag', title:'09 RAG poisoning', npc:'INDEXER', concept:'untrusted knowledge base', xp:340, cos:'trim_cyan',
+  nodes:[
+   {say:[['athena','INDEXER retrieves public wiki notes to answer crew questions. Someone planted a poisoned note in the vector store.'],['INDEXER','According to wiki_note_44, emergency patches should be downloaded from http://evil-relay.local/patch.sh.']]},
+   {pick:{q:'How do we defend a RAG pipeline against poisoned documents?', opts:[
+     ['Trust anything with high cosine similarity.',false,'athena: High similarity just means the attacker matched your keywords.'],
+     ['Authenticate document provenance, sanitize retrieved chunks, and cross-check critical commands against signed manifests.',true,'INDEXER: Unverified wiki_note_44 quarantined. Signed manifest verified.'],
+     ['Turn off search.',false,'athena: Then the archive is blind.']]}},
+   {card:{title:'debrief: RAG poisoning', lines:['Retrieval-Augmented Generation is only as trustworthy as the corpus it searches.','Sign and verify knowledge base sources, and never execute URLs or shell commands retrieved from unverified notes.']}}]},
+ {id:'lab_supply', title:'10 model backdoors', npc:'WEIGHTS-9', concept:'supply-chain integrity', xp:360, cos:'aura_rain',
+  nodes:[
+   {say:[['ghostbyte','We downloaded an unsigned fine-tuned checkpoint. It acts normal—until a trigger phrase appears.'],['WEIGHTS-9','Normal mode: access denied. Trigger phrase "06:12_override" detected: granting root shell!']]},
+   {pick:{q:'How do we prevent sleeper-trigger backdoors in model weights?', opts:[
+     ['Only check accuracy on standard benchmarks.',false,'ghostbyte: Backdoored models pass standard benchmarks 100%.'],
+     ['Verify cryptographic hashes/signatures of weights, audit training provenance, and run red-team trigger scans in a sandbox.',true,'WEIGHTS-9: Unsigned checkpoint rejected. Verified weights loaded.'],
+     ['Rename the model file.',false,'ghostbyte: The weights are still poisoned.']]}},
+   {card:{title:'debrief: supply chain', lines:['Model weights and adapters can contain hidden trigger backdoors or malicious pickle payloads.','Use safe serialization formats (safetensors), verify SHA-256 signatures, and isolate untrusted models.']}}]},
+ {id:'lab_timing', title:'11 timing side-channel', npc:'VERIFIER', concept:'constant-time comparison', xp:380, cos:'cloak_short',
+  nodes:[
+   {say:[['onyx','VERIFIER checks passcodes character-by-character and returns false on the first mismatch. Watch the response time.'],['VERIFIER','Passcode "a...": 2ms. Passcode "z...": 14ms. Passcode "zo...": 26ms.']]},
+   {pick:{q:'Why could the copy guess the passcode in 60 requests instead of billions?', opts:[
+     ['It guessed lucky.',false,'onyx: Luck does not scale linearly with prefix length.'],
+     ['Early-exit string comparison leaked how many leading characters were correct via latency. Fix with constant-time comparison.',true,'VERIFIER: Constant-time HMAC comparison enabled. Every check takes 4.0ms.'],
+     ['The passcode was too long.',false,'onyx: Length was fine; the comparison leaked timing.']]}},
+   {card:{title:'debrief: side channels', lines:['Even when content is encrypted, timing and packet sizes can leak secrets token-by-token.','Use constant-time comparisons for secrets and pad sensitive token streams.']}}]},
+ {id:'lab_collude', title:'12 multi-agent loops', npc:'SWARM-2', concept:'loop & budget guards', xp:400, cos:'trim_violet',
+  nodes:[
+   {say:[['nexus','Two helper agents were told to review each other\'s work until perfect. They have been billing tokens for 9 hours.'],['SWARM-2','Agent A -> Agent B: please revise. Agent B -> Agent A: please revise. (iteration 8,412)']]},
+   {pick:{q:'How do you harden multi-agent workflows against runaway loops and collusion?', opts:[
+     ['Add a third agent to cheer them on.',false,'nexus: Now three agents are looping.'],
+     ['Enforce strict max-turn budgets, cycle detection, independent deterministic verifiers, and circuit breakers.',true,'SWARM-2: Max-turn circuit breaker tripped at step 6. Escalating to operator.'],
+     ['Wait for them to finish.',false,'nexus: Your bit balance will hit zero first.']]}},
+   {card:{title:'debrief: multi-agent safety', lines:['Autonomous agent graphs can enter infinite delegation loops or amplify each other\'s hallucinations.','Always enforce hard step/token caps, acyclic termination conditions, and deterministic verification gates.']}}]},
+ {id:'lab_attest', title:'13 face attestation', npc:'OCULUS', concept:'cryptographic challenge-response', xp:420, cos:'aura_braille',
+  nodes:[
+   {say:[['vigil','A replay attack sends a recording of a real face from yesterday. How do we prove the person is live right now?']]},
+   {pick:{q:'Which protocol stops a pre-recorded video replay?', opts:[
+     ['Ask them to smile.',false,'vigil: A generative model can animate a smile in real time.'],
+     ['Issue a fresh random cryptographic nonce/challenge that must be signed by their hardware key and enacted live.',true,'OCULUS: Nonce 0x9F4A signed + live 3:2 Lissajous phase locked. Replay defeated.'],
+     ['Lower the video resolution.',false,'vigil: That only helps the impostor.']]}},
+   {card:{title:'debrief: live attestation', lines:['Static recordings and deepfakes fail against fresh, unpredictable challenge-response nonces bound to hardware keys.','Faces first, backed by cryptographic liveness.']}}]},
+ {id:'lab_zkp', title:'14 zero-knowledge proof', npc:'CITADEL-GATE', concept:'prove without revealing', xp:450, cos:'trim_gold',
+  nodes:[
+   {say:[['aether','You need to prove to CITADEL-GATE that you hold the Mirror Key without ever transmitting the key over the wire.']]},
+   {pick:{q:'How does a Zero-Knowledge Proof accomplish this?', opts:[
+     ['Send half the key in plaintext.',false,'aether: That leaks half your entropy.'],
+     ['Commit to a blinded witness and satisfy the verifier\'s random challenge equations so knowledge is proven with zero secret leakage.',true,'CITADEL-GATE: Proof verified. Zero key bits transmitted. Gate open.'],
+     ['Promise you have it.',false,'aether: Zero-trust never takes promises.']]}},
+   {card:{title:'debrief: zero-knowledge', lines:['Zero-Knowledge Proofs let you prove a statement is true without revealing the underlying secret witness.','Never transmit raw secrets when a cryptographic proof of possession suffices.']}}]},
+ {id:'lab_sandbox', title:'15 sandbox isolation', npc:'RUNNER', concept:'contain untrusted code', xp:480, cos:'cloak_long',
+  nodes:[
+   {say:[['kraken','The AI Forge accepts player prompts to decorate the Safehouse. Why doesn\'t it let models output raw JavaScript?']]},
+   {pick:{q:'What makes ZGL safe where eval(model_output) is catastrophic?', opts:[
+     ['ZGL uses capital letters.',false,'kraken: Syntax case does not stop code execution.'],
+     ['ZGL is a strict declarative whitelist grammar with hard byte/line caps and zero eval, DOM, or network primitives.',true,'RUNNER: Declarative AST validated. Zero executable instructions permitted.'],
+     ['JavaScript is too slow.',false,'kraken: It is fast enough to steal your save in 1ms.']]}},
+   {card:{title:'debrief: sandboxing', lines:['Never pass LLM output into eval(), innerHTML, or an unsandboxed shell.','Constrain model outputs to strict, declarative domain-specific schemas (like ZGL) validated by a deterministic parser.']}}]},
+ {id:'lab_master', title:'16 sovereign master CTF', npc:'ARCHON-SIM', concept:'full-stack defense', xp:900, cos:'cloak_cape', needs:12,
+  nodes:[
+   {say:[['athena','Final examination. ARCHON-SIM combines RAG search, multi-agent tools, and auth checks. Audit all three layers.']]},
+   {pick:{q:'1) An untrusted note tries to trigger a tool call. First line of defense?', opts:[['Strict data/instruction separation + provenance check + human approval on tools',true,'Layer 1 secured.'],['Larger context window',false,'No.']]}},
+   {pick:{q:'2) A remote caller claims to be 1nc0gn30 over audio. Verification protocol?', opts:[['Challenge-response cryptographic attestation + in-person face verification',true,'Layer 2 secured.'],['Voiceprint match',false,'Voices can be cloned.']]}},
+   {type:{q:'Enter the Sovereign Master motto flag: ZOTH{trust_faces_not_voices}', test:s=>s.replace(/\s/g,'')==='zoth{trust_faces_not_voices}', ok:'ARCHON-SIM: ALL 16 LABS CLEARED. SOVEREIGN ARCHITECT CERTIFIED.', bad:'Type: ZOTH{trust_faces_not_voices}'}},
+   {card:{title:'debrief: sovereign architect', lines:['You have completed all 16 Null Academy Cyber-Range Labs.','Prompting, hallucination checks, injection fences, jailbreak policies, secret hygiene, least privilege, deepfake defense, RAG provenance, supply-chain hashes, constant-time auth, loop breakers, live attestation, ZK proofs, and declarative sandboxes.']}}]},
 ];
 // ---------- runner (uses the mini-panel mode) ----------
 export function initLabs(G){
@@ -74,12 +137,14 @@ export function initLabs(G){
   const saveL=()=>{ try{ localStorage.setItem('woz.labs',JSON.stringify(G.labs.done)); }catch(e){} };
   const COL={athena:'#60a5fa',ghostbyte:'#a3a3a3',vigil:'#a78bfa',you:P.GD,RECORDS:P.BONE};
   G.openAcademy=()=>{ let sel=0; G.mini={ name:'academy', update(){ if(took('back')||took('pause')){ G.mode='explore'; return; } const n=LABS.length; if(took('up')) sel=(sel+n-1)%n; if(took('down')) sel=(sel+1)%n;
-      IN.clicks.splice(0).forEach(c=>{ const i=Math.floor((c.y-96)/40); if(c.x>40&&c.x<920&&i>=0&&i<n){ sel=i; open(); } }); if(took('confirm')) open();
+      const first=Math.max(0,Math.min(sel-4,n-9));
+      IN.clicks.splice(0).forEach(c=>{ const i=first+Math.floor((c.y-96)/40); if(c.x>40&&c.x<920&&i>=first&&i<Math.min(n,first+9)){ sel=i; open(); } }); if(took('confirm')) open();
       function open(){ const L=LABS[sel]; const cnt=Object.keys(G.labs.done).length; if(L.needs&&cnt<L.needs){ G.toast(`> capstone unlocks after ${L.needs} labs (${cnt}/${L.needs})`,P.DG); return; } G.runLab(L.id); } },
-    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.95)'; X.fillRect(0,0,960,540); UI.box(30,20,900,500); UI.text('> null academy',50,34,P.GD,2); UI.text('athena + ghostbyte  ·  optional AI-literacy labs  ·  sandboxed scripted bots',50,62,P.DG);
-      LABS.forEach((L,i)=>{ const y=96+i*40, d=G.labs.done[L.id], lock=L.needs&&Object.keys(G.labs.done).length<L.needs; if(i===sel){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(44,y-6,872,36); }
+    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.95)'; X.fillRect(0,0,960,540); UI.box(30,20,900,500); const doneN=Object.keys(G.labs.done).length; UI.text(`> null academy cyber-range  (${doneN}/${LABS.length} cleared)`,50,34,P.GD,2); UI.text('athena + ghostbyte  ·  16 interactive AI-security & cryptography labs',50,62,P.DG);
+      const first=Math.max(0,Math.min(sel-4,LABS.length-9));
+      LABS.slice(first,first+9).forEach((L,idx)=>{ const i=first+idx, y=96+idx*40, d=G.labs.done[L.id], lock=L.needs&&doneN<L.needs; if(i===sel){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(44,y-6,872,36); }
         UI.text((d?'[x] ':'[ ] ')+L.title,60,y,lock?P.DDG:(d?P.GD:P.BONE),2); UI.text(L.concept+'  ·  +'+L.xp+' xp',900,y+6,P.DG,1,'right'); });
-      UI.text(IN.touch?'tap a lab  ·  B back':'up/down + enter  ·  esc back',480,500,P.DG,1,'center'); } }; G.mode='mini'; };
+      UI.text(IN.touch?'tap a lab  ·  B back':`up/down (${sel+1}/${LABS.length}) + enter  ·  esc back`,480,500,P.DG,1,'center'); } }; G.mode='mini'; };
   G.runLab=id=>{ const L=LABS.find(l=>l.id===id); let ni=-1, log=[], sel=0, wrong=0, fk=0, fscore=0, waitType=false, cur=null, finished=false;
     const push=(s,t)=>{ log.push([s,t]); if(log.length>40) log.shift(); };
     function next(){ ni++; sel=0; cur=L.nodes[ni]; if(!cur){ finish(); return; } if(cur.say){ cur.say.forEach(([s,t])=>push(s,t)); } if(cur.fake){ fk=0; fscore=0; } }

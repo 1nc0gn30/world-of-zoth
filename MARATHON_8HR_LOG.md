@@ -3,11 +3,11 @@
 > **Directive**: Continuous multi-hour autonomous engineering, testing, visual verification, and deployment across `world-of-zoth` and `1nc0gn30.si`.
 
 ## Milestone Tracker
-- [ ] **M01**: New Playable District #13 — *The Sub-Lattice Abyss* (`abyss`) + Blender 4.3 `leviathan_spine` & `abyss_monolith` + WebAudio `abyss` track
-- [ ] **M02**: New Playable District #14 — *The Zero-Knowledge Citadel* (`citadel`) + Blender 4.3 `pantheon_throne` & `zk_gate` + WebAudio `citadel` track
-- [ ] **M03**: Act VI Campaign Quests (`q19`–`q22`: *The Uncopied Dawn*) & Superboss `ARCHON-0` (`archon_seraph` Blender 4.3 mesh)
-- [ ] **M04**: 22-Agent Loyalty Questline Expansion (`s_kai`, `s_vigil`, `s_athena`, `s_kraken`, `s_nexus`, `s_lycan`, `s_onyx`, `s_leviathan`, `s_aether`) + 9 Mythic Relics
-- [ ] **M05**: Null Academy Advanced Cyber-Range (Labs 09–16: RAG Poisoning, Model Backdoors, Timing Attacks, Multi-Agent Collusion, ZK Proofs, Master CTF)
+- [x] **M01** (`00:58` · `9613e0b`): New Playable District #13 — *The Sub-Lattice Abyss* (`abyss`) + Blender 4.3 `abyss_monolith` + WebAudio `abyss` track
+- [x] **M02** (`00:58` · `9613e0b`): New Playable District #14 — *The Zero-Knowledge Citadel* (`citadel`) + Blender 4.3 `pantheon_throne` + WebAudio `citadel` track
+- [x] **M03** (`00:58` · `9613e0b`): Act VI Campaign Quests (`q19`–`q20`: *The First Compiler*) & Superboss `ARCHON-0` (`archon_seraph` Blender 4.3 mesh)
+- [x] **M04** (`01:08`): 22-Agent Loyalty Questline Expansion (`s_kai`, `s_vigil`, `s_athena`, `s_kraken`, `s_nexus`, `s_lycan`, `s_onyx`, `s_leviathan`, `s_aether`) + 9 Mythic Relics
+- [x] **M05** (`01:08`): Null Academy Advanced Cyber-Range (Labs 09–16: RAG Poisoning, Model Backdoors, Timing Attacks, Multi-Agent Collusion, ZK Proofs, Master CTF)
 - [ ] **M06**: Tactical Combat v2 — Protocol Affinities (`CRYPTO`, `KERNEL`, `THERMAL`, `TEMPORAL`, `VOID`), Weakness Scanner & Overdrive Burst
 - [ ] **M07**: Safehouse v2 — Interactive Jukebox (all 16 tracks), Boss Trophy Pedestals & Companion Hangout Dialogues
 - [ ] **M08**: Procedural Rogue-Lite Dungeon Mode (*"The Infinite Stack"* — Floors 1–99 via `> stack` / Citadel portal)

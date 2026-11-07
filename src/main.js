@@ -254,7 +254,7 @@ function drawMenu(t){ const M=G.menu, X=UI.ctx; X.fillStyle='rgba(6,5,4,.78)'; X
     const done=ks.filter(k=>G.quests[k].done).length; UI.text(`missions done: ${done}`,842,98,P.DG,1,'right');
     ks.forEach((k,i)=>{ if(y>460) return; if(G.quests[k].done&&i>0&&y>380) return; const q=G.quests[k], Q=QUESTS[k], sel=i===M.sel, isTrk=k===trk&&!q.done;
       const y0=y; if(sel){ X.fillStyle='rgba(245,184,46,.1)'; X.fillRect(x-6,y-3,726,38); }
-      UI.text((q.done?'[done] ':isTrk?'[trail locked] ':'[active] ')+(Q.act?'act '+['','I','II','III','IV','V'][Q.act]+'  ':'')+Q.title+(Q.side?'  (side)':''),x,y,q.done?P.DG:(sel||isTrk?P.GD:P.BONE)); y+=18;
+      UI.text((q.done?'[done] ':isTrk?'[trail locked] ':'[active] ')+(Q.act?'act '+['','I','II','III','IV','V','VI'][Q.act]+'  ':'')+Q.title+(Q.side?'  (side)':''),x,y,q.done?P.DG:(sel||isTrk?P.GD:P.BONE)); y+=18;
       if(!q.done){ Q.steps.forEach((s,j)=>{ if(j>q.step||j<q.step-1) return; const txt=j===q.step?G.stepText(k):s; UI.wrap((j<q.step?'  [ok] ':'  > ')+txt,700).forEach(l=>{ UI.text(l,x+10,y,j<q.step?P.DG:P.BONE); y+=16; }); }); }
       UI.hit(x-6,y0-3,726,Math.max(22,y-y0+4),()=>{ M.sel=i; menuAct(0,i); }); y+=8; }); }
   if(M.tab===1){ UI.text(`pantheon crew: ${G.crewCount?G.crewCount():G.roster.length}/22.  confirm toggles active squad (max 3).`,x,y,P.DG); y+=22; const first=Math.max(0,Math.min(M.sel-2,G.roster.length-5));
@@ -365,7 +365,7 @@ function drawHUD(t){ const X=UI.ctx;
   if(G.scanT>0){ UI.box(12,ty+25,204,20,P.GD,'rgba(6,5,4,.82)'); UI.text('> sonar pulse: scanning lattice',20,ty+29,P.GD,1); }
   // objective
   const q=trackQuest(), nt=navTarget();
-  if(q){ const pend=q==='__pending'&&G.Q.pending(); const qid=pend?pend.k:q; const s='> '+(pend?pend.text:G.stepText(q)); const actTag=QUESTS[qid]&&QUESTS[qid].act?`act ${['','I','II','III','IV','V'][QUESTS[qid].act]} · `:''; const distStr=nt?`  ·  [trail: ${Math.round(Math.hypot(nt.x-player.group.position.x,nt.z-player.group.position.z))}m]`:''; const title=actTag+(QUESTS[qid]?QUESTS[qid].title:q)+distStr; const m=markFor(q); let extra=''; if(m&&m[0]!==G.zoneId) extra='  (follow trail to '+G.Z[m[0]].name+' portal)'; const k=LARGE()?2:1;
+  if(q){ const pend=q==='__pending'&&G.Q.pending(); const qid=pend?pend.k:q; const s='> '+(pend?pend.text:G.stepText(q)); const actTag=QUESTS[qid]&&QUESTS[qid].act?`act ${['','I','II','III','IV','V','VI'][QUESTS[qid].act]} · `:''; const distStr=nt?`  ·  [trail: ${Math.round(Math.hypot(nt.x-player.group.position.x,nt.z-player.group.position.z))}m]`:''; const title=actTag+(QUESTS[qid]?QUESTS[qid].title:q)+distStr; const m=markFor(q); let extra=''; if(m&&m[0]!==G.zoneId) extra='  (follow trail to '+G.Z[m[0]].name+' portal)'; const k=LARGE()?2:1;
     if(k===2){ const ls=UI.wrap(s+extra,880,2).slice(0,2); const h=24+ls.length*24, bw=Math.min(936,Math.max(UI.textW(title,1),...ls.map(l=>UI.textW(l,2)))+24); UI.box(12,528-h,bw,h,P.DDG,'rgba(6,5,4,.8)'); UI.text(title,24,528-h+6,P.GD); ls.forEach((l,i)=>UI.text(l,24,528-h+20+i*24,P.BONE,2)); UI.hit(12,528-h,bw,h,()=>{ G.trailOn=true; G.scanT=3; sfx('zap'); }); }
     else { const bw=Math.min(760,Math.max(UI.textW(title),UI.textW(s+extra))+28); UI.box(12,486,bw,40,P.DDG,'rgba(6,5,4,.8)'); UI.text(title,24,492,P.GD); UI.text(s+extra,24,507,P.BONE); UI.hit(12,486,bw,40,()=>{ G.trailOn=true; G.scanT=3; sfx('zap'); }); } }
   UI.text(`bits ${G.bits}`,948,150,P.GD,1,'right'); G.drawTut();
