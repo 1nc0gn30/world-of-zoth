@@ -12,7 +12,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -37,7 +37,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='combos'||c==='synergy'){ out('[combos] opening Companion Duo & Overdrive Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCombos(); },40); }
+    else if(c==='router'||c==='physarum'){ out('[router] launching Physarum Slime Mould Network Router...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRouter(); },40); }
     else if(c==='market'||c==='blackmarket'){ out('[market] opening Neko Underground Black-Market Exchange...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBlackMarket(); },40); }
     else if(c==='bosslab'||c==='practice'){ out('[bosslab] opening Apex Boss Practice & Phase Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBossLab(); },40); }
     else if(c==='shaders'||c==='crt'){ out('[shaders] opening Custom CRT Shader & Scanline Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openShaderStudio(); },40); }
@@ -1785,6 +1787,153 @@ export function initEggs(G,{music,sfx}){
         UI.box(504,312,330,44,P.GD,'rgba(245,184,46,.16)');
         UI.text('> [ENTER] LAUNCH BOSS SIMULATION',669,328,P.GD,1,'center');
         UI.text('[up/down] boss   [left/right] scale level (1-50)   [P] toggle ambush   [enter] fight   [esc] exit',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Companion Combo Synergy Encyclopedia (M55) ----
+  const COMBO_LIST=[
+    {id:'duo_mirror', name:'DUO: ZERO-DAY SPLIT', pair:['me','copy'], pairLbl:'1nc0gn30 + 03ng0cn1', pow:'2.8x Piercing All', cost:'10 EN · 3 Sync', fx:'Pierces all firewalls and applies 3-turn Trace across the entire enemy wave.'},
+    {id:'duo_solar', name:'DUO: FOXFIRE NOVA', pair:['kitsune','ignis'], pairLbl:'Kitsune + Ignis', pow:'2.5x Solar Magma', cost:'10 EN · 3 Sync', fx:'Unleashes nine-tail solar magma on all foes while restoring +24 HP (+3/lvl) to the crew.'},
+    {id:'duo_undertow', name:'DUO: DEEP-TIME TIDE', pair:['chronos','leviathan'], pairLbl:'Chronos + Leviathan', pow:'2.4x Temporal Wave', cost:'10 EN · 3 Sync', fx:'Crushes all enemies under deep-trench pressure, grants 2-turn Crew Shield & +12 EN.'},
+    {id:'duo_zerotrust', name:'DUO: ZERO-TRUST EXEC', pair:['vigil','onyx'], pairLbl:'Vigil + Onyx', pow:'2.6x Seam Execution', cost:'10 EN · 3 Sync', fx:'Strips all enemy firewalls, silences voice anomalies, and buffs crew ATK by +40%.'},
+    {id:'duo_surge', name:'DUO: LATTICE SURGE', pair:['me','kitsune'], pairLbl:'Any Active Duo Pair', pow:'2.2x Harmonic Surge', cost:'8 EN · 3 Sync', fx:'Universal companion resonance strike that pierces armor and refunds +8 EN to the squad.'},
+    {id:'od_surge', name:'OVERDRIVE: 100% SURGE', pair:['me','aether'], pairLbl:'Full Crew (100% OD)', pow:'3.2x Sovereign Convergence', cost:'0 EN · 100% OD', fx:'Ultimate zero-cost convergence: 3.2x piercing damage to all foes, +45 HP heal & +15 EN.'},
+    {id:'quorum', name:'QUORUM: TWENTY-TWO FACES', pair:['me','vigil'], pairLbl:'1nc0gn30 + Crew Chorus', pow:'2.2x Chorus Breaker', cost:'14 EN · 3 Sync', fx:'Verifies every face in person, shattering acoustic illusions and Relay 4 voice pylons.'},
+    {id:'crew22', name:'CREW: 22 CONVERGENCE', pair:['copy','me'], pairLbl:'03ng0cn1 + Full Roster', pow:'2.6x Mirror Convergence', cost:'20 EN · Lvl 16', fx:'22nd agent signature convergence: 2.6x piercing wave + full squad restoration.'}
+  ];
+  G.openCombos=()=>{
+    let sel=0, pulseT=0;
+    G.mini={
+      name:'combos',
+      update(dt){
+        pulseT=Math.max(0,pulseT-dt);
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+COMBO_LIST.length-1)%COMBO_LIST.length;
+        if(took('down')) sel=(sel+1)%COMBO_LIST.length;
+        if(took('confirm')){
+          const c=COMBO_LIST[sel];
+          c.pair.forEach(id=>{ if(!G.roster.includes(id)&&id!=='copy') G.recruit(id); });
+          G.activeL=['me',...c.pair.filter(id=>id!=='me'&&G.roster.includes(id))].slice(0,3);
+          pulseT=1.2; sfx('level');
+          G.toast(`> Synced Active Squad for ${c.name}!`,P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(76,28,808,484,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> COMBO & OVERDRIVE CODEX',98,44,P.GD,2);
+        UI.text('BUILD 3 SYNC POINTS OR 100% OVERDRIVE IN BATTLE',862,48,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(94,72,772,2);
+        COMBO_LIST.forEach((c,i)=>{
+          const y=88+i*44, on=i===sel;
+          UI.box(96,y-4,330,36,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.85)');
+          UI.text(`${on?'> ':'  '}${c.name}`,106,y+4,on?P.GD:P.BONE,1);
+          UI.text(c.pairLbl,114,y+18,'#22d3ee',1);
+          UI.hit(96,y-4,330,36,()=>{ sel=i; });
+        });
+        const cur=COMBO_LIST[sel];
+        UI.box(444,84,420,356,pulseT>0?'#4ade80':P.GD,'rgba(12,10,8,.94)');
+        // Dual portrait synergy preview
+        cur.pair.forEach((id,idx)=>{
+          const px=486+idx*180, py=104;
+          UI.box(px,py,116,124,AG[id]?AG[id].color:P.GD,'rgba(6,5,4,.95)');
+          UI.ditherRect(px+4,py+4,108,116,AG[id]?AG[id].color:P.GD,.22);
+          try{
+            const fc=frameCanvas(id,'idle',Math.floor(t*6)%(id==='me'||id==='copy'?1:8));
+            X.imageSmoothingEnabled=false;
+            if(id==='me'||id==='copy') X.drawImage(fc,px+58-fc.width,py+116-fc.height*2,fc.width*2,fc.height*2);
+            else X.drawImage(fc,0,10,96,86,px+58-86,py+118-86*1.6,96*1.8,86*1.6);
+          }catch(e){}
+          UI.text((AG[id]&&AG[id].name)||id,px+58,py+108,P.BONE,1,'center');
+        });
+        UI.text('+',634,154,P.GD,2,'center');
+        UI.text(cur.name,464,246,P.GD,2);
+        UI.text(`Multiplier: ${cur.pow}   ·   Requirement: ${cur.cost}`,464,276,'#22d3ee',1);
+        UI.wrap(cur.fx,380,1).forEach((l,li)=>UI.text(l,464,304+li*20,P.BONE,1));
+        UI.box(464,380,380,38,P.GD,'rgba(245,184,46,.16)');
+        UI.text('> [ENTER] EQUIP SYNERGY PAIR TO ACTIVE SQUAD',654,392,P.GD,1,'center');
+        UI.text('[up/down] select resonance combo   [enter] sync active squad   [esc] close',480,484,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #7: "Physarum Slime Mould Network Router" (M56) ----
+  const PHY_NODES=[
+    {id:0, name:'SPORE CORE', x:220, y:260},
+    {id:1, name:'VEIN NORTH', x:360, y:140},
+    {id:2, name:'VEIN SOUTH', x:360, y:380},
+    {id:3, name:'AORTA HUB',  x:520, y:260},
+    {id:4, name:'EAST LOBE',  x:680, y:150},
+    {id:5, name:'APEX SINK',  x:720, y:370}
+  ];
+  const PHY_EDGES=[
+    [0,1,14],[0,2,16],[0,3,24],
+    [1,3,12],[1,4,18],
+    [2,3,15],[2,5,22],
+    [3,4,14],[3,5,16],[4,5,12]
+  ];
+  G.startRouter=()=>{
+    let sel=0;
+    const active=new Set([0,3,5,7,9]); // Initial spanning links
+    const checkSpan=()=>{
+      const vis=new Set([0]), q=[0];
+      while(q.length){
+        const u=q.shift();
+        PHY_EDGES.forEach(([a,b],ei)=>{
+          if(!active.has(ei)) return;
+          if(a===u&&!vis.has(b)){ vis.add(b); q.push(b); }
+          if(b===u&&!vis.has(a)){ vis.add(a); q.push(a); }
+        });
+      }
+      return vis.size===PHY_NODES.length;
+    };
+    const totalCost=()=>[...active].reduce((s,ei)=>s+PHY_EDGES[ei][2],0);
+    G.mini={
+      name:'router',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')||took('left')) sel=(sel+PHY_EDGES.length-1)%PHY_EDGES.length;
+        if(took('down')||took('right')) sel=(sel+1)%PHY_EDGES.length;
+        if(took('confirm')){
+          if(active.has(sel)) active.delete(sel); else active.add(sel);
+          sfx('blip');
+          if(checkSpan()&&totalCost()<=70){
+            sfx('win'); G.ach('bio_router');
+            if(!G.flags.router_won){ G.flags.router_won=1; G.bits+=180; G.toast('> OPTIMAL PHYSARUM MESH LOCKED! (+180 bits)',P.GD); }
+          }
+        }
+        if(took('party')){
+          active.clear(); [0,3,5,7,9].forEach(e=>active.add(e));
+          sfx('win'); G.ach('bio_router');
+          if(!G.flags.router_won){ G.flags.router_won=1; G.bits+=180; }
+          G.toast('> PHYSARUM SHORTEST-PATH CONVERGED (COST 67 <= 70)!',P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(76,28,808,484,P.GD,'rgba(8,7,5,.96)');
+        const ok=checkSpan(), cost=totalCost(), optimal=ok&&cost<=70;
+        UI.text('> PHYSARUM SLIME MOULD ROUTER',98,44,P.GD,2);
+        UI.text(`NODES LINKED: ${ok?'6/6 [OK]':'DISCONNECTED'}   ·   ATP COST: ${cost}/70`,862,48,optimal?'#4ade80':'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(94,72,772,2);
+        PHY_EDGES.forEach(([a,b,w],ei)=>{
+          const na=PHY_NODES[a], nb=PHY_NODES[b], on=active.has(ei), cur=ei===sel;
+          X.strokeStyle=cur?P.GD:(on?'#4ade80':P.DDG);
+          X.lineWidth=cur?4:(on?3:1.5);
+          X.beginPath(); X.moveTo(na.x,na.y); X.lineTo(nb.x,nb.y); X.stroke();
+          const mx=(na.x+nb.x)/2, my=(na.y+nb.y)/2;
+          UI.box(mx-22,my-11,44,22,cur?P.GD:(on?'#4ade80':P.DDG),'rgba(6,5,4,.92)');
+          UI.text(`${w}`,mx,my-5,cur?P.GD:(on?'#4ade80':P.DG),1,'center');
+          UI.hit(mx-22,my-11,44,22,()=>{ sel=ei; if(active.has(ei)) active.delete(ei); else active.add(ei); sfx('blip'); });
+        });
+        PHY_NODES.forEach(n=>{
+          UI.box(n.x-44,n.y-20,88,40,'#4ade80','rgba(8,24,14,.94)');
+          UI.text(n.name,n.x,n.y-6,P.BONE,1,'center');
+        });
+        UI.box(96,426,768,36,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('Connect all 6 Physarum bio-nodes with total ATP cost <= 70 (Optimal MST = 67 ATP).',480,438,P.BONE,1,'center');
+        UI.text('[arrows] select vein   [enter / click] toggle vein   [P] auto-solve MST   [esc] close',480,482,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
