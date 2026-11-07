@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 export const NW=480, NH=270, OW=960, OH=540;
 export let renderer, scene, camera, rt, post, glyphTex;
-export const U = { time:{value:0}, pulse:{value:new THREE.Vector4(0,0,0,-100)}, pulse2:{value:new THREE.Vector4(0,0,0,-100)} };
+export const U = { time:{value:0}, pulse:{value:new THREE.Vector4(0,0,0,-100)}, pulse2:{value:new THREE.Vector4(0,0,0,-100)}, texBump:{value:1.0}, texWet:{value:1.0}, texWin:{value:1.0} };
 
 function glyphAtlas(){
   // 32 glyphs, 8x12 cells, drawn with a pixel-ish monospace in white. Row 0: series glyph set, row 1: hex.
@@ -121,7 +121,7 @@ export function latMat({color='#f5b82e', intensity=1, fogNear=10, fogFar=70, wob
 // Solid occluder with procedural high-detail 3D world-space architectural & surface textures — writes depth, class "world".
 export function solidMat(color='#0b0906'){
   return new THREE.ShaderMaterial({
-    uniforms:{ color:{value:new THREE.Color(color)}, time:U.time, pulse:U.pulse },
+    uniforms:{ color:{value:new THREE.Color(color)}, time:U.time, pulse:U.pulse, texBump:U.texBump, texWet:U.texWet, texWin:U.texWin },
     vertexShader:`
       varying vec3 vW; varying vec3 vN; varying float vDist;
       void main(){
@@ -132,7 +132,7 @@ export function solidMat(color='#0b0906'){
       }`,
     fragmentShader:`
       precision highp float;
-      uniform vec3 color; uniform float time; uniform vec4 pulse;
+      uniform vec3 color; uniform float time, texBump, texWet, texWin; uniform vec4 pulse;
       varying vec3 vW; varying vec3 vN; varying float vDist;
       float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
       float n2(vec2 p){
@@ -146,9 +146,14 @@ export function solidMat(color='#0b0906'){
         float fog=1.-smoothstep(12.,88.,vDist);
         vec3 base=max(color, vec3(0.065,0.052,0.036));
         vec3 gold=vec3(0.96,0.72,0.18), cyan=vec3(0.13,0.83,0.93);
+        // Procedural 3D normal bump perturbation from world-space FBM
+        float b0=fbm(vW.xz*2.2 + vW.xy*1.6);
+        float bx=fbm(vW.xz*2.2 + vW.xy*1.6 + vec2(0.08,0.0)) - b0;
+        float by=fbm(vW.xz*2.2 + vW.xy*1.6 + vec2(0.0,0.08)) - b0;
+        vec3 N=normalize(vN + vec3(bx, by, bx)*1.8*texBump);
         // Directional 3D hemisphere lighting so building/prop faces have real depth
         vec3 L=normalize(vec3(0.55,0.78,0.42));
-        float ndl=clamp(dot(vN,L)*0.5+0.5, 0., 1.);
+        float ndl=clamp(dot(N,L)*0.5+0.5, 0., 1.);
         vec3 col=base*(0.65+0.85*ndl);
         if(abs(vN.y)<0.5){
           // Vertical architectural facade: brushed cyber-concrete, panel joints, rain streaks & recessed micro-windows
@@ -160,12 +165,12 @@ export function solidMat(color='#0b0906'){
           float seamX = smoothstep(0.05, 0.0, abs(fract(uCoord/1.3)-0.5));
           vec2 rivetUv = abs(fract(vec2(uCoord/1.3, vW.y/2.6)-0.5));
           float rivet = smoothstep(0.07, 0.03, length(rivetUv - vec2(0.42, 0.42)));
-          col *= (0.78 + 0.44*grain) * (1.0 - 0.35*max(seamY, seamX)) + rivet*0.14;
-          col += gold * (0.045 * rainStreak * smoothstep(0.0, 12.0, vW.y));
+          col *= (0.78 + 0.44*grain*texBump) * (1.0 - 0.35*max(seamY, seamX)) + rivet*0.14*texBump;
+          col += gold * (0.045 * rainStreak * texWet * smoothstep(0.0, 12.0, vW.y));
           // Street-level holographic telemetry band (y between 2.4m and 3.1m)
           if(vW.y>2.4 && vW.y<3.05){
             float band = step(0.45, h2(floor(vec2(uCoord*3.2 + floor(time*2.0), vW.y*6.0))));
-            col += mix(gold, cyan, 0.5) * band * 0.16;
+            col += mix(gold, cyan, 0.5) * band * 0.16 * texWin;
           }
           // Ground bounce ambient warmth near street level
           col += gold * (0.07 * exp(-max(0., vW.y)*0.55));
@@ -178,7 +183,7 @@ export function solidMat(color='#0b0906'){
             float blinds = 0.65 + 0.35*sin(wUv.y*34.0);
             if(winRng>0.74){
               vec3 wCol = winRng>0.91 ? cyan : gold;
-              col = mix(col, wCol*(0.28 + 0.24*blinds), 0.75);
+              col = mix(col, wCol*(0.28 + 0.24*blinds)*texWin, 0.75);
             } else {
               col *= 0.62;
             }
@@ -190,8 +195,8 @@ export function solidMat(color='#0b0906'){
           float puddle = smoothstep(0.56, 0.74, fbm(uv*0.28));
           float tileX = smoothstep(0.04, 0.0, abs(fract(uv.x*0.5)-0.5));
           float tileZ = smoothstep(0.04, 0.0, abs(fract(uv.y*0.5)-0.5));
-          col *= (0.75 + 0.5*g) * (1.0 - 0.3*max(tileX, tileZ));
-          col += mix(gold, cyan, 0.35) * (puddle * 0.11 * (0.7 + 0.3*sin(time*1.8 + uv.x)));
+          col *= (0.75 + 0.5*g*texBump) * (1.0 - 0.3*max(tileX, tileZ));
+          col += mix(gold, cyan, 0.35) * (puddle * 0.11 * texWet * (0.7 + 0.3*sin(time*1.8 + uv.x)));
         }
         // Sonar pulse wave reflection across solid surfaces
         float r=distance(vW.xz,pulse.xz); float pr=(time-pulse.w)*14.;
@@ -204,7 +209,7 @@ export function solidMat(color='#0b0906'){
 // Textured 3D terrain surface material underneath lattice grids (wet cyber-asphalt, stone tiles, sub-surface circuit traces)
 export function terrainMat(accent='#f5b82e', fogNear=10, fogFar=72){
   return new THREE.ShaderMaterial({
-    uniforms:{ accent:{value:new THREE.Color(accent)}, time:U.time, pulse:U.pulse, fogNear:{value:fogNear}, fogFar:{value:fogFar} },
+    uniforms:{ accent:{value:new THREE.Color(accent)}, time:U.time, pulse:U.pulse, fogNear:{value:fogNear}, fogFar:{value:fogFar}, texBump:U.texBump, texWet:U.texWet },
     vertexShader:`
       varying vec3 vW; varying float vDist;
       void main(){
@@ -214,7 +219,7 @@ export function terrainMat(accent='#f5b82e', fogNear=10, fogFar=72){
       }`,
     fragmentShader:`
       precision highp float;
-      uniform vec3 accent; uniform float time, fogNear, fogFar; uniform vec4 pulse;
+      uniform vec3 accent; uniform float time, fogNear, fogFar, texBump, texWet; uniform vec4 pulse;
       varying vec3 vW; varying float vDist;
       float h2(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
       float n2(vec2 p){
@@ -237,9 +242,9 @@ export function terrainMat(accent='#f5b82e', fogNear=10, fogFar=72){
         float rPhase=fract(time*0.65 + h2(rCell));
         float ripple=puddle * smoothstep(0.04, 0.0, abs(length(rLocal) - rPhase*0.45)) * (1.0 - rPhase);
         float trace=step(0.92, h2(floor(uv*0.5))) * smoothstep(0.05,0.0,abs(tc.x-0.5));
-        vec3 base=mix(vec3(0.038,0.031,0.022), accent*0.14, 0.35 + 0.45*micro);
-        base *= (1.0 - 0.38*groove);
-        base += accent * (puddle * 0.095 * (0.65 + 0.35*sin(time*1.5 + uv.x*0.5 + uv.y*0.5)) + ripple * 0.22);
+        vec3 base=mix(vec3(0.038,0.031,0.022), accent*0.14, 0.35 + 0.45*micro*texBump);
+        base *= (1.0 - 0.38*groove*texBump);
+        base += accent * ((puddle * 0.095 * (0.65 + 0.35*sin(time*1.5 + uv.x*0.5 + uv.y*0.5)) + ripple * 0.22) * texWet);
         base += accent * (trace * 0.14 * (0.5 + 0.5*sin(time*3.0 + uv.y)));
         float r=distance(uv,pulse.xz); float pr=(time-pulse.w)*14.;
         if(pr>0.&&pr<60.) base += accent * exp(-pow((r-pr)*.9,2.))*0.32*(1.-pr/60.);
