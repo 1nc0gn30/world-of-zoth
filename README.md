@@ -3,8 +3,8 @@
 # ⚡ WORLD OF ZOTH
 ### A 3D Lattice Cyber-RPG · The Sovereign 1nc0gn30 Saga
 
-[![Version](https://img.shields.io/badge/version-v0.4_5--act_&_22--crew-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
-[![Status](https://img.shields.io/badge/status-production_playable-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
+[![Version](https://img.shields.io/badge/version-v1.2_sovereign_director's_cut-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
+[![Districts](https://img.shields.io/badge/districts-15_playable_3d_worlds-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Platform](https://img.shields.io/badge/platform-browser_%7C_android_apk-00f0ff?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Offline](https://img.shields.io/badge/network-100%25_offline_zero_cdn-a855f7?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![License](https://img.shields.io/badge/license-100%25_free_%26_unlocked-ec4899?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
@@ -29,10 +29,18 @@
 
 The **140 BPM Dark-Phonk / Cyber-Synth Motion Edit** (`assets/world-of-zoth-trailer.mp4`, mastered to `-13.47 LUFS` / `-3.87 dBTP` across 25 real in-engine WebGL captures) and the **v0.4 5-Act Story & 22-Crew Edition** are now live:
 
-- **📖 Interactive 6-Chapter Master Story Codex (`[Menu > Story]`)**: Full playable lore archive for Acts I–VI (`ROADMAP.md`), live mission completion checklists, and one-click Act Cinematic playback.
-- **🩸 Playable Crew #22 (`03ng0cn1` — The Red Copy)**: Reconstruct `03ng0cn1` from its mirror shard at the Hall of Mirrors rosette after defeating *THE HUNTER* (`crew: 22`) to unlock 4 bespoke skills: `seam strike`, `mirror buffer`, `unscripted`, and `crew: 22`.
-- **⚡ Lattice Sync Chain & Counter-Parry (`x1..x7`)**: Consecutive timed strikes and parries build up to `+35% DMG`, `+4 EN` per parry, `0.85x` critical counter-damage, and real-time boss phase telemetry (`[GAZE ARMED]`, `[SILENCE TRIAL: GUARD]`).
-- **🏛️ Act VI Citadel Gauntlet (`s_citadel`)**: Post-game dual-boss simulation (`SANDGLASS` + `THE HUNTER`) on the Mode-7 Skyline rewarding `3000 XP` and the `citadel.crown` (`+22 DEF, +160 HP, +4 SPD`).
+- **📖 Interactive 6-Act Master Story Codex (`[Menu > Story]`)**: Full playable lore archive for Acts I–VI (`q1`–`q21`), live mission completion checklists, and one-click Act Cinematic playback.
+- **🌐 15 Playable 3D Lattice Districts**: Expanded with **District #13: Sub-Lattice Abyss** (`abyss`), **District #14: Zero-Knowledge Citadel** (`citadel`), and **District #15: The Null Core** (`nullcore` — 4D Clifford hyper-torus singularity generated via headless Blender 4.3).
+- **🩸 Playable Crew #22 (`03ng0cn1` — The Red Copy) & 9 Loyalty Relic Quests**: Reconstruct `03ng0cn1` at the Hall of Mirrors rosette and complete all 22 companion loyalty missions for 10 Mythic Relics (`sovereign.edge`, `singularity.halo`, `citadel.crown`, `seraph.mantle`, `abyssal.trident`, `obsidian.prism`, `fenrir.fang`, `owl.spear`, `ocular.aegis`, `static.katana`).
+- **⚡ Tactical Combat v2 — 5 Protocol Affinities, Overdrive Surge & AI Tactics (`[P]`)**: Every agent and enemy carries a Protocol Affinity (`KERNEL`, `CRYPTO`, `THERMAL`, `TEMPORAL`, `VOID`) granting `1.35x` Breach damage, `100% Overdrive Surge` (`od_surge`), and on-the-fly `[P]` Companion AI Battle Tactics (`MANUAL`, `COMPANION: BREACH`, `COMPANION: SUPPORT`, `FULL SQUAD: AUTO`).
+- **🗼 Endgame Modes (`> stack`, `> bossrush`, `> bounty`, `> daily`, `> reforge`)**:
+  - **The Infinite Stack (`> stack`)**: 99-floor procedural rogue-lite gauntlet with 5 rotating floor mutators.
+  - **Pantheon Trial Boss Rush (`> bossrush`)**: 6-stage sequential boss arena culminating in `ARCHON-0` (`4,800 HP`).
+  - **06:12 Daily Seeded Lattice (`> daily`)**: Deterministic daily seed, anomaly wave, and mutator contract.
+  - **Sub-Lattice Elite Bounties (`> bounty`)**: 10 named district contracts with 1-click intercept or 3D Golden Trail GPS lock.
+  - **Gear Overclocking Bench (`> reforge`)**: Upgrade any weapon or shell from `+1` to `+5` (`+20%` to `+100%` stats).
+  - **16 Null Academy AI-Security & ZK Labs**: Interactive cyber-range covering prompt injection, RAG poisoning, timing side-channels, and zero-knowledge proofs.
+  - **20 WebAudio Stems + 3D Photo Mode (`> photo`) + 5 CRT Phosphor Themes (`> theme`) + 3-Slot Base64 Save Manager (`> saves`)**.
 
 <div align="center">
 <img src="assets/motion_edit_contact_sheet.jpg" alt="World of Zoth 60fps 1080p Motion Edit Contact Sheet" width="100%"/>
@@ -164,24 +172,27 @@ Boss: >_ (The Blank Cursor)     Boss: THE HUNTER (Firewall Eye)
 
 ---
 
-## 🌐 The 11 Zones
+## 🌐 The 15 Playable 3D Lattice Districts
 
 <div align="center">
 <img src="assets/gameplay-loop.gif" alt="World of Zoth Zone Exploration Tour" width="100%" style="border-radius: 12px; border: 1px solid rgba(251, 191, 36, 0.3);"/>
 </div>
 
-1. **Relit City (Hub)**: Dot-matrix skyscraper canyon, Relay 1, Game-of-Life plaza, fast travel terminal.
-2. **Rest Woods**: Peaceful lattice forest, firefly swarms, the great slumber tree.
-3. **The Hollow**: Red glitching terraces, floating voxel debris, and corrupted Relay 4.
-4. **Fiber Tunnels**: Subterranean space-filling Hilbert curve optical lines.
-5. **Sand Clocktower**: Cascading sand hourglasses where time is frozen at `06:12`.
-6. **Collapse Streets**: Superposed quantum city grid powered by Wave Function Collapse.
-7. **Doom-Fire Foundry**: Blazing blast furnace where mirror keys are forged.
-8. **Physarum Caves**: Bioluminescent slime mould navigating sound waves.
-9. **Hall of Mirrors**: An octagonal mirrored labyrinth harboring the tragic truth of the copy.
-10. **Deep-Water Memory**: Abyssal trench holding pristine pre-blackout memory vectors.
-11. **Mode-7 Skyline**: High-altitude Voronoi plateau bathed under 21 skybeams.
-* **★ Secret Sector — The Rooftop**: Unlocked via hidden terminal; contains the dawn laptop.
+1. **Relit City (`hub`)**: Dot-matrix skyscraper canyon, Relay 1, Null Academy (16 AI-Security Labs), Overclock Bench, Bounty Board, and Operator Safehouse.
+2. **Rest Woods (`forest`)**: Peaceful lattice forest, firefly swarms, Conway's Game of Life clearing, and the Great Slumber Tree.
+3. **The Hollow (`relay`)**: Red glitching terraces, floating voxel debris, and corrupted `RELAY 4`.
+4. **Fiber Tunnels (`fiber`)**: Subterranean space-filling Hilbert curve optical conduits pulsing at 140 BPM.
+5. **Sand Clocktower (`clock`)**: Cascading hourglasses where time is frozen at `06:12` by `SANDGLASS`.
+6. **Collapse Streets (`streets`)**: Superposed quantum city grid powered by Wave Function Collapse.
+7. **Doom-Fire Foundry (`foundry`)**: Blazing blast furnace where the octagonal Mirror Key and Doom Gauntlet are forged.
+8. **Physarum Caves (`caves`)**: Bioluminescent slime mould navigating acoustic standing waves.
+9. **Hall of Mirrors (`mirrors`)**: Octagonal mirrored labyrinth harboring `03ng0cn1` and `THE HUNTER`.
+10. **Deep-Water Memory (`deep`)**: Abyssal trench holding pre-blackout memory vectors guarded by Leviathan.
+11. **Mode-7 Skyline (`skyline`)**: High-altitude Voronoi plateau bathed under 21 sovereign skybeams and `>_`.
+12. **Sub-Lattice Abyss (`abyss`)**: Menger-sponge deep trench (`4096m`) housing three Zero-Knowledge Seals.
+13. **Zero-Knowledge Citadel (`citadel`)**: Gothic-cybernetic Pantheon Sanctum, `ARCHON-0` (`4,800 HP`), Infinite Stack, and Boss Rush Arena.
+14. **The Null Core (`nullcore`)**: Post-Citadel 4D Clifford hyper-torus Memory Singularity (`06:13`) and Daily Seeded Lattice hub.
+15. **★ Secret Sector — The Rooftop (`rooftop`)**: Unlocked via hidden terminal (`tomorrow 06:12`); overlooks the rising Braille sun.
 
 ---
 
