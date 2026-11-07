@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='medals'||c==='ribbons'){ out('[medals] opening Operator Combat Medal & Ribbon Rack...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMedals(); },40); }
+    else if(c==='epilogues'||c==='afterword'||c==='future'){ out('[epilogues] opening 22-Agent Post-Dawn Epilogue Chronicles...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEpilogues(); },40); }
     else if(c==='seedlab'||c==='seeds'){ out('[seedlab] opening Procedural Dungeon Seed & Custom Run Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSeedLab(); },40); }
     else if(c==='radio'||c==='tuner'||c==='fm'){ out('[radio] opening Sovereign Radio & Lo-Fi Broadcast Tuner...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openRadio(); },40); }
     else if(c==='skulls'||c==='mutators'){ out('[skulls] opening Dynamic Battle Mutator & Challenge Skull Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSkulls(); },40); }
@@ -4723,6 +4725,223 @@ export function initEggs(G,{music,sfx}){
         UI.text(isLive?`LOCKED ON ${cur.freq} (BROADCASTING)`:`[ENTER] TUNE & LOCK ${cur.freq}`,692,396,isLive?'#4ade80':P.GD,1,'center');
         UI.text('[P] CYCLE DJ COMMENTARY & SIGNAL BOOST',692,422,'#22d3ee',1,'center');
         UI.text('[up/down] select station   [enter] lock frequency   [P] next DJ broadcast   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Operator Combat Medal & Ribbon Rack (M95) ----
+  const COMBAT_MEDALS=[
+    {id:'med_01', code:'M-01', name:'FIRST BLOOD RIBBON', cols:['#f5b82e','#1f2937','#f5b82e'], req:'Win your first tactical lattice encounter.',
+      cite:'Awarded for initiating zero-telemetry combat operations in Relit City.'},
+    {id:'med_02', code:'M-02', name:'AEGIS PARRY CROSS', cols:['#22d3ee','#f5b82e','#22d3ee'], req:'Execute a frame-tight Perfect Parry counter.',
+      cite:'Awarded for deflecting hostile packet strikes within the 120ms gold window.'},
+    {id:'med_03', code:'M-03', name:'FIREWALL BREAKER STAR', cols:['#4ade80','#0f172a','#4ade80'], req:'Shatter a hostile protocol shield to STAGGER.',
+      cite:'Awarded for matching elemental protocol weaknesses to collapse enemy wards.'},
+    {id:'med_04', code:'M-04', name:'GOLD-WINDOW SNIPER', cols:['#fb923c','#f5b82e','#fb923c'], req:'Land a Gold-Window critical strike (1.5x).',
+      cite:'Awarded for precision strike synchronization on the primary command bus.'},
+    {id:'med_05', code:'M-05', name:'QUORUM OVERDRIVE MEDAL', cols:['#a78bfa','#22d3ee','#a78bfa'], req:'Unleash a 100% Squad Overdrive finisher.',
+      cite:'Awarded for channeling full 3-agent resonance into a cataclysmic strike.'},
+    {id:'med_06', code:'M-06', name:'ZERO-DAMAGE AEGIS', cols:['#22d3ee','#4ade80','#22d3ee'], req:'Clear an encounter with 100% squad HP intact.',
+      cite:'Awarded for flawless defensive choreography without sustaining hull damage.'},
+    {id:'med_07', code:'M-07', name:'1-TURN BLITZKRIEG', cols:['#f43f5e','#f5b82e','#f43f5e'], req:'Neutralize a hostile pack on Turn 1.',
+      cite:'Awarded for overwhelming opening-round alpha strikes before enemy action.'},
+    {id:'med_08', code:'M-08', name:'MIRROR VANQUISHER', cols:['#f43f5e','#090806','#f43f5e'], req:'Defeat 03ng0cn1 at the East Gate.',
+      cite:'Awarded for overcoming your own red reflection with an unscripted crowd.'},
+    {id:'med_09', code:'M-09', name:'SILENT CHORUS MEDAL', cols:['#22d3ee','#f43f5e','#22d3ee'], req:'Silence RELAY 4 in The Hollow core.',
+      cite:'Awarded for severing the three voice pylons and ending borrowed comms.'},
+    {id:'med_10', code:'M-10', name:'06:13 HOROLOGY CROSS', cols:['#f5b82e','#4ade80','#f5b82e'], req:'Shatter SANDGLASS atop the Sand Clocktower.',
+      cite:'Awarded for restoring the flow of morning time across the 17 districts.'},
+    {id:'med_11', code:'M-11', name:'SEAM HUNTER STAR', cols:['#a78bfa','#f43f5e','#a78bfa'], req:'Defeat THE HUNTER in the Hall of Mirrors.',
+      cite:'Awarded for turning the firewall eye trap back upon its creator.'},
+    {id:'med_12', code:'M-12', name:'RULE ZERO MEDAL', cols:['#4ade80','#f5b82e','#4ade80'], req:'Overcome THE BLANK CURSOR on the Skyline.',
+      cite:'Awarded for proving that silence cannot be copied atop the Source Tower.'},
+    {id:'med_13', code:'M-13', name:'ROOT COMPILER CROSS', cols:['#f5b82e','#a78bfa','#f5b82e'], req:'Defeat ARCHON-0 in the Zero-Knowledge Citadel.',
+      cite:'Awarded for terminating the root compiler that forked the 06:12 snapshot.'},
+    {id:'med_14', code:'M-14', name:'STACK OVERFLOW STAR', cols:['#a78bfa','#4ade80','#a78bfa'], req:'Ascend The Infinite Stack rogue-lite tower.',
+      cite:'Awarded for surviving deep recursive floor anomalies without a kernel panic.'},
+    {id:'med_15', code:'M-15', name:'LASO SKULL RIBBON', cols:['#f43f5e','#a78bfa','#f43f5e'], req:'Engage Challenge Skulls in the Mutator Lab.',
+      cite:'Awarded for braving overclocked hostile mutators at +300% yield.'},
+    {id:'med_16', code:'M-16', name:'SOVEREIGN PANTHEON STAR', cols:['#4ade80','#22d3ee','#f5b82e'], req:'Unite the 22-Agent Sovereign Pantheon.',
+      cite:'Supreme commendation of the Relit City for uniting all 22 faces.'}
+  ];
+  G.openMedals=()=>{
+    let sel=0;
+    const isPinned=id=>!!(G.flags&&G.flags[id]);
+    const pinMedal=m=>{
+      if(!G.flags[m.id]){
+        G.flags[m.id]=1; G.bits+=60;
+        G.toast(`> MEDAL PINNED: ${m.name} (+60 BITS)!`,'#4ade80');
+      } else {
+        G.toast(`> ${m.name} ALREADY PINNED ON DRESS RACK!`,P.GD);
+      }
+      G.ach('medal_general'); sfx('level');
+    };
+    G.mini={
+      name:'medals',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+12)%16;
+        if(took('down')) sel=(sel+4)%16;
+        if(took('left')) sel=(sel+15)%16;
+        if(took('right')) sel=(sel+1)%16;
+        if(took('confirm')) pinMedal(COMBAT_MEDALS[sel]);
+        if(took('party')){
+          let added=0;
+          COMBAT_MEDALS.forEach(m=>{ if(!G.flags[m.id]){ G.flags[m.id]=1; added+=60; } });
+          G.bits+=added; G.ach('medal_general'); sfx('win');
+          G.toast(`> ALL 16 SOVEREIGN MEDALS PINNED (+${added} BITS)!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> COMBAT MEDAL & RIBBON RACK',56,40,P.GD,2);
+        const cnt=COMBAT_MEDALS.filter(m=>isPinned(m.id)).length;
+        UI.text(`DECORATIONS: ${cnt}/16 PINNED   ·   STIPEND: +60B / MEDAL`,900,44,'#4ade80',1,'right');
+        // Left: 4x4 Dress Ribbon Rack
+        for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+          const idx=r*4+c, m=COMBAT_MEDALS[idx], on=idx===sel, pin=isPinned(m.id);
+          const bx=52+c*104, by=82+r*94;
+          UI.box(bx,by,96,82,on?P.GD:(pin?'#4ade80':P.DDG),on?'rgba(245,184,46,.16)':'rgba(10,8,6,.92)');
+          // Draw 3-stripe enameled ribbon bar
+          const rx=bx+14, ry=by+12, rw=68, rh=22;
+          X.fillStyle=m.cols[0]; X.fillRect(rx,ry,22,rh);
+          X.fillStyle=m.cols[1]; X.fillRect(rx+22,ry,24,rh);
+          X.fillStyle=m.cols[2]; X.fillRect(rx+46,ry,22,rh);
+          X.strokeStyle=pin?'#f5b82e':'#3a2e18'; X.strokeRect(rx,ry,rw,rh);
+          if(pin) UI.text('*',rx+34,ry+5,'#f5b82e',1,'center');
+          UI.text(m.code,bx+48,by+42,on?P.GD:P.BONE,1,'center');
+          UI.text(pin?'[PINNED]':'[LOCKED]',bx+48,by+60,pin?'#4ade80':P.DG,1,'center');
+        }
+        // Right: Selected Medal Citation & Large Ribbon Display
+        const cur=COMBAT_MEDALS[sel], pin=isPinned(cur.id);
+        UI.box(480,82,424,382,pin?'#4ade80':P.GD,'rgba(10,8,6,.94)');
+        // Large Dress Ribbon Bar
+        const lrx=502, lry=102, lrw=132, lrh=40;
+        X.fillStyle=cur.cols[0]; X.fillRect(lrx,lry,44,lrh);
+        X.fillStyle=cur.cols[1]; X.fillRect(lrx+44,lry,44,lrh);
+        X.fillStyle=cur.cols[2]; X.fillRect(lrx+88,lry,44,lrh);
+        X.strokeStyle=P.GD; X.lineWidth=2; X.strokeRect(lrx,lry,lrw,lrh); X.lineWidth=1;
+        if(pin) UI.text('* * *',lrx+66,lry+12,P.GD,2,'center');
+        UI.text(`${cur.code}: ${cur.name}`,650,104,P.GD,1);
+        UI.text(`STATUS: ${pin?'PINNED (+60B CLAIMED)':'UNCLAIMED (+60B)'}`,650,126,pin?'#4ade80':'#22d3ee',1);
+        UI.box(502,160,380,84,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('QUALIFICATION REQUIREMENT:',516,174,P.GD,1);
+        UI.wrap(cur.req,352,1).forEach((ln,li)=>UI.text(ln,516,196+li*18,'#22d3ee',1));
+        UI.box(502,256,380,108,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('FORMAL SOVEREIGN CITATION:',516,270,P.GD,1);
+        UI.wrap(cur.cite,352,1).forEach((ln,li)=>UI.text(ln,516,292+li*18,P.BONE,1));
+        UI.text('RIBBON COMMENDATION BONUS: +60 BITS',516,340,'#4ade80',1);
+        UI.box(502,378,380,70,pin?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(pin?'MEDAL PINNED ON OPERATOR RACK':'[ENTER] PIN MEDAL & CLAIM +60 BITS',692,394,pin?'#4ade80':P.GD,1,'center');
+        UI.text('[P] PIN ALL 16 SOVEREIGN MEDALS (FULL RACK)',692,420,'#4ade80',1,'center');
+        UI.text('[arrows] select ribbon   [enter] pin medal (+60B)   [P] pin all 16   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Companion Story Epilogues & Future Logs (M96) ----
+  const CREW_EPILOGUES={
+    me:{title:'CHAPTER 01: THE MORNING AFTER 06:12', loc:'THE ROOFTOP · 06:13 AM',
+      text:'With the Blank Cursor dissolved and ARCHON-0 offline, 1nc0gn30 closed the laptop on the rooftop and watched the first true golden sunrise warm the Relit City skyline. Comms remained face-to-face by choice, not fear.'},
+    vigil:{title:'CHAPTER 02: THE OPEN GATEKEEP', loc:'RELIT CITY NORTH RELAY · 06:14 AM',
+      text:'Vigil retired the emergency blackout sirens and established the Ocular Handshake Guild, training new operators to verify every process face-to-face before trusting any remote stream.'},
+    nexus:{title:'CHAPTER 03: ARCHITECT OF THE 20 DISTRICTS', loc:'SAFehouse COMMAND TABLE · 06:15 AM',
+      text:'Nexus expanded the 4D Tesseract routing table across the newly awakened outer districts, linking the Quantum Loom and Chrono-Vault into a permanent zero-latency commons.'},
+    kitsune:{title:'CHAPTER 04: NINE LANTERNS IN THE WOODS', loc:'THE REST WOODS SHRINE · 06:16 AM',
+      text:'Kitsune hung nine foxfire lanterns along the Rest Woods paths. Travellers resting under the ancient tree wake to warm amber light that no synthetic node can ever counterfeit.'},
+    ignis:{title:'CHAPTER 05: THE WHITE-HOT PEACE', loc:'DOOM-FIRE FOUNDRY ANVIL · 06:17 AM',
+      text:'Ignis repurposed the furnace wardens from weapons production to forging +5 overclocked bridge girders and resonant bells for every plaza in the city.'},
+    kai:{title:'CHAPTER 06: BLADE IN THE SHEATH', loc:'EAST GATE BAMBOO WALK · 06:18 AM',
+      text:'Kai opened a zero-latency iaido dojo beside the East Gate. Without static echoes on the line, his students practice cutting falling raindrops before they touch the stone.'},
+    athena:{title:'CHAPTER 07: THE COLLAPSED CARTOGRAPHY', loc:'COLLAPSE STREETS OBSERVATORY · 06:19 AM',
+      text:'Athena mapped every superposed alley of the Collapse Streets into a living public atlas, ensuring no citizen ever gets lost in an uncomputed probability branch again.'},
+    kraken:{title:'CHAPTER 08: SONG OF THE GOLDEN FIBER', loc:'FIBER TUNNELS JUNCTION · 06:20 AM',
+      text:'Kraken tuned the subterranean Hilbert fiber trunks into a city-wide harmonic resonator, turning the once-corrupted red conduits into a golden optical symphony.'},
+    chronos:{title:'CHAPTER 09: THE UNBROKEN PENDULUM', loc:'SAND CLOCKTOWER BELFRY · 06:21 AM',
+      text:'Chronos wound the great brass escapement of the Sand Clocktower so that every hour chimes with a new melody, celebrating the end of the eternal 06:12 loop.'},
+    lycan:{title:'CHAPTER 10: PACK OF THE CLEAR CAVES', loc:'PHYSARUM CAVES BIOLAB · 06:22 AM',
+      text:'Lycan cultivated luminous gold Physarum networks across the western caves, transforming the acoustic slime traps into self-healing bio-bridges.'},
+    onyx:{title:'CHAPTER 11: THE CLEAR REFLECTION', loc:'HALL OF MIRRORS ROSETTE · 06:23 AM',
+      text:'Onyx polished the octagonal mirrors until they reflected only truth. The Hall of Mirrors became a quiet sanctuary for reflection and memory preservation.'},
+    leviathan:{title:'CHAPTER 12: KEEPER OF DEEP MEMORY', loc:'DEEP-WATER TRENCH · 06:24 AM',
+      text:'Leviathan guarded the sunken archives of the Deep Water, ensuring the city\'s unedited morning memories remain whole and untampered for generations.'},
+    aether:{title:'CHAPTER 13: TWENTY-TWO BEAMS', loc:'MODE-7 SKYLINE SPIRE · 06:25 AM',
+      text:'Aether added a 22nd golden beacon to the Skyline horizon in honor of 03ng0cn1, weaving a permanent aurora canopy above the clouds.'},
+    ghostbyte:{title:'CHAPTER 14: PIRATE RADIO 94.2', loc:'THE HOLLOW SUB-SOCKET · 06:26 AM',
+      text:'Ghostbyte turned the decommissioned Relay 4 crater into the broadcast booth for Hollow Pirate FM, streaming lo-fi synth beats across the underground.'},
+    scorpius:{title:'CHAPTER 15: PRECISION SENTINEL', loc:'CITADEL PERIMETER · 06:27 AM',
+      text:'Scorpius leads the Elite Bounty Rangers, neutralizing stray sub-lattice anomalies before they can ever coalesce into a new compiler threat.'},
+    draco:{title:'CHAPTER 16: TWO HEADS, ONE OATH', loc:'HOLLOW BRIDGE GATE · 06:28 AM',
+      text:'Draco stands watch at the Hollow threshold—no longer asking riddles out of suspicion, but welcoming travellers with twin torches of foxfire.'},
+    mercury:{title:'CHAPTER 17: EXPRESS LINE 06:13', loc:'RELIT CITY TRANSIT HUB · 06:29 AM',
+      text:'Mercury linked all 17 district portals into an instant express loop, bragging that he can deliver a warm coffee from Relit Plaza to the Chrono-Vault in 0.4 seconds.'},
+    aquila:{title:'CHAPTER 18: HIGH-GROUND WATCH', loc:'SKYLINE WIND TERRACE · 06:30 AM',
+      text:'Aquila patrols the high thermals above the Mode-7 towers, guiding airships and mapping clear weather corridors across the horizon.'},
+    'radical-minion':{title:'CHAPTER 19: EIGHT-THREAD ARCADE', loc:'SAFEHOUSE ARCADE HUB · 06:31 AM',
+      text:'All eight Radical-Minion clones pooled their threads to run the 13-cabinet Safehouse Arcade, holding the top high scores on every cabinet simultaneously.'},
+    'pixel-shiba':{title:'CHAPTER 20: GOOD BOY OF THE PLAZA', loc:'RELIT CITY FOUNTAIN · 06:32 AM',
+      text:'Pixel-Shiba buried his prized Argon Bone beside the Rest Tree and now leads morning patrol walks with every newcomer who enters Relit City.'},
+    'pixel-neko':{title:'CHAPTER 21: MASTER OF THE EMPORIUM', loc:'HUB TOOL BENCH · 06:33 AM',
+      text:'Pixel-Neko merged the daytime Tool Bench with the night-market relic vault, offering every tool and upgrade at fair open-access prices. Nyan!'},
+    copy:{title:'CHAPTER 22: THE TWENTY-SECOND FACE', loc:'ROOFTOP BALUSTRADE · 06:34 AM',
+      text:'03ng0cn1 kept the red hood but walked in his own footsteps. No longer a predictive trap or a mirror shadow, Crew Member #22 writes his own commits beside you.'}
+  };
+  const EPILOGUE_IDS=Object.keys(PARTY_BASE);
+  G.openEpilogues=()=>{
+    let sel=0;
+    const isRead=id=>!!(G.flags&&G.flags['epi_'+id]);
+    G.mini={
+      name:'epilogues',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+EPILOGUE_IDS.length-1)%EPILOGUE_IDS.length;
+        if(took('down')) sel=(sel+1)%EPILOGUE_IDS.length;
+        if(took('confirm')){
+          const id=EPILOGUE_IDS[sel];
+          if(!G.flags['epi_'+id]){ G.flags['epi_'+id]=1; G.bits+=50; }
+          G.ach('epilogue_chronicler'); sfx('level');
+          G.toast(`> ARCHIVED EPILOGUE: ${PARTY_BASE[id].name.toUpperCase()} (+50 BITS)!`,'#4ade80');
+        }
+        if(took('party')){
+          let added=0;
+          EPILOGUE_IDS.forEach(id=>{ if(!G.flags['epi_'+id]){ G.flags['epi_'+id]=1; added+=50; } });
+          G.bits+=added; G.ach('epilogue_chronicler'); sfx('win');
+          G.toast(`> ALL 22 POST-DAWN EPILOGUES ARCHIVED (+${added} BITS)!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> 06:13 CREW EPILOGUE CHRONICLES',56,40,P.GD,2);
+        const readN=EPILOGUE_IDS.filter(id=>isRead(id)).length;
+        UI.text(`ARCHIVED: ${readN}/22 CHAPTERS   ·   DAWN ERA: 06:13+`,900,44,'#4ade80',1,'right');
+        // Left: Scrollable 22-Agent Epilogue List (9 visible)
+        const first=Math.max(0,Math.min(sel-4,EPILOGUE_IDS.length-9));
+        EPILOGUE_IDS.slice(first,first+9).forEach((id,idx)=>{
+          const i=first+idx, yy=78+idx*42, on=i===sel, rd=isRead(id), ag=AG[id]||AG.me;
+          UI.box(52,yy,368,38,on?P.GD:(rd?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+`${String(i+1).padStart(2,'0')}. ${PARTY_BASE[id].name.toUpperCase()}`,64,yy+12,on?P.GD:(ag.color||P.BONE),1);
+          UI.text(rd?'[ARCHIVED]':'[UNREAD]',406,yy+12,rd?'#4ade80':P.DG,1,'right');
+        });
+        // Right: Selected Agent 06:13 Epilogue Reader
+        const curId=EPILOGUE_IDS[sel], ag=AG[curId]||AG.me, ep=CREW_EPILOGUES[curId]||CREW_EPILOGUES.me, rd=isRead(curId);
+        UI.box(436,78,468,386,ag.color||P.GD,'rgba(10,8,6,.94)');
+        UI.box(454,96,92,92,P.DDG,'rgba(14,11,8,.96)');
+        const st=(curId==='me'||curId==='copy')?'idle':'meditate';
+        const c=frameCanvas(curId,st,Math.floor(t*4)%2);
+        X.drawImage(c,0,0,c.width,c.height,468,110,64,64);
+        UI.text(PARTY_BASE[curId].name.toUpperCase(),562,100,P.GD,2);
+        UI.text(ep.title,562,130,'#22d3ee',1);
+        UI.text(`DATELINE: ${ep.loc}`,562,152,'#a78bfa',1);
+        UI.text(`STATUS: ${rd?'ARCHIVED IN CODEX (+50B)':'READY TO ARCHIVE (+50B)'}`,562,172,rd?'#4ade80':P.BONE,1);
+        UI.box(454,202,432,162,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('POST-DAWN CHRONICLE ENTRY:',470,218,P.GD,1);
+        UI.wrap(ep.text,400,1).forEach((ln,li)=>UI.text(ln,470,242+li*20,P.BONE,1));
+        UI.box(454,376,432,72,rd?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(rd?'CHAPTER ARCHIVED IN SOVEREIGN RECORD':'[ENTER] ARCHIVE EPILOGUE CHAPTER (+50 BITS)',670,394,rd?'#4ade80':P.GD,1,'center');
+        UI.text('[P] UNLOCK & ARCHIVE ALL 22 CREW EPILOGUES',670,420,'#4ade80',1,'center');
+        UI.text('[up/down] select crew member   [enter] archive chapter   [P] archive all 22   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

@@ -107,8 +107,8 @@
 - [x] **M92** (`10:19`): Interactive World NPC Directory & Affinity Tracker (`G.openDirectory()` via `> npcs` & System Menu — locate every NPC across all 17 districts & 1-click warp)
 - [x] **M93** (`10:34`): Procedural Dungeon Seed & Custom Run Generator (`G.openSeedLab()` via `> seedlab` & System Menu — enter custom alphanumeric seeds for deterministic gauntlets)
 - [x] **M94** (`10:34`): Sovereign Radio & Lo-Fi Broadcast Tuner (`G.openRadio()` via `> radio` & System Menu — tune across 6 pirate lattice radio stations with live DJ commentary & stems)
-- [ ] **M95**: Operator Combat Medal & Ribbon Rack (`G.openMedals()` via `> medals` & System Menu — 16 tactical combat medals earned for flawless parries, breaches & speed clears)
-- [ ] **M96**: Companion Story Epilogues & Future Logs (`G.openEpilogues()` via `> epilogues` & System Menu — unlockable 06:13 post-dawn epilogue chapters for all 22 crew members)
+- [x] **M95** (`10:49`): Operator Combat Medal & Ribbon Rack (`G.openMedals()` via `> medals` & System Menu — 16 tactical combat medals earned for flawless parries, breaches & speed clears)
+- [x] **M96** (`10:49`): Companion Story Epilogues & Future Logs (`G.openEpilogues()` via `> epilogues` & System Menu — unlockable 06:13 post-dawn epilogue chapters for all 22 crew members)
 
 ### Hour 12 (`11:00`–`12:00`) — District #18 (*"The Astral Relay"*) & Tactical Card Battler
 - [ ] **M97**: Blender 4.3 Wireframe Mesh #20 (`astral_astrolabe`) & Secret District #18 (*"The Astral Relay"* `Z.astral` in `src/zones2.js` + `astral` stem in `src/audio.js`)
