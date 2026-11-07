@@ -127,12 +127,12 @@
 - [x] **M108** (`12:21` · `commit c0bc8be`): Interactive Quest Flowchart & Dependency Visualizer (`G.openQuestGraph()` via `> questgraph` & System Menu — visual node graph of all main & side quests across Acts I–VI)
 - [x] **M109** (`12:35` · `commit 074fc1d`): Companion Training Regimen & Stat Redistributor (`G.openGym()` via `> gym` & System Menu — train individual crew stats HP/EN/ATK/DEF/SPD)
 - [x] **M110** (`12:35` · `commit 074fc1d`): Lattice News Wire & Underground BBS Reader (`G.openBBS()` via `> bbs` & System Menu — read 18 reactive underground bulletin board threads that evolve with story progress)
-- [x] **M111** (`12:50`): Boss Rush Endless Survival Mode (`G.openEndlessBoss()` via `> endless` & System Menu — infinite scaling boss waves with global high-score tracking)
-- [x] **M112** (`12:50`): Secret Mini-Game #16 — *"Vector Tank Cyber-Arena"* (`G.startVectorTank()` via `> tank` & System Menu — top-down Battlezone-style wireframe vector tank skirmish)
+- [x] **M111** (`12:50` · `commit 5141ca0`): Boss Rush Endless Survival Mode (`G.openEndlessBoss()` via `> endless` & System Menu — infinite scaling boss waves with global high-score tracking)
+- [x] **M112** (`12:50` · `commit 5141ca0`): Secret Mini-Game #16 — *"Vector Tank Cyber-Arena"* (`G.startVectorTank()` via `> tank` & System Menu — top-down Battlezone-style wireframe vector tank skirmish)
 
 ### Hour 14 (`13:00`–`14:00`) — District #19 (*"The Omega Foundry"*) & ZGL World Mod Studio
-- [ ] **M113**: Blender 4.3 Wireframe Mesh #21 (`omega_core`) & Secret District #19 (*"The Omega Foundry"* `Z.omega` in `src/zones2.js`)
-- [ ] **M114**: In-Game ZGL World & Prop Blueprint Editor (`G.openBlueprintStudio()` via `> blueprint` & System Menu — place & preview custom 3D wireframe props in the current district)
+- [x] **M113** (`13:08`): Blender 4.3 Wireframe Mesh #21 (`omega_core`) & Secret District #19 (*"The Omega Foundry"* `Z.omega` in `src/zones2.js`)
+- [x] **M114** (`13:08`): In-Game ZGL World & Prop Blueprint Editor (`G.openBlueprintStudio()` via `> blueprint` & System Menu — place & preview custom 3D wireframe props in the current district)
 - [ ] **M115**: Secret Mini-Game #17 — *"Packet Alchemy / 2048 Bit Merger"* (`G.startBitMerge()` via `> merge` & System Menu — 4x4 sliding power-of-2 bit compiler up to `2048.ROOT`)
 - [ ] **M116**: Tactical Combat Log & Damage Breakdown Analyzer (`G.openCombatLog()` via `> combatlog` & System Menu — inspect turn-by-turn damage, breach, crit & parry analytics)
 - [ ] **M117**: Sovereign Loot Box & Relic Gacha Simulator (100% Free Bits-Only `G.openRelicCapsules()` via `> capsules` & System Menu — spend earned Bits to roll holo cards & items)

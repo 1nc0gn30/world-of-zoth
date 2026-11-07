@@ -298,10 +298,27 @@ export function buildZones2(Z){
     });
     const st=[]; for(let i=0;i<360;i++) st.push((R()-.5)*86,R()*26,(R()-.5)*86);
     g.add(pts(st,latMat({color:'#22d3ee',points:true,size:2.0,twinkle:1,intensity:1.55,fogFar:80})));
-    portal(g,0,42,0);
+    portal(g,0,42,0); portal(g,0,-42,0);
     Z.astral={ id:'astral', name:'the astral relay', sub:'stellar astrolabe · 06:16', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'astral', lvl:38,
       sky:{rain:.14,rainCol:'#22d3ee',hex:1,stars:3.2}, spawn:{x:0,z:36,yaw:Math.PI},
-      portals:[{x:0,z:42,r:3,to:'vault',sx:0,sz:-36,syaw:0,label:'the chrono-vault'}], objs:{astro,pyl}, tag:[34,-34] };
+      portals:[{x:0,z:42,r:3,to:'vault',sx:0,sz:-36,syaw:0,label:'the chrono-vault'},{x:0,z:-42,r:3,to:'omega',sx:0,sz:36,syaw:Math.PI,label:'the omega foundry'}], objs:{astro,pyl}, tag:[34,-34] };
+  }
+  // ===================== THE OMEGA FOUNDRY (District #19 · Crucible Core) =====================
+  { const h=(x,z)=>0.22*Math.sin(x*.14)*Math.cos(z*.14);
+    const B=base('omega',{seed:191,h,fogFar:70,gridCol:'#2e140c',dotCol:'#fb923c'}); const {g,col,anim}=B; const R=rng(192);
+    const core=segs(BLENDER_GEO.omega_core,latMat({color:'#fb923c',intensity:1.65,fogFar:140})); core.position.set(0,0,-8); g.add(core); col.push({c:[0,-8,5.6]});
+    const inner=segs(BLENDER_GEO.omega_core,latMat({color:GD,intensity:1.45,fogFar:140})); inner.scale.setScalar(.62); inner.position.set(0,2.4,-8); g.add(inner);
+    anim.push(t=>{ core.rotation.y=t*.44; inner.rotation.y=-t*.72; inner.position.y=2.4+Math.sin(t*1.9)*.4; });
+    const pyl={}; [['o1',-20,-8],['o2',20,-8],['o3',0,16]].forEach(([id,x,z])=>{
+      const a=[]; wireOcta(a,1.8,x,3.0,z); ring(a,x,.15,z,3.2,32,2);
+      const m=segs(a,latMat({color:'#f43f5e',intensity:1.5,fogFar:85})); g.add(m); anim.push(t=>{ m.rotation.y=-t*.56; }); col.push({c:[x,z,1.8]}); pyl[id]={x,z,m};
+    });
+    const st=[]; for(let i=0;i<360;i++) st.push((R()-.5)*86,R()*26,(R()-.5)*86);
+    g.add(pts(st,latMat({color:'#fb923c',points:true,size:2.0,twinkle:1,intensity:1.55,fogFar:80})));
+    portal(g,0,42,0);
+    Z.omega={ id:'omega', name:'the omega foundry', sub:'reactor crucible · 06:17', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'omega', lvl:40,
+      sky:{rain:.24,rainCol:'#fb923c',hex:1,stars:2.8}, spawn:{x:0,z:36,yaw:Math.PI},
+      portals:[{x:0,z:42,r:3,to:'astral',sx:0,sz:-36,syaw:0,label:'the astral relay'}], objs:{core,pyl}, tag:[-36,-36] };
   }
   // ===================== SECRET: THE ROOFTOP AT 06:12 =====================
   { const g=new THREE.Group(), col=[], anim=[], R=rng(612); const h=()=>0;

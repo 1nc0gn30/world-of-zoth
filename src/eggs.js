@@ -11,11 +11,12 @@ import { CINE } from './cine.js';
 import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
 import { BLENDER_GEO } from './blender_geo.js';
 import { TRACKS, SFX, AU } from './audio.js';
+import { segs, latMat } from './geo.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +42,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='blueprint'||c==='modstudio'||c==='props'){ out('[blueprint] opening In-Game ZGL World & Prop Blueprint Editor...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBlueprintStudio(); },40); }
     else if(c==='endless'||c==='survival'||c==='gauntlet'){ out('[endless] opening Boss Rush Endless Survival Mode...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEndlessBoss(); },40); }
     else if(c==='tank'||c==='vectortank'||c==='battlezone'){ out('[tank] launching Secret Mini-Game #16: Vector Tank Cyber-Arena...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startVectorTank(); },40); }
     else if(c==='gym'||c==='train'||c==='respec'){ out('[gym] opening Companion Training Regimen & Stat Redistributor...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openGym(); },40); }
@@ -6551,6 +6553,133 @@ export function initEggs(G,{music,sfx}){
         UI.text('[P] TRIGGER EMP OVERDRIVE NOVA (+200 BITS)',698,392,P.GD,1,'center');
         UI.text('Detonates all hostile vector tanks & advances wave.',698,418,'#4ade80',1,'center');
         UI.text('[arrows] steer & thrust   [enter/space] fire cannon   [P] EMP nova (+200B)   [esc] exit',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- In-Game ZGL World & Prop Blueprint Editor (M114) ----
+  const BLUEPRINT_PROPS=[
+    {id:'omega_core',       name:'OMEGA REACTOR CRUCIBLE', col:'#fb923c', scale:0.55, desc:'District #19 centerpiece: 10 radial cooling fins, magnetic rings & icosahedral heart.'},
+    {id:'astral_astrolabe', name:'ASTRAL STELLAR ASTROLABE',col:'#22d3ee', scale:0.58, desc:'District #18 centerpiece: 4 gimbaled armillary rings & 8 compass star vanes.'},
+    {id:'chrono_orrery',    name:'CELESTIAL CHRONO-ORRERY',col:'#f5b82e', scale:0.58, desc:'District #17 centerpiece: 3 armillary rings, 12 zodiac spokes & orbital moons.'},
+    {id:'quantum_loom',     name:'QUANTUM LOOM SPINDLE',   col:'#a78bfa', scale:0.60, desc:'District #16 centerpiece: double-helix phase spindle & octahedral resonator.'},
+    {id:'null_singularity', name:'NULL CORE SINGULARITY',  col:'#22d3ee', scale:0.55, desc:'District #15 centerpiece: toroidal accretion cage & 8 radial gravitational fins.'},
+    {id:'pantheon_throne',  name:'SOVEREIGN PANTHEON THRONE',col:'#f5b82e',scale:0.65, desc:'District #14 monument: 7-blade halo crown & levitating dais steps.'},
+    {id:'citadel_spire',    name:'TWISTED CITADEL SPIRE',  col:'#4ade80', scale:0.52, desc:'Zero-Knowledge Citadel helical obelisk with subdivided lattice struts.'},
+    {id:'clock_escapement', name:'BELFRY GEAR ESCAPEMENT', col:'#fb923c', scale:0.65, desc:'Sand Clocktower interlocking planetary gear escapement & crown wheel.'},
+    {id:'mirror_obelisk',   name:'FRACTURED MIRROR OBELISK',col:'#a78bfa',scale:0.85, desc:'Hall of Mirrors floating biconical diamond hyper-obelisk.'},
+    {id:'abyss_monolith',   name:'SUNKEN ABYSS MONOLITH',  col:'#22d3ee', scale:0.65, desc:'Deep-trench server rack monolith with 6 cooling fins & halo ring.'},
+    {id:'phase_merkaba',    name:'PHASE-SHIFT MERKABA',    col:'#4ade80', scale:1.10, desc:'Interlocking dual star-tetrahedron quantum merkaba crystal.'},
+    {id:'gunship_valkyrie', name:'VALKYRIE VECTOR GUNSHIP',col:'#f43f5e', scale:0.95, desc:'Swept-wing cybernetic interceptor chassis with twin VTOL turbine rings.'}
+  ];
+  const BP_COLORS=['#f5b82e','#22d3ee','#4ade80','#a78bfa','#f43f5e','#fb923c'];
+  G.openBlueprintStudio=()=>{
+    let mIdx=0, cIdx=0, curX=0, curZ=6, scaleMul=1.0;
+    G.ach('blueprint_architect');
+    if(!G.flags.placed_props) G.flags.placed_props=[];
+    if(!G._spawnedBlueprints) G._spawnedBlueprints=[];
+    const placeProp=()=>{
+      const bp=BLUEPRINT_PROPS[mIdx], col=BP_COLORS[cIdx], geo=BLENDER_GEO[bp.id];
+      if(!geo||!G.zone||!G.zone.group) return;
+      const sc=+(bp.scale*scaleMul).toFixed(2);
+      const mesh=segs(geo,latMat({color:col,intensity:1.55,fogFar:140}));
+      const py=G.zone.h?G.zone.h(curX,curZ):0;
+      mesh.position.set(curX,py,curZ);
+      mesh.scale.setScalar(sc);
+      G.zone.group.add(mesh);
+      G._spawnedBlueprints.push({zone:G.zoneId,mesh});
+      G.flags.placed_props.push({zone:G.zoneId,id:bp.id,name:bp.name,x:curX,z:curZ,col,sc});
+      if(!G.flags.blueprint_stipend){
+        G.flags.blueprint_stipend=1; G.bits+=150;
+        G.toast(`> PLACED ${bp.name} AT (${curX}, ${curZ}) +150B ARCHITECT GRANT!`,'#4ade80');
+      } else {
+        G.toast(`> SPAWNED 3D PROP: ${bp.name} AT (${curX}, ${curZ}) IN ${G.zone.name.toUpperCase()}`,col);
+      }
+      G.ach('blueprint_architect'); sfx('win');
+    };
+    const clearZoneProps=()=>{
+      const kept=[];
+      (G._spawnedBlueprints||[]).forEach(item=>{
+        if(item.zone===G.zoneId && G.zone && G.zone.group) G.zone.group.remove(item.mesh);
+        else kept.push(item);
+      });
+      G._spawnedBlueprints=kept;
+      G.flags.placed_props=(G.flags.placed_props||[]).filter(p=>p.zone!==G.zoneId);
+      sfx('cancel'); G.toast(`> CLEARED CUSTOM BLUEPRINT PROPS IN ${G.zone.name.toUpperCase()}`,P.GD);
+    };
+    G.mini={
+      name:'blueprint_studio',
+      key(e){
+        const k=(e.key||'').toLowerCase();
+        if(k==='q'){ mIdx=(mIdx+BLUEPRINT_PROPS.length-1)%BLUEPRINT_PROPS.length; cIdx=mIdx%BP_COLORS.length; sfx('move'); }
+        if(k==='e'){ mIdx=(mIdx+1)%BLUEPRINT_PROPS.length; cIdx=mIdx%BP_COLORS.length; sfx('move'); }
+        if(k==='c'){ cIdx=(cIdx+1)%BP_COLORS.length; sfx('blip'); }
+        if(k==='z'){ scaleMul=Math.max(0.5,+(scaleMul-0.25).toFixed(2)); sfx('move'); }
+        if(k==='x'){ scaleMul=Math.min(2.0,+(scaleMul+0.25).toFixed(2)); sfx('move'); }
+        if(k==='r') clearZoneProps();
+        if(k==='p') placeProp();
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left'))  { curX=Math.max(-28,curX-4); sfx('move'); }
+        if(took('right')) { curX=Math.min(28,curX+4); sfx('move'); }
+        if(took('up'))    { curZ=Math.max(-28,curZ-4); sfx('move'); }
+        if(took('down'))  { curZ=Math.min(28,curZ+4); sfx('move'); }
+        if(took('confirm')) placeProp();
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        const bp=BLUEPRINT_PROPS[mIdx], col=BP_COLORS[cIdx], geo=BLENDER_GEO[bp.id]||[];
+        const zoneProps=(G.flags.placed_props||[]).filter(p=>p.zone===G.zoneId);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> ZGL 3D BLUEPRINT STUDIO',56,40,P.GD,2);
+        UI.text(`SECTOR: ${(G.zone&&G.zone.name||'HUB').toUpperCase()}   ·   PLACED: ${zoneProps.length} PROPS`,900,44,'#4ade80',1,'right');
+        // Left Top: Live 3D Wireframe Turntable Preview of Selected Blender Mesh
+        UI.box(52,78,412,216,col,'rgba(8,10,12,.96)');
+        UI.text(`BLUEPRINT ${String(mIdx+1).padStart(2,'0')}/${BLUEPRINT_PROPS.length} [Q/E]: ${bp.name}`,68,94,col,1);
+        const cx=258, cy=196, ca=Math.cos(t*0.9), sa=Math.sin(t*0.9), sc=11*bp.scale*scaleMul;
+        X.strokeStyle=col; X.lineWidth=1.35; X.beginPath();
+        for(let i=0;i<geo.length;i+=6){
+          const x0=geo[i], y0=geo[i+1]-4.2, z0=geo[i+2];
+          const x1=geo[i+3], y1=geo[i+4]-4.2, z1=geo[i+5];
+          const rx0=x0*ca-z0*sa, rz0=x0*sa+z0*ca;
+          const rx1=x1*ca-z1*sa, rz1=x1*sa+z1*ca;
+          X.moveTo(cx+rx0*sc, cy-y0*sc+rz0*sc*0.28);
+          X.lineTo(cx+rx1*sc, cy-y1*sc+rz1*sc*0.28);
+        }
+        X.stroke(); X.lineWidth=1;
+        UI.text(`EDGES: ${geo.length/6}   ·   SCALE [Z/X]: ${(bp.scale*scaleMul).toFixed(2)}x   ·   COLOR [C]`,68,272,P.BONE,1);
+        // Left Bottom: District Coordinate Placement Radar (-28..+28)
+        UI.box(52,306,412,158,P.DDG,'rgba(10,8,6,.94)');
+        UI.text(`SECTOR PLACEMENT RADAR [ARROWS]: X=${curX}, Z=${curZ}`,68,322,P.GD,1);
+        UI.box(68,342,168,108,'#22d3ee','rgba(6,12,16,.96)');
+        // Draw placed props on mini radar
+        zoneProps.forEach(p=>{
+          const px=152+Math.round((p.x/32)*72), pz=396+Math.round((p.z/32)*44);
+          X.fillStyle=p.col||'#4ade80'; X.fillRect(px-3,pz-3,6,6);
+        });
+        // Draw cursor crosshair
+        const tx=152+Math.round((curX/32)*72), tz=396+Math.round((curZ/32)*44);
+        X.strokeStyle=P.GD; X.strokeRect(tx-5,tz-5,10,10);
+        UI.text('LIVE 3D SCENE INJECTION:',250,350,'#4ade80',1);
+        UI.text('Spawns 3D THREE.LineSegments',250,372,P.BONE,1);
+        UI.text('directly into G.zone.group!',250,392,P.BONE,1);
+        UI.text('[R] Clear Sector Props',250,420,'#f43f5e',1);
+        // Right: 12 Blender 4.3 Prop Catalog & Spawn Action
+        UI.box(480,78,424,386,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('BLENDER 4.3 WIREFRAME BLUEPRINT CATALOG:',498,94,P.GD,1);
+        const first=Math.max(0,Math.min(mIdx-4,BLUEPRINT_PROPS.length-8));
+        BLUEPRINT_PROPS.slice(first,first+8).forEach((item,idx)=>{
+          const i=first+idx, y=116+idx*30, on=i===mIdx;
+          if(on){ X.fillStyle='#241b0b'; X.fillRect(492,y-4,400,24); }
+          UI.text(`${on?'>':' '} ${String(i+1).padStart(2,'0')}. ${item.name}`,500,y,on?P.GD:P.BONE,1);
+          UI.text(`${(BLENDER_GEO[item.id]||[]).length/6} EDGES`,882,y,item.col,1,'right');
+          UI.hit(492,y-4,400,24,()=>{ mIdx=i; cIdx=i%BP_COLORS.length; sfx('move'); });
+        });
+        UI.box(496,368,392,82,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER / P] SPAWN 3D PROP IN CURRENT DISTRICT (+150B)',692,388,P.GD,1,'center');
+        UI.wrap(bp.desc,368,1).slice(0,2).forEach((ln,li)=>UI.text(ln,692,412+li*16,'#4ade80',1,'center'));
+        UI.text('[Q/E] blueprint   [arrows] X/Z coords   [Z/X] scale   [C] color   [enter/P] spawn   [R] clear   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

@@ -494,6 +494,40 @@ def build_astral_astrolabe():
     return arr
 
 
+def build_omega_core():
+    """Towering Omega Foundry Reactor Crucible with 10 radial fins & magnetic containment rings (District #19)."""
+    bm = bmesh.new()
+    # Heavy industrial octagonal crucible base & upper containment rings
+    add_ring(bm, 0, 0, 0.5, 5.4, segs=24, axis="z")
+    add_ring(bm, 0, 0, 3.2, 4.4, segs=24, axis="z")
+    add_ring(bm, 0, 0, 6.6, 4.8, segs=24, axis="z")
+    add_ring(bm, 0, 0, 10.2, 3.6, segs=24, axis="z")
+    # 3 orthogonal magnetic containment hoops around the reactor heart
+    add_ring(bm, 0, 0, 6.6, 4.5, segs=24, axis="x")
+    add_ring(bm, 0, 0, 6.6, 4.5, segs=24, axis="y")
+    # 10 radial thermal cooling fins & structural buttresses
+    for i in range(10):
+        a = (i / 10.0) * math.pi * 2.0
+        v0 = bm.verts.new((math.cos(a) * 5.4, math.sin(a) * 5.4, 0.5))
+        v1 = bm.verts.new((math.cos(a) * 4.4, math.sin(a) * 4.4, 3.2))
+        v2 = bm.verts.new((math.cos(a) * 5.6, math.sin(a) * 5.6, 6.6))
+        v3 = bm.verts.new((math.cos(a) * 3.6, math.sin(a) * 3.6, 10.2))
+        v_in = bm.verts.new((math.cos(a) * 1.8, math.sin(a) * 1.8, 6.6))
+        bm.edges.new((v0, v1))
+        bm.edges.new((v1, v2))
+        bm.edges.new((v2, v3))
+        bm.edges.new((v1, v_in))
+        bm.edges.new((v2, v_in))
+        bm.edges.new((v3, v_in))
+    # Central suspended icosahedral Omega singularity core
+    bmesh.ops.create_icosphere(bm, subdivisions=1, radius=1.75)
+    for v in bm.verts[-12:]:
+        v.co.z += 6.6
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
 def main():
     data = {
         "relay4_crown": build_relay4_crown(),
@@ -516,6 +550,7 @@ def main():
         "quantum_loom": build_quantum_loom(),
         "chrono_orrery": build_chrono_orrery(),
         "astral_astrolabe": build_astral_astrolabe(),
+        "omega_core": build_omega_core(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:
