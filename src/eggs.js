@@ -5,7 +5,7 @@ import { P, THEMES, applyTheme } from './pal.js';
 import { postU } from './render.js';
 import { IN, took, KEYMAP, DEFAULT_KEYS } from './input.js';
 import { AG, frameCanvas } from './sprites.js';
-import { ENEMIES, ITEMS, PARTY_BASE, SKILLS } from './data.js';
+import { ENEMIES, ITEMS, PARTY_BASE, SKILLS, QUESTS } from './data.js';
 import { IDLE } from './content.js';
 import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
 export const ACH={
@@ -37,7 +37,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='ledger'||c==='stats'||c==='career'){ out('[ledger] opening Operator Career Telemetry Ledger...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openLedger(); },40); }
     else if(c==='combos'||c==='synergy'){ out('[combos] opening Companion Duo & Overdrive Encyclopedia...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCombos(); },40); }
     else if(c==='router'||c==='physarum'){ out('[router] launching Physarum Slime Mould Network Router...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRouter(); },40); }
     else if(c==='market'||c==='blackmarket'){ out('[market] opening Neko Underground Black-Market Exchange...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBlackMarket(); },40); }
@@ -1934,6 +1935,49 @@ export function initEggs(G,{music,sfx}){
         UI.box(96,426,768,36,P.DDG,'rgba(12,10,8,.92)');
         UI.text('Connect all 6 Physarum bio-nodes with total ATP cost <= 70 (Optimal MST = 67 ATP).',480,438,P.BONE,1,'center');
         UI.text('[arrows] select vein   [enter / click] toggle vein   [P] auto-solve MST   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Operator Combat Statistics & Career Telemetry Ledger (M57) ----
+  G.openLedger=()=>{
+    G.mini={
+      name:'ledger',
+      update(){
+        if(took('back')||took('pause')||took('confirm')){ G.mode='explore'; sfx('cancel'); return; }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(76,28,808,484,P.GD,'rgba(8,7,5,.96)');
+        const qAll=Object.keys(QUESTS).length||32, qDone=Object.values(G.quests).filter(q=>q.done).length;
+        const achAll=Object.keys(ACH).length, achDone=Object.keys(G.achGot||{}).length;
+        const bntDone=[1,2,3,4,5,6,7,8,9,10].filter(i=>G.flags['bounty_'+i]).length;
+        const dcDone=DATACUBES.filter(d=>G.flags['dc_'+d.id]).length;
+        const seenZ=Object.keys(G.Z).filter(z=>G.flags['seen_'+z]||z==='hub').length;
+        const labsDone=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].filter(i=>G.flags['lab_'+i]).length;
+        const overallPct=Math.min(100,Math.round(((G.crewCount()/22)+(qDone/qAll)+(achDone/achAll)+(bntDone/10)+(dcDone/15)+(seenZ/15))/6*100));
+        UI.text('> CAREER TELEMETRY LEDGER',98,44,P.GD,2);
+        UI.text(`SOVEREIGN COMPLETION INDEX: ${overallPct}%`,862,48,'#4ade80',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(94,72,772,2);
+        const rows=[
+          ['OPERATOR LEVEL & ACTIVE CYCLE', `LVL ${G.party.me.lvl}  ·  CYCLE NG+${G.flags.ng_plus||0}`, `RUN TIME: ${fmtSplit(G.t||0)}`],
+          ['CREW RECRUITED & BOND RESONANCE', `${G.crewCount()} / 22 SOVEREIGN AGENTS`, `ACTIVE SQUAD: ${G.active().map(id=>AG[id].name).join(', ')}`],
+          ['DISTRICTS & RED TAGS DISCOVERED', `${seenZ} / 15 DISTRICTS MAPPED`, `RED TAGS: ${['hub','forest','relay','fiber','clock','streets','foundry','caves','deep'].filter(z=>G.flags['tag_'+z]).length} / 9`],
+          ['CAMPAIGN & LOYALTY MISSIONS', `${qDone} / ${qAll} MISSIONS COMPLETED`, `BOUNTY CONTRACTS: ${bntDone} / 10`],
+          ['ENDGAME GAUNTLET RECORDS', `INFINITE STACK: FLOOR ${G.flags.stack_floor||0}/99`, `PANTHEON BOSS RUSH: STAGE ${G.flags.bossrush_stage||0}/6`],
+          ['ARCHIVAL & CYBER-RANGE MASTERY', `DATACUBES: ${dcDone}/15  ·  LABS: ${labsDone}/16`, `ACHIEVEMENTS: ${achDone} / ${achAll}`],
+          ['COMBAT & TREASURY LEDGER', `VICTORIES: ${G.flags.total_wins||0} BATTLES`, `TREASURY: ${G.bits} LATTICE BITS`]
+        ];
+        rows.forEach(([title,v1,v2],i)=>{
+          const y=90+i*48;
+          UI.box(98,y-4,764,40,P.DDG,'rgba(10,8,6,.88)');
+          UI.text(title,114,y+10,P.GD,1);
+          UI.text(v1,430,y+10,'#22d3ee',1);
+          UI.text(v2,846,y+10,P.BONE,1,'right');
+        });
+        UI.box(98,434,764,34,P.GD,'rgba(245,184,46,.14)');
+        UI.text(`SOVEREIGN OPERATOR STATUS: ${overallPct>=80?'PANTHEON ARCHITECT':(overallPct>=40?'SENIOR LATTICE OPERATOR':'INITIATE NODE WALKER')}`,480,445,P.GD,1,'center');
+        UI.text('[enter / esc] return to lattice',480,484,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

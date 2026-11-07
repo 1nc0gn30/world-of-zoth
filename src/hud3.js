@@ -96,7 +96,8 @@ export function initHud3(G, api){
     const b=B(G.zoneId), cw=(b[2]-b[0])/FN, chh=(b[3]-b[1])/FN, f=fog[G.zoneId]; X.fillStyle='rgba(6,5,4,.6)'; if(f){ X.beginPath(); for(let j=0;j<FN;j++) for(let i=0;i<FN;i++) if(!f[j*FN+i]) X.rect(b[0]+i*cw,b[1]+j*chh,cw+.05,chh+.05); X.fill(); }
     X.restore(); };
   // ---- full-screen map ----
-  const MV={z:null,cx:0,cz:0,zoom:1};
+  const MV={z:null,cx:0,cz:0,zoom:1,flt:0};
+  const FLTS=['ALL','TAGS','LOGS','LVL'];
   H.open=()=>{ MV.z=G.zoneId; const p=api.player().group.position; MV.cx=p.x; MV.cz=p.z; MV.zoom=1; G.mapPrev=G.mode; G.mode='map'; sfx('confirm'); };
   const zlist=()=>Object.keys(G.Z).filter(z=>!G.Z[z].secret||G.flags['seen_'+z]);
   const S=()=>{ const b=B(MV.z); const base=Math.min(600/(b[2]-b[0]),470/(b[3]-b[1])); return base*MV.zoom; };
@@ -109,6 +110,7 @@ export function initHud3(G, api){
     if(IN.stick.active){ MV.cx+=IN.stick.x*sp; MV.cz+=IN.stick.y*sp; }
     if(IN.drag.dx||IN.drag.dy){ const s=S(); MV.cx-=IN.drag.dx/s; MV.cz-=IN.drag.dy/s; }
     if(IN.wheel) MV.zoom=Math.max(.6,Math.min(5,MV.zoom*(IN.wheel<0?1.15:1/1.15))); if(IN.held.has('rotl')) MV.zoom=Math.min(5,MV.zoom*(1+dt)); if(IN.held.has('rotr')) MV.zoom=Math.max(.6,MV.zoom/(1+dt));
+    if(took('n3')){ MV.flt=(MV.flt+1)%FLTS.length; sfx('blip'); }
     const zl=zlist(), zi=zl.indexOf(MV.z); if(took('n1')||took('quests')){ MV.z=zl[(zi+zl.length-1)%zl.length]; MV.cx=MV.cz=0; MV.zoom=1; sfx('move'); } if(took('n2')||took('items')){ MV.z=zl[(zi+1)%zl.length]; MV.cx=MV.cz=0; MV.zoom=1; sfx('move'); }
     if(took('party')&&MV.z&&(G.flags['seen_'+MV.z]||MV.z==='hub')&&MV.z!==G.zoneId&&(MV.z!=='relay'||G.isFlag('gate_open'))){ G.mode='explore'; G.travelTo(MV.z); sfx('confirm'); return; }
     const clicks=IN.clicks.splice(0); for(const c of clicks){ if(c.x>660){ if(c.y>466&&c.y<504&&MV.z&&(G.flags['seen_'+MV.z]||MV.z==='hub')&&MV.z!==G.zoneId){ G.mode='explore'; G.travelTo(MV.z); sfx('confirm'); return; } const i=Math.floor((c.y-64)/22); if(i>=0&&i<zl.length&&(G.flags['seen_'+zl[i]]||zl[i]==='hub')){ MV.z=zl[i]; MV.cx=MV.cz=0; MV.zoom=1; sfx('move'); } continue; } if(c.y>500) continue; const [wx,wz]=toW(c.x,c.y); placeAt(wx,wz); }
@@ -140,10 +142,16 @@ export function initHud3(G, api){
     const zl=zlist(), avgExp=Math.round(zl.reduce((a,zz)=>a+H.explored(zz),0)/Math.max(1,zl.length)*100);
     UI.box(20,8,620,28); UI.text(`> atlas  ${Z.name} (lv${Z.lvl||1})  ·  sector ${Math.round(H.explored(z)*100)}%  ·  world ${avgExp}%`,32,15,P.GD); UI.text('N^',628,15,P.DG,1,'right');
     // zone list
-    UI.box(656,40,288,470); UI.text(`> districts (${zl.filter(zz=>G.flags['seen_'+zz]||zz==='hub').length}/${zl.length})`,670,48,P.GD);
-    zl.forEach((zz,i)=>{ const known=G.flags['seen_'+zz]||zz==='hub', yy=64+i*22, tagDone=G.flags['tag_'+zz]; if(zz===MV.z){ X.fillStyle='rgba(245,184,46,.15)'; X.fillRect(660,yy-2,280,20); }
+    UI.box(656,40,288,470); UI.text(`> districts  [${FLTS[MV.flt]}]`,670,48,P.GD);
+    zl.forEach((zz,i)=>{ const known=G.flags['seen_'+zz]||zz==='hub', yy=64+i*22, tagDone=G.flags['tag_'+zz], dcDone=G.flags['dc_'+zz]; if(zz===MV.z){ X.fillStyle='rgba(245,184,46,.15)'; X.fillRect(660,yy-2,280,20); }
       UI.text((known?G.Z[zz].name:'???'),668,yy+2,known?(zz===G.zoneId?P.BONE:P.GD):P.DDG);
-      if(known) UI.text(`${tagDone?'[tag] ':''}lv${G.Z[zz].lvl||1} · ${Math.round(H.explored(zz)*100)}%`,936,yy+2,tagDone?P.RED:P.DG,1,'right'); });
+      if(known){
+        let rTxt=`${tagDone?'[tag] ':''}lv${G.Z[zz].lvl||1} · ${Math.round(H.explored(zz)*100)}%`, rCol=tagDone?P.RED:P.DG;
+        if(MV.flt===1){ rTxt=G.Z[zz].tag?(tagDone?'TAG [OK]':'TAG [MISS]'):'--'; rCol=tagDone?'#4ade80':P.RED; }
+        else if(MV.flt===2){ rTxt=dcDone?'LOG [OK]':'LOG [LOCK]'; rCol=dcDone?'#4ade80':'#22d3ee'; }
+        else if(MV.flt===3){ rTxt=`THREAT LV ${G.Z[zz].lvl||1}`; rCol=(G.Z[zz].lvl||1)>=18?P.RED:P.GD; }
+        UI.text(rTxt,936,yy+2,rCol,1,'right');
+      } });
     if(MV.z!==G.zoneId&&(G.flags['seen_'+MV.z]||MV.z==='hub')){ UI.box(666,472,268,28,P.GD,'rgba(245,184,46,.14)'); UI.text(`> [P / tap] warp to ${Z.name}`,800,480,P.GD,1,'center'); }
-    UI.text(IN.touch?'drag pan · tap set waypoint · tap district · B close':'arrows pan · Q/R zoom · enter waypoint · P warp · 1/2 district · M/esc close',480,522,P.DG,1,'center'); };
+    UI.text(IN.touch?'drag pan · tap set waypoint · tap district · B close':'arrows pan · Q/R zoom · 1/2 district · 3 filter · P warp · M/esc close',480,522,P.DG,1,'center'); };
 }
