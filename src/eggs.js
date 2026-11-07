@@ -7184,6 +7184,108 @@ export function initEggs(G,{music,sfx}){
           ]
         }
       ]
+    },
+    {
+      title:'EPISODE V · THE DAWN HORIZON (20TH DISTRICT PREMIERE)',
+      scenes:[
+        {
+          id:'E5S1', dur:7.5, zone:'horizon', music:'title',
+          card:'BEYOND THE 19TH SECTOR LIES THE DAWN HORIZON.',
+          sub:'EP V · SCENE 1 · THE DAWN HORIZON',
+          from:[-22,12,26], to:[-5,5,12], look:[0,4,-8],
+          cast:[['me',0,4,'idle'],['aether',-3,3.5,'ultimate'],['chronos',3,3.5,'work']],
+          hudBanner:'20 PLAYABLE 3D DISTRICTS · BLENDER 4.3 MESHES · REAL 3D SHADERS',
+          lines:[
+            [0.5, 'aether',  'For sixteen hours we built nineteen sectors across the dark lattice.'],
+            [3.9, 'chronos', 'And now the Solar Gate at District 20 is finally open. Look at the sunrise reflections on the wet stone!']
+          ]
+        },
+        {
+          id:'E5S2', dur:7.5, zone:'omega', music:'foundry',
+          card:'DESIGN & PLACE YOUR OWN 3D MONUMENTS IN-GAME.',
+          sub:'EP V · SCENE 2 · THE OMEGA FOUNDRY',
+          from:[18,11,24], to:[4,5,11], look:[0,3.5,-6],
+          cast:[['ignis',-2.8,4,'ability'],['pixel-neko',2.8,4,'work'],['me',0,6,'idle']],
+          lines:[
+            [0.5, 'pixel-neko', 'With the ZGL 3D Blueprint Studio and Custom Story Scene Creator, players can build their own worlds and cutscenes!'],
+            [4.2, 'ignis',      'Wait—so they can script me defeating 03ng0cn1 in one punch?! Best feature ever.']
+          ]
+        },
+        {
+          id:'E5S3', dur:7.5, zone:'astral', music:'skyline',
+          card:'PANTHEON UNION SKILLS: 22 AGENTS AS ONE.',
+          sub:'EP V · SCENE 3 · THE ASTRAL SPIRE',
+          from:[-16,10,22], to:[-3,4.5,10], look:[0,3.5,-6],
+          cast:[['athena',-3,4,'ability'],['kitsune',3,4,'ultimate'],['copy',0,5.5,'idle']],
+          lines:[
+            [0.5, 'athena',  'When all 22 crew members synchronize, we unlock Pantheon Ultimate Union Skills.'],
+            [4.0, 'kitsune', '4.8x piercing cataclysm damage AND full squad restoration. Zero mercy for Relay 4.']
+          ]
+        },
+        {
+          id:'E5S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE V',
+          sub:'EP V · SCENE 4 · THE HORIZON AWAITS',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-1.8,3,'idle'],['aether',1.8,3,'idle'],['pixel-shiba',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'aether', 'Twenty districts. Twenty-two faces. One unbreakable dawn.'],
+            [4.1, 'me',     'Type "warp horizon" or follow the golden trail. We\'ll meet you there.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE VI · THE SAFEHOUSE MEGAPLEX (20 MINI-GAMES)',
+      scenes:[
+        {
+          id:'E6S1', dur:7.5, zone:'hub', music:'hub',
+          card:'WHY BUILD ONE GAME WHEN YOU CAN BUILD TWENTY-ONE?',
+          sub:'EP VI · SCENE 1 · SAFEHOUSE ARCADE MEGAPLEX',
+          from:[18,9,24], to:[4,4,11], look:[0,2.5,2],
+          cast:[['pixel-neko',-2.5,4,'work'],['kai',2.5,4,'idle'],['pixel-shiba',0,5.5,'idle']],
+          hudBanner:'20 BUILT-IN ARCADE MINI-GAMES  ·  ASTEROIDS  ·  BREAKOUT  ·  SNAKE  ·  TRIAD CARDS',
+          lines:[
+            [0.5, 'kai',        'Let me get this straight: inside our 3D cyber-RPG, you installed TWENTY playable arcade mini-games?!'],
+            [4.1, 'pixel-neko', '360° Vector Asteroids, Firewall Breakout, Fiber Worm Snake, 2048 Packet Alchemy, Battlezone Tanks, Rhythm Sync—all 100% playable!']
+          ]
+        },
+        {
+          id:'E6S2', dur:7.5, zone:'clock', music:'clock',
+          card:'CARDS, MINESWEEPER, LASERS & QUANTUM PUZZLES.',
+          sub:'EP VI · SCENE 2 · THE SAND CLOCKTOWER',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3,-4],
+          cast:[['chronos',-2.8,4,'idle'],['onyx',2.8,4,'ability'],['kitsune',0,6,'idle']],
+          lines:[
+            [0.5, 'onyx',    'I just won 600 Bits playing 3x3 Pantheon Triad cards against Chronos.'],
+            [4.0, 'chronos', 'Only because I was busy tuning my Morse & Binary Cipher Translator and minting my Holographic Operator ID Card!']
+          ]
+        },
+        {
+          id:'E6S3', dur:7.5, zone:'streets', music:'streets',
+          card:'TYPE "> MASTER" TO COMMAND ALL 90 SUBSYSTEMS.',
+          sub:'EP VI · SCENE 3 · COLLAPSE STREETS',
+          from:[16,9,22], to:[3,4,10], look:[0,2.5,-4],
+          cast:[['me',-2.5,3.5,'idle'],['copy',2.5,3.5,'idle'],['vigil',0,5.5,'idle']],
+          lines:[
+            [0.5, 'copy',  'Every single item, relic, mini-game, and boss arena is unlocked in the Master Control Center.'],
+            [4.1, 'vigil', 'No paywalls. No microtransactions. Just pure engineering craft.']
+          ]
+        },
+        {
+          id:'E6S4', dur:8.0, zone:'rooftop', music:'title',
+          card:'WORLD OF ZOTH · EPISODE VI',
+          sub:'EP VI · SCENE 4 · SOVEREIGN EDITION v2.0',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-2,3,'idle'],['kitsune',2,3,'idle'],['copy',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'kitsune', 'Six theatrical commercials. Twenty districts. Twenty mini-games.'],
+            [4.1, 'me',      'Welcome to World of Zoth v2.0. The lattice is yours.']
+          ]
+        }
+      ]
     }
   ];
   G.openCommercial=(epOrDone=0, onDoneArg=null)=>{
@@ -7249,13 +7351,13 @@ export function initEggs(G,{music,sfx}){
       key(e){
         const k=(e.key||'').toLowerCase();
         if(k===' ') { e.preventDefault(); paused=!paused; sfx('blip'); }
-        if(k==='1'||k==='2'||k==='3'||k==='4') switchEp(parseInt(k,10)-1);
+        if(k>='1'&&k<='6') switchEp(parseInt(k,10)-1);
         if(k==='p'){
           if(!G.flags.commercial_stipend){
             G.flags.commercial_stipend=1; G.bits+=200;
             G.toast('> MOVIE PREMIERE STIPEND: +200 BITS CLAIMED!','#4ade80');
           } else {
-            G.toast('> THEATRICAL COMMERCIAL: [1-4] SWITCH EPISODE!',P.GD);
+            G.toast('> THEATRICAL COMMERCIAL: [1-6] SWITCH EPISODE!',P.GD);
           }
           sfx('win');
         }
@@ -7306,8 +7408,8 @@ export function initEggs(G,{music,sfx}){
         X.fillRect(0,485,960,1);
         // Top Cinema Bar Telemetry
         const mm=String(Math.floor(totalT/60)).padStart(2,'0'), ss=String(Math.floor(totalT%60)).padStart(2,'0'), ff=String(Math.floor((totalT%1)*30)).padStart(2,'0');
-        UI.text(`REC [EP 0${epIdx+1}/04] 06:12:${mm}:${ss}:${ff}  ·  ${sc.sub}`,24,18,P.GD,1);
-        UI.text(`SCENE 0${sIdx+1}/0${curScenes.length}  [1-4/UP/DN] EPISODE  [<-/->] SKIP  [P] +200B`,936,18,'#22d3ee',1,'right');
+        UI.text(`REC [EP 0${epIdx+1}/0${COMMERCIAL_EPISODES.length}] 06:12:${mm}:${ss}:${ff}  ·  ${sc.sub}`,24,18,P.GD,1);
+        UI.text(`SCENE 0${sIdx+1}/0${curScenes.length}  [1-6/UP/DN] EPISODE  [<-/->] SKIP  [P] +200B`,936,18,'#22d3ee',1,'right');
         // Scene Progress Bar inside top letterbox
         X.fillStyle='rgba(245,184,46,.18)'; X.fillRect(24,38,912,6);
         const totProg=((sIdx + Math.min(1,st/sc.dur))/curScenes.length)*912;
@@ -7330,7 +7432,7 @@ export function initEggs(G,{music,sfx}){
           const r=Math.min(1,st/2.2);
           UI.box(150,92,660,168,P.GD,'rgba(6,5,4,.84)');
           UI.dotText('world of zoth',480,148,7,P.GD,r,r<1?.25:0,t);
-          UI.text('FACES, NOT VOICES   ·   19 DISTRICTS   ·   22 COMPANIONS   ·   100% FREE',480,206,'#4ade80',1,'center');
+          UI.text('FACES, NOT VOICES  ·  20 DISTRICTS  ·  22 COMPANIONS  ·  20 MINI-GAMES',480,206,'#4ade80',1,'center');
           UI.text('ENGINEERED BY 1NC0GN30 • NULLAI PLATFORM',480,230,P.BONE,1,'center');
         }
         // Custom Movie Conversation Box (Portrait + Typewriter Dialogue)

@@ -155,11 +155,18 @@ export function solidMat(color='#0b0906'){
           float uCoord = abs(vN.x)>abs(vN.z) ? vW.z : vW.x;
           float grain = fbm(vec2(uCoord*2.4, vW.y*1.2));
           float rainStreak = n2(vec2(uCoord*6.5, vW.y*0.35 - time*0.15));
-          // Panel seams every 2.6m vertically and 1.3m horizontally
+          // Panel seams every 2.6m vertically and 1.3m horizontally + structural corner rivets
           float seamY = smoothstep(0.06, 0.0, abs(fract(vW.y/2.6)-0.5));
           float seamX = smoothstep(0.05, 0.0, abs(fract(uCoord/1.3)-0.5));
-          col *= (0.78 + 0.44*grain) * (1.0 - 0.35*max(seamY, seamX));
+          vec2 rivetUv = abs(fract(vec2(uCoord/1.3, vW.y/2.6)-0.5));
+          float rivet = smoothstep(0.07, 0.03, length(rivetUv - vec2(0.42, 0.42)));
+          col *= (0.78 + 0.44*grain) * (1.0 - 0.35*max(seamY, seamX)) + rivet*0.14;
           col += gold * (0.045 * rainStreak * smoothstep(0.0, 12.0, vW.y));
+          // Street-level holographic telemetry band (y between 2.4m and 3.1m)
+          if(vW.y>2.4 && vW.y<3.05){
+            float band = step(0.45, h2(floor(vec2(uCoord*3.2 + floor(time*2.0), vW.y*6.0))));
+            col += mix(gold, cyan, 0.5) * band * 0.16;
+          }
           // Ground bounce ambient warmth near street level
           col += gold * (0.07 * exp(-max(0., vW.y)*0.55));
           // Procedural recessed window cells with interior blinds & parallax warmth
@@ -223,12 +230,16 @@ export function terrainMat(accent='#f5b82e', fogNear=10, fogFar=72){
         // Carved stone / cyber-asphalt tile joints every 2m
         vec2 tc=fract(uv*0.5);
         float groove=smoothstep(0.035,0.0,min(tc.x,tc.y));
-        // Wet rain-slicked puddle reflection + subtle circuit trace pulse
+        // Wet rain-slicked puddle reflection + animated concentric raindrop ripples + circuit trace pulse
         float puddle=smoothstep(0.58,0.76,macro);
+        vec2 rCell=floor(uv*0.75);
+        vec2 rLocal=fract(uv*0.75)-0.5;
+        float rPhase=fract(time*0.65 + h2(rCell));
+        float ripple=puddle * smoothstep(0.04, 0.0, abs(length(rLocal) - rPhase*0.45)) * (1.0 - rPhase);
         float trace=step(0.92, h2(floor(uv*0.5))) * smoothstep(0.05,0.0,abs(tc.x-0.5));
         vec3 base=mix(vec3(0.038,0.031,0.022), accent*0.14, 0.35 + 0.45*micro);
         base *= (1.0 - 0.38*groove);
-        base += accent * (puddle * 0.095 * (0.65 + 0.35*sin(time*1.5 + uv.x*0.5 + uv.y*0.5)));
+        base += accent * (puddle * 0.095 * (0.65 + 0.35*sin(time*1.5 + uv.x*0.5 + uv.y*0.5)) + ripple * 0.22);
         base += accent * (trace * 0.14 * (0.5 + 0.5*sin(time*3.0 + uv.y)));
         float r=distance(uv,pulse.xz); float pr=(time-pulse.w)*14.;
         if(pr>0.&&pr<60.) base += accent * exp(-pow((r-pr)*.9,2.))*0.32*(1.-pr/60.);
