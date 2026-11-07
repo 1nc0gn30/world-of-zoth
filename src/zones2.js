@@ -247,10 +247,27 @@ export function buildZones2(Z){
     });
     const st=[]; for(let i=0;i<320;i++) st.push((R()-.5)*84,R()*24,(R()-.5)*84);
     g.add(pts(st,latMat({color:'#f43f5e',points:true,size:1.9,twinkle:1,intensity:1.5,fogFar:70})));
-    portal(g,0,42,0);
+    portal(g,0,42,0); portal(g,0,-42,0);
     Z.nullcore={ id:'nullcore', name:'the null core', sub:'memory singularity · 06:13', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'phonk', lvl:32,
       sky:{rain:.18,rainCol:'#06b6d4',hex:1,stars:2.5}, spawn:{x:0,z:36,yaw:Math.PI},
-      portals:[{x:0,z:42,r:3,to:'citadel',sx:0,sz:-36,syaw:0,label:'zero-knowledge citadel'}], objs:{sing,pyl}, tag:[-32,-32] };
+      portals:[{x:0,z:42,r:3,to:'citadel',sx:0,sz:-36,syaw:0,label:'zero-knowledge citadel'},{x:0,z:-42,r:3,to:'loom',sx:0,sz:36,syaw:Math.PI,label:'the quantum loom'}], objs:{sing,pyl}, tag:[-32,-32] };
+  }
+  // ===================== THE QUANTUM LOOM (District #16 · Entangled Spindle) =====================
+  { const h=(x,z)=>0.18*Math.sin(x*.15)*Math.cos(z*.15);
+    const B=base('loom',{seed:161,h,fogFar:68,gridCol:'#1f1235',dotCol:'#a78bfa'}); const {g,col,anim}=B; const R=rng(162);
+    const spindle=segs(BLENDER_GEO.quantum_loom,latMat({color:'#a78bfa',intensity:1.5,fogFar:140})); spindle.position.set(0,0,-8); g.add(spindle); col.push({c:[0,-8,4.8]});
+    const inner=segs(BLENDER_GEO.quantum_loom,latMat({color:GD,intensity:1.3,fogFar:140})); inner.scale.setScalar(.62); inner.position.set(0,2.2,-8); g.add(inner);
+    anim.push(t=>{ spindle.rotation.y=t*.42; inner.rotation.y=-t*.68; inner.position.y=2.2+Math.sin(t*1.6)*.45; });
+    const pyl={}; [['l1',-20,-8],['l2',20,-8],['l3',0,16]].forEach(([id,x,z])=>{
+      const a=[]; wireOcta(a,1.6,x,2.8,z); ring(a,x,.15,z,3.0,32,2);
+      const m=segs(a,latMat({color:'#22d3ee',intensity:1.4,fogFar:85})); g.add(m); anim.push(t=>{ m.rotation.y=t*.5; }); col.push({c:[x,z,1.6]}); pyl[id]={x,z,m};
+    });
+    const st=[]; for(let i=0;i<300;i++) st.push((R()-.5)*84,R()*24,(R()-.5)*84);
+    g.add(pts(st,latMat({color:'#a78bfa',points:true,size:1.8,twinkle:1,intensity:1.45,fogFar:75})));
+    portal(g,0,42,0);
+    Z.loom={ id:'loom', name:'the quantum loom', sub:'entangled spindle · 06:14', group:g, col, bounds:[-44,-44,44,44], h, anim, music:'loom', lvl:34,
+      sky:{rain:.22,rainCol:'#a78bfa',hex:1,stars:2.6}, spawn:{x:0,z:36,yaw:Math.PI},
+      portals:[{x:0,z:42,r:3,to:'nullcore',sx:0,sz:-36,syaw:0,label:'the null core'}], objs:{spindle,pyl}, tag:[32,-32] };
   }
   // ===================== SECRET: THE ROOFTOP AT 06:12 =====================
   { const g=new THREE.Group(), col=[], anim=[], R=rng(612); const h=()=>0;

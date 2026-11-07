@@ -14,7 +14,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -40,7 +40,8 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='resonance'||c==='protocols'||c==='elements'){ out('[resonance] opening 5x5 Protocol Resonance Matrix...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openResonance(); },40); }
     else if(c==='collapse'||c==='quantum'){ out('[collapse] launching 5x5 Quantum Wave-Collapse Puzzle...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startCollapse(); },40); }
     else if(c==='banner'||c==='callsign'){ out('[banner] opening Operator Call-Sign & HUD Banner Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBannerStudio(); },40); }
     else if(c==='timeline'||c==='lore'||c==='06:12'){ out('[timeline] opening 06:12 Incident Forensic Timeline...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTimeline(); },40); }
@@ -1531,7 +1532,7 @@ export function initEggs(G,{music,sfx}){
     {name:'CHRONO SANDSTORM', proto:'TEMPORAL', buff:'+25% TEMPORAL DMG · +2 SPD', col:'#a78bfa'},
     {name:'VOID SINGULARITY SURGE', proto:'VOID', buff:'+25% VOID DMG · +35% XP', col:'#f43f5e'}
   ];
-  const ZONE_KEYS=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','rooftop'];
+  const ZONE_KEYS=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','loom','rooftop'];
   G.openWeather=()=>{
     let sel=0, seedOff=G.flags.weather_seed||0;
     const wFor=i=>WEATHER_TYPES[(i*3+seedOff+Math.floor((G.t||0)/120))%WEATHER_TYPES.length];
@@ -2182,6 +2183,7 @@ export function initEggs(G,{music,sfx}){
     {id:'blank_tesseract', name:'THE CURSOR (4D)', cat:'APEX BOSS', zone:'03ng0cn1 Node', col:'#a78bfa', lore:'Four-dimensional Schlegel tesseract projection that listens when spoken to and mirrors every strike.'},
     {id:'archon_seraph', name:'ARCHON-0 COMPILER', cat:'APEX BOSS', zone:'ZK Citadel', col:'#f5b82e', lore:'The First Compiler at the apex of the Zero-Knowledge Citadel, surrounded by dual gimbal rings.'},
     {id:'null_singularity', name:'NULL SINGULARITY', cat:'WORLD MONUMENT', zone:'The Null Core', col:'#22d3ee', lore:'Eight-ribbon torus knot and dual accretion rings hovering at the center of District #15.'},
+    {id:'quantum_loom', name:'QUANTUM LOOM', cat:'WORLD MONUMENT', zone:'The Quantum Loom', col:'#a78bfa', lore:'Twelve-strand double-helical Mobius spindle weaving entangled eigenstates across District #16.'},
     {id:'pantheon_throne', name:'PANTHEON THRONE', cat:'WORLD MONUMENT', zone:'ZK Citadel', col:'#f5b82e', lore:'Seventeen-meter sovereign monolith and solar halo anchoring the Zero-Knowledge Citadel.'},
     {id:'abyss_monolith', name:'ABYSS MONOLITH', cat:'WORLD MONUMENT', zone:'Sub-Lattice Abyss', col:'#a78bfa', lore:'Twisted hexagonal obelisk suspended inside the inverted gravity field of the Sub-Lattice Abyss.'},
     {id:'citadel_spire', name:'CITADEL SPIRE', cat:'WORLD MONUMENT', zone:'Hub / Citadel', col:'#22d3ee', lore:'Helical lattice broadcast spire routing encrypted carrier packets between sectors.'},
@@ -2864,6 +2866,102 @@ export function initEggs(G,{music,sfx}){
           UI.text(sub,840,yy+22,P.DG,1,'right');
         });
         UI.text('[up/down] select row   [left/right / enter] cycle call-sign, emblem & accent   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Elemental & Protocol Resonance Matrix (M74) ----
+  const PROTO_MATRIX=[
+    {id:'KERNEL', col:'#f5b82e', chord:'432 Hz ROOT CHORD', bonus:'+15% ATK/DEF · +12% HP/EN · +1 SPD',
+      desc:'Direct root-level ring-0 instructions. Breaches autonomous drones, sentries, and core nodes at 1.35x damage.'},
+    {id:'CRYPTO', col:'#22d3ee', chord:'528 Hz ZERO-KNOWLEDGE CHORD', bonus:'+15% ATK/DEF · +12% HP/EN · +1 SPD',
+      desc:'Elliptic-curve & zero-knowledge verification proofs. Shatters mirror forks, voice relays, and orbital hunters.'},
+    {id:'THERMAL', col:'#fb923c', chord:'639 Hz DOOM-FIRE CHORD', bonus:'+15% ATK/DEF · +12% HP/EN · +1 SPD',
+      desc:'High-entropy plasma & foxfire combustion. Incinerates lattice worms, bio-slimes, and deep-trench eels.'},
+    {id:'TEMPORAL', col:'#4ade80', chord:'741 Hz CHRONO-LOCK CHORD', bonus:'+15% ATK/DEF · +12% HP/EN · +1 SPD',
+      desc:'Causality-splicing phase vectors. Collapses crawler mites, phase merkabas, and the 06:12 Sandglass.'},
+    {id:'VOID', col:'#a78bfa', chord:'852 Hz SINGULARITY CHORD', bonus:'+15% ATK/DEF · +12% HP/EN · +1 SPD',
+      desc:'Non-Euclidean null-space metrics. Erases furnace wardens, 4D cursorlings, the Blank Cursor, and ARCHON-0.'}
+  ];
+  const INTER_MATRIX=[
+    [1.00, 1.35, 1.00, 1.15, 1.25],
+    [1.15, 1.00, 1.35, 1.25, 1.00],
+    [1.25, 1.00, 1.00, 1.35, 1.15],
+    [1.00, 1.25, 1.15, 1.00, 1.35],
+    [1.35, 1.15, 1.25, 1.00, 1.00]
+  ];
+  G.openResonance=()=>{
+    let sel=PROTO_MATRIX.findIndex(p=>p.id===(G.flags.harmonic||'KERNEL')); if(sel<0) sel=0;
+    G.mini={
+      name:'resonance',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')||took('left')){ sel=(sel+PROTO_MATRIX.length-1)%PROTO_MATRIX.length; sfx('move'); }
+        if(took('down')||took('right')){ sel=(sel+1)%PROTO_MATRIX.length; sfx('move'); }
+        if(took('confirm')){
+          const pr=PROTO_MATRIX[sel];
+          G.flags.harmonic=pr.id;
+          G.ach('harmonic_chord'); sfx('level');
+          G.toast(`> HARMONIC LOCKED: ${pr.chord} (${pr.bonus})`,pr.col);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> 5x5 PROTOCOL RESONANCE MATRIX',56,40,P.GD,2);
+        const activeH=G.flags.harmonic||'NONE';
+        UI.text(`ACTIVE CHORD: [${activeH}]`,900,44,activeH!=='NONE'?'#4ade80':P.DG,1,'right');
+        // Left: 5x5 Protocol Multiplier Grid
+        UI.box(52,78,430,256,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('ATK \\ DEF',64,92,P.DG,1);
+        PROTO_MATRIX.forEach((p,c)=>{
+          UI.text(p.id.slice(0,4),164+c*62,92,p.col,1,'center');
+        });
+        PROTO_MATRIX.forEach((pr,r)=>{
+          const yy=118+r*40, on=r===sel;
+          if(on){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(58,yy-6,418,32); }
+          UI.text((on?'>':' ')+pr.id,62,yy+2,on?P.GD:pr.col,1);
+          for(let c=0;c<5;c++){
+            const m=INTER_MATRIX[r][c];
+            const col=m>=1.35?'#4ade80':(m>=1.2?'#22d3ee':P.BONE);
+            UI.box(138+c*62,yy-4,52,26,on&&m>=1.35?P.GD:P.DDG,'rgba(14,11,8,.9)');
+            UI.text(m.toFixed(2)+'x',164+c*62,yy+3,col,1,'center');
+          }
+        });
+        // Bottom-left: Active 3-Agent Squad Harmonic Breakdown
+        UI.box(52,346,430,132,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('ACTIVE SQUAD RESONANCE SYNERGY:',68,360,P.GD,1);
+        G.active().forEach((id,idx)=>{
+          const pr=PARTY_PROTO[id]||'KERNEL';
+          const pObj=PROTO_MATRIX.find(x=>x.id===pr)||PROTO_MATRIX[0];
+          const ax=68+idx*136, ay=384;
+          UI.box(ax,ay,128,78,pObj.col,'rgba(14,11,8,.92)');
+          const c=frameCanvas(id,'idle',Math.floor(t*4)%2);
+          const isOp=id==='me'||id==='copy';
+          X.drawImage(c,0,0,c.width,c.height,ax+8+(isOp?6:0),ay+10,isOp?16:36,36);
+          UI.text(PARTY_BASE[id].name.slice(0,9).toUpperCase(),ax+48,ay+14,P.BONE,1);
+          UI.text(pr,ax+48,ay+32,pObj.col,1);
+          UI.text(G.flags.harmonic?'+15% TUNED':'READY',ax+64,ay+56,'#4ade80',1,'center');
+        });
+        // Right: Selected Protocol Inspector & Harmonic Tuner
+        const cur=PROTO_MATRIX[sel];
+        const agents=Object.keys(PARTY_PROTO).filter(k=>PARTY_PROTO[k]===cur.id).map(k=>(PARTY_BASE[k]&&PARTY_BASE[k].name)||k);
+        const weakFoes=Object.keys(ENEMY_WEAK).filter(k=>ENEMY_WEAK[k]===cur.id).map(k=>(ENEMIES[k]&&ENEMIES[k].name)||k);
+        UI.box(498,78,406,400,cur.col,'rgba(10,8,6,.94)');
+        UI.text(`${cur.id} PROTOCOL`,518,96,cur.col,2);
+        UI.text(cur.chord,518,128,P.GD,1);
+        UI.wrap(cur.desc,368,1).forEach((l,li)=>UI.text(l,518,152+li*18,P.BONE,1));
+        UI.box(518,208,366,76,P.DDG,'rgba(14,11,8,.9)');
+        UI.text(`PANTHEON AGENTS (${agents.length}):`,532,220,'#22d3ee',1);
+        UI.wrap(agents.join('  ·  '),340,1).forEach((l,li)=>UI.text(l,532,240+li*18,P.BONE,1));
+        UI.box(518,296,366,86,P.DDG,'rgba(14,11,8,.9)');
+        UI.text(`1.35x BREACH TARGETS (${weakFoes.length}):`,532,308,'#f43f5e',1);
+        UI.wrap(weakFoes.join('  ·  '),340,1).forEach((l,li)=>UI.text(l,532,328+li*18,P.BONE,1));
+        const isTuned=G.flags.harmonic===cur.id;
+        UI.box(518,396,366,64,isTuned?'#4ade80':P.GD,isTuned?'rgba(74,222,128,.16)':'rgba(245,184,46,.14)');
+        UI.text(isTuned?`HARMONIC ACTIVE: ${cur.chord}`:`[ENTER] TUNE ${cur.chord}`,701,410,isTuned?'#4ade80':P.GD,1,'center');
+        UI.text(cur.bonus,701,432,P.BONE,1,'center');
+        UI.text('[up/down] select protocol   [enter] tune harmonic chord (+15% ATK/DEF, +12% HP/EN)   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

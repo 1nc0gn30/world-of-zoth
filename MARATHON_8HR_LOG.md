@@ -81,8 +81,8 @@
 ## Sprint II — Second 8-Hour Autonomous Engineering Marathon (`08:00`–`16:00` · `M73`–`M136`)
 
 ### Hour 9 (`08:00`–`09:00`) — District #16 (*"The Quantum Loom"*) & Elemental Resonance Matrix
-- [ ] **M73**: Blender 4.3 `bpy + bmesh` Wireframe Mesh #18 (`quantum_loom`) & Secret District #16 (*"The Quantum Loom"* `Z.loom` in `src/zones2.js` + `loom` stem in `src/audio.js`)
-- [ ] **M74**: Interactive Elemental & Protocol Resonance Matrix (`G.openResonance()` via `> resonance` & System Menu — attune active squad to 6 Lattice Harmonics)
+- [x] **M73** (`08:07`): Blender 4.3 `bpy + bmesh` Wireframe Mesh #18 (`quantum_loom`) & Secret District #16 (*"The Quantum Loom"* `Z.loom` in `src/zones2.js` + `loom` stem in `src/audio.js`)
+- [x] **M74** (`08:07`): Interactive Elemental & Protocol Resonance Matrix (`G.openResonance()` via `> resonance` & System Menu — attune active squad to 5x5 Lattice Harmonics)
 - [ ] **M75**: Secret Mini-Game #11 — *"Fiber-Optic Laser Mirror Routing Puzzle"* (`G.startLasers()` via `> lasers` & System Menu — rotate 45° phase mirrors across a 6x6 grid)
 - [ ] **M76**: Companion Gear Loadout Presets & 1-Click Auto-Optimizer (`G.openLoadouts()` via `> loadouts` & System Menu — save/restore 4 squad gear presets & auto-equip best-in-slot)
 - [ ] **M77**: Interactive Safehouse Trophy Room & Arcade Cabinet Hub (`G.openArcade()` via `> arcade` & System Menu — launch all 11 mini-games with high-score leaderboards)

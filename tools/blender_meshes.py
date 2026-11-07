@@ -398,6 +398,35 @@ def build_null_singularity():
     return arr
 
 
+def build_quantum_loom():
+    """12-strand double-helical Möbius loom spindle & warp-thread rings for District #16: The Quantum Loom."""
+    bm = bmesh.new()
+    # Upper and lower crown rings
+    add_ring(bm, 0, 0, 1.0, 5.2, segs=24, axis="z")
+    add_ring(bm, 0, 0, 11.0, 5.2, segs=24, axis="z")
+    add_ring(bm, 0, 0, 6.0, 2.4, segs=24, axis="z")
+    # 12 counter-woven catenary warp threads connecting bottom to top with 180-deg twist
+    for i in range(12):
+        a0 = (i / 12.0) * math.pi * 2.0
+        a1 = a0 + math.pi * 0.75
+        pts = []
+        for s in range(9):
+            u = s / 8.0
+            ang = a0 * (1.0 - u) + a1 * u
+            rad = 5.2 * (1.0 - 0.54 * math.sin(u * math.pi))
+            z = 1.0 + u * 10.0
+            pts.append(bm.verts.new((math.cos(ang) * rad, math.sin(ang) * rad, z)))
+        for s in range(8):
+            bm.edges.new((pts[s], pts[s + 1]))
+    # Central suspended biconical shuttle core
+    bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=8, radius1=1.5, radius2=0.1, depth=3.6)
+    for v in bm.verts[-18:]:
+        v.co.z += 6.0
+    arr = bmesh_to_seg_array(bm)
+    bm.free()
+    return arr
+
+
 def main():
     data = {
         "relay4_crown": build_relay4_crown(),
@@ -417,6 +446,7 @@ def main():
         "pantheon_throne": build_pantheon_throne(),
         "archon_seraph": build_archon_seraph(),
         "null_singularity": build_null_singularity(),
+        "quantum_loom": build_quantum_loom(),
     }
     out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "blender_geo.js")
     with open(out_path, "w") as f:

@@ -43,6 +43,7 @@ export const TRACKS={
   phonk:{bpm:144, prog:[Dm,Eb,Dm,Bb], bass:'x.x.xx.xx.x.xx.x', arp:[0,2,1,2], arpDiv:4, duty:.25, drums:'phonk', lead:.85, pad:.4, phonk:1},
   archon:{bpm:158, prog:[Dm,Eb,Gm,A], bass:'xxx.xxx.xxxxxxx.', arp:[0,2,1,3,2,0,3,1], arpDiv:4, duty:.125, drums:'phonk', lead:.95, pad:.5, drone:1, phonk:1},
   stack:{bpm:136, prog:[Dm,Bb,C,A], bass:'x.xxx.x.x.xxx.xx', arp:[0,1,2,3,1,2], arpDiv:4, duty:.25, drums:'battle', lead:.75, pad:.6},
+  loom:{bpm:132, prog:[Dm,F,Eb,A], bass:'x..xx..xx..xx.x.', arp:[0,2,1,3,2,0], arpDiv:4, duty:.25, drums:'relay', lead:.7, pad:.9, drone:1},
   final:{bpm:160, prog:[Dm,Eb,Bb,A], bass:'xxxxxxx.xxxxxx.x', arp:[0,2,1,3,1,2], arpDiv:4, duty:.125, drums:'battle', lead:.9, pad:.4, drone:1},
 };
 function hsh(n){ n=Math.sin(n*127.1)*43758.5453; return n-Math.floor(n); }
