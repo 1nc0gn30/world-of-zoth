@@ -32,11 +32,11 @@
 - [x] **M27** (`03:11` · `b319a12`): Secret District #15 — *The Null Core (`nullcore`)* (Post-Citadel 4D Clifford Hyper-Torus Memory Singularity + `q21` + `singularity.halo`)
 - [x] **M28** (`03:11` · `b319a12`): Daily Seeded Challenge Run (*"06:12 Daily Lattice"* deterministic daily seed, mutator & +600 bit contract via `> daily` / System Menu)
 - [x] **M29** (`03:11` · `b319a12`): In-Game Achievement Showcase & Operator Title Badges (`44 Achievements` & 8 equippable HUD badges `[NODE WALKER]` .. `[PANTHEON SOVEREIGN]`)
-- [x] **M30** (`03:20`): Full `README.md` & Architecture Documentation Overhaul (`world-of-zoth` & `1nc0gn30-si` updated for 15 Districts, 20 Stems, 16 Labs & v1.2 Director's Cut)
-- [x] **M31** (`03:20`): Full 15-District + All Mini-Games + All Bosses Automated Verification Pass (`node tests/zones.mjs` — all 15 districts verified with `0` errors)
-- [x] **M32** (`03:20`): Mid-Marathon Signed APK v1.2 (`2,007,936 bytes`, v2/v3 verified) & `1nc0gn30.si` Sync Checkpoint #2
-- [ ] **M33**: Interactive Combat Arena Sandbox / Training Dummy (`> dojo` — DPS meter, protocol tester & skill preview)
-- [ ] **M34**: Procedural Relic Synthesizer / Transmutation Cube (`> synth` — combine 3 spare items into rare/mythic relics)
+- [x] **M30** (`03:20` · `ec7481b`): Full `README.md` & Architecture Documentation Overhaul (`world-of-zoth` & `1nc0gn30-si` updated for 15 Districts, 20 Stems, 16 Labs & v1.2 Director's Cut)
+- [x] **M31** (`03:20` · `ec7481b`): Full 15-District + All Mini-Games + All Bosses Automated Verification Pass (`node tests/zones.mjs` — all 15 districts verified with `0` errors)
+- [x] **M32** (`03:20` · `ec7481b`): Mid-Marathon Signed APK v1.2 (`2,007,936 bytes`, v2/v3 verified) & `1nc0gn30.si` Sync Checkpoint #2
+- [x] **M33** (`03:34`): Interactive Combat Arena Sandbox / Training Dummy (`> dojo` — DPS meter, protocol tester, skill benchmark & live sparring arena)
+- [x] **M34** (`03:34`): Procedural Relic Synthesizer / Transmutation Cube (`> synth` — transmute bits & materials into unowned Mythic Companion Relics)
 - [ ] **M35**: District Lore & Hermetic Audio Logs (`15 Encrypted Datacubes` scattered across the 15 districts)
 - [ ] **M36**: Companion Affinity & Gift System (boost individual companion bond levels for +10% stat synergy)
 - [ ] **M37**: Boss Modifiers / Hardcore "06:12 Nightmare" Difficulty Toggle (`1.5x enemy stats`, `+100% bit/XP drops`)

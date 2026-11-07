@@ -4,8 +4,8 @@ import * as UI from './ui.js';
 import { P, THEMES, applyTheme } from './pal.js';
 import { IN, took } from './input.js';
 import { AG } from './sprites.js';
-import { ENEMIES, ITEMS } from './data.js';
-import { ENEMY_WEAK, AI_TACTICS } from './battle.js';
+import { ENEMIES, ITEMS, PARTY_BASE, SKILLS } from './data.js';
+import { ENEMY_WEAK, PARTY_PROTO, AI_TACTICS } from './battle.js';
 export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
@@ -35,7 +35,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  daily  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  daily  dojo  synth  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='dojo'){ out('[dojo] opening Combat Arena Sandbox & DPS Analyzer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDojo(); },40); }
+    else if(c==='synth'){ out('[synth] opening Zero-Knowledge Relic Synthesizer Cube...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSynth(); },40); }
     else if(c==='daily'){ out('[daily] opening 06:12 Daily Seeded Lattice Challenge...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDailyChallenge(); },40); }
     else if(c==='titles'||c==='badges'){ out('[titles] opening Operator Title Badges & Showcase...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTitles(); },40); }
     else if(c==='stack'){ out('[stack] opening The Infinite Stack (floors 1-99)...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startStack(); },40); }
@@ -88,7 +90,7 @@ export function initEggs(G,{music,sfx}){
     else if(c==='exit'||c==='quit') G.closeTerm=1;
     else out('command not found: '+c,P.DG); }
   // tap-able command chips so the shell works on touch screens without a keyboard
-  const CHIPS=['help','nmap','ping','patch','daily','titles','bounty','stack','bossrush','reforge','bestiary','photo','saves','theme','exit'];
+  const CHIPS=['help','nmap','ping','patch','daily','dojo','synth','titles','bounty','stack','bossrush','reforge','bestiary','photo','saves','theme','exit'];
   const chipRects=()=>{ const R=[]; let x=160, y=402; for(const c of CHIPS){ const w=UI.textW(c)+16; if(x+w>810){ x=160; y+=26; } R.push({c,x,y,w,h:20}); x+=w+8; } return R; };
   G.updateTerminal=dt=>{ T.t+=dt; if(G.closeTerm){ G.closeTerm=0; IN.pressed.clear(); G.mode='explore'; return; } if(IN.clicks.length){ const k=IN.clicks[0]; IN.clicks.length=0; const hit=chipRects().find(r=>k.x>=r.x&&k.x<=r.x+r.w&&k.y>=r.y-4&&k.y<=r.y+r.h+4); if(hit){ sfx('talk'); run(hit.c); } else if(IN.touch&&(k.x<140||k.x>820||k.y<60||k.y>480)) G.mode='explore'; } };
   G.drawTerminal=t=>{ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.88)'; X.fillRect(0,0,960,540); UI.box(140,60,680,420); UI.text('> shell',160,74,P.GD,2);
@@ -684,6 +686,132 @@ export function initEggs(G,{music,sfx}){
         UI.box(490,348,334,32,un?P.GD:P.DDG,'rgba(245,184,46,.14)');
         UI.text(un?'> [ENTER] EQUIP THIS OPERATOR BADGE':`UNLOCK ${cur.req-cnt} MORE ACHIEVEMENTS`,657,357,un?P.GD:P.DG,1,'center');
         UI.text('[up/down] select title   [enter] equip badge   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Combat Arena Sandbox / Training Dummy (M33) ----
+  const PROTOS=['KERNEL','CRYPTO','THERMAL','TEMPORAL','VOID'];
+  G.openDojo=()=>{
+    let aIdx=0, sIdx=0, pIdx=1, totDmg=0, hits=0, lastHit=0;
+    G.mini={
+      name:'dojo',
+      update(){
+        const ros=G.roster||['me'];
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')){ aIdx=(aIdx+ros.length-1)%ros.length; sIdx=0; sfx('move'); }
+        if(took('right')){ aIdx=(aIdx+1)%ros.length; sIdx=0; sfx('move'); }
+        const id=ros[aIdx], sks=PARTY_BASE[id].skills;
+        if(took('up')) sIdx=(sIdx+sks.length-1)%sks.length;
+        if(took('down')) sIdx=(sIdx+1)%sks.length;
+        if(took('quests')) pIdx=(pIdx+1)%PROTOS.length;
+        if(took('confirm')){
+          const sk=SKILLS[sks[sIdx]], st=G.stats(id), myP=PARTY_PROTO[id]||'KERNEL', tgP=PROTOS[pIdx];
+          const breach=myP===tgP?1.35:1, pow=sk.pow||1.2, hitsN=sk.hits||1;
+          const dmg=Math.max(1,Math.round(st.atk*pow*hitsN*breach*1.5*1.35));
+          lastHit=dmg; totDmg+=dmg; hits++; sfx('crit');
+          G.toast(`> SIMULATED STRIKE: ${dmg} DMG (${breach>1?'PROTOCOL BREACH 1.35x':'STANDARD'})`,P.GD);
+        }
+        if(took('party')){
+          G.healAll(); sfx('confirm'); G.mode='explore';
+          G.battle(['drone','sentinel','echo'],{lvl:G.party.me.lvl||10, ambush:true});
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,34,792,472,P.GD,'rgba(8,7,5,.96)');
+        const ros=G.roster||['me'], id=ros[aIdx], st=G.stats(id), m=G.party[id];
+        const myP=PARTY_PROTO[id]||'KERNEL', tgP=PROTOS[pIdx], breach=myP===tgP;
+        const sks=PARTY_BASE[id].skills, sk=SKILLS[sks[sIdx]]||SKILLS.strike;
+        UI.text('> COMBAT DOJO & DPS SANDBOX',108,50,P.GD,2);
+        UI.text(`AGENT [${aIdx+1}/${ros.length}]  ·  DUMMY PROTOCOL: [${tgP}]`,852,54,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(104,78,752,2);
+        UI.box(104,94,320,356,P.DDG,'rgba(12,10,8,.92)');
+        UI.text(`${(id==='me'?'1nc0gn30':AG[id].name).toUpperCase()}  (LV ${m.lvl})`,120,110,id==='me'?P.GD:AG[id].color,2);
+        UI.text(`Affinity: [${myP}]   ·   ATK ${st.atk}  DEF ${st.def}  SPD ${st.spd}`,120,138,'#22d3ee',1);
+        UI.text('SELECT SKILL TO BENCHMARK:',120,166,P.DG,1);
+        const first=Math.max(0,Math.min(sIdx-4,sks.length-8));
+        sks.slice(first,first+8).forEach((k,idx)=>{
+          const i=first+idx, s=SKILLS[k], y=190+idx*28, on=i===sIdx;
+          UI.box(120,y-4,288,23,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}${s.name} (${s.cost||0} EN)`,130,y+2,on?P.GD:P.BONE,1);
+          UI.hit(120,y-4,288,23,()=>{ sIdx=i; });
+        });
+        UI.box(440,94,416,356,breach?P.GD:P.DDG,'rgba(14,10,8,.92)');
+        UI.text(`DUMMY: [${tgP}]`,460,110,breach?P.GD:P.BONE,2);
+        UI.text(breach?'STATUS: 1.35x PROTOCOL BREACH MATCH!':'STATUS: NEUTRAL (Press [J] to cycle Dummy Protocol)',460,138,breach?'#22d3ee':P.DG,1);
+        const baseD=Math.max(1,Math.round(st.atk*(sk.pow||1)*(sk.hits||1)));
+        const critD=Math.round(baseD*1.5), maxD=Math.round(critD*(breach?1.35:1)*1.35);
+        UI.box(460,166,376,120,P.DDG,'rgba(6,5,4,.85)');
+        UI.text(`SKILL: ${sk.name.toUpperCase()}  (${sk.hits||1} hit · ${(sk.pow||1)}x pow)`,474,180,P.GD,1);
+        UI.wrap(sk.desc||'',348,1).slice(0,2).forEach((l,li)=>UI.text(l,474,200+li*15,P.BONE,1));
+        UI.text(`Base: ${baseD}   ·   Timed Crit (1.5x): ${critD}   ·   Max Breach+Sync: ${maxD}`,474,238,'#22d3ee',1);
+        UI.text(`Session Hits: ${hits}   ·   Last Strike: ${lastHit}   ·   Total DMG: ${totDmg}`,474,262,P.GD,1);
+        UI.box(460,306,376,30,P.GD,'rgba(245,184,46,.16)');
+        UI.text('> [ENTER] EXECUTE SIMULATED STRIKE ON DUMMY',648,314,P.GD,1,'center');
+        UI.box(460,346,376,30,'#22d3ee','rgba(8,22,28,.45)');
+        UI.text('> [P] LAUNCH LIVE SPARRING ARENA (3 HOSTILES)',648,354,'#22d3ee',1,'center');
+        UI.text('[<-/->] agent  [up/down] skill  [J] dummy proto  [enter] strike  [P] live arena  [esc] exit',480,480,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Procedural Relic Synthesizer / Transmutation Cube (M34) ----
+  const SYNTH_POOL=['foxfire.crown','doom.gauntlet','aeon.gear','static.katana','ocular.aegis','owl.spear','hilbert.coil','tesseract.core','fenrir.fang','obsidian.prism','abyssal.trident','seraph.mantle','citadel.crown','sovereign.edge','singularity.halo'];
+  G.openSynth=()=>{
+    let sel=0, lastOut=null;
+    const recipes=[
+      {name:'MYTHIC RELIC TRANSMUTATION', cost:350, mat:'patch.kit', matN:2, desc:'Fuse 350 bits + 2x patch.kit inside the 4D Clifford Cube to synthesize an unowned Mythic Companion Relic.'},
+      {name:'OVERCLOCK CATALYST SYNTHESIS', cost:200, mat:'cache.bit', matN:1, desc:'Transmute 200 bits + 1x cache.bit into 2x Root.Shell + 1x Mega.Patch for high-floor Infinite Stack runs.'},
+      {name:'QUANTUM BIT DISTILLATION', cost:0, mat:'patch.kit', matN:3, desc:'Decompile 3x spare patch.kit consumables into +140 raw lattice bits.'}
+    ];
+    G.mini={
+      name:'synth',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+recipes.length-1)%recipes.length;
+        if(took('down')) sel=(sel+1)%recipes.length;
+        if(took('confirm')){
+          const r=recipes[sel], haveMat=G.inv[r.mat]||0;
+          if(G.bits<r.cost){ G.toast(`need ${r.cost} bits`,P.RED); sfx('cancel'); return; }
+          if(haveMat<r.matN){ G.toast(`need ${r.matN}x ${r.mat} (have ${haveMat})`,P.RED); sfx('cancel'); return; }
+          G.bits-=r.cost; G.take(r.mat,r.matN);
+          if(sel===0){
+            const unowned=SYNTH_POOL.filter(k=>!G.has(k));
+            const pick=unowned.length?unowned[Math.floor(Math.random()*unowned.length)]:SYNTH_POOL[Math.floor(Math.random()*SYNTH_POOL.length)];
+            G.give(pick,1); lastOut=ITEMS[pick].name.toUpperCase(); sfx('level');
+            G.toast(`> SYNTHESIZED MYTHIC RELIC: ${ITEMS[pick].name}!`,P.GD);
+          } else if(sel===1){
+            G.give('root.shell',2); G.give('mega.patch',1); lastOut='2X ROOT.SHELL + 1X MEGA.PATCH'; sfx('level');
+            G.toast('> SYNTHESIZED: 2x Root.Shell + 1x Mega.Patch',P.GD);
+          } else {
+            G.bits+=140; lastOut='+140 LATTICE BITS'; sfx('loot');
+            G.toast('> DISTILLED: +140 bits',P.GD);
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(96,36,768,468,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> RELIC SYNTHESIZER CUBE',118,52,P.GD,2);
+        UI.text(`BITS: ${G.bits}  ·  PATCH.KIT: ${G.inv['patch.kit']||0}  ·  CACHE.BIT: ${G.inv['cache.bit']||0}`,842,56,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(114,80,732,2);
+        recipes.forEach((r,i)=>{
+          const y=102+i*58, on=i===sel;
+          UI.box(114,y-4,732,48,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.8)');
+          UI.text(`${on?'> ':'  '}0${i+1} · ${r.name}`,128,y+4,on?P.GD:P.BONE,2);
+          UI.text(`Cost: ${r.cost} bits + ${r.matN}x ${r.mat}`,830,y+8,'#22d3ee',1,'right');
+          UI.text(r.desc,132,y+26,P.DG,1);
+          UI.hit(114,y-4,732,48,()=>{ sel=i; });
+        });
+        UI.box(114,284,732,126,P.DDG,'rgba(12,10,8,.92)');
+        const ownedRelics=SYNTH_POOL.filter(k=>G.has(k)).length;
+        UI.text(`MYTHIC RELIC COLLECTION PROGRESS: ${ownedRelics} / ${SYNTH_POOL.length} RELICS ACQUIRED`,134,300,P.GD,1);
+        UI.text(`LAST TRANSMUTATION OUTPUT: ${lastOut||'READY FOR INPUT'}`,134,328,'#22d3ee',2);
+        UI.text('Synthesized relics can be overclocked up to +5 (+100% stats) at the Reforge Bench.',134,366,P.BONE,1);
+        UI.box(240,426,480,34,P.GD,'rgba(245,184,46,.16)');
+        UI.text('> [ENTER] ACTIVATE TRANSMUTATION CUBE',480,436,P.GD,1,'center');
+        UI.text('[up/down] select recipe   [enter] synthesize   [esc] close',480,480,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
