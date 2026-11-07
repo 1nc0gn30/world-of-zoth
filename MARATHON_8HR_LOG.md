@@ -103,8 +103,8 @@
 ### Hour 11 (`10:00`–`11:00`) — Tactical Mutations, Cybernetic Implants & Mini-Game #13
 - [x] **M89** (`10:03`): Cybernetic Kernel Implant Laboratory (`G.openImplants()` via `> implants` & System Menu — 9 socketable neural implants granting lifesteal, thorns, and EN surge)
 - [x] **M90** (`10:03`): Secret Mini-Game #13 — *"Sub-Lattice Sonar Mine Sweeper"* (`G.startSonarSweep()` via `> mines` & System Menu — 6x6 logic grid clearing corrupted logic bombs)
-- [ ] **M91**: Dynamic Battle Mutator & Challenge Skull Selector (`G.openSkulls()` via `> skulls` & System Menu — toggle 6 Halo-style challenge skulls for up to `+300%` XP & Bits)
-- [ ] **M92**: Interactive World NPC Directory & Affinity Tracker (`G.openDirectory()` via `> npcs` & System Menu — locate every NPC across all 17 districts & 1-click warp)
+- [x] **M91** (`10:19`): Dynamic Battle Mutator & Challenge Skull Selector (`G.openSkulls()` via `> skulls` & System Menu — toggle 6 Halo-style challenge skulls for up to `+300%` XP & Bits)
+- [x] **M92** (`10:19`): Interactive World NPC Directory & Affinity Tracker (`G.openDirectory()` via `> npcs` & System Menu — locate every NPC across all 17 districts & 1-click warp)
 - [ ] **M93**: Procedural Dungeon Seed & Custom Run Generator (`G.openSeedLab()` via `> seedlab` & System Menu — enter custom alphanumeric seeds for deterministic gauntlets)
 - [ ] **M94**: Sovereign Radio & Lo-Fi Broadcast Tuner (`G.openRadio()` via `> radio` & System Menu — tune across 6 pirate lattice radio stations with live DJ commentary & stems)
 - [ ] **M95**: Operator Combat Medal & Ribbon Rack (`G.openMedals()` via `> medals` & System Menu — 16 tactical combat medals earned for flawless parries, breaches & speed clears)

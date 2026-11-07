@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='skulls'||c==='mutators'){ out('[skulls] opening Dynamic Battle Mutator & Challenge Skull Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSkulls(); },40); }
+    else if(c==='npcs'||c==='directory'||c==='census'){ out('[npcs] opening Interactive World NPC Directory & Affinity Tracker...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDirectory(); },40); }
     else if(c==='implants'||c==='cybernetics'||c==='neural'){ out('[implants] opening Cybernetic Kernel Implant Laboratory...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openImplants(); },40); }
     else if(c==='mines'||c==='sonar'||c==='sweeper'){ out('[mines] launching Sub-Lattice Sonar Mine Sweeper...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startSonarSweep(); },40); }
     else if(c==='sprites'||c==='animstudio'||c==='frames'){ out('[sprites] opening Interactive Sprite & Animation Frame Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSpriteStudio(); },40); }
@@ -4329,6 +4331,192 @@ export function initEggs(G,{music,sfx}){
         UI.text(won?'SUB-LATTICE 100% SWEPT & SECURED!':'[ENTER] PING SECTOR   ·   [F] FLAG BOMB',684,390,won?'#4ade80':P.GD,1,'center');
         UI.text('[P] DEEP-SONAR PULSE LOCK (INSTANT CLEAR)',684,418,'#22d3ee',1,'center');
         UI.text('[arrows] move cursor   [enter] sweep node   [F] flag bomb   [P] deep-sonar lock   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Dynamic Battle Mutator & Challenge Skull Selector (M91) ----
+  const CHALLENGE_SKULLS=[
+    {id:'sk_iron', name:'01. IRON KERNEL SKULL', col:'#f43f5e', mult:50,
+      rule:'Hostile Armor Shields gain +1 Layer; Squad Defend restores 2.0x EN.',
+      lore:'Forged in the Doom-Fire Foundry. Demands disciplined protocol shield-breaking.'},
+    {id:'sk_famine', name:'02. ZERO-CACHE FAMINE SKULL', col:'#fb923c', mult:50,
+      rule:'Consumable patch healing -25%; Companion Skill Mastery damage +20%.',
+      lore:'Starves local cache buffers, forcing aggressive high-output skill rotations.'},
+    {id:'sk_thunder', name:'03. THUNDER-CLOCK SKULL', col:'#f5b82e', mult:50,
+      rule:'Hostile SPD +25%; Perfect Parry counter-strikes deal 2.0x damage.',
+      lore:'Overclocks enemy turn frequency while rewarding frame-tight parry reflexes.'},
+    {id:'sk_mythic', name:'04. MYTHIC OVERCLOCK SKULL', col:'#a78bfa', mult:50,
+      rule:'Hostile Max HP +35%; Squad Overdrive gauge charges +40% faster.',
+      lore:'Amplifies anomaly vitality across all 17 districts while supercharging Overdrive.'},
+    {id:'sk_blind', name:'05. BLACKOUT FOG SKULL', col:'#22d3ee', mult:50,
+      rule:'Timing window narrowed 20%; Gold-window critical strikes deal 1.85x.',
+      lore:'Simulates the 06:12 blackout sensor fog for veteran zero-telemetry operators.'},
+    {id:'sk_pantheon', name:'06. PANTHEON WRATH SKULL', col:'#4ade80', mult:50,
+      rule:'Apex Bosses unleash Phase-2 moves from Turn 1; Loot & XP yield +50%.',
+      lore:'The ultimate sovereign mutator engraved with all 22 Pantheon sigils.'}
+  ];
+  G.openSkulls=()=>{
+    let sel=0;
+    if(!Array.isArray(G.flags.active_skulls)) G.flags.active_skulls=[];
+    const list=()=>G.flags.active_skulls||[];
+    G.mini={
+      name:'skulls',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+CHALLENGE_SKULLS.length-1)%CHALLENGE_SKULLS.length;
+        if(took('down')) sel=(sel+1)%CHALLENGE_SKULLS.length;
+        if(took('confirm')){
+          const sk=CHALLENGE_SKULLS[sel];
+          let L=[...list()];
+          if(L.includes(sk.id)){
+            L=L.filter(x=>x!==sk.id); G.flags.active_skulls=L; sfx('cancel');
+            G.toast(`> DEACTIVATED: ${sk.name.slice(4)}`,P.DG);
+          } else {
+            L.push(sk.id); G.flags.active_skulls=L;
+            G.ach('skull_sovereign'); sfx('level');
+            G.toast(`> SKULL ACTIVE: ${sk.name.slice(4)} (+${L.length*50}% XP/BITS)!`,sk.col);
+          }
+        }
+        if(took('party')){
+          G.flags.active_skulls=CHALLENGE_SKULLS.map(s=>s.id);
+          G.ach('skull_sovereign'); sfx('win');
+          G.toast('> ALL 6 LASO CHALLENGE SKULLS ENGAGED (+300% XP & BITS)!','#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> CHALLENGE SKULL MUTATORS',56,40,P.GD,2);
+        const L=list(), bonusPct=L.length*50;
+        UI.text(`ACTIVE SKULLS: ${L.length}/6   ·   YIELD: +${bonusPct}% XP & BITS`,900,44,L.length?'#4ade80':P.GD,1,'right');
+        // Left: 6 Challenge Skull Rows
+        CHALLENGE_SKULLS.forEach((sk,i)=>{
+          const yy=80+i*64, on=i===sel, act=L.includes(sk.id);
+          UI.box(52,yy,416,56,on?P.GD:(act?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+sk.name,66,yy+10,on?P.GD:sk.col,1);
+          UI.text(sk.rule.slice(0,48)+'..',66,yy+30,P.BONE,1);
+          UI.text(act?'[ACTIVE +50%]':'[OFF]',454,yy+10,act?'#4ade80':P.DG,1,'right');
+        });
+        // Right: Selected Skull Emblem & Mutator Rules
+        const cur=CHALLENGE_SKULLS[sel], isAct=L.includes(cur.id);
+        UI.box(484,80,420,384,cur.col,'rgba(10,8,6,.94)');
+        // Procedural Wireframe Skull Icon Box
+        UI.box(502,98,96,96,P.DDG,'rgba(14,11,8,.96)');
+        const cx=550, cy=142;
+        X.strokeStyle=isAct?'#4ade80':cur.col; X.lineWidth=2;
+        X.beginPath(); X.arc(cx,cy-6,24,Math.PI*0.85,Math.PI*0.15,false);
+        X.lineTo(cx+14,cy+22); X.lineTo(cx-14,cy+22); X.closePath(); X.stroke();
+        X.fillStyle=isAct?'#4ade80':cur.col;
+        X.fillRect(cx-11,cy-10,6,6); X.fillRect(cx+5,cy-10,6,6);
+        X.fillRect(cx-8,cy+12,3,8); X.fillRect(cx-1,cy+12,3,8); X.fillRect(cx+6,cy+12,3,8);
+        X.lineWidth=1;
+        UI.text(cur.name.slice(4),612,104,P.GD,1);
+        UI.text(`STATUS: ${isAct?'ENGAGED (+50% YIELD)':'INACTIVE'}`,612,128,isAct?'#4ade80':P.DG,1);
+        UI.text(`TOTAL MULTIPLIER: ${(1+bonusPct/100).toFixed(2)}x (+${bonusPct}%)`,612,152,'#22d3ee',1);
+        UI.box(502,208,384,80,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('COMBAT MUTATOR RULE:',516,222,P.GD,1);
+        UI.wrap(cur.rule,356,1).forEach((ln,li)=>UI.text(ln,516,242+li*18,'#4ade80',1));
+        UI.box(502,298,384,74,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('SOVEREIGN LORE:',516,312,P.GD,1);
+        UI.wrap(cur.lore,356,1).forEach((ln,li)=>UI.text(ln,516,332+li*18,P.BONE,1));
+        UI.box(502,382,384,68,isAct?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(isAct?'[ENTER] DEACTIVATE CHALLENGE SKULL':'[ENTER] ENGAGE CHALLENGE SKULL (+50%)',694,398,isAct?'#4ade80':P.GD,1,'center');
+        UI.text('[P] ENGAGE ALL 6 LASO SKULLS (+300% XP & BITS)',694,424,'#4ade80',1,'center');
+        UI.text('[up/down] select skull   [enter] toggle skull   [P] engage all 6 (LASO)   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive World NPC Directory & 1-Click Warp (M92) ----
+  const NPC_DIRECTORY=[
+    {id:'vigil', zone:'hub', x:4, z:7, dist:'RELIT CITY PLAZA'},
+    {id:'nexus', zone:'hub', x:-6, z:5, dist:'RELIT CITY PLAZA'},
+    {id:'athena', zone:'hub', x:7, z:-6, dist:'RELIT CITY PLAZA'},
+    {id:'onyx', zone:'mirrors', x:5, z:34, dist:'HALL OF MIRRORS'},
+    {id:'pixel-neko', zone:'hub', x:12, z:3.5, dist:'RELIT CITY BENCH'},
+    {id:'mercury', zone:'hub', x:-12, z:-3.5, dist:'RELIT CITY TRANSIT'},
+    {id:'radical-minion', zone:'hub', x:3, z:-10, dist:'RELIT CITY SOUTH'},
+    {id:'pixel-shiba', zone:'hub', x:-3, z:11, dist:'RELIT CITY NORTH'},
+    {id:'ignis', zone:'hub', x:14, z:-12, dist:'RELIT CITY FORGE'},
+    {id:'aquila', zone:'hub', x:36, z:5, dist:'RELIT CITY EAST GATE'},
+    {id:'kitsune', zone:'forest', x:-22, z:-14, dist:'THE REST WOODS'},
+    {id:'leviathan', zone:'deep', x:36, z:6, dist:'DEEP-WATER MEMORY'},
+    {id:'chronos', zone:'clock', x:7, z:34, dist:'SAND CLOCKTOWER'},
+    {id:'lycan', zone:'forest', x:30, z:14, dist:'THE REST WOODS'},
+    {id:'kai', zone:'forest', x:-38, z:36, dist:'THE REST WOODS'},
+    {id:'draco', zone:'relay', x:-34, z:3, dist:'THE HOLLOW'},
+    {id:'ghostbyte', zone:'relay', x:-20, z:-12, dist:'THE HOLLOW'},
+    {id:'scorpius', zone:'relay', x:-10, z:8, dist:'THE HOLLOW'},
+    {id:'kraken', zone:'fiber', x:5, z:40, dist:'FIBER TUNNELS'},
+    {id:'aether', zone:'skyline', x:-36, z:24, dist:'MODE-7 SKYLINE'},
+    {id:'copy', zone:'mirrors', x:0, z:-4, dist:'HALL OF MIRRORS'}
+  ];
+  G.openDirectory=()=>{
+    let sel=0;
+    const bondOf=id=>(G.flags&&G.flags['bond_'+id])||0;
+    G.mini={
+      name:'directory',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+NPC_DIRECTORY.length-1)%NPC_DIRECTORY.length;
+        if(took('down')) sel=(sel+1)%NPC_DIRECTORY.length;
+        if(took('confirm')){
+          const n=NPC_DIRECTORY[sel];
+          G.ach('directory_navigator'); sfx('confirm');
+          G.mode='explore';
+          G.goZone(n.zone,n.x,n.z+2.2,Math.PI);
+          G.toast(`> WARPED TO ${PARTY_BASE[n.id].name.toUpperCase()} (${n.dist})!`,P.GD);
+        }
+        if(took('party')){
+          const n=NPC_DIRECTORY[sel];
+          if(!G.roster.includes(n.id)){
+            G.recruit(n.id);
+            if(n.id==='copy') G.flag('copy_crew',1);
+          }
+          const b=Math.min(5,bondOf(n.id)+1);
+          G.flags['bond_'+n.id]=b;
+          G.ach('directory_navigator'); sfx('win');
+          G.toast(`> ${PARTY_BASE[n.id].name.toUpperCase()} RECRUITED & AFFINITY +${b}/5!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> WORLD NPC DIRECTORY & WARP',56,40,P.GD,2);
+        const recCount=NPC_DIRECTORY.filter(n=>G.roster.includes(n.id)).length;
+        UI.text(`CREW LOCATED: ${recCount}/21   ·   1-CLICK WARP READY`,900,44,'#4ade80',1,'right');
+        // Left: Scrollable 21-Agent Census List (9 visible)
+        const first=Math.max(0,Math.min(sel-4,NPC_DIRECTORY.length-9));
+        NPC_DIRECTORY.slice(first,first+9).forEach((n,idx)=>{
+          const i=first+idx, yy=78+idx*42, on=i===sel, inR=G.roster.includes(n.id), ag=AG[n.id]||AG.me;
+          UI.box(52,yy,404,38,on?P.GD:(inR?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+`${String(i+1).padStart(2,'0')}. ${PARTY_BASE[n.id].name.toUpperCase()}`,64,yy+12,on?P.GD:(ag.color||P.BONE),1);
+          UI.text(n.dist,236,yy+12,'#22d3ee',1);
+          UI.text(inR?'[CREW]':'[FIELD]',442,yy+12,inR?'#4ade80':P.DG,1,'right');
+        });
+        // Right: Selected NPC Dossier, Coordinates & 1-Click Warp
+        const cur=NPC_DIRECTORY[sel], ag=AG[cur.id]||AG.me, inR=G.roster.includes(cur.id), b=bondOf(cur.id);
+        UI.box(474,78,430,386,ag.color||P.GD,'rgba(10,8,6,.94)');
+        UI.box(492,96,92,92,P.DDG,'rgba(14,11,8,.96)');
+        const c=frameCanvas(cur.id,'idle',Math.floor(t*5)%2);
+        X.drawImage(c,0,0,c.width,c.height,506,110,64,64);
+        UI.text(PARTY_BASE[cur.id].name.toUpperCase(),600,100,P.GD,2);
+        UI.text(`SECTOR: ${cur.dist}`,600,130,'#22d3ee',1);
+        UI.text(`COORDS: (X: ${cur.x}, Z: ${cur.z})  ·  BOND: +${b}/5`,600,152,'#4ade80',1);
+        UI.text(`STATUS: ${inR?'RECRUITED INTO PANTHEON':'AWAITING CONTACT IN FIELD'}`,600,172,inR?'#4ade80':P.BONE,1);
+        UI.box(492,202,394,82,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('AGENT ROLE & SIGNATURE:',506,216,P.GD,1);
+        UI.text(`ROLE: ${ag.role||'Sovereign Specialist'}`,506,238,P.BONE,1);
+        UI.text(`ABILITY: ${ag.ability||'Protocol Resonance'}`,506,258,'#a78bfa',1);
+        UI.box(492,294,394,76,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('COMMS / FIELD QUOTE:',506,308,P.GD,1);
+        const qt=IDLE[cur.id]||'Faces, not voices. Ready on the lattice.';
+        UI.wrap(`"${qt}"`,366,1).forEach((ln,li)=>UI.text(ln,506,328+li*18,P.BONE,1));
+        UI.box(492,380,394,68,P.GD,'rgba(245,184,46,.14)');
+        UI.text(`[ENTER] 1-CLICK WARP TO ${PARTY_BASE[cur.id].name.toUpperCase()}`,689,396,P.GD,1,'center');
+        UI.text('[P] INSTANT RECRUIT & BOOST AFFINITY (+1 BOND)',689,422,'#4ade80',1,'center');
+        UI.text('[up/down] select agent   [enter] warp to NPC   [P] recruit & bond   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
