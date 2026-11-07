@@ -14,7 +14,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -40,7 +40,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='lasers'||c==='mirror'||c==='optics'){ out('[lasers] launching 6x6 Fiber-Optic Laser Mirror Router...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startLasers(); },40); }
+    else if(c==='loadouts'||c==='presets'||c==='equip'){ out('[loadouts] opening Companion Gear Loadout Presets & Optimizer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openLoadouts(); },40); }
     else if(c==='resonance'||c==='protocols'||c==='elements'){ out('[resonance] opening 5x5 Protocol Resonance Matrix...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openResonance(); },40); }
     else if(c==='collapse'||c==='quantum'){ out('[collapse] launching 5x5 Quantum Wave-Collapse Puzzle...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startCollapse(); },40); }
     else if(c==='banner'||c==='callsign'){ out('[banner] opening Operator Call-Sign & HUD Banner Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBannerStudio(); },40); }
@@ -2962,6 +2964,216 @@ export function initEggs(G,{music,sfx}){
         UI.text(isTuned?`HARMONIC ACTIVE: ${cur.chord}`:`[ENTER] TUNE ${cur.chord}`,701,410,isTuned?'#4ade80':P.GD,1,'center');
         UI.text(cur.bonus,701,432,P.BONE,1,'center');
         UI.text('[up/down] select protocol   [enter] tune harmonic chord (+15% ATK/DEF, +12% HP/EN)   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #11: Fiber-Optic Laser Mirror Routing Puzzle (M75) ----
+  G.startLasers=()=>{
+    // 6x6 grid: 0=empty, 1='/' mirror, 2='\' mirror
+    // Canonical path: TX(0,0) -> E to (2,0)[\] -> S to (2,3)[\] -> E to (5,3)[\] -> S to RX(5,5)
+    //Wait: if moving East (dx=1,dy=0) hits '\' (type 2): new dir is South (dx=0,dy=1).
+    // Moving South (dx=0,dy=1) hits '\' (type 2): new dir is East (dx=1,dy=0)!
+    // Wait: if moving South (dx=0,dy=1) hits '\' at (2,3), standard reflection off '\' (top-left to bottom-right):
+    // Let's verify: (dx,dy) off '\' (type 2) -> (dy, dx)!
+    // - East (1,0) -> (0,1) South!
+    // - South (0,1) -> (1,0) East!
+    // Wait: if (0,1) South hits '\' at (2,3) -> it turns (1,0) East!
+    // Then at (5,3) moving East (1,0), if it hits '\' (type 2), it turns (0,1) South to (5,5) RX!
+    // And off '/' (type 1): (dx,dy) -> (-dy, -dx)!
+    const grid=new Array(36).fill(0);
+    // Start with scrambled mirrors so player rotates them
+    grid[0*6+2]=1; grid[3*6+2]=1; grid[3*6+5]=0; grid[1*6+4]=2;
+    const NODES=[[2,0,'NODE 01'],[2,3,'NODE 02'],[5,3,'NODE 03']];
+    let cur=2, moves=0, won=false;
+    const traceBeam=()=>{
+      const path=[[0,0]];
+      let x=0, y=0, dx=1, dy=0, steps=0;
+      const hitNodes=new Set();
+      while(steps<40){
+        x+=dx; y+=dy; steps++;
+        if(x<0||x>=6||y<0||y>=6) break;
+        path.push([x,y]);
+        NODES.forEach(([nx,ny],ni)=>{ if(nx===x&&ny===y) hitNodes.add(ni); });
+        if(x===5&&y===5) break;
+        const m=grid[y*6+x];
+        if(m===1){ const ndx=-dy, ndy=-dx; dx=ndx; dy=ndy; }
+        else if(m===2){ const ndx=dy, ndy=dx; dx=ndx; dy=ndy; }
+      }
+      const rxHit=(path[path.length-1][0]===5 && path[path.length-1][1]===5);
+      return {path, hitNodes, rxHit};
+    };
+    const checkWin=()=>{
+      const res=traceBeam();
+      if(res.rxHit && res.hitNodes.size===3 && !won){
+        won=true; sfx('win'); G.ach('laser_router');
+        if(!G.flags.laser_reward){
+          G.flags.laser_reward=1; G.bits+=250; G.give('cache.bit',2);
+          G.toast('> LASER CARRIER LOCKED! +250 Bits & +2x Cache.Bit!',P.GD);
+        } else {
+          G.bits+=65; G.toast('> Optical Carrier Routed! +65 Bits!',P.GD);
+        }
+      }
+    };
+    G.mini={
+      name:'lasers',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left')) cur=(cur%6===0)?cur+5:cur-1;
+        if(took('right')) cur=(cur%6===5)?cur-5:cur+1;
+        if(took('up')) cur=(cur+30)%36;
+        if(took('down')) cur=(cur+6)%36;
+        if(took('party')&&!won){
+          grid.fill(0);
+          grid[0*6+2]=2; grid[3*6+2]=2; grid[3*6+5]=2;
+          moves++; checkWin(); return;
+        }
+        if(took('confirm')&&!won){
+          if(cur===0||cur===35){ sfx('cancel'); return; }
+          grid[cur]=(grid[cur]+1)%3; moves++; sfx('blip'); checkWin();
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(44,24,872,492,P.GD);
+        UI.text('> FIBER-OPTIC LASER MIRROR ROUTER',68,40,P.GD,2);
+        const {path,hitNodes,rxHit}=traceBeam();
+        UI.text(`RELAYS LIT: ${hitNodes.size}/3   RX: ${rxHit?'LOCKED':'OPEN'}   ROTATIONS: ${moves}`,892,44,won?'#4ade80':'#22d3ee',1,'right');
+        // 6x6 Optical Grid
+        const gx=76, gy=82, cw=88, ch=62;
+        for(let r=0;r<6;r++){
+          for(let c=0;c<6;c++){
+            const idx=r*6+c, bx=gx+c*cw, by=gy+r*ch, isCur=idx===cur;
+            const isNode=NODES.findIndex(([nx,ny])=>nx===c&&ny===r);
+            const isTx=(c===0&&r===0), isRx=(c===5&&r===5);
+            UI.box(bx,by,cw-6,ch-6,isCur?P.GD:(isTx||isRx?'#4ade80':(isNode>=0?'#22d3ee':P.DDG)),'rgba(10,8,6,.92)');
+            if(isTx) UI.text('TX >>',bx+41,by+20,'#4ade80',1,'center');
+            else if(isRx) UI.text('>> RX',bx+41,by+20,rxHit?'#4ade80':P.RED,1,'center');
+            else if(isNode>=0) UI.text(`N${isNode+1}`,bx+14,by+8,hitNodes.has(isNode)?'#4ade80':'#22d3ee',1);
+            const m=grid[idx];
+            if(m===1||m===2){
+              X.strokeStyle='#a78bfa'; X.lineWidth=3; X.beginPath();
+              if(m===1){ X.moveTo(bx+22,by+44); X.lineTo(bx+60,by+12); }
+              else { X.moveTo(bx+22,by+12); X.lineTo(bx+60,by+44); }
+              X.stroke(); X.lineWidth=1;
+            }
+          }
+        }
+        // Draw Laser Beam Path
+        if(path.length>1){
+          X.strokeStyle=won?'#4ade80':P.GD; X.lineWidth=3;
+          X.beginPath();
+          path.forEach(([px,py],i)=>{
+            const sx=gx+px*cw+41, sy=gy+py*ch+28;
+            if(i===0) X.moveTo(sx,sy); else X.lineTo(sx,sy);
+          });
+          X.stroke(); X.lineWidth=1;
+        }
+        // Right Panel
+        UI.box(624,82,268,366,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('OPTICAL ROUTING RULES:',642,100,P.GD,1);
+        UI.wrap('Rotate 45-degree phase mirrors (/ and \\) so the TX [0,0] carrier laser illuminates all 3 Relay Nodes (N1, N2, N3) and terminates at RX [5,5].',234,1).forEach((l,li)=>UI.text(l,642,124+li*18,P.BONE,1));
+        UI.text('MIRROR STATES:',642,226,'#a78bfa',1);
+        UI.text('[ENTER] Cycle: Empty -> / -> \\',642,246,P.BONE,1);
+        UI.text('BOUNTY:',642,288,'#22d3ee',1);
+        UI.text('+250 Bits & +2x Cache.Bit',642,308,P.GD,1);
+        UI.text('[P] Auto-Align Phase Mirrors',642,356,'#4ade80',1);
+        UI.text('[arrows] select cell   [enter] rotate mirror   [P] auto-align   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Companion Gear Loadout Presets & 1-Click Auto-Optimizer (M76) ----
+  const LOADOUT_NAMES=['01: BREACH VANGUARD','02: ZERO-KNOWLEDGE WALL','03: CHRONO SPEEDRUN','04: SOVEREIGN APEX'];
+  G.openLoadouts=()=>{
+    let sel=0;
+    const scoreItem=k=>{
+      const it=ITEMS[k]; if(!it||!it.mod) return 0;
+      const m=it.mod, up=1+((G.flags&&G.flags['up_'+k])||0)*0.2;
+      return Math.round(((m.atk||0)*3 + (m.def||0)*2.5 + (m.hp||0)*0.6 + (m.en||0)*0.8 + (m.spd||0)*5)*up);
+    };
+    const autoOptimize=()=>{
+      // Collect all owned gear items (in G.inv or currently equipped)
+      const owned=new Set(Object.keys(G.inv).filter(k=>G.inv[k]>0&&ITEMS[k]&&ITEMS[k].slot));
+      Object.values(G.equip||{}).forEach(eq=>{
+        if(eq&&eq.tool) owned.add(eq.tool);
+        if(eq&&eq.shell) owned.add(eq.shell);
+      });
+      // Ensure starter gear is available if nothing else owned
+      if(![...owned].some(k=>ITEMS[k].slot==='tool')){ G.inv['keycap.ring']=Math.max(1,G.inv['keycap.ring']||1); owned.add('keycap.ring'); }
+      if(![...owned].some(k=>ITEMS[k].slot==='shell')){ G.inv['hood.v2']=Math.max(1,G.inv['hood.v2']||1); owned.add('hood.v2'); }
+      const tools=[...owned].filter(k=>ITEMS[k].slot==='tool').sort((a,b)=>scoreItem(b)-scoreItem(a));
+      const shells=[...owned].filter(k=>ITEMS[k].slot==='shell').sort((a,b)=>scoreItem(b)-scoreItem(a));
+      // Clear current equips and assign best tools/shells to active squad
+      G.equip={};
+      G.active().forEach((id,idx)=>{
+        G.equip[id]={
+          tool:tools[idx]||tools[0]||null,
+          shell:shells[idx]||shells[0]||null
+        };
+      });
+      G.ach('loadout_master'); sfx('level');
+      G.toast('> 1-CLICK AUTO-OPTIMIZER: Best-in-Slot Relics Equipped!',P.GD);
+    };
+    G.mini={
+      name:'loadouts',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+3)%4;
+        if(took('down')) sel=(sel+1)%4;
+        if(took('party')){ autoOptimize(); return; }
+        if(took('confirm')){
+          G.flags['loadout_'+sel]=JSON.parse(JSON.stringify({active:G.active(), equip:G.equip}));
+          G.ach('loadout_master'); sfx('save');
+          G.toast(`> SAVED SQUAD LOADOUT ${LOADOUT_NAMES[sel]}`,P.GD);
+        }
+        if(took('n1')||took('quests')){
+          const saved=G.flags['loadout_'+sel];
+          if(!saved){ G.toast('> Preset slot is empty — press [ENTER] to save first!',P.RED); sfx('cancel'); return; }
+          if(saved.active&&saved.active.length) G.activeL=saved.active.filter(id=>G.roster.includes(id));
+          if(saved.equip) G.equip=JSON.parse(JSON.stringify(saved.equip));
+          sfx('confirm'); G.toast(`> RESTORED LOADOUT ${LOADOUT_NAMES[sel]}`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> SQUAD GEAR LOADOUTS & AUTO-OPTIMIZER',56,40,P.GD,2);
+        UI.text('[P] 1-CLICK BEST-IN-SLOT',900,44,'#4ade80',1,'right');
+        // Left: 4 Loadout Preset Slots
+        UI.box(52,78,360,396,P.DDG,'rgba(10,8,6,.94)');
+        UI.text('TACTICAL PRESET SLOTS (4):',68,94,P.GD,1);
+        LOADOUT_NAMES.forEach((nm,i)=>{
+          const yy=118+i*84, on=i===sel, sv=G.flags['loadout_'+i];
+          UI.box(64,yy,336,74,on?P.GD:(sv?'#4ade80':P.DDG),on?'rgba(245,184,46,.14)':'rgba(14,11,8,.9)');
+          UI.text((on?'> ':'  ')+nm,78,yy+10,on?P.GD:P.BONE,1);
+          if(sv){
+            const sq=(sv.active||[]).map(id=>(PARTY_BASE[id]&&PARTY_BASE[id].name)||id).join(' · ');
+            UI.text(`SQUAD: ${sq.slice(0,32)}`,78,yy+32,'#22d3ee',1);
+            UI.text('[SAVED — ENTER OVERWRITE / 1 LOAD]',78,yy+50,'#4ade80',1);
+          } else {
+            UI.text('[EMPTY SLOT — PRESS ENTER TO SAVE]',78,yy+38,P.DG,1);
+          }
+        });
+        // Right: Active Squad Equipped Gear & Stat Breakdown
+        UI.box(428,78,476,396,P.GD,'rgba(10,8,6,.94)');
+        UI.text('ACTIVE SQUAD RELICS & STATS:',448,94,P.GD,1);
+        G.active().forEach((id,idx)=>{
+          const yy=118+idx*102, st=G.stats(id), eq=G.equip[id]||{};
+          const tName=eq.tool?ITEMS[eq.tool].name:'[None]', sName=eq.shell?ITEMS[eq.shell].name:'[None]';
+          const tUp=(eq.tool&&G.flags['up_'+eq.tool])?` +${G.flags['up_'+eq.tool]}`:'';
+          const sUp=(eq.shell&&G.flags['up_'+eq.shell])?` +${G.flags['up_'+eq.shell]}`:'';
+          UI.box(444,yy,444,92,P.DDG,'rgba(14,11,8,.92)');
+          const c=frameCanvas(id,'idle',Math.floor(t*4)%2);
+          const isOp=id==='me'||id==='copy';
+          X.drawImage(c,0,0,c.width,c.height,458+(isOp?10:0),yy+14,isOp?22:52,52);
+          UI.text(`${PARTY_BASE[id].name.toUpperCase()}  (LV ${G.party[id].lvl})`,526,yy+12,P.GD,1);
+          UI.text(`TOOL: ${tName}${tUp}   ·   SHELL: ${sName}${sUp}`,526,yy+34,'#22d3ee',1);
+          UI.text(`HP ${st.mhp}  EN ${st.men}  ATK ${st.atk}  DEF ${st.def}  SPD ${st.spd}`,526,yy+58,'#4ade80',1);
+        });
+        UI.box(444,430,444,32,'#4ade80','rgba(74,222,128,.14)');
+        UI.text('[P] RUN 1-CLICK BEST-IN-SLOT AUTO-OPTIMIZER',666,439,'#4ade80',1,'center');
+        UI.text('[up/down] slot   [enter] save preset   [1/J] load preset   [P] auto-optimize   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
