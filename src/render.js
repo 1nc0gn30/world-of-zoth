@@ -32,11 +32,11 @@ export function initRender(canvas){
   glyphTex=glyphAtlas();
   post=new THREE.Mesh(new THREE.PlaneGeometry(2,2), new THREE.ShaderMaterial({
     uniforms:{ tScene:{value:rt.texture}, tGlyph:{value:glyphTex}, time:U.time, glitch:{value:0}, flash:{value:0}, flashCol:{value:new THREE.Color('#f5b82e')},
-      fade:{value:0}, rain:{value:0.5}, rainCol:{value:new THREE.Color('#8a6514')}, hex:{value:0}, stars:{value:1}, warm:{value:0}, shake:{value:new THREE.Vector2()} },
+      fade:{value:0}, rain:{value:0.5}, rainCol:{value:new THREE.Color('#8a6514')}, hex:{value:0}, stars:{value:1}, warm:{value:0}, scanAmt:{value:0.18}, vigAmt:{value:0.55}, shake:{value:new THREE.Vector2()} },
     vertexShader:`varying vec2 vUv; void main(){vUv=uv; gl_Position=vec4(position.xy,0.,1.);}`,
     fragmentShader:`
       precision highp float; varying vec2 vUv;
-      uniform sampler2D tScene, tGlyph; uniform float time, glitch, flash, fade, rain, hex, stars, warm; uniform vec3 flashCol, rainCol; uniform vec2 shake;
+      uniform sampler2D tScene, tGlyph; uniform float time, glitch, flash, fade, rain, hex, stars, warm, scanAmt, vigAmt; uniform vec3 flashCol, rainCol; uniform vec2 shake;
       float h1(float n){return fract(sin(n*127.1)*43758.5453);} float h2(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
       float bayer(vec2 p){ int x=int(mod(p.x,4.)), y=int(mod(p.y,4.)); int i=y*4+x; float m[16]=float[16](0.,8.,2.,10.,12.,4.,14.,6.,3.,11.,1.,9.,15.,7.,13.,5.); for(int k=0;k<16;k++){ if(k==i) return (m[k]+.5)/16.; } return .5; }
       void main(){
@@ -65,8 +65,8 @@ export function initRender(canvas){
           }
           float st=h2(floor(px/2.)); if(st>1.-.0025*stars && mod(px.x,2.)<1.&&mod(px.y,2.)<1.) col+=vec3(.54,.4,.08)*(.6+.4*sin(time*2.+st*90.));
         }
-        if(mod(np.y,2.)>.5) col*=.82;
-        vec2 cv=vUv-.5; col*=1.-dot(cv,cv)*.55;
+        if(mod(np.y,2.)>.5) col*=1.-scanAmt;
+        vec2 cv=vUv-.5; col*=1.-dot(cv,cv)*vigAmt;
         col=mix(col,flashCol,flash);
         col*=1.-fade;
         gl_FragColor=vec4(col,1.);

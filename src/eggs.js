@@ -2,6 +2,7 @@
 // handshake, title idle hook, achievements (persist across saves).
 import * as UI from './ui.js';
 import { P, THEMES, applyTheme } from './pal.js';
+import { postU } from './render.js';
 import { IN, took, KEYMAP, DEFAULT_KEYS } from './input.js';
 import { AG, frameCanvas } from './sprites.js';
 import { ENEMIES, ITEMS, PARTY_BASE, SKILLS } from './data.js';
@@ -36,7 +37,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='shaders'||c==='crt'){ out('[shaders] opening Custom CRT Shader & Scanline Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openShaderStudio(); },40); }
+    else if(c==='composer'||c==='sequencer'){ out('[composer] opening 8-Bit Chiptune 16-Step Sequencer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openComposer(); },40); }
     else if(c==='museum'||c==='trophies'){ out('[museum] opening 10-Apex Boss Trophy & Lore Museum...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMuseum(); },40); }
     else if(c==='weather'||c==='storms'){ out('[weather] opening Lattice Weather Radar & Forecast...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openWeather(); },40); }
     else if(c==='formation'||c==='stances'){ out('[formation] opening Tactical Squad Formation & Row Synergy...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openFormation(); },40); }
@@ -1547,6 +1550,118 @@ export function initEggs(G,{music,sfx}){
         });
         UI.box(96,452,768,26,P.DDG,'rgba(12,10,8,.92)');
         UI.text('[UP/DOWN] SELECT DISTRICT     [ENTER] WARP & LOCK STORM BUFF     [P] SEED FRONT     [ESC] EXIT',480,458,P.GD,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Custom CRT Shader & Scanline Curvature Studio (M51) ----
+  const SHADER_PRESETS=[
+    {name:'SOVEREIGN DEFAULT', scan:.18, vig:.55, rain:.5, stars:1, hex:0},
+    {name:'HEAVY CRT MONITOR', scan:.42, vig:.95, rain:.65, stars:1, hex:0},
+    {name:'MATRIX HEX OVERDRIVE', scan:.22, vig:.45, rain:.95, stars:1.5, hex:1},
+    {name:'CLEAN ZERO-GLARE', scan:.0, vig:.15, rain:.25, stars:.6, hex:0}
+  ];
+  G.openShaderStudio=()=>{
+    let sel=0, pIdx=0;
+    const u=postU();
+    const params=[
+      {name:'SCANLINE DEPTH', get:()=>u.scanAmt.value, set:v=>u.scanAmt.value=Math.max(0,Math.min(.65,v)), step:.05},
+      {name:'CRT VIGNETTE CURVE', get:()=>u.vigAmt.value, set:v=>u.vigAmt.value=Math.max(0,Math.min(1.4,v)), step:.1},
+      {name:'SKY GLYPH RAIN DENSITY', get:()=>u.rain.value, set:v=>u.rain.value=Math.max(0,Math.min(1.0,v)), step:.1},
+      {name:'BRAILLE STARFIELD', get:()=>u.stars.value, set:v=>u.stars.value=Math.max(0,Math.min(2.0,v)), step:.2},
+      {name:'HEXADECIMAL MATRIX MODE', get:()=>u.hex.value, set:v=>u.hex.value=v>.5?1:0, step:1}
+    ];
+    G.mini={
+      name:'shaders',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+params.length-1)%params.length;
+        if(took('down')) sel=(sel+1)%params.length;
+        if(took('left')){ const p=params[sel]; p.set(+(p.get()-p.step).toFixed(2)); sfx('blip'); }
+        if(took('right')||took('confirm')){ const p=params[sel]; p.set(+(p.get()+p.step).toFixed(2)); sfx('blip'); }
+        if(took('party')){
+          pIdx=(pIdx+1)%SHADER_PRESETS.length; const pr=SHADER_PRESETS[pIdx];
+          u.scanAmt.value=pr.scan; u.vigAmt.value=pr.vig; u.rain.value=pr.rain; u.stars.value=pr.stars; u.hex.value=pr.hex;
+          sfx('level'); G.toast(`> Shader Preset: ${pr.name}`,P.GD);
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.78)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.90)');
+        UI.text('> CRT SHADER & SCANLINE STUDIO',106,48,P.GD,2);
+        UI.text(`PRESET: ${SHADER_PRESETS[pIdx].name}`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        params.forEach((p,i)=>{
+          const y=102+i*58, on=i===sel, val=p.get();
+          UI.box(106,y-4,748,46,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.82)');
+          UI.text(`${on?'> ':'  '}0${i+1} · ${p.name}`,122,y+6,on?P.GD:P.BONE,1);
+          // Visual slider bar
+          const maxV=i===3?2.0:(i===1?1.4:(i===0?.65:1.0)), pct=Math.max(0,Math.min(1,val/maxV));
+          UI.box(460,y+6,260,18,P.DDG,'rgba(6,5,4,.95)');
+          X.fillStyle=on?P.GD:'#22d3ee'; X.fillRect(462,y+8,Math.round(256*pct),14);
+          UI.text(val.toFixed(2),836,y+6,P.GD,1,'right');
+          UI.hit(106,y-4,748,46,()=>{ sel=i; });
+        });
+        UI.box(106,404,748,48,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('Live WebGL post-processing uniforms update in real time across the 3D viewport behind this panel.',480,422,P.BONE,1,'center');
+        UI.text('[up/down] select uniform   [left/right] tune value   [P] cycle shader preset   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- In-Game 8-Bit Chiptune Sequencer & Loop Composer (M52) ----
+  const SEQ_ROWS=[
+    {name:'LEAD D5', sfx:'loot', col:'#f5b82e'},
+    {name:'ARP A4',  sfx:'blip', col:'#22d3ee'},
+    {name:'BASS D3', sfx:'move', col:'#4ade80'},
+    {name:'PERC KK', sfx:'block', col:'#f43f5e'}
+  ];
+  const seqGrid=[
+    [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,1,0,0],
+    [0,1,1,0, 1,0,0,1, 0,1,1,0, 1,0,1,1],
+    [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,1,0,1],
+    [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,1,0]
+  ];
+  G.openComposer=()=>{
+    let cr=0, cc=0, playing=true, stepIdx=0, acc=0, bpm=128;
+    G.mini={
+      name:'composer',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) cr=(cr+3)%4;
+        if(took('down')) cr=(cr+1)%4;
+        if(took('left')) cc=(cc+15)%16;
+        if(took('right')) cc=(cc+1)%16;
+        if(took('confirm')){ seqGrid[cr][cc]=seqGrid[cr][cc]?0:1; sfx(SEQ_ROWS[cr].sfx); }
+        if(took('party')){ playing=!playing; sfx('confirm'); }
+        if(playing){
+          const stepDur=60/bpm/4;
+          acc+=dt;
+          if(acc>=stepDur){
+            acc-=stepDur; stepIdx=(stepIdx+1)%16;
+            for(let r=0;r<4;r++) if(seqGrid[r][stepIdx]) sfx(SEQ_ROWS[r].sfx);
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(68,28,824,484,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> 8-BIT CHIPTUNE LOOP COMPOSER',92,44,P.GD,2);
+        UI.text(`${playing?'[PLAYING '+bpm+' BPM]':'[PAUSED]'}   ·   STEP ${String(stepIdx+1).padStart(2,'0')}/16`,868,48,playing?'#4ade80':P.RED,1,'right');
+        X.fillStyle=P.DDG; X.fillRect(88,72,784,2);
+        for(let r=0;r<4;r++){
+          const y=104+r*72, row=SEQ_ROWS[r];
+          UI.text(row.name,92,y+20,row.col,1);
+          for(let c=0;c<16;c++){
+            const x=184+c*42, on=seqGrid[r][c], cur=(r===cr&&c===cc), playHead=(c===stepIdx&&playing);
+            UI.box(x,y,36,52,cur?P.GD:(playHead?'#22d3ee':(on?row.col:P.DDG)),on?'rgba(245,184,46,.22)':(playHead?'rgba(34,211,238,.12)':'rgba(6,5,4,.85)'));
+            if(on){ X.fillStyle=row.col; X.fillRect(x+8,y+12,20,28); }
+            UI.hit(x,y,36,52,()=>{ cr=r; cc=c; seqGrid[r][c]=seqGrid[r][c]?0:1; sfx(row.sfx); });
+          }
+        }
+        UI.box(92,408,776,46,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('16-Step 4-Channel Chiptune Matrix — toggle cells to synthesize custom D-Minor loops.',480,424,P.BONE,1,'center');
+        UI.text('[arrows] move cursor   [enter / click] toggle note   [P] play/pause loop   [esc] close',480,482,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
