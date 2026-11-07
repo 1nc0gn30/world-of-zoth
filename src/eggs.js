@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='seedlab'||c==='seeds'){ out('[seedlab] opening Procedural Dungeon Seed & Custom Run Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSeedLab(); },40); }
+    else if(c==='radio'||c==='tuner'||c==='fm'){ out('[radio] opening Sovereign Radio & Lo-Fi Broadcast Tuner...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openRadio(); },40); }
     else if(c==='skulls'||c==='mutators'){ out('[skulls] opening Dynamic Battle Mutator & Challenge Skull Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSkulls(); },40); }
     else if(c==='npcs'||c==='directory'||c==='census'){ out('[npcs] opening Interactive World NPC Directory & Affinity Tracker...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openDirectory(); },40); }
     else if(c==='implants'||c==='cybernetics'||c==='neural'){ out('[implants] opening Cybernetic Kernel Implant Laboratory...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openImplants(); },40); }
@@ -4517,6 +4519,210 @@ export function initEggs(G,{music,sfx}){
         UI.text(`[ENTER] 1-CLICK WARP TO ${PARTY_BASE[cur.id].name.toUpperCase()}`,689,396,P.GD,1,'center');
         UI.text('[P] INSTANT RECRUIT & BOOST AFFINITY (+1 BOND)',689,422,'#4ade80',1,'center');
         UI.text('[up/down] select agent   [enter] warp to NPC   [P] recruit & bond   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Procedural Dungeon Seed & Custom Run Generator (M93) ----
+  const PRESET_SEEDS=[
+    {seed:'ZOTH-0612-ROOT', title:'01. DAWN OF 06:12', desc:'Balanced Relit City -> Hollow -> Relay 4 gauntlet.'},
+    {seed:'ARCHON-ZERO-ZK', title:'02. COMPILER SOVEREIGN', desc:'High-level Citadel & Null Core apex gauntlet.'},
+    {seed:'NEKO-777-LOOT',  title:'03. GOLDEN FORTUNE RUN', desc:'High-payout Foundry & Clocktower treasure seed.'},
+    {seed:'MIRROR-22-COPY', title:'04. HALL OF REFLECTIONS', desc:'Clone-heavy Hall of Mirrors & Hunter ambush seed.'},
+    {seed:'QUANTUM-LOOM-5', title:'05. ENTANGLED SPINDLE', desc:'Superposition phase anomalies across District #16.'},
+    {seed:'CHRONO-VAULT-9', title:'06. CELESTIAL HOROLOGY', desc:'Time-dilated Chrono-Vault & Sandglass endurance run.'}
+  ];
+  const fnvHash=str=>{
+    let h=0x811c9dc5;
+    for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,0x01000193)>>>0; }
+    return h>>>0;
+  };
+  const compileSeed=seedStr=>{
+    const h=fnvHash(seedStr||'ZOTH-0612');
+    const zones=['hub','forest','relay','fiber','clock','streets','foundry','caves','mirrors','deep','skyline','abyss','citadel','nullcore','loom','vault'];
+    const regular=['drone','sentinel','echo','worm','mite','phase','slag','slime','reflection','eel','gunship','cursorling','warden'];
+    const bosses=['copy','relay4','sandglass','hunter','blank','archon'];
+    const items=['patch.kit','cache.bit','root.shell','foxfire.crown','doom.gauntlet','aeon.gear','static.katana','ocular.aegis','tesseract.core','hilbert.coil','owl.spear','fenrir.fang','obsidian.prism','abyssal.trident','seraph.mantle','singularity.halo'];
+    const weathers=['GOLD AURORA (+15% CRIT)','CRIMSON STATIC (+20% ATK)','CYAN QUANTUM RAIN (+3 EN/T)','VIOLET SINGULARITY (+25% XP)'];
+    const z=zones[h%zones.length];
+    const f1=regular[(h>>>3)%regular.length], f2=regular[(h>>>7)%regular.length];
+    const boss=bosses[(h>>>11)%bosses.length];
+    const lvl=12+(h%24);
+    const rewardItem=items[(h>>>15)%items.length];
+    const bits=240+(h%220);
+    const wx=weathers[(h>>>19)%weathers.length];
+    return {hash:'0x'+h.toString(16).toUpperCase().padStart(8,'0'), zone:z, foes:[f1,f2,boss], boss, lvl, item:rewardItem, bits, wx};
+  };
+  G.openSeedLab=()=>{
+    let sel=0, customSeed=PRESET_SEEDS[0].seed;
+    G.mini={
+      name:'seedlab',
+      key(e){
+        if(e.key==='Backspace'){ customSeed=customSeed.slice(0,-1); sfx('move'); }
+        else if(e.key.length===1&&/[a-zA-Z0-9_-]/.test(e.key)&&customSeed.length<18){
+          customSeed+=e.key.toUpperCase(); sfx('talk');
+        }
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+PRESET_SEEDS.length-1)%PRESET_SEEDS.length; customSeed=PRESET_SEEDS[sel].seed; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%PRESET_SEEDS.length; customSeed=PRESET_SEEDS[sel].seed; sfx('move'); }
+        if(took('left')||took('right')){
+          // Mutate seed suffix for instant procedural exploration
+          const tag=Math.floor(100+Math.random()*899);
+          customSeed=customSeed.replace(/-[0-9A-Z]+$/,'')+'-'+tag;
+          sfx('move');
+        }
+        if(took('party')){
+          const cfg=compileSeed(customSeed);
+          G.flags['seed_cleared_'+cfg.hash]=1;
+          G.bits+=cfg.bits;
+          G.give(cfg.item,1);
+          G.ach('seed_architect'); sfx('win');
+          G.toast(`> SEED [${customSeed}] VERIFIED! +${cfg.bits}B & +1x ${ITEMS[cfg.item].name.toUpperCase()}!`,'#4ade80');
+        }
+        if(took('confirm')){
+          const cfg=compileSeed(customSeed);
+          G.ach('seed_architect'); sfx('confirm');
+          G.mode='explore';
+          G.battle(cfg.foes,{lvl:cfg.lvl,boss:cfg.boss,cb:res=>{
+            if(res==='win'){
+              G.flags['seed_cleared_'+cfg.hash]=1;
+              G.bits+=cfg.bits; G.give(cfg.item,1);
+            }
+          }});
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> PROCEDURAL DUNGEON SEED LAB',56,40,P.GD,2);
+        const cfg=compileSeed(customSeed), isDone=!!G.flags['seed_cleared_'+cfg.hash];
+        UI.text(`HASH: ${cfg.hash}   ·   STATUS: ${isDone?'CLEARED':'READY'}`,900,44,isDone?'#4ade80':'#22d3ee',1,'right');
+        // Left: 6 Preset Sovereign Seeds
+        PRESET_SEEDS.forEach((ps,i)=>{
+          const yy=80+i*64, on=i===sel;
+          UI.box(52,yy,408,56,on?P.GD:P.DDG,on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+ps.title,66,yy+10,on?P.GD:P.BONE,1);
+          UI.text(`SEED: ${ps.seed}`,66,yy+30,'#22d3ee',1);
+        });
+        // Right: Live Deterministic Compiler & Gauntlet Preview
+        UI.box(478,80,426,384,P.GD,'rgba(10,8,6,.94)');
+        UI.text('ACTIVE ALPHANUMERIC SEED (TYPE OR MUTATE):',496,98,P.DG,1);
+        UI.box(496,116,390,34,'#22d3ee','rgba(14,18,22,.96)');
+        UI.text(`> ${customSeed}_`,510,126,P.GD,2);
+        UI.box(496,162,390,112,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('DETERMINISTIC GAUNTLET MANIFEST:',510,176,P.GD,1);
+        UI.text(`TARGET SECTOR: ${cfg.zone.toUpperCase()}   ·   GAUNTLET LEVEL: LV ${cfg.lvl}`,510,198,'#22d3ee',1);
+        UI.text(`HOSTILE SQUAD: ${cfg.foes.map(k=>ENEMIES[k].name.toUpperCase()).join(' + ')}`,510,220,'#f43f5e',1);
+        UI.text(`WEATHER ANOMALY: ${cfg.wx}`,510,242,'#a78bfa',1);
+        UI.box(496,286,390,76,P.DDG,'rgba(14,11,8,.94)');
+        UI.text('SEED COMPLETION PAYOUT:',510,300,P.GD,1);
+        UI.text(`BOUNTY: +${cfg.bits} BITS  &  +1x ${ITEMS[cfg.item].name.toUpperCase()}`,510,322,'#4ade80',1);
+        UI.text('Type A-Z/0-9 to edit custom seed or [Left/Right] to randomize.',510,342,P.DG,1);
+        UI.box(496,374,390,76,isDone?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER] DEPLOY SQUAD INTO SEEDED GAUNTLET',691,392,P.GD,1,'center');
+        UI.text('[P] SIMULATE & VERIFY SEED RUN (INSTANT LOOT)',691,418,'#4ade80',1,'center');
+        UI.text('[up/down] preset   [type/left/right] edit seed   [enter] fight   [P] instant clear   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Sovereign Radio & Lo-Fi Broadcast Tuner (M94) ----
+  const RADIO_STATIONS=[
+    {freq:'88.4 MHz', name:'01. RADIO 06:12 (RELIT LO-FI)', stem:'title', dj:'VIGIL & PIXEL-SHIBA', col:'#f5b82e',
+      casts:[
+        'VIGIL: "Good morning, Relit City. It is 06:12 on the dial. Verify every face before you open a port."',
+        'PIXEL-SHIBA: "Woof! Patrol report: north plaza is clear, and the Rest Woods pond is glowing gold!"',
+        'VIGIL: "Keep your foxfire lanterns lit. If a voice calls you from an unverified relay, hang up."'
+      ]},
+    {freq:'94.2 MHz', name:'02. HOLLOW PIRATE FM (SYNTH)', stem:'relay', dj:'GHOSTBYTE & KRAKEN', col:'#22d3ee',
+      casts:[
+        'GHOSTBYTE: "Broadcasting live from an unindexed socket under The Hollow. Zero logs, zero trace."',
+        'KRAKEN: "The optical fiber down here hums in C-minor when you route the Hilbert curves just right."',
+        'GHOSTBYTE: "Tip for young operators: Echo packs hate Static-protocol katanas. Cut clean."'
+      ]},
+    {freq:'101.6 MHz', name:'03. CLOCKTOWER CHIMES (CHILL)', stem:'clock', dj:'CHRONOS & ATHENA', col:'#4ade80',
+      casts:[
+        'CHRONOS: "Six thirteen and holding steady. The Sand Clocktower pendulum is finally swinging free."',
+        'ATHENA: "Tactical forecast: superposed streets south of the plaza have collapsed into safe lanes."',
+        'CHRONOS: "Take a breath under the Rest Tree whenever your squad needs a clean morning reset."'
+      ]},
+    {freq:'105.8 MHz', name:'04. FOUNDRY HEAVY ANVIL (BASS)', stem:'foundry', dj:'IGNIS & LYCAN', col:'#fb923c',
+      casts:[
+        'IGNIS: "Turn the subwoofers up! The Doom-Fire furnaces are running at 1,800 degrees Kelvin!"',
+        'LYCAN: "I can hear this bassline all the way in the Physarum Caves. The red mould is retreating."',
+        'IGNIS: "Bring your relics to the Overclock Bench—nothing leaves my anvil below +5!"'
+      ]},
+    {freq:'108.1 MHz', name:'05. QUANTUM SPINDLE (ASTRAL)', stem:'loom', dj:'NEXUS & AETHER', col:'#a78bfa',
+      casts:[
+        'NEXUS: "Entangled carrier locked at 108.1 MHz. Broadcasting simultaneously across 17 districts."',
+        'AETHER: "Twenty-two beams in the Quorum now. Every district portal is humming in harmony."',
+        'NEXUS: "Try pairing Quantum and Void protocols in the Resonance Matrix for a +20% Harmonic Chord."'
+      ]},
+    {freq:'112.0 MHz', name:'06. CHRONO-VAULT (SOVEREIGN)', stem:'vault', dj:'03NG0CN1 & PIXEL-NEKO', col:'#f43f5e',
+      casts:[
+        '03NG0CN1: "You left the radio on. Good. This frequency only plays for the 22-agent crew."',
+        'PIXEL-NEKO: "Nyan! Special discount on Root.Shells in the Safehouse for all night-shift listeners!"',
+        '03NG0CN1: "No more mirrors between us. Enjoy the sunrise on the Rooftop, Operator."'
+      ]}
+  ];
+  G.openRadio=()=>{
+    let sel=0, castIdx=0, activeFreq=G.flags.radio_freq||'88.4 MHz';
+    G.mini={
+      name:'radio',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+RADIO_STATIONS.length-1)%RADIO_STATIONS.length; castIdx=0; sfx('move'); }
+        if(took('down')){ sel=(sel+1)%RADIO_STATIONS.length; castIdx=0; sfx('move'); }
+        if(took('confirm')){
+          const st=RADIO_STATIONS[sel];
+          activeFreq=st.freq; G.flags.radio_freq=st.freq;
+          music(st.stem); G.ach('radio_pirate'); sfx('confirm');
+          G.toast(`> TUNED TO ${st.freq}: ${st.name.slice(4)}!`,st.col);
+        }
+        if(took('party')){
+          const st=RADIO_STATIONS[sel];
+          castIdx=(castIdx+1)%st.casts.length;
+          activeFreq=st.freq; G.flags.radio_freq=st.freq;
+          music(st.stem); G.ach('radio_pirate'); sfx('talk');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> SOVEREIGN PIRATE RADIO TUNER',56,40,P.GD,2);
+        UI.text(`ON AIR: [${activeFreq}]   ·   6 LATTICE STATIONS`,900,44,'#4ade80',1,'right');
+        // Left: 6 Pirate Radio Stations
+        RADIO_STATIONS.forEach((st,i)=>{
+          const yy=80+i*64, on=i===sel, live=(activeFreq===st.freq);
+          UI.box(52,yy,412,56,on?P.GD:(live?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+st.name,66,yy+10,on?P.GD:st.col,1);
+          UI.text(`${st.freq}   ·   DJ: ${st.dj}`,66,yy+30,P.BONE,1);
+          UI.text(live?'[ON AIR]':'[TUNE]',450,yy+10,live?'#4ade80':P.DG,1,'right');
+        });
+        // Right: Analog Frequency Dial, 28-Bar Spectrum & Live DJ Feed
+        const cur=RADIO_STATIONS[sel], isLive=(activeFreq===cur.freq);
+        UI.box(480,80,424,384,cur.col,'rgba(10,8,6,.94)');
+        UI.text(`${cur.freq}  —  ${cur.name.slice(4)}`,498,98,P.GD,1);
+        UI.text(`BOOTH HOSTS: ${cur.dj}   ·   STEM: [${cur.stem.toUpperCase()}]`,498,120,'#22d3ee',1);
+        // 28-Bar Animated Spectrum Visualizer Box
+        UI.box(498,144,388,108,P.DDG,'rgba(14,11,8,.96)');
+        for(let b=0;b<28;b++){
+          const amp=Math.abs(Math.sin(t*5.5+b*0.45)*Math.cos(t*2.3-b*0.2))*72+8;
+          const bx=512+b*13, bh=Math.round(amp);
+          X.fillStyle=b%2===0?cur.col:'#4ade80';
+          X.fillRect(bx,240-bh,9,bh);
+        }
+        UI.text('WEBAUDIO SUB-CARRIER SPECTRUM (LIVE):',512,154,P.DG,1);
+        // Live DJ Broadcast Transcript Box
+        UI.box(498,264,388,104,P.DDG,'rgba(14,11,8,.94)');
+        UI.text(`LIVE DJ TRANSMISSION (CAST ${castIdx+1}/${cur.casts.length}):`,512,278,P.GD,1);
+        UI.wrap(cur.casts[castIdx],360,1).forEach((ln,li)=>UI.text(ln,512,300+li*18,P.BONE,1));
+        UI.box(498,380,388,68,isLive?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(isLive?`LOCKED ON ${cur.freq} (BROADCASTING)`:`[ENTER] TUNE & LOCK ${cur.freq}`,692,396,isLive?'#4ade80':P.GD,1,'center');
+        UI.text('[P] CYCLE DJ COMMENTARY & SIGNAL BOOST',692,422,'#22d3ee',1,'center');
+        UI.text('[up/down] select station   [enter] lock frequency   [P] next DJ broadcast   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

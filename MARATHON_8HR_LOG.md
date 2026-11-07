@@ -105,8 +105,8 @@
 - [x] **M90** (`10:03`): Secret Mini-Game #13 — *"Sub-Lattice Sonar Mine Sweeper"* (`G.startSonarSweep()` via `> mines` & System Menu — 6x6 logic grid clearing corrupted logic bombs)
 - [x] **M91** (`10:19`): Dynamic Battle Mutator & Challenge Skull Selector (`G.openSkulls()` via `> skulls` & System Menu — toggle 6 Halo-style challenge skulls for up to `+300%` XP & Bits)
 - [x] **M92** (`10:19`): Interactive World NPC Directory & Affinity Tracker (`G.openDirectory()` via `> npcs` & System Menu — locate every NPC across all 17 districts & 1-click warp)
-- [ ] **M93**: Procedural Dungeon Seed & Custom Run Generator (`G.openSeedLab()` via `> seedlab` & System Menu — enter custom alphanumeric seeds for deterministic gauntlets)
-- [ ] **M94**: Sovereign Radio & Lo-Fi Broadcast Tuner (`G.openRadio()` via `> radio` & System Menu — tune across 6 pirate lattice radio stations with live DJ commentary & stems)
+- [x] **M93** (`10:34`): Procedural Dungeon Seed & Custom Run Generator (`G.openSeedLab()` via `> seedlab` & System Menu — enter custom alphanumeric seeds for deterministic gauntlets)
+- [x] **M94** (`10:34`): Sovereign Radio & Lo-Fi Broadcast Tuner (`G.openRadio()` via `> radio` & System Menu — tune across 6 pirate lattice radio stations with live DJ commentary & stems)
 - [ ] **M95**: Operator Combat Medal & Ribbon Rack (`G.openMedals()` via `> medals` & System Menu — 16 tactical combat medals earned for flawless parries, breaches & speed clears)
 - [ ] **M96**: Companion Story Epilogues & Future Logs (`G.openEpilogues()` via `> epilogues` & System Menu — unlockable 06:13 post-dawn epilogue chapters for all 22 crew members)
 
