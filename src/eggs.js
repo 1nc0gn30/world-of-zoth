@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='rhythm'||c==='beats'||c==='ddr'){ out('[rhythm] launching Signal Tower 4-Track Rhythm Sync...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startRhythm(); },40); }
+    else if(c==='vaults'||c==='cracker'||c==='hexvault'){ out('[vaults] opening Zero-Knowledge Hexadecimal Vault Cracker...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openVaultCracker(); },40); }
     else if(c==='spectate'||c==='wager'||c==='colosseum'){ out('[spectate] opening Automated AI vs AI Spectator & Wager Arena...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSpectator(); },40); }
     else if(c==='engrave'||c==='anvil'||c==='runes'){ out('[engrave] opening Weapon & Relic Custom Engraving Anvil...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEngrave(); },40); }
     else if(c==='themeforge'||c==='palette'||c==='rgb'){ out('[themeforge] opening Interactive RGB Palette & Theme Forger...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openThemeForger(); },40); }
@@ -5631,6 +5633,274 @@ export function initEggs(G,{music,sfx}){
         UI.text(running?'[ENTER] INSTANT-RESOLVE AI BOUT':'[ENTER] START LIVE AI vs AI BOUT',685,394,P.GD,1,'center');
         UI.text(`[P] INSTANT HIGH-ROLLER VICTORY (+${pay} BITS)`,685,420,'#4ade80',1,'center');
         UI.text('[up/down] bout   [left/right] wager   [enter] spectate live   [P] instant win   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #15: "Signal Tower Rhythm Sync" 4-Track Chiptune Rhythm Game (M105) ----
+  G.startRhythm=()=>{
+    const LANES=[
+      {lbl:'LEFT',  col:'#22d3ee', x:160},
+      {lbl:'UP',    col:'#4ade80', x:260},
+      {lbl:'DOWN',  col:'#a78bfa', x:360},
+      {lbl:'RIGHT', col:'#f5b82e', x:460}
+    ];
+    let lane=0, hits=0, combo=0, maxCombo=0, score=0, judge='READY TO SYNC', judgeCol=P.GD, spawnT=0.25, won=false;
+    const notes=[
+      {lane:0, y:160, spd:150},
+      {lane:1, y:240, spd:150},
+      {lane:2, y:320, spd:150},
+      {lane:3, y:385, spd:150}
+    ];
+    const HIT_Y=400;
+    const awardMaestro=()=>{
+      if(won) return;
+      won=true; G.ach('rhythm_maestro'); sfx('win');
+      if(!G.flags.rhythm_reward){
+        G.flags.rhythm_reward=1; G.bits+=260; G.give('cache.bit',2);
+        G.toast('> SIGNAL MAESTRO! +260 Bits & +2x Cache.Bit!',P.GD);
+      } else {
+        G.bits+=80;
+        G.toast('> Rhythm Track Synced! +80 Bits!',P.GD);
+      }
+    };
+    const triggerHit=targetLane=>{
+      lane=targetLane;
+      // Find closest note in targetLane or any lane near HIT_Y
+      let bestIdx=-1, bestDist=999;
+      notes.forEach((n,i)=>{
+        const d=Math.abs(n.y-HIT_Y)+(n.lane===targetLane?0:25);
+        if(d<bestDist){ bestDist=d; bestIdx=i; }
+      });
+      if(bestIdx>=0 && bestDist<85){
+        const n=notes[bestIdx]; notes.splice(bestIdx,1);
+        hits++; combo++; if(combo>maxCombo) maxCombo=combo;
+        const perf=bestDist<32;
+        score+=(perf?200:100)*Math.min(4,1+Math.floor(combo/4));
+        judge=perf?`PERFECT SYNC! (${combo}x)`:`GOOD LOCK! (${combo}x)`;
+        judgeCol=perf?'#4ade80':'#22d3ee';
+        sfx(perf?'level':'confirm');
+        if(hits>=15) awardMaestro();
+      } else {
+        // Spawn and hit a synthetic harmonic pulse so pressing Enter always feels responsive
+        hits++; combo++; if(combo>maxCombo) maxCombo=combo;
+        score+=150*Math.min(4,1+Math.floor(combo/4));
+        judge=`HARMONIC PULSE! (${combo}x)`; judgeCol='#22d3ee';
+        sfx('confirm');
+        if(hits>=15) awardMaestro();
+      }
+    };
+    G.mini={
+      name:'rhythm',
+      update(dt){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(won){
+          if(took('confirm')){ G.startRhythm(); return; }
+          return;
+        }
+        if(took('left')) triggerHit(0);
+        if(took('up')) triggerHit(1);
+        if(took('down')) triggerHit(2);
+        if(took('right')) triggerHit(3);
+        if(took('confirm')||took('jump')){
+          // Auto-target lowest note on screen
+          let low=notes[0];
+          notes.forEach(n=>{ if(n.y>low.y) low=n; });
+          triggerHit(low?low.lane:lane);
+        }
+        if(took('party')){
+          hits=15; combo=15; maxCombo=15; score=4500;
+          judge='SOVEREIGN FULL COMBO (15x)!'; judgeCol='#4ade80';
+          notes.length=0;
+          awardMaestro();
+          return;
+        }
+        spawnT-=dt;
+        if(spawnT<=0 && notes.length<7){
+          spawnT=0.38;
+          notes.push({lane:(hits+notes.length)%4, y:96, spd:155});
+        }
+        for(let i=notes.length-1;i>=0;i--){
+          notes[i].y+=notes[i].spd*dt;
+          if(notes[i].y>446){
+            notes[i].y=96; notes[i].lane=(notes[i].lane+1)%4;
+          }
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> SIGNAL TOWER RHYTHM SYNC',56,40,P.GD,2);
+        UI.text(`SYNCED: ${hits}/15   ·   COMBO: ${combo}x   ·   SCORE: ${score}`,900,44,'#4ade80',1,'right');
+        // Left: 4-Track Highway
+        UI.box(96,78,432,390,P.DDG,'rgba(10,8,6,.94)');
+        // Receptor Bar at HIT_Y=400
+        UI.box(108,HIT_Y-16,408,32,P.GD,'rgba(245,184,46,.14)');
+        LANES.forEach((ln,li)=>{
+          X.strokeStyle='rgba(138,101,20,.28)';
+          X.beginPath(); X.moveTo(ln.x,82); X.lineTo(ln.x,462); X.stroke();
+          const on=li===lane;
+          UI.box(ln.x-38,HIT_Y-14,76,28,on?P.GD:ln.col,on?'rgba(245,184,46,.28)':'rgba(14,11,8,.92)');
+          UI.text(ln.lbl,ln.x,HIT_Y-6,on?P.GD:ln.col,1,'center');
+        });
+        // Falling Notes
+        notes.forEach(n=>{
+          const ln=LANES[n.lane];
+          UI.box(ln.x-34,Math.round(n.y)-12,68,24,ln.col,'rgba(20,28,36,.95)');
+          UI.text('===',ln.x,Math.round(n.y)-6,P.GD,1,'center');
+        });
+        // Right: Signal Telemetry, Judgment & Bounty
+        UI.box(548,78,356,390,P.GD,'rgba(10,8,6,.94)');
+        UI.text('CARRIER WAVE TELEMETRY:',568,98,P.GD,1);
+        UI.box(568,120,316,74,judgeCol,'rgba(14,11,8,.96)');
+        UI.text(judge,726,136,judgeCol,2,'center');
+        UI.text(`MAX COMBO: ${maxCombo}x   ·   PROGRESS: ${hits}/15`,726,168,P.BONE,1,'center');
+        // 20-bar beat visualizer
+        UI.box(568,208,316,86,P.DDG,'rgba(14,11,8,.94)');
+        for(let b=0;b<20;b++){
+          const bh=10+Math.round(Math.abs(Math.sin(t*6+b*0.5))*54);
+          X.fillStyle=LANES[b%4].col;
+          X.fillRect(584+b*14,282-bh,10,bh);
+        }
+        UI.box(568,308,316,66,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('SIGNAL MAESTRO BOUNTY (15 NOTES):',582,322,P.GD,1);
+        UI.text('+260 BITS  &  +2x CACHE.BIT',582,344,'#4ade80',1);
+        UI.box(568,386,316,66,won?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ARROWS / ENTER] STRIKE RHYTHM NOTE',726,402,P.GD,1,'center');
+        UI.text('[P] SOVEREIGN FULL COMBO (INSTANT 15/15)',726,428,'#4ade80',1,'center');
+        if(won){
+          UI.box(144,210,336,92,'#4ade80','rgba(6,5,4,.96)');
+          UI.text('SIGNAL TRACK SYNCED!',312,232,'#4ade80',2,'center');
+          UI.text('[ENTER] REPLAY   [ESC] EXIT',312,268,P.GD,1,'center');
+        }
+        UI.text('[arrows / enter] hit falling carrier notes   [P] full combo (15/15)   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Zero-Knowledge Cryptographic Vault Cracker (M106) ----
+  const ZK_VAULTS=[
+    {id:'zk_v1', name:'VAULT 01: RELIT GATEBOX',     code:['0','6','1','2'], bits:180, item:'patch.kit',       col:'#f5b82e', hint:'Morning timestamp of the Relit City snapshot.'},
+    {id:'zk_v2', name:'VAULT 02: HOLLOW RELAY SAFE', code:['4','A','C','E'], bits:220, item:'cache.bit',       col:'#22d3ee', hint:'Relay 4 hexadecimal acoustic carrier key.'},
+    {id:'zk_v3', name:'VAULT 03: FOUNDRY ANVIL BOX', code:['F','1','8','E'], bits:250, item:'doom.gauntlet',   col:'#fb923c', hint:'Doom-Fire thermal calibration hex sequence.'},
+    {id:'zk_v4', name:'VAULT 04: CLOCKTOWER PENDULUM',code:['0','6','1','3'],bits:280, item:'aeon.gear',       col:'#4ade80', hint:'The first minute after the loop breaks.'},
+    {id:'zk_v5', name:'VAULT 05: MIRROR SEAM CACHE', code:['C','0','D','E'], bits:310, item:'obsidian.prism',  col:'#a78bfa', hint:'Onyx\'s octagonal phase-reflection cipher.'},
+    {id:'zk_v6', name:'VAULT 06: CITADEL ROOT SAFE', code:['D','E','A','D'], bits:350, item:'seraph.mantle',   col:'#f43f5e', hint:'Zero-Knowledge Citadel decommissioned root hex.'},
+    {id:'zk_v7', name:'VAULT 07: QUANTUM SPINDLE',   code:['B','E','E','F'], bits:380, item:'tesseract.core',  col:'#22d3ee', hint:'Entangled Mobius parity word in District #16.'},
+    {id:'zk_v8', name:'VAULT 08: ASTRAL ASTROLABE',  code:['F','A','C','E'], bits:420, item:'singularity.halo',col:'#4ade80', hint:'Rule One of Relit City: Trust ___s, not voices.'}
+  ];
+  const HEX_DIGITS=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+  G.openVaultCracker=()=>{
+    let vSel=0, dSel=0, guess=['0','6','1','2'], history=[];
+    const syncVault=()=>{
+      const v=ZK_VAULTS[vSel];
+      guess=[...v.code];
+      // Scramble last digit if not yet cracked so player can test Mastermind feedback or crack immediately
+      if(!(G.flags&&G.flags[v.id])) guess[3]=HEX_DIGITS[(HEX_DIGITS.indexOf(v.code[3])+1)%16];
+      history=[];
+    };
+    syncVault();
+    const evalGuess=(g,target)=>{
+      let exact=0, parity=0;
+      const usedT=[false,false,false,false], usedG=[false,false,false,false];
+      for(let i=0;i<4;i++){ if(g[i]===target[i]){ exact++; usedT[i]=usedG[i]=true; } }
+      for(let i=0;i<4;i++) if(!usedG[i]){
+        for(let j=0;j<4;j++) if(!usedT[j] && g[i]===target[j]){ parity++; usedT[j]=true; break; }
+      }
+      return {exact, parity};
+    };
+    const unlockVault=v=>{
+      if(!G.flags[v.id]){
+        G.flags[v.id]=1; G.bits+=v.bits; G.give(v.item,1);
+        G.toast(`> CRACKED ${v.name}! +${v.bits}B & +1x ${ITEMS[v.item].name.toUpperCase()}!`,'#4ade80');
+      } else {
+        G.toast(`> ${v.name} ALREADY CRACKED!`,P.GD);
+      }
+      guess=[...v.code];
+      history.push({code:guess.join(''), exact:4, parity:0});
+      if(history.length>4) history=history.slice(-4);
+      G.ach('vault_cracker'); sfx('win');
+    };
+    G.mini={
+      name:'vaults',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('n1')||took('quests')){ vSel=(vSel+1)%ZK_VAULTS.length; syncVault(); sfx('move'); }
+        if(took('left')) dSel=(dSel+3)%4;
+        if(took('right')) dSel=(dSel+1)%4;
+        if(took('up')){
+          const idx=HEX_DIGITS.indexOf(guess[dSel]);
+          guess[dSel]=HEX_DIGITS[(idx+1)%16]; sfx('blip');
+        }
+        if(took('down')){
+          const idx=HEX_DIGITS.indexOf(guess[dSel]);
+          guess[dSel]=HEX_DIGITS[(idx+15)%16]; sfx('blip');
+        }
+        if(took('confirm')){
+          const v=ZK_VAULTS[vSel];
+          const res=evalGuess(guess,v.code);
+          history.push({code:guess.join(''), exact:res.exact, parity:res.parity});
+          if(history.length>4) history=history.slice(-4);
+          if(res.exact===4){
+            unlockVault(v);
+          } else {
+            // Auto-align next mismatched digit on Enter so player cracks smoothly in 1-2 presses
+            for(let i=0;i<4;i++) if(guess[i]!==v.code[i]){ guess[i]=v.code[i]; break; }
+            sfx('confirm');
+            G.toast(`> PROBE: ${res.exact} EXACT, ${res.parity} PARITY (Auto-aligned tumbler!)`,P.GD);
+          }
+        }
+        if(took('party')){
+          let totalB=0;
+          ZK_VAULTS.forEach(v=>{
+            if(!G.flags[v.id]){ G.flags[v.id]=1; totalB+=v.bits; G.inv[v.item]=(G.inv[v.item]||0)+1; }
+          });
+          G.bits+=totalB;
+          unlockVault(ZK_VAULTS[vSel]);
+          G.toast(`> ALL 8 ZK HEX VAULTS CRACKED (+${totalB} BITS & 8 RELICS)!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> ZK HEXADECIMAL VAULT CRACKER',56,40,P.GD,2);
+        const cracked=ZK_VAULTS.filter(v=>G.flags&&G.flags[v.id]).length;
+        UI.text(`VAULTS CRACKED: ${cracked}/8   ·   [1] SWITCH VAULT`,900,44,'#4ade80',1,'right');
+        // Left: 8 Cryptographic Vaults List
+        ZK_VAULTS.forEach((v,i)=>{
+          const yy=78+i*48, on=i===vSel, open=!!(G.flags&&G.flags[v.id]);
+          UI.box(52,yy,400,42,on?P.GD:(open?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+v.name,64,yy+8,on?P.GD:v.col,1);
+          UI.text(`+${v.bits}B & ${ITEMS[v.item].name}`,64,yy+24,P.BONE,1);
+          UI.text(open?`[0x${v.code.join('')}]`:'[LOCKED]',438,yy+14,open?'#4ade80':P.DG,1,'right');
+        });
+        // Right: 4-Tumbler Hexadecimal Dial & Mastermind Parity Log
+        const cur=ZK_VAULTS[vSel], open=!!(G.flags&&G.flags[cur.id]);
+        UI.box(470,78,434,386,open?'#4ade80':cur.col,'rgba(10,8,6,.94)');
+        UI.text(cur.name,488,96,P.GD,2);
+        UI.text(`CIPHER HINT: ${cur.hint}`,488,126,'#22d3ee',1);
+        // 4 Hex Tumblers
+        for(let i=0;i<4;i++){
+          const tx=516+i*88, ty=152, on=i===dSel;
+          UI.box(tx,ty,72,78,on?P.GD:(guess[i]===cur.code[i]?'#4ade80':P.DDG),on?'rgba(245,184,46,.18)':'rgba(14,11,8,.96)');
+          UI.text('^',tx+36,ty+6,P.DG,1,'center');
+          UI.text(guess[i],tx+36,ty+28,guess[i]===cur.code[i]?'#4ade80':P.GD,2,'center');
+          UI.text('v',tx+36,ty+58,P.DG,1,'center');
+        }
+        // Mastermind Probe History Log
+        UI.box(488,244,398,122,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('ZERO-KNOWLEDGE PARITY PROBE LOG:',504,258,P.GD,1);
+        if(history.length===0){
+          UI.text('Press [Enter] to test hex combination & auto-lock tumblers.',504,284,P.DG,1);
+        } else {
+          history.forEach((h,hi)=>{
+            UI.text(`PROBE #0${hi+1}: [ 0x${h.code} ]  ->  EXACT: ${h.exact}/4   PARITY: ${h.parity}`,504,282+hi*20,h.exact===4?'#4ade80':'#22d3ee',1);
+          });
+        }
+        UI.box(488,378,398,70,open?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(open?`VAULT CRACKED: [0x${cur.code.join('')}]`:'[ENTER] PROBE & ALIGN HEX TUMBLERS',687,394,open?'#4ade80':P.GD,1,'center');
+        UI.text('[P] QUANTUM ZERO-KNOWLEDGE CRACK (ALL 8 VAULTS)',687,420,'#4ade80',1,'center');
+        UI.text('[1] vault   [left/right] tumbler   [up/down] hex   [enter] probe   [P] crack all 8   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');

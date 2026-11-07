@@ -117,12 +117,12 @@
 - [x] **M100** (`11:18` · `commit 3bac606`): Milestone #100 Special — *"The Sovereign Pantheon Citadel"* Interactive 3D Hall of Fame (`G.openHallOfFame()` via `> hall` & System Menu — celebrate 100 milestones with full crew & stats)
 - [x] **M101** (`11:34` · `commit 7c9b9cb`): Weapon & Relic Custom Naming & Engraving Anvil (`G.openEngrave()` via `> engrave` & System Menu — imbue custom prefixes & elemental runes onto any relic)
 - [x] **M102** (`11:34` · `commit 7c9b9cb`): Interactive Color Palette & Custom Theme Forger (`G.openThemeForger()` via `> themeforge` & System Menu — design custom RGB phosphor palettes for the HUD & 3D world)
-- [x] **M103** (`11:48`): Automated AI vs AI Battle Spectator Arena (`G.openSpectator()` via `> spectate` & System Menu — pit any 3 crew members against any boss squad and wager Bits)
-- [x] **M104** (`11:48`): Full 18-District + 60-Subsystem Automated Audit #6 & APK v1.6 Sync (`dist/world-of-zoth.apk` signed & verified, `Errors: []`)
+- [x] **M103** (`11:48` · `commit c7cd5a5`): Automated AI vs AI Battle Spectator Arena (`G.openSpectator()` via `> spectate` & System Menu — pit any 3 crew members against any boss squad and wager Bits)
+- [x] **M104** (`11:48` · `commit c7cd5a5`, `1nc0gn30.si` `commit e6437a22`): Full 18-District + 60-Subsystem Automated Audit #6 & APK v1.6 Sync (`dist/world-of-zoth.apk` signed & verified, `Errors: []`)
 
 ### Hour 13 (`12:00`–`13:00`) — Mini-Game #15, Telemetry Profiler & Zero-Knowledge Vaults
-- [ ] **M105**: Secret Mini-Game #15 — *"Signal Tower Rhythm Sync"* (`G.startRhythm()` via `> rhythm` & System Menu — 4-track falling note chiptune rhythm game synced to WebAudio)
-- [ ] **M106**: Zero-Knowledge Cryptographic Vault Cracker (`G.openVaultCracker()` via `> vaults` & System Menu — crack 8 Mastermind-style hexadecimal vaults for mythic caches)
+- [x] **M105** (`12:03`): Secret Mini-Game #15 — *"Signal Tower Rhythm Sync"* (`G.startRhythm()` via `> rhythm` & System Menu — 4-track falling note chiptune rhythm game synced to WebAudio)
+- [x] **M106** (`12:03`): Zero-Knowledge Cryptographic Vault Cracker (`G.openVaultCracker()` via `> vaults` & System Menu — crack 8 Mastermind-style hexadecimal vaults for mythic caches)
 - [ ] **M107**: Real-Time Engine & WebGL Telemetry Profiler (`G.openProfiler()` via `> profiler` & System Menu — live FPS graph, draw calls, particle count, memory & audio node inspector)
 - [ ] **M108**: Interactive Quest Flowchart & Dependency Visualizer (`G.openQuestGraph()` via `> questgraph` & System Menu — visual node graph of all main & side quests across Acts I–VI)
 - [ ] **M109**: Companion Training Regimen & Stat Redistributor (`G.openGym()` via `> gym` & System Menu — train individual crew stats HP/EN/ATK/DEF/SPD)
