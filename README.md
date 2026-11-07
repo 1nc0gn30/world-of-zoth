@@ -6,7 +6,7 @@
 [![Version](https://img.shields.io/badge/version-v2.0_sovereign_edition-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
 [![Districts](https://img.shields.io/badge/districts-20_playable_3d_worlds-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Mini-Games](https://img.shields.io/badge/mini--games-22_built--in_arcade_games-f97316?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
-[![Movies](https://img.shields.io/badge/cinema-12_movie_commercials-fbbf24?style=for-the-badge)](commercial.html)
+[![Movies](https://img.shields.io/badge/cinema-24_movie_commercials-fbbf24?style=for-the-badge)](commercial.html)
 [![Platform](https://img.shields.io/badge/platform-browser_%7C_android_apk-00f0ff?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Offline](https://img.shields.io/badge/network-100%25_offline_zero_cdn-a855f7?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![License](https://img.shields.io/badge/license-100%25_free_%26_unlocked-ec4899?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
@@ -21,29 +21,43 @@
 
 <br/>
 
-**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 12-Episode Movie Anthology (`commercial.html`)](commercial.html)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ 16-Hour Marathon Log (`MARATHON_8HR_LOG.md`)](MARATHON_8HR_LOG.md)**
+**[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 24-Episode Movie Anthology (`commercial.html`)](commercial.html)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ 16-Hour Marathon Log (`MARATHON_8HR_LOG.md`)](MARATHON_8HR_LOG.md)**
 
 </div>
 
 ---
 
-## 🏆 v2.0 Sovereign Edition — 16-Hour Autonomous Engineering Marathon (`M1`–`M142`)
+## 🏆 v2.0 Sovereign Edition — 16-Hour Autonomous Engineering Marathon (`M1`–`M143`)
 
-Engineered across a **16-Hour Autonomous Marathon (142 Verified Milestones)**, **World of Zoth v2.0 Sovereign Edition** expands the zero-dependency 3D WebGL + WebAudio cyber-RPG into a self-contained sovereign universe:
+Engineered across a **16-Hour Autonomous Marathon (143 Verified Milestones)**, **World of Zoth v2.0 Sovereign Edition** expands the zero-dependency 3D WebGL + WebAudio cyber-RPG into a self-contained sovereign universe:
 
-- **🎬 12-Episode 1080p Theatrical Movie Commercial Anthology (`commercial.html`, `> cinema` & `> commercial 1..12`)**:
-  - **Episode I**: *"06:12 — Faces, Not Voices"* (`dist/world-of-zoth-commercial.mp4`)
-  - **Episode II**: *"Midnight at the Safehouse"* (`dist/world-of-zoth-ep2-crew.mp4`)
-  - **Episode III**: *"99 Floors of Fury"* (`dist/world-of-zoth-ep3-combat.mp4`)
-  - **Episode IV**: *"Behind the Wireframe — Secrets of 06:13"* (`dist/world-of-zoth-ep4-secrets.mp4`)
-  - **Episode V**: *"The Dawn Horizon (District #20)"* (`dist/world-of-zoth-ep5-horizon.mp4`)
-  - **Episode VI**: *"The Safehouse Megaplex (Mini-Games)"* (`dist/world-of-zoth-ep6-arcade.mp4`)
-  - **Episode VII**: *"Null Academy: Hack the Prompt"* (`dist/world-of-zoth-ep7-academy.mp4`)
-  - **Episode VIII**: *"06:13: The Sunrise Finale"* (`dist/world-of-zoth-ep8-sunrise.mp4`)
-  - **Episode IX**: *"The Mirror's Edge (03ng0cn1's Redemption)"* (`dist/world-of-zoth-ep9-mirror.mp4`)
-  - **Episode X**: *"The Pantheon Gala (PBR Shaders & 22 Crew)"* (`dist/world-of-zoth-ep10-gala.mp4`)
-  - **Episode XI**: *"Skybeam Interceptor (22nd Mini-Game)"* (`dist/world-of-zoth-ep11-skyline.mp4`)
-  - **Episode XII**: *"06:12 to 06:13 (12-Episode Season Finale)"* (`dist/world-of-zoth-ep12-season.mp4`)
+- **🎬 24-Episode 1080p Theatrical Movie Commercial Anthology — Season I & Season II (`commercial.html`, `> cinema` & `> commercial 1..24`)**:
+  - **Season I (`Episodes I–XII`)**:
+    - **Episode I**: *"06:12 — Faces, Not Voices"* (`dist/world-of-zoth-commercial.mp4`)
+    - **Episode II**: *"Midnight at the Safehouse"* (`dist/world-of-zoth-ep2-crew.mp4`)
+    - **Episode III**: *"99 Floors of Fury"* (`dist/world-of-zoth-ep3-combat.mp4`)
+    - **Episode IV**: *"Behind the Wireframe — Secrets of 06:13"* (`dist/world-of-zoth-ep4-secrets.mp4`)
+    - **Episode V**: *"The Dawn Horizon (District #20)"* (`dist/world-of-zoth-ep5-horizon.mp4`)
+    - **Episode VI**: *"The Safehouse Megaplex (Mini-Games)"* (`dist/world-of-zoth-ep6-arcade.mp4`)
+    - **Episode VII**: *"Null Academy: Hack the Prompt"* (`dist/world-of-zoth-ep7-academy.mp4`)
+    - **Episode VIII**: *"06:13: The Sunrise Finale"* (`dist/world-of-zoth-ep8-sunrise.mp4`)
+    - **Episode IX**: *"The Mirror's Edge (03ng0cn1's Redemption)"* (`dist/world-of-zoth-ep9-mirror.mp4`)
+    - **Episode X**: *"The Pantheon Gala (PBR Shaders & 22 Crew)"* (`dist/world-of-zoth-ep10-gala.mp4`)
+    - **Episode XI**: *"Skybeam Interceptor (22nd Mini-Game)"* (`dist/world-of-zoth-ep11-skyline.mp4`)
+    - **Episode XII**: *"06:12 to 06:13 (12-Episode Season I Finale)"* (`dist/world-of-zoth-ep12-season.mp4`)
+  - **Season II (`Episodes XIII–XXIV`)**:
+    - **Episode XIII**: *"Monsoon Over Relit City (3D Rain & PBR Shaders)"* (`dist/world-of-zoth-ep13-monsoon.mp4`)
+    - **Episode XIV**: *"The Black-Market Heist (Contraband & Anvil)"* (`dist/world-of-zoth-ep14-heist.mp4`)
+    - **Episode XV**: *"Wager at the Colosseum (AI vs AI Spectator)"* (`dist/world-of-zoth-ep15-colosseum.mp4`)
+    - **Episode XVI**: *"06:12 Pirate Radio FM (Chiptunes & Phonk)"* (`dist/world-of-zoth-ep16-pirateradio.mp4`)
+    - **Episode XVII**: *"The Cyber-Familiar Sanctuary (Good Dog Protocol)"* (`dist/world-of-zoth-ep17-pets.mp4`)
+    - **Episode XVIII**: *"The Quantum Loom Conspiracy (Superposition)"* (`dist/world-of-zoth-ep18-quantum.mp4`)
+    - **Episode XIX**: *"Grandmaster of Pantheon Triad (3x3 Cards)"* (`dist/world-of-zoth-ep19-cards.mp4`)
+    - **Episode XX**: *"2.0x Hyper-Clock: The 60-Second Speedrun"* (`dist/world-of-zoth-ep20-speedrun.mp4`)
+    - **Episode XXI**: *"Forged in Doom-Fire (Brutalist 3D Relief)"* (`dist/world-of-zoth-ep21-foundry.mp4`)
+    - **Episode XXII**: *"The Seventh Reflection (Noir Mystery)"* (`dist/world-of-zoth-ep22-detective.mp4`)
+    - **Episode XXIII**: *"The 22-Cabinet Arcade Marathon (High Score)"* (`dist/world-of-zoth-ep23-megaplex.mp4`)
+    - **Episode XXIV**: *"24 Episodes of Zoth (Season II Grand Finale)"* (`dist/world-of-zoth-ep24-pantheon.mp4`)
 - **🧱 Procedural 3D Normal-Bump Architectural, Terrain & Sprite Shaders (`src/render.js`, `src/geo.js`, `> textures`)**:
   - Real-time 3D world-space FBM normal-bump perturbation (`dN`) across concrete & anodized metal facades, recessed floor slabs, structural steel corner rivets, animated concentric raindrop ripples in wet asphalt puddles, interior parallax lit windows, and an interactive **3D Material & Surface Shader Studio (`> textures`)** with 5 live presets and real-time uniform sliders (`texBump`, `texWet`, `texWin`).
 - **⚡ Live Game Speed & Turbo Multiplier (`[V]` Key — `1.0x / 1.5x / 2.0x`)**:

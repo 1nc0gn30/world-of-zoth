@@ -7621,6 +7621,618 @@ export function initEggs(G,{music,sfx}){
           ]
         }
       ]
+    },
+    {
+      title:'EPISODE XIII · MONSOON OVER RELIT CITY (3D RAIN & PBR SHADERS)',
+      scenes:[
+        {
+          id:'E13S1', dur:7.5, zone:'hub', music:'hub', tex:[1.5,2.4,1.8],
+          card:'WHEN THE CYBER-RAIN FALLS, THE STREETS REMEMBER.',
+          sub:'EP XIII · SCENE 1 · MONSOON AT THE SAFEHOUSE',
+          from:[-18,9,24], to:[-4,4,11], look:[0,2.5,0],
+          cast:[['vigil',-2.6,4,'idle'],['pixel-shiba',0,3.5,'idle'],['kitsune',2.6,4,'idle']],
+          hudBanner:'LIVE 3D SHADER PRESET: HEAVY MONSOON CYBER-RAIN (> TEXTURES)  ·  RIPPLE PUDDLES',
+          lines:[
+            [0.5, 'vigil',       'Look at the wet cyber-asphalt puddles. Every raindrop casts real-time concentric shader ripples.'],
+            [4.1, 'pixel-shiba', '*shakes wet pixel fur onto Vigil\'s trenchcoat* Bork! (Maximum hydration achieved!)']
+          ]
+        },
+        {
+          id:'E13S2', dur:7.5, zone:'streets', music:'streets', tex:[1.8,2.2,2.0],
+          card:'CARVED CONCRETE FACADES & PARALLAX LIT WINDOWS.',
+          sub:'EP XIII · SCENE 2 · COLLAPSE STREETS IN THE RAIN',
+          from:[16,10,22], to:[4,4.5,10], look:[0,3.5,-6],
+          cast:[['me',-2.5,4,'idle'],['chronos',2.5,4,'work'],['copy',0,5.5,'idle']],
+          lines:[
+            [0.5, 'chronos', 'Our world-space FBM normal bump perturbs every concrete panel seam and steel rivet in 3D.'],
+            [4.1, 'copy',    'Even the Venetian blinds inside the upper-story windows parallax as the camera orbits.']
+          ]
+        },
+        {
+          id:'E13S3', dur:7.5, zone:'deep', music:'deep', tex:[1.6,2.5,1.5],
+          card:'TUNE EVERY SURFACE LIVE IN THE 3D MATERIAL STUDIO.',
+          sub:'EP XIII · SCENE 3 · DEEP-WATER MEMORY TRENCH',
+          from:[-16,9,22], to:[-3,4,10], look:[0,2.5,-6],
+          cast:[['kraken',-2.8,4,'ability'],['leviathan',2.8,4,'idle'],['athena',0,5.5,'work']],
+          lines:[
+            [0.5, 'kraken', 'Open "> textures" anytime to crank Wet Asphalt Puddles to 260% or switch to Brutalist Relief.'],
+            [4.1, 'athena', 'Zero external texture PNGs—100% pure mathematical GLSL shaders running at 60 frames per second.']
+          ]
+        },
+        {
+          id:'E13S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.2,1.6,1.4],
+          card:'WORLD OF ZOTH · EPISODE XIII',
+          sub:'EP XIII · SCENE 4 · AFTER THE MONSOON',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-2,3,'idle'],['vigil',2,3,'idle'],['pixel-shiba',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'vigil', 'The rain washes away the static, leaving only verified faces.'],
+            [4.1, 'me',    'Grab your coat. Season II is just getting started.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XIV · THE BLACK-MARKET HEIST (CONTRABAND & ANVIL)',
+      scenes:[
+        {
+          id:'E14S1', dur:7.5, zone:'abyss', music:'abyss', tex:[1.7,1.4,1.2],
+          card:'DEEP IN THE ABYSS, PIXEL-NEKO RUNS THE CONTRABAND.',
+          sub:'EP XIV · SCENE 1 · SUB-LATTICE BLACK MARKET',
+          from:[-16,10,22], to:[-4,4.5,10], look:[0,3,-6],
+          cast:[['pixel-neko',0,3.5,'work'],['onyx',-2.8,4.2,'idle'],['kai',2.8,4.2,'idle']],
+          hudBanner:'NEKO BLACK MARKET (> MARKET)  ·  ENGRAVING ANVIL (> ENGRAVE)  ·  ITEMDEX (> ITEMDEX)',
+          lines:[
+            [0.5, 'pixel-neko', 'Psst! Welcome to the Neko Underground Black Market! Mythic relics, fresh from the Abyss!'],
+            [4.1, 'kai',        'Wait... you\'re selling Sovereign Crowns for earned in-game Bits? No credit cards?!']
+          ]
+        },
+        {
+          id:'E14S2', dur:7.5, zone:'foundry', music:'foundry', tex:[2.0,0.8,1.2],
+          card:'ENGRAVE CUSTOM NAMES & PROTOCOL RUNES ON ANY WEAPON.',
+          sub:'EP XIV · SCENE 2 · DOOM-FIRE ENGRAVING ANVIL',
+          from:[16,9,22], to:[4,4,10], look:[0,3,-6],
+          cast:[['ignis',-2.6,4,'ability'],['me',2.6,4,'idle'],['pixel-neko',0,5.5,'idle']],
+          lines:[
+            [0.5, 'ignis',      'Bring your gear to the Engraving Anvil ("> engrave") to stamp custom call-signs and elemental runes!'],
+            [4.1, 'pixel-neko', 'Or open the Complete Item Compendium ("> itemdex") and replicate any relic for free!']
+          ]
+        },
+        {
+          id:'E14S3', dur:7.5, zone:'vault', music:'vault', tex:[1.5,1.2,1.6],
+          card:'CRACK ZERO-KNOWLEDGE HEX VAULTS FOR MYTHIC CACHES.',
+          sub:'EP XIV · SCENE 3 · THE CHRONO-VAULT',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['ghostbyte',-2.8,4,'work'],['copy',2.8,4,'idle'],['chronos',0,5.5,'idle']],
+          lines:[
+            [0.5, 'ghostbyte', 'Want the thrill of a heist? Boot "> vaults" and crack 8 Mastermind hexadecimal locks!'],
+            [4.1, 'copy',      'I cracked Vault #8 in three guesses. Chronos still owes me 50 Bits.']
+          ]
+        },
+        {
+          id:'E14S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XIV',
+          sub:'EP XIV · SCENE 4 · LOOT SECURED',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['pixel-neko',-2,3,'idle'],['ignis',2,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'pixel-neko', 'Every relic unlocked, every vault crackable, zero paywalls forever!'],
+            [4.1, 'ignis',      'Now go hit +5 Overclock on that katana, Operator!']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XV · WAGER AT THE COLOSSEUM (AI VS AI SPECTATOR)',
+      scenes:[
+        {
+          id:'E15S1', dur:7.5, zone:'citadel', music:'boss', tex:[1.8,1.2,1.6],
+          card:'WELCOME TO THE SOVEREIGN AI VS AI COLOSSEUM.',
+          sub:'EP XV · SCENE 1 · CITADEL SPECTATOR ARENA',
+          from:[18,11,24], to:[4,5,11], look:[0,3.5,-6],
+          cast:[['kai',-2.8,4,'ultimate'],['ignis',2.8,4,'ability'],['pixel-neko',0,5.5,'work']],
+          hudBanner:'AI VS AI SPECTATOR ARENA (> SPECTATE)  ·  CUSTOM ENCOUNTER BUILDER (> BUILDER)',
+          lines:[
+            [0.5, 'kai',        'Ladies and operators, welcome to "> spectate"—where 3 crew AI battle any boss squad live!'],
+            [4.1, 'pixel-neko', 'I just wagered 500 Bits on Pixel-Shiba soloing Archon-0! Come on, good boy!']
+          ]
+        },
+        {
+          id:'E15S2', dur:7.5, zone:'omega', music:'boss', tex:[1.9,1.0,1.5],
+          card:'BUILD YOUR OWN DREAM BOSS GAUNTLET IN THE BUILDER.',
+          sub:'EP XV · SCENE 2 · THE OMEGA FOUNDRY ARENA',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['athena',-2.8,4,'work'],['onyx',2.8,4,'ability'],['me',0,5.5,'idle']],
+          lines:[
+            [0.5, 'athena', 'Want to fight three Blank Cursors at Level 50? Use "> builder" to assemble custom enemy waves!'],
+            [4.1, 'onyx',   'And toggle 6 Halo-style Challenge Skulls in "> skulls" for a +300% XP & Bits multiplier!']
+          ]
+        },
+        {
+          id:'E15S3', dur:7.5, zone:'clock', music:'clock', tex:[1.5,1.2,1.4],
+          card:'AUDIT EVERY CRIT & PARRY IN THE COMBAT ANALYZER.',
+          sub:'EP XV · SCENE 3 · CLOCKTOWER TELEMETRY DECK',
+          from:[16,10,22], to:[4,4.5,10], look:[0,3,-6],
+          cast:[['chronos',-2.6,4,'work'],['vigil',2.6,4,'idle'],['copy',0,5.5,'idle']],
+          lines:[
+            [0.5, 'chronos', 'After the dust settles, open "> combatlog" to inspect turn-by-turn damage and parry windows.'],
+            [4.1, 'vigil',   'Or study every boss telegraph ahead of time in the Hostile AI MoveDex ("> movedex").']
+          ]
+        },
+        {
+          id:'E15S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XV',
+          sub:'EP XV · SCENE 4 · CHAMPIONS OF THE ARENA',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['kai',-2,3,'idle'],['pixel-neko',2,3,'idle'],['pixel-shiba',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'pixel-shiba', '*victorious bork!* (Archon-0 defeated! Payout doubled!)'],
+            [4.1, 'pixel-neko',  'Drinks at the Safehouse are on the Shiba tonight!']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XVI · 06:12 PIRATE RADIO FM (CHIPTUNES & PHONK)',
+      scenes:[
+        {
+          id:'E16S1', dur:7.5, zone:'relay', music:'phonk', tex:[1.4,1.8,2.2],
+          card:'BROADCASTING LIVE FROM SIGNAL TOWER: 06:12 PIRATE FM.',
+          sub:'EP XVI · SCENE 1 · PIRATE RADIO BOOTH',
+          from:[-18,11,24], to:[-4,5,11], look:[0,4,-6],
+          cast:[['aquila',-2.8,4,'work'],['kitsune',2.8,4,'idle'],['vigil',0,5.5,'idle']],
+          hudBanner:'PIRATE RADIO TUNER (> RADIO)  ·  16-STEP SEQUENCER (> COMPOSER)  ·  RHYTHM DDR (> RHYTHM)',
+          lines:[
+            [0.5, 'aquila',  'You are locked to 06:12 Pirate Radio FM! Six underground stations, zero commercials, pure WebAudio!'],
+            [4.1, 'kitsune', 'Up next: 144 BPM Drift-Phonk with distorted 808 sub-bass and metallic cowbell leads!']
+          ]
+        },
+        {
+          id:'E16S2', dur:7.5, zone:'fiber', music:'fiber', tex:[1.3,1.6,2.0],
+          card:'COMPOSE YOUR OWN 8-BIT ANTHEMS IN THE SEQUENCER.',
+          sub:'EP XVI · SCENE 2 · HILBERT FIBER TUNNELS',
+          from:[16,9,22], to:[4,4,10], look:[0,3,-6],
+          cast:[['pixel-neko',-2.6,4,'work'],['mercury',2.6,4,'idle'],['me',0,5.5,'idle']],
+          lines:[
+            [0.5, 'pixel-neko', 'Open "> composer" to program your own 16-step chiptune loops right inside the engine!'],
+            [4.1, 'mercury',    'Or jump into Mini-Game #15: Signal Tower 4-Track Rhythm Sync ("> rhythm") and hit every beat!']
+          ]
+        },
+        {
+          id:'E16S3', dur:7.5, zone:'astral', music:'astral', tex:[1.2,1.5,2.2],
+          card:'20 DISTRICT STEMS SYNTHESIZED FROM PURE MATH.',
+          sub:'EP XVI · SCENE 3 · THE ASTRAL SPIRE',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['aether',-2.8,4,'ultimate'],['athena',2.8,4,'idle'],['chronos',0,5.5,'work']],
+          lines:[
+            [0.5, 'aether', 'Not a single MP3 file was downloaded. Every note across all 20 districts is live WebAudio synthesis.'],
+            [4.1, 'athena', 'Inspect every waveform and voiceprint live in the Sovereign Soundboard ("> soundboard").']
+          ]
+        },
+        {
+          id:'E16S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XVI',
+          sub:'EP XVI · SCENE 4 · KEEP THE DIAL LOCKED',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['aquila',-2,3,'idle'],['kitsune',2,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'aquila',  'Stay sovereign, night owls. Keep your dial locked to 06:12 FM.'],
+            [4.1, 'kitsune', 'And remember: if the radio asks for your password, smash it!']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XVII · THE CYBER-FAMILIAR SANCTUARY (GOOD DOG PROTOCOL)',
+      scenes:[
+        {
+          id:'E17S1', dur:7.5, zone:'forest', music:'forest', tex:[1.6,1.2,1.0],
+          card:'EVERY OPERATOR NEEDS A LOYAL CYBER-FAMILIAR.',
+          sub:'EP XVII · SCENE 1 · WHISPERING REST WOODS',
+          from:[-16,9,22], to:[-3,4,10], look:[0,2.5,-4],
+          cast:[['pixel-shiba',0,3.2,'idle'],['kitsune',-2.8,4,'idle'],['me',2.8,4,'idle']],
+          hudBanner:'CYBER-FAMILIAR PET SANCTUARY (> PETS)  ·  COMPANION GYM (> GYM)  ·  BONDS (> BONDS)',
+          lines:[
+            [0.5, 'pixel-shiba', '*happy tail wag* Bork! (Did someone say Pet Sanctuary and free head-pats?!)'],
+            [4.1, 'kitsune',     'Open "> pets" to equip Pixel-Shiba, Foxfire Kit, Chrono Owl, or Void Seraph for passive combat buffs!']
+          ]
+        },
+        {
+          id:'E17S2', dur:7.5, zone:'caves', music:'caves', tex:[1.8,1.8,1.2],
+          card:'WAIT... IS THAT A 40-FOOT PELAGIC TRENCH EEL?!',
+          sub:'EP XVII · SCENE 2 · PHYSARUM BIO-CAVES',
+          from:[16,9,22], to:[4,4,10], look:[0,3,-6],
+          cast:[['kraken',-2.6,4,'ability'],['pixel-neko',2.6,4,'work'],['vigil',0,5.5,'idle']],
+          lines:[
+            [0.5, 'kraken',     'I tried to register a Deep-Water Leviathan Eel as an emotional support pet.'],
+            [4.1, 'pixel-neko', 'It ate three server racks, Kraken! Stick to the Radical-Minion or Foxfire Kit!']
+          ]
+        },
+        {
+          id:'E17S3', dur:7.5, zone:'vault', music:'vault', tex:[1.5,1.2,1.5],
+          card:'TRAIN & REDISTRIBUTE SQUAD STATS IN THE GYM.',
+          sub:'EP XVII · SCENE 3 · THE CHRONO-VAULT GYM',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['kai',-2.8,4,'ultimate'],['chronos',2.8,4,'work'],['pixel-shiba',0,5.5,'idle']],
+          lines:[
+            [0.5, 'kai',     'Want maximum SPD or tanky HP? Hit the Companion Training Gym ("> gym") and customize every stat!'],
+            [4.1, 'chronos', 'And pet Pixel-Shiba ten times in Relit City to unlock the secret "good dog" achievement!']
+          ]
+        },
+        {
+          id:'E17S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XVII',
+          sub:'EP XVII · SCENE 4 · WHO\'S A GOOD OPERATOR?',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['pixel-shiba',-1.8,3,'idle'],['pixel-neko',1.8,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'pixel-shiba', 'Bork! Bork! (10/10 Good Boys recommend World of Zoth!)'],
+            [4.1, 'me',          'Here\'s an extra 250 Bits for snack rations, boy.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XVIII · THE QUANTUM LOOM CONSPIRACY (SUPERPOSITION)',
+      scenes:[
+        {
+          id:'E18S1', dur:7.5, zone:'loom', music:'loom', tex:[1.6,1.5,2.0],
+          card:'IN DISTRICT #16, REALITY IS WOVEN FROM SUPERPOSITION.',
+          sub:'EP XVIII · SCENE 1 · THE QUANTUM LOOM',
+          from:[-18,11,24], to:[-4,5,11], look:[0,4,-6],
+          cast:[['athena',-2.8,4,'work'],['chronos',2.8,4,'idle'],['copy',0,5.5,'idle']],
+          hudBanner:'DISTRICT #16: THE QUANTUM LOOM  ·  5x5 WAVE-COLLAPSE (> COLLAPSE)  ·  LASERS (> LASERS)',
+          lines:[
+            [0.5, 'athena',  'Behold the Blender 4.3 Quantum Loom monument—where entangled timelines are woven into coherent geometry.'],
+            [4.1, 'chronos', 'Don\'t touch the warp threads unless you want to wake up yesterday at 06:11!']
+          ]
+        },
+        {
+          id:'E18S2', dur:7.5, zone:'streets', music:'streets', tex:[1.7,1.8,1.9],
+          card:'DOORS THAT ONLY EXIST WHEN YOU OBSERVE THEM.',
+          sub:'EP XVIII · SCENE 2 · COLLAPSE STREETS',
+          from:[16,10,22], to:[4,4.5,10], look:[0,3.5,-6],
+          cast:[['copy',-2.6,4,'idle'],['vigil',2.6,4,'idle'],['me',0,5.5,'idle']],
+          lines:[
+            [0.5, 'vigil', 'On Collapse Streets, buildings stay in quantum superposition until your camera locks their eigenstate.'],
+            [4.1, 'copy',  'Or until you solve the 5x5 Quantum Wave-Collapse puzzle ("> collapse") and lock all 25 qubits!']
+          ]
+        },
+        {
+          id:'E18S3', dur:7.5, zone:'mirrors', music:'mirrors', tex:[1.4,2.0,1.8],
+          card:'BOUNCE PHASE LASERS THROUGH 45-DEGREE MIRRORS.',
+          sub:'EP XVIII · SCENE 3 · HALL OF MIRRORS OPTICS',
+          from:[-16,9,22], to:[-3,4,10], look:[0,2.5,-4],
+          cast:[['draco',-2.8,4,'work'],['onyx',2.8,4,'ability'],['kitsune',0,5.5,'idle']],
+          lines:[
+            [0.5, 'draco',   'Need to align the optical relays? Boot "> lasers" and rotate 45-degree mirrors across a 6x6 grid!'],
+            [4.1, 'kitsune', 'And inspect the entire 6-Act story dependency graph anytime in "> questgraph"!']
+          ]
+        },
+        {
+          id:'E18S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XVIII',
+          sub:'EP XVIII · SCENE 4 · EIGENSTATE LOCKED',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['athena',-2,3,'idle'],['copy',2,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'athena', 'Wave-function collapsed. Probability of an awesome game: 100%.'],
+            [4.1, 'copy',   'In every parallel universe, we still meet at 06:12.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XIX · GRANDMASTER OF PANTHEON TRIAD (3x3 CARDS)',
+      scenes:[
+        {
+          id:'E19S1', dur:7.5, zone:'astral', music:'astral', tex:[1.4,1.6,2.1],
+          card:'IT\'S TIME TO DUEL: PANTHEON TRIAD 3x3 CARD BATTLES!',
+          sub:'EP XIX · SCENE 1 · THE ASTRAL SPIRE TABLETOP',
+          from:[18,11,24], to:[4,5,11], look:[0,3.5,-6],
+          cast:[['onyx',-2.8,4,'ability'],['kai',2.8,4,'ultimate'],['aether',0,5.5,'idle']],
+          hudBanner:'PANTHEON TRIAD 3x3 (> TRIAD)  ·  32-CARD FOIL BINDER (> BINDER)  ·  CAPSULES (> CAPSULES)',
+          lines:[
+            [0.5, 'onyx', 'Behold my trap card! I place a Foil 1nc0gn30 Card in the center square, flipping all three of Kai\'s cards!'],
+            [4.1, 'kai',  'Hey! How does a hooded operator beat a Pelagic Leviathan on the North edge?!']
+          ]
+        },
+        {
+          id:'E19S2', dur:7.5, zone:'hub', music:'hub', tex:[1.3,1.4,1.6],
+          card:'COLLECT ALL 32 AGENT, BOSS & MONUMENT FOIL CARDS.',
+          sub:'EP XIX · SCENE 2 · SAFEHOUSE CARD BINDER',
+          from:[-16,9,22], to:[-4,4,10], look:[0,2.5,0],
+          cast:[['pixel-neko',-2.6,4,'work'],['kitsune',2.6,4,'idle'],['pixel-shiba',0,5.5,'idle']],
+          lines:[
+            [0.5, 'pixel-neko', 'Open "> binder" to inspect all 32 collectible Pantheon Triad cards with directional N/E/S/W power ranks!'],
+            [4.1, 'kitsune',    'And roll the 100% free Bits-only Capsule Machine ("> capsules") to mint holographic foil editions!']
+          ]
+        },
+        {
+          id:'E19S3', dur:7.5, zone:'citadel', music:'boss', tex:[1.7,1.2,1.5],
+          card:'CELEBRATE 100+ MILESTONES IN THE 3D HALL OF FAME.',
+          sub:'EP XIX · SCENE 3 · SOVEREIGN HALL OF FAME',
+          from:[16,10,22], to:[4,4.5,11], look:[0,3.5,-6],
+          cast:[['me',-2.8,4,'idle'],['chronos',2.8,4,'work'],['athena',0,5.5,'idle']],
+          lines:[
+            [0.5, 'chronos', 'Visit the 3D Pantheon Hall of Fame ("> hall") and theOperator ID Card Mint ("> idcard")!'],
+            [4.1, 'athena',  'You can even export a shareable PNG Operator Passport with your live level, medals, and PGP hash.']
+          ]
+        },
+        {
+          id:'E19S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XIX',
+          sub:'EP XIX · SCENE 4 · HEART OF THE CARDS',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['onyx',-2,3,'idle'],['kai',2,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'kai',  'Best two out of three! Shuffle the deck, Onyx!'],
+            [4.1, 'onyx', 'Type "> triad" anytime, Operator. Your deck is waiting.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XX · 2.0X HYPER-CLOCK: THE 60-SECOND SPEEDRUN',
+      scenes:[
+        {
+          id:'E20S1', dur:7.5, zone:'hub', music:'phonk', tex:[1.2,1.8,2.2],
+          card:'PRESS [V] FOR 2.0X HYPER-CLOCK TURBO SPEED.',
+          sub:'EP XX · SCENE 1 · RELIT CITY LAUNCHPAD',
+          from:[-18,10,24], to:[-4,4.5,10], look:[0,2.5,0],
+          cast:[['mercury',-2.8,4,'idle'],['me',0,3.5,'idle'],['kai',2.8,4,'ultimate']],
+          hudBanner:'LIVE SPEED MULTIPLIER ([V] KEY: 1.0X / 1.5X / 2.0X)  ·  SPEEDRUN SPLITS (> SPLITS)',
+          lines:[
+            [0.5, 'mercury', 'Why walk when you can fly? Base sprint is now 11.5, Dissipate Dash is 21, and cooldown is 0.9 seconds!'],
+            [4.1, 'kai',     'Tap [V] to engage 2.0x HYPER-CLOCK and watch the entire 3D lattice blur past at 60fps!']
+          ]
+        },
+        {
+          id:'E20S2', dur:7.5, zone:'fiber', music:'fiber', tex:[1.4,1.6,2.0],
+          card:'WE MOVED SO FAST THE BOSS MISSED HIS MONOLOGUE.',
+          sub:'EP XX · SCENE 2 · HILBERT FIBER SPEEDRUN',
+          from:[16,9,22], to:[4,4,10], look:[0,3,-6],
+          cast:[['copy',-2.6,4,'idle'],['chronos',2.6,4,'work'],['kitsune',0,5.5,'idle']],
+          lines:[
+            [0.5, 'copy',    'We blinked through the Hilbert Tunnels so fast that Relay 4 was still clearing its throat!'],
+            [4.1, 'chronos', 'Track your Act I–VI gold splits in "> splits" and compete in the 06:12 Daily Seeded Run ("> daily")!']
+          ]
+        },
+        {
+          id:'E20S3', dur:7.5, zone:'nullcore', music:'boss', tex:[1.6,1.4,1.8],
+          card:'WEBGL FRUSTUM CULLING & REAL-TIME ENGINE PROFILER.',
+          sub:'EP XX · SCENE 3 · THE NULL CORE',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['athena',-2.8,4,'work'],['nexus',2.8,4,'idle'],['me',0,5.5,'idle']],
+          lines:[
+            [0.5, 'nexus',  'Every wireframe geometry computes bounding spheres for instant WebGL frustum culling.'],
+            [4.1, 'athena', 'Verify frame timings and draw calls yourself in the Real-Time Engine Profiler ("> profiler")!']
+          ]
+        },
+        {
+          id:'E20S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XX',
+          sub:'EP XX · SCENE 4 · NEW PERSONAL BEST',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['mercury',-2,3,'idle'],['me',2,3,'idle'],['chronos',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'chronos', 'New world record! We beat 06:12 by fourteen minutes!'],
+            [4.1, 'mercury', 'Press [V] and see how fast you can clear the Stack, Operator!']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XXI · FORGED IN DOOM-FIRE (BRUTALIST 3D RELIEF)',
+      scenes:[
+        {
+          id:'E21S1', dur:7.5, zone:'foundry', music:'foundry', tex:[2.3,0.6,1.2],
+          card:'200% HYPER-CARVED BRUTALIST 3D SURFACE RELIEF.',
+          sub:'EP XXI · SCENE 1 · DOOM-FIRE FOUNDRY',
+          from:[18,10,24], to:[4,4.5,10], look:[0,3,-6],
+          cast:[['ignis',-2.8,4,'ability'],['lycan',2.8,4,'idle'],['me',0,5.5,'idle']],
+          hudBanner:'BRUTALIST RELIEF SHADER (TEXBUMP 2.3)  ·  3D BLUEPRINT STUDIO (> BLUEPRINT)',
+          lines:[
+            [0.5, 'ignis', 'Check out the Doom-Fire Foundry with 3D Normal Bump cranked to 230%! Every steel rivet pops in 3D!'],
+            [4.1, 'lycan', 'Even the slag trenches and stone pavers cast directional hemisphere shadows across the floor.']
+          ]
+        },
+        {
+          id:'E21S2', dur:7.5, zone:'omega', music:'boss', tex:[2.1,0.9,1.5],
+          card:'PLACE CUSTOM 3D MONUMENTS IN THE ZGL BLUEPRINT STUDIO.',
+          sub:'EP XXI · SCENE 2 · THE OMEGA FOUNDRY',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['athena',-2.6,4,'work'],['pixel-neko',2.6,4,'work'],['kitsune',0,5.5,'idle']],
+          lines:[
+            [0.5, 'athena',     'Want to mod the 3D world? Open "> blueprint" to drop Blender 4.3 wireframe monuments into any district!'],
+            [4.1, 'pixel-neko', 'Or inspect all 22 procedural Blender meshes in 360-degree wireframe detail via "> meshes"!']
+          ]
+        },
+        {
+          id:'E21S3', dur:7.5, zone:'clock', music:'clock', tex:[1.8,1.2,1.6],
+          card:'DESIGN YOUR OWN CRT PHOSPHOR PALETTE IN THEMEFORGE.',
+          sub:'EP XXI · SCENE 3 · CLOCKTOWER FORGE',
+          from:[16,10,22], to:[4,4.5,10], look:[0,3,-6],
+          cast:[['draco',-2.8,4,'work'],['chronos',2.8,4,'idle'],['copy',0,5.5,'idle']],
+          lines:[
+            [0.5, 'draco', 'Prefer Amber Gold, Matrix Emerald, VirtualBoy Crimson, or custom RGB? Open "> themeforge"!'],
+            [4.1, 'copy',  'And tune scanline curvature and CRT bloom intensity live in "> shaders".']
+          ]
+        },
+        {
+          id:'E21S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.2,1.2,1.2],
+          card:'WORLD OF ZOTH · EPISODE XXI',
+          sub:'EP XXI · SCENE 4 · BUILT LIKE AN ANVIL',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['ignis',-2,3,'idle'],['athena',2,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'ignis', 'Forged in pure GLSL and headless Blender 4.3. Built to last forever.'],
+            [4.1, 'me',    'Fire up the forge, Operator.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XXII · THE SEVENTH REFLECTION (NOIR MYSTERY)',
+      scenes:[
+        {
+          id:'E22S1', dur:7.5, zone:'mirrors', music:'mirrors', tex:[1.6,2.1,1.7],
+          card:'SEVEN MIRRORS IN THE HALL. ONLY SIX CAST A SHADOW.',
+          sub:'EP XXII · SCENE 1 · HALL OF MIRRORS NOIR',
+          from:[-18,9,24], to:[-4,4,10], look:[0,2.5,-4],
+          cast:[['vigil',-2.8,4,'idle'],['copy',2.8,4,'idle'],['me',0,5.5,'idle']],
+          hudBanner:'06:12 FORENSIC TIMELINE (> TIMELINE)  ·  UNDERGROUND BBS (> BBS)  ·  DOSSIERS (> DOSSIERS)',
+          lines:[
+            [0.5, 'vigil', 'Case File 06:12. At exactly twelve minutes past six, every remote voice channel in the city turned into a lie.'],
+            [4.1, 'copy',  'Everyone blamed the seventh mirror. Turns out I was just trying to warn you about the Blank Cursor.']
+          ]
+        },
+        {
+          id:'E22S2', dur:7.5, zone:'abyss', music:'abyss', tex:[1.8,1.8,1.4],
+          card:'READ REACTIVE UNDERGROUND DISPATCHES ON THE 06:12 BBS.',
+          sub:'EP XXII · SCENE 2 · SUB-LATTICE ARCHIVES',
+          from:[16,10,22], to:[4,4.5,10], look:[0,3,-6],
+          cast:[['ghostbyte',-2.6,4,'work'],['onyx',2.6,4,'ability'],['kitsune',0,5.5,'idle']],
+          lines:[
+            [0.5, 'ghostbyte', 'Log into the underground bulletin board ("> bbs") to read 18 reactive threads and PGP-sign dispatches!'],
+            [4.1, 'kitsune',   'And piece together every minute of the blackout in the 06:12 Forensic Timeline ("> timeline")!']
+          ]
+        },
+        {
+          id:'E22S3', dur:7.5, zone:'rooftop', music:'title', tex:[1.4,1.6,1.6],
+          card:'READ THE 06:13 POST-DAWN EPILOGUES FOR ALL 22 CREW.',
+          sub:'EP XXII · SCENE 3 · ROOFTOP 06:12 ARCHIVE',
+          from:[-14,8,20], to:[-3,3.8,9], look:[0,3,-20],
+          cast:[['chronos',-2.8,4,'work'],['athena',2.8,4,'idle'],['pixel-shiba',0,5.5,'idle']],
+          lines:[
+            [0.5, 'chronos',     'Wondering what happens to all 22 companions after the 06:13 sunrise? Open "> epilogues"!'],
+            [4.1, 'pixel-shiba', '*detective bork!* (Spoiler alert: I open a 24-hour Safehouse bakery!)']
+          ]
+        },
+        {
+          id:'E22S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XXII',
+          sub:'EP XXII · SCENE 4 · CASE CLOSED AT 06:13',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['vigil',-2,3,'idle'],['copy',2,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'vigil', 'Case closed. Trust faces, not voices.'],
+            [4.1, 'copy',  'And always check the seventh mirror twice.']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XXIII · THE 22-CABINET ARCADE MARATHON (HIGH SCORE)',
+      scenes:[
+        {
+          id:'E23S1', dur:7.5, zone:'hub', music:'hub', tex:[1.3,1.6,2.1],
+          card:'FRIDAY NIGHT AT THE 22-CABINET SAFEHOUSE MEGAPLEX.',
+          sub:'EP XXIII · SCENE 1 · SAFEHOUSE ARCADE HALL',
+          from:[18,10,24], to:[4,4.5,10], look:[0,2.5,0],
+          cast:[['kai',-2.8,4,'ultimate'],['pixel-neko',2.8,4,'work'],['copy',0,5.5,'idle']],
+          hudBanner:'22-CABINET ARCADE MEGAPLEX (> ARCADE)  ·  PONG (> PONG)  ·  GALAGA (> GALAGA)  ·  WORM (> WORM)',
+          lines:[
+            [0.5, 'kai',        'Twenty-two full arcade cabinets built right into an RPG! Who has next quarter on Galaga Interceptor?!'],
+            [4.1, 'pixel-neko', 'No quarters needed, Kai! Every cabinet in "> arcade" is free-play and pays YOU Bits for high scores!']
+          ]
+        },
+        {
+          id:'E23S2', dur:7.5, zone:'skyline', music:'skyline', tex:[1.4,1.5,2.2],
+          card:'FROM 360° ASTEROIDS TO VECTOR TANKS & CYBER-PONG.',
+          sub:'EP XXIII · SCENE 2 · MODE-7 SKYLINE ARCADE',
+          from:[-16,10,22], to:[-4,4.5,10], look:[0,3.5,-6],
+          cast:[['aether',-2.6,4,'idle'],['mercury',2.6,4,'idle'],['me',0,5.5,'idle']],
+          lines:[
+            [0.5, 'mercury', 'Blast wireframe armor in Vector Tank ("> tank"), shatter firewalls in Breakout ("> breakout"), or steer Fiber Worm ("> worm")!'],
+            [4.1, 'aether',  'Or duel 03ng0cn1 in zero-latency Cyber-Pong ("> pong") with curve-ball spin and overdrive smashes!']
+          ]
+        },
+        {
+          id:'E23S3', dur:7.5, zone:'caves', music:'caves', tex:[1.6,1.7,1.5],
+          card:'BRAIN TEASERS: 2048 MERGER, SONAR MINES & CHRONO-ORRERY.',
+          sub:'EP XXIII · SCENE 3 · PHYSARUM PUZZLE LAB',
+          from:[16,9,22], to:[4,4,10], look:[0,3,-6],
+          cast:[['athena',-2.8,4,'work'],['chronos',2.8,4,'work'],['kitsune',0,5.5,'idle']],
+          lines:[
+            [0.5, 'athena',  'Love logic puzzles? Compile 2048.ROOT in "> merge", sweep logic bombs in "> mines", or route slime mould in "> router"!'],
+            [4.1, 'chronos', 'Crown all 22 cabinets in "> arcade" and claim up to +860 Bits from the Safehouse Arcade Hall stipend!']
+          ]
+        },
+        {
+          id:'E23S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.0,1.0,1.0],
+          card:'WORLD OF ZOTH · EPISODE XXIII',
+          sub:'EP XXIII · SCENE 4 · ARCADE SOVEREIGN',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['kai',-2,3,'idle'],['pixel-neko',2,3,'idle'],['me',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'pixel-neko', '22 arcade games inside one 3.6MB single-file HTML RPG.'],
+            [4.1, 'kai',        'Type "> arcade" and set a new high score, Operator!']
+          ]
+        }
+      ]
+    },
+    {
+      title:'EPISODE XXIV · 24 EPISODES OF ZOTH (SEASON II GRAND FINALE)',
+      scenes:[
+        {
+          id:'E24S1', dur:7.5, zone:'horizon', music:'title', tex:[1.4,1.8,2.0],
+          card:'TWENTY-FOUR FILMS. TWENTY WORLDS. ONE SOVEREIGN SAGA.',
+          sub:'EP XXIV · SCENE 1 · THE DAWN HORIZON GRAND GALA',
+          from:[-18,11,24], to:[-4,5,11], look:[0,4,-8],
+          cast:[['me',0,3.5,'idle'],['kitsune',-2.8,4,'idle'],['copy',2.8,4,'idle'],['aether',0,5.5,'ultimate']],
+          hudBanner:'24 THEATRICAL COMMERCIALS  ·  20 3D DISTRICTS  ·  22 COMPANIONS  ·  22 MINI-GAMES',
+          lines:[
+            [0.5, 'me',      'Welcome to Episode XXIV—the Season II Grand Finale of the World of Zoth Theatrical Anthology.'],
+            [4.1, 'kitsune', 'From Monsoon Cyber-Rain and Black-Market Heists to Pirate Radio FM and the 22-Cabinet Megaplex!']
+          ]
+        },
+        {
+          id:'E24S2', dur:7.5, zone:'astral', music:'astral', tex:[1.5,1.6,2.2],
+          card:'EVERY SUBSYSTEM AT YOUR FINGERTIPS IN "> MASTER".',
+          sub:'EP XXIV · SCENE 2 · THE ASTRAL SPIRE',
+          from:[16,10,22], to:[4,4.5,11], look:[0,3.5,-6],
+          cast:[['athena',-2.8,4,'work'],['chronos',2.8,4,'work'],['vigil',0,5.5,'idle']],
+          lines:[
+            [0.5, 'athena',  '95+ subsystems, 20 normal-mapped 3D districts, 22 Blender 4.3 monuments, and 24 movie commercials.'],
+            [4.1, 'chronos', 'Press Backtick (`) and type "master" or "cinema" anytime to launch any experience in one click.']
+          ]
+        },
+        {
+          id:'E24S3', dur:7.5, zone:'citadel', music:'boss', tex:[1.7,1.4,1.8],
+          card:'100% FREE. 100% OFFLINE-CAPABLE. ZERO PAYWALLS.',
+          sub:'EP XXIV · SCENE 3 · THE PANTHEON SALUTE',
+          from:[-16,10,22], to:[-4,4.5,11], look:[0,3.5,-6],
+          cast:[['ignis',-2.8,4,'ability'],['onyx',2.8,4,'ability'],['pixel-shiba',0,5.5,'idle']],
+          lines:[
+            [0.5, 'ignis',       'Engineered with love by 1nc0gn30 on the NullAI Platform. No servers required, no strings attached.'],
+            [4.1, 'pixel-shiba', '*grand finale bork!* (Thank you for watching all 24 episodes with us!)']
+          ]
+        },
+        {
+          id:'E24S4', dur:8.0, zone:'rooftop', music:'title', tex:[1.2,1.6,1.6],
+          card:'WORLD OF ZOTH · 24-EPISODE ANTHOLOGY COMPLETE',
+          sub:'EP XXIV · SCENE 4 · FOREVER 06:13',
+          from:[0,5,14], to:[0,3.2,8], look:[0,4,-120],
+          cast:[['me',-2.2,3,'idle'],['kitsune',2.2,3,'idle'],['copy',0,4.2,'idle']],
+          finale:true,
+          lines:[
+            [0.6, 'me',      'Trust faces, not voices. Silence cannot be copied.'],
+            [4.1, 'kitsune', 'The golden trail is lit, Operator. The world of Zoth is yours!']
+          ]
+        }
+      ]
     }
   ];
   G.openCommercial=(epOrDone=0, onDoneArg=null)=>{
@@ -7630,6 +8242,7 @@ export function initEggs(G,{music,sfx}){
     let sIdx=0, st=0, paused=false, totalT=0, lastTalkIdx=-1;
     const savedZone=G.zoneId||'hub';
     const savedPos=G.player&&G.player.group?{x:G.player.group.position.x,z:G.player.group.position.z}:{x:0,z:16};
+    const savedTex=[renderU.texBump.value, renderU.texWet.value, renderU.texWin.value];
     let castGroups=[];
     G.ach('movie_premiere');
     const clearCast=()=>{
@@ -7642,13 +8255,18 @@ export function initEggs(G,{music,sfx}){
       sIdx=(idx+curScenes.length)%curScenes.length;
       st=0; lastTalkIdx=-1;
       const sc=curScenes[sIdx];
+      if(sc.tex){
+        renderU.texBump.value=sc.tex[0];
+        renderU.texWet.value=sc.tex[1];
+        renderU.texWin.value=sc.tex[2];
+      }
       if(G.enterZone && G.Z && G.Z[sc.zone]) G.enterZone(sc.zone,true,0,30,Math.PI);
       if(G.player && G.player.group) G.player.group.visible=false;
       G.banner=null;
       if(sc.music) music(sc.music);
       if(G.Billboard && G.scene && G.zone){
         (sc.cast||[]).forEach(([id,x,z,anim])=>{
-          const b=new G.Billboard(id==='copy'?'copy':id);
+          const b=new G.Billboard(id==='copy'?'copy':(AG[id]?id:'vigil'));
           b.group.position.set(x,G.zone.h?G.zone.h(x,z):0,z);
           b.anim=anim||'idle';
           G.scene.add(b.group);
@@ -7665,6 +8283,9 @@ export function initEggs(G,{music,sfx}){
     };
     const closeCommercial=()=>{
       clearCast();
+      renderU.texBump.value=savedTex[0];
+      renderU.texWet.value=savedTex[1];
+      renderU.texWin.value=savedTex[2];
       if(G.player && G.player.group) G.player.group.visible=true;
       if(G.enterZone && G.Z && G.Z[savedZone]) G.enterZone(savedZone,true,savedPos.x,savedPos.z,Math.PI);
       G.mode='explore';
@@ -7759,7 +8380,8 @@ export function initEggs(G,{music,sfx}){
         const cardAlpha=st<0.8?(st/0.8):(st<3.4?1:Math.max(0,1-(st-3.4)/0.8));
         if(cardAlpha>0.02 && !sc.finale){
           X.save(); X.globalAlpha=cardAlpha;
-          UI.box(96,104,768,44,P.GD,'rgba(6,5,4,.86)');
+          const cw=Math.min(920,Math.max(768,UI.textW(sc.card,2)+44));
+          UI.box(480-cw/2,104,cw,44,P.GD,'rgba(6,5,4,.86)');
           UI.text(sc.card,480,118,P.GD,2,'center');
           X.restore();
         }
@@ -7768,7 +8390,7 @@ export function initEggs(G,{music,sfx}){
           const r=Math.min(1,st/2.2);
           UI.box(150,92,660,168,P.GD,'rgba(6,5,4,.84)');
           UI.dotText('world of zoth',480,148,7,P.GD,r,r<1?.25:0,t);
-          UI.text('FACES, NOT VOICES  ·  20 DISTRICTS  ·  22 COMPANIONS  ·  20 MINI-GAMES',480,206,'#4ade80',1,'center');
+          UI.text('FACES, NOT VOICES  ·  20 DISTRICTS  ·  22 COMPANIONS  ·  22 MINI-GAMES',480,206,'#4ade80',1,'center');
           UI.text('ENGINEERED BY 1NC0GN30 • NULLAI PLATFORM',480,230,P.BONE,1,'center');
         }
         // Custom Movie Conversation Box (Portrait + Typewriter Dialogue)
@@ -7789,7 +8411,7 @@ export function initEggs(G,{music,sfx}){
             }
             UI.text('NO FACE',px+pw/2,py+ph/2-6,P.RED,1,'center');
           } else {
-            const spId=activeLine[1]==='me'?'me':activeLine[1]==='copy'?'copy':activeLine[1];
+            const spId=activeLine[1]==='me'?'me':activeLine[1]==='copy'?'copy':(AG[activeLine[1]]?activeLine[1]:'vigil');
             const fc=frameCanvas(spId,'idle',Math.floor(t*6)%(spId==='me'||spId==='copy'?1:8));
             if(fc){
               X.imageSmoothingEnabled=false;
@@ -8622,7 +9244,7 @@ export function initEggs(G,{music,sfx}){
       ['World NPC Directory & Warp (21)','> npcs',()=>G.openDirectory()]
     ]},
     {name:'STUDIO, CINEMA & TOOLS', items:[
-      ['12-Episode Movie Cinema Hub','> cinema',()=>G.openCinemaHub()],
+      ['24-Episode Movie Cinema Hub','> cinema',()=>G.openCinemaHub()],
       ['3D Material & PBR Shader Studio','> textures',()=>G.openTextureStudio()],
       ['20-District World Atlas & Warp','> atlas',()=>G.openDistrictAtlas()],
       ['Custom Story Scene Creator','> scenemaker',()=>G.openSceneMaker()],
@@ -8883,7 +9505,19 @@ export function initEggs(G,{music,sfx}){
     ['EPISODE IX · THE MIRROR\'S EDGE (03NG0CN1)', '4 Scenes · Mirrors, Deep Water & Hollow', '03ng0cn1, 1nc0gn30, Kitsune, Vigil, Onyx, Kai, Pixel-Shiba', 'How your dark reflection 03ng0cn1 evolved from Act I nemesis into the 22nd playable member of your Pantheon squad.'],
     ['EPISODE X · THE PANTHEON GALA', '4 Scenes · Astral Spire, Foundry & Horizon', 'Aether, Athena, Ignis, Pixel-Neko, Chronos, Kitsune, 1nc0gn30', 'Red-carpet celebration of all 10 Theatrical Movie Commercials, 21 Mini-Games, 20 Districts, and the Live 3D Material Studio.'],
     ['EPISODE XI · SKYBEAM INTERCEPTOR (#22)', '4 Scenes · Skyline, Null Core & Citadel', 'Kai, Aether, Athena, Chronos, Pixel-Neko, Onyx, 1nc0gn30', 'Showcasing the 22nd Arcade Mini-Game (Galaga Skybeam Interceptor) and the Interactive 20-District Atlas.'],
-    ['EPISODE XII · 06:12 TO 06:13 (FINALE)', '4 Scenes · Safehouse, Mirrors & Horizon', '1nc0gn30, Kitsune, 03ng0cn1, Vigil, Athena, Chronos, Aether', 'The 12th and final episode of the 06:12 Anthology celebrating 16 hours of autonomous sovereign engineering.']
+    ['EPISODE XII · 06:12 TO 06:13 (SEASON I FINALE)', '4 Scenes · Safehouse, Mirrors & Horizon', '1nc0gn30, Kitsune, 03ng0cn1, Vigil, Athena, Chronos, Aether', 'The 12th episode of Season I celebrating 16 hours of autonomous sovereign engineering.'],
+    ['EPISODE XIII · MONSOON OVER RELIT CITY', '4 Scenes · Safehouse, Streets & Deep Water', 'Vigil, Pixel-Shiba, Kitsune, Chronos, 03ng0cn1, Kraken, Athena', 'Atmospheric neo-noir showcase of Heavy Monsoon Cyber-Rain, concentric raindrop puddles, and 3D FBM normal-bump facades.'],
+    ['EPISODE XIV · THE BLACK-MARKET HEIST', '4 Scenes · Abyss, Foundry & Chrono-Vault', 'Pixel-Neko, Kai, Onyx, Ignis, Cipher, 03ng0cn1, 1nc0gn30', 'Ocean\'s Eleven style caper around Pixel-Neko\'s 100% free Bits-only Black Market, the Engraving Anvil, and Hex Vault Cracker.'],
+    ['EPISODE XV · WAGER AT THE COLOSSEUM', '4 Scenes · Citadel, Omega Foundry & Clock', 'Kai, Ignis, Pixel-Neko, Pixel-Shiba, Athena, Onyx, Chronos', 'High-energy sports broadcast of the AI vs AI Spectator Arena, Custom Encounter Builder, and Challenge Skulls.'],
+    ['EPISODE XVI · 06:12 PIRATE RADIO FM', '4 Scenes · Signal Tower, Fiber & Astral', 'Echo-0, Kitsune, Vigil, Pixel-Neko, Mercury, Aether, Athena', 'Late-night underground radio broadcast featuring 144 BPM Drift-Phonk, the 16-Step Chiptune Sequencer, and 4-Track Rhythm Sync.'],
+    ['EPISODE XVII · CYBER-FAMILIAR SANCTUARY', '4 Scenes · Rest Woods, Bio-Caves & Vault', 'Pixel-Shiba, Kitsune, Kraken, Pixel-Neko, Kai, Chronos, 1nc0gn30', 'Wholesome creature-feature comedy starring Pixel-Shiba, Foxfire Kit, Chrono Owl, and Kraken\'s 40-foot Pelagic Trench Eel.'],
+    ['EPISODE XVIII · QUANTUM LOOM CONSPIRACY', '4 Scenes · Quantum Loom, Streets & Mirrors', 'Athena, Chronos, 03ng0cn1, Vigil, Prisma, Onyx, Kitsune', 'Mind-bending sci-fi mystery inside District #16, 5x5 Quantum Wave-Collapse, and 6x6 Fiber Laser Mirror routing.'],
+    ['EPISODE XIX · PANTHEON TRIAD GRANDMASTER', '4 Scenes · Astral Spire, Safehouse & Citadel', 'Onyx, Kai, Aether, Pixel-Neko, Kitsune, Chronos, Athena', 'Tabletop tournament showdown showcasing Pantheon Triad 3x3 Card Battles, the 32-Card Foil Binder, and PNG ID Passports.'],
+    ['EPISODE XX · 2.0X HYPER-CLOCK SPEEDRUN', '4 Scenes · Relit City, Fiber & Null Core', 'Mercury, Kai, 03ng0cn1, Chronos, Athena, Nexus, 1nc0gn30', 'Adrenaline-fueled 60-second speedrun at 2.0x Hyper-Clock Turbo Speed ([V] Key) with WebGL frustum culling and live profiler.'],
+    ['EPISODE XXI · FORGED IN DOOM-FIRE (3D RELIEF)', '4 Scenes · Foundry, Omega & Clocktower', 'Ignis, Warden, Athena, Pixel-Neko, Prisma, Chronos, 1nc0gn30', 'Heavy-metal industrial showcase of 230% Brutalist 3D Normal-Bump Relief, ZGL 3D Blueprint Studio, and RGB ThemeForger.'],
+    ['EPISODE XXII · THE SEVENTH REFLECTION (NOIR)', '4 Scenes · Mirrors, Abyss & Rooftop 06:12', 'Vigil, 03ng0cn1, Cipher, Onyx, Kitsune, Chronos, Pixel-Shiba', 'Moody blade-runner detective mystery exploring the 06:12 Forensic Timeline, Underground BBS, and 22-Agent Epilogues.'],
+    ['EPISODE XXIII · 22-CABINET ARCADE MARATHON', '4 Scenes · Safehouse, Skyline & Bio-Caves', 'Kai, Pixel-Neko, Mercury, Aether, Athena, Chronos, 1nc0gn30', 'Retro arcade tournament night inside the 22-Cabinet Safehouse Megaplex: Galaga, Cyber-Pong, Asteroids, Breakout, and Snake.'],
+    ['EPISODE XXIV · 24 EPISODES OF ZOTH (FINALE)', '4 Scenes · Dawn Horizon, Astral & Rooftop', '1nc0gn30, Kitsune, 03ng0cn1, Aether, Athena, Chronos, Pixel-Shiba', 'The epic 24th Episode Season II Grand Finale celebrating 24 films, 20 normal-mapped 3D worlds, 22 companions, and 22 mini-games.']
   ];
   G.openCinemaHub=()=>{
     let sel=0;
@@ -8895,7 +9529,7 @@ export function initEggs(G,{music,sfx}){
         if(took('down')){ sel=(sel+1)%EP_META.length; sfx('move'); }
         if(took('party')){
           G.ach('cinema_curator'); G.bits+=200; sfx('win');
-          G.toast('> BOX-OFFICE STIPEND CLAIMED! +200 BITS FOR SCREENING THE 12-EPISODE SERIES',P.GD);
+          G.toast('> BOX-OFFICE STIPEND CLAIMED! +200 BITS FOR SCREENING THE 24-EPISODE ANTHOLOGY',P.GD);
         }
         if(took('confirm')){
           G.ach('cinema_curator'); sfx('confirm');
@@ -8907,7 +9541,7 @@ export function initEggs(G,{music,sfx}){
         X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
         UI.box(36,20,888,500,P.GD);
         UI.text('> CINEMA SCREENING ROOM',56,36,P.GD,2);
-        UI.text('12 FULL-LENGTH 3D MOVIE COMMERCIALS · REAL-TIME WEBGL',900,40,'#4ade80',1,'right');
+        UI.text('24 FULL-LENGTH 3D MOVIE COMMERCIALS · SEASON I & II',900,40,'#4ade80',1,'right');
         const first=Math.max(0,Math.min(sel-5,EP_META.length-10));
         for(let idx=0;idx<Math.min(10,EP_META.length);idx++){
           const i=first+idx, ep=EP_META[i], y=76+idx*38, on=i===sel;
@@ -8917,7 +9551,7 @@ export function initEggs(G,{music,sfx}){
         }
         const cur=EP_META[sel];
         UI.box(504,76,396,378,'#22d3ee','rgba(8,10,14,.95)');
-        UI.text(`EPISODE ${String(sel+1).padStart(2,'0')} OF ${EP_META.length}`,524,96,'#22d3ee',1);
+        UI.text(`EPISODE ${String(sel+1).padStart(2,'0')} OF ${EP_META.length} · SEASON ${sel<12?'I':'II'}`,524,96,'#22d3ee',1);
         UI.wrap(cur[0],360,2).forEach((ln,li)=>UI.text(ln,524,116+li*22,P.GD,2));
         UI.text(`FORMAT: ${cur[1]}`,524,168,'#4ade80',1);
         UI.text('STARRING CAST:',524,196,P.GD,1);
@@ -8927,7 +9561,7 @@ export function initEggs(G,{music,sfx}){
         UI.box(524,382,356,48,P.GD,'rgba(245,184,46,.16)');
         UI.text(`> [ENTER] SCREEN EPISODE ${String(sel+1).padStart(2,'0')} IN LIVE 3D`,702,400,P.GD,1,'center');
         UI.hit(524,382,356,48,()=>{ G.ach('cinema_curator'); G.openCommercial(sel); });
-        UI.text('[up/down] select episode (1-12)   [enter] launch live 3D screening   [P] claim +200B   [esc] exit',480,486,P.DG,1,'center');
+        UI.text('[up/down] select episode (1-24)   [enter] launch live 3D screening   [P] claim +200B   [esc] exit',480,486,P.DG,1,'center');
       }
     };
     G.mode='mini'; G.ach('cinema_curator'); sfx('confirm');

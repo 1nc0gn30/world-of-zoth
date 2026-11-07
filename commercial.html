@@ -101,17 +101,23 @@
   <div class="container">
     <header>
       <div>
-        <span class="badge">● REC 06:12 // OFFICIAL THEATRICAL TRAILER</span>
+        <span class="badge">● REC 06:12 // 24-EPISODE THEATRICAL ANTHOLOGY (SEASON I &amp; II)</span>
         <h1>WORLD OF ZOTH — "FACES, NOT VOICES"</h1>
-        <p class="sub">Real-Time 3D WebGL Gameplay · Custom Character Banter · Mysterious, Funny &amp; 100% Free</p>
+        <p class="sub">24 Full-Length 1080p Movie Commercials · Real-Time 3D WebGL + PBR Normal Bump · Custom Crew Banter · 100% Free</p>
       </div>
       <div class="cta-row">
-        <a class="btn btn-gold" href="world-of-zoth.html?commercial=1">▶ LAUNCH LIVE 60FPS 3D COMMERCIAL</a>
+        <a class="btn btn-gold" href="world-of-zoth.html?commercial=1">▶ LAUNCH LIVE 60FPS 3D CINEMA</a>
         <a class="btn btn-outline" href="world-of-zoth.html">⚡ PLAY FULL GAME</a>
       </div>
     </header>
 
-    <section class="theater-frame">
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px;">
+      <button class="btn btn-gold" onclick="filterSeason('all')" id="tab-all" style="cursor:pointer; border:none;">🎬 ALL 24 EPISODES</button>
+      <button class="btn btn-outline" onclick="filterSeason('s1')" id="tab-s1" style="cursor:pointer;">☀️ SEASON I (EP I–XII)</button>
+      <button class="btn btn-outline" onclick="filterSeason('s2')" id="tab-s2" style="cursor:pointer;">🌧️ SEASON II (EP XIII–XXIV · NEW!)</button>
+    </div>
+
+    <section class="theater-frame ep-s1">
       <div class="theater-bar">
         <span>EPISODE I · "06:12 — FACES, NOT VOICES" (OFFICIAL OVERVIEW FILM)</span>
         <span><a href="world-of-zoth.html?commercial=1" style="color:var(--cyan);text-decoration:none;">▶ LAUNCH LIVE 60FPS 3D EPISODE I</a></span>
@@ -119,7 +125,8 @@
       <video controls autoplay loop playsinline preload="auto" src="dist/world-of-zoth-commercial.mp4"></video>
     </section>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:22px; margin-bottom:36px;">
+    <h2 class="ep-s1" style="font-family:'Syne',sans-serif; color:var(--gold); font-size:22px; margin: 12px 0 18px;">☀️ Season I — The 06:12 Awakening (Episodes II–XII)</h2>
+    <div class="ep-s1" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:22px; margin-bottom:36px;">
       <section class="theater-frame" style="margin-bottom:0;">
         <div class="theater-bar">
           <span>EPISODE II · "MIDNIGHT AT THE SAFEHOUSE"</span>
@@ -154,7 +161,7 @@
 
       <section class="theater-frame" style="margin-bottom:0;">
         <div class="theater-bar">
-          <span>EPISODE VI · "SAFEHOUSE MEGAPLEX (20 MINI-GAMES)"</span>
+          <span>EPISODE VI · "SAFEHOUSE MEGAPLEX (MINI-GAMES)"</span>
           <a href="world-of-zoth.html?commercial=6" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
         </div>
         <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep6-arcade.mp4"></video>
@@ -186,7 +193,7 @@
 
       <section class="theater-frame" style="margin-bottom:0;">
         <div class="theater-bar">
-          <span>EPISODE X · "THE PANTHEON GALA (21 MINI-GAMES)"</span>
+          <span>EPISODE X · "THE PANTHEON GALA"</span>
           <a href="world-of-zoth.html?commercial=10" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
         </div>
         <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep10-gala.mp4"></video>
@@ -202,12 +209,121 @@
 
       <section class="theater-frame" style="margin-bottom:0;">
         <div class="theater-bar">
-          <span>EPISODE XII · "06:12 TO 06:13 (SEASON FINALE)"</span>
+          <span>EPISODE XII · "06:12 TO 06:13 (SEASON I FINALE)"</span>
           <a href="world-of-zoth.html?commercial=12" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
         </div>
         <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep12-season.mp4"></video>
       </section>
     </div>
+
+    <h2 class="ep-s2" style="font-family:'Syne',sans-serif; color:var(--emerald); font-size:22px; margin: 12px 0 18px;">🌧️ Season II — Monsoon, Heists &amp; The Pantheon Encore (Episodes XIII–XXIV)</h2>
+    <div class="ep-s2" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:22px; margin-bottom:36px;">
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XIII · "MONSOON OVER RELIT CITY (3D RAIN)"</span>
+          <a href="world-of-zoth.html?commercial=13" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep13-monsoon.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XIV · "THE BLACK-MARKET HEIST"</span>
+          <a href="world-of-zoth.html?commercial=14" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep14-heist.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XV · "WAGER AT THE COLOSSEUM (AI VS AI)"</span>
+          <a href="world-of-zoth.html?commercial=15" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep15-colosseum.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XVI · "06:12 PIRATE RADIO FM (PHONK)"</span>
+          <a href="world-of-zoth.html?commercial=16" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep16-pirateradio.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XVII · "CYBER-FAMILIAR SANCTUARY (PETS)"</span>
+          <a href="world-of-zoth.html?commercial=17" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep17-pets.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XVIII · "QUANTUM LOOM CONSPIRACY"</span>
+          <a href="world-of-zoth.html?commercial=18" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep18-quantum.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XIX · "PANTHEON TRIAD GRANDMASTER (3x3)"</span>
+          <a href="world-of-zoth.html?commercial=19" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep19-cards.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XX · "2.0X HYPER-CLOCK SPEEDRUN"</span>
+          <a href="world-of-zoth.html?commercial=20" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep20-speedrun.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XXI · "FORGED IN DOOM-FIRE (3D RELIEF)"</span>
+          <a href="world-of-zoth.html?commercial=21" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep21-foundry.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XXII · "THE SEVENTH REFLECTION (NOIR)"</span>
+          <a href="world-of-zoth.html?commercial=22" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep22-detective.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XXIII · "22-CABINET ARCADE MARATHON"</span>
+          <a href="world-of-zoth.html?commercial=23" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep23-megaplex.mp4"></video>
+      </section>
+
+      <section class="theater-frame" style="margin-bottom:0;">
+        <div class="theater-bar">
+          <span>EPISODE XXIV · "24 EPISODES OF ZOTH (FINALE)"</span>
+          <a href="world-of-zoth.html?commercial=24" style="color:var(--cyan);text-decoration:none;">▶ LIVE 3D</a>
+        </div>
+        <video controls loop playsinline preload="metadata" src="dist/world-of-zoth-ep24-pantheon.mp4"></video>
+      </section>
+    </div>
+    <script>
+      function filterSeason(s) {
+        document.querySelectorAll('.ep-s1').forEach(el => el.style.display = (s === 'all' || s === 's1') ? '' : 'none');
+        document.querySelectorAll('.ep-s2').forEach(el => el.style.display = (s === 'all' || s === 's2') ? '' : 'none');
+        ['all','s1','s2'].forEach(k => {
+          const b = document.getElementById('tab-' + k);
+          if (b) b.className = (k === s) ? 'btn btn-gold' : 'btn btn-outline';
+        });
+      }
+    </script>
 
     <h2 style="font-family:'Syne',sans-serif; color:var(--gold); font-size:22px;">8-Scene Director's Script &amp; Custom Conversation Breakdown</h2>
     <div class="scenes-grid">
