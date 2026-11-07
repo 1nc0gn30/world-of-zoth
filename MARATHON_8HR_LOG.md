@@ -87,8 +87,8 @@
 - [x] **M76** (`08:18`): Companion Gear Loadout Presets & 1-Click Auto-Optimizer (`G.openLoadouts()` via `> loadouts` & System Menu — save/restore 4 squad gear presets & auto-equip best-in-slot)
 - [x] **M77** (`08:35`): Interactive Safehouse Trophy Room & Arcade Cabinet Hub (`G.openArcade()` via `> arcade` & System Menu — launch all 11 mini-games with trophy status & arcade stipend)
 - [x] **M78** (`08:35`): Hostile AI Behavior & Intent Inspector (`G.openMoveDex()` via `> movedex` & System Menu — inspect all 24 enemy & boss move multipliers, AI weights & counter-strategies)
-- [ ] **M79**: Custom Battle Arena & Encounter Builder (`G.openEncounterBuilder()` via `> builder` & System Menu — assemble custom 1–3 enemy/boss squads at any level & fight them)
-- [ ] **M80**: Procedural Daily Contract Generator v2 (`G.openContracts()` via `> contracts` & System Menu — 6 rotating tactical contracts with streak multipliers)
+- [x] **M79** (`08:49`): Custom Battle Arena & Encounter Builder (`G.openEncounterBuilder()` via `> builder` & System Menu — assemble custom 1–3 enemy/boss squads at any level & fight them)
+- [x] **M80** (`08:49`): Procedural Daily Contract Generator v2 (`G.openContracts()` via `> contracts` & System Menu — 6 rotating tactical contracts with streak multipliers)
 
 ### Hour 10 (`09:00`–`10:00`) — District #17 (*"The Chrono-Vault"*) & Sovereign Pet Companions
 - [ ] **M81**: Blender 4.3 Wireframe Mesh #19 (`chrono_orrery`) & Secret District #17 (*"The Chrono-Vault"* `Z.vault` in `src/zones2.js` + `vault` stem in `src/audio.js`)

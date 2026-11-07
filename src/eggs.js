@@ -14,7 +14,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -40,7 +40,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='builder'||c==='encounter'||c==='custom'){ out('[builder] opening Custom Battle Arena & Encounter Builder...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEncounterBuilder(); },40); }
+    else if(c==='contracts'||c==='streak'){ out('[contracts] opening Procedural Daily Contract Board v2...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openContracts(); },40); }
     else if(c==='arcade'||c==='cabinets'||c==='games'){ out('[arcade] opening 11-Cabinet Safehouse Arcade Hub...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openArcade(); },40); }
     else if(c==='movedex'||c==='intents'||c==='moves'){ out('[movedex] opening Hostile AI Behavior & Intent Inspector...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMoveDex(); },40); }
     else if(c==='lasers'||c==='mirror'||c==='optics'){ out('[lasers] launching 6x6 Fiber-Optic Laser Mirror Router...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startLasers(); },40); }
@@ -3363,6 +3365,181 @@ export function initEggs(G,{music,sfx}){
           UI.text('[ENTER] SIMULATE TELEGRAPH IMPACT VS YOUR DEF',642,418,'#22d3ee',1,'center');
         }
         UI.text('[up/down] select hostile move   [enter] simulate impact vs your DEF   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Custom Battle Arena & Encounter Builder (M79) ----
+  const BUILDER_ENEMIES=Object.keys(ENEMIES);
+  const BUILDER_OPTS=['NONE',...BUILDER_ENEMIES];
+  const BUILDER_LVLS=[5,10,15,20,25,30,35];
+  G.openEncounterBuilder=()=>{
+    let row=0, s1=BUILDER_ENEMIES.indexOf('copy'), s2=BUILDER_OPTS.indexOf('sentinel'), s3=BUILDER_OPTS.indexOf('echo'), lIdx=2, ambush=true;
+    if(s1<0) s1=0; if(s2<0) s2=1; if(s3<0) s3=0;
+    G.ach('arena_architect');
+    const getSquad=()=>{
+      const sq=[BUILDER_ENEMIES[s1]];
+      if(s2>0) sq.push(BUILDER_OPTS[s2]);
+      if(s3>0) sq.push(BUILDER_OPTS[s3]);
+      return sq;
+    };
+    const launchCustom=()=>{
+      const sq=getSquad(), lvl=BUILDER_LVLS[lIdx];
+      sfx('confirm'); G.mode='explore';
+      G.toast(`> CUSTOM ARENA DEPLOYED: ${sq.length} Hostiles (LV ${lvl})!`,P.GD);
+      G.battle(sq,{lvl,ambush});
+    };
+    G.mini={
+      name:'builder',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) row=(row+4)%5;
+        if(took('down')) row=(row+1)%5;
+        if(took('party')){ launchCustom(); return; }
+        if(took('left')){
+          if(row===0) s1=(s1+BUILDER_ENEMIES.length-1)%BUILDER_ENEMIES.length;
+          else if(row===1) s2=(s2+BUILDER_OPTS.length-1)%BUILDER_OPTS.length;
+          else if(row===2) s3=(s3+BUILDER_OPTS.length-1)%BUILDER_OPTS.length;
+          else if(row===3) lIdx=(lIdx+BUILDER_LVLS.length-1)%BUILDER_LVLS.length;
+          else ambush=!ambush;
+          sfx('move');
+        }
+        if(took('right')){
+          if(row===0) s1=(s1+1)%BUILDER_ENEMIES.length;
+          else if(row===1) s2=(s2+1)%BUILDER_OPTS.length;
+          else if(row===2) s3=(s3+1)%BUILDER_OPTS.length;
+          else if(row===3) lIdx=(lIdx+1)%BUILDER_LVLS.length;
+          else ambush=!ambush;
+          sfx('move');
+        }
+        if(took('confirm')){
+          if(row===4){ launchCustom(); return; }
+          if(row===0) s1=(s1+1)%BUILDER_ENEMIES.length;
+          else if(row===1) s2=(s2+1)%BUILDER_OPTS.length;
+          else if(row===2) s3=(s3+1)%BUILDER_OPTS.length;
+          else if(row===3){ lIdx=(lIdx+1)%BUILDER_LVLS.length; ambush=!ambush; }
+          sfx('blip');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> CUSTOM BATTLE ARENA & ENCOUNTER BUILDER',56,40,P.GD,2);
+        const sq=getSquad(), lvl=BUILDER_LVLS[lIdx];
+        UI.text(`SQUAD SIZE: ${sq.length}/3   THREAT: LV ${lvl}`,900,44,'#22d3ee',1,'right');
+        // Left: 5 Configuration Rows
+        const fmtE=k=>k==='NONE'?'[EMPTY SLOT]':`${ENEMIES[k].name.toUpperCase()} (${ENEMY_WEAK[k]||'KERNEL'})`;
+        const rows=[
+          ['1. HOSTILE SLOT 01 (PRIMARY)', fmtE(BUILDER_ENEMIES[s1]), '#f43f5e'],
+          ['2. HOSTILE SLOT 02 (WING)', fmtE(BUILDER_OPTS[s2]), s2>0?'#fb923c':P.DG],
+          ['3. HOSTILE SLOT 03 (FLANK)', fmtE(BUILDER_OPTS[s3]), s3>0?'#a78bfa':P.DG],
+          ['4. ARENA LEVEL & OPENING', `LV ${lvl}  ·  ${ambush?'AMBUSH (+40% OD)':'STANDARD'}`, '#22d3ee'],
+          ['5. ENGAGE SIMULATION', '[ENTER / P] LAUNCH ARENA BATTLE', '#4ade80']
+        ];
+        rows.forEach(([lbl,val,col],i)=>{
+          const yy=82+i*76, on=i===row;
+          UI.box(52,yy,452,64,on?P.GD:P.DDG,on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+lbl,68,yy+12,on?P.GD:P.BONE,1);
+          UI.text(`<  ${val}  >`,278,yy+36,col,1,'center');
+        });
+        // Right: Live Encounter Telemetry & Preview
+        UI.box(520,82,384,380,P.GD,'rgba(10,8,6,.94)');
+        UI.text('ENCOUNTER TELEMETRY PREVIEW:',540,100,P.GD,1);
+        let totHp=0, totXp=0, totBits=0;
+        sq.forEach((k,idx)=>{
+          const e=ENEMIES[k], sc=e.fixed?1:(1+(lvl-1)*0.22);
+          const ehp=Math.round(e.hp*sc), eatk=Math.round(e.atk*sc), edef=Math.round(e.def*sc);
+          totHp+=ehp; totXp+=Math.round((e.xp||15)*sc); totBits+=Math.round((e.bits||10)*sc);
+          const yy=126+idx*74;
+          UI.box(538,yy,348,64,e.boss?'#f43f5e':P.DDG,'rgba(14,11,8,.92)');
+          UI.text(`SLOT 0${idx+1}: ${e.name.toUpperCase()}${e.boss?' [BOSS]':''}`,552,yy+10,e.boss?'#f43f5e':P.GD,1);
+          UI.text(`HP ${ehp}   ATK ${eatk}   DEF ${edef}   SPD ${e.spd}`,552,yy+28,P.BONE,1);
+          UI.text(`WEAK: ${(ENEMY_WEAK[k]||'KERNEL')}  ·  MOVES: ${(e.moves||[]).slice(0,3).map(m=>m[0]).join(', ')}`,552,yy+46,'#22d3ee',1);
+        });
+        UI.box(538,358,348,88,P.DDG,'rgba(14,11,8,.92)');
+        UI.text(`COMBINED HOSTILE HP POOL: ${totHp} HP`,554,372,'#f43f5e',1);
+        UI.text(`ESTIMATED CLEAR PAYOUT: +${totBits} BITS  ·  +${totXp} XP`,554,394,'#4ade80',1);
+        UI.text(`OPENING: ${ambush?'PRE-EMPTIVE AMBUSH (+40% OVERDRIVE)':'STANDARD INITIATIVE'}`,554,416,P.GD,1);
+        UI.text('[up/down] row   [left/right] cycle hostile & level   [P / enter on row 5] fight   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Procedural Daily Contract Generator v2 with Streak Multipliers (M80) ----
+  const TACTICAL_CONTRACTS=[
+    {id:'tc_1', name:'01. NORTH STREET DRONE CULL', zone:'Relit City', foes:['drone','drone','sentinel'], lvl:6, baseBits:120, item:'patch.kit', proto:'KERNEL',
+      desc:'Eliminate the low-altitude reconnaissance drone pack mapping the north plaza.'},
+    {id:'tc_2', name:'02. STOLEN CHORUS BLACKOUT', zone:'The Hollow', foes:['echo','node','echo'], lvl:11, baseBits:180, item:'cache.bit', proto:'CRYPTO',
+      desc:'Silence the acoustic echo nodes feeding stolen crew syllables into Relay 4.'},
+    {id:'tc_3', name:'03. DOOM-FIRE SLAG CONTAINMENT', zone:'Doom-Fire Foundry', foes:['slag','warden','slag'], lvl:16, baseBits:240, item:'patch.kit', proto:'VOID',
+      desc:'Breach the Foundry blast doors and dismantle the rogue Furnace Warden.'},
+    {id:'tc_4', name:'04. MIRROR SEAM INTERCEPTION', zone:'Hall of Mirrors', foes:['reflection','copy','phase'], lvl:21, baseBits:320, item:'root.shell', proto:'CRYPTO',
+      desc:'Intercept the speculative mirror fork before it duplicates your git reflog.'},
+    {id:'tc_5', name:'05. ABYSSAL TRENCH EXCAVATION', zone:'Sub-Lattice Abyss', foes:['eel','worm','cursorling'], lvl:26, baseBits:400, item:'cache.bit', proto:'THERMAL',
+      desc:'Purge the Menger sponge parasites chewing through cold-storage magnetic dumps.'},
+    {id:'tc_6', name:'06. CITADEL COMPILER AUDIT', zone:'ZK Citadel', foes:['gunship','warden','cursorling'], lvl:30, baseBits:520, item:'root.shell', proto:'VOID',
+      desc:'Execute a root-level security audit against the Citadel vanguard garrison.'}
+  ];
+  G.openContracts=()=>{
+    let sel=0;
+    const streak=()=>(G.flags&&G.flags.contract_streak)||0;
+    const mult=()=>Math.min(2.5, 1 + streak()*0.25);
+    const completeContract=c=>{
+      G.flags.contract_streak=streak()+1;
+      G.flags[c.id]=1;
+      const payout=Math.round(c.baseBits*mult());
+      G.bits+=payout; G.give(c.item,1);
+      G.ach('contract_hunter'); sfx('win');
+      G.toast(`> CONTRACT CLEARED! +${payout} Bits (${mult().toFixed(2)}x Streak) & +1x ${ITEMS[c.item].name}!`,P.GD);
+    };
+    G.mini={
+      name:'contracts',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+TACTICAL_CONTRACTS.length-1)%TACTICAL_CONTRACTS.length;
+        if(took('down')) sel=(sel+1)%TACTICAL_CONTRACTS.length;
+        if(took('party')){
+          const c=TACTICAL_CONTRACTS[sel];
+          completeContract(c);
+          return;
+        }
+        if(took('confirm')){
+          const c=TACTICAL_CONTRACTS[sel];
+          sfx('confirm'); G.mode='explore';
+          G.battle(c.foes,{lvl:c.lvl,cb:res=>{ if(res==='win') completeContract(c); }});
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> TACTICAL CONTRACT BOARD v2',56,40,P.GD,2);
+        const doneCount=TACTICAL_CONTRACTS.filter(c=>G.flags[c.id]).length;
+        UI.text(`STREAK: ${streak()} (${mult().toFixed(2)}x PAYOUT)   CLEARED: ${doneCount}/6`,900,44,'#4ade80',1,'right');
+        // Left: 6 Rotating Contracts
+        TACTICAL_CONTRACTS.forEach((c,i)=>{
+          const yy=80+i*64, on=i===sel, dn=!!G.flags[c.id];
+          UI.box(52,yy,424,56,on?P.GD:(dn?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          UI.text((on?'> ':'  ')+c.name,66,yy+10,on?P.GD:P.BONE,1);
+          UI.text(`LV ${c.lvl}  ·  ${c.zone.toUpperCase()}`,66,yy+30,'#22d3ee',1);
+          UI.text(dn?'[CLEARED]':`+${Math.round(c.baseBits*mult())}B`,462,yy+18,dn?'#4ade80':P.GD,1,'right');
+        });
+        // Right: Selected Contract Dossier
+        const cur=TACTICAL_CONTRACTS[sel], payout=Math.round(cur.baseBits*mult());
+        UI.box(494,80,410,384,P.GD,'rgba(10,8,6,.94)');
+        UI.text(cur.name.slice(4),514,100,P.GD,2);
+        UI.text(`SECTOR: ${cur.zone.toUpperCase()}   ·   THREAT LEVEL: LV ${cur.lvl}`,514,132,'#22d3ee',1);
+        UI.text(`RECOMMENDED PROTOCOL: 1.35x ${cur.proto}`,514,154,'#a78bfa',1);
+        UI.box(514,180,370,78,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('CONTRACT BRIEFING:',528,194,P.GD,1);
+        UI.wrap(cur.desc,342,1).forEach((l,li)=>UI.text(l,528,214+li*18,P.BONE,1));
+        UI.box(514,270,370,88,P.DDG,'rgba(14,11,8,.92)');
+        UI.text(`HOSTILE TARGETS: ${cur.foes.map(k=>ENEMIES[k].name.toUpperCase()).join(' + ')}`,528,284,'#f43f5e',1);
+        UI.text(`BASE BOUNTY: ${cur.baseBits} BITS   ·   STREAK MULT: ${mult().toFixed(2)}x`,528,308,P.BONE,1);
+        UI.text(`TOTAL PAYOUT: +${payout} BITS & +1x ${ITEMS[cur.item].name.toUpperCase()}`,528,330,'#4ade80',1);
+        UI.box(514,372,370,74,P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER] DEPLOY SQUAD TO CONTRACT SECTOR',699,390,P.GD,1,'center');
+        UI.text('[P] TACTICAL AUTO-DISPATCH (INSTANT CLEAR + STREAK)',699,416,'#4ade80',1,'center');
+        UI.text('[up/down] select contract   [enter] fight contract   [P] auto-dispatch   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
