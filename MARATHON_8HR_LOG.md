@@ -113,10 +113,10 @@
 ### Hour 12 (`11:00`–`12:00`) — District #18 (*"The Astral Relay"*) & Tactical Card Battler
 - [x] **M97** (`11:08` · `commit 4e983b9`): Blender 4.3 Wireframe Mesh #20 (`astral_astrolabe`) & Secret District #18 (*"The Astral Relay"* `Z.astral` in `src/zones2.js` + `astral` stem in `src/audio.js`)
 - [x] **M98** (`11:08` · `commit 4e983b9`): Secret Mini-Game #14 — *"Pantheon Triad" Tactical 3x3 Card Battler* (`G.startTriad()` via `> triad` & System Menu — Triple-Triad style 3x3 grid card game using 22 Agent & Boss cards!)
-- [x] **M99** (`11:18`): Collectible Pantheon Card Binder (`G.openCardBinder()` via `> binder` & System Menu — inspect all 32 collectible Agent, Boss & Monument Triad cards)
-- [x] **M100** (`11:18`): Milestone #100 Special — *"The Sovereign Pantheon Citadel"* Interactive 3D Hall of Fame (`G.openHallOfFame()` via `> hall` & System Menu — celebrate 100 milestones with full crew & stats)
-- [ ] **M101**: Weapon & Relic Custom Naming & Engraving Anvil (`G.openEngrave()` via `> engrave` & System Menu — imbue custom prefixes & elemental runes onto any relic)
-- [ ] **M102**: Interactive Color Palette & Custom Theme Forger (`G.openThemeForger()` via `> themeforge` & System Menu — design custom RGB phosphor palettes for the HUD & 3D world)
+- [x] **M99** (`11:18` · `commit 3bac606`): Collectible Pantheon Card Binder (`G.openCardBinder()` via `> binder` & System Menu — inspect all 32 collectible Agent, Boss & Monument Triad cards)
+- [x] **M100** (`11:18` · `commit 3bac606`): Milestone #100 Special — *"The Sovereign Pantheon Citadel"* Interactive 3D Hall of Fame (`G.openHallOfFame()` via `> hall` & System Menu — celebrate 100 milestones with full crew & stats)
+- [x] **M101** (`11:34`): Weapon & Relic Custom Naming & Engraving Anvil (`G.openEngrave()` via `> engrave` & System Menu — imbue custom prefixes & elemental runes onto any relic)
+- [x] **M102** (`11:34`): Interactive Color Palette & Custom Theme Forger (`G.openThemeForger()` via `> themeforge` & System Menu — design custom RGB phosphor palettes for the HUD & 3D world)
 - [ ] **M103**: Automated AI vs AI Battle Spectator Arena (`G.openSpectator()` via `> spectate` & System Menu — pit any 3 crew members against any boss squad and wager Bits)
 - [ ] **M104**: Full 18-District + 60-Subsystem Automated Audit #6 & APK v1.6 Sync
 

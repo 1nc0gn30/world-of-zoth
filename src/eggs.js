@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='engrave'||c==='anvil'||c==='runes'){ out('[engrave] opening Weapon & Relic Custom Engraving Anvil...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEngrave(); },40); }
+    else if(c==='themeforge'||c==='palette'||c==='rgb'){ out('[themeforge] opening Interactive RGB Palette & Theme Forger...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openThemeForger(); },40); }
     else if(c==='hall'||c==='m100'||c==='halloffame'){ out('[hall] opening Milestone #100 Sovereign 3D Hall of Fame...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openHallOfFame(); },40); }
     else if(c==='binder'||c==='cardbinder'||c==='deck'){ out('[binder] opening Collectible 32-Card Pantheon Foil Binder...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCardBinder(); },40); }
     else if(c==='triad'||c==='cards'){ out('[triad] launching Pantheon Triad 3x3 Tactical Card Battler...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startTriad(); },40); }
@@ -5318,6 +5320,192 @@ export function initEggs(G,{music,sfx}){
         UI.text(clm?'M100 CENTURY GRANT CLAIMED (+500B & HALO)':'[ENTER / P] CLAIM M100 GRANT (+500B & HALO)',692,394,clm?'#4ade80':P.GD,1,'center');
         UI.text('+500 BITS  &  +1x SINGULARITY.HALO MYTHIC RELIC',692,420,'#22d3ee',1,'center');
         UI.text('[arrows] cycle 3D monument   [enter / P] claim M100 grant (+500B & Halo)   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Weapon & Relic Custom Naming & Engraving Anvil (M101) ----
+  const ENGRAVE_ITEMS=Object.keys(ITEMS).filter(k=>ITEMS[k].slot);
+  const SOVEREIGN_RUNES=[
+    {id:'ROOT',     label:'[KERNEL: ROOT]',     col:'#f5b82e', desc:'+25% Relic Stat Output · Unlocks Root-Level Overdrive Resonance.'},
+    {id:'SOLAR',    label:'[THERMAL: SOLAR]',   col:'#fb923c', desc:'+25% Relic Stat Output · Infuses Foundry white-hot thermal edge.'},
+    {id:'ARC',      label:'[STATIC: ARC]',      col:'#22d3ee', desc:'+25% Relic Stat Output · Discharges high-frequency arc bolts.'},
+    {id:'CIPHER',   label:'[CRYPTO: CIPHER]',   col:'#a78bfa', desc:'+25% Relic Stat Output · Encrypts armor & pierces mirror wards.'},
+    {id:'PHASE',    label:'[QUANTUM: PHASE]',   col:'#4ade80', desc:'+25% Relic Stat Output · Stabilizes Chrono-Vault time dilation.'},
+    {id:'SINGULAR', label:'[VOID: SINGULAR]',   col:'#f43f5e', desc:'+25% Relic Stat Output · Channels 06:16 Astral Relay gravity.'}
+  ];
+  G.openEngrave=()=>{
+    let sel=0, rSel=0, customTag='SOVEREIGN';
+    const syncSelection=()=>{
+      const k=ENGRAVE_ITEMS[sel];
+      customTag=(G.flags&&G.flags['tag_'+k])||ITEMS[k].name.toUpperCase();
+      const savedR=G.flags&&G.flags['rune_'+k];
+      if(savedR){ const idx=SOVEREIGN_RUNES.findIndex(r=>r.id===savedR); if(idx>=0) rSel=idx; }
+    };
+    syncSelection();
+    G.mini={
+      name:'engrave',
+      key(e){
+        if(e.key==='Backspace'){ customTag=customTag.slice(0,-1); sfx('move'); }
+        else if(e.key.length===1&&/[a-zA-Z0-9 _+-]/.test(e.key)&&customTag.length<18){
+          customTag+=e.key.toUpperCase(); sfx('talk');
+        }
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ sel=(sel+ENGRAVE_ITEMS.length-1)%ENGRAVE_ITEMS.length; syncSelection(); sfx('move'); }
+        if(took('down')){ sel=(sel+1)%ENGRAVE_ITEMS.length; syncSelection(); sfx('move'); }
+        if(took('left')){ rSel=(rSel+SOVEREIGN_RUNES.length-1)%SOVEREIGN_RUNES.length; sfx('move'); }
+        if(took('right')){ rSel=(rSel+1)%SOVEREIGN_RUNES.length; sfx('move'); }
+        if(took('confirm')){
+          const k=ENGRAVE_ITEMS[sel], rn=SOVEREIGN_RUNES[rSel];
+          G.flags['rune_'+k]=rn.id;
+          G.flags['tag_'+k]=customTag||ITEMS[k].name.toUpperCase();
+          if(!G.has(k)) G.give(k,1);
+          G.ach('relic_engraver'); sfx('level');
+          G.toast(`> ENGRAVED [${G.flags['tag_'+k]}] WITH ${rn.label} (+25% STATS)!`,'#4ade80');
+        }
+        if(took('party')){
+          ENGRAVE_ITEMS.forEach((k,i)=>{
+            const rn=SOVEREIGN_RUNES[i%SOVEREIGN_RUNES.length];
+            G.flags['rune_'+k]=rn.id;
+            if(!G.flags['tag_'+k]) G.flags['tag_'+k]='SOV.'+ITEMS[k].name.toUpperCase().slice(0,12);
+            if(!G.has(k)) G.inv[k]=(G.inv[k]||0)+1;
+          });
+          if(!G.flags.engrave_grant){ G.flags.engrave_grant=1; G.bits+=150; }
+          syncSelection();
+          G.ach('relic_engraver'); sfx('win');
+          G.toast('> ALL 18 RELICS ENGRAVED WITH SOVEREIGN RUNES (+25% STATS & +150B)!','#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> RELIC NAMING & ENGRAVING ANVIL',56,40,P.GD,2);
+        const engCount=ENGRAVE_ITEMS.filter(k=>G.flags&&G.flags['rune_'+k]).length;
+        UI.text(`ENGRAVED RELICS: ${engCount}/${ENGRAVE_ITEMS.length}   ·   RUNE BONUS: +25%`,900,44,'#4ade80',1,'right');
+        // Left: Scrollable 18 Equippable Relics (9 visible)
+        const first=Math.max(0,Math.min(sel-4,ENGRAVE_ITEMS.length-9));
+        ENGRAVE_ITEMS.slice(first,first+9).forEach((k,idx)=>{
+          const i=first+idx, yy=78+idx*42, on=i===sel, it=ITEMS[k], rn=G.flags&&G.flags['rune_'+k];
+          UI.box(52,yy,390,38,on?P.GD:(rn?'#4ade80':P.DDG),on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          const disp=(G.flags&&G.flags['tag_'+k])||it.name.toUpperCase();
+          UI.text((on?'> ':'  ')+disp.slice(0,20),64,yy+12,on?P.GD:P.BONE,1);
+          UI.text(rn?`[${rn}]`:`[${it.slot.toUpperCase()}]`,428,yy+12,rn?'#4ade80':P.DG,1,'right');
+        });
+        // Right: Selected Relic Engraving Anvil & Stat Preview
+        const curK=ENGRAVE_ITEMS[sel], it=ITEMS[curK], rn=SOVEREIGN_RUNES[rSel], hasR=!!(G.flags&&G.flags['rune_'+curK]);
+        const upLv=(G.flags&&G.flags['up_'+curK])||0;
+        const mul=1+upLv*0.2+(hasR?0.25:0), nextMul=1+upLv*0.2+0.25;
+        UI.box(460,78,444,386,rn.col,'rgba(10,8,6,.94)');
+        UI.text(`BASE RELIC: ${it.name.toUpperCase()} (${it.slot.toUpperCase()})`,480,96,P.GD,1);
+        UI.text('CUSTOM INSCRIPTION (TYPE A-Z/0-9):',480,118,P.DG,1);
+        UI.box(480,136,404,34,'#22d3ee','rgba(14,18,22,.96)');
+        UI.text(`> ${customTag}_`,494,146,P.GD,2);
+        // Sovereign Rune Selector
+        UI.box(480,182,404,96,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('SELECT ELEMENTAL RUNE [LEFT / RIGHT]:',494,194,P.GD,1);
+        UI.text(rn.label,494,214,rn.col,2);
+        UI.wrap(rn.desc,374,1).forEach((ln,li)=>UI.text(ln,494,242+li*16,P.BONE,1));
+        // Stat Output Comparison
+        UI.box(480,288,404,78,P.DDG,'rgba(14,11,8,.92)');
+        UI.text(`RELIC STAT OUTPUT (OVERCLOCK +${upLv} · RUNE ${hasR?'ACTIVE':'PREVIEW'}):`,494,302,P.GD,1);
+        const modStr=Object.entries(it.mod||{}).map(([st,v])=>`${st.toUpperCase()} +${Math.round(v*nextMul)} (Base +${v})`).join('   ');
+        UI.text(modStr||'SPECIAL PASSIVE RELIC',494,324,'#4ade80',1);
+        UI.text(`TOTAL MULTIPLIER: ${(mul*100).toFixed(0)}% -> ${(nextMul*100).toFixed(0)}% WITH RUNE`,494,344,'#22d3ee',1);
+        UI.box(480,378,404,70,hasR?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER] ENGRAVE CUSTOM NAME & RUNE (+25% STATS)',682,394,P.GD,1,'center');
+        UI.text(`[P] AUTO-ENGRAVE ALL ${ENGRAVE_ITEMS.length} RELICS (+150 BITS)`,682,420,'#4ade80',1,'center');
+        UI.text('[up/down] relic   [left/right] rune   [type] rename   [enter] engrave   [P] engrave all   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Interactive Color Palette & Custom RGB Theme Forger (M102) ----
+  const DESIGNER_PALETTES=[
+    {name:'01. 06:12 SOLAR GOLD',   rgb:[245,184,46],  GD:'#f5b82e', DG:'#8a6514', DDG:'#3c2c0a'},
+    {name:'02. CYBERPUNK MAGENTA',  rgb:[244,63,168],  GD:'#f43fa8', DG:'#9d1765', DDG:'#4a082e'},
+    {name:'03. ICECREST GLACIER',   rgb:[56,189,248],  GD:'#38bdf8', DG:'#0284c7', DDG:'#082f49'},
+    {name:'04. PLASMA NEON LIME',   rgb:[163,230,53],  GD:'#a3e635', DG:'#4d7c0f', DDG:'#1a2e05'},
+    {name:'05. ROYAL AMETHYST',     rgb:[192,132,252], GD:'#c084fc', DG:'#7e22ce', DDG:'#3b0764'},
+    {name:'06. AMBER CRT VINTAGE',  rgb:[251,146,60],  GD:'#fb923c', DG:'#9a3412', DDG:'#431407'}
+  ];
+  const toHex=(r,g,b)=>'#'+[r,g,b].map(v=>Math.max(0,Math.min(255,Math.round(v))).toString(16).padStart(2,'0')).join('');
+  G.openThemeForger=()=>{
+    let pSel=0, chSel=0, rgb=[245,184,46];
+    const applyCustomRGB=(r,g,b,label='CUSTOM RGB PHOSPHOR')=>{
+      const gd=toHex(r,g,b), dg=toHex(r*0.56,g*0.56,b*0.56), ddg=toHex(r*0.24,g*0.24,b*0.24);
+      P.GD=gd; P.DG=dg; P.DDG=ddg;
+      G.flags.custom_theme={name:label, GD:gd, DG:dg, DDG:ddg, rgb:[r,g,b]};
+      return {gd,dg,ddg};
+    };
+    if(G.flags&&G.flags.custom_theme&&G.flags.custom_theme.rgb){
+      rgb=[...G.flags.custom_theme.rgb];
+    }
+    G.mini={
+      name:'themeforge',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')){ pSel=(pSel+DESIGNER_PALETTES.length-1)%DESIGNER_PALETTES.length; rgb=[...DESIGNER_PALETTES[pSel].rgb]; sfx('move'); }
+        if(took('down')){ pSel=(pSel+1)%DESIGNER_PALETTES.length; rgb=[...DESIGNER_PALETTES[pSel].rgb]; sfx('move'); }
+        if(took('n1')||took('quests')){ chSel=(chSel+1)%3; sfx('move'); }
+        if(took('left')){ rgb[chSel]=Math.max(20,rgb[chSel]-15); applyCustomRGB(rgb[0],rgb[1],rgb[2]); sfx('blip'); }
+        if(took('right')){ rgb[chSel]=Math.min(255,rgb[chSel]+15); applyCustomRGB(rgb[0],rgb[1],rgb[2]); sfx('blip'); }
+        if(took('confirm')){
+          const pr=DESIGNER_PALETTES[pSel];
+          const res=applyCustomRGB(rgb[0],rgb[1],rgb[2],pr.name.slice(4));
+          G.ach('theme_alchemist'); sfx('level');
+          G.toast(`> FORGED PHOSPHOR PALETTE: ${res.gd.toUpperCase()}!`,res.gd);
+        }
+        if(took('party')){
+          const pr=DESIGNER_PALETTES[pSel];
+          rgb=[...pr.rgb];
+          const res=applyCustomRGB(rgb[0],rgb[1],rgb[2],pr.name.slice(4));
+          if(!G.flags.theme_grant){ G.flags.theme_grant=1; G.bits+=120; }
+          G.ach('theme_alchemist'); sfx('win');
+          G.toast(`> PALETTE FORGED & +120 BITS CLAIMED (${res.gd.toUpperCase()})!`,'#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> RGB PHOSPHOR & THEME FORGER',56,40,P.GD,2);
+        const curHex=toHex(rgb[0],rgb[1],rgb[2]).toUpperCase();
+        UI.text(`ACTIVE PHOSPHOR: ${curHex}   ·   LIVE CRT SYNC`,900,44,P.GD,1,'right');
+        // Left: 6 Designer Palettes
+        DESIGNER_PALETTES.forEach((p,i)=>{
+          const yy=80+i*64, on=i===pSel;
+          UI.box(52,yy,400,56,on?P.GD:p.DG,on?'rgba(245,184,46,.15)':'rgba(10,8,6,.9)');
+          X.fillStyle=p.GD; X.fillRect(66,yy+12,28,32);
+          X.fillStyle=p.DG; X.fillRect(96,yy+12,18,32);
+          X.fillStyle=p.DDG; X.fillRect(116,yy+12,14,32);
+          UI.text((on?'> ':'  ')+p.name,142,yy+12,on?P.GD:P.BONE,1);
+          UI.text(`GD: ${p.GD}  ·  DG: ${p.DG}`,142,yy+32,p.GD,1);
+        });
+        // Right: Interactive RGB Channel Mixer & Live Swatch Preview
+        const gd=toHex(rgb[0],rgb[1],rgb[2]), dg=toHex(rgb[0]*0.56,rgb[1]*0.56,rgb[2]*0.56), ddg=toHex(rgb[0]*0.24,rgb[1]*0.24,rgb[2]*0.24);
+        UI.box(470,80,434,384,gd,'rgba(10,8,6,.94)');
+        UI.text('RGB PHOSPHOR CHANNEL MIXER ([1] SELECT CH · [<-/->] TUNE):',488,98,P.GD,1);
+        const chNames=[['RED CHANNEL (R)',rgb[0],'#f43f5e'],['GREEN CHANNEL (G)',rgb[1],'#4ade80'],['BLUE CHANNEL (B)',rgb[2],'#22d3ee']];
+        chNames.forEach(([lbl,val,col],ci)=>{
+          const yy=122+ci*48, on=ci===chSel;
+          UI.box(488,yy,398,40,on?P.GD:P.DDG,'rgba(14,11,8,.92)');
+          UI.text((on?'> ':'  ')+lbl,502,yy+12,on?P.GD:P.BONE,1);
+          UI.bar(670,yy+14,150,12,val/255,col,P.DDG);
+          UI.text(String(val),872,yy+12,col,1,'right');
+        });
+        // 3-Tone Derived Swatch Preview
+        UI.box(488,274,398,92,P.DDG,'rgba(14,11,8,.94)');
+        UI.text('DERIVED 3-TONE CRT PHOSPHOR TRIAD:',502,288,P.GD,1);
+        [[gd,'PRIMARY (P.GD)',504],[dg,'MID-GRID (P.DG)',634],[ddg,'SHADOW (P.DDG)',764]].forEach(([hx,lbl,bx])=>{
+          X.fillStyle=hx; X.fillRect(bx,310,104,26);
+          X.strokeStyle=P.BONE; X.strokeRect(bx,310,104,26);
+          UI.text(`${lbl.split(' ')[0]} ${hx.toUpperCase()}`,bx+52,342,P.BONE,1,'center');
+        });
+        UI.box(488,378,398,70,gd,'rgba(245,184,46,.14)');
+        UI.text(`[ENTER] APPLY CUSTOM PALETTE (${curHex})`,687,394,gd,1,'center');
+        UI.text('[P] FORGE PALETTE & CLAIM +120 BITS GRANT',687,420,'#4ade80',1,'center');
+        UI.text('[up/down] preset   [1] RGB channel   [left/right] adjust   [enter] apply   [P] forge +120B   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
