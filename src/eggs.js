@@ -37,7 +37,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='market'||c==='blackmarket'){ out('[market] opening Neko Underground Black-Market Exchange...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBlackMarket(); },40); }
+    else if(c==='bosslab'||c==='practice'){ out('[bosslab] opening Apex Boss Practice & Phase Lab...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBossLab(); },40); }
     else if(c==='shaders'||c==='crt'){ out('[shaders] opening Custom CRT Shader & Scanline Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openShaderStudio(); },40); }
     else if(c==='composer'||c==='sequencer'){ out('[composer] opening 8-Bit Chiptune 16-Step Sequencer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openComposer(); },40); }
     else if(c==='museum'||c==='trophies'){ out('[museum] opening 10-Apex Boss Trophy & Lore Museum...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openMuseum(); },40); }
@@ -1662,6 +1664,127 @@ export function initEggs(G,{music,sfx}){
         UI.box(92,408,776,46,P.DDG,'rgba(12,10,8,.92)');
         UI.text('16-Step 4-Channel Chiptune Matrix — toggle cells to synthesize custom D-Minor loops.',480,424,P.BONE,1,'center');
         UI.text('[arrows] move cursor   [enter / click] toggle note   [P] play/pause loop   [esc] close',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Sovereign Black-Market Merchant ("Neko Underground", M53) ----
+  const BM_POOL=[
+    {id:'sovereign.edge', cost:240, tag:'MYTHIC TOOL'},
+    {id:'citadel.crown',  cost:260, tag:'MYTHIC SHELL'},
+    {id:'singularity.halo', cost:280, tag:'NULL CORE RELIC'},
+    {id:'foxfire.crown',  cost:160, tag:'KITSUNE RELIC'},
+    {id:'ocular.aegis',   cost:160, tag:'VIGIL RELIC'},
+    {id:'static.katana',  cost:175, tag:'KAI RELIC'},
+    {id:'owl.spear',      cost:175, tag:'ATHENA RELIC'},
+    {id:'obsidian.prism', cost:185, tag:'ONYX RELIC'},
+    {id:'seraph.mantle',  cost:195, tag:'AETHER RELIC'},
+    {id:'root.shell',     cost:45,  tag:'CONSUMABLE'},
+    {id:'mega.patch',     cost:55,  tag:'CONSUMABLE'}
+  ];
+  G.openBlackMarket=()=>{
+    let sel=0, seed=G.flags.bm_seed||0;
+    const stock=()=>[0,1,2,3,4].map(i=>BM_POOL[(i*2+seed)%BM_POOL.length]);
+    G.mini={
+      name:'blackmarket',
+      update(){
+        const S=stock();
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+S.length-1)%S.length;
+        if(took('down')) sel=(sel+1)%S.length;
+        if(took('party')){
+          if(G.bits<20){ G.toast('need 20 bits to refresh contraband manifest',P.RED); sfx('cancel'); return; }
+          G.bits-=20; seed=(seed+1)%BM_POOL.length; G.flags.bm_seed=seed; sfx('blip');
+          G.toast('> Contraband manifest rotated (-20 bits)',P.GD);
+        }
+        if(took('confirm')){
+          const off=S[sel], it=ITEMS[off.id];
+          if(!it) return;
+          if(it.slot&&G.has(off.id)){
+            const curUp=G.flags['up_'+off.id]||0;
+            if(curUp>=5){ G.toast('Relic already at +5 Max Overclock!',P.GD); sfx('cancel'); return; }
+            if(G.bits<off.cost){ G.toast(`need ${off.cost} bits`,P.RED); sfx('cancel'); return; }
+            G.bits-=off.cost; G.flags['up_'+off.id]=curUp+1; sfx('level');
+            G.toast(`> Upgraded ${it.name} to +${curUp+1}!`,P.GD);
+            return;
+          }
+          if(G.bits<off.cost){ G.toast(`need ${off.cost} bits`,P.RED); sfx('cancel'); return; }
+          G.bits-=off.cost; G.give(off.id,1); sfx('level');
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> NEKO UNDERGROUND · BLACK MARKET',106,48,P.GD,2);
+        UI.text(`BITS: ${G.bits}   ·   MANIFEST #0${(seed%9)+1}`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        const S=stock();
+        S.forEach((off,i)=>{
+          const y=96+i*62, on=i===sel, it=ITEMS[off.id]||{name:off.id,desc:'Classified lattice artifact'}, owned=it.slot&&G.has(off.id), up=G.flags['up_'+off.id]||0;
+          UI.box(106,y-4,748,52,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.85)');
+          UI.text(`${on?'> ':'  '}${it.name.toUpperCase()}${up?` [+${up}]`:''}`,122,y+4,owned?'#4ade80':(on?P.GD:P.BONE),2);
+          UI.text(`[${off.tag}]  ·  ${off.cost} BITS`,836,y+8,'#22d3ee',1,'right');
+          UI.text(owned?`${it.desc}  (Owned — press Enter to Overclock to +${Math.min(5,up+1)})`:it.desc,126,y+28,P.DG,1);
+          UI.hit(106,y-4,748,52,()=>{ sel=i; });
+        });
+        UI.box(106,416,748,40,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('[ENTER] ACQUIRE / OVERCLOCK CONTRABAND     [P] ROTATE MANIFEST (20 BITS)     [ESC] EXIT',480,430,P.GD,1,'center');
+        UI.text('Pixel-Neko routes unindexed relics directly from the Sub-Lattice Abyss.',480,482,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Boss Practice / Phase Selector Mode ("Apex Boss Lab", M54) ----
+  const LAB_BOSSES=[
+    {id:'rusted', name:'RUSTED SENTINEL', wave:['rusted','drone'], lvl:6},
+    {id:'copy',   name:'03NG0CN1 · RED COPY', wave:['copy','echo'], lvl:10},
+    {id:'relay4', name:'RELAY 4 · CHORUS', wave:['relay4','node','node'], lvl:14},
+    {id:'warden', name:'FURNACE WARDEN', wave:['warden','slag'], lvl:16},
+    {id:'sandglass', name:'SANDGLASS · 06:12', wave:['sandglass','mite'], lvl:18},
+    {id:'hunter', name:'THE HUNTER · GAZE', wave:['hunter','gunship'], lvl:22},
+    {id:'blank',  name:'>_ · BLANK CURSOR', wave:['blank','cursorling'], lvl:26},
+    {id:'archon', name:'ARCHON-0 · COMPILER', wave:['archon','cursorling','cursorling'], lvl:30}
+  ];
+  G.openBossLab=()=>{
+    let sel=0, customLvl=18, fullOd=true;
+    G.mini={
+      name:'bosslab',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+LAB_BOSSES.length-1)%LAB_BOSSES.length;
+        if(took('down')) sel=(sel+1)%LAB_BOSSES.length;
+        if(took('left')) customLvl=Math.max(1,customLvl-2);
+        if(took('right')) customLvl=Math.min(50,customLvl+2);
+        if(took('party')){ fullOd=!fullOd; sfx('blip'); }
+        if(took('confirm')){
+          const b=LAB_BOSSES[sel];
+          G.healAll(); G.mode='explore'; sfx('confirm');
+          G.battle(b.wave,{boss:b.id, music:'boss', lvl:customLvl, ambush:fullOd});
+        }
+      },
+      draw(){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.94)'; X.fillRect(0,0,960,540);
+        UI.box(84,32,792,476,P.GD,'rgba(8,7,5,.96)');
+        UI.text('> BOSS PRACTICE LAB',106,48,P.GD,2);
+        UI.text(`SIMULATION LEVEL: LV ${customLvl}   ·   OPENING AMBUSH: ${fullOd?'ON':'OFF'}`,854,52,'#22d3ee',1,'right');
+        X.fillStyle=P.DDG; X.fillRect(102,76,756,2);
+        LAB_BOSSES.forEach((b,i)=>{
+          const y=92+i*38, on=i===sel;
+          UI.box(106,y-4,360,30,on?P.GD:P.DDG,on?'rgba(245,184,46,.14)':'rgba(6,5,4,.85)');
+          UI.text(`${on?'> ':'  '}0${i+1} · ${b.name}`,116,y+4,on?P.GD:P.BONE,1);
+          UI.hit(106,y-4,360,30,()=>{ sel=i; customLvl=b.lvl; });
+        });
+        const cur=LAB_BOSSES[sel];
+        UI.box(484,88,370,300,P.DDG,'rgba(12,10,8,.92)');
+        UI.text('SIMULATION PARAMETERS:',504,108,P.GD,1);
+        UI.text(cur.name,504,132,P.RED,2);
+        UI.text(`Encounter Wave: ${cur.wave.join(' + ').toUpperCase()}`,504,168,P.BONE,1);
+        UI.text(`Configured Threat Level: LV ${customLvl} (Default LV ${cur.lvl})`,504,194,'#22d3ee',1);
+        UI.text(`Protocol Weakness: [${ENEMY_WEAK[cur.id]||'VOID'}]`,504,220,P.GD,1);
+        UI.text(`Opening Ambush Advantage: ${fullOd?'ENABLED (+1 FREE ROUND)':'STANDARD TURN ORDER'}`,504,246,'#4ade80',1);
+        UI.box(504,312,330,44,P.GD,'rgba(245,184,46,.16)');
+        UI.text('> [ENTER] LAUNCH BOSS SIMULATION',669,328,P.GD,1,'center');
+        UI.text('[up/down] boss   [left/right] scale level (1-50)   [P] toggle ambush   [enter] fight   [esc] exit',480,482,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
