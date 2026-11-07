@@ -15,7 +15,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -41,7 +41,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='implants'||c==='cybernetics'||c==='neural'){ out('[implants] opening Cybernetic Kernel Implant Laboratory...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openImplants(); },40); }
+    else if(c==='mines'||c==='sonar'||c==='sweeper'){ out('[mines] launching Sub-Lattice Sonar Mine Sweeper...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startSonarSweep(); },40); }
     else if(c==='sprites'||c==='animstudio'||c==='frames'){ out('[sprites] opening Interactive Sprite & Animation Frame Studio...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openSpriteStudio(); },40); }
     else if(c==='trophies2'||c==='stipends'||c==='achcase'){ out('[trophies2] opening Achievement Trophy Case & Stipends...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openTrophyCase(); },40); }
     else if(c==='exchange'||c==='stocks'||c==='stake'){ out('[exchange] opening Lattice Stock & Bit Staking Exchange...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openExchange(); },40); }
@@ -4111,6 +4113,222 @@ export function initEggs(G,{music,sfx}){
         UI.box(408,412,478,40,P.GD,'rgba(245,184,46,.14)');
         UI.text('[LEFT/RIGHT] STATE   ·   [ENTER] PAUSE/STEP   ·   [P] ZOOM & ONION-SKIN',647,426,P.GD,1,'center');
         UI.text('[up/down] agent   [left/right] anim row   [enter] step frame   [P] zoom/onion   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Cybernetic Kernel Implant Laboratory (M89) ----
+  const CYBER_IMPLANTS=[
+    {id:'imp_vamp', name:'01. VAMPIRIC SIPHON', lobe:'CORTEX', col:'#f43f5e',
+      stat:'+12% ATK & +15% LIFESTEAL ON CRIT',
+      desc:'Nanite siphon spliced into the primary strike bus. Drains hostile HP on every gold-window strike.'},
+    {id:'imp_thorn', name:'02. COUNTER-STATIC THORNS', lobe:'CORTEX', col:'#fb923c',
+      stat:'+14% DEF & 20% MELEE REFLECT',
+      desc:'Sub-dermal high-voltage mesh that discharges static arcs into any attacker on contact.'},
+    {id:'imp_surge', name:'03. ZERO-DAY EN SURGE', lobe:'CORTEX', col:'#22d3ee',
+      stat:'+18% MAX EN & +3 EN / TURN',
+      desc:'Overclocked kernel capacitor bank that floods the active squad with surplus energy.'},
+    {id:'imp_chrono', name:'04. 06:12 REFLEX COIL', lobe:'SYNAPSE', col:'#f5b82e',
+      stat:'+3 SPD & WIDER PARRY WINDOW',
+      desc:'Chronos-calibrated synaptic relay that dilates combat perception during enemy telegraphs.'},
+    {id:'imp_aegis', name:'05. QUANTUM WARD CORE', lobe:'SYNAPSE', col:'#4ade80',
+      stat:'+16% MAX HP & TURN-1 BARRIER',
+      desc:'Superposed phase-shield generator that absorbs the opening volley of any encounter.'},
+    {id:'imp_breach', name:'06. FIREWALL PIERCE BUS', lobe:'SYNAPSE', col:'#a78bfa',
+      stat:'+15% ATK & +1 SHIELD BREACH',
+      desc:'Zero-knowledge packet injector that strips an extra layer of boss armor per hit.'},
+    {id:'imp_quorum', name:'07. PANTHEON NEURAL LINK', lobe:'SPINAL', col:'#22d3ee',
+      stat:'+10% ALL STATS TO ACTIVE SQUAD',
+      desc:'22-channel optical spine link synchronizing tactical telemetry across all 3 squad slots.'},
+    {id:'imp_overdrive', name:'08. SINGULARITY REACTOR', lobe:'SPINAL', col:'#f5b82e',
+      stat:'+20% ATK/DEF & +25% OVERDRIVE',
+      desc:'Miniature 4D Clifford reactor core that accelerates squad Overdrive gauge charge.'},
+    {id:'imp_sovereign', name:'09. ARCHON-0 ROOT CHIP', lobe:'SPINAL', col:'#4ade80',
+      stat:'+22% ALL STATS & +4 SPD BOOST',
+      desc:'Sovereign root-compiler neural chip recovered from the Zero-Knowledge Citadel throne.'}
+  ];
+  G.openImplants=()=>{
+    let sel=0;
+    if(!Array.isArray(G.flags.active_implants)) G.flags.active_implants=['imp_chrono'];
+    const activeList=()=>G.flags.active_implants||[];
+    G.mini={
+      name:'implants',
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) sel=(sel+6)%9;
+        if(took('down')) sel=(sel+3)%9;
+        if(took('left')) sel=(sel+8)%9;
+        if(took('right')) sel=(sel+1)%9;
+        if(took('confirm')){
+          const imp=CYBER_IMPLANTS[sel];
+          let L=[...activeList()];
+          if(L.includes(imp.id)){
+            L=L.filter(x=>x!==imp.id);
+            G.flags.active_implants=L;
+            sfx('cancel'); G.toast(`> UNSOCKETED: ${imp.name.slice(4)}`,P.DG);
+          } else {
+            if(L.length>=3) L.shift();
+            L.push(imp.id);
+            G.flags.active_implants=L;
+            G.ach('cyber_augmented'); sfx('level');
+            G.toast(`> SOCKETED IMPLANT: ${imp.name.slice(4)} (${L.length}/3)!`,imp.col);
+          }
+          G.healAll();
+        }
+        if(took('party')){
+          G.flags.active_implants=['imp_chrono','imp_quorum','imp_sovereign'];
+          G.ach('cyber_augmented'); G.healAll(); sfx('win');
+          G.toast('> OPTIMAL SOVEREIGN TRIAD SOCKETED (04 + 07 + 09)!','#4ade80');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> CYBERNETIC KERNEL IMPLANT LAB',56,40,P.GD,2);
+        const L=activeList();
+        UI.text(`ACTIVE SOCKETS: ${L.length}/3   ·   BONUS: +${L.length*12}% STATS`,900,44,'#4ade80',1,'right');
+        // Left: 3x3 Neural Socket Matrix
+        const lobes=['CORTEX','SYNAPSE','SPINAL'];
+        for(let r=0;r<3;r++){
+          UI.text(lobes[r],56,92+r*124,P.DG,1);
+          for(let c=0;c<3;c++){
+            const idx=r*3+c, imp=CYBER_IMPLANTS[idx], on=idx===sel, eq=L.includes(imp.id);
+            const bx=56+c*138, by=108+r*124;
+            UI.box(bx,by,128,96,on?P.GD:(eq?'#4ade80':P.DDG),on?'rgba(245,184,46,.16)':(eq?'rgba(74,222,128,.12)':'rgba(10,8,6,.92)'));
+            UI.text(imp.name.slice(0,3),bx+10,by+10,on?P.GD:imp.col,1);
+            UI.text(eq?'[SOCKETED]':'[IDLE]',bx+118,by+10,eq?'#4ade80':P.DG,1,'right');
+            UI.wrap(imp.name.slice(4),108,1).slice(0,2).forEach((ln,li)=>UI.text(ln,bx+10,by+34+li*16,P.BONE,1));
+            UI.text(imp.lobe,bx+10,by+74,imp.col,1);
+          }
+        }
+        // Right: Selected Implant Dossier & Squad Stat Readout
+        const cur=CYBER_IMPLANTS[sel], isEq=L.includes(cur.id), sMe=G.stats('me');
+        UI.box(484,80,420,384,cur.col,'rgba(10,8,6,.94)');
+        UI.text(cur.name.slice(4),502,98,P.GD,1);
+        UI.text(`NEURAL LOBE: ${cur.lobe}   ·   STATUS: ${isEq?'SOCKETED (ACTIVE)':'STANDBY'}`,502,120,isEq?'#4ade80':cur.col,1);
+        UI.box(502,144,384,54,P.DDG,'rgba(14,11,8,.94)');
+        UI.text('AUGMENTATION VECTOR:',516,156,P.GD,1);
+        UI.text(cur.stat,516,176,'#4ade80',1);
+        UI.box(502,208,384,82,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('CLINICAL SCHEMATIC:',516,222,P.GD,1);
+        UI.wrap(cur.desc,356,1).forEach((ln,li)=>UI.text(ln,516,242+li*18,P.BONE,1));
+        UI.box(502,300,384,72,P.DDG,'rgba(14,11,8,.96)');
+        UI.text('OPERATOR AUGMENTED TELEMETRY (1NC0GN30):',516,314,'#22d3ee',1);
+        UI.text(`HP ${sMe.mhp}   EN ${sMe.men}   ATK ${sMe.atk}   DEF ${sMe.def}   SPD ${sMe.spd}`,516,336,P.BONE,1);
+        UI.text(`ACTIVE CHIPS: ${L.map(id=>id.replace('imp_','').toUpperCase()).join(' + ')||'NONE'}`,516,354,P.GD,1);
+        UI.box(502,382,384,68,isEq?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(isEq?'[ENTER] UNSOCKET NEURAL IMPLANT':'[ENTER] SOCKET IMPLANT INTO KERNEL (MAX 3)',694,398,isEq?'#4ade80':P.GD,1,'center');
+        UI.text('[P] AUTO-SOCKET SOVEREIGN TRIAD (04 + 07 + 09)',694,424,'#4ade80',1,'center');
+        UI.text('[arrows] select chip   [enter] socket/unsocket   [P] sovereign triad   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #13: Sub-Lattice Sonar Mine Sweeper (M90) ----
+  G.startSonarSweep=()=>{
+    const N=6, BOMBS=[[0,2],[1,4],[2,1],[3,5],[4,0],[5,3]];
+    const isBomb=(r,c)=>BOMBS.some(([br,bc])=>br===r&&bc===c);
+    const adjCount=(r,c)=>{
+      let cnt=0;
+      for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++){
+        if(!dr&&!dc) continue;
+        const nr=r+dr, nc=c+dc;
+        if(nr>=0&&nr<N&&nc>=0&&nc<N&&isBomb(nr,nc)) cnt++;
+      }
+      return cnt;
+    };
+    let cr=0, cc=0, rev=Array.from({length:N},()=>Array(N).fill(false)), flg=Array.from({length:N},()=>Array(N).fill(false));
+    let hits=0, won=false;
+    const safeCleared=()=>{
+      let n=0;
+      for(let r=0;r<N;r++) for(let c=0;c<N;c++) if(rev[r][c]&&!isBomb(r,c)) n++;
+      return n;
+    };
+    const checkWin=()=>{
+      if(!won&&safeCleared()>=30){
+        won=true; G.ach('sonar_sweeper'); sfx('win');
+        if(!G.flags.sonar_won){
+          G.flags.sonar_won=1; G.bits+=280; G.give('cache.bit',1);
+          G.toast('> SUB-LATTICE SWEPT! +280 BITS & +1x CACHE.BIT!',P.GD);
+        } else {
+          G.toast('> ALL 30 SAFE SECTORS VERIFIED!',P.GD);
+        }
+      }
+    };
+    const flood=(r,c)=>{
+      if(r<0||r>=N||c<0||c>=N||rev[r][c]||isBomb(r,c)) return;
+      rev[r][c]=true; flg[r][c]=false;
+      if(adjCount(r,c)===0){
+        for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++) if(dr||dc) flood(r+dr,c+dc);
+      }
+    };
+    // Reveal (0,0) at start so player immediately has an opening sonar reading
+    flood(0,0);
+    G.mini={
+      name:'sonarsweep',
+      key(e){
+        if(e.code==='KeyF'){ flg[cr][cc]=!flg[cr][cc]; sfx('move'); }
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('up')) cr=(cr+N-1)%N;
+        if(took('down')) cr=(cr+1)%N;
+        if(took('left')) cc=(cc+N-1)%N;
+        if(took('right')) cc=(cc+1)%N;
+        if(took('confirm')&&!won){
+          if(isBomb(cr,cc)){
+            flg[cr][cc]=true; hits++; sfx('hit');
+            G.toast('> LOGIC BOMB DETECTED & AUTO-QUARANTINED!',P.RED);
+          } else {
+            flood(cr,cc); sfx('confirm'); checkWin();
+          }
+        }
+        if(took('party')){
+          for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+            if(isBomb(r,c)) flg[r][c]=true; else rev[r][c]=true;
+          }
+          checkWin();
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> SUB-LATTICE SONAR MINE SWEEPER',56,40,P.GD,2);
+        const clr=safeCleared();
+        UI.text(`SAFE SECTORS: ${clr}/30   ·   BOMBS: 6`,900,44,won?'#4ade80':P.GD,1,'right');
+        // Left: 6x6 Sonar Grid
+        const gx0=64, gy0=82, cs=62;
+        for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+          const x=gx0+c*cs, y=gy0+r*cs, on=(r===cr&&c===cc), isR=rev[r][c], isF=flg[r][c];
+          const bCol=on?P.GD:(isF?'#f43f5e':(isR?'#4ade80':P.DDG));
+          const bg=on?'rgba(245,184,46,.18)':(isF?'rgba(244,63,94,.16)':(isR?'rgba(16,24,18,.92)':'rgba(10,8,6,.94)'));
+          UI.box(x,y,56,56,bCol,bg);
+          if(isF){
+            UI.text('[!]',x+28,y+20,'#f43f5e',1,'center');
+          } else if(isR){
+            const n=adjCount(r,c);
+            const cols=['#6b7280','#22d3ee','#4ade80','#f5b82e','#fb923c','#f43f5e','#a78bfa'];
+            UI.text(n===0?'·':String(n),x+28,y+16,cols[n]||P.GD,2,'center');
+          } else {
+            UI.text('?',x+28,y+20,P.DG,1,'center');
+          }
+        }
+        // Right: Sonar Telemetry & Briefing
+        UI.box(464,82,440,382,won?'#4ade80':P.GD,'rgba(10,8,6,.94)');
+        UI.text(`CURSOR SECTOR: [ROW ${cr+1}, COL ${cc+1}]`,484,102,P.GD,1);
+        const stTxt=flg[cr][cc]?'QUARANTINED LOGIC BOMB [!]':(rev[cr][cc]?`VERIFIED SAFE (${adjCount(cr,cc)} ADJ BOMBS)`:'UNSCANNED SUB-LATTICE NODE');
+        UI.text(`STATUS: ${stTxt}`,484,126,'#22d3ee',1);
+        UI.box(484,154,400,104,P.DDG,'rgba(14,11,8,.92)');
+        UI.text('SONAR SWEEP PROTOCOL:',500,168,P.GD,1);
+        UI.wrap('6 corrupted Red Logic Bombs are buried in the 6x6 sub-lattice grid. Each swept node displays the count of adjacent logic bombs in its 8-cell perimeter.',368,1).forEach((ln,li)=>UI.text(ln,500,188+li*18,P.BONE,1));
+        UI.box(484,270,400,88,P.DDG,'rgba(14,11,8,.94)');
+        UI.text(`PROGRESS: ${clr}/30 SAFE NODES SWEPT (${Math.round(clr/30*100)}%)`,500,286,'#4ade80',1);
+        UI.text(`QUARANTINE FLAGS: ${flg.flat().filter(Boolean).length}/6   ·   HITS: ${hits}`,500,308,P.BONE,1);
+        UI.text('REWARD: +280 BITS & +1x CACHE.BIT + SONAR SWEEPER',500,330,P.GD,1);
+        UI.box(484,372,400,76,won?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text(won?'SUB-LATTICE 100% SWEPT & SECURED!':'[ENTER] PING SECTOR   ·   [F] FLAG BOMB',684,390,won?'#4ade80':P.GD,1,'center');
+        UI.text('[P] DEEP-SONAR PULSE LOCK (INSTANT CLEAR)',684,418,'#22d3ee',1,'center');
+        UI.text('[arrows] move cursor   [enter] sweep node   [F] flag bomb   [P] deep-sonar lock   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
