@@ -16,7 +16,7 @@ export const ACH={
   forge:['forged','apply a valid ZGL creation'], academy:['null certified','finish every Null Academy lab'], lab_prompt:['prompt engineer','lab 01'], lab_halluc:['source check','lab 02'], lab_inject:['data, not orders','lab 03'], lab_jail:['still no','lab 04'], lab_leak:['no secrets in prompts','lab 05'], lab_agent:['least privilege','lab 06'], lab_fake:['faces, not voices','lab 07'], lab_ctf:['capture the flag','lab 08'],
   tutorial:['first light','finish the tutorial'], dissipate:['dissipate','blink through a firewall'],
   first_win:['hello world','win a battle'], lvl10:['root','reach level 10'], lvl20:['kernel','reach level 20'], lvl30:['superuser','reach level 30'],
-  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'],
+  boss_copy:['mirror, mirror','beat 03ng0cn1'], boss_relay4:['chorus','beat RELAY 4'], boss_sandglass:['six thirteen','beat SANDGLASS'], boss_hunter:['hunter offline','beat THE HUNTER'], boss_blank:['whoami','beat the cursor'], boss_archon:['the first compiler','beat ARCHON-0'], stack10:['stack overflow','clear floor 10 of The Infinite Stack'], pantheon_trial:['pantheon sovereign','clear all 6 stages of Boss Rush'], reforge5:['overclocked +5','overclock any gear to +5'], bounty10:['apex hunter','clear all 10 district elite bounties'], photographer:['06:12 postcard','capture a snapshot in Photo Mode'], daily_clear:['daily 06:12','complete a Daily Seeded Lattice Run'], packet_runner:['hilbert surfer','reach 500m in Packet Runner'], zk_cipher:['zero-knowledge solver','solve the 4x4 Protocol Cipher Grid'], sig_decoder:['carrier locked','decode all 4 encrypted carrier frequencies'], bio_router:['physarum architect','route all 6 Physarum bio-nodes'], core_defrag:['memory defragmented','defragment all 16 cold-storage memory blocks'], skill_master:['protocol savant','upgrade any skill to Mastery Rank +3'], gate_defender:['east gate sentinel','intercept 20 hostile packets in Firewall Defender'], pantheon_raider:['pantheon raider','complete a 3-wave Pantheon Survival Raid'], wave_collapse:['eigenstate locked','collapse the 5x5 quantum superposition manifold'], banner_forged:['call-sign sovereign','customize your operator call-sign & HUD banner'], harmonic_chord:['harmonic chord','lock a 5x5 Protocol Resonance Chord'], laser_router:['optical engineer','route the fiber-optic laser through all 3 nodes to RX'], loadout_master:['tactical quartermaster','auto-optimize or save a squad gear loadout preset'], arcade_king:['arcade sovereign','boot the 11-cabinet Safehouse Arcade Hub'], move_analyst:['intent analyst','analyze hostile AI move telegraphs in the MoveDex'], arena_architect:['arena architect','design a custom encounter in the Battle Builder'], contract_hunter:['streak contractor','complete a rotating Tactical Contract with streak bonus'], cyber_tamer:['cyber-familiar tamer','equip & bond with a Cyber-Familiar Pet Companion'], orrery_master:['celestial horologist','align all 5 orbital rings of the Chrono-Orrery to 06:12'], theater_director:['chronicle director','replay a cutscene or story dialogue in the Sovereign Theater'], trophy_collector:['stipend sovereign','claim a milestone stipend from the Achievement Trophy Case'], market_maker:['lattice whale','stake bits or harvest dividends on the Lattice Exchange'], sprite_animator:['pixel choreographer','inspect agent animation frames in the Sprite Studio'], cyber_augmented:['neural augmented','socket a Cybernetic Kernel Implant in the Implant Lab'], sonar_sweeper:['sonar sweeper','clear all 30 safe sectors in Sub-Lattice Sonar Mine Sweeper'], skull_sovereign:['laso sovereign','activate Challenge Skulls in the Battle Mutator Lab'], directory_navigator:['census sovereign','locate or warp to an agent via the World NPC Directory'], seed_architect:['seed architect','compile or clear a deterministic gauntlet in the Seed Lab'], radio_pirate:['pirate broadcaster','tune into sovereign frequencies on the Lattice Radio'], medal_general:['decorated sovereign','earn or pin a commendation on the Combat Medal Rack'], epilogue_chronicler:['06:13 chronicler','read the post-dawn epilogue chapters of the 22-agent crew'], triad_champion:['triad grandmaster','win a 3x3 Pantheon Triad tactical card match'], card_collector:['binder archivist','collect or mint foil cards in the 32-Card Pantheon Binder'], century_sovereign:['milestone 100','commemorate 100 sovereign milestones in the 3D Hall of Fame'], relic_engraver:['runesmith sovereign','engrave a custom name and protocol rune onto a relic'], theme_alchemist:['phosphor alchemist','forge a custom RGB phosphor palette in the Theme Forger'], arena_spectator:['high-roller patron','spectate and win a Bits wager in the AI vs AI Battle Arena'], rhythm_maestro:['signal maestro','score a 15-note sync combo in Signal Tower Rhythm Sync'], vault_cracker:['zero-knowledge cracker','crack a hexadecimal cryptographic vault in the Vault Cracker'], engine_profiler:['telemetry engineer','profile WebGL geometry and frame timings in the Engine Profiler'], quest_architect:['chronicle cartographer','inspect or route a story dependency in the Quest Flowchart'], gym_master:['regimen drillmaster','train or redistribute companion attributes in the Stat Gym'], bbs_sysop:['sub-lattice sysop','read and PGP-sign underground dispatches on the 06:12 BBS'], endless_survivor:['endless sovereign','survive scaling apex boss waves in Endless Survival Mode'], vector_commander:['vector commander','destroy hostile vector tanks in the Vector Tank Cyber-Arena'], blueprint_architect:['world architect','place a custom 3D wireframe monument in the ZGL Blueprint Studio'], bit_alchemist:['packet alchemist','compile high-tier power-of-2 bit packets in 2048 Bit Merger'], combat_analyst:['damage auditor','analyze turn-by-turn breach and parry telemetry in the Combat Log'],
   ending:['tomorrow 06:12','see the sunrise'], crew22:['crew: 22','count the copy in'], recruit20:['twenty-one','recruit every agent'],
   konami:['up up down down','enter the old code'], terminal:['ls -a','find the hidden terminal'], whoami:['the wordmark','ask the terminal who you are'], rooftop:['06:12','find the rooftop'],
   early:['early riser','sleep at the rest tree at 06:12 real time'], sleep3:['rest well','sleep under the tree three times'], handshake:['handshake: ok','lock the oscilloscope with Vigil'],
@@ -42,7 +42,9 @@ export function initEggs(G,{music,sfx}){
   function termKey(e){ if(e.key==='Escape'){ G.closeTerm=1; return; } if(e.key==='Enter'){ run(T.buf.trim().toLowerCase()); T.buf=''; G.eatConfirm=2; e.preventDefault(); return; }
     if(e.key==='Backspace'){ T.buf=T.buf.slice(0,-1); e.preventDefault(); return; } if(e.key.length===1&&T.buf.length<40){ T.buf+=e.key; sfx('talk'); e.preventDefault(); } }
   function run(c){ out('> '+c,P.GD); if(!c) return;
-    if(c==='help') out('nmap  ping  patch  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    if(c==='help') out('nmap  ping  patch  merge  combatlog  blueprint  endless  tank  gym  bbs  profiler  questgraph  rhythm  vaults  spectate  engrave  themeforge  hall  binder  triad  medals  epilogues  seedlab  radio  skulls  npcs  implants  mines  sprites  trophies2  exchange  orrery  theater  pets  builder  contracts  arcade  movedex  lasers  loadouts  resonance  collapse  banner  timeline  raid  defender  soundboard  meshes  mastery  wheel  defrag  singularity  ledger  combos  router  market  bosslab  shaders  composer  museum  weather  formation  decoder  dossiers  splits  daily  dojo  synth  logs  bonds  keys  runner  cipher  titles  bounty  stack  bossrush  reforge  bestiary  photo  saves  theme  warp  exit');
+    else if(c==='merge'||c==='2048'||c==='alchemy'){ out('[merge] launching Secret Mini-Game #17: Packet Alchemy / 2048 Bit Merger...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startBitMerge(); },40); }
+    else if(c==='combatlog'||c==='dmglog'||c==='analytics'){ out('[combatlog] opening Tactical Combat Log & Damage Breakdown Analyzer...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openCombatLog(); },40); }
     else if(c==='blueprint'||c==='modstudio'||c==='props'){ out('[blueprint] opening In-Game ZGL World & Prop Blueprint Editor...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openBlueprintStudio(); },40); }
     else if(c==='endless'||c==='survival'||c==='gauntlet'){ out('[endless] opening Boss Rush Endless Survival Mode...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.openEndlessBoss(); },40); }
     else if(c==='tank'||c==='vectortank'||c==='battlezone'){ out('[tank] launching Secret Mini-Game #16: Vector Tank Cyber-Arena...',P.GD); G.closeTerm=1; setTimeout(()=>{ G.startVectorTank(); },40); }
@@ -6680,6 +6682,238 @@ export function initEggs(G,{music,sfx}){
         UI.text('[ENTER / P] SPAWN 3D PROP IN CURRENT DISTRICT (+150B)',692,388,P.GD,1,'center');
         UI.wrap(bp.desc,368,1).slice(0,2).forEach((ln,li)=>UI.text(ln,692,412+li*16,'#4ade80',1,'center'));
         UI.text('[Q/E] blueprint   [arrows] X/Z coords   [Z/X] scale   [C] color   [enter/P] spawn   [R] clear   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Secret Mini-Game #17: "Packet Alchemy / 2048 Bit Merger" (M115) ----
+  const BIT_TIERS={
+    2:    {lbl:'2.BIT',    col:'#9ca3af', bg:'rgba(24,24,28,.96)'},
+    4:    {lbl:'4.BYTE',   col:'#22d3ee', bg:'rgba(12,26,32,.96)'},
+    8:    {lbl:'8.WORD',   col:'#4ade80', bg:'rgba(12,28,18,.96)'},
+    16:   {lbl:'16.NODE',  col:'#f5b82e', bg:'rgba(28,22,10,.96)'},
+    32:   {lbl:'32.HASH',  col:'#fb923c', bg:'rgba(32,18,10,.96)'},
+    64:   {lbl:'64.CORE',  col:'#f43f5e', bg:'rgba(34,12,16,.96)'},
+    128:  {lbl:'128.SEAL', col:'#a78bfa', bg:'rgba(24,14,34,.96)'},
+    256:  {lbl:'256.KEY',  col:'#22d3ee', bg:'rgba(14,30,38,.96)'},
+    512:  {lbl:'512.GATE', col:'#4ade80', bg:'rgba(14,34,22,.96)'},
+    1024: {lbl:'1024.ARCH',col:'#f5b82e', bg:'rgba(36,28,12,.96)'},
+    2048: {lbl:'2048.ROOT',col:'#4ade80', bg:'rgba(20,42,26,.98)'}
+  };
+  G.startBitMerge=()=>{
+    let grid=Array(16).fill(0), score=0, moves=0, maxTile=4;
+    const spawnTile=()=>{
+      const empty=[];
+      for(let i=0;i<16;i++) if(grid[i]===0) empty.push(i);
+      if(!empty.length) return;
+      const pick=empty[(empty.length*0.37+moves)%empty.length|0];
+      grid[pick]=(moves%4===0)?4:2;
+    };
+    const initBoard=()=>{
+      grid=Array(16).fill(0);
+      grid[0]=2; grid[1]=2; grid[5]=4; grid[10]=8;
+      score=0; moves=0; maxTile=8;
+    };
+    initBoard();
+    const slideLine=arr=>{
+      const nz=arr.filter(v=>v>0);
+      const out=[];
+      for(let i=0;i<nz.length;i++){
+        if(i+1<nz.length && nz[i]===nz[i+1]){
+          const merged=Math.min(2048,nz[i]*2);
+          out.push(merged);
+          score+=merged;
+          if(merged>maxTile) maxTile=merged;
+          i++;
+        } else out.push(nz[i]);
+      }
+      while(out.length<4) out.push(0);
+      return out;
+    };
+    const moveDir=(dir)=>{
+      const before=grid.join(',');
+      if(dir==='left'||dir==='right'){
+        for(let r=0;r<4;r++){
+          let row=[grid[r*4],grid[r*4+1],grid[r*4+2],grid[r*4+3]];
+          if(dir==='right') row.reverse();
+          row=slideLine(row);
+          if(dir==='right') row.reverse();
+          for(let c=0;c<4;c++) grid[r*4+c]=row[c];
+        }
+      } else {
+        for(let c=0;c<4;c++){
+          let col=[grid[c],grid[4+c],grid[8+c],grid[12+c]];
+          if(dir==='down') col.reverse();
+          col=slideLine(col);
+          if(dir==='down') col.reverse();
+          for(let r=0;r<4;r++) grid[r*4+c]=col[r];
+        }
+      }
+      if(grid.join(',')!==before){
+        moves++; spawnTile(); sfx('move');
+        if(maxTile>=64){ G.ach('bit_alchemist'); }
+      }
+    };
+    const quantumOverclock=()=>{
+      for(let i=0;i<16;i++){
+        if(grid[i]>0){
+          grid[i]=Math.min(2048,grid[i]*2);
+          if(grid[i]>maxTile) maxTile=grid[i];
+          score+=grid[i];
+        }
+      }
+      if(maxTile<2048){ grid[15]=2048; maxTile=2048; score+=2048; }
+      G.bits+=200; G.give('root.shell',1);
+      G.ach('bit_alchemist'); sfx('win');
+      G.toast('> 2048.ROOT PACKET COMPILED! +200 BITS + 1x ROOT.SHELL','#4ade80');
+    };
+    G.mini={
+      name:'bit_merge',
+      key(e){
+        const k=(e.key||'').toLowerCase();
+        if(k==='p') quantumOverclock();
+        if(k==='r'){ initBoard(); sfx('blip'); }
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left'))  moveDir('left');
+        if(took('right')) moveDir('right');
+        if(took('up'))    moveDir('up');
+        if(took('down'))  moveDir('down');
+        if(took('confirm')) quantumOverclock();
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> PACKET ALCHEMY // 2048 BIT MERGER',56,40,P.GD,2);
+        UI.text(`MAX PACKET: ${maxTile}.BIT   ·   MOVES: ${moves}   ·   SCORE: ${score}`,900,44,'#4ade80',1,'right');
+        // Left: 4x4 Sliding Bit Compiler Grid
+        UI.box(52,78,404,386,P.DDG,'rgba(10,8,6,.94)');
+        for(let r=0;r<4;r++){
+          for(let c=0;c<4;c++){
+            const v=grid[r*4+c], bx=68+c*94, by=94+r*90;
+            const info=BIT_TIERS[v]||{lbl:'EMPTY',col:P.DG,bg:'rgba(14,12,10,.88)'};
+            UI.box(bx,by,84,80,v?info.col:P.DDG,info.bg);
+            if(v>0){
+              UI.text(String(v),bx+42,by+18,info.col,2,'center');
+              UI.text(info.lbl,bx+42,by+50,P.BONE,1,'center');
+            } else {
+              UI.text('·',bx+42,by+32,P.DDG,2,'center');
+            }
+          }
+        }
+        // Right: Bit Compiler Hierarchy & Quantum Overclock Controls
+        UI.box(472,78,432,386,P.GD,'rgba(10,8,6,.94)');
+        UI.text('POWER-OF-2 BIT COMPILER LADDER:',492,96,P.GD,1);
+        const ladder=[2,4,8,16,32,64,128,256,512,1024,2048];
+        ladder.forEach((v,idx)=>{
+          const colIdx=idx%2, rowIdx=Math.floor(idx/2);
+          const lx=492+colIdx*202, ly=120+rowIdx*36, info=BIT_TIERS[v];
+          const unlocked=maxTile>=v;
+          UI.box(lx,ly,190,30,unlocked?info.col:P.DDG,unlocked?info.bg:'rgba(14,11,8,.88)');
+          UI.text(info.lbl,lx+10,ly+8,unlocked?info.col:P.DG,1);
+          UI.text(unlocked?'[SYNC]':'[LOCK]',lx+180,ly+8,unlocked?'#4ade80':P.DG,1,'right');
+        });
+        UI.box(492,344,392,104,maxTile>=2048?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER / P] QUANTUM BIT DOUBLER (+200B & ROOT.SHELL)',688,362,P.GD,1,'center');
+        UI.text('Doubles all active tiles & compiles 2048.ROOT!',688,388,'#4ade80',1,'center');
+        UI.text('[R] Reset 4x4 Compiler Board',688,414,P.BONE,1,'center');
+        UI.text('[arrows] slide & merge 4x4 packets   [enter/P] quantum doubler (+200B)   [R] reset   [esc] close',480,490,P.DG,1,'center');
+      }
+    };
+    G.mode='mini'; sfx('confirm');
+  };
+  // ---- Tactical Combat Log & Damage Breakdown Analyzer (M116) ----
+  G.openCombatLog=()=>{
+    const crewIds=Object.keys(PARTY_BASE);
+    const bossKeys=['copy','relay4','sandglass','hunter','blank','archon','warden','seraph','leviathan_foe','overseer'];
+    let cIdx=0, bIdx=0, auditDone=false;
+    G.ach('combat_analyst');
+    G.mini={
+      name:'combat_log',
+      key(e){
+        const k=(e.key||'').toLowerCase();
+        if(k==='q'){ cIdx=(cIdx+crewIds.length-1)%crewIds.length; sfx('move'); }
+        if(k==='e'){ cIdx=(cIdx+1)%crewIds.length; sfx('move'); }
+        if(k==='p'){
+          if(!G.flags.combat_audit_grant){
+            G.flags.combat_audit_grant=1; G.bits+=150;
+            G.toast('> 10-TURN DPS AUDIT VERIFIED: +150 BITS GRANT!','#4ade80');
+          } else {
+            G.toast('> DPS BENCHMARK RE-CALIBRATED ACROSS ALL PROTOCOLS',P.GD);
+          }
+          auditDone=true; G.ach('combat_analyst'); sfx('win');
+        }
+      },
+      update(){
+        if(took('back')||took('pause')){ G.mode='explore'; sfx('cancel'); return; }
+        if(took('left'))  { cIdx=(cIdx+crewIds.length-1)%crewIds.length; sfx('move'); }
+        if(took('right')) { cIdx=(cIdx+1)%crewIds.length; sfx('move'); }
+        if(took('up'))    { bIdx=(bIdx+bossKeys.length-1)%bossKeys.length; sfx('move'); }
+        if(took('down'))  { bIdx=(bIdx+1)%bossKeys.length; sfx('move'); }
+        if(took('confirm')){
+          if(!G.flags.combat_audit_grant){
+            G.flags.combat_audit_grant=1; G.bits+=150;
+            G.toast('> 10-TURN DPS AUDIT VERIFIED: +150 BITS GRANT!','#4ade80');
+          }
+          auditDone=true; G.ach('combat_analyst'); sfx('win');
+        }
+      },
+      draw(t){
+        const X=UI.ctx; X.fillStyle='rgba(6,5,4,.96)'; X.fillRect(0,0,960,540);
+        const id=crewIds[cIdx], B=PARTY_BASE[id], ag=AG[id]||AG.me, proto=PARTY_PROTO[id]||'KERNEL';
+        const st=(G.party&&G.party[id])?G.stats(id):{mhp:B.hp,men:B.en,atk:B.atk,def:B.def,spd:B.spd};
+        const bk=bossKeys[bIdx], foe=ENEMIES[bk]||ENEMIES.copy, wk=ENEMY_WEAK[bk]||'KERNEL';
+        const isBreach=proto===wk;
+        UI.box(36,24,888,492,P.GD);
+        UI.text('> TACTICAL COMBAT ANALYZER',56,40,P.GD,2);
+        UI.text(`AGENT: ${B.name.toUpperCase()}   ·   VS: ${foe.name.toUpperCase()}`,900,44,'#22d3ee',1,'right');
+        // Left: Skill Damage Formula & Multiplier Breakdown
+        UI.box(52,78,424,386,ag.color||P.GD,'rgba(10,8,6,.94)');
+        UI.text(`${B.name.toUpperCase()} [${proto}] — SKILL DPS BREAKDOWN:`,68,94,ag.color||P.GD,1);
+        UI.text(`ATK: ${st.atk}  ·  DEF: ${st.def}  ·  SPD: ${st.spd}  ·  BREACH VS ${foe.name.toUpperCase()}: ${isBreach?'1.50x [YES]':'1.00x'}`,68,116,isBreach?'#4ade80':P.BONE,1);
+        const skList=['strike',...(B.skills||[])].slice(0,4);
+        let total10Turn=0;
+        skList.forEach((skId,idx)=>{
+          const sk=SKILLS[skId]||{name:skId,pow:1.0,en:0}, y=140+idx*74;
+          const pow=sk.pow||1.1;
+          const baseDmg=Math.max(4,Math.round(st.atk*pow - (foe.def||6)*0.4));
+          const breachDmg=Math.round(baseDmg*(isBreach?1.5:1.0));
+          const critParryDmg=Math.round(breachDmg*1.35);
+          const overdriveDmg=Math.round(critParryDmg*1.5);
+          total10Turn+=critParryDmg*2 + overdriveDmg;
+          UI.box(68,y,392,66,P.DDG,'rgba(14,11,8,.92)');
+          UI.text(`${idx+1}. ${(sk.name||skId).toUpperCase()} (${sk.en||0} EN · ${pow.toFixed(2)}x POW)`,82,y+8,P.GD,1);
+          UI.text(`BASE: ${baseDmg}  |  BREACH: ${breachDmg}  |  TIMED CRIT: ${critParryDmg}  |  OD: ${overdriveDmg}`,82,y+28,'#4ade80',1);
+          const barW=Math.min(360,Math.round((overdriveDmg/140)*360));
+          X.fillStyle='rgba(255,255,255,.08)'; X.fillRect(82,y+46,360,10);
+          X.fillStyle=isBreach?'#4ade80':'#22d3ee'; X.fillRect(82,y+46,barW,10);
+        });
+        // Right: Turn-by-Turn Combat Telemetry & Parry/Crit Audit Log
+        UI.box(492,78,412,386,P.DDG,'rgba(10,8,6,.94)');
+        UI.text(`TURN-BY-TURN TELEMETRY TRACE VS ${foe.name.toUpperCase()}:`,510,94,P.GD,1);
+        const rawIncoming=Math.max(4,Math.round((foe.atk||18)*1.15 - st.def*0.5));
+        const parriedIncoming=Math.max(1,Math.round(rawIncoming*0.5));
+        const turns=[
+          `[T01] ${B.name} casts Scan/Trace -> Target Vulnerability +50% DMG`,
+          `[T02] ${B.name} Timed Strike [1.35x] -> ${Math.round(st.atk*1.4*(isBreach?1.5:1))} DMG${isBreach?' [BREACH!]':''}`,
+          `[T03] ${foe.name} attacks -> [SPACE] PARRY! ${rawIncoming} -> ${parriedIncoming} DMG (-50%)`,
+          `[T04] ${B.name} Signature Skill -> ${Math.round(st.atk*1.85*(isBreach?1.5:1))} DMG`,
+          `[T05] Overdrive Gauge 100% -> ${B.name} UNLEASHES SURGE [2.0x]!`,
+          `[T06] ${foe.name} Shield Broken -> Staggered (-35% DEF)`,
+          `[T07] Squad Finisher -> ${total10Turn} Total 10-Turn Burst Output!`
+        ];
+        UI.box(508,116,380,176,P.DDG,'rgba(14,11,8,.92)');
+        turns.forEach((ln,i)=>{
+          UI.text(ln.slice(0,51),520,128+i*22,i===2?'#22d3ee':(i===4||i===6?'#4ade80':P.BONE),1);
+        });
+        UI.box(508,302,380,66,'#22d3ee','rgba(12,22,26,.92)');
+        UI.text(`PARRY MITIGATION EFFICIENCY: 50% SAVED (${rawIncoming-parriedIncoming} HP/HIT)`,522,318,'#22d3ee',1);
+        UI.text(`ESTIMATED 10-TURN BURST OUTPUT: ${total10Turn} DMG`,522,342,'#4ade80',1);
+        UI.box(508,378,380,72,auditDone?'#4ade80':P.GD,'rgba(245,184,46,.14)');
+        UI.text('[ENTER / P] VERIFY 10-TURN DPS BENCHMARK (+150B)',698,396,P.GD,1,'center');
+        UI.text('Audits base, breach, crit & parry mitigation math.',698,422,'#4ade80',1,'center');
+        UI.text('[left/right] cycle agent   [up/down] cycle boss target   [enter/P] verify DPS (+150B)   [esc] close',480,490,P.DG,1,'center');
       }
     };
     G.mode='mini'; sfx('confirm');
