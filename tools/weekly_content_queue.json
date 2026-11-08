@@ -20,7 +20,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_01_engine.jpg"
         ]
       },
       {
@@ -32,7 +32,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_02_pantheon.jpg"
         ]
       },
       {
@@ -44,7 +44,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day1_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_03_districts.jpg"
         ]
       },
       {
@@ -60,9 +60,9 @@
         "day": 2,
         "slot": 1,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP III: 99 Floors of Fury [Day 2/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 Season III Trilogy Premiere (36 Films) [Day 2/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep3-combat.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_SEASON3-TRILOGY-TRAILER.mp4"
         ]
       },
       {
@@ -74,7 +74,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_04_arcade.jpg"
         ]
       },
       {
@@ -86,7 +86,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_05_season3.jpg"
         ]
       },
       {
@@ -98,25 +98,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day2_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_06_academy.jpg"
         ]
       },
       {
         "day": 2,
         "slot": 5,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP IV: Behind the Wireframe \u2014 Secrets of 06:13 [Day 2/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 The $19.99 Katana Prank (Zero Paywalls) [Day 2/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep4-secrets.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-PAYWALL-FAKEOUT.mp4"
         ]
       },
       {
         "day": 3,
         "slot": 1,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP V: The Dawn Horizon (District #20) [Day 3/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XXV: The Citadel of Archon-0 [Day 3/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep5-horizon.mp4"
+          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep25-citadel.mp4"
         ]
       },
       {
@@ -128,7 +128,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_07_foundry.jpg"
         ]
       },
       {
@@ -140,7 +140,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_08_combat.jpg"
         ]
       },
       {
@@ -152,25 +152,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day3_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_01_engine.jpg"
         ]
       },
       {
         "day": 3,
         "slot": 5,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP VI: The Safehouse Megaplex (22 Mini-Games) [Day 3/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 140 BPM Drift-Phonk Combat Edit [Day 3/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep6-arcade.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_140BPM-DRIFT-PHONK-EDIT.mp4"
         ]
       },
       {
         "day": 4,
         "slot": 1,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP VII: Null Academy \u2014 Hack the Prompt [Day 4/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 When Pixel-Shiba Leads QA (#0612) [Day 4/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep7-academy.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-SHIBA-QA-LEAD.mp4"
         ]
       },
       {
@@ -182,7 +182,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_02_pantheon.jpg"
         ]
       },
       {
@@ -194,7 +194,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_03_districts.jpg"
         ]
       },
       {
@@ -206,25 +206,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day4_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_04_arcade.jpg"
         ]
       },
       {
         "day": 4,
         "slot": 5,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP VIII: 06:13 \u2014 The Sunrise Finale [Day 4/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XXVI: Abyssal Pelagic Memory [Day 4/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep8-sunrise.mp4"
+          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep26-abyss.mp4"
         ]
       },
       {
         "day": 5,
         "slot": 1,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP IX: The Mirror's Edge (03ng0cn1) [Day 5/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 ZGL 3D Procedural Bump Shader Showcase [Day 5/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep9-mirror.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_3D-BUMP-SHADER-SHOWCASE.mp4"
         ]
       },
       {
@@ -236,7 +236,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_05_season3.jpg"
         ]
       },
       {
@@ -248,7 +248,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_06_academy.jpg"
         ]
       },
       {
@@ -260,25 +260,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day5_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_07_foundry.jpg"
         ]
       },
       {
         "day": 5,
         "slot": 5,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP X: The Pantheon Gala (3D PBR Shaders) [Day 5/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 Hiring Your Evil Twin (03ng0cn1) [Day 5/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep10-gala.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-EVIL-TWIN-HR.mp4"
         ]
       },
       {
         "day": 6,
         "slot": 1,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XI: Skybeam Interceptor (Galaga #22) [Day 6/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XXVII: Packet Runner at 140 BPM [Day 6/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep11-skyline.mp4"
+          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep27-fiber.mp4"
         ]
       },
       {
@@ -290,7 +290,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_08_combat.jpg"
         ]
       },
       {
@@ -302,7 +302,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_01_engine.jpg"
         ]
       },
       {
@@ -314,25 +314,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day6_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_02_pantheon.jpg"
         ]
       },
       {
         "day": 6,
         "slot": 5,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XII: 06:12 to 06:13 (Season I Finale) [Day 6/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 06:12 AM Safehouse Groupchat Sitcom [Day 6/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep12-season.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-0612-GROUPCHAT.mp4"
         ]
       },
       {
         "day": 7,
         "slot": 1,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XIII: Monsoon Over Relit City (3D Rain) [Day 7/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XXXVI: The 36-Episode Trilogy Finale [Day 7/90 \u00b7 Slot 1/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep13-monsoon.mp4"
+          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep36-trilogy.mp4"
         ]
       },
       {
@@ -344,7 +344,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_03_districts.jpg"
         ]
       },
       {
@@ -356,7 +356,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_04_arcade.jpg"
         ]
       },
       {
@@ -368,16 +368,16 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/1nc0gn30/day7_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/1nc0gn30/woz_arch_05_season3.jpg"
         ]
       },
       {
         "day": 7,
         "slot": 5,
         "type": "video",
-        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 EP XIV: The Black-Market Heist [Day 7/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
+        "text": "\ud83c\udfac WORLD OF ZOTH \u2014 Nice Try, Prompt Injector (Null Academy) [Day 7/90 \u00b7 Slot 5/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n\u2022 20 Playable 3D Districts\n\u2022 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/dist/world-of-zoth-ep14-heist.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-PROMPT-INJECTION.mp4"
         ]
       }
     ],
@@ -386,9 +386,9 @@
         "day": 1,
         "slot": 1,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 1 \u00b7 Slot 1/5]: ZOTH OS REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 1 \u00b7 Slot 1/5]: ZOTHOS EP01 TORAM BOOT\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os/zoth-os-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/zoth_os/zothos_ep01_toram_boot.mp4"
         ]
       },
       {
@@ -400,7 +400,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_01_toram.jpg"
         ]
       },
       {
@@ -412,7 +412,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_02_vault.jpg"
         ]
       },
       {
@@ -424,25 +424,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day1_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_03_ebpf.jpg"
         ]
       },
       {
         "day": 1,
         "slot": 5,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 1 \u00b7 Slot 5/5]: ZOTH OS WEBSITE REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 1 \u00b7 Slot 5/5]: ZOTHOS EP02 ENCLAVE VAULT\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os-website/zoth-os-website-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/zoth_os/zothos_ep02_enclave_vault.mp4"
         ]
       },
       {
         "day": 2,
         "slot": 1,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 2 \u00b7 Slot 1/5]: ZOTHOS LITE COT MOTION EDIT\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 2 \u00b7 Slot 1/5]: 1NC0GN30 ZOTHOS TORAM COMMERCIAL\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/NullAITech/media-assets/zothos-lite-cot-motion-edit.mp4"
+          "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_ZOTHOS-TORAM-COMMERCIAL.mp4"
         ]
       },
       {
@@ -454,7 +454,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_04_arsenal.jpg"
         ]
       },
       {
@@ -466,7 +466,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_05_installer.jpg"
         ]
       },
       {
@@ -478,25 +478,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day2_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_06_neuro.jpg"
         ]
       },
       {
         "day": 2,
         "slot": 5,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 2 \u00b7 Slot 5/5]: ENVGUARD SECRETS VAULT REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 2 \u00b7 Slot 5/5]: ZOTHOS EP03 EBPF FIREWALL\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/envguard-secrets-vault/envguard-secrets-vault-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/zoth_os/zothos_ep03_ebpf_firewall.mp4"
         ]
       },
       {
         "day": 3,
         "slot": 1,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 3 \u00b7 Slot 1/5]: ANDERSON SECURITY SENTINEL REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 3 \u00b7 Slot 1/5]: ZOTHOS EP04 LOCAL AI DAEMON\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/anderson-security-sentinel/anderson-security-sentinel-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/zoth_os/zothos_ep04_local_ai_daemon.mp4"
         ]
       },
       {
@@ -508,7 +508,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_07_hardening.jpg"
         ]
       },
       {
@@ -520,7 +520,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_08_iso_pipeline.jpg"
         ]
       },
       {
@@ -532,25 +532,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day3_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_01_toram.jpg"
         ]
       },
       {
         "day": 3,
         "slot": 5,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 3 \u00b7 Slot 5/5]: NEURO MEMORY DAEMON REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 3 \u00b7 Slot 5/5]: ZOTHOS EP05 XCURSOR PLASMA\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/neuro-memory-daemon/neuro-memory-daemon-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/zoth_os/zothos_ep05_xcursor_plasma.mp4"
         ]
       },
       {
         "day": 4,
         "slot": 1,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 4 \u00b7 Slot 1/5]: PAYLOAD ENTROPY STUDIO REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 4 \u00b7 Slot 1/5]: ZOTHOS EP06 ARSENAL PIPELINE\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/payload-entropy-studio/payload-entropy-studio-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/zoth_os/zothos_ep06_arsenal_pipeline.mp4"
         ]
       },
       {
@@ -562,7 +562,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_02_vault.jpg"
         ]
       },
       {
@@ -574,7 +574,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_03_ebpf.jpg"
         ]
       },
       {
@@ -586,25 +586,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day4_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_04_arsenal.jpg"
         ]
       },
       {
         "day": 4,
         "slot": 5,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 4 \u00b7 Slot 5/5]: JWT INSPECTOR GUARD REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 4 \u00b7 Slot 5/5]: ZOTH OS REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/jwt-inspector-guard/jwt-inspector-guard-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os/zoth-os-reel-16x9.mp4"
         ]
       },
       {
         "day": 5,
         "slot": 1,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 5 \u00b7 Slot 1/5]: WEB SECURITY GUARD REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 5 \u00b7 Slot 1/5]: ZOTH OS WEBSITE REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/web-security-guard/web-security-guard-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os-website/zoth-os-website-reel-16x9.mp4"
         ]
       },
       {
@@ -616,7 +616,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_05_installer.jpg"
         ]
       },
       {
@@ -628,7 +628,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_06_neuro.jpg"
         ]
       },
       {
@@ -640,25 +640,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day5_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_07_hardening.jpg"
         ]
       },
       {
         "day": 5,
         "slot": 5,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 5 \u00b7 Slot 5/5]: SOVEREIGN AGENT BRIDGE REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 5 \u00b7 Slot 5/5]: ZOTHOS LITE COT MOTION EDIT\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/sovereign-agent-bridge/sovereign-agent-bridge-reel-16x9.mp4"
+          "/home/zoth/NullAITech/media-assets/zothos-lite-cot-motion-edit.mp4"
         ]
       },
       {
         "day": 6,
         "slot": 1,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 6 \u00b7 Slot 1/5]: ZOTH BOT REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 6 \u00b7 Slot 1/5]: ENVGUARD SECRETS VAULT REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/zoth-bot/zoth-bot-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/envguard-secrets-vault/envguard-secrets-vault-reel-16x9.mp4"
         ]
       },
       {
@@ -670,7 +670,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_08_iso_pipeline.jpg"
         ]
       },
       {
@@ -682,7 +682,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_01_toram.jpg"
         ]
       },
       {
@@ -694,25 +694,25 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day6_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_02_vault.jpg"
         ]
       },
       {
         "day": 6,
         "slot": 5,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 6 \u00b7 Slot 5/5]: ZOTH CIVILIZATION REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 6 \u00b7 Slot 5/5]: ANDERSON SECURITY SENTINEL REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/zoth-civilization/zoth-civilization-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/anderson-security-sentinel/anderson-security-sentinel-reel-16x9.mp4"
         ]
       },
       {
         "day": 7,
         "slot": 1,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 7 \u00b7 Slot 1/5]: ZOTH OS REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 7 \u00b7 Slot 1/5]: NEURO MEMORY DAEMON REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os/zoth-os-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/neuro-memory-daemon/neuro-memory-daemon-reel-16x9.mp4"
         ]
       },
       {
@@ -724,7 +724,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_03_ebpf.jpg"
         ]
       },
       {
@@ -736,7 +736,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_04_arsenal.jpg"
         ]
       },
       {
@@ -748,16 +748,16 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/zoth_os/day7_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/zoth_os/zos_arch_05_installer.jpg"
         ]
       },
       {
         "day": 7,
         "slot": 5,
         "type": "video",
-        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 7 \u00b7 Slot 5/5]: ENVGUARD SECRETS VAULT REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
+        "text": "\ud83d\udc27 ZothOS Motion Briefing [Day 7 \u00b7 Slot 5/5]: PAYLOAD ENTROPY STUDIO REEL 16X9\n\nRAM-resident Debian Live (toram) architecture paired with our local Rust Argon2id secrets enclave (:8787) and 75+ offline security workstations.\n\n#Linux #CyberSecurity #InfoSec #OpenSource #LocalAI",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/envguard-secrets-vault/envguard-secrets-vault-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/payload-entropy-studio/payload-entropy-studio-reel-16x9.mp4"
         ]
       }
     ],
@@ -768,7 +768,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 1 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/aeo-graph-engine/aeo-graph-engine-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep01_zero_dep_architecture.mp4"
         ]
       },
       {
@@ -780,7 +780,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_01_zerodep.jpg"
         ]
       },
       {
@@ -792,7 +792,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_02_guardrail.jpg"
         ]
       },
       {
@@ -804,7 +804,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_03_aeo.jpg"
         ]
       },
       {
@@ -813,7 +813,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 1 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/cwv-speed-engine/cwv-speed-engine-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep02_webgl_pbr_shaders.mp4"
         ]
       },
       {
@@ -822,7 +822,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 2 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/polyglot-framework-exporter/polyglot-framework-exporter-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep03_aeo_schema_graph.mp4"
         ]
       },
       {
@@ -834,7 +834,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_04_shaders.jpg"
         ]
       },
       {
@@ -846,7 +846,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_05_openaccess.jpg"
         ]
       },
       {
@@ -858,7 +858,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_06_webaudio.jpg"
         ]
       },
       {
@@ -867,7 +867,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 2 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/schema-illustrator-studio/schema-illustrator-studio-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep04_webaudio_dsp_synth.mp4"
         ]
       },
       {
@@ -876,7 +876,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 3 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/regex-droid-builder/regex-droid-builder-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep05_headless_cdp_qa.mp4"
         ]
       },
       {
@@ -888,7 +888,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_07_cdp_loop.jpg"
         ]
       },
       {
@@ -900,7 +900,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_08_full_stack.jpg"
         ]
       },
       {
@@ -912,7 +912,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_01_zerodep.jpg"
         ]
       },
       {
@@ -921,7 +921,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 3 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/cron-rhythm-studio/cron-rhythm-studio-reel-16x9.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep06_open_access_micro_saas.mp4"
         ]
       },
       {
@@ -930,7 +930,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 4 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/badge3d-coin-generator/badge3d-coin-generator-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/aeo-graph-engine/aeo-graph-engine-reel-16x9.mp4"
         ]
       },
       {
@@ -942,7 +942,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_02_guardrail.jpg"
         ]
       },
       {
@@ -954,7 +954,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_03_aeo.jpg"
         ]
       },
       {
@@ -966,7 +966,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_04_shaders.jpg"
         ]
       },
       {
@@ -975,7 +975,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 4 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/subsweep-lead-scanner/subsweep-lead-scanner-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/cwv-speed-engine/cwv-speed-engine-reel-16x9.mp4"
         ]
       },
       {
@@ -984,7 +984,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 5 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/city-desk/city-desk-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/polyglot-framework-exporter/polyglot-framework-exporter-reel-16x9.mp4"
         ]
       },
       {
@@ -996,7 +996,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_05_openaccess.jpg"
         ]
       },
       {
@@ -1008,7 +1008,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_06_webaudio.jpg"
         ]
       },
       {
@@ -1020,7 +1020,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_07_cdp_loop.jpg"
         ]
       },
       {
@@ -1029,7 +1029,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 5 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/NullAITech/video-production/tool-01-zoth-swarm-multiplexer/video_tool_01_zoth_swarm_multiplexer.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/schema-illustrator-studio/schema-illustrator-studio-reel-16x9.mp4"
         ]
       },
       {
@@ -1038,7 +1038,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 6 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/ufo-sacred-geometry/ufo-sacred-geometry-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/regex-droid-builder/regex-droid-builder-reel-16x9.mp4"
         ]
       },
       {
@@ -1050,7 +1050,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_08_full_stack.jpg"
         ]
       },
       {
@@ -1062,7 +1062,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_01_zerodep.jpg"
         ]
       },
       {
@@ -1074,7 +1074,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_02_guardrail.jpg"
         ]
       },
       {
@@ -1083,7 +1083,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 6 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/aeo-graph-engine/aeo-graph-engine-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/cron-rhythm-studio/cron-rhythm-studio-reel-16x9.mp4"
         ]
       },
       {
@@ -1092,7 +1092,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 7 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/cwv-speed-engine/cwv-speed-engine-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/badge3d-coin-generator/badge3d-coin-generator-reel-16x9.mp4"
         ]
       },
       {
@@ -1104,7 +1104,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot2_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot2_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot2_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_03_aeo.jpg"
         ]
       },
       {
@@ -1116,7 +1116,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot3_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot3_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot3_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_04_shaders.jpg"
         ]
       },
       {
@@ -1128,7 +1128,7 @@
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot4_slide1.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot4_slide2.jpg",
           "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot4_slide4.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_05_openaccess.jpg"
         ]
       },
       {
@@ -1137,7 +1137,7 @@
         "type": "video",
         "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 7 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/nullaitech-upgrade/reels-v2/polyglot-framework-exporter/polyglot-framework-exporter-reel-16x9.mp4"
+          "/home/zoth/nullaitech-upgrade/reels-v2/subsweep-lead-scanner/subsweep-lead-scanner-reel-16x9.mp4"
         ]
       }
     ]

@@ -173,18 +173,18 @@ def render_carousel_slide(bg_path, out_path, accent_rgb, badge_text, title, subt
 WOZ_VIDEOS = [
     ("dist/world-of-zoth-commercial.mp4", "EP I: 06:12 — Faces, Not Voices"),
     ("dist/world-of-zoth-ep2-crew.mp4", "EP II: Midnight at the Safehouse"),
-    ("dist/world-of-zoth-ep3-combat.mp4", "EP III: 99 Floors of Fury"),
-    ("dist/world-of-zoth-ep4-secrets.mp4", "EP IV: Behind the Wireframe — Secrets of 06:13"),
-    ("dist/world-of-zoth-ep5-horizon.mp4", "EP V: The Dawn Horizon (District #20)"),
-    ("dist/world-of-zoth-ep6-arcade.mp4", "EP VI: The Safehouse Megaplex (22 Mini-Games)"),
-    ("dist/world-of-zoth-ep7-academy.mp4", "EP VII: Null Academy — Hack the Prompt"),
-    ("dist/world-of-zoth-ep8-sunrise.mp4", "EP VIII: 06:13 — The Sunrise Finale"),
-    ("dist/world-of-zoth-ep9-mirror.mp4", "EP IX: The Mirror's Edge (03ng0cn1)"),
-    ("dist/world-of-zoth-ep10-gala.mp4", "EP X: The Pantheon Gala (3D PBR Shaders)"),
-    ("dist/world-of-zoth-ep11-skyline.mp4", "EP XI: Skybeam Interceptor (Galaga #22)"),
-    ("dist/world-of-zoth-ep12-season.mp4", "EP XII: 06:12 to 06:13 (Season I Finale)"),
-    ("dist/world-of-zoth-ep13-monsoon.mp4", "EP XIII: Monsoon Over Relit City (3D Rain)"),
-    ("dist/world-of-zoth-ep14-heist.mp4", "EP XIV: The Black-Market Heist")
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_SEASON3-TRILOGY-TRAILER.mp4", "Season III Trilogy Premiere (36 Films)"),
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-PAYWALL-FAKEOUT.mp4", "The $19.99 Katana Prank (Zero Paywalls)"),
+    ("dist/world-of-zoth-ep25-citadel.mp4", "EP XXV: The Citadel of Archon-0"),
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_140BPM-DRIFT-PHONK-EDIT.mp4", "140 BPM Drift-Phonk Combat Edit"),
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-SHIBA-QA-LEAD.mp4", "When Pixel-Shiba Leads QA (#0612)"),
+    ("dist/world-of-zoth-ep26-abyss.mp4", "EP XXVI: Abyssal Pelagic Memory"),
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_3D-BUMP-SHADER-SHOWCASE.mp4", "ZGL 3D Procedural Bump Shader Showcase"),
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-EVIL-TWIN-HR.mp4", "Hiring Your Evil Twin (03ng0cn1)"),
+    ("dist/world-of-zoth-ep27-fiber.mp4", "EP XXVII: Packet Runner at 140 BPM"),
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-0612-GROUPCHAT.mp4", "06:12 AM Safehouse Groupchat Sitcom"),
+    ("dist/world-of-zoth-ep36-trilogy.mp4", "EP XXXVI: The 36-Episode Trilogy Finale"),
+    ("/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_COMEDY-PROMPT-INJECTION.mp4", "Nice Try, Prompt Injector (Null Academy)")
 ]
 
 WOZ_SHOTS = [
@@ -200,20 +200,20 @@ WOZ_SHOTS = [
 ]
 
 ZOTHOS_VIDEOS = [
+    str(ROOT / "media_packs/videos/zoth_os/zothos_ep01_toram_boot.mp4"),
+    str(ROOT / "media_packs/videos/zoth_os/zothos_ep02_enclave_vault.mp4"),
+    "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_ZOTHOS-TORAM-COMMERCIAL.mp4",
+    str(ROOT / "media_packs/videos/zoth_os/zothos_ep03_ebpf_firewall.mp4"),
+    str(ROOT / "media_packs/videos/zoth_os/zothos_ep04_local_ai_daemon.mp4"),
+    str(ROOT / "media_packs/videos/zoth_os/zothos_ep05_xcursor_plasma.mp4"),
+    str(ROOT / "media_packs/videos/zoth_os/zothos_ep06_arsenal_pipeline.mp4"),
     "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os/zoth-os-reel-16x9.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os-website/zoth-os-website-reel-16x9.mp4",
     "/home/zoth/NullAITech/media-assets/zothos-lite-cot-motion-edit.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/envguard-secrets-vault/envguard-secrets-vault-reel-16x9.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/anderson-security-sentinel/anderson-security-sentinel-reel-16x9.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/neuro-memory-daemon/neuro-memory-daemon-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/payload-entropy-studio/payload-entropy-studio-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/jwt-inspector-guard/jwt-inspector-guard-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/web-security-guard/web-security-guard-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/sovereign-agent-bridge/sovereign-agent-bridge-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/zoth-bot/zoth-bot-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/zoth-civilization/zoth-civilization-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/zoth-os/zoth-os-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/envguard-secrets-vault/envguard-secrets-vault-reel-16x9.mp4"
+    "/home/zoth/nullaitech-upgrade/reels-v2/payload-entropy-studio/payload-entropy-studio-reel-16x9.mp4"
 ]
 
 ZOTHOS_SHOTS = [
@@ -244,6 +244,12 @@ ZOTHOS_SHOTS = [
 ]
 
 NFT_VIDEOS = [
+    str(ROOT / "media_packs/videos/nealfraziertech/nft_ep01_zero_dep_architecture.mp4"),
+    str(ROOT / "media_packs/videos/nealfraziertech/nft_ep02_webgl_pbr_shaders.mp4"),
+    str(ROOT / "media_packs/videos/nealfraziertech/nft_ep03_aeo_schema_graph.mp4"),
+    str(ROOT / "media_packs/videos/nealfraziertech/nft_ep04_webaudio_dsp_synth.mp4"),
+    str(ROOT / "media_packs/videos/nealfraziertech/nft_ep05_headless_cdp_qa.mp4"),
+    str(ROOT / "media_packs/videos/nealfraziertech/nft_ep06_open_access_micro_saas.mp4"),
     "/home/zoth/nullaitech-upgrade/reels-v2/aeo-graph-engine/aeo-graph-engine-reel-16x9.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/cwv-speed-engine/cwv-speed-engine-reel-16x9.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/polyglot-framework-exporter/polyglot-framework-exporter-reel-16x9.mp4",
@@ -251,13 +257,7 @@ NFT_VIDEOS = [
     "/home/zoth/nullaitech-upgrade/reels-v2/regex-droid-builder/regex-droid-builder-reel-16x9.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/cron-rhythm-studio/cron-rhythm-studio-reel-16x9.mp4",
     "/home/zoth/nullaitech-upgrade/reels-v2/badge3d-coin-generator/badge3d-coin-generator-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/subsweep-lead-scanner/subsweep-lead-scanner-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/city-desk/city-desk-reel-16x9.mp4",
-    "/home/zoth/NullAITech/video-production/tool-01-zoth-swarm-multiplexer/video_tool_01_zoth_swarm_multiplexer.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/ufo-sacred-geometry/ufo-sacred-geometry-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/aeo-graph-engine/aeo-graph-engine-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/cwv-speed-engine/cwv-speed-engine-reel-16x9.mp4",
-    "/home/zoth/nullaitech-upgrade/reels-v2/polyglot-framework-exporter/polyglot-framework-exporter-reel-16x9.mp4"
+    "/home/zoth/nullaitech-upgrade/reels-v2/subsweep-lead-scanner/subsweep-lead-scanner-reel-16x9.mp4"
 ]
 
 NFT_SHOTS = [
@@ -513,11 +513,11 @@ def build_all():
                     v_item = videos[v_idx % len(videos)]
                     v_idx += 1
                     if isinstance(v_item, tuple):
-                        v_path = str(ROOT / v_item[0])
+                        v_path = v_item[0] if os.path.isabs(v_item[0]) else str(ROOT / v_item[0])
                         v_title = v_item[1]
                     else:
                         v_path = v_item
-                        v_title = Path(v_item).stem.replace("-", " ").upper()
+                        v_title = Path(v_item).stem.replace("-", " ").replace("_", " ").upper()
 
                     if handle == "1nc0gn30":
                         txt = f"🎬 WORLD OF ZOTH — {v_title} [Day {day}/90 · Slot {slot}/5]\n\n\"The city is lit again, but now it can talk. Trust faces, not voices.\"\n\n• 20 Playable 3D Districts\n• 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG"
@@ -538,6 +538,12 @@ def build_all():
                     t_title, t_sub, t_bullets, t_text = topics[c_idx % len(topics)]
                     slide_files = []
                     for s_i in range(1, 5):
+                        if s_i == 4:
+                            # Attach one of the newly rendered high-end 1080p architectural blueprint cards as Slide 4
+                            arch_cards = sorted((ROOT / "media_packs" / "high_end_cards" / handle).glob("*.jpg"))
+                            if arch_cards:
+                                slide_files.append(str(arch_cards[c_idx % len(arch_cards)]))
+                                continue
                         bg_shot = shots[(c_idx * 4 + s_i - 1) % len(shots)]
                         out_slide = OUT_DIR / handle / f"day{day}_slot{slot}_slide{s_i}.jpg"
                         # Rotate bullet emphasis per slide
