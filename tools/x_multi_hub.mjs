@@ -25,6 +25,7 @@ const VAULT_DIR = path.join(process.env.HOME || '/home/zoth', '.config', 'zoth-v
 const VAULT_ENV = path.join(VAULT_DIR, 'x.env');
 const PENDING_OAUTH = path.join(VAULT_DIR, 'x_pending_oauth.json');
 const STATE_FILE = path.join(VAULT_DIR, 'x_campaign_state.json');
+const WEEKLY_QUEUE_FILE = path.join(ROOT, 'tools', 'weekly_content_queue.json');
 
 // Active accounts right now (dinorawrai & zothstudio strictly paused)
 const ACTIVE_ACCOUNTS = ['1nc0gn30', 'zoth_os', 'nealfraziertech'];
@@ -400,6 +401,32 @@ function pick4Images(pool, startIdx) {
 export function generatePostForSlot(account, day, slot) {
   const h = normHandle(account);
   const dIdx = day - 1;
+
+  // Check curated Weekly Content Queue (105 posts + 252 custom 1080p 4-slide carousel decks)
+  if (fs.existsSync(WEEKLY_QUEUE_FILE)) {
+    try {
+      const q = JSON.parse(fs.readFileSync(WEEKLY_QUEUE_FILE, 'utf8'));
+      const list = q.accounts && q.accounts[h];
+      if (Array.isArray(list)) {
+        const wDay = (dIdx % 7) + 1;
+        const match = list.find(item => item.day === wDay && item.slot === slot);
+        if (match && Array.isArray(match.mediaFiles) && match.mediaFiles.every(f => fs.existsSync(f))) {
+          // For @1nc0gn30 Slot 1, always advance through all 24 episodes across the 90 days
+          if (h === '1nc0gn30' && slot === 1) {
+            const v = WOZ_VIDEOS[dIdx % WOZ_VIDEOS.length];
+            return {
+              text: `🎬 WORLD OF ZOTH — ${v.title} [Day ${day}/90]\n\n"The city is lit again, but now it can talk. Trust faces, not voices."\n\n• 20 Playable 3D WebGL Districts\n• 22 Companions & 22 Mini-Games\n\nhttps://github.com/1nc0gn30/world-of-zoth #IndieDev #WebGL #CyberRPG`,
+              mediaFiles: [v.file]
+            };
+          }
+          return {
+            text: match.text.replace(/Day \d+\/90/g, `Day ${day}/90`).replace(/Day \d+ ·/g, `Day ${day} ·`),
+            mediaFiles: match.mediaFiles
+          };
+        }
+      }
+    } catch (_) {}
+  }
 
   // ── 1. @1nc0gn30 (Strictly World of Zoth & 1nc0gn30 Saga) ──
   if (h === '1nc0gn30') {
