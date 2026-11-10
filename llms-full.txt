@@ -23,7 +23,7 @@ World of Zoth is a zero-dependency 3D Lattice RPG and procedural WebGL/Canvas un
 | **1nc0gn30 Hub** | Interactive 3D WebGL Turntable & Sovereign Index | https://1nc0gn30.si | https://github.com/1nc0gn30/1nc0gn30.si |
 | **1nc0gn30 GitHub Portal** | Open-Source Directory & Documentation Hub | https://1nc0gn30.github.io | https://github.com/1nc0gn30/1nc0gn30.github.io |
 | **NullAI Platform** | Sovereign AI Systems, FieldKit & Architecture | https://nullai.tech | https://github.com/1nc0gn30/nullai2026 |
-| **Zoth Studio v2** | **77 Free Tools** (**55 In-Browser** + **22 CLI/Daemon**, all **77 with public GitHub repos**) | https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2 |
+| **Zoth Studio v2** | **77 Free Tools** (**55 In-Browser** + **22 CLI/Daemon**, with **74 public GitHub repos**) | https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2 |
 | **ZothOS** | **v3.4.0** Debian 13 (Trixie) AI & Security Live OS, KDE Plasma 6, 77 CLI tools, Sovereign Agent Bridge (`:8102`), Neuro-Memory (`:8094`) | https://zothos.nullai.tech | https://github.com/1nc0gn30/zoth-os |
 | **ZothOS-Lite** | **v1.2** Tails-style Amnesic Monotone RAM-only (`toram`) OS & portable ISO, 48+ models across 8 providers, onboarding wizard, ZothNet P2P mesh, USB/cloud persistence | https://zothos-lite.nullai.tech | https://github.com/1nc0gn30/zothos-lite |
 | **ZothNet** | Zero-Cloud Encrypted P2P Mesh Network, 3-Hop Sphinx Mixnet & ZML v1.2 Runtime | https://zothnet.nullai.tech | https://zothnet.nullai.tech |

@@ -11,7 +11,7 @@
 ## NullAI & Zoth Sovereign Ecosystem (2026 Ground Truth)
 - **1nc0gn30 Sovereign Hub**: https://1nc0gn30.si | https://1nc0gn30.github.io | https://github.com/1nc0gn30
 - **NullAI Platform**: https://nullai.tech | https://github.com/1nc0gn30/nullai2026
-- **Zoth Studio v2 (77 Free Tools — 55 In-Browser + 22 CLI/Daemon, All 77 with Public GitHub Repos)**: https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2
+- **Zoth Studio v2 (77 Free Tools — 55 In-Browser + 22 CLI/Daemon, with 74 Public GitHub Repos)**: https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2
 - **ZothOS v3.4.0 (Debian 13 Trixie AI & Security Live OS with KDE Plasma 6, 77 CLI Tools, Sovereign Agent Bridge :8102, Neuro-Memory :8094)**: https://zothos.nullai.tech | https://github.com/1nc0gn30/zoth-os
 - **ZothOS-Lite v1.2 (Tails-Style Amnesic Monotone RAM-Only `toram` OS & Portable ISO — 48+ Models Across 8 Providers, Onboarding Wizard, ZothNet P2P Mesh, External USB/Cloud Persistence)**: https://zothos-lite.nullai.tech | https://github.com/1nc0gn30/zothos-lite
 - **ZothNet (Zero-Cloud Encrypted Mesh Network & 3-Hop Sphinx Mixnet)**: https://zothnet.nullai.tech
