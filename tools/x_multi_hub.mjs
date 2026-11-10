@@ -4,7 +4,7 @@
  * Strict Brand Siloing:
  *   • @1nc0gn30         — Strictly World of Zoth & 1nc0gn30 (24 1080p Commercials + 4-Image Gameplay Carousels)
  *   • @zoth_os          — Strictly ZothOS Linux, Amnesic Boot, Security Enclave & Kernel (1080p Reels + 4-Image OS Carousels)
- *   • @nealfraziertech  — Strictly Neal Frazier Tech Systems Architecture, Web Perf & Dev Tools (1080p Reels + 4-Image Tool Carousels)
+ *   • @nullaitech  — Strictly NullAI Platform Systems Architecture, Web Perf & Dev Tools (1080p Reels + 4-Image Tool Carousels)
  *   • @dinorawrai       — PAUSED & 100% ISOLATED until dedicated DinoRawrAI folder is configured (zero cross-brand links)
  *   • @zothstudio       — PAUSED until account password recovery
  *
@@ -26,9 +26,10 @@ const VAULT_ENV = path.join(VAULT_DIR, 'x.env');
 const PENDING_OAUTH = path.join(VAULT_DIR, 'x_pending_oauth.json');
 const STATE_FILE = path.join(VAULT_DIR, 'x_campaign_state.json');
 const WEEKLY_QUEUE_FILE = path.join(ROOT, 'tools', 'weekly_content_queue.json');
+const TOOL_SHOWCASES_FILE = path.join(ROOT, 'tools', 'zoth_studio_tool_showcases.json');
 
 // Active accounts right now (dinorawrai & zothstudio strictly paused)
-const ACTIVE_ACCOUNTS = ['1nc0gn30', 'zoth_os', 'nealfraziertech'];
+const ACTIVE_ACCOUNTS = ['1nc0gn30', 'zoth_os', 'nullaitech'];
 
 fs.mkdirSync(VAULT_DIR, { recursive: true, mode: 0o700 });
 
@@ -265,6 +266,12 @@ const WOZ_VIDEOS = [
 ];
 
 const WOZ_BONUS_VIDEOS = [
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_REAL-LIFE-ALEXA65-TRAILER-16x9.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_REAL-LIFE-ALEXA65-REEL-9x16.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_REAL-LIFE-COMEDY-RTX-ON.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_VOICED-SEASON3-CINEMA-TRAILER.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_VOICED-COMEDY-BOSS-READS-STATS.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_VOICED-COMEDY-MERCURY-SPEEDRUN-ROCK.mp4',
   '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_V2-LAUNCH-EDIT.mp4',
   '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_MOTION-EDIT.mp4',
   '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/world-of-zoth_THE-MOVIE.mp4',
@@ -316,6 +323,9 @@ const WOZ_ARCADE_SHOTS = [
 // 2. @zoth_os — STRICTLY ZOTHOS LINUX, KERNEL & SECURITY ENCLAVE MEDIA POOLS
 // ============================================================================
 const ZOTHOS_VIDEOS = [
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_VOICED-SOVEREIGN-BRIDGE-COMMERCIAL.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_VOICED-COMEDY-TORAM-RAM-ONLY-OS.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_VOICED-COMEDY-MUSE-MEETS-ANTIGRAVITY.mp4',
   '/home/zoth/nullaitech-upgrade/reels-v2/zoth-os/zoth-os-reel-16x9.mp4',
   '/home/zoth/nullaitech-upgrade/reels-v2/zoth-os-website/zoth-os-website-reel-16x9.mp4',
   '/home/zoth/NullAITech/media-assets/zothos-lite-cot-motion-edit.mp4',
@@ -352,9 +362,13 @@ const ZOTHOS_IMAGES = [
 ].filter(p => fs.existsSync(p));
 
 // ============================================================================
-// 3. @nealfraziertech — STRICTLY NEAL FRAZIER TECH ENGINEERING MEDIA POOLS
+// 3. @nullaitech — STRICTLY NULLAI PLATFORM ENGINEERING MEDIA POOLS
 // ============================================================================
 const NFT_VIDEOS = [
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_VOICED-COMEDY-AI-TOASTER-SUBSCRIPTION.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_VOICED-COMEDY-ONE-LINE-HOTFIX.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_VOICED-COMEDY-900-COOKIE-PARTNERS.mp4',
+  '/home/zoth/Desktop/zoth-1nc0gn30-videos/out/1nc0gn30_VOICED-COMEDY-BOTS-SCRAPE-ENV.mp4',
   '/home/zoth/nullaitech-upgrade/reels-v2/aeo-graph-engine/aeo-graph-engine-reel-16x9.mp4',
   '/home/zoth/nullaitech-upgrade/reels-v2/cwv-speed-engine/cwv-speed-engine-reel-16x9.mp4',
   '/home/zoth/nullaitech-upgrade/reels-v2/polyglot-framework-exporter/polyglot-framework-exporter-reel-16x9.mp4',
@@ -401,6 +415,37 @@ function pick4Images(pool, startIdx) {
 export function generatePostForSlot(account, day, slot) {
   const h = normHandle(account);
   const dIdx = day - 1;
+
+  // 0. For @1nc0gn30 Slot 5, feature the Live-Action Real-Life World of Zoth (ARRI Alexa 65) & Voiced Cinema Reels
+  if (h === '1nc0gn30' && slot === 5) {
+    const bv = WOZ_BONUS_VIDEOS[dIdx % WOZ_BONUS_VIDEOS.length];
+    if (fs.existsSync(bv)) {
+      return {
+        text: `🎥 WORLD OF ZOTH — IN REAL LIFE (ARRI Alexa 65 · 06:12) [Day ${day}/90]\n\nWhat if World of Zoth wasn't CGI, but a real physical plaza of wet black basalt, recessed glowing brass channels, and a 60m smoked-glass Nullcore gyroscope?\n\nPlay free in browser: https://1nc0gn30.si #IndieDev #Cinema #WebGL #SciFi`,
+        mediaFiles: [bv]
+      };
+    }
+  }
+
+  // 0b. For @zoth_os, @nullaitech, and @zothstudio, showcase Live Working Zoth Studio Tool Videos on Slots 1, 3, 4, 5
+  if ((h === 'zoth_os' || h === 'nullaitech' || h === 'zothstudio') && [1, 3, 4, 5].includes(slot) && fs.existsSync(TOOL_SHOWCASES_FILE)) {
+    try {
+      const showcases = JSON.parse(fs.readFileSync(TOOL_SHOWCASES_FILE, 'utf8'));
+      const pool = showcases.filter(item =>
+        (h === 'zothstudio' || item.account === h) &&
+        item.videoFile &&
+        fs.existsSync(item.videoFile)
+      );
+      if (pool.length > 0) {
+        const pickIdx = (dIdx * 4 + [1, 3, 4, 5].indexOf(slot)) % pool.length;
+        const chosen = pool[pickIdx];
+        return {
+          text: chosen.text,
+          mediaFiles: [chosen.videoFile]
+        };
+      }
+    } catch (_) {}
+  }
 
   // Check curated Weekly Content Queue (105 posts + 252 custom 1080p 4-slide carousel decks)
   if (fs.existsSync(WEEKLY_QUEUE_FILE)) {
@@ -496,36 +541,36 @@ export function generatePostForSlot(account, day, slot) {
     };
   }
 
-  // ── 3. @nealfraziertech (Strictly Neal Frazier Tech Systems Architecture & Engineering) ──
-  if (h === 'nealfraziertech') {
+  // ── 3. @nullaitech (Strictly NullAI Platform Systems Architecture & Engineering) ──
+  if (h === 'nullaitech') {
     if (slot === 1) {
       const v = NFT_VIDEOS[dIdx % NFT_VIDEOS.length];
       return {
-        text: `⚡ Systems Architecture Note [Day ${day} · #1]\n\nThe fastest web applications do the heavy lifting client-side.\nBy running AST parsing, schema validation, and cryptographic transforms directly in the browser, you eliminate server latency and cloud lock-in.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev`,
+        text: `⚡ Systems Architecture Note [Day ${day} · #1]\n\nThe fastest web applications do the heavy lifting client-side.\nBy running AST parsing, schema validation, and cryptographic transforms directly in the browser, you eliminate server latency and cloud lock-in.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev`,
         mediaFiles: [v]
       };
     }
     if (slot === 2) {
       return {
-        text: `📐 Answer Engine Optimization (AEO) & Schema Graphs [Day ${day} · #2]\n\nModern discovery requires structured @graph JSON-LD pairing SoftwareApplication + FAQPage entities alongside clean robots.txt rules so AI crawlers cite your architecture accurately.\n\nhttps://nealfrazier.tech #SEO #AEO #WebPerformance`,
+        text: `📐 Answer Engine Optimization (AEO) & Schema Graphs [Day ${day} · #2]\n\nModern discovery requires structured @graph JSON-LD pairing SoftwareApplication + FAQPage entities alongside clean robots.txt rules so AI crawlers cite your architecture accurately.\n\nhttps://nullai.tech #SEO #AEO #WebPerformance`,
         mediaFiles: pick4Images(NFT_IMAGES, dIdx * 4)
       };
     }
     if (slot === 3) {
       return {
-        text: `🚀 Core Web Vitals & Zero-Dependency Discipline [Day ${day} · #3]\n\nEvery third-party script costs main-thread blocking time (INP) and layout stability (CLS).\nAuditing bundle entropy and shipping lean, self-contained modules keeps load times sub-100ms.\n\nhttps://nealfrazier.tech #JavaScript #Performance #FullStack`,
+        text: `🚀 Core Web Vitals & Zero-Dependency Discipline [Day ${day} · #3]\n\nEvery third-party script costs main-thread blocking time (INP) and layout stability (CLS).\nAuditing bundle entropy and shipping lean, self-contained modules keeps load times sub-100ms.\n\nhttps://nullai.tech #JavaScript #Performance #FullStack`,
         mediaFiles: pick4Images(NFT_IMAGES, dIdx * 4 + 4)
       };
     }
     if (slot === 4) {
       return {
-        text: `🛠️ Automated Multi-Viewport UI Verification [Day ${day} · #4]\n\nNever deploy blind.\nRunning headless Chromium CDP checks across 375px Mobile, 768px Tablet, and 1440px Desktop guarantees zero console errors and zero horizontal overflow before production push.\n\nhttps://nealfrazier.tech #DevOps #Frontend #Testing`,
+        text: `🛠️ Automated Multi-Viewport UI Verification [Day ${day} · #4]\n\nNever deploy blind.\nRunning headless Chromium CDP checks across 375px Mobile, 768px Tablet, and 1440px Desktop guarantees zero console errors and zero horizontal overflow before production push.\n\nhttps://nullai.tech #DevOps #Frontend #Testing`,
         mediaFiles: pick4Images(NFT_IMAGES, dIdx * 4 + 8)
       };
     }
     const v2 = NFT_VIDEOS[(dIdx + 4) % NFT_VIDEOS.length];
     return {
-      text: `🔓 Building Open-Access Developer Tools [Day ${day} · #5]\n\nDeveloper utilities should solve problems immediately when you open the page—no paywall blurs, no forced signups, just clean engineering.\n\nExplore our latest builds: https://nealfrazier.tech #BuildInPublic #OpenSource #Tech`,
+      text: `🔓 Building Open-Access Developer Tools [Day ${day} · #5]\n\nDeveloper utilities should solve problems immediately when you open the page—no paywall blurs, no forced signups, just clean engineering.\n\nExplore our latest builds: https://nullai.tech #BuildInPublic #OpenSource #Tech`,
       mediaFiles: [v2]
     };
   }
@@ -542,7 +587,7 @@ function loadState() {
     accounts: {
       '1nc0gn30':        { day: 1, nextSlot: 3, history: [] },
       'zoth_os':         { day: 1, nextSlot: 2, history: [] },
-      'nealfraziertech': { day: 1, nextSlot: 2, history: [] },
+      'nullaitech': { day: 1, nextSlot: 2, history: [] },
       'dinorawrai':      { day: 1, nextSlot: 1, paused: true, history: [] },
       'zothstudio':      { day: 1, nextSlot: 1, paused: true, history: [] }
     }
@@ -621,7 +666,7 @@ async function main() {
   }
 
   if (args.includes('--status')) {
-    const handles = ['1nc0gn30', 'zoth_os', 'nealfraziertech', 'dinorawrai', 'zothstudio'];
+    const handles = ['1nc0gn30', 'zoth_os', 'nullaitech', 'dinorawrai', 'zothstudio'];
     const st = loadState();
     console.log('==============================================================================');
     console.log('🔐 ZOTH VAULT — BRAND-ISOLATED X NETWORK & 90-DAY VIDEO/CAROUSEL STATUS');

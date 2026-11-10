@@ -3,9 +3,9 @@
 High-End 1080p Motion-Graphics Video & Architectural Blueprint Engine
 Generates:
   1. 6 bespoke 1080p MP4 videos for @zoth_os (media_packs/videos/zoth_os/zothos_ep01..06.mp4)
-  2. 6 bespoke 1080p MP4 videos for @nealfraziertech (media_packs/videos/nealfraziertech/nft_ep01..06.mp4)
+  2. 6 bespoke 1080p MP4 videos for @nullaitech (media_packs/videos/nullaitech/nft_ep01..06.mp4)
   3. 36 high-end 1920x1080 multi-panel architectural infographic & code blueprint cards
-     in media_packs/high_end_cards/{1nc0gn30,zoth_os,nealfraziertech}/
+     in media_packs/high_end_cards/{1nc0gn30,zoth_os,nullaitech}/
 """
 
 import os
@@ -163,7 +163,7 @@ ZOTHOS_VIDEOS = [
 NFT_VIDEOS = [
     {
         "slug": "nft_ep01_zero_dep_architecture.mp4",
-        "badge": "NEAL FRAZIER TECH // EPISODE 01 · ZERO-DEPENDENCY WEB ARCHITECTURE",
+        "badge": "NULLAI PLATFORM // EPISODE 01 · ZERO-DEPENDENCY WEB ARCHITECTURE",
         "title": "Why We Ship 60FPS WebGL & AST Tools Without 800MB node_modules",
         "sub": "Sub-50ms Cold Starts, Deterministic Bundles & 100% Client-Side Execution",
         "accent": (56, 189, 248),
@@ -173,13 +173,13 @@ NFT_VIDEOS = [
              ["Every transitive npm dependency is a latency & supply-chain liability", "Native WebCrypto, WebAudio, Canvas2D & WebGL2 cover 99% of use cases", "Zero webpack/vite plugin breakage across 5-year maintenance horizons"]),
             ("PRINCIPLE 02 // 100% IN-BROWSER CLIENT COMPUTE", "window.crypto.subtle.digest('SHA-256', payload)", "/home/zoth/nullaitech-upgrade/art-v2/polyglot-framework-exporter/polyglot-framework-exporter-hero-16x9.png",
              ["AST parsing, shader compilation & binary packing run in the browser", "Zero server round-trips means 0ms network jitter and infinite scale", "User data never leaves their local browser memory space"]),
-            ("PRINCIPLE 03 // VERIFIED TRIPLE-VIEWPORT GUARDRAILS", "node engine/site_guardrail.js https://nealfrazier.tech", "/home/zoth/nullaitech-upgrade/art-v2/schema-illustrator-studio/schema-illustrator-studio-hero-16x9.png",
-             ["Automated headless Chromium checks mobile (375px), tablet & 1080p", "Enforces zero console errors and zero horizontal scroll overflow", "Engineered by Neal Frazier Tech • nealfrazier.tech"])
+            ("PRINCIPLE 03 // VERIFIED TRIPLE-VIEWPORT GUARDRAILS", "node engine/site_guardrail.js https://nullai.tech", "/home/zoth/nullaitech-upgrade/art-v2/schema-illustrator-studio/schema-illustrator-studio-hero-16x9.png",
+             ["Automated headless Chromium checks mobile (375px), tablet & 1080p", "Enforces zero console errors and zero horizontal scroll overflow", "Engineered by NullAI Platform • nullai.tech"])
         ]
     },
     {
         "slug": "nft_ep02_webgl_pbr_shaders.mp4",
-        "badge": "NEAL FRAZIER TECH // EPISODE 02 · PROCEDURAL PBR SHADER PIPELINE",
+        "badge": "NULLAI PLATFORM // EPISODE 02 · PROCEDURAL PBR SHADER PIPELINE",
         "title": "Synthesizing Normal-Bump & Specular Maps in 4KB of GLSL",
         "sub": "How to replace 200MB of PNG textures with analytical FBM derivatives at 60fps",
         "accent": (245, 184, 46),
@@ -190,12 +190,12 @@ NFT_VIDEOS = [
             ("TECHNIQUE 02 // DYNAMIC WETNESS & PUDDLE RIPPLES", "float ripple = sin(dist * 48.0 - uTime * 9.0) * exp(-dist * 4.0);", "/home/zoth/NullAITech/video-production/tool-36-nexus-3d-scene-studio/thumbnail.jpg",
              ["Concentric raindrop rings modulate roughness & mirror reflection", "Smoothstep puddle masks blend dry stone with specular water", "Runs at locked 60fps on integrated laptops and mobile GPUs"]),
             ("TECHNIQUE 03 // FRUSTUM & DISTANCE CULLING", "if (dot(toObj, camFwd) < -0.25) continue;", "/home/zoth/nullaitech-upgrade/art-v2/badge3d-coin-generator/badge3d-coin-generator-hero-16x9.png",
-             ["Cuts draw calls by 68% in dense multi-tower procedural districts", "Maintains 16.6ms frame pacing even at 2.0x Hyper-Clock speed", "Full architectural breakdowns at nealfrazier.tech"])
+             ["Cuts draw calls by 68% in dense multi-tower procedural districts", "Maintains 16.6ms frame pacing even at 2.0x Hyper-Clock speed", "Full architectural breakdowns at nullai.tech"])
         ]
     },
     {
         "slug": "nft_ep03_aeo_schema_graph.mp4",
-        "badge": "NEAL FRAZIER TECH // EPISODE 03 · AEO & AI SEARCH ENGINEERING",
+        "badge": "NULLAI PLATFORM // EPISODE 03 · AEO & AI SEARCH ENGINEERING",
         "title": "Engineering JSON-LD Knowledge Graphs for AI Citation Engines",
         "sub": "How to structure WebApplication + FAQPage graphs for Perplexity, GPTBot & Claude",
         "accent": (74, 222, 128),
@@ -206,12 +206,12 @@ NFT_VIDEOS = [
             ("LAYER 02 // ZERO-DELAY ROBOTS.TXT & CANONICAL SITEMAP", "User-agent: GPTBot / ClaudeBot / PerplexityBot -> Allow: /", "/home/zoth/NullAITech/video-production/tool-49-robots-txt-auditor/thumbnail.jpg",
              ["Explicitly whitelists frontier AI crawlers with Crawl-delay: 0", "Pairs semantic HTML5 landmarks with high-signal FAQ answers", "Eliminates JS-hydration black holes that blind crawler indexers"]),
             ("LAYER 03 // OPENGRAPH & HIGH-CONTRAST CARD DESIGN", "og:image 1920x1080 + twitter:card summary_large_image", "/home/zoth/NullAITech/video-production/tool-03-aeo-graph-engine/thumbnail.jpg",
-             ["Every route ships with verified high-contrast social preview cards", "Boosts click-through rate across X, LinkedIn, and developer feeds", "Explore our open-access tools at nealfrazier.tech"])
+             ["Every route ships with verified high-contrast social preview cards", "Boosts click-through rate across X, LinkedIn, and developer feeds", "Explore our open-access tools at nullai.tech"])
         ]
     },
     {
         "slug": "nft_ep04_webaudio_dsp_synth.mp4",
-        "badge": "NEAL FRAZIER TECH // EPISODE 04 · PROCEDURAL WEBAUDIO DSP",
+        "badge": "NULLAI PLATFORM // EPISODE 04 · PROCEDURAL WEBAUDIO DSP",
         "title": "Synthesizing Multi-Track Soundtracks in Pure JavaScript",
         "sub": "Zero MP3 Assets: 144 BPM Drift-Phonk, FM Bells & Biquad Filter Envelopes",
         "accent": (244, 63, 94),
@@ -222,12 +222,12 @@ NFT_VIDEOS = [
             ("DSP STAGE 02 // SUB-BASS PITCH ENVELOPE & FM COWBELL", "gain.gain.exponentialRampToValueAtTime(0.001, t + 0.18);", "/home/zoth/NullAITech/video-production/tool-19-cron-rhythm-studio/thumbnail.jpg",
              ["808 sub-bass uses rapid pitch-drop exponential ramps for punch", "Detuned dual-square wave + bandpass filter creates iconic phonk bell", "Adds 0 bytes of external audio file weight to the bundle"]),
             ("DSP STAGE 03 // PROCEDURAL FOLEY & UI MICRO-SONICS", "sfx('confirm') // 4ms tactile harmonic chirp", "/home/zoth/NullAITech/video-production/tool-68-zoth-math-pillar/thumbnail.jpg",
-             ["Every button hover, parry, and terminal keystroke has bespoke DSP feedback", "Respects user mute preferences and browser autoplay policies cleanly", "Engineered by Neal Frazier Tech • 757tech.pro"])
+             ["Every button hover, parry, and terminal keystroke has bespoke DSP feedback", "Respects user mute preferences and browser autoplay policies cleanly", "Engineered by NullAI Platform • 1nc0gn30.si"])
         ]
     },
     {
         "slug": "nft_ep05_headless_cdp_qa.mp4",
-        "badge": "NEAL FRAZIER TECH // EPISODE 05 · DETERMINISTIC VISUAL QA LOOP",
+        "badge": "NULLAI PLATFORM // EPISODE 05 · DETERMINISTIC VISUAL QA LOOP",
         "title": "Zero-Flake UI Verification with Headless CDP & Time-Stepping",
         "sub": "Why we banned sleep(3000) in favor of deterministic frame-stepping harnesses",
         "accent": (34, 211, 238),
@@ -238,12 +238,12 @@ NFT_VIDEOS = [
             ("HARNESS 02 // TRIPLE-VIEWPORT GEOMETRY AUDIT", "scrollWidth <= clientWidth && consoleErrors.length === 0", "/home/zoth/NullAITech/video-production/tool-59-webmcp-protocol-inspector/thumbnail.jpg",
              ["Automatically sweeps 375x812 mobile, 768x1024 tablet & 1920x1080 desktop", "Detects clipped labels, overlapping HUD bars, and broken images", "Blocks deployment if any runtime exception or 404 resource occurs"]),
             ("HARNESS 03 // AUTOMATED MP4 SHOWREEL PIPELINE", "ffmpeg -f image2pipe -i - -i synth.wav -c:v libx264 out.mp4", "/home/zoth/NullAITech/video-production/tool-70-zoth-webgen/thumbnail.jpg",
-             ["Pipes live WebGL canvas frames + procedural WAV audio into ffmpeg", "Generates broadcast-ready 1080p MP4 trailers in seconds", "Follow @NealFrazierTech for production engineering blueprints"])
+             ["Pipes live WebGL canvas frames + procedural WAV audio into ffmpeg", "Generates broadcast-ready 1080p MP4 trailers in seconds", "Follow @1nc0gn30 for production engineering blueprints"])
         ]
     },
     {
         "slug": "nft_ep06_open_access_micro_saas.mp4",
-        "badge": "NEAL FRAZIER TECH // EPISODE 06 · OPEN-ACCESS PRODUCT ARCHITECTURE",
+        "badge": "NULLAI PLATFORM // EPISODE 06 · OPEN-ACCESS PRODUCT ARCHITECTURE",
         "title": "Why 100% Unlocked Utility Beats Paywall Funnels in 2026",
         "sub": "Zero Login Walls, Zero Blur Locks, Instant Value & Voluntary Creator Support",
         "accent": (245, 184, 46),
@@ -253,8 +253,8 @@ NFT_VIDEOS = [
              ["Developers bounce in <3 seconds when hit with a credit-card wall", "Opening directly into an active multi-pane workstation maximizes trust", "Full export, copy, and CLI features work out of the box"]),
             ("MODEL 02 // ZERO-BACKEND COST STRUCTURE", "Static Edge CDN + 100% Client-Side Compute = $0/mo Infra", "/home/zoth/nullaitech-upgrade/art-v2/subsweep-lead-scanner/subsweep-lead-scanner-hero-16x9.png",
              ["Running AST, crypto, and WebGL on the client eliminates GPU server bills", "Allows every tool to remain 100% free and open-access indefinitely", "Immune to database breaches or traffic-spike downtime"]),
-            ("MODEL 03 // CLEAN VOLUNTARY SUPPORT RAILS", "☕ Buy Us a Coffee • Engineered by Neal Frazier Tech", "/home/zoth/NullAITech/video-production/tool-56-vector-search-engine/thumbnail.jpg",
-             ["Non-intrusive support link lets power users tip when they get value", "Builds long-term reputation across nealfrazier.tech & 757tech.pro", "Try our full suite of open developer tools today"])
+            ("MODEL 03 // CLEAN VOLUNTARY SUPPORT RAILS", "☕ Buy Us a Coffee • Engineered by NullAI Platform", "/home/zoth/NullAITech/video-production/tool-56-vector-search-engine/thumbnail.jpg",
+             ["Non-intrusive support link lets power users tip when they get value", "Builds long-term reputation across nullai.tech & 1nc0gn30.si", "Try our full suite of open developer tools today"])
         ]
     }
 ]
@@ -478,7 +478,7 @@ def build_video_pack(spec, out_folder, footer_brand, seed):
 def build_high_end_infographics():
     """
     Renders 36 bespoke 1920x1080 Architectural Blueprint & Multi-Panel Infographics
-    (12 for @1nc0gn30, 12 for @zoth_os, 12 for @nealfraziertech)
+    (12 for @1nc0gn30, 12 for @zoth_os, 12 for @nullaitech)
     """
     specs = {
         "1nc0gn30": [
@@ -613,16 +613,16 @@ def build_high_end_infographics():
               ("OPEN SOURCE", "Clone, audit, and customize at github.com/1nc0gn30/zoth-os")],
              "REPO: github.com/1nc0gn30/zoth-os"),
         ],
-        "nealfraziertech": [
-            ("nft_arch_01_zerodep.jpg", (56, 189, 248), "NEAL FRAZIER TECH // SYSTEMS BLUEPRINT #01",
+        "nullaitech": [
+            ("nft_arch_01_zerodep.jpg", (56, 189, 248), "NULLAI PLATFORM // SYSTEMS BLUEPRINT #01",
              "Zero-Dependency Client-Side Web Application Architecture", "Shipping Instant-Load Tools Without Backend Server Fragility",
              "/home/zoth/nullaitech-upgrade/art-v2/cwv-speed-engine/cwv-speed-engine-hero-16x9.png",
              [("SUB-50MS LOAD", "Zero framework hydration tax—opens directly into active workspace"),
               ("CLIENT COMPUTE", "AST parsing, cryptography & WebGL run 100% in user's browser"),
               ("ZERO CLOUD BILL", "Static edge delivery eliminates runaway API & database costs"),
               ("PRIVACY BY DESIGN", "Zero user payloads ever transmitted to external servers")],
-             "PORTFOLIO & TOOLS: https://nealfrazier.tech"),
-            ("nft_arch_02_guardrail.jpg", (74, 222, 128), "NEAL FRAZIER TECH // PRODUCTION QA GUARDRAIL #02",
+             "PORTFOLIO & TOOLS: https://nullai.tech"),
+            ("nft_arch_02_guardrail.jpg", (74, 222, 128), "NULLAI PLATFORM // PRODUCTION QA GUARDRAIL #02",
              "The 8-Point Pre-Deployment Verification Protocol", "How We Guarantee Zero Console Errors Across Mobile, Tablet & Desktop",
              "/home/zoth/nullaitech-upgrade/art-v2/schema-illustrator-studio/schema-illustrator-studio-hero-16x9.png",
              [("TRIPLE VIEWPORT", "Automated CDP sweep at 375px Mobile, 768px Tablet & 1920px Desktop"),
@@ -630,15 +630,15 @@ def build_high_end_infographics():
               ("TAG INTEGRITY", "Verifies closed <style>/<script> tags and non-empty DOM presence"),
               ("ZERO ERRORS", "Hard-fails build if consoleErrors.length > 0 or any 404 occurs")],
              "RUN AUDIT: node engine/site_guardrail.js <URL>"),
-            ("nft_arch_03_aeo.jpg", (245, 184, 46), "NEAL FRAZIER TECH // AEO & SEMANTIC GRAPH #03",
+            ("nft_arch_03_aeo.jpg", (245, 184, 46), "NULLAI PLATFORM // AEO & SEMANTIC GRAPH #03",
              "Answer Engine Optimization (AEO) for Technical Products", "Structuring JSON-LD @graph for Instant AI Search Citation",
              "/home/zoth/nullaitech-upgrade/art-v2/aeo-graph-engine/aeo-graph-engine-hero-16x9.png",
              [("SCHEMA @GRAPH", "Unified WebApplication + SoftwareApplication + FAQPage JSON-LD"),
               ("CRAWLER ACCESS", "robots.txt explicitly allows GPTBot, ClaudeBot & PerplexityBot"),
               ("SOCIAL CARDS", "Verified 1920x1080 og:image and summary_large_image headers"),
               ("SEMANTIC DOM", "Accessible ARIA landmarks and 100% descriptive image alt text")],
-             "SPECIFICATION: nealfrazier.tech // 757tech.pro"),
-            ("nft_arch_04_shaders.jpg", (244, 63, 94), "NEAL FRAZIER TECH // REAL-TIME GRAPHICS ENGINEERING #04",
+             "SPECIFICATION: nullai.tech // 1nc0gn30.si"),
+            ("nft_arch_04_shaders.jpg", (244, 63, 94), "NULLAI PLATFORM // REAL-TIME GRAPHICS ENGINEERING #04",
              "Procedural GLSL Shaders vs Multi-Megabyte Texture Packs", "Generating PBR Normal-Bump, Specular Water & CRT Dither in Code",
              "/home/zoth/NullAITech/video-production/tool-71-reality-shader-forge/thumbnail.jpg",
              [("ANALYTICAL FBM", "Computes surface normal derivatives on the fly in fragment shader"),
@@ -646,23 +646,23 @@ def build_high_end_infographics():
               ("ZERO VRAM BLOAT", "Loads in <15ms on mobile networks with infinite resolution scale"),
               ("60FPS BUDGET", "Strict transform/opacity & frustum-culled WebGL render loops")],
              "LIVE DEMO: world-of-zoth.html"),
-            ("nft_arch_05_openaccess.jpg", (34, 211, 238), "NEAL FRAZIER TECH // PRODUCT STRATEGY #05",
+            ("nft_arch_05_openaccess.jpg", (34, 211, 238), "NULLAI PLATFORM // PRODUCT STRATEGY #05",
              "The 100% Open-Access Developer Tool Manifesto", "Why Removing Paywalls & Blur Locks Multiplies Engineering Trust",
              "/home/zoth/nullaitech-upgrade/art-v2/polyglot-framework-exporter/polyglot-framework-exporter-hero-16x9.png",
              [("ZERO PAYWALLS", "Every export, copy action, and advanced mode is unlocked by default"),
               ("NO LOGIN WALLS", "Users test real payloads immediately without email capture funnels"),
               ("VOLUNTARY TIP", "Clean 'Buy Us a Coffee' support option for power users"),
               ("HIGH RETENTION", "Engineers bookmark and share tools that respect their time")],
-             "ENGINEERED BY NEAL FRAZIER TECH (@NealFrazierTech)"),
-            ("nft_arch_06_webaudio.jpg", (168, 85, 247), "NEAL FRAZIER TECH // BROWSER DSP & SYNTHESIS #06",
+             "ENGINEERED BY NULLAI PLATFORM (@1nc0gn30)"),
+            ("nft_arch_06_webaudio.jpg", (168, 85, 247), "NULLAI PLATFORM // BROWSER DSP & SYNTHESIS #06",
              "Zero-Dependency Audio Synthesis with the WebAudio API", "Building Low-Latency Sequencers, Foley & Soundtracks in Pure JS",
              "/home/zoth/nullaitech-upgrade/art-v2/cron-rhythm-studio/cron-rhythm-studio-hero-16x9.png",
              [("LOOKAHEAD CLOCK", "Sample-accurate AudioContext scheduling immune to UI frame drops"),
               ("FM & SUBTRACTIVE", "Custom BiquadFilter envelopes, 808 glides & chiptune arpeggiators"),
               ("ZERO MP3 WEIGHT", "Eliminates external audio asset requests and CORS decoding bugs"),
               ("TACTILE UI SFX", "Subtle harmonic micro-feedback on every user interaction")],
-             "EXPLORE MORE: https://nealfrazier.tech"),
-            ("nft_arch_07_cdp_loop.jpg", (74, 222, 128), "NEAL FRAZIER TECH // VISUAL VERIFICATION LOOP #07",
+             "EXPLORE MORE: https://nullai.tech"),
+            ("nft_arch_07_cdp_loop.jpg", (74, 222, 128), "NULLAI PLATFORM // VISUAL VERIFICATION LOOP #07",
              "Automated Screenshot Inspection & Deterministic Frame Capture", "Proving Visual Quality Instead of Guessing in CSS",
              "/home/zoth/nullaitech-upgrade/art-v2/regex-droid-builder/regex-droid-builder-hero-16x9.png",
              [("CDP HARNESS", "Zero-dependency Chrome DevTools Protocol multi-viewport capture"),
@@ -670,14 +670,14 @@ def build_high_end_infographics():
               ("METRICS JSON", "Measures scrollWidth, broken images, and console errors automatically"),
               ("VISUAL DIFF", "Guarantees zero overlapping HUD text or clipped cards before ship")],
              "PIPELINE: capture.mjs --base <URL> --out /tmp/shots"),
-            ("nft_arch_08_full_stack.jpg", (245, 184, 46), "NEAL FRAZIER TECH // SOVEREIGN FULL-STACK MATRIX #08",
-             "From Bare-Metal Linux ISOs to 60FPS Browser Engines", "Unified Systems Engineering Across nealfrazier.tech & 757tech.pro",
+            ("nft_arch_08_full_stack.jpg", (245, 184, 46), "NULLAI PLATFORM // SOVEREIGN FULL-STACK MATRIX #08",
+             "From Bare-Metal Linux ISOs to 60FPS Browser Engines", "Unified Systems Engineering Across nullai.tech & 1nc0gn30.si",
              "/home/zoth/nullaitech-upgrade/art-v2/badge3d-coin-generator/badge3d-coin-generator-hero-16x9.png",
              [("SYSTEMS LAYER", "Custom Debian Live ISOs, eBPF packet filters & CLI toolchains"),
               ("WEB ENGINE LAYER", "Single-file 3D WebGL worlds, AST compilers & client-side SaaS"),
               ("QA & AUTOMATION", "Headless Chromium guardrails & automated 1080p video pipelines"),
               ("OPEN ECOSYSTEM", "100% free, sovereign, and verifiable engineering")],
-             "FOLLOW @NealFrazierTech  •  https://nealfrazier.tech"),
+             "FOLLOW @1nc0gn30  •  https://nullai.tech"),
         ]
     }
 
@@ -786,7 +786,7 @@ def build_high_end_infographics():
             brand_map = {
                 "1nc0gn30": "WORLD OF ZOTH // ENGINEERED BY @1NC0GN30 • 36-EPISODE ANTHOLOGY",
                 "zoth_os": "ZOTHOS SOVEREIGN LINUX // @ZOTH_OS • AMNESIC TORAM WORKSTATION",
-                "nealfraziertech": "NEAL FRAZIER TECH // @NEALFRAZIERTECH • NEALFRAZIER.TECH & 757TECH.PRO"
+                "nullaitech": "NULLAI PLATFORM // @1nc0gn30 • NULLAI.TECH & 1NC0GN30.SI"
             }
             draw.text((60, H - 48), brand_map[acct], font=f_hud, fill=(225, 232, 242))
             draw.text((W - 430, H - 48), "100% FREE & OPEN-ACCESS Forever", font=f_hud, fill=accent)
@@ -801,9 +801,9 @@ if __name__ == "__main__":
     for i, sp in enumerate(ZOTHOS_VIDEOS, 1):
         build_video_pack(sp, VID_DIR / "zoth_os", "ZOTHOS LINUX // @ZOTH_OS • GITHUB.COM/1NC0GN30/ZOTH-OS", seed=i)
 
-    print("=== Rendering 6 @nealfraziertech 1080p Motion-Graphics Showreel Videos ===")
+    print("=== Rendering 6 @nullaitech 1080p Motion-Graphics Showreel Videos ===")
     for i, sp in enumerate(NFT_VIDEOS, 1):
-        build_video_pack(sp, VID_DIR / "nealfraziertech", "NEAL FRAZIER TECH // @NEALFRAZIERTECH • NEALFRAZIER.TECH", seed=i + 6)
+        build_video_pack(sp, VID_DIR / "nullaitech", "NULLAI PLATFORM // @1nc0gn30 • NULLAI.TECH", seed=i + 6)
 
     print("=== Rendering 24 High-End 1080p Architectural Blueprint Cards ===")
     build_high_end_infographics()

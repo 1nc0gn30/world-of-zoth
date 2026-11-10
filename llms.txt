@@ -1,0 +1,22 @@
+# World of Zoth · 1nc0gn30 (https://1nc0gn30.si | https://github.com/1nc0gn30/world-of-zoth)
+
+> Zero-dependency 3D Lattice RPG, procedural WebGL/Canvas engine, and interactive sovereign world engineered by `1nc0gn30` (`@1nc0gn30`) • `NullAI Platform` (`https://nullai.tech`).
+> 100% free, open-access, and unlocked by default — zero paywalls, zero ads, zero telemetry.
+
+## World of Zoth Highlights
+- **20 Playable 3D Lattice Districts**: From Relit City (`hub`), Rest Woods, and The Hollow to The Null Core (`06:13`), Quantum Loom, Chrono-Vault, Astral Spire, Omega Foundry, and Dawn Horizon.
+- **5-Act Campaign & Tactical Combat**: Terminal command verbs (`> ping`, `> exploit`, `> firewall`, `> trace`, `> sudo rm -rf`), sub-second rhythm parry windows, 6 tactical bosses, and Null Academy (16 AI-Security Labs).
+- **Zero-Dependency Portability**: Runs offline from a single HTML file (`world-of-zoth.html` / `index.html`) on Desktop or native hardware-accelerated Android APK (`dist/world-of-zoth.apk`).
+
+## NullAI & Zoth Sovereign Ecosystem (2026 Ground Truth)
+- **1nc0gn30 Sovereign Hub**: https://1nc0gn30.si | https://1nc0gn30.github.io | https://github.com/1nc0gn30
+- **NullAI Platform**: https://nullai.tech | https://github.com/1nc0gn30/nullai2026
+- **Zoth Studio v2 (77 Free Tools — 55 In-Browser + 22 CLI/Daemon, All 77 with Public GitHub Repos)**: https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2
+- **ZothOS v3.4.0 (Debian 13 Trixie AI & Security Live OS with KDE Plasma 6, 77 CLI Tools, Sovereign Agent Bridge :8102, Neuro-Memory :8094)**: https://zothos.nullai.tech | https://github.com/1nc0gn30/zoth-os
+- **ZothOS-Lite v1.2 (Tails-Style Amnesic Monotone RAM-Only `toram` OS & Portable ISO — 48+ Models Across 8 Providers, Onboarding Wizard, ZothNet P2P Mesh, External USB/Cloud Persistence)**: https://zothos-lite.nullai.tech | https://github.com/1nc0gn30/zothos-lite
+- **ZothNet (Zero-Cloud Encrypted Mesh Network & 3-Hop Sphinx Mixnet)**: https://zothnet.nullai.tech
+- **Hermes-Zoth (Nous Hermes Multi-Agent Orchestrator & Plugin)**: https://github.com/1nc0gn30/hermes-zoth
+
+## Support Open-Access Craft
+- **Buy Us a Coffee (Stripe)**: https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X
+- **Solana Tip Jar**: `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK` (`solana:GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`)

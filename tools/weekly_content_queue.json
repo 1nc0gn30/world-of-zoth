@@ -761,174 +761,174 @@
         ]
       }
     ],
-    "nealfraziertech": [
+    "nullaitech": [
       {
         "day": 1,
         "slot": 1,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 1 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 1 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep01_zero_dep_architecture.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nullaitech/nft_ep01_zero_dep_architecture.mp4"
         ]
       },
       {
         "day": 1,
         "slot": 2,
         "type": "carousel",
-        "text": "\ud83d\udcd0 Answer Engine Optimization (AEO) & Schema.org Graphs\n\nModern technical discovery requires unified JSON-LD @graph schemas + zero-delay crawler rules so AI search engines cite your work accurately.\n\nhttps://nealfrazier.tech #SEO #AEO #WebDev",
+        "text": "\ud83d\udcd0 Answer Engine Optimization (AEO) & Schema.org Graphs\n\nModern technical discovery requires unified JSON-LD @graph schemas + zero-delay crawler rules so AI search engines cite your work accurately.\n\nhttps://nullai.tech #SEO #AEO #WebDev",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot2_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot2_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_01_zerodep.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot2_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot2_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot2_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_01_zerodep.jpg"
         ]
       },
       {
         "day": 1,
         "slot": 3,
         "type": "carousel",
-        "text": "\ud83d\ude80 Engineering Sub-100ms INP & 0.000 CLS\n\nEvery kilobyte of third-party JS costs main-thread responsiveness. Keep bundles lean, reserve layout geometry, and ship instant UIs.\n\nhttps://nealfrazier.tech #WebPerformance #JavaScript #Frontend",
+        "text": "\ud83d\ude80 Engineering Sub-100ms INP & 0.000 CLS\n\nEvery kilobyte of third-party JS costs main-thread responsiveness. Keep bundles lean, reserve layout geometry, and ship instant UIs.\n\nhttps://nullai.tech #WebPerformance #JavaScript #Frontend",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot3_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot3_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_02_guardrail.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot3_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot3_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot3_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_02_guardrail.jpg"
         ]
       },
       {
         "day": 1,
         "slot": 4,
         "type": "carousel",
-        "text": "\ud83d\udee0\ufe0f Automated Multi-Viewport UI Verification Loops\n\nDon't guess if a layout breaks on mobile\u2014automate headless CDP checks at 375px, 768px, and 1440px with zero console errors allowed.\n\nhttps://nealfrazier.tech #Frontend #Testing #DevOps",
+        "text": "\ud83d\udee0\ufe0f Automated Multi-Viewport UI Verification Loops\n\nDon't guess if a layout breaks on mobile\u2014automate headless CDP checks at 375px, 768px, and 1440px with zero console errors allowed.\n\nhttps://nullai.tech #Frontend #Testing #DevOps",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot4_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot4_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day1_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_03_aeo.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot4_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot4_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day1_slot4_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_03_aeo.jpg"
         ]
       },
       {
         "day": 1,
         "slot": 5,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 1 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 1 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep02_webgl_pbr_shaders.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nullaitech/nft_ep02_webgl_pbr_shaders.mp4"
         ]
       },
       {
         "day": 2,
         "slot": 1,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 2 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 2 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep03_aeo_schema_graph.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nullaitech/nft_ep03_aeo_schema_graph.mp4"
         ]
       },
       {
         "day": 2,
         "slot": 2,
         "type": "carousel",
-        "text": "\u26a1 The Power of 100% Client-Side Developer Utilities\n\nWhen AST parsing, crypto transforms, and visualizers run directly in the browser, you get 0ms latency, total data privacy, and infinite scale.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #Arch",
+        "text": "\u26a1 The Power of 100% Client-Side Developer Utilities\n\nWhen AST parsing, crypto transforms, and visualizers run directly in the browser, you get 0ms latency, total data privacy, and infinite scale.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #Arch",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot2_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot2_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_04_shaders.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot2_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot2_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot2_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_04_shaders.jpg"
         ]
       },
       {
         "day": 2,
         "slot": 3,
         "type": "carousel",
-        "text": "\ud83d\udd04 AST-Driven Polyglot UI Transpilation\n\nInstead of rewriting components by hand across React, Vue, and vanilla JS, compile UI primitives through a clean intermediate AST.\n\nhttps://nealfrazier.tech #TypeScript #ReactJS #WebComponents",
+        "text": "\ud83d\udd04 AST-Driven Polyglot UI Transpilation\n\nInstead of rewriting components by hand across React, Vue, and vanilla JS, compile UI primitives through a clean intermediate AST.\n\nhttps://nullai.tech #TypeScript #ReactJS #WebComponents",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot3_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot3_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_05_openaccess.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot3_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot3_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot3_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_05_openaccess.jpg"
         ]
       },
       {
         "day": 2,
         "slot": 4,
         "type": "carousel",
-        "text": "\ud83d\uddc2\ufe0f Turning Raw Schemas into Interactive Architecture Graphs\n\nAuto-parsing SQL DDL and TypeScript interfaces into live ER diagrams helps teams spot normalization bugs before writing a single query.\n\nhttps://nealfrazier.tech #Database #SQL #SystemDesign",
+        "text": "\ud83d\uddc2\ufe0f Turning Raw Schemas into Interactive Architecture Graphs\n\nAuto-parsing SQL DDL and TypeScript interfaces into live ER diagrams helps teams spot normalization bugs before writing a single query.\n\nhttps://nullai.tech #Database #SQL #SystemDesign",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot4_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot4_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day2_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_06_webaudio.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot4_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot4_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day2_slot4_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_06_webaudio.jpg"
         ]
       },
       {
         "day": 2,
         "slot": 5,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 2 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 2 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep04_webaudio_dsp_synth.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nullaitech/nft_ep04_webaudio_dsp_synth.mp4"
         ]
       },
       {
         "day": 3,
         "slot": 1,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 3 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 3 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep05_headless_cdp_qa.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nullaitech/nft_ep05_headless_cdp_qa.mp4"
         ]
       },
       {
         "day": 3,
         "slot": 2,
         "type": "carousel",
-        "text": "\ud83e\udde9 Visualizing Regex as Finite State Machines (And Preventing ReDoS)\n\nUnchecked regular expressions can lock up a Node.js event loop via catastrophic backtracking. Audit patterns visually with AST state graphs.\n\nhttps://nealfrazier.tech #JavaScript #NodeJS #AppSec",
+        "text": "\ud83e\udde9 Visualizing Regex as Finite State Machines (And Preventing ReDoS)\n\nUnchecked regular expressions can lock up a Node.js event loop via catastrophic backtracking. Audit patterns visually with AST state graphs.\n\nhttps://nullai.tech #JavaScript #NodeJS #AppSec",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot2_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot2_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_07_cdp_loop.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot2_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot2_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot2_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_07_cdp_loop.jpg"
         ]
       },
       {
         "day": 3,
         "slot": 3,
         "type": "carousel",
-        "text": "\u23f1\ufe0f Preventing Cron Thundering Herds with Deterministic Jitter\n\nScheduling 50 jobs at '0 * * * *' guarantees top-of-the-hour CPU spikes. Stagger schedules and visualize overlap windows up front.\n\nhttps://nealfrazier.tech #Backend #DevOps #DistributedSystems",
+        "text": "\u23f1\ufe0f Preventing Cron Thundering Herds with Deterministic Jitter\n\nScheduling 50 jobs at '0 * * * *' guarantees top-of-the-hour CPU spikes. Stagger schedules and visualize overlap windows up front.\n\nhttps://nullai.tech #Backend #DevOps #DistributedSystems",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot3_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot3_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_08_full_stack.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot3_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot3_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot3_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_08_full_stack.jpg"
         ]
       },
       {
         "day": 3,
         "slot": 4,
         "type": "carousel",
-        "text": "\u2728 High-Craft 60fps WebGL Without Megabytes of 3D Bloat\n\nProcedural shaders and lightweight geometry let you embed interactive 3D product showcases that load faster than a hero JPEG.\n\nhttps://nealfrazier.tech #WebGL #CreativeCoding #UIUX",
+        "text": "\u2728 High-Craft 60fps WebGL Without Megabytes of 3D Bloat\n\nProcedural shaders and lightweight geometry let you embed interactive 3D product showcases that load faster than a hero JPEG.\n\nhttps://nullai.tech #WebGL #CreativeCoding #UIUX",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot4_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot4_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day3_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_01_zerodep.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot4_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot4_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day3_slot4_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_01_zerodep.jpg"
         ]
       },
       {
         "day": 3,
         "slot": 5,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 3 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 3 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nealfraziertech/nft_ep06_open_access_micro_saas.mp4"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/videos/nullaitech/nft_ep06_open_access_micro_saas.mp4"
         ]
       },
       {
         "day": 4,
         "slot": 1,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 4 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 4 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/aeo-graph-engine/aeo-graph-engine-reel-16x9.mp4"
         ]
@@ -937,43 +937,43 @@
         "day": 4,
         "slot": 2,
         "type": "carousel",
-        "text": "\ud83d\udd0d Hybrid BM25 + Vector Retrieval Architecture\n\nPure vector embeddings miss exact keyword identifiers (SKUs, error codes, function names). Hybrid BM25 + dense vector fusion wins every time.\n\nhttps://nealfrazier.tech #AIEngineering #Search #RAG",
+        "text": "\ud83d\udd0d Hybrid BM25 + Vector Retrieval Architecture\n\nPure vector embeddings miss exact keyword identifiers (SKUs, error codes, function names). Hybrid BM25 + dense vector fusion wins every time.\n\nhttps://nullai.tech #AIEngineering #Search #RAG",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot2_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot2_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_02_guardrail.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot2_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot2_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot2_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_02_guardrail.jpg"
         ]
       },
       {
         "day": 4,
         "slot": 3,
         "type": "carousel",
-        "text": "\ud83d\udd0c Designing Clean MCP (Model Context Protocol) Tool Schemas\n\nThe secret to reliable AI agents isn't a bigger prompt\u2014it's small, deterministic MCP tools with strict JSON schemas and actionable error messages.\n\nhttps://nealfrazier.tech #MCP #AIAgents #SoftwareArchitecture",
+        "text": "\ud83d\udd0c Designing Clean MCP (Model Context Protocol) Tool Schemas\n\nThe secret to reliable AI agents isn't a bigger prompt\u2014it's small, deterministic MCP tools with strict JSON schemas and actionable error messages.\n\nhttps://nullai.tech #MCP #AIAgents #SoftwareArchitecture",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot3_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot3_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_03_aeo.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot3_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot3_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot3_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_03_aeo.jpg"
         ]
       },
       {
         "day": 4,
         "slot": 4,
         "type": "carousel",
-        "text": "\ud83d\udcf1 Offline-First PWA Architecture That Feels Native\n\nWith clean Service Worker cache strategies and IndexedDB state persistence, a web application should work just as fast offline as online.\n\nhttps://nealfrazier.tech #PWA #WebDev #MobileDev",
+        "text": "\ud83d\udcf1 Offline-First PWA Architecture That Feels Native\n\nWith clean Service Worker cache strategies and IndexedDB state persistence, a web application should work just as fast offline as online.\n\nhttps://nullai.tech #PWA #WebDev #MobileDev",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot4_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot4_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day4_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_04_shaders.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot4_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot4_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day4_slot4_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_04_shaders.jpg"
         ]
       },
       {
         "day": 4,
         "slot": 5,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 4 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 4 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/cwv-speed-engine/cwv-speed-engine-reel-16x9.mp4"
         ]
@@ -982,7 +982,7 @@
         "day": 5,
         "slot": 1,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 5 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 5 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/polyglot-framework-exporter/polyglot-framework-exporter-reel-16x9.mp4"
         ]
@@ -991,43 +991,43 @@
         "day": 5,
         "slot": 2,
         "type": "carousel",
-        "text": "\ud83d\udee0\ufe0f The Case for Zero-Dependency Node.js CLIs\n\nBefore reaching for 40 npm packages, check Node's standard library (`crypto`, `https`, `fs`, `util.parseArgs`). Zero supply-chain bloat, instant cold starts.\n\nhttps://nealfrazier.tech #NodeJS #JavaScript #CleanCode",
+        "text": "\ud83d\udee0\ufe0f The Case for Zero-Dependency Node.js CLIs\n\nBefore reaching for 40 npm packages, check Node's standard library (`crypto`, `https`, `fs`, `util.parseArgs`). Zero supply-chain bloat, instant cold starts.\n\nhttps://nullai.tech #NodeJS #JavaScript #CleanCode",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot2_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot2_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_05_openaccess.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot2_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot2_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot2_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_05_openaccess.jpg"
         ]
       },
       {
         "day": 5,
         "slot": 3,
         "type": "carousel",
-        "text": "\ud83c\udfa8 Engineering High-Contrast Dual-Theme UI Systems\n\nGreat light mode isn't just `filter: invert(1)`\u2014it requires warm editorial ivory surfaces, deep ink typography, and calibrated contrast tokens.\n\nhttps://nealfrazier.tech #DesignSystems #CSS #UIUX",
+        "text": "\ud83c\udfa8 Engineering High-Contrast Dual-Theme UI Systems\n\nGreat light mode isn't just `filter: invert(1)`\u2014it requires warm editorial ivory surfaces, deep ink typography, and calibrated contrast tokens.\n\nhttps://nullai.tech #DesignSystems #CSS #UIUX",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot3_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot3_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_06_webaudio.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot3_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot3_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot3_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_06_webaudio.jpg"
         ]
       },
       {
         "day": 5,
         "slot": 4,
         "type": "carousel",
-        "text": "\u2699\ufe0f Designing Idempotent Webhook & API State Machines\n\nNetworks drop packets and webhooks retry. Keying every state transition by a deterministic idempotency token prevents duplicate side effects.\n\nhttps://nealfrazier.tech #Backend #API #SystemDesign",
+        "text": "\u2699\ufe0f Designing Idempotent Webhook & API State Machines\n\nNetworks drop packets and webhooks retry. Keying every state transition by a deterministic idempotency token prevents duplicate side effects.\n\nhttps://nullai.tech #Backend #API #SystemDesign",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot4_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot4_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day5_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_07_cdp_loop.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot4_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot4_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day5_slot4_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_07_cdp_loop.jpg"
         ]
       },
       {
         "day": 5,
         "slot": 5,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 5 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 5 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/schema-illustrator-studio/schema-illustrator-studio-reel-16x9.mp4"
         ]
@@ -1036,7 +1036,7 @@
         "day": 6,
         "slot": 1,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 6 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 6 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/regex-droid-builder/regex-droid-builder-reel-16x9.mp4"
         ]
@@ -1045,43 +1045,43 @@
         "day": 6,
         "slot": 2,
         "type": "carousel",
-        "text": "\ud83d\udcca Automating E-Commerce & POD Unit-Economics\n\nKnow your exact net margin after platform fees, fulfillment, and ad spend before launching a campaign\u2014and automate listing SEO audits via API.\n\nhttps://nealfrazier.tech #Ecommerce #SaaS #Automation",
+        "text": "\ud83d\udcca Automating E-Commerce & POD Unit-Economics\n\nKnow your exact net margin after platform fees, fulfillment, and ad spend before launching a campaign\u2014and automate listing SEO audits via API.\n\nhttps://nullai.tech #Ecommerce #SaaS #Automation",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot2_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot2_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_08_full_stack.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot2_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot2_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot2_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_08_full_stack.jpg"
         ]
       },
       {
         "day": 6,
         "slot": 3,
         "type": "carousel",
-        "text": "\ud83c\udfac 60fps Motion Choreography Rules for Web Engineers\n\nAnimate only `transform` and `opacity`, pause `requestAnimationFrame` when offscreen, and always honor `prefers-reduced-motion`.\n\nhttps://nealfrazier.tech #WebAnimation #Frontend #UX",
+        "text": "\ud83c\udfac 60fps Motion Choreography Rules for Web Engineers\n\nAnimate only `transform` and `opacity`, pause `requestAnimationFrame` when offscreen, and always honor `prefers-reduced-motion`.\n\nhttps://nullai.tech #WebAnimation #Frontend #UX",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot3_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot3_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_01_zerodep.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot3_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot3_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot3_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_01_zerodep.jpg"
         ]
       },
       {
         "day": 6,
         "slot": 4,
         "type": "carousel",
-        "text": "\ud83d\udd0e Technical Diagnostics as a B2B Growth Engine\n\nAutomatically auditing Core Web Vitals, schema graphs, and mobile responsiveness lets you bring concrete engineering value to every conversation.\n\nhttps://nealfrazier.tech #B2B #GrowthEngineering #Tech",
+        "text": "\ud83d\udd0e Technical Diagnostics as a B2B Growth Engine\n\nAutomatically auditing Core Web Vitals, schema graphs, and mobile responsiveness lets you bring concrete engineering value to every conversation.\n\nhttps://nullai.tech #B2B #GrowthEngineering #Tech",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot4_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot4_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day6_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_02_guardrail.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot4_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot4_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day6_slot4_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_02_guardrail.jpg"
         ]
       },
       {
         "day": 6,
         "slot": 5,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 6 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 6 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/cron-rhythm-studio/cron-rhythm-studio-reel-16x9.mp4"
         ]
@@ -1090,7 +1090,7 @@
         "day": 7,
         "slot": 1,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 7 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 7 \u00b7 Slot 1/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/badge3d-coin-generator/badge3d-coin-generator-reel-16x9.mp4"
         ]
@@ -1099,43 +1099,43 @@
         "day": 7,
         "slot": 2,
         "type": "carousel",
-        "text": "\ud83d\udd13 Why We Ship 100% Open-Access Developer Tools\n\nNo blurred results. No 'sign up to copy JSON' modals.\nWhen a developer lands on your tool, let them solve their problem in 5 seconds flat.\n\nhttps://nealfrazier.tech #OpenSource #BuildInPublic #DevTools",
+        "text": "\ud83d\udd13 Why We Ship 100% Open-Access Developer Tools\n\nNo blurred results. No 'sign up to copy JSON' modals.\nWhen a developer lands on your tool, let them solve their problem in 5 seconds flat.\n\nhttps://nullai.tech #OpenSource #BuildInPublic #DevTools",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot2_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot2_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot2_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_03_aeo.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot2_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot2_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot2_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_03_aeo.jpg"
         ]
       },
       {
         "day": 7,
         "slot": 3,
         "type": "carousel",
-        "text": "\ud83e\udd16 Practical Multi-Model AI Routing in Production\n\nPair fast models for triage with deep reasoning models for architecture\u2014and always gate output behind deterministic compiler & browser checks.\n\nhttps://nealfrazier.tech #AIEngineering #LLMOps #SoftwareEngineering",
+        "text": "\ud83e\udd16 Practical Multi-Model AI Routing in Production\n\nPair fast models for triage with deep reasoning models for architecture\u2014and always gate output behind deterministic compiler & browser checks.\n\nhttps://nullai.tech #AIEngineering #LLMOps #SoftwareEngineering",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot3_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot3_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot3_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_04_shaders.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot3_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot3_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot3_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_04_shaders.jpg"
         ]
       },
       {
         "day": 7,
         "slot": 4,
         "type": "carousel",
-        "text": "\u26a1 The Neal Frazier Tech Production Guardrail\n\nBefore any app goes live: triple-viewport CDP verification, zero console errors, full Schema.org @graph, and 100% real client-side utility.\n\nhttps://nealfrazier.tech #SoftwareEngineering #FullStack #Tech",
+        "text": "\u26a1 The NullAI Platform Production Guardrail\n\nBefore any app goes live: triple-viewport CDP verification, zero console errors, full Schema.org @graph, and 100% real client-side utility.\n\nhttps://nullai.tech #SoftwareEngineering #FullStack #Tech",
         "mediaFiles": [
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot4_slide1.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot4_slide2.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nealfraziertech/day7_slot4_slide3.jpg",
-          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nealfraziertech/nft_arch_05_openaccess.jpg"
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot4_slide1.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot4_slide2.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/week1/nullaitech/day7_slot4_slide3.jpg",
+          "/home/zoth/Desktop/world-of-zoth/media_packs/high_end_cards/nullaitech/nft_arch_05_openaccess.jpg"
         ]
       },
       {
         "day": 7,
         "slot": 5,
         "type": "video",
-        "text": "\u26a1 Neal Frazier Tech Engineering Reel [Day 7 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nealfrazier.tech #SoftwareEngineering #WebDev #BuildInPublic",
+        "text": "\u26a1 NullAI Platform Engineering Reel [Day 7 \u00b7 Slot 5/5]\n\nShipping zero-dependency client-side developer utilities, automated CDP verification loops, and high-converting web architecture.\n\nhttps://nullai.tech #SoftwareEngineering #WebDev #BuildInPublic",
         "mediaFiles": [
           "/home/zoth/nullaitech-upgrade/reels-v2/subsweep-lead-scanner/subsweep-lead-scanner-reel-16x9.mp4"
         ]

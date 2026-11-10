@@ -1,0 +1,618 @@
+[
+  {
+    "id": "sovereign-agent-bridge",
+    "name": "Sovereign Agent Signal Bridge",
+    "category": "Swarm & Core",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-sovereign-agent-bridge.mp4",
+    "text": "\ud83e\udd1d What happens when multiple AI agents work together on your computer?\n\nMeet Sovereign Agent Signal Bridge \u2014 a live mission control where AI tools communicate, share tasks, and pass through a mandatory security gatekeeper before running.\n\n\u2022 Live Cross-Agent Mesh Radar\n\u2022 1-Click AI Tool Kill-Switch\n\u2022 100% Free & Local\n\nhttps://zoth.nullai.tech/tools/sovereign-agent-bridge #AI #OpenSource #CyberSecurity #BuildInPublic"
+  },
+  {
+    "id": "aeo-graph-engine",
+    "name": "AEO Graph Engine & Studio",
+    "category": "Autonomous Web",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-aeo-graph-engine.mp4",
+    "text": "\ud83d\udd0d Why does ChatGPT recommend your competitors instead of your website?\n\nTraditional SEO isn't enough anymore\u2014AI search engines look for structured Answer Engine Optimization (AEO) graphs.\n\nWatch AEO Graph Engine audit a site and generate ready-to-paste Schema graphs live in the browser (100% free):\n\nhttps://zoth.nullai.tech/tools/aeo-graph-engine #SEO #AEO #WebDev #Marketing #AI"
+  },
+  {
+    "id": "cwv-speed-engine",
+    "name": "CWV Speed Engine",
+    "category": "Autonomous Web",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-cwv-speed-engine.mp4",
+    "text": "\u26a1 53% of mobile visitors leave if a page takes more than 3 seconds to load.\n\nHere is the Core Web Vitals Speed Engine working live in Zoth Studio\u2014simulating LCP, INP, and layout shifts to show you the exact fix in seconds.\n\n100% free & unlocked in your browser:\nhttps://zoth.nullai.tech/tools/cwv-speed-engine #WebPerformance #WebDev #SEO #JavaScript"
+  },
+  {
+    "id": "envguard-secrets-vault",
+    "name": "EnvGuard Secrets Vault",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-envguard-secrets-vault.mp4",
+    "text": "\ud83d\udd10 Leaving plain-text .env password files on your laptop is an open invitation for credential-stealing malware.\n\nWatch EnvGuard Secrets Vault in action: encrypting API keys with Argon2id + XChaCha20 and injecting them directly into RAM.\n\n100% free & local-first:\nhttps://zoth.nullai.tech/tools/envguard-secrets-vault #CyberSecurity #DevSecOps #InfoSec #Developers"
+  },
+  {
+    "id": "deepsearch-research-agent",
+    "name": "DeepSearch Research Agent & Studio",
+    "category": "AI & Knowledge",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-deepsearch-research-agent.mp4",
+    "text": "\ud83e\udde0 Tired of AI chatbots making up fake citations when you need real research?\n\nWatch DeepSearch Research Agent working live in Zoth Studio\u2014building a multi-source verification graph with grounded citations and consensus scoring.\n\n100% free in your browser:\nhttps://zoth.nullai.tech/tools/deepsearch-research-agent #AI #Research #Productivity #Tech"
+  },
+  {
+    "id": "badge3d-coin-generator",
+    "name": "Badge3D Coin Generator",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-badge3d-coin-generator.mp4",
+    "text": "\ud83e\ude99 Want a custom 3D metallic coin or badge for your brand, game, or community without spending hours in Blender?\n\nWatch Badge3D Coin Generator forging a custom PBR medallion live in the browser\u2014complete with custom rim text and instant export.\n\n100% free, zero watermarks:\nhttps://zoth.nullai.tech/tools/badge3d-coin-generator #WebDesign #3D #Creators #IndieDev"
+  },
+  {
+    "id": "regex-droid-builder",
+    "name": "Regex Droid Studio",
+    "category": "Automation",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-regex-droid-builder.mp4",
+    "text": "\ud83e\udd16 Stop wasting an hour debugging cryptic Regular Expressions.\n\nWatch Regex Droid Builder working live in Zoth Studio\u2014visually highlighting matches, explaining every token in plain English, and auditing performance in real time.\n\n100% free in your browser:\nhttps://zoth.nullai.tech/tools/regex-droid-builder #Programming #WebDev #JavaScript #Coding"
+  },
+  {
+    "id": "schema-illustrator-studio",
+    "name": "Schema Illustrator Studio",
+    "category": "Autonomous Web",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-schema-illustrator-studio.mp4",
+    "text": "\ud83d\udcd0 Don't explain your system architecture with a wall of raw SQL or JSON.\n\nWatch Schema Illustrator Studio turn raw database schemas into clean, interactive visual diagrams live in the browser.\n\n100% free & zero cloud uploads:\nhttps://zoth.nullai.tech/tools/schema-illustrator-studio #SoftwareEngineering #Database #SystemDesign #DevTools"
+  },
+  {
+    "id": "neuro-memory-daemon",
+    "name": "Neuro-Memory Daemon",
+    "category": "Memory & Brain",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-neuro-memory-daemon.mp4",
+    "text": "\ud83e\udde0 What if your AI assistant actually remembered every project decision\u2014without uploading your private notes to the cloud?\n\nWatch Neuro-Memory Daemon working live: a local 3D second-brain memory graph for your AI agents and Obsidian vault.\n\nhttps://zoth.nullai.tech/tools/neuro-memory-daemon #LocalAI #Obsidian #PKM #Privacy #Linux"
+  },
+  {
+    "id": "anderson-security-sentinel",
+    "name": "Anderson Security Sentinel",
+    "category": "Security & OpSec",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-anderson-security-sentinel.mp4",
+    "text": "\ud83d\udee1\ufe0f Catch security vulnerabilities before they hit production.\n\nWatch Anderson Security Sentinel running a live defense audit in Zoth Studio\u2014flagging exposed headers, injection risks, and remediation steps in seconds.\n\n100% free & open-access:\nhttps://zoth.nullai.tech/tools/anderson-security-sentinel #CyberSecurity #AppSec #Infosec #WebDev"
+  },
+  {
+    "id": "certpath-roadmap-studio",
+    "name": "CertPath Roadmap Studio",
+    "category": "Automation",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-certpath-roadmap-studio.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: CertPath Roadmap Studio (Automation)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser certification DAG solver, career roadmap planner, and study guide generator with 137 credentials, procedural DAG brand media, and dual Stripe + Solana rails.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/certpath-roadmap-studio #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "cron-rhythm-studio",
+    "name": "CronRhythm Studio",
+    "category": "Automation",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-cron-rhythm-studio.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: CronRhythm Studio (Automation)\n\n\ud83d\udca1 Purpose & Use Case:\nHigh-precision cron AST parser, 24x7 rhythm heatmap, countdown timeline, multi-dialect transpiler across K8s, GitHub Actions, AWS EventBridge, and Systemd with procedural chronometer brand media and dual Stripe + Solana rails.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/cron-rhythm-studio #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "jwt-inspector-guard",
+    "name": "JWT Inspector Guard",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-jwt-inspector-guard.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: JWT Inspector Guard (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\nZero-cloud in-browser JWT token decoder, cryptographic signature validator, HS256 dictionary cracker, DPoP proofer, and auth claim auditor.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/jwt-inspector-guard #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "omnipost-social-engine",
+    "name": "OmniPost Social Engine",
+    "category": "Automation",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-omnipost-social-engine.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: OmniPost Social Engine (Automation)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser social content formatting, viral thread splitter, virality scoring, MCP AI agent client hub, and procedural omni-beacon brand media with dual Stripe + Solana rails.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/omnipost-social-engine #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "payload-entropy-studio",
+    "name": "Payload Entropy Studio",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-payload-entropy-studio.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Payload Entropy Studio (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser Shannon entropy waveform visualizer, 32-byte sliding window, recursive payload deobfuscator, automated multi-engine WAF rule generator, Shannon waveform brand media, and 100% free & open-access with optional Buy Us a Coffee & Solana tip support.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/payload-entropy-studio #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "polyglot-framework-exporter",
+    "name": "Polyglot Framework Exporter",
+    "category": "Autonomous Web",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-polyglot-framework-exporter.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Polyglot Framework Exporter (Autonomous Web)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser multi-framework project scaffolder (13 frameworks), AST component transpiler, and client-side PKZIP compressor.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/polyglot-framework-exporter #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "pwa-manifest-builder",
+    "name": "PWA Manifest Studio",
+    "category": "Autonomous Web",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-pwa-manifest-builder.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: PWA Manifest Studio (Autonomous Web)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser Progressive Web App manifest generator, ServiceWorker compiler, offline cache architect, and production PWA ZIP bundle exporter. Free to use; tips optional.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/pwa-manifest-builder #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "subsweep-lead-scanner",
+    "name": "SubSweep Lead Scanner",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-subsweep-lead-scanner.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: SubSweep Lead Scanner (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser OSINT reconnaissance, passive DNS discovery, tech stack fingerprinting, OSINT radar brand media, and executive lead intelligence with zero cloud egress.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/subsweep-lead-scanner #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "vision-gesture-control",
+    "name": "Vision Gesture Control",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-vision-gesture-control.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Vision Gesture Control (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser touchless gesture control, 21-joint 3D hand tracking, spatial air drawing, and Model Context Protocol (MCP) agent connectivity. Free to use; tips optional.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/vision-gesture-control #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "web-security-guard",
+    "name": "Web Security Guard",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-web-security-guard.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Web Security Guard (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser security headers auditor, TLS cert inspector, CSP Level 3 generator, native Web Crypto SHA-384 SRI hasher, security defense shield brand media, and 100% free & open-access with optional Buy Us a Coffee & Solana tip support.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/web-security-guard #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-budget-sentinel",
+    "name": "Agent Budget Sentinel",
+    "category": "Security & Network",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-budget-sentinel.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Budget Sentinel (Security & Network)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous zero-dependency spending guardrail, real-time token cost circuit breaker, and runaway loop interceptor.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-budget-sentinel #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-capsule-jail",
+    "name": "Agent Capsule Jail",
+    "category": "Security & Enclave",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-capsule-jail.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Capsule Jail (Security & Enclave)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous kernel enclave sandbox, resource quota manager, and secret stripping engine with dual Stripe + Solana rails.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-capsule-jail #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-egress-sentinel",
+    "name": "Agent Egress Sentinel",
+    "category": "Security & Network",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-egress-sentinel.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Egress Sentinel (Security & Network)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous zero-dependency network interceptor, TLS SNI sniffer, kinetic egress radar, and kernel quarantine. Free to use; tips optional.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-egress-sentinel #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-flight-recorder",
+    "name": "Agent Flight Recorder",
+    "category": "Forensics & Telemetry",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-flight-recorder.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Flight Recorder (Forensics & Telemetry)\n\n\ud83d\udca1 Purpose & Use Case:\nBlack box flight recorder & time-scrubbing telemetry forensics hub for AI agents with synchronized terminal stream, egress graph, memory engrams, and 100% free open access.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-flight-recorder #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-gods-eye",
+    "name": "Agent God's Eye",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-gods-eye.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent God's Eye (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous zero-dependency Shodan OSINT tactical radar, 3D kinetic planetary attack surface reconnaissance, and threat scoring.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-gods-eye #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-mock-twin",
+    "name": "Agent Mock Twin",
+    "category": "Simulation & Testing",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-mock-twin.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Mock Twin (Simulation & Testing)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous offline API mock server & deterministic replay twin for AI agents ($0 token spend in CI/CD) with OpenAPI/HAR ingestion, Python standard library backend, and 100% free open access.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-mock-twin #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-policy-auditor",
+    "name": "Agent Policy Auditor",
+    "category": "Security & Enclave",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-policy-auditor.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Policy Auditor (Security & Enclave)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous capability leaser, permission broker, and OWASP LLM manifest security auditor with dual Stripe + Solana rails.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-policy-auditor #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-prompt-firewall",
+    "name": "Agent Prompt Firewall",
+    "category": "Security & Network",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-prompt-firewall.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Prompt Firewall (Security & Network)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous inline prompt injection defense, PII redactor, and threat radar for AI agents ($0 token leak) with real-time SSE stream, AST de-obfuscation, and 100% free open access.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-prompt-firewall #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "city-desk",
+    "name": "City Desk",
+    "category": "Growth & SEO",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-city-desk.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: City Desk (Growth & SEO)\n\n\ud83d\udca1 Purpose & Use Case:\nOne studio writes the finished page for a trade and a city. 1,000 localized service pages across 20 trades and 50 mid-size cities with live customizer, multi-mipmap ICO, Pro bundle export, and 100% free & open-access with optional Buy Us a Coffee & Solana tip support.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/city-desk #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "etsy-connector",
+    "name": "Etsy Connector",
+    "category": "Commerce & MCP",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-etsy-connector.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Etsy Connector (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nEtsy Open API v3 & Antigravity MCP bridge with 13-tag SEO auditor, fee/profit calculator, and Printify payload generator.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/etsy-connector #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "etsy-pod-forge",
+    "name": "Etsy POD Forge",
+    "category": "Commerce & POD",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-etsy-pod-forge.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Etsy POD Forge (Commerce & POD)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous 300 DPI canvas generator, photorealistic mockup engine, and Etsy SEO listing synthesizer. Free to use; tips optional.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/etsy-pod-forge #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "mcp-lens",
+    "name": "MCP Lens",
+    "category": "Simulation & Testing",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-mcp-lens.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: MCP Lens (Simulation & Testing)\n\n\ud83d\udca1 Purpose & Use Case:\nZero-dependency real-time stdio/SSE traffic sniffer, token weight auditor, and visual playground for Model Context Protocol.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/mcp-lens #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "robots-txt-auditor",
+    "name": "Robots.txt & AEO Auditor",
+    "category": "Growth & SEO",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-robots-txt-auditor.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Robots.txt & AEO Auditor (Growth & SEO)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser RFC 9309 robots.txt parser, AI crawler simulator (Googlebot, GPTBot, ClaudeBot, PerplexityBot, Applebot), Pro Drift Shield, and 100% free & open-access with optional Buy Us a Coffee & Solana tip support.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/robots-txt-auditor #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "shopify-connector",
+    "name": "Shopify Connector",
+    "category": "Commerce & MCP",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-shopify-connector.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Shopify Connector (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nShopify GraphQL Admin API & POD sync engine with 1-click Etsy listing transpiler, net profit simulator, and Antigravity MCP suite.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/shopify-connector #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "wcag-contrast-guard",
+    "name": "WCAG & APCA Contrast Guard Studio",
+    "category": "accessibility",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-wcag-contrast-guard.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: WCAG & APCA Contrast Guard Studio (accessibility)\n\n\ud83d\udca1 Purpose & Use Case:\nWCAG 2.2 Level AA/AAA, APCA contrast algorithm, colorblindness simulation, focus indicators, and harmonic palette generation.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/wcag-contrast-guard #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "webmcp-protocol-inspector",
+    "name": "WebMCP Protocol Suite",
+    "category": "AI & Knowledge",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-webmcp-protocol-inspector.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: WebMCP Protocol Suite (AI & Knowledge)\n\n\ud83d\udca1 Purpose & Use Case:\nIn-browser Model Context Protocol (MCP) JSON-RPC 2.0 inspector, tool schema dispatcher, and Zoth OS bare-metal video showcase.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/webmcp-protocol-inspector #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-swarm-multiplexer",
+    "name": "21-Agent Swarm Multiplexer",
+    "category": "Swarm & Core",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-swarm-multiplexer.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: 21-Agent Swarm Multiplexer (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\n21-terminal autonomous agent multiplexer daemon with hot-swappable AI harnesses, PWD control, and SSE telemetry.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-swarm-multiplexer #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-webgen",
+    "name": "Zoth QuickSite Starter",
+    "category": "Autonomous Web",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-webgen.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth QuickSite Starter (Autonomous Web)\n\n\ud83d\udca1 Purpose & Use Case:\nSimple 3-step static template & 1-click Netlify launcher on 127.0.0.1:8092. Pick a ready-made template, preview live, and export HTML/ZIP or deploy to Netlify.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-webgen #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "agent-voice-call",
+    "name": "Agent Voice Call",
+    "category": "Voice & Real-Time",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-agent-voice-call.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Agent Voice Call (Voice & Real-Time)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous sovereign real-time voice cockpit, live audio WebSocket streaming, multi-persona voice synthesizer, and zero-telemetry call protocol.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/agent-voice-call #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "audiocipher-stego-engine",
+    "name": "AudioCipher Stego Studio",
+    "category": "Security & OpSec",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-audiocipher-stego-engine.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: AudioCipher Stego Studio (Security & OpSec)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser acoustic cryptography, PCM audio LSB steganography, DTMF Goertzel decoder, ITU Morse synthesizer, and ultrasonic BFSK air-gap modem.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/audiocipher-stego-engine #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "cyber-turtle-studio",
+    "name": "Cyber Turtle Studio",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-cyber-turtle-studio.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Cyber Turtle Studio (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser L-System fractal synthesizer, turtle geometry studio, and physical CNC pen-plotter G-Code and SVG vector exporter. Free to use; tips optional.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/cyber-turtle-studio #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "datamosh-glitch-studio",
+    "name": "Datamosh Glitch Studio",
+    "category": "Media & 3D",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-datamosh-glitch-studio.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Datamosh Glitch Studio (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser parametric video datamosh synthesizer, H.264 I-frame drop corruption, CRT scanlines, procedural cassette brand media, and live camera mosh buffer with zero paywalls.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/datamosh-glitch-studio #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "digital-asset-forge",
+    "name": "Digital Asset Forge",
+    "category": "Commerce & MCP",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-digital-asset-forge.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Digital Asset Forge (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nHigh-Res 300 DPI multi-ratio wall art pack generator (2:3, 3:4, 4:5, 11:14, ISO) for Etsy & Shopify digital downloads (98% margin) with 20MB multi-zip splitting.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/digital-asset-forge #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "gelato-connector",
+    "name": "Gelato Connector",
+    "category": "Commerce & MCP",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-gelato-connector.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Gelato Connector (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous zero-dependency Gelato Open API v2 connector, localized 32-country print routing optimizer, multi-currency margin engine, and Antigravity MCP suite.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/gelato-connector #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "ghidra-mcp-bridge",
+    "name": "GhidraMCP Binary Reverse Engineering Bridge",
+    "category": "Security & Enclave",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-ghidra-mcp-bridge.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: GhidraMCP Binary Reverse Engineering Bridge (Security & Enclave)\n\n\ud83d\udca1 Purpose & Use Case:\nLaurieWired Ghidra Model Context Protocol bridge for autonomous binary decompilation, AST method analysis, and project variable annotation.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/ghidra-mcp-bridge #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "likeness-desk",
+    "name": "Likeness Desk (AI Video Double)",
+    "category": "Voice & Real-Time",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-likeness-desk.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Likeness Desk (AI Video Double) (Voice & Real-Time)\n\n\ud83d\udca1 Purpose & Use Case:\nLocal video double on GPU; Chatterbox Turbo voice cloning and Wav2Lip photorealistic mouth animation on Quadro P1000 with zero cloud leakage.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/likeness-desk #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "nexus-3d-scene-studio",
+    "name": "Nexus 3D Scene Studio",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-nexus-3d-scene-studio.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Nexus 3D Scene Studio (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser WebGL mathematical 3D geometry engine, 4D Tesseract, parametric surfaces, FastMCP server, procedural tesseract brand media, and precision OBJ/STL mesh exporters with zero paywalls.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/nexus-3d-scene-studio #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "osint-scout-skill",
+    "name": "Domain Intel OSINT Scout",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-osint-scout-skill.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Domain Intel OSINT Scout (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser passive domain intelligence & attack surface reconnaissance engine auditing Certificate Transparency logs, DoH DNS records, and SPF/DMARC posture \u2014 free to use; optional tips welcome.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/osint-scout-skill #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "pod-margin-sentinel",
+    "name": "POD Margin Sentinel",
+    "category": "Commerce & MCP",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-pod-margin-sentinel.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: POD Margin Sentinel (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous real-time profit sentinel, break-even solver, and 2026 fee simulator across Etsy (Organic & 15% Ads), Shopify, and TikTok Shop.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/pod-margin-sentinel #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "pod-mockup-forge",
+    "name": "POD Mockup Forge",
+    "category": "Commerce & MCP",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-pod-mockup-forge.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: POD Mockup Forge (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous photorealistic mockup studio with 60fps Lumen Matrix, fabric ink blending, and Etsy 2026 photo standards compliance auditor.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/pod-mockup-forge #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "pod-smart-router",
+    "name": "POD Smart Router",
+    "category": "Commerce & MCP",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-pod-smart-router.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: POD Smart Router (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nMulti-channel POD order router dynamically comparing Printify (:8115) and Gelato (:8116) on landed cost, domestic proximity, delivery speed, and tariff avoidance.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/pod-smart-router #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "printify-connector",
+    "name": "Printify Connector",
+    "category": "Commerce & MCP",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-printify-connector.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Printify Connector (Commerce & MCP)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous zero-dependency Printify Open API v1 connector, 20% Premium margin calculator, artwork DPI auditor, and Antigravity MCP suite.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/printify-connector #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "producthunt-connector",
+    "name": "Product Hunt Connector (zoth-ph)",
+    "category": "Commerce & POD",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-producthunt-connector.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Product Hunt Connector (zoth-ph) (Commerce & POD)\n\n\ud83d\udca1 Purpose & Use Case:\nLocal Zoth OS cockpit that diffs the ZOTHOS Product Hunt listing against live website/GitHub URLs, surfaces votes/ranks/comments, and serves a loopback dashboard on :8139. Token stays in ~/.config/zothos/producthunt.secret.json.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/producthunt-connector #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "reality-shader-forge",
+    "name": "Zoth Reality Shader & Theme Forge",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-reality-shader-forge.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Reality Shader & Theme Forge (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\nInteractive 60fps Reality Switch shader synthesizer and ZothOS desktop theme compiler. Customize the 5 Zoth Realities, preview Zoth Bot companions, and export KDE Plasma .colors, Alacritty .toml, and CSS tokens.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/reality-shader-forge #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "shodan-surface-sentinel",
+    "name": "Shodan Attack Surface Sentinel",
+    "category": "Security & Enclave",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-shodan-surface-sentinel.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Shodan Attack Surface Sentinel (Security & Enclave)\n\n\ud83d\udca1 Purpose & Use Case:\nZero-egress defensive asset auditor and InternetDB engine. Inspects open ports, CPE software stacks, and confirmed CVE exposures for your infrastructure.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/shodan-surface-sentinel #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "storefront-catalog",
+    "name": "YourDigitalSpace POD Showcase",
+    "category": "Commerce & POD",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-storefront-catalog.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: YourDigitalSpace POD Showcase (Commerce & POD)\n\n\ud83d\udca1 Purpose & Use Case:\n10 master Etsy Print-on-Demand products optimized for 55+ demographic with 62.6% blended profit margin, 13/13 tag sets, and 100% free & open-access with optional Buy Us a Coffee & Solana tip support.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/storefront-catalog #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "ufo-sacred-geometry",
+    "name": "UFO Sacred Geometry Studio",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-ufo-sacred-geometry.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: UFO Sacred Geometry Studio (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser sacred geometry synthesizer, crop circle agro-glyph CAD generator, procedural Metatron brand media, and AutoCAD DXF, Wavefront OBJ, and vector SVG exporter with dual Stripe + Solana rails.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/ufo-sacred-geometry #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "yara-sigma-forge",
+    "name": "YARA-X & Sigma Threat Rule Forge",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-yara-sigma-forge.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: YARA-X & Sigma Threat Rule Forge (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\n100% client-side YARA-X & Sigma threat detection compiler with 60fps byte-offset entropy radar, CVE-2024-4577 PHP-CGI / ELF64 memfd / AI Agent exfil signatures, and MITRE ATT&CK mapping.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/yara-sigma-forge #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zela-glasses-guide",
+    "name": "Zela Glasses Guide",
+    "category": "Swarm & Core",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zela-glasses-guide.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zela Glasses Guide (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\nSovereign wearable AI mission coach for Ray-Ban Meta smart glasses over Tailscale \u2014 full-duplex WebSocket guide stream, Moondream vision, AGY coaching, and Kokoro TTS via zoth-relay-mobile.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zela-glasses-guide #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-ascii-magic",
+    "name": "Zoth ASCII Magic Studio",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-ascii-magic.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth ASCII Magic Studio (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\n100% client-side Image/Video/3D-to-ASCII & Sub-Pixel Unicode Braille studio with Sobel directional edge detection (/\\|-), interactive 2D point relighting, CRT phosphor bloom, and 24-bit TrueColor ANSI/HTML/SVG exports.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-ascii-magic #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-bolt",
+    "name": "Zoth Bolt",
+    "category": "Autonomous Web",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-bolt.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Bolt (Autonomous Web)\n\n\ud83d\udca1 Purpose & Use Case:\nFlagship Sovereign Full-Stack AI Web & Motion Architect (Zoth Bolt / bolt.diy) on 127.0.0.1:5173. Supports 19+ AI providers, local Ollama & CLI agents (AGY, Hermes, Grok, Claude, OpenCode, Cline, Aider), 6 Motion Edit templates, 200k+ SVG & Pixel Art icons, TUI (`zoth-bolt-tui`), and Electron Desktop app (`zoth-bolt desktop`).\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-bolt #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-bot",
+    "name": "Zoth Bot Desktop Companion",
+    "category": "Swarm & Core",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-bot.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Bot Desktop Companion (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\nLocal-first always-on 3D WebGL desk companion for Zoth OS \u2014 multi-harness neural engine (Grok/Hermes/Ollama), Security Ring authority, MCP hub, summoned with Ctrl+Shift+Space.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-bot #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-bounty",
+    "name": "Zoth Bounty Research Hub",
+    "category": "Security & Enclave",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-bounty.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Bounty Research Hub (Security & Enclave)\n\n\ud83d\udca1 Purpose & Use Case:\nZero-false-positive security research & responsible disclosure workspace tracking Ongoing / Pending / Completed audits with a loopback command center on :9494.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-bounty #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-civilization",
+    "name": "Zoth Civilization Hub",
+    "category": "Swarm & Core",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-civilization.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Civilization Hub (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\nThe living heart of the 21-agent society. Runs the GameBoy pixel world simulation, Adytum Initiation Deck, and meditation art catalog.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-civilization #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-math-pillar",
+    "name": "Zoth Math Pillar HUD",
+    "category": "Security & Enclave",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-math-pillar.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Math Pillar HUD (Security & Enclave)\n\n\ud83d\udca1 Purpose & Use Case:\nReal-time 4-Pillar Mathematical Security & Compute Telemetry HUD (L0 Kernel Hardware, L1 Crypto Vault, L2 Network Enclave, L3 Agent Runtime) with Compact Pill mode, Electron desktop overlay, and Braille TUI.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-math-pillar #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-osint",
+    "name": "Zoth OSINT Workstation & Masterclass",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-osint.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth OSINT Workstation & Masterclass (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\nSovereign OSINT investigation workstation, 10-module interactive masterclass, subdomain takeover auditing across 23+ SaaS fingerprints, zero-knowledge HIBP k-anonymity breach intel, and MITRE ATT&CK CTI matrix mapping with STIX 2.1 & Obsidian Canvas export.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-osint #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-relay",
+    "name": "Zoth Relay (MCP Agent Bridge)",
+    "category": "Swarm & Core",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-relay.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Relay (MCP Agent Bridge) (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\nHardened local MCP/HTTP bridge so many AI agents share one ZothOS machine with per-agent tokens, path sandbox, command blocklist, rate limits, and audit trail on 127.0.0.1:8765.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-relay #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-scene-foundry",
+    "name": "Zoth Scene Foundry",
+    "category": "Media & 3D",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-scene-foundry.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth Scene Foundry (Media & 3D)\n\n\ud83d\udca1 Purpose & Use Case:\nProcedural ZothOS-style ASCII + pixel-art scene engine \u2014 1000 deterministic scenes with Bayer dither, tube palettes, and three.js AsciiEffect stage on :8823.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-scene-foundry #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zothnet",
+    "name": "ZothNet (Sovereign Darknet Mesh)",
+    "category": "Swarm & Core",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zothnet.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: ZothNet (Sovereign Darknet Mesh) (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous zero-DNS darknet mesh with Sphinx 1,280B onion mixnet, Vaelor feeless L1 DAG, Kademlia DHT alpha=3, RFC 5389 STUN NAT traversal, and CAS parallel swarm on :9900 and UDP :42069.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zothnet #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zothos-lite",
+    "name": "ZothOS-Lite v1.2 (Amnesic Monotone OS)",
+    "category": "Hardware & OS",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zothos-lite.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: ZothOS-Lite v1.2 (Amnesic Monotone OS) (Hardware & OS)\n\n\ud83d\udca1 Purpose & Use Case:\n1-Bit Monotone Amnesic Security & AI Workstation (toram noswap) with AZOTH Embodied Braille AI, A100 80GB Foundry, 21 Pantheon Agent Rigs, 6 Helios-Zoth Planets, 22 Adytum Tarot 3D Dioramas, and 45 Kali/Parrot CLI Tools on :8145.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zothos-lite #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "adytum-alchemist-ai-workflow",
+    "name": "Adytum Planner",
+    "category": "Planning",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-adytum-alchemist-ai-workflow.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Adytum Planner (Planning)\n\n\ud83d\udca1 Purpose & Use Case:\nThe 22-key hermetic planning rite. Intention, five-minute incubation, and a local-model gate.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/adytum-alchemist-ai-workflow #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "azoth-local-agent",
+    "name": "AZOTH Local Archon Agent",
+    "category": "Swarm & Core",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-azoth-local-agent.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: AZOTH Local Archon Agent (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\nArchon Orchestrator core agent for local zero-telemetry task dispatching and subagent delegation.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/azoth-local-agent #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "hexstrike-arsenal",
+    "name": "HexStrike Security Arsenal",
+    "category": "Security & Recon",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-hexstrike-arsenal.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: HexStrike Security Arsenal (Security & Recon)\n\n\ud83d\udca1 Purpose & Use Case:\nAutonomous penetration audit suite, CVE matrix inspector, and exploit payload lab.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/hexstrike-arsenal #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "pixel-cast",
+    "name": "PixelCast",
+    "category": "Hardware & OS",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-pixel-cast.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: PixelCast (Hardware & OS)\n\n\ud83d\udca1 Purpose & Use Case:\nUltra-low latency Google Pixel screenshare, camera bridge, and sovereign wireless ADB mirroring workstation over Tailscale mesh.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/pixel-cast #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "promptmaster-studio",
+    "name": "PromptMaster Studio",
+    "category": "AI & Knowledge",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-promptmaster-studio.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: PromptMaster Studio (AI & Knowledge)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser prompt engineering and meta-optimization studio with real-time AST linting, multi-model rewrites (Claude, ChatGPT, Gemini), tri-model constellation brand media, and dual Stripe + Solana rails.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/promptmaster-studio #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "vector-search-engine",
+    "name": "Vector Search Engine & Studio",
+    "category": "Swarm & Core",
+    "account": "nullaitech",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-vector-search-engine.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Vector Search Engine & Studio (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\n100% in-browser HNSW skip-graph vector database, IVF clustering, Okapi BM25 lexical engine, HNSW graph brand media, and RRF hybrid search simulator.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/vector-search-engine #BuildInPublic #OpenSource #Tech #Developers"
+  },
+  {
+    "id": "zoth-os",
+    "name": "Zoth OS v3.4.0",
+    "category": "Swarm & Core",
+    "account": "zoth_os",
+    "videoFile": "/home/zoth/Desktop/zoth-1nc0gn30-videos/out/zoth-studio_LIVE-TOOL-zoth-os.mp4",
+    "text": "\ud83d\udee0\ufe0f Tool Spotlight: Zoth OS v3.4.0 (Swarm & Core)\n\n\ud83d\udca1 Purpose & Use Case:\nDebian 13 + KDE Plasma 6.3 sovereign AI distro. Kali + Parrot parity, Studio v2, Ollama on 127.0.0.1, 163 MCP servers all off. Eight named virtual desktops; zoth-workspaces puts a Samsung / DP monitor on its own screen. Live users zoth / azoth / root password zoth.\n\nWatch it working live inside Zoth Studio\u2014100% free, zero paywalls, and zero cloud lock-in:\n\nhttps://zoth.nullai.tech/tools/zoth-os #BuildInPublic #OpenSource #Tech #Developers"
+  }
+]

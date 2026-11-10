@@ -1,0 +1,34 @@
+# World of Zoth — Complete Technical & Lore Specification (`llms-full.txt`)
+
+- **Repository**: https://github.com/1nc0gn30/world-of-zoth
+- **Web Experience**: https://1nc0gn30.si
+- **Creator & Attribution**: Engineered by `1nc0gn30` (`@1nc0gn30`) • `NullAI Platform` (`https://nullai.tech`)
+- **License & Access**: 100% open-access, free forever, zero paywalls, zero cloud dependencies, zero telemetry.
+
+## 1. Engine & Gameplay Architecture
+World of Zoth is a zero-dependency 3D Lattice RPG and procedural WebGL/Canvas universe packed into a self-contained browser runtime (`index.html` + `game.js` / standalone `world-of-zoth.html`) and native Android APK (`dist/world-of-zoth.apk`):
+- **20 Playable 3D Lattice Districts**: Relit City (`hub`), Rest Woods (`forest`), The Hollow (`relay`), Fiber Tunnels (`fiber`), Sand Clocktower (`clock`), Collapse Streets (`streets`), Doom-Fire Foundry (`foundry`), Physarum Caves (`caves`), Hall of Mirrors (`mirrors`), Deep-Water Memory (`deep`), Mode-7 Skyline (`skyline`), Sub-Lattice Abyss (`abyss`), Zero-Knowledge Citadel (`citadel`), The Null Core (`nullcore`), Secret Sector — The Rooftop (`rooftop`), The Quantum Loom (`loom`), The Chrono-Vault (`vault`), The Astral Spire (`astral`), The Omega Foundry (`omega`), and The Dawn Horizon (`horizon`).
+- **5-Act Narrative (`06:12` -> `06:13` First Dawn)**:
+  - Act I: *Faces, Not Voices* (Boss: `03ng0cn1`)
+  - Act II: *Chorus* (Boss: `RELAY 4`)
+  - Act III: *Inside the Lines* (Boss: `SANDGLASS`)
+  - Act IV: *Hall of Superposition* (Boss: `THE HUNTER`)
+  - Act V: *06:12 — The Dawn* (Boss: `>_` & Post-Game `ARCHON-0` in Zero-Knowledge Citadel)
+- **Null Academy**: 16 interactive AI-Security & cryptography labs embedded directly inside Relit City.
+- **Procedural Audio & Cinema**: WebAudio synthesis engine + 36-episode theatrical storyboard commercial showcase (`commercial.html`).
+
+## 2. NullAI & Zoth Ecosystem Matrix
+| Property | Version / Scope | URL | Repository |
+|---|---|---|---|
+| **1nc0gn30 Hub** | Interactive 3D WebGL Turntable & Sovereign Index | https://1nc0gn30.si | https://github.com/1nc0gn30/1nc0gn30.si |
+| **1nc0gn30 GitHub Portal** | Open-Source Directory & Documentation Hub | https://1nc0gn30.github.io | https://github.com/1nc0gn30/1nc0gn30.github.io |
+| **NullAI Platform** | Sovereign AI Systems, FieldKit & Architecture | https://nullai.tech | https://github.com/1nc0gn30/nullai2026 |
+| **Zoth Studio v2** | **77 Free Tools** (**55 In-Browser** + **22 CLI/Daemon**, all **77 with public GitHub repos**) | https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2 |
+| **ZothOS** | **v3.4.0** Debian 13 (Trixie) AI & Security Live OS, KDE Plasma 6, 77 CLI tools, Sovereign Agent Bridge (`:8102`), Neuro-Memory (`:8094`) | https://zothos.nullai.tech | https://github.com/1nc0gn30/zoth-os |
+| **ZothOS-Lite** | **v1.2** Tails-style Amnesic Monotone RAM-only (`toram`) OS & portable ISO, 48+ models across 8 providers, onboarding wizard, ZothNet P2P mesh, USB/cloud persistence | https://zothos-lite.nullai.tech | https://github.com/1nc0gn30/zothos-lite |
+| **ZothNet** | Zero-Cloud Encrypted P2P Mesh Network, 3-Hop Sphinx Mixnet & ZML v1.2 Runtime | https://zothnet.nullai.tech | https://zothnet.nullai.tech |
+| **Hermes-Zoth** | Nous Hermes Multi-Agent Orchestrator & Plugin | https://github.com/1nc0gn30/hermes-zoth | https://github.com/1nc0gn30/hermes-zoth |
+
+## 3. Voluntary Support Rails (Zero Paywalls)
+- **Buy Us a Coffee (Stripe)**: https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X
+- **Solana Wallet Tip**: `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK` (`solana:GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`)
