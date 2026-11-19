@@ -64,13 +64,6 @@ function getAccountCreds(handle) {
   const apiSecret = env.X_API_SECRET;
   let accessToken = env[`X_TOKEN_${upper}`];
   let accessSecret = env[`X_SECRET_${upper}`];
-  if (!accessToken && h === 'nullaitech') {
-    accessToken = env.X_TOKEN_NEALFRAZIERTECH;
-    accessSecret = env.X_SECRET_NEALFRAZIERTECH;
-  } else if (!accessToken && h === 'nealfraziertech') {
-    accessToken = env.X_TOKEN_NULLAITECH;
-    accessSecret = env.X_SECRET_NULLAITECH;
-  }
   if (!accessToken && (h === '1nc0gn30' || h === 'default')) {
     accessToken = env.X_ACCESS_TOKEN;
     accessSecret = env.X_ACCESS_SECRET;
@@ -589,17 +582,6 @@ function loadState() {
   if (fs.existsSync(STATE_FILE)) {
     try {
       const parsed = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'));
-      if (parsed && parsed.accounts) {
-        if (!parsed.accounts.nullaitech && parsed.accounts.nealfraziertech) {
-          parsed.accounts.nullaitech = {
-            day: parsed.accounts.nealfraziertech.day || 1,
-            nextSlot: parsed.accounts.nealfraziertech.nextSlot || 1,
-            history: Array.isArray(parsed.accounts.nealfraziertech.history)
-              ? [...parsed.accounts.nealfraziertech.history]
-              : []
-          };
-        }
-      }
       return parsed;
     } catch (_) {}
   }
