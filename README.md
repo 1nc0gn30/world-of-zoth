@@ -9,7 +9,7 @@
 [![Movies](https://img.shields.io/badge/cinema-24_movie_commercials-fbbf24?style=for-the-badge)](commercial.html)
 [![Platform](https://img.shields.io/badge/platform-browser_%7C_android_apk-00f0ff?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Offline](https://img.shields.io/badge/network-100%25_offline_zero_cdn-a855f7?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
-[![License](https://img.shields.io/badge/license-100%25_free_%26_unlocked-ec4899?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
+[![License](https://img.shields.io/badge/license-MIT-ec4899?style=for-the-badge)](LICENSE)
 
 <br/>
 
@@ -290,6 +290,12 @@ If you appreciate the craft and want to fuel further development:
 
 * **Stripe "Buy Us a Coffee"**: [Support via Stripe](https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X)
 * **Solana Tip Address**: `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK` (`solana:GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`)
+
+---
+
+## License
+
+MIT. See [LICENSE](LICENSE).
 
 ---
 
