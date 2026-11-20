@@ -46,10 +46,17 @@
   - 6 brand-new lush procedural tracks selectable anytime alongside district defaults: *Midnight Lattice (Synthwave)*, *06:12 Rain Lounge (Lo-Fi Cyber)*, *Hermes Protocol (Nous Drive)*, *GhostByte Sanctum (Neural Choir)*, *ZothOS Kernel (Hyper Phonk)*, and *757 Coastal Dawn (Horizon Arps)*.
 - **Enhanced Graphics & New Controls (`src/render.js`, `src/input.js`, `src/main.js`)**:
   - **`[G]`** — Summon GhostByte 3D AI Guide & Narrated Academy *(Android: `G` touch button)*
+  - **`[O]`** — Launch **Sovereign Operations Hub** — 4 High-End Real-Time Gameplay Missions *(Android: `O` touch button)*
   - **`[B]`** — Cycle Sovereign Music Deck *(Android: `♪` touch button)*
   - **`[H]`** — Cycle Graphics Mode (`Sovereign HD` · `Cyber Bloom` · `Classic CRT`) with live neon bloom & color saturation shaders
   - **`[T]`** — Cycle Camera View (`Standard 3rd-Person` · `Cinematic Close` · `Tactical High-Orbit`)
   - **`[N]`** — Toggle Neural Voice Narration On/Mute
+- **🎯 4 High-End Real-Time Sovereign Operations & 3D Data Shard Hunting (`src/missions.js`)**:
+  - **In-World 3D Sovereign Data Shards**: Glowing cyan/emerald octahedral lattice shards spawn across every district—collect them in rapid succession for up to **`x8` Chain Combo Multipliers** awarding bonus Bits & XP.
+  - **OP-01 · Hermes Swarm Intercept**: 360° real-time MCP counter-beam defense protecting your local `127.0.0.1` Hermes node across 3 waves + EMP Nova shockwave.
+  - **OP-02 · Neural Weight Breach**: Multi-ring kinetic firewall timing heist to liberate open-weight `safetensors` checkpoints before the trace timer expires.
+  - **OP-03 · ZothNet Mixnet Relay Run**: Hyper-speed 3-lane 3D perspective fiber tunnel escort dodging surveillance grids and collecting Nous tokens.
+  - **OP-04 · Archon Sentinel Duel**: Real-time plasma-dodge & charged EMP counter boss showdown across 3 escalating armor phases.
 - **100% Web & Android APK Parity + Zero Secret Leaks**:
   - `./tools/build.sh` builds the web bundle (`game.js`, `world-of-zoth.html`, `dist/world-of-zoth.zip`); `./tools/build_apk.sh` packages the HTML bundle **and** offline neural voice-overs into a signed standalone **`dist/world-of-zoth.apk`**. Zero API keys, zero telemetry, zero paywalls.
 

@@ -23,6 +23,7 @@ import { initQuests } from './quests.js';
 import { buildZones2, tagMesh } from './zones2.js';
 import { initEggs, ACH } from './eggs.js';
 import { initGhostByte } from './ghostbyte.js';
+import { initMissions } from './missions.js';
 const V=(x,y,z)=>new THREE.Vector3(x,y,z);
 const SAVE_KEY='woz.save.v1'; const LARGE=()=>G.settings.large;
 const G=window.G={ Q:null, mode:'boot', t:0, zone:null, zoneId:'hub', Z:null, party:{}, roster:['me'], activeL:['me'], inv:{}, bits:0, quests:{}, flags:{}, defeated:new Set(),
@@ -82,6 +83,7 @@ async function boot(){
   await loadAll(); G.Z=buildZones(); buildZones2(G.Z); initQuests(G); initEggs(G,{music,sfx}); initHud3(G,{player:()=>player,trackQuest,markFor,portalToward}); G.Z.hub.checkpoints=[[-5,-2,'save terminal']]; G.Z.forest.checkpoints=[[-20,20,'rest tree']];
   initCine(G,{scene,camera,enterZone,Billboard,AG,PARTY_BASE,player:()=>player}); initTut(G,{player:()=>player}); initLabs(G); initHouse(G,{scene,applyLook:()=>applyLook()}); initForge(G);
   initGhostByte(G,{scene,player:()=>player,postU});
+  initMissions(G,{scene,player:()=>player});
   G.enterZone=enterZone; G.Billboard=Billboard;
   try{ G.cosmetics=JSON.parse(localStorage.getItem('woz.cos')||'{}'); }catch(e){ G.cosmetics={}; }
   G.goZone=(id,x,z,yaw)=>transition(()=>enterZone(id,false,x,z,yaw));
@@ -125,6 +127,7 @@ function enterZone(id,silent=false,sx,sz,syaw){
   Object.values(G.Z).forEach(zz=>{ if(zz.tagMesh) zz.tagMesh.visible=!G.flags['tag_'+zz.id]; });
   if(id==='fiber'&&G.flags.fiber_gold) z.objs.gold(); if(id==='clock') z.objs.clockT.run=!!G.flags.clock_run;
   G.rebuildNPCs(); rebuildFoes(); G.grace=1.5; G.onZone3&&G.onZone3(); if(G.Q) G.Q.onZone(id);
+  G.missions&&G.missions.spawnZoneShards(id);
   if(!silent){ G.banner={t0:G.t,t:0,name:z.name,sub:z.sub}; music(z.music); U.pulse2.value.set(p.x,0,p.z,U.time.value); G.glitch(.4); }
 }
 G.rebuildNPCs=function(){
@@ -256,7 +259,7 @@ function drawDialog(t){
 // ---------------- interactables ----------------
 function interactables(){
   const L=G.Q?G.Q.interactables():[]; if(G.extraInteract) L.push(...G.extraInteract()); L.push(...G.house.inter()); if(G.zoneId==='hub') L.push({x:9,z:-9,r:2,label:'null academy  (ai labs)',col:'#7fd1c8',act:()=>G.openAcademy()}); npcs.forEach(n=>{ if(n.prop||n.refl) return; L.push({x:n.sp.group.position.x,z:n.sp.group.position.z,r:n.red?4.5:3.6,label:n.red?(n.zone==='mirrors'?'talk  03ng0cn1':'confront  '+'03ng0cn1'):'talk  '+AG[n.id].name,col:n.red?P.RED:AG[n.id].color,act:()=>talkTo(n),npc:n}); });
-  if(G.zoneId==='hub'){ L.push({x:-14.2,z:-14.2,r:1.8,label:'???',col:P.DG,act:()=>G.openTerminal()}); L.push({x:-9,z:-9,r:2.2,label:'infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()}); L.push({x:-12,z:3.5,r:2.2,label:'elite  bounties (10 contracts)',col:P.RED,act:()=>G.openBounties()}); L.push({x:14.5,z:3.5,r:2.2,label:'overclock  bench (+1 to +5)',col:'#22d3ee',act:()=>G.openReforge()}); if(G.roster.includes('vigil')) L.push({x:3.6,z:3.6,r:1.5,label:'vigil\'s lamp  (handshake)',col:AG.vigil.color,act:()=>G.startScope()}); if(G.roster.includes('pixel-neko')) L.push({x:12,z:3.5,r:2.6,label:'tool  bench',col:P.GD,act:()=>G.dialog('neko_bench')}); }
+  if(G.zoneId==='hub'){ L.push({x:6,z:6,r:2.4,label:'sovereign ops  (4 live missions)',col:'#00d5ff',act:()=>G.openOpsHub()}); L.push({x:-14.2,z:-14.2,r:1.8,label:'???',col:P.DG,act:()=>G.openTerminal()}); L.push({x:-9,z:-9,r:2.2,label:'infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()}); L.push({x:-12,z:3.5,r:2.2,label:'elite  bounties (10 contracts)',col:P.RED,act:()=>G.openBounties()}); L.push({x:14.5,z:3.5,r:2.2,label:'overclock  bench (+1 to +5)',col:'#22d3ee',act:()=>G.openReforge()}); if(G.roster.includes('vigil')) L.push({x:3.6,z:3.6,r:1.5,label:'vigil\'s lamp  (handshake)',col:AG.vigil.color,act:()=>G.startScope()}); if(G.roster.includes('pixel-neko')) L.push({x:12,z:3.5,r:2.6,label:'tool  bench',col:P.GD,act:()=>G.dialog('neko_bench')}); }
   if(G.zoneId==='citadel'){ L.push({x:0,z:12,r:3.2,label:'the infinite stack  (floors 1-99)',col:'#a78bfa',act:()=>G.startStack()}); L.push({x:0,z:-8,r:3.2,label:'pantheon trial  (boss rush)',col:P.RED,act:()=>G.openBossRush()}); }
   if(G.zoneId==='nullcore'){ L.push({x:0,z:14,r:3.2,label:'06:12 daily lattice  (seeded run)',col:'#22d3ee',act:()=>G.openDailyChallenge()}); L.push({x:-14,z:0,r:3.0,label:'operator title  showcase',col:P.GD,act:()=>G.openTitles()}); L.push({x:14,z:0,r:3.0,label:'relic synthesizer  cube',col:'#a78bfa',act:()=>G.openSynth()}); }
   if(G.zoneId==='loom'){ L.push({x:0,z:12,r:3.2,label:'quantum wave-collapse  (5x5)',col:'#a78bfa',act:()=>G.startCollapse()}); L.push({x:-14,z:0,r:3.0,label:'protocol resonance  matrix',col:'#22d3ee',act:()=>G.openResonance()}); L.push({x:14,z:0,r:3.0,label:'laser mirror  router (6x6)',col:P.GD,act:()=>G.startLasers()}); }
@@ -380,6 +383,7 @@ const tmp=V(0,0,0);
 function updateExplore(dt){
   const c=G.cam; if(G.grace>0) G.grace-=dt;
   if(took('ghost')){ G.openGhostByte(); return; }
+  if(took('ops')){ G.openOpsHub(); return; }
   if(took('bgm')){ G.cycleMusic(); }
   if(took('gfx')){ G.cycleGfxMode(); }
   if(took('camview')){ G.cycleCamView(); }
@@ -509,10 +513,11 @@ function drawHUD(t){ const X=UI.ctx;
   npcs.forEach(n=>{ if(n.refl||n.prop) return; const d=n.sp.group.position.distanceTo(p); if(d>11) return; const v=n.sp.group.position.clone().add(V(0,2.25,0)).project(camera); if(v.z>1) return; UI.text(n.red?'03ng0cn1':AG[n.id].name,(v.x+1)/2*960,(1-v.y)/2*540-6,n.red?P.RED:AG[n.id].color,LARGE()&&d<6?2:1,'center'); });
   if(interact){ const k=LARGE()?2:1; const s=(IN.touch?'[A] ':'[E] ')+interact.label; const w=UI.textW(s,k)+30; const hh=k===2?40:28, yy=k===2?400:440; UI.box(480-w/2,yy,w,hh,interact.col===P.RED?P.RED2:P.DDG); UI.text(s,480,yy+(k===2?8:8),interact.col,k,'center'); UI.hit(480-w/2,yy,w,hh,()=>interact&&interact.act()); }
   // clickable tactical quick-bar on bottom-right (desktop)
-  if(!IN.touch){ const qbs=[['[G] ghostbyte',()=>G.openGhostByte()],['[B] music',()=>G.cycleMusic()],['[H] gfx',()=>G.cycleGfxMode()],['[T] cam',()=>G.cycleCamView()],['[J] quests',()=>openMenu(0)],['[M] map',()=>G.hud3.open()],['[C] dash',()=>press('dash')]];
-    let qx=948; for(let i=qbs.length-1;i>=0;i--){ const [lbl,fn]=qbs[i], bw=UI.textW(lbl,1)+14; qx-=bw; UI.box(qx,504,bw,22,i===0?'#00d5ff':P.DDG,'rgba(6,5,4,.84)');
+  if(!IN.touch){ const qbs=[['[G] ghostbyte',()=>G.openGhostByte()],['[O] ops',()=>G.openOpsHub()],['[B] music',()=>G.cycleMusic()],['[H] gfx',()=>G.cycleGfxMode()],['[T] cam',()=>G.cycleCamView()],['[M] map',()=>G.hud3.open()],['[C] dash',()=>press('dash')]];
+    let qx=948; for(let i=qbs.length-1;i>=0;i--){ const [lbl,fn]=qbs[i], bw=UI.textW(lbl,1)+14; qx-=bw; UI.box(qx,504,bw,22,i===0?'#00d5ff':(i===1?'#f5b82e':P.DDG),'rgba(6,5,4,.84)');
       if(i===6&&G.mv3&&G.mv3.cd>0){ UI.bar(qx+2,522,bw-4,2,1-G.mv3.cd/0.9,P.GD,P.DDG); }
-      UI.text(lbl,qx+bw/2,509,i===0?'#00d5ff':(i===1?'#32ff85':P.GD),1,'center'); UI.hit(qx,504,bw,22,fn); qx-=4; } }
+      UI.text(lbl,qx+bw/2,509,i===0?'#00d5ff':(i===2?'#32ff85':P.GD),1,'center'); UI.hit(qx,504,bw,22,fn); qx-=4; } }
+  if(G.missions&&G.missions.combo>0){ UI.box(12,110,204,22,'#00d5ff','rgba(4,8,16,.88)'); UI.text(`SHARD CHAIN x${G.missions.combo} · ${G.missions.comboT.toFixed(1)}s`,20,115,'#00d5ff',1); }
   if(G.banner){ const b=G.banner; b.t=G.t-b.t0; const n=Math.floor(b.t*28); const s='> district: '+b.name; const bw=Math.max(260,UI.textW(s,2)+44); UI.box(480-bw/2,86,bw,54,P.GD,'rgba(6,5,4,.84)'); UI.text(s.slice(0,n),480,94,P.GD,2,'center'); if(b.t>0.6) UI.text(curActLabel()+'  ·  '+b.sub,480,120,P.BONE,1,'center'); if(b.t>3.6) G.banner=null; }
 }
 function trackQuest(){ if(G.pinnedQuest&&G.quests[G.pinnedQuest]&&!G.quests[G.pinnedQuest].done) return G.pinnedQuest; const ks=Object.keys(G.quests).filter(k=>!G.quests[k].done&&k!=='s_tags'); return ks.find(k=>!QUESTS[k].side)||(G.Q&&G.Q.pending()?'__pending':null)||ks[0]; }
@@ -531,7 +536,7 @@ function drawToasts(dt){ let y=170; const k=LARGE()?2:1; G.toasts.slice(0,2).for
 function drawTouch(){ if(!IN.touch) return; IN.wantStick=G.mode==='explore'; const X=UI.ctx;
   if(G.mode==='explore'){ X.strokeStyle='rgba(245,184,46,.4)'; X.lineWidth=2; const sx=IN.stick.active?IN.stick.ox:110, sy=IN.stick.active?IN.stick.oy:400; X.beginPath(); X.arc(sx,sy,50,0,7); X.stroke(); X.fillStyle='rgba(245,184,46,.5)'; X.beginPath(); X.arc(sx+IN.stick.x*40,sy+IN.stick.y*40,16,0,7); X.fill(); }
   const btn=(x,y,l,a,r=34,hold)=>{ X.fillStyle='rgba(6,5,4,.72)'; X.beginPath(); X.arc(x,y,r,0,7); X.fill(); X.strokeStyle=P.DG; X.lineWidth=2; X.stroke(); UI.text(l,x,y-12,P.GD,2,'center'); UI.hit(x-r,y-r,r*2,r*2,()=>{ if(hold) IN.toggleRun=!IN.toggleRun; else press(a); }); };
-  if(G.mode==='explore'){ btn(896,446,'A','confirm',40); btn(910,236,'=','pause',28); btn(810,500,IN.toggleRun?'>>':'>','run',28,true); btn(820,380,'^','jump',30); btn(740,460,'~','dash',30); btn(910,300,'M','map',24); btn(846,236,'G','ghost',26); btn(846,300,'♪','bgm',24); if(IN.toggleRun) IN.held.add('run'); else if(!IN.kbRun) IN.held.delete('run'); }
+  if(G.mode==='explore'){ btn(896,446,'A','confirm',40); btn(910,236,'=','pause',28); btn(810,500,IN.toggleRun?'>>':'>','run',28,true); btn(820,380,'^','jump',30); btn(740,460,'~','dash',30); btn(910,300,'M','map',24); btn(846,236,'G','ghost',26); btn(846,300,'♪','bgm',24); btn(784,236,'O','ops',24); if(IN.toggleRun) IN.held.add('run'); else if(!IN.kbRun) IN.held.delete('run'); }
   else if(G.mode==='battle'&&G.B&&G.B.state==='victory'){ btn(896,446,'A','confirm',40); }
   else if(['battle','menu','shop','dialog','terminal','mini','ghost'].includes(G.mode)){ btn(896,446,'A','confirm',36); btn(820,500,'B','back',28); if(G.mode!=='dialog'||(G.D&&G.D.choices)){ btn(740,400,'^','up',26); btn(740,490,'v','down',26); btn(680,445,'<','left',26); btn(800,445,'>','right',26); } } }
 // ---------------- title / ending ----------------
@@ -599,6 +604,7 @@ function frame(dt){
   if(G.zone) G.zone.anim.forEach(f=>f(G.t));
   if(G.mode!=='battle'&&G.mode!=='mini'){ player.update(dt,G.cam.yaw,camera.position); npcs.forEach(n=>n.sp.update(dt,G.cam.yaw,camera.position)); followers.forEach(f=>f.sp.update(dt,G.cam.yaw,camera.position)); }
   if(G.ghostbyte) G.ghostbyte.update3D(dt,G.t);
+  if(G.missions) G.missions.updateWorld(dt,G.t);
   // beacon + 3D golden mission guide trail
   const nt=(G.trailOn!==false&&G.zone&&!['battle','title','ending','cine','mini'].includes(G.mode))?navTarget():null;
   beacon.visible=!!nt;

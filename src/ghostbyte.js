@@ -567,12 +567,12 @@ export function initGhostByte(G, { scene, player, postU }) {
       UI.text(q ? `ACTIVE TRAIL: ${q.label.toUpperCase()} (${Math.round(Math.hypot(q.x - player().group.position.x, q.z - player().group.position.z))}m)` : 'EXPLORE FREELY · VISIT NULL ACADEMY IN THE HUB FOR 20 PLAYABLE LABS', 368, 384, '#32ff85', 1);
     }
 
-    // Bottom Action Bar: Music Deck, Graphics Mode, Camera, Launch Null Academy
+    // Bottom Action Bar: Music Deck, Graphics Mode, Sovereign Ops, Null Academy
     const btns = [
-      { x: 20, w: 230, lbl: `[B] MUSIC: ${(MUSIC_DECK[AU.deckIdx] || MUSIC_DECK[0]).name.split('·')[0].trim().slice(0, 16)}`, col: '#32ff85', fn: () => G.cycleMusic() },
-      { x: 258, w: 215, lbl: `[H] GFX: ${GFX_MODES[GB.gfxIdx].name.toUpperCase()}`, col: '#00d5ff', fn: () => G.cycleGfxMode() },
-      { x: 481, w: 210, lbl: '[T] CYCLE CAMERA VIEW', col: P.GD, fn: () => G.cycleCamView() },
-      { x: 699, w: 241, lbl: 'LAUNCH NULL ACADEMY (20 LABS)', col: '#f5b82e', fn: () => { stopVoice(); G.openAcademy && G.openAcademy(); } },
+      { x: 20, w: 222, lbl: `[B] MUSIC: ${(MUSIC_DECK[AU.deckIdx] || MUSIC_DECK[0]).name.split('·')[0].trim().slice(0, 14)}`, col: '#32ff85', fn: () => G.cycleMusic() },
+      { x: 250, w: 205, lbl: `[H] GFX: ${GFX_MODES[GB.gfxIdx].name.toUpperCase()}`, col: '#00d5ff', fn: () => G.cycleGfxMode() },
+      { x: 463, w: 228, lbl: '[O] SOVEREIGN OPS (4 MISSIONS)', col: '#f5b82e', fn: () => { stopVoice(); G.openOpsHub && G.openOpsHub(); } },
+      { x: 699, w: 241, lbl: 'NULL ACADEMY (20 AI LABS)', col: '#a855f7', fn: () => { stopVoice(); G.openAcademy && G.openAcademy(); } },
     ];
     btns.forEach((b) => {
       UI.box(b.x, 484, b.w, 38, b.col, 'rgba(6,10,18,0.95)');
