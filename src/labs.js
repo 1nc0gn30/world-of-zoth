@@ -130,17 +130,49 @@ export const LABS=[
    {pick:{q:'2) A remote caller claims to be 1nc0gn30 over audio. Verification protocol?', opts:[['Challenge-response cryptographic attestation + in-person face verification',true,'Layer 2 secured.'],['Voiceprint match',false,'Voices can be cloned.']]}},
    {type:{q:'Enter the Sovereign Master motto flag: ZOTH{trust_faces_not_voices}', test:s=>s.replace(/\s/g,'')==='zoth{trust_faces_not_voices}', ok:'ARCHON-SIM: ALL 16 LABS CLEARED. SOVEREIGN ARCHITECT CERTIFIED.', bad:'Type: ZOTH{trust_faces_not_voices}'}},
    {card:{title:'debrief: sovereign architect', lines:['You have completed all 16 Null Academy Cyber-Range Labs.','Prompting, hallucination checks, injection fences, jailbreak policies, secret hygiene, least privilege, deepfake defense, RAG provenance, supply-chain hashes, constant-time auth, loop breakers, live attestation, ZK proofs, and declarative sandboxes.']}}]},
+ {id:'lab_history', title:'17 ai history & transformers', npc:'CHRONICLE', concept:'1950 -> attention mechanism', xp:300, cos:'trim_cyan',
+  nodes:[
+   {say:[['ghostbyte','Before you command modern models, know where intelligence engineering began—from Alan Turing (1950) and the Perceptron (1958) to the 2017 Transformer.']]},
+   {pick:{q:'Which 2017 architecture replaced sequential RNN bottlenecks with parallel self-attention?', opts:[
+     ['The Transformer ("Attention Is All You Need")',true,'CHRONICLE: Correct. Parallel self-attention unlocked massive scaling and modern LLMs.'],
+     ['Rule-based expert trees',false,'ghostbyte: Expert systems were rigid 1980s if/else rules.'],
+     ['Floppy disk arrays',false,'ghostbyte: Storage, not neural architecture.']]}},
+   {card:{title:'debrief: ai origins', lines:['1950 Turing -> 1958 Perceptron -> 1986 Backprop -> 2012 AlexNet GPU vision -> 2017 Transformer.','Understanding attention and token prediction makes you a vastly stronger prompt and agent architect.']}}]},
+ {id:'lab_nous', title:'18 nous research & open weights', npc:'NOUS-NODE', concept:'open weights + DisTrO/Psyche', xp:350, cos:'aura_rings',
+  nodes:[
+   {say:[['ghostbyte','Closed APIs rent intelligence by the token. Nous Research proved open weights, high-craft synthetic reasoning data, and decentralized training belong to everyone.']]},
+   {pick:{q:'What do Nous Research projects like DisTrO and Psyche solve?', opts:[
+     ['Decentralized low-bandwidth training of frontier open-weight models across distributed GPUs',true,'NOUS-NODE: Verified. Open-weight sovereignty beats single-datacenter monopolies.'],
+     ['Adding paywalls to chat boxes',false,'ghostbyte: Exact opposite of Nous Research\'s mission.'],
+     ['Deleting local GPUs',false,'ghostbyte: Local GPUs are the heart of sovereign AI.']]}},
+   {card:{title:'debrief: nous research', lines:['Nous Research pioneered steerable open-weight fine-tuning, reasoning datasets, and distributed training (DisTrO / Psyche).','When you own the weights locally, no API vendor can revoke or silently alter your intelligence.']}}]},
+ {id:'lab_hermes', title:'19 hermes agent & tool-calling', npc:'HERMES-ZOTH', concept:'structured tools + MCP', xp:400, cos:'trim_gold',
+  nodes:[
+   {say:[['ghostbyte','Nous Hermes models pioneered rock-solid function calling and strict JSON schemas. Hermes Agent connects those weights to local MCP tools, shells, and persistent memory.']]},
+   {pick:{q:'Why is structured tool-calling (JSON + MCP) superior to raw chat text for agents?', opts:[
+     ['Deterministic tool schemas let the runtime validate arguments, enforce permissions, and execute real local actions safely',true,'HERMES-ZOTH: Tool call validated -> executed on 127.0.0.1 with zero cloud egress.'],
+     ['JSON is prettier to read',false,'ghostbyte: It is about deterministic contracts and safety boundaries, not aesthetics.'],
+     ['It disables all tools',false,'ghostbyte: It enables safe, auditable tool execution.']]}},
+   {card:{title:'debrief: hermes agent', lines:['Hermes models + Hermes Agent turn local LLMs into real sovereign operators via MCP tools and persistent memory.','Always pair Hermes tool calls with least-privilege sandboxes and deterministic verification.']}}]},
+ {id:'lab_zoth_sovereign', title:'20 zothos, studio & physical ai', npc:'ZOTH-CORE', concept:'local-first ecosystem', xp:450, cos:'aura_braille',
+  nodes:[
+   {say:[['ghostbyte','Where is AI headed? Local-first operating systems like ZothOS v3.4 & ZothOS-Lite v1.2, 80 free tools in Zoth Studio v2, and FieldKit Physical AI beyond the screen.']]},
+   {pick:{q:'How do ZothOS v3.4 and ZothOS-Lite v1.2 complement each other?', opts:[
+     ['ZothOS v3.4 is a persistent Debian 13 AI workstation (23 daemons); ZothOS-Lite v1.2 is an amnesic RAM-only (toram) live USB with ZothNet mixnet',true,'ZOTH-CORE: Sovereign stack confirmed. Persistent power at home, zero-trace privacy on the move.'],
+     ['Both require a paid cloud subscription',false,'ghostbyte: 100% free, zero paywalls, zero cloud lock-in.'],
+     ['Neither runs local AI',false,'ghostbyte: Both are built from the ground up for local AI & MCP daemons.']]}},
+   {card:{title:'debrief: sovereign future', lines:['ZothOS v3.4 + ZothOS-Lite v1.2 + Zoth Studio v2 (80 free tools) + FieldKit Physical AI.','Press [G] anytime to hear GhostByte\'s full narrated AI Academy chapters.']}}]},
 ];
 // ---------- runner (uses the mini-panel mode) ----------
 export function initLabs(G){
   G.labs={done:{}}; try{ G.labs.done=JSON.parse(localStorage.getItem('woz.labs')||'{}'); }catch(e){}
   const saveL=()=>{ try{ localStorage.setItem('woz.labs',JSON.stringify(G.labs.done)); }catch(e){} };
-  const COL={athena:'#60a5fa',ghostbyte:'#a3a3a3',vigil:'#a78bfa',you:P.GD,RECORDS:P.BONE};
+  const COL={athena:'#60a5fa',ghostbyte:'#00d5ff',vigil:'#a78bfa',you:P.GD,RECORDS:P.BONE};
   G.openAcademy=()=>{ let sel=0; G.mini={ name:'academy', update(){ if(took('back')||took('pause')){ G.mode='explore'; return; } const n=LABS.length; if(took('up')) sel=(sel+n-1)%n; if(took('down')) sel=(sel+1)%n;
       const first=Math.max(0,Math.min(sel-4,n-9));
       IN.clicks.splice(0).forEach(c=>{ const i=first+Math.floor((c.y-96)/40); if(c.x>40&&c.x<920&&i>=first&&i<Math.min(n,first+9)){ sel=i; open(); } }); if(took('confirm')) open();
       function open(){ const L=LABS[sel]; const cnt=Object.keys(G.labs.done).length; if(L.needs&&cnt<L.needs){ G.toast(`> capstone unlocks after ${L.needs} labs (${cnt}/${L.needs})`,P.DG); return; } G.runLab(L.id); } },
-    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.95)'; X.fillRect(0,0,960,540); UI.box(30,20,900,500); const doneN=Object.keys(G.labs.done).length; UI.text(`> null academy cyber-range  (${doneN}/${LABS.length} cleared)`,50,34,P.GD,2); UI.text('athena + ghostbyte  ·  16 interactive AI-security & cryptography labs',50,62,P.DG);
+    draw(t){ const X=UI.ctx; X.fillStyle='rgba(6,5,4,.95)'; X.fillRect(0,0,960,540); UI.box(30,20,900,500); const doneN=Object.keys(G.labs.done).length; UI.text(`> null academy cyber-range  (${doneN}/${LABS.length} cleared)`,50,34,P.GD,2); UI.text(`athena + ghostbyte  ·  ${LABS.length} interactive AI, Nous/Hermes, ZothOS & security labs`,50,62,P.DG);
       const first=Math.max(0,Math.min(sel-4,LABS.length-9));
       LABS.slice(first,first+9).forEach((L,idx)=>{ const i=first+idx, y=96+idx*40, d=G.labs.done[L.id], lock=L.needs&&doneN<L.needs; if(i===sel){ X.fillStyle='rgba(245,184,46,.14)'; X.fillRect(44,y-6,872,36); }
         UI.text((d?'[x] ':'[ ] ')+L.title,60,y,lock?P.DDG:(d?P.GD:P.BONE),2); UI.text(L.concept+'  ·  +'+L.xp+' xp',900,y+6,P.DG,1,'right'); });

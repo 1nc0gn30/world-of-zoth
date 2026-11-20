@@ -22,6 +22,7 @@ import { MODULES, IDLE, QDEF, CODEX } from './content.js';
 import { initQuests } from './quests.js';
 import { buildZones2, tagMesh } from './zones2.js';
 import { initEggs, ACH } from './eggs.js';
+import { initGhostByte } from './ghostbyte.js';
 const V=(x,y,z)=>new THREE.Vector3(x,y,z);
 const SAVE_KEY='woz.save.v1'; const LARGE=()=>G.settings.large;
 const G=window.G={ Q:null, mode:'boot', t:0, zone:null, zoneId:'hub', Z:null, party:{}, roster:['me'], activeL:['me'], inv:{}, bits:0, quests:{}, flags:{}, defeated:new Set(),
@@ -80,6 +81,7 @@ let player, npcs=[], foes=[], followers=[], beacon, navTrail, navPosArr, interac
 async function boot(){
   await loadAll(); G.Z=buildZones(); buildZones2(G.Z); initQuests(G); initEggs(G,{music,sfx}); initHud3(G,{player:()=>player,trackQuest,markFor,portalToward}); G.Z.hub.checkpoints=[[-5,-2,'save terminal']]; G.Z.forest.checkpoints=[[-20,20,'rest tree']];
   initCine(G,{scene,camera,enterZone,Billboard,AG,PARTY_BASE,player:()=>player}); initTut(G,{player:()=>player}); initLabs(G); initHouse(G,{scene,applyLook:()=>applyLook()}); initForge(G);
+  initGhostByte(G,{scene,player:()=>player,postU});
   G.enterZone=enterZone; G.Billboard=Billboard;
   try{ G.cosmetics=JSON.parse(localStorage.getItem('woz.cos')||'{}'); }catch(e){ G.cosmetics={}; }
   G.goZone=(id,x,z,yaw)=>transition(()=>enterZone(id,false,x,z,yaw));
@@ -377,6 +379,11 @@ function drawMenu(t){ const M=G.menu, X=UI.ctx; X.fillStyle='rgba(6,5,4,.78)'; X
 const tmp=V(0,0,0);
 function updateExplore(dt){
   const c=G.cam; if(G.grace>0) G.grace-=dt;
+  if(took('ghost')){ G.openGhostByte(); return; }
+  if(took('bgm')){ G.cycleMusic(); }
+  if(took('gfx')){ G.cycleGfxMode(); }
+  if(took('camview')){ G.cycleCamView(); }
+  if(took('voice')){ G.toggleVoice(); }
   if(took('map')){ G.hud3.open(); return; } if(took('pause')){ openMenu(0); return; } if(took('quests')){ openMenu(0); return; } if(took('items')){ openMenu(2); return; } if(took('party')){ openMenu(1); return; }
   // camera control
   if(IN.drag.dx||IN.drag.dy){ c.yaw-=IN.drag.dx*.009; c.pitch=Math.max(.08,Math.min(1.1,c.pitch+IN.drag.dy*.006)); c.lastDrag=G.t; }
@@ -502,10 +509,10 @@ function drawHUD(t){ const X=UI.ctx;
   npcs.forEach(n=>{ if(n.refl||n.prop) return; const d=n.sp.group.position.distanceTo(p); if(d>11) return; const v=n.sp.group.position.clone().add(V(0,2.25,0)).project(camera); if(v.z>1) return; UI.text(n.red?'03ng0cn1':AG[n.id].name,(v.x+1)/2*960,(1-v.y)/2*540-6,n.red?P.RED:AG[n.id].color,LARGE()&&d<6?2:1,'center'); });
   if(interact){ const k=LARGE()?2:1; const s=(IN.touch?'[A] ':'[E] ')+interact.label; const w=UI.textW(s,k)+30; const hh=k===2?40:28, yy=k===2?400:440; UI.box(480-w/2,yy,w,hh,interact.col===P.RED?P.RED2:P.DDG); UI.text(s,480,yy+(k===2?8:8),interact.col,k,'center'); UI.hit(480-w/2,yy,w,hh,()=>interact&&interact.act()); }
   // clickable tactical quick-bar on bottom-right (desktop)
-  if(!IN.touch){ const spdLbl=`[V] ${(G.gameSpeed||1).toFixed(1)}x`; const qbs=[['[J] quests',()=>openMenu(0)],['[P] crew',()=>openMenu(1)],['[M] map',()=>G.hud3.open()],['[Tab] codex',()=>openMenu(4)],['[`] shell',()=>G.openTerminal(true)],[spdLbl,()=>G.cycleSpeed&&G.cycleSpeed()],['[C] dash',()=>press('dash')]];
-    let qx=948; for(let i=qbs.length-1;i>=0;i--){ const [lbl,fn]=qbs[i], bw=UI.textW(lbl,1)+14; qx-=bw; UI.box(qx,504,bw,22,P.DDG,'rgba(6,5,4,.82)');
+  if(!IN.touch){ const qbs=[['[G] ghostbyte',()=>G.openGhostByte()],['[B] music',()=>G.cycleMusic()],['[H] gfx',()=>G.cycleGfxMode()],['[T] cam',()=>G.cycleCamView()],['[J] quests',()=>openMenu(0)],['[M] map',()=>G.hud3.open()],['[C] dash',()=>press('dash')]];
+    let qx=948; for(let i=qbs.length-1;i>=0;i--){ const [lbl,fn]=qbs[i], bw=UI.textW(lbl,1)+14; qx-=bw; UI.box(qx,504,bw,22,i===0?'#00d5ff':P.DDG,'rgba(6,5,4,.84)');
       if(i===6&&G.mv3&&G.mv3.cd>0){ UI.bar(qx+2,522,bw-4,2,1-G.mv3.cd/0.9,P.GD,P.DDG); }
-      UI.text(lbl,qx+bw/2,509,i===5&&(G.gameSpeed||1)>1?'#4ade80':P.GD,1,'center'); UI.hit(qx,504,bw,22,fn); qx-=4; } }
+      UI.text(lbl,qx+bw/2,509,i===0?'#00d5ff':(i===1?'#32ff85':P.GD),1,'center'); UI.hit(qx,504,bw,22,fn); qx-=4; } }
   if(G.banner){ const b=G.banner; b.t=G.t-b.t0; const n=Math.floor(b.t*28); const s='> district: '+b.name; const bw=Math.max(260,UI.textW(s,2)+44); UI.box(480-bw/2,86,bw,54,P.GD,'rgba(6,5,4,.84)'); UI.text(s.slice(0,n),480,94,P.GD,2,'center'); if(b.t>0.6) UI.text(curActLabel()+'  ·  '+b.sub,480,120,P.BONE,1,'center'); if(b.t>3.6) G.banner=null; }
 }
 function trackQuest(){ if(G.pinnedQuest&&G.quests[G.pinnedQuest]&&!G.quests[G.pinnedQuest].done) return G.pinnedQuest; const ks=Object.keys(G.quests).filter(k=>!G.quests[k].done&&k!=='s_tags'); return ks.find(k=>!QUESTS[k].side)||(G.Q&&G.Q.pending()?'__pending':null)||ks[0]; }
@@ -524,21 +531,21 @@ function drawToasts(dt){ let y=170; const k=LARGE()?2:1; G.toasts.slice(0,2).for
 function drawTouch(){ if(!IN.touch) return; IN.wantStick=G.mode==='explore'; const X=UI.ctx;
   if(G.mode==='explore'){ X.strokeStyle='rgba(245,184,46,.4)'; X.lineWidth=2; const sx=IN.stick.active?IN.stick.ox:110, sy=IN.stick.active?IN.stick.oy:400; X.beginPath(); X.arc(sx,sy,50,0,7); X.stroke(); X.fillStyle='rgba(245,184,46,.5)'; X.beginPath(); X.arc(sx+IN.stick.x*40,sy+IN.stick.y*40,16,0,7); X.fill(); }
   const btn=(x,y,l,a,r=34,hold)=>{ X.fillStyle='rgba(6,5,4,.72)'; X.beginPath(); X.arc(x,y,r,0,7); X.fill(); X.strokeStyle=P.DG; X.lineWidth=2; X.stroke(); UI.text(l,x,y-12,P.GD,2,'center'); UI.hit(x-r,y-r,r*2,r*2,()=>{ if(hold) IN.toggleRun=!IN.toggleRun; else press(a); }); };
-  if(G.mode==='explore'){ btn(896,446,'A','confirm',40); btn(910,236,'=','pause',28); btn(810,500,IN.toggleRun?'>>':'>','run',28,true); btn(820,380,'^','jump',30); btn(740,460,'~','dash',30); btn(910,300,'M','map',24); if(IN.toggleRun) IN.held.add('run'); else if(!IN.kbRun) IN.held.delete('run'); }
+  if(G.mode==='explore'){ btn(896,446,'A','confirm',40); btn(910,236,'=','pause',28); btn(810,500,IN.toggleRun?'>>':'>','run',28,true); btn(820,380,'^','jump',30); btn(740,460,'~','dash',30); btn(910,300,'M','map',24); btn(846,236,'G','ghost',26); btn(846,300,'♪','bgm',24); if(IN.toggleRun) IN.held.add('run'); else if(!IN.kbRun) IN.held.delete('run'); }
   else if(G.mode==='battle'&&G.B&&G.B.state==='victory'){ btn(896,446,'A','confirm',40); }
-  else if(['battle','menu','shop','dialog','terminal','mini'].includes(G.mode)){ btn(896,446,'A','confirm',36); btn(820,500,'B','back',28); if(G.mode!=='dialog'||(G.D&&G.D.choices)){ btn(740,400,'^','up',26); btn(740,490,'v','down',26); btn(680,445,'<','left',26); btn(800,445,'>','right',26); } } }
+  else if(['battle','menu','shop','dialog','terminal','mini','ghost'].includes(G.mode)){ btn(896,446,'A','confirm',36); btn(820,500,'B','back',28); if(G.mode!=='dialog'||(G.D&&G.D.choices)){ btn(740,400,'^','up',26); btn(740,490,'v','down',26); btn(680,445,'<','left',26); btn(800,445,'>','right',26); } } }
 // ---------------- title / ending ----------------
 function updateTitle(dt){ G.titleT+=dt; const c=G.cam; const a=G.titleT*.06; c.pos.set(Math.sin(a)*34,12+Math.sin(G.titleT*.2)*3,Math.cos(a)*34); c.look.set(0,6,0);
   const opts=titleOpts(); G.tsel=Math.min(G.tsel||0,opts.length-1); if(took('up')){ G.tsel=(G.tsel+opts.length-1)%opts.length; sfx('move'); } if(took('down')){ G.tsel=(G.tsel+1)%opts.length; sfx('move'); }
   if(IN.held.size||IN.clicks.length) G.titleIdle=0; if(took('confirm')&&G.titleT>.5) opts[G.tsel][1](); }
 function titleOpts(){ const o=[]; if(hasSave()){ o.push(['continue',()=>{ sfx('confirm'); loadGame(); }]); o.push(['new game+ (cycle 06:13)',()=>{ sfx('confirm'); loadGame(); G.newGamePlus(); }]); } o.push(['new game',()=>{ sfx('confirm'); G.skipTutNext=false; startNew(); }]); o.push(['new game (skip intro + tutorial)',()=>{ sfx('confirm'); G.skipTutNext=true; startNew(true); }]); o.push(['watch movie commercial',()=>{ sfx('confirm'); G.openCommercial(); }]); o.push(['controls',()=>{ G.showCtl=!G.showCtl; sfx('blip'); }]); return o; }
-function startNew(skipIntro){ newGame(); const go=()=>{ enterZone('hub',false,0,16,Math.PI); G.mode='explore'; G.qstart('q1'); if(!G.skipTutNext) G.startTut(); G.dialog('intro'); };
+function startNew(skipIntro){ newGame(); const go=()=>{ enterZone('hub',false,0,16,Math.PI); G.mode='explore'; G.qstart('q1'); if(!G.skipTutNext) G.startTut(); G.ghostbyte&&G.ghostbyte.greet(); G.dialog('intro'); };
   if(skipIntro||G.noCine) go(); else G.playCine('intro',go); }
 function drawTitle(t){ const X=UI.ctx; const r=Math.min(1,G.titleT/1.6); X.fillStyle='rgba(6,5,4,.38)'; X.fillRect(0,0,960,540);
   UI.dotText('world of zoth',480,164,7,P.GD,r,G.titleT<2?.15:(Math.sin(t*1.3)>.97?.3:0),t);
   if(G.titleT>1.4){ UI.text('a 1nc0gn30 story  ·  nullai platform',480,224,P.BONE,2,'center'); UI.text('"trust faces, not voices. silence cannot be copied."',480,250,P.DG,1,'center'); }
   if(G.titleT>2.0){ titleOpts().forEach((o,i)=>{ const y=296+i*30, sel=i===G.tsel; UI.text((sel?'> ':'  ')+o[0],420,y,sel?P.GD:P.DG,2); if(sel) UI.cursor(420+UI.textW('> '+o[0],2)+4,y+4,t); UI.hit(380,y-4,240,28,()=>{ G.tsel=i; o[1](); }); }); }
-  if(G.showCtl){ UI.box(250,400,460,120); ((IN.touch||/android=1/.test(location.search))?['left stick moves, drag right side for camera, run toggles','A talks + confirms, B goes back, the menu button opens the menu','battle: tap A in the gold = crit, tap A on impact = block']:['WASD/arrows move, shift run, drag/Q/R camera','E/space talk + confirm, X back, esc menu, J quests','battle: space in the gold = crit, space on impact = block']).forEach((l,i)=>UI.text(l,270,416+i*20,P.BONE)); }
+  if(G.showCtl){ UI.box(220,392,520,132); ((IN.touch||/android=1/.test(location.search))?['left stick moves, drag right side for camera, run toggles','A talks + confirms, B back, G GhostByte AI Guide, ♪ Music Deck','= menu, M map, ^ jump, ~ dash · battle: tap A in gold = crit']:['WASD/arrows move, shift run, C dash, drag/Q/R/T camera','E/space talk + confirm, G GhostByte AI Guide (Voice), B Music Deck','H Graphics Mode (HD/Bloom/CRT), N Voice toggle, M map, J quests']).forEach((l,i)=>UI.text(l,240,412+i*24,P.BONE)); }
   if(G.titleT>61){ const n=Math.floor((G.titleT-61)*10); UI.text('found you'.slice(0,n),480,270,P.RED,2,'center'); }
   UI.text('v1.0 · sovereign director\'s cut',950,524,P.DDG,1,'right'); }
 G.finalEnding=function(){ G.mode='final'; G.endT=0; music('title'); sfx('win'); G.ach('ending'); G.checkAch(); G.flag('final_done'); saveGame(true); };
@@ -582,6 +589,7 @@ function frame(dt){
   else if(M==='mini') G.updateMini(dt);
   else if(M==='map') G.hud3.mapUpdate(dt);
   else if(M==='cine') G.updateCine(dt);
+  else if(M==='ghost') G.ghostbyte&&G.ghostbyte.updateUI();
   if((M==='explore'||M==='dialog'||M==='battle'||M==='mini')&&G.fadeV>0) G.fadeV=Math.max(0,G.fadeV-dt*3);
   if(M==='transition'){ G.trT+=dt; G.fadeV=G.trT<.35?G.trT/.35:Math.max(0,1-(G.trT-.45)/.35); G.glitchT=Math.max(G.glitchT,.3); if(G.trT>=.4&&G.trFn){ const f=G.trFn; G.trFn=null; f(); } if(G.trT>.8){ G.mode='explore'; G.fadeV=0; } }
   if(G.pendingBattle&&(G.mode==='explore'||G.mode==='dialog')&&!G.D){ const b=G.pendingBattle; G.pendingBattle=null; startBattle(b.types,b.opts); }
@@ -590,6 +598,7 @@ function frame(dt){
   // world anim
   if(G.zone) G.zone.anim.forEach(f=>f(G.t));
   if(G.mode!=='battle'&&G.mode!=='mini'){ player.update(dt,G.cam.yaw,camera.position); npcs.forEach(n=>n.sp.update(dt,G.cam.yaw,camera.position)); followers.forEach(f=>f.sp.update(dt,G.cam.yaw,camera.position)); }
+  if(G.ghostbyte) G.ghostbyte.update3D(dt,G.t);
   // beacon + 3D golden mission guide trail
   const nt=(G.trailOn!==false&&G.zone&&!['battle','title','ending','cine','mini'].includes(G.mode))?navTarget():null;
   beacon.visible=!!nt;
@@ -643,6 +652,7 @@ function frame(dt){
   else if(G.mode==='mini') G.drawMini(G.t);
   else if(G.mode==='map') G.hud3.mapDraw(G.t);
   else if(G.mode==='cine') G.drawCine(G.t);
+  else if(G.mode==='ghost') G.ghostbyte&&G.ghostbyte.drawUI(G.t);
   else { if(G.mode==='battle'&&G.B) G.B.draw(G.t); else if(G.mode==='explore'||G.mode==='transition') drawHUD(G.t);
     if(G.mode==='dialog'){ if(G.B) G.B.draw(G.t); drawDialog(G.t); }
     if(G.mode==='menu') drawMenu(G.t); if(G.mode==='shop') drawShop(G.t);

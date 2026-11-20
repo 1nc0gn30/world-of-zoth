@@ -8,6 +8,7 @@ B=android/build; rm -rf $B; mkdir -p $B/gen $B/obj $B/apk/assets
 python3 tools/make_icons.py android/res
 $BT/aapt2 compile --dir android/res -o $B/res.zip
 cp world-of-zoth.html $B/apk/assets/index.html
+if [ -d assets/voice ]; then mkdir -p $B/apk/assets/assets && cp -r assets/voice $B/apk/assets/assets/; fi
 $BT/aapt2 link -o $B/base.apk -I $PLAT --manifest android/AndroidManifest.xml -R $B/res.zip --java $B/gen -A $B/apk/assets --auto-add-overlay
 javac -source 8 -target 8 -nowarn -classpath $PLAT -d $B/obj $(find android/src $B/gen -name '*.java') 2>&1 | grep -v "bootstrap\|warning" || true
 $BT/d8 --release --min-api 24 --lib $PLAT --output $B $(find $B/obj -name '*.class')

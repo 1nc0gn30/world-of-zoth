@@ -48,7 +48,23 @@ export const TRACKS={
   astral:{bpm:120, prog:[Dm,Bb,Eb,A], bass:'x..x.x..x..x.x.x', arp:[0,2,1,3,2,1,0,3], arpDiv:4, duty:.125, drums:'relay', lead:.65, pad:1.05, drone:1},
   omega:{bpm:134, prog:[Dm,Eb,C,A], bass:'xx.x.xx.xx.x.xxx', arp:[0,3,1,2,3,1,2,0], arpDiv:4, duty:.25, drums:'battle', lead:.78, pad:.7, drone:1},
   final:{bpm:160, prog:[Dm,Eb,Bb,A], bass:'xxxxxxx.xxxxxx.x', arp:[0,2,1,3,1,2], arpDiv:4, duty:.125, drums:'battle', lead:.9, pad:.4, drone:1},
+  // GhostByte Sovereign Soundtrack Selection (2026-2027)
+  synthwave:{bpm:116, prog:[Dm,Bb,F,C], bass:'x.x.x.x.x.x.x.x.', arp:[0,2,1,3,2,1,0,2], arpDiv:4, duty:.25, drums:'hub', lead:.62, pad:1.35, shimmer:1},
+  cyberjazz:{bpm:88, prog:[Dm,Gm,Bb,A], bass:'x.....x...x...x.', arp:[0,1,2,3,1,2], arpDiv:2, duty:.5, drums:'soft', lead:.48, pad:1.4, shimmer:1},
+  hermes_pulse:{bpm:128, prog:[Am,F,C,Gm], bass:'x..xx..xx..xx.x.', arp:[0,2,3,1,2,3,0,1], arpDiv:4, duty:.125, drums:'battle', lead:.72, pad:1.0, shimmer:1},
+  ghost_choir:{bpm:78, prog:[Dm,F,C,Am], bass:'x.......x.......', arp:[0,2,1,3], arpDiv:2, duty:.5, drums:'none', lead:.38, pad:1.6, drone:1, shimmer:1},
+  hyper_phonk:{bpm:146, prog:[Dm,Eb,Dm,A], bass:'x.x.xx.xx.x.xx.x', arp:[0,2,1,3,2,1], arpDiv:4, duty:.125, drums:'phonk', lead:.88, pad:.55, phonk:1},
+  coastal_dawn:{bpm:108, prog:[F,C,Dm,Bb], bass:'x..x..x.x..x..x.', arp:[0,1,2,3,2,1,2,3], arpDiv:4, duty:.25, drums:'hub', lead:.58, pad:1.25, shimmer:1},
 };
+export const MUSIC_DECK=[
+  {id:null, name:'Auto (District Default)'},
+  {id:'synthwave', name:'Midnight Lattice · Synthwave (116 BPM)'},
+  {id:'cyberjazz', name:'06:12 Rain Lounge · Lo-Fi Cyber (88 BPM)'},
+  {id:'hermes_pulse', name:'Hermes Protocol · Nous Drive (128 BPM)'},
+  {id:'ghost_choir', name:'GhostByte Sanctum · Neural Choir (78 BPM)'},
+  {id:'hyper_phonk', name:'ZothOS Kernel · Hyper Phonk (146 BPM)'},
+  {id:'coastal_dawn', name:'757 Coastal Dawn · Horizon Arps (108 BPM)'},
+];
 function hsh(n){ n=Math.sin(n*127.1)*43758.5453; return n-Math.floor(n); }
 const VOICE_MIDI={
   me:69, vigil:64, kitsune:76, ignis:57, kai:74, nexus:67, kraken:55, chronos:62, athena:71,
@@ -63,8 +79,9 @@ export function step(ctx,dest,name,i,t){
   if(tr.bass[k]==='x') osc(ctx,dest,'triangle',N(ch[0]-12),t,s16*1.6,.32);
   const ad=16/(tr.arpDiv*4); if(k%Math.max(1,Math.round(ad))===0){ const ai=Math.floor(k/ad)%tr.arp.length; const nn=tr.arp[ai]; const m=nn<3?ch[nn]+12:ch[0]+24; osc(ctx,dest,'sq',N(m),t,s16*.9,.07,{duty:tr.duty});
     if(chain>=3&&(name==='battle'||name==='boss')) osc(ctx,dest,'sq',N(m+12),t,s16*.55,.045,{duty:.125}); }
-  if(tr.pad && k===0){ ch.forEach((m,j)=>{ const o=ctx.createOscillator(), g=ctx.createGain(), f=ctx.createBiquadFilter(); o.type='sawtooth'; o.frequency.value=N(m)*(1+(j-1)*.003); f.type='lowpass'; f.frequency.value=900;
+  if(tr.pad && k===0){ ch.forEach((m,j)=>{ const o=ctx.createOscillator(), g=ctx.createGain(), f=ctx.createBiquadFilter(); o.type='sawtooth'; o.frequency.value=N(m)*(1+(j-1)*.003); f.type='lowpass'; f.frequency.value=tr.shimmer?1400:900;
       const d=s16*16; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.022*tr.pad,t+d*.3); g.gain.linearRampToValueAtTime(0,t+d); o.connect(f); f.connect(g); g.connect(dest); o.start(t); o.stop(t+d+.05); }); }
+  if(tr.shimmer && (k===0||k===8)){ osc(ctx,dest,'sine',N(ch[2]+24),t,s16*7,.032,{a:.08}); osc(ctx,dest,'triangle',N(ch[0]+12),t,s16*6,.04,{a:.04}); }
   if(tr.drone && k===0){ osc(ctx,dest,'sq',N(38)*1.003,t,s16*16,.035,{duty:.5,a:.4}); osc(ctx,dest,'sq',N(39),t,s16*16,.02,{duty:.125,a:.6}); }
   if(tr.lead && (k===0||k===6||k===10) && hsh(i*1.7+bar)<tr.lead){ const sc=[0,2,3,5,7,8,10]; const m=62+sc[Math.floor(hsh(i*3.3)*7)]+(hsh(i)>.7?12:0); osc(ctx,dest,'sq',N(m),t,s16*(k===0?3:1.6),.06,{duty:.5}); }
   const d=tr.drums;
@@ -102,19 +119,21 @@ export const SFX={
   red:(c,d,t)=>{osc(c,d,'sawtooth',N(38),t,.5,.12,{a:.05}); osc(c,d,'sawtooth',N(39),t,.5,.1,{a:.05});},
 };
 // ---------- live engine ----------
-export const AU={ ctx:null, music:null, sfx:null, track:null, nextT:0, idx:0, on:true, musicOn:true, log:null, clock:()=>0, timer:null };
+export const AU={ ctx:null, music:null, sfx:null, track:null, lockedTrack:null, deckIdx:0, ducked:false, nextT:0, idx:0, on:true, musicOn:true, log:null, clock:()=>0, timer:null };
+export function duckMusic(on){ AU.ducked=!!on; if(AU.music&&AU.ctx){ const target=AU.musicOn?(AU.ducked?.14:.55):0; AU.music.gain.setTargetAtTime(target,AU.ctx.currentTime,.08); } }
+export function cycleMusicDeck(){ AU.deckIdx=(AU.deckIdx+1)%MUSIC_DECK.length; const item=MUSIC_DECK[AU.deckIdx]; AU.lockedTrack=item.id; if(item.id){ music(item.id,true); } else if(typeof window!=='undefined'&&window.G&&window.G.zone){ music(window.G.zone.music,true); } return item; }
 export function initAudio(){
   if(AU.ctx) { if(AU.ctx.state==='suspended') AU.ctx.resume(); return; }
   try{ AU.ctx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ return; }
   const comp=AU.ctx.createDynamicsCompressor(); comp.connect(AU.ctx.destination);
-  AU.music=AU.ctx.createGain(); AU.music.gain.value=.55; AU.music.connect(comp);
+  AU.music=AU.ctx.createGain(); AU.music.gain.value=AU.musicOn?(AU.ducked?.14:.55):0; AU.music.connect(comp);
   AU.sfx=AU.ctx.createGain(); AU.sfx.gain.value=.8; AU.sfx.connect(comp);
   AU.timer=setInterval(tick,25);
 }
 function tick(){ const c=AU.ctx; if(!c||!AU.track||!AU.musicOn) return; const tr=TRACKS[AU.track]; const s16=60/tr.bpm/4;
   if(AU.nextT<c.currentTime) AU.nextT=c.currentTime+.05;
   while(AU.nextT<c.currentTime+.18){ step(c,AU.music,AU.track,AU.idx,AU.nextT); AU.idx++; AU.nextT+=s16; } }
-export function music(name){ if(AU.log && AU.track!==name) AU.log.push({t:AU.clock(),type:'music',name}); if(AU.track===name) return; AU.track=name; AU.idx=0; if(AU.ctx) AU.nextT=AU.ctx.currentTime+.08; }
+export function music(name,force=false){ const eff=(!force&&AU.lockedTrack&&name!==null)?AU.lockedTrack:name; if(AU.log && AU.track!==eff) AU.log.push({t:AU.clock(),type:'music',name:eff}); if(AU.track===eff) return; AU.track=eff; AU.idx=0; if(AU.ctx) AU.nextT=AU.ctx.currentTime+.08; }
 export function sfx(name){ if(AU.log) AU.log.push({t:AU.clock(),type:'sfx',name}); if(!AU.ctx||!AU.on||AU.log) return; const f=SFX[name]; if(f) f(AU.ctx,AU.sfx,AU.ctx.currentTime+.005); }
 // ---------- offline render for gameplay captures ----------
 export async function renderLog(log,dur){

@@ -1,12 +1,12 @@
 <div align="center">
 
 # ⚡ WORLD OF ZOTH
-### A 3D Lattice Cyber-RPG · The Sovereign 1nc0gn30 Saga (v2.0 Sovereign Edition)
+### A 3D Lattice Cyber-RPG · The Sovereign 1nc0gn30 & GhostByte Saga (v2.5 GhostByte AI Edition)
 
-[![Version](https://img.shields.io/badge/version-v2.0_sovereign_edition-fbbf24?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
+[![Version](https://img.shields.io/badge/version-v2.5_ghostbyte_ai_edition-00d5ff?style=for-the-badge&logo=target)](https://github.com/1nc0gn30/world-of-zoth)
+[![Companion](https://img.shields.io/badge/guide-3d_ghostbyte_neural_vo-32ff85?style=for-the-badge)](https://nullai.tech/team)
 [![Districts](https://img.shields.io/badge/districts-20_playable_3d_worlds-10b981?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
-[![Mini-Games](https://img.shields.io/badge/mini--games-22_built--in_arcade_games-f97316?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
-[![Movies](https://img.shields.io/badge/cinema-24_movie_commercials-fbbf24?style=for-the-badge)](commercial.html)
+[![Academy](https://img.shields.io/badge/null_academy-20_ai_%26_hermes_labs-f5b82e?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Platform](https://img.shields.io/badge/platform-browser_%7C_android_apk-00f0ff?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![Offline](https://img.shields.io/badge/network-100%25_offline_zero_cdn-a855f7?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
 [![License](https://img.shields.io/badge/license-100%25_free_%26_unlocked-ec4899?style=for-the-badge)](https://github.com/1nc0gn30/world-of-zoth)
@@ -24,6 +24,34 @@
 **[🎮 Play In Browser](#-how-to-play-on-desktop)** · **[📱 Android APK](#-how-to-play-on-android)** · **[🎬 24-Episode Movie Anthology (`commercial.html`)](commercial.html)** · **[🗺️ Story Roadmap](ROADMAP.md)** · **[📖 Lore & Canon](STORY.md)** · **[⚙️ 16-Hour Marathon Log (`MARATHON_8HR_LOG.md`)](MARATHON_8HR_LOG.md)**
 
 </div>
+
+---
+
+## 👻 v2.5 GhostByte Sovereign AI Companion Edition
+
+- **Living 3D Volumetric GhostByte Companion (`src/ghostbyte.js`)**:
+  - GhostByte hovers dynamically beside `1nc0gn30` across all 20 districts with a 3D volumetric voxel dome, undulating 6-lobe cloth skirt, glowing eyes, dual counter-rotating cyan/gold orbital rings, and live particle aura.
+  - Press **`[G]`** on Desktop (or tap **`G`** on Android) anytime to summon the **GhostByte AI Guide & Sovereign Academy** with a live animated 3D HUD portrait and audio waveform bars.
+- **Studio-Quality Zero-Cost Neural Voice-Overs (`assets/voice/*.mp3`, `tools/generate_voiceovers.py`)**:
+  - Pre-rendered offline neural narrations synthesized at **$0.00 cost** via Microsoft Edge Neural TTS (`en-US-AndrewMultilingualNeural`) and mastered to `-16 LUFS` compact mono MP3s—**zero robotic browser speech, zero API keys, 100% offline on both Web and Android APK**, with automatic background music ducking.
+- **10 Narrated AI Masterclass Chapters + 20 Playable Null Academy Labs (`src/ghostbyte.js`, `src/labs.js`)**:
+  - **How to Use AI Like an Engineer** (role, context, constraints, output format, deterministic tool verification)
+  - **Where AI Started** (1950 Turing → 1958 Perceptron → 1986 Backprop → 2012 AlexNet → 2017 Transformer *"Attention Is All You Need"*)
+  - **Nous Research & Open Weights** (community-owned weights, steerable reasoning, `DisTrO` & `Psyche` decentralized training)
+  - **Hermes Models & Hermes Agent** (structured function calling, JSON schemas, local MCP tools, persistent memory & `Hermes-Zoth`)
+  - **Where AI Is Headed (2026–2030)** (local-first multi-agent swarms, STDP Neuro-Memory, WebGPU inference & **FieldKit Physical AI**)
+  - **Zoth Ecosystem** (`ZothOS v3.4.0`, `ZothOS-Lite v1.2`, `Zoth Studio v2` 80 free tools, `ZothNet` 3-hop Sphinx mixnet)
+  - **Local LLMs & AI Red Teaming** (GGUF quantization, VRAM math, prompt injection defense, RAG provenance, safetensors, least privilege)
+- **Expanded Sovereign Music Deck (`src/audio.js` — `[B]` Key / `[♪]` Android Touch)**:
+  - 6 brand-new lush procedural tracks selectable anytime alongside district defaults: *Midnight Lattice (Synthwave)*, *06:12 Rain Lounge (Lo-Fi Cyber)*, *Hermes Protocol (Nous Drive)*, *GhostByte Sanctum (Neural Choir)*, *ZothOS Kernel (Hyper Phonk)*, and *757 Coastal Dawn (Horizon Arps)*.
+- **Enhanced Graphics & New Controls (`src/render.js`, `src/input.js`, `src/main.js`)**:
+  - **`[G]`** — Summon GhostByte 3D AI Guide & Narrated Academy *(Android: `G` touch button)*
+  - **`[B]`** — Cycle Sovereign Music Deck *(Android: `♪` touch button)*
+  - **`[H]`** — Cycle Graphics Mode (`Sovereign HD` · `Cyber Bloom` · `Classic CRT`) with live neon bloom & color saturation shaders
+  - **`[T]`** — Cycle Camera View (`Standard 3rd-Person` · `Cinematic Close` · `Tactical High-Orbit`)
+  - **`[N]`** — Toggle Neural Voice Narration On/Mute
+- **100% Web & Android APK Parity + Zero Secret Leaks**:
+  - `./tools/build.sh` builds the web bundle (`game.js`, `world-of-zoth.html`, `dist/world-of-zoth.zip`); `./tools/build_apk.sh` packages the HTML bundle **and** offline neural voice-overs into a signed standalone **`dist/world-of-zoth.apk`**. Zero API keys, zero telemetry, zero paywalls.
 
 ---
 
