@@ -98,10 +98,20 @@ async function boot(){
   const navGeo=new THREE.BufferGeometry(); navGeo.setAttribute('position',new THREE.BufferAttribute(navPosArr,3)); navGeo.setDrawRange(0,0);
   navTrail=new THREE.LineSegments(navGeo,latMat({color:P.GD,intensity:1.28,fogFar:180})); navTrail.frustumCulled=false; scene.add(navTrail);
   newGame(); G.mode='title'; enterZone('hub',true); G.titleT=0; music('title');
-  if(new URLSearchParams(location.search).has('capture')) WOZ.manual=true;
-  if(new URLSearchParams(location.search).has('commercial')){
-    const ep=parseInt(new URLSearchParams(location.search).get('commercial')||'1',10)-1;
+  const _qs=new URLSearchParams(location.search);
+  if(_qs.has('capture')) WOZ.manual=true;
+  if(_qs.has('commercial')){
+    const ep=parseInt(_qs.get('commercial')||'1',10)-1;
     G.openCommercial(isNaN(ep)?0:ep);
+  } else if(_qs.has('zone')&&G.Z[_qs.get('zone')]){
+    G.noCine=true; G.skipTutNext=true;
+    enterZone(_qs.get('zone'),false); G.mode='explore'; G.qstart('q1');
+  } else if(_qs.get('mode')==='ops'){
+    G.noCine=true; G.skipTutNext=true; enterZone('hub',true); G.openOpsHub&&G.openOpsHub();
+  } else if(_qs.get('mode')==='academy'){
+    G.noCine=true; G.skipTutNext=true; enterZone('hub',true); G.openAcademy&&G.openAcademy();
+  } else if(_qs.get('mode')==='ghostbyte'){
+    G.noCine=true; G.skipTutNext=true; enterZone('hub',true); G.openGhostByte&&G.openGhostByte(0);
   }
   requestAnimationFrame(loop);
 }

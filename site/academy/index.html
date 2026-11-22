@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GhostByte AI Academy &amp; 20 Null Academy Labs | World of Zoth</title>
+  <meta name="description" content="Listen to all 10 offline neural voice-over AI chapters by GhostByte and play 20 interactive Null Academy labs covering AI history, Nous Research open weights, Hermes Agent MCP tool-calling, ZothOS v3.4, and AI security.">
+  <link rel="canonical" href="https://world-of-zoth.netlify.app/academy/">
+  <link rel="icon" type="image/png" href="/assets/ghostbyte-icon.png">
+
+  <meta property="og:title" content="GhostByte AI Academy &amp; 20 Null Academy Labs — World of Zoth">
+  <meta property="og:description" content="10 narrated neural voice-over chapters + 20 playable AI security, Nous Research, Hermes Agent, and ZothOS labs. 100% free &amp; open-access.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://world-of-zoth.netlify.app/academy/">
+  <meta property="og:image" content="https://world-of-zoth.netlify.app/assets/woz_v04_codex.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@1nc0gn30">
+  <meta name="twitter:creator" content="@1nc0gn30">
+  <meta name="twitter:image" content="https://world-of-zoth.netlify.app/assets/woz_v04_codex.jpg">
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Course",
+        "name": "GhostByte Sovereign AI Academy & Null Academy Cyber-Range",
+        "description": "Free interactive AI engineering and security curriculum built into World of Zoth, featuring 10 neural voice-over chapters and 20 playable labs covering prompt engineering, AI history, Nous Research, Hermes Agent, ZothOS, and AI red teaming.",
+        "url": "https://world-of-zoth.netlify.app/academy/",
+        "provider": {
+          "@type": "Organization",
+          "name": "NullAI Platform • Neal Frazier Tech (@1nc0gn30)",
+          "url": "https://nullai.tech"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "category": "Free"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What topics do the 20 Null Academy labs cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 20 playable labs cover prompting basics, hallucination verification, prompt injection defense, jailbreak guardrails, data leakage, least-privilege agent tools, deepfake verification, RAG poisoning, model supply-chain safetensors, timing side-channels, multi-agent loop breakers, cryptographic attestation, zero-knowledge proofs, sandbox isolation, AI history & Transformers, Nous Research open weights, Hermes Agent MCP tool-calling, and ZothOS local-first architecture."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do the GhostByte AI voice-overs require an API key?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All 11 neural voice-over MP3 tracks are pre-rendered and bundled locally for zero-cost offline playback in both the Web app and Android APK."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #05060a;
+      --surface: rgba(11, 15, 25, 0.9);
+      --border: rgba(148, 163, 184, 0.16);
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+      --gold: #f5b82e;
+      --cyan: #00d5ff;
+      --emerald: #32ff85;
+      --display: 'Clash Display', system-ui, sans-serif;
+      --body: 'Cabinet Grotesk', system-ui, sans-serif;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--body); overflow-x: hidden;
+    }
+    body {
+      background-image:
+        radial-gradient(circle at 20% 5%, rgba(0, 213, 255, 0.13), transparent 40%),
+        radial-gradient(circle at 85% 10%, rgba(245, 184, 46, 0.12), transparent 36%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .nav {
+      position: sticky; top: 0; z-index: 40; backdrop-filter: blur(18px);
+      background: rgba(5, 6, 10, 0.85); border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 12px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
+    .brand img { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(0,213,255,0.4); }
+    @media (max-width: 600px) { .hide-sm { display: none; } .brand { font-size: 0.94rem; } .btn-play { padding: 8px 13px; font-size: 0.8rem; } }
+    .btn-play {
+      display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--gold), #ff9f1c);
+      color: #05060a; font-family: var(--display); font-weight: 700; font-size: 0.88rem;
+      padding: 10px 18px; border-radius: 11px; border: none; cursor: pointer; white-space: nowrap;
+    }
+    .btn-cyan {
+      display: inline-flex; align-items: center; gap: 7px; background: rgba(0,213,255,0.1);
+      color: var(--cyan); font-family: var(--mono); font-weight: 700; font-size: 0.76rem;
+      padding: 8px 13px; border-radius: 10px; border: 1px solid rgba(0,213,255,0.36); cursor: pointer;
+    }
+    .btn-cyan.playing { background: rgba(50,255,133,0.18); border-color: var(--emerald); color: var(--emerald); }
+    header.hero { padding: 48px 0 36px; }
+    .kicker { font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; color: var(--cyan); margin-bottom: 12px; }
+    h1 { font-family: var(--display); font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 0.98; margin: 0 0 14px; }
+    .serif { font-family: var(--serif); font-style: italic; color: var(--gold); font-weight: 400; }
+    .lead { color: var(--muted); font-size: 1.05rem; line-height: 1.65; max-width: 700px; margin: 0 0 22px; }
+    h2 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 42px 0 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 12px; min-width: 0;
+    }
+    .tag { font-family: var(--mono); font-size: 0.68rem; font-weight: 700; color: var(--emerald); letter-spacing: 0.1em; }
+    .card h3 { font-family: var(--display); font-size: 1.15rem; margin: 4px 0 6px; }
+    .card p { color: var(--muted); font-size: 0.92rem; line-height: 1.55; margin: 0; }
+    .lab-card {
+      background: rgba(11, 15, 25, 0.72); border: 1px solid var(--border); border-radius: 13px; padding: 14px 16px;
+    }
+    .lab-card b { display: block; font-family: var(--display); font-size: 1rem; margin-bottom: 4px; color: var(--ink); }
+    .lab-card span { font-family: var(--mono); font-size: 0.72rem; color: var(--gold); }
+    footer { border-top: 1px solid var(--border); margin-top: 56px; padding: 30px 0 42px; font-family: var(--mono); font-size: 0.76rem; color: var(--muted); }
+    @media (max-width: 820px) { .grid-2, .grid-3 { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a href="/" class="brand">
+        <img src="/assets/ghostbyte-icon.png" alt="World of Zoth 3D GhostByte emblem">
+        <span>← WORLD OF ZOTH</span>
+      </a>
+      <a href="/play/?mode=academy" class="btn-play">▶ PLAY 20 LABS<span class="hide-sm"> IN-GAME</span></a>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <header class="hero">
+      <div class="kicker">GHOSTBYTE SOVEREIGN AI ACADEMY · 10 NEURAL AUDIO CHAPTERS · 20 PLAYABLE LABS</div>
+      <h1>Learn AI Engineering, <span class="serif">Nous &amp; Hermes</span> in 3D.</h1>
+      <p class="lead">
+        Every chapter below is narrated by GhostByte using zero-cost offline neural voice-overs—play any track right here in your browser or jump straight into World of Zoth's 20 interactive Null Academy labs to earn XP and cosmetics.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <a href="/play/?mode=ghostbyte" class="btn-play">▶ OPEN GHOSTBYTE IN-GAME</a>
+        <a href="/play/?mode=ops" class="btn-cyan">⚡ LAUNCH 4 SOVEREIGN OPS</a>
+      </div>
+    </header>
+
+    <h2>10 Narrated GhostByte AI Masterclass Chapters</h2>
+    <div id="chapters-grid" class="grid-2"></div>
+
+    <h2>20 Playable Null Academy Cyber-Range Labs</h2>
+    <div id="labs-grid" class="grid-3"></div>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;">
+      <div>Engineered by Neal Frazier Tech (<a href="https://github.com/1nc0gn30/world-of-zoth" style="color:var(--gold)">@1nc0gn30</a>) • <a href="https://nullai.tech" style="color:var(--cyan)">NullAI Platform</a></div>
+      <div><a href="/" style="color:var(--ink)">Portal</a> · <a href="/play/" style="color:var(--gold)">Play Web</a> · <a href="https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X" style="color:var(--gold)">☕ Buy Us a Coffee</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const CHAPTERS = [
+      { id: 'gb_01_use_ai', tag: 'HOW TO USE AI', title: '01 · Using AI Like a Pro', desc: 'Role + grounded context + hard constraints + output example + deterministic tool & test verification.' },
+      { id: 'gb_02_history', tag: 'AI ORIGINS', title: '02 · Where AI Started (1950–2017)', desc: 'Alan Turing (1950), Rosenblatt Perceptron (1958), Backprop (1986), AlexNet (2012), and the 2017 Transformer.' },
+      { id: 'gb_03_nous', tag: 'NOUS RESEARCH', title: '03 · Nous Research & Open Weights', desc: 'Community-owned weights, steerable synthetic reasoning datasets, DisTrO & Psyche decentralized training.' },
+      { id: 'gb_04_hermes', tag: 'HERMES AGENT', title: '04 · Hermes Models & Hermes Agent', desc: 'Open-weight function calling, strict JSON schemas, local MCP servers, persistent memory & Hermes-Zoth.' },
+      { id: 'gb_05_future', tag: 'FUTURE 2026–2030', title: '05 · Where AI Is Headed Next', desc: 'Local-first multi-agent swarms, STDP Neuro-Memory, WebGPU browser engines, and FieldKit Physical AI.' },
+      { id: 'gb_06_zothos', tag: 'ZOTHOS ECOSYSTEM', title: '06 · ZothOS v3.4 & ZothOS-Lite v1.2', desc: 'Persistent Debian 13 + KDE Plasma 6 AI workstation (23 daemons) vs. RAM-only toram Live USB + ZothNet.' },
+      { id: 'gb_07_studio', tag: 'ZOTH STUDIO V2', title: '07 · Zoth Studio & 80 Free Tools', desc: '56 in-browser/WebGPU developer utilities + 24 bare-metal CLI daemons—100% free with zero paywalls.' },
+      { id: 'gb_08_local_llm', tag: 'LOCAL WEIGHTS', title: '08 · Local LLMs, GGUF & Privacy', desc: 'Q4_K_M & Q8 quantization, VRAM budgeting, llama.cpp/Ollama, and why 127.0.0.1 equals true ownership.' },
+      { id: 'gb_09_security', tag: 'AI SECURITY', title: '09 · AI Red Teaming & Hardening', desc: 'Prompt injection fences, signed RAG corpora, safetensors weight provenance, and least-privilege tools.' },
+      { id: 'gb_10_tactical', tag: 'LIVE GUIDE', title: '10 · GhostByte Live Tactical Scan', desc: 'Navigating the 20 districts, golden 3D trails, phase-dashing patrols, and mastering Sovereign Operations.' }
+    ];
+
+    const LABS = [
+      ['01 Prompting Basics', 'role + context + examples'],
+      ['02 Hallucination Defense', 'verify against a source'],
+      ['03 Prompt Injection', 'separate instructions vs data'],
+      ['04 Jailbreak & Role-Play', 'guardrails hold in fiction'],
+      ['05 Data Leakage', 'secrets never belong in prompts'],
+      ['06 Agent & Tool Misuse', 'least privilege + approval'],
+      ['07 Deepfake / Voice Clone', 'trust faces, not voices'],
+      ['08 Capstone CTF', 'multi-layer prompt audit'],
+      ['09 RAG Poisoning', 'authenticate vector provenance'],
+      ['10 Model Backdoors', 'safetensors + SHA-256 hashes'],
+      ['11 Timing Side-Channel', 'constant-time verification'],
+      ['12 Multi-Agent Loops', 'turn budgets & circuit breakers'],
+      ['13 Face Attestation', 'cryptographic liveness nonce'],
+      ['14 Zero-Knowledge Proofs', 'prove without revealing'],
+      ['15 Sandbox Isolation', 'declarative AST whitelists'],
+      ['16 Sovereign Master CTF', 'full-stack security audit'],
+      ['17 AI History & Transformers', '1950 -> parallel self-attention'],
+      ['18 Nous Research & Open Weights', 'DisTrO & Psyche decentralized AI'],
+      ['19 Hermes Agent & Tool-Calling', 'structured JSON + local MCP'],
+      ['20 ZothOS, Studio & Physical AI', 'local-first sovereign stack']
+    ];
+
+    let curAudio = null, curBtn = null;
+    const cg = document.getElementById('chapters-grid');
+    CHAPTERS.forEach((ch) => {
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.innerHTML = `
+        <div>
+          <div class="tag">${ch.tag}</div>
+          <h3>${ch.title}</h3>
+          <p>${ch.desc}</p>
+        </div>
+        <div>
+          <button type="button" class="btn-cyan" data-clip="${ch.id}">▶ LISTEN TO NEURAL VOICE</button>
+        </div>`;
+      const btn = el.querySelector('button');
+      btn.addEventListener('click', () => {
+        if (curAudio && curBtn === btn && !curAudio.paused) {
+          curAudio.pause(); curAudio.currentTime = 0;
+          btn.classList.remove('playing'); btn.textContent = '▶ LISTEN TO NEURAL VOICE';
+          return;
+        }
+        if (curAudio) { curAudio.pause(); curBtn.classList.remove('playing'); curBtn.textContent = '▶ LISTEN TO NEURAL VOICE'; }
+        curAudio = new Audio(`/play/assets/voice/${ch.id}.mp3`);
+        curBtn = btn;
+        btn.classList.add('playing');
+        btn.textContent = '■ PLAYING NEURAL VOICE...';
+        curAudio.addEventListener('ended', () => {
+          btn.classList.remove('playing'); btn.textContent = '▶ LISTEN TO NEURAL VOICE';
+        });
+        curAudio.play().catch(() => {
+          btn.classList.remove('playing'); btn.textContent = '▶ LISTEN TO NEURAL VOICE';
+        });
+      });
+      cg.appendChild(el);
+    });
+
+    const lg = document.getElementById('labs-grid');
+    LABS.forEach(([title, concept]) => {
+      const d = document.createElement('div');
+      d.className = 'lab-card';
+      d.innerHTML = `<b>${title}</b><span>${concept}</span>`;
+      lg.appendChild(d);
+    });
+  </script>
+</body>
+</html>

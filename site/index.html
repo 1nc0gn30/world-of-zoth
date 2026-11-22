@@ -512,7 +512,8 @@
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#ops">Sovereign Ops</a>
-        <a href="#academy">GhostByte AI Academy</a>
+        <a href="#atlas">20 Districts</a>
+        <a href="/academy/">AI Academy</a>
         <a href="#controls">Controls</a>
         <a href="#faq">FAQ</a>
         <a href="https://github.com/1nc0gn30/world-of-zoth" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -602,6 +603,20 @@
           <p>Real-time plasma-dodge &amp; charged cyan EMP counter boss showdown across 3 escalating armor phases.</p>
         </article>
       </div>
+      <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="/play/?mode=ops" class="btn-play">⚡ DEPLOY DIRECTLY INTO SOVEREIGN OPS</a>
+        <a href="/academy/" class="btn-ghost">🎧 LISTEN TO ALL 10 AI VOICE CHAPTERS →</a>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE 20-DISTRICT 3D WORLD ATLAS -->
+    <section id="atlas">
+      <div class="sec-head">
+        <div class="sec-kicker">INSTANT 1-CLICK 3D WARP · ZERO LOADING SCREENS</div>
+        <h2>Explore 20 Playable 3D Lattice Districts</h2>
+        <p class="sec-desc">Click any district below to warp straight into its live 3D WebGL world with GhostByte hovering beside you and glowing 3D Data Shards ready to hunt.</p>
+      </div>
+      <div id="district-atlas-grid" class="kbd-grid"></div>
     </section>
 
     <!-- GHOSTBYTE AI ACADEMY & NOUS / HERMES / ZOTH LEARNING -->
@@ -783,6 +798,27 @@
         requestAnimationFrame(draw);
       }
       requestAnimationFrame(draw);
+
+      // Populate Interactive 20-District 3D Warp Atlas
+      const atlasGrid = document.getElementById('district-atlas-grid');
+      if (atlasGrid) {
+        const DISTRICTS = [
+          ['hub', '01 · Relit City Hub'], ['forest', '02 · Static Forest'], ['fiber', '03 · Fiber Trench'],
+          ['clock', '04 · 06:12 Clocktower'], ['relay', '05 · Relay 4 Core'], ['streets', '06 · Neon Streets'],
+          ['foundry', '07 · Doom-Fire Foundry'], ['caves', '08 · Sub-Lattice Caves'], ['mirrors', '09 · Mirror Gallery'],
+          ['deep', '10 · Deep Trench'], ['abyss', '11 · Abyssal Node'], ['skyline', '12 · Skyline Spires'],
+          ['citadel', '13 · Sovereign Citadel'], ['nullcore', '14 · NullCore Nexus'], ['glacier', '15 · Cryo Glacier'],
+          ['loom', '16 · Quantum Loom'], ['vault', '17 · Chrono-Vault'], ['astral', '18 · Astral Spire'],
+          ['omega', '19 · Omega Foundry'], ['horizon', '20 · Dawn Horizon']
+        ];
+        DISTRICTS.forEach(([id, label]) => {
+          const a = document.createElement('a');
+          a.href = `/play/?zone=${id}`;
+          a.className = 'kbd-item';
+          a.innerHTML = `<span class="kbd">WARP</span><span>${label}</span>`;
+          atlasGrid.appendChild(a);
+        });
+      }
 
       // Voice-Over Preview Player
       const btn = document.getElementById('voice-preview-btn');
