@@ -12,3 +12,9 @@ motion/clips/
 motion/out/score.wav
 dist/world-of-zoth-motion-edit.mp4
 media_packs/videos/
+
+# Local Netlify folder
+.netlify
+site/downloads/
+site/play/game.js
+site/play/assets/

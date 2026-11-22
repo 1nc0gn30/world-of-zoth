@@ -1,0 +1,18 @@
+# World of Zoth — Sovereign 3D Cyber-RPG & GhostByte AI Academy
+> Zero-dependency 3D Lattice Cyber-RPG playable in browser and as a standalone Android APK.
+
+- Official Portal: https://world-of-zoth.netlify.app/
+- Play Instant Web Edition: https://world-of-zoth.netlify.app/play/
+- Download Signed Android APK: https://world-of-zoth.netlify.app/downloads/world-of-zoth.apk
+- GitHub Repository: https://github.com/1nc0gn30/world-of-zoth
+- Parent Lab: https://nullai.tech (1nc0gn30 & GhostByte)
+
+## Highlights (v2.6 Sovereign AI Edition)
+- Living 3D Volumetric GhostByte Companion & Guide ([G] key / Android G button)
+- 11 Pre-Rendered Zero-Cost Offline Neural Voice-Over Narration Chapters (How to Use AI, AI History 1950-2017, Nous Research, Hermes Agent, Future of AI 2026-2030, ZothOS v3.4, Zoth Studio v2 80 Free Tools, Local LLMs & AI Red Teaming)
+- 4 Real-Time Interactive Sovereign Operations ([O] key): Hermes Swarm Intercept, Neural Weight Breach, ZothNet Mixnet Relay Run, Archon Sentinel Duel
+- In-World 3D Sovereign Data Shards across all 20 districts with up to x8 Chain Combo Multipliers
+- 20 Playable Null Academy AI & Security Labs
+- Expanded Sovereign Music Deck ([B] key / Android ♪ button) with 6 procedural soundtracks
+- Graphics Modes ([H] key): Sovereign HD, Cyber Bloom, Classic CRT
+- 100% Free, Open-Access, Zero Paywalls, Zero Cloud Telemetry.
